@@ -1,0 +1,468 @@
+{
+  "repository": "MontrealAI/skillos",
+  "target_site": "https://montrealai.github.io/skillos/",
+  "package_version": "v3.0",
+  "generated_at": "2026-05-27T00:51:22Z",
+  "files": [
+    {
+      "path": ".editorconfig",
+      "bytes": 139,
+      "sha256": "0236baaa876eef2fbe3d4a9b01aac87d148b925fac3f58e1bc0cc9819ed88dab"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 90,
+      "sha256": "1e3bbde0c8ea6e92fd74c35ad9d694a02351eeae385e97cb96ea2e9a1b213911"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "bytes": 239,
+      "sha256": "80c8e0a934125e05840b140e783b8983126b771a25579e47f5e8c8520a95db95"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.md",
+      "bytes": 360,
+      "sha256": "4059b431d2d4ff52eab4a301bf27da2115ab29cf3e4c614babad9ef7c6d759ef"
+    },
+    {
+      "path": ".github/workflows/pages.yml",
+      "bytes": 1223,
+      "sha256": "eb1cb538a02ef4b42830215e1d993bae40a2b1a3da2588aabe7ccf05d62e8b93"
+    },
+    {
+      "path": ".github/workflows/tests.yml",
+      "bytes": 575,
+      "sha256": "ae630562927feb0ad87e282720b20a9fcfea676fc3e32041e62c5556de6fdf59"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 100,
+      "sha256": "1afe3851dbecaf5b1b347b0083465d1bee77fc85d17107cc5d98c0fb6d2dea43"
+    },
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "404.html",
+      "bytes": 436,
+      "sha256": "79a85c9a93346fecac3d51c2fa75fbed25155f3274e3d51fa308c5b2582baf2b"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 621,
+      "sha256": "85684f5a8db4325a1158056fe934618933a62b7cccd891b557fd096bb9b0e173"
+    },
+    {
+      "path": "COPY_IF_NEEDED_pages_workflow.yml.txt",
+      "bytes": 1223,
+      "sha256": "eb1cb538a02ef4b42830215e1d993bae40a2b1a3da2588aabe7ccf05d62e8b93"
+    },
+    {
+      "path": "COPY_PASTE_GITHUB_ACTIONS/pages.yml",
+      "bytes": 1223,
+      "sha256": "eb1cb538a02ef4b42830215e1d993bae40a2b1a3da2588aabe7ccf05d62e8b93"
+    },
+    {
+      "path": "COPY_PASTE_GITHUB_ACTIONS/tests.yml",
+      "bytes": 575,
+      "sha256": "ae630562927feb0ad87e282720b20a9fcfea676fc3e32041e62c5556de6fdf59"
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 143,
+      "sha256": "c1ca4772e4dd7cfc046fc6932e9b30fbd7f0febb8f06e4d66470fa33d9b7698d"
+    },
+    {
+      "path": "GITHUB_UPLOAD_GUIDE.md",
+      "bytes": 4035,
+      "sha256": "17c8a8750c1fad7bbb964be4d4963cf7faccc9d50741e4eb4e18e01ed5dd836c"
+    },
+    {
+      "path": "GITHUB_WEB_UPLOAD_CHECKLIST.md",
+      "bytes": 733,
+      "sha256": "8c5f624347fb66a6f195a11dc2b37e63ace593f544c2fe33174003c90e431227"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1083,
+      "sha256": "e764bf1bad9ea738ff1220b381710aa989188c1099d17761f01df4d0d3cbcc37"
+    },
+    {
+      "path": "Makefile",
+      "bytes": 242,
+      "sha256": "822f661dcf18a19905b9b9330b8df66c84b4411b1f93ef49f6ccee6ca0a675ac"
+    },
+    {
+      "path": "OPEN_ME_FIRST_GITHUB_WEB_SETUP.md",
+      "bytes": 3671,
+      "sha256": "c841baa2ac080b2e6baee44dbf38f6e23645e23779bdf5a5ee415d72e9ec27c7"
+    },
+    {
+      "path": "PROOF_OF_WEALTH_ACCUMULATION.md",
+      "bytes": 892,
+      "sha256": "7bea5823ba17fc9b5c81b58bcb475ea09c2fd15ae837bda66b4e421dfb0ec053"
+    },
+    {
+      "path": "QA_VERIFICATION.md",
+      "bytes": 1906,
+      "sha256": "adbbeb8cd8ddc8b011d52afb3ad89ef6d22523933cac8bc191c70dd3248de3a9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3185,
+      "sha256": "0df5389b9ec2ef467debd9ea2f9432768946508ac46d5c116c8df006f94fe419"
+    },
+    {
+      "path": "README_FIRST_GITHUB_WEB_USERS.md",
+      "bytes": 4164,
+      "sha256": "92aa94049522dae758c7c17064ed0bad4490b59b48c508ef8698d9c0cfd166b6"
+    },
+    {
+      "path": "REPO_FILE_TREE.txt",
+      "bytes": 1992,
+      "sha256": "0df30455d48254430f46fe7414a921e5a7b7afdc1afcfd5eaed7355fb68e774a"
+    },
+    {
+      "path": "ROADMAP.md",
+      "bytes": 877,
+      "sha256": "a86b5b205ac11178b6a838cb8ecc9942c133679d108c08523a366c7a39afbd0d"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 585,
+      "sha256": "d63ba23b635738df41afbcaa9ef9e82032f1a7b51295ebb3fa097747a834e36c"
+    },
+    {
+      "path": "START_HERE.html",
+      "bytes": 3190,
+      "sha256": "1dd5e88b808d1d638b0d5dbd57bca1b2a806d5e22afe5cc860c961f24aac1c49"
+    },
+    {
+      "path": "app.js",
+      "bytes": 12409,
+      "sha256": "3bd58f921aad42e22c5b2c3a3800b0b8d2c82778aa94d4462fd81de4f98ede57"
+    },
+    {
+      "path": "assets/skillos-mark.svg",
+      "bytes": 945,
+      "sha256": "930d2484c6e0d31ed8576e2859a2adef55326849264d3d714add12f71f5f64de"
+    },
+    {
+      "path": "data/demo.json",
+      "bytes": 20371,
+      "sha256": "99ea8a5e771fc63eb86699fbecc963ffbf2c6939552afd0dc606b43e612a0ffe"
+    },
+    {
+      "path": "data/wealth_proof.json",
+      "bytes": 63497,
+      "sha256": "19349abe6ea119e53a8facba369d421db730f5d8a61ccb3295dc7e1d8d36adad"
+    },
+    {
+      "path": "docker-compose.yml",
+      "bytes": 111,
+      "sha256": "8e8542752a8db52997d105a86232e4f7f5aa63ce33cd4961c257055e90cdc3ef"
+    },
+    {
+      "path": "docs/api_reference.md",
+      "bytes": 997,
+      "sha256": "747da70d78e393ad3ad2fd39cf8d2b63f3b092cfef4778481be53076eb458310"
+    },
+    {
+      "path": "docs/architecture.md",
+      "bytes": 1421,
+      "sha256": "0bdce54f307b329555adc20eabb2e013b8e37fae4a6bd5aea6f026638d8b1071"
+    },
+    {
+      "path": "docs/demo_walkthrough.md",
+      "bytes": 1351,
+      "sha256": "57d5b81552e6ad5ec1be84f920b85b1f0426f730f2a1302bae43bfbeb99ea3e5"
+    },
+    {
+      "path": "docs/extending.md",
+      "bytes": 1041,
+      "sha256": "bb68831eff081fa3b9f6230d926c5f3da4d74038e8ad4fa6ddc9c4ecd79c4789"
+    },
+    {
+      "path": "docs/github_pages_troubleshooting.md",
+      "bytes": 1761,
+      "sha256": "a5d145baf7093578391db3198a4817593a5726b369b0de5100d093efc70e9df7"
+    },
+    {
+      "path": "docs/github_web_launch_guide.md",
+      "bytes": 2587,
+      "sha256": "7116cac6884f2de9e65c4deee1d6bb2023f714f9be5767c382ca8e6ba25076a6"
+    },
+    {
+      "path": "docs/governance.md",
+      "bytes": 908,
+      "sha256": "4d3e62d8fbff260bf63daef2224c5584dd8540b9397512f591fc2cc79da95cc6"
+    },
+    {
+      "path": "docs/pages_site.md",
+      "bytes": 400,
+      "sha256": "ac459366bedf280037693042247c3e9264ef5a4d54c8460fa8ca6816f2f73004"
+    },
+    {
+      "path": "docs/production_blueprint.md",
+      "bytes": 1771,
+      "sha256": "39366530e3adf2bc3c172079fe27e708c37b5ccc49a54964efd9b25f31d01787"
+    },
+    {
+      "path": "docs/quickstart.md",
+      "bytes": 812,
+      "sha256": "5d9bff86b17173486106ef4dfb47d7a81c207fa9bcab0a278599af2b7194bc60"
+    },
+    {
+      "path": "docs/repository_index.md",
+      "bytes": 1218,
+      "sha256": "243176722f8fa297509ed14e39475a5442e66a835a270b70b8164fc3fc02809c"
+    },
+    {
+      "path": "docs/skill_lifecycle.md",
+      "bytes": 919,
+      "sha256": "456b1abd5f5ccf551da82576f70f6f239ec75e427c11cb13158f7c05ca427542"
+    },
+    {
+      "path": "docs/type_ii_roadmap.md",
+      "bytes": 1761,
+      "sha256": "3cf0e3eaa67ea336a4856b7736719d119fc890702808106d444262f7c7fbccda"
+    },
+    {
+      "path": "docs/vision.md",
+      "bytes": 894,
+      "sha256": "6cec7719e818f833bc7ebc1f80da77d9a6fac3b40b05eaeca1fad455f3f7fcb4"
+    },
+    {
+      "path": "docs/wealth_accumulation_proof.md",
+      "bytes": 1869,
+      "sha256": "452f2eda564d2817ea7785fcef5f583599bd29ae72420af38d658af858f1925e"
+    },
+    {
+      "path": "examples/curl_examples.sh",
+      "bytes": 609,
+      "sha256": "25f1fb25fe860c816e3ac726779a09ad88dd856e4c1f857729482a7acf018bff"
+    },
+    {
+      "path": "examples/run_demo.py",
+      "bytes": 45,
+      "sha256": "57915d96cfc61a9ee455c5cbe2bcb3c22efcd58a3a023bbe4b9b5fb4cb6b854c"
+    },
+    {
+      "path": "index.html",
+      "bytes": 8020,
+      "sha256": "28d34cb5d9af2969cbeff9ad6a960bd6641fe6e78b45363aed103b246d74ea69"
+    },
+    {
+      "path": "pages-manifest.json",
+      "bytes": 403,
+      "sha256": "dadfe9d3e6abdaa02c0846b7ac9a047248dac9beff2ac1cb73af19d274f7ecc5"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 576,
+      "sha256": "64d0bfe9615803d45923d3b206cbd3e73786a6312306777fa2093053876e2131"
+    },
+    {
+      "path": "robots.txt",
+      "bytes": 81,
+      "sha256": "86cdbaef82120d1844e79b205eb9a0b7857e85c7046677f7ab6fcaa4b37ffa55"
+    },
+    {
+      "path": "scripts/build_pages.py",
+      "bytes": 5762,
+      "sha256": "850f223ff58b144ec7dde3d7d26aa7b4edab91de749f6de7a615a6dd175636d2"
+    },
+    {
+      "path": "scripts/prove_wealth_loop.py",
+      "bytes": 1304,
+      "sha256": "e940ae4e698568a8cadde55d4fcecb66b40dece7d6cf9a96ab1c71595ddf316e"
+    },
+    {
+      "path": "scripts/qa_check.py",
+      "bytes": 1275,
+      "sha256": "c69ed7cd27019bfe3458addf12453b445c8fc3e665a57accec829b1396bcd184"
+    },
+    {
+      "path": "scripts/reset_local.sh",
+      "bytes": 66,
+      "sha256": "2e58f7ee3079d9933c9143c1d65cbbe92eb40c4e6127228a47b95138f536b85f"
+    },
+    {
+      "path": "scripts/run_local.sh",
+      "bytes": 93,
+      "sha256": "3731bc692bd2c678d686af17c778cfc2ad1f069fedd756aa4d16d592817cd21b"
+    },
+    {
+      "path": "scripts/verify_pages.py",
+      "bytes": 1776,
+      "sha256": "288ab7d4b26c6a43b79047c7fbcd9ccfd78a1683685310c5c454d4650e7a5337"
+    },
+    {
+      "path": "scripts/verify_repo.py",
+      "bytes": 3691,
+      "sha256": "04796fec6fbc9a2db0592ab3e8bbc468ead6467b3c72e024fbd781f514642ce9"
+    },
+    {
+      "path": "site/404.html",
+      "bytes": 436,
+      "sha256": "79a85c9a93346fecac3d51c2fa75fbed25155f3274e3d51fa308c5b2582baf2b"
+    },
+    {
+      "path": "site/app.js",
+      "bytes": 12409,
+      "sha256": "3bd58f921aad42e22c5b2c3a3800b0b8d2c82778aa94d4462fd81de4f98ede57"
+    },
+    {
+      "path": "site/assets/skillos-mark.svg",
+      "bytes": 945,
+      "sha256": "930d2484c6e0d31ed8576e2859a2adef55326849264d3d714add12f71f5f64de"
+    },
+    {
+      "path": "site/index.html",
+      "bytes": 8020,
+      "sha256": "28d34cb5d9af2969cbeff9ad6a960bd6641fe6e78b45363aed103b246d74ea69"
+    },
+    {
+      "path": "site/manifest.webmanifest",
+      "bytes": 294,
+      "sha256": "e3d746f197138ddbf782d57bee78f62f2d451f3b1786955b125b702bdafb2633"
+    },
+    {
+      "path": "site/robots.txt",
+      "bytes": 81,
+      "sha256": "86cdbaef82120d1844e79b205eb9a0b7857e85c7046677f7ab6fcaa4b37ffa55"
+    },
+    {
+      "path": "site/sitemap.xml",
+      "bytes": 172,
+      "sha256": "3b2c73003bb2ba04b2868b884e1d4df06b6ca0afea415e66ca7eee9a4f1c2a23"
+    },
+    {
+      "path": "site/styles.css",
+      "bytes": 11272,
+      "sha256": "e0b835435c28a8a0aa53771d86b716703fce6c8be04404561a984a2d33a0da2d"
+    },
+    {
+      "path": "skillos/__init__.py",
+      "bytes": 69,
+      "sha256": "d2546db400e454b36b7203dfe2e6f5d8afe0e369fa5aa15dff7b3b423e483176"
+    },
+    {
+      "path": "skillos/api.py",
+      "bytes": 5513,
+      "sha256": "33b241abd3d46537dac39f440c582556ef4c6564610f087fbe0590540666c3a4"
+    },
+    {
+      "path": "skillos/cli.py",
+      "bytes": 10022,
+      "sha256": "c28bb429600a4eab8331c26b566583139584a3b2822b7cbab344980c8a1a2bdc"
+    },
+    {
+      "path": "skillos/evals.py",
+      "bytes": 4163,
+      "sha256": "4f8b854abe8b409d9a968654ad33f2119d68aa9b6c5c32b1f6255f99ef364eeb"
+    },
+    {
+      "path": "skillos/learning.py",
+      "bytes": 2441,
+      "sha256": "34ab705e4541fd4c1e0c8ab44c3f9882d429fb7fbc9624e354e2fe9e75fa0afc"
+    },
+    {
+      "path": "skillos/models.py",
+      "bytes": 2021,
+      "sha256": "62d2db3ea1b593473a17775842f9e1544a9333594bf62859a440607008382f3c"
+    },
+    {
+      "path": "skillos/permissions.py",
+      "bytes": 705,
+      "sha256": "08f13c6b9e54e7cfd89a1b3eabcfae3b75e5efcf8900808a0dc3d231972c0a2a"
+    },
+    {
+      "path": "skillos/releases.py",
+      "bytes": 2193,
+      "sha256": "75e127506f6f6189d89ed8faaf1a919db5331122ea7f7f2487e05531e1457d38"
+    },
+    {
+      "path": "skillos/runtime.py",
+      "bytes": 4831,
+      "sha256": "15e8df0d9d62a6685cc2755f9f14638c9df62a5b5829775e0eb893382fc0445c"
+    },
+    {
+      "path": "skillos/seed.py",
+      "bytes": 3794,
+      "sha256": "cc601dd0ccb31718f8c29c80563305c03ea319b0b983c91699514d54b988ea59"
+    },
+    {
+      "path": "skillos/storage.py",
+      "bytes": 14118,
+      "sha256": "4102979a054205183298cffb81e389813be16a1445e65403e69f3a6561969f66"
+    },
+    {
+      "path": "skillos/trainer.py",
+      "bytes": 1671,
+      "sha256": "6a17a095a0634cd9ae34e6512a484e02c5058e8bc0098f592c1699c8ce05db31"
+    },
+    {
+      "path": "skillos/wealth_proof.py",
+      "bytes": 21506,
+      "sha256": "b260cf5af9881c951d5610bafde5ba041fb6b7756ff6e973b89f6d554e9596d0"
+    },
+    {
+      "path": "skills/invoice_reconciliation/v1/skill.md",
+      "bytes": 395,
+      "sha256": "f6d387cbd9cc794db9dd9ac260c1fddd76df7d70c3f4b300e124da3b06339f89"
+    },
+    {
+      "path": "skills/research_summary/v1/skill.md",
+      "bytes": 325,
+      "sha256": "798a0f2381c46763891ed3724872e946098b4d109d038748fae8272aa4ccdbbc"
+    },
+    {
+      "path": "skills/sales_followup_email/v1/skill.md",
+      "bytes": 390,
+      "sha256": "5b05f8488c8151b52c7005731d225ac5ae284107ee1b15c67f7ee4bb7c161a66"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 11272,
+      "sha256": "e0b835435c28a8a0aa53771d86b716703fce6c8be04404561a984a2d33a0da2d"
+    },
+    {
+      "path": "tests/test_end_to_end.py",
+      "bytes": 1814,
+      "sha256": "1fbc807d20f44c07ed92818bce94eb44b88e2785daab35677fc546481fb30421"
+    },
+    {
+      "path": "tests/test_pages_build.py",
+      "bytes": 1773,
+      "sha256": "f3c6e8c27e18fd851544896596ed96832a71fddf2f4ad78e7b51cd6cc7ac49e5"
+    },
+    {
+      "path": "tests/test_storage.py",
+      "bytes": 657,
+      "sha256": "c04b86d3cdd9f63cc6dbaa5c0ba376a89234270a6603b9220e9303b9b5fdd8e9"
+    },
+    {
+      "path": "tests/test_wealth_proof.py",
+      "bytes": 1822,
+      "sha256": "864564bee5bb051e7698f0bd37d653970a3b972684e8dbeae2e0f4faf1a9ce78"
+    },
+    {
+      "path": "web/app.js",
+      "bytes": 3600,
+      "sha256": "1f924214911693ebc3326d812aa14757f60fb9f8f6ad80801d81f314ead75e56"
+    },
+    {
+      "path": "web/index.html",
+      "bytes": 1904,
+      "sha256": "ea10d559eef42d48bd8c15ff1bc83c5e2fe2430e3093c8f4fcc22269ecfd9409"
+    },
+    {
+      "path": "web/styles.css",
+      "bytes": 2509,
+      "sha256": "bdf8a32938cdc0ed9dd1e11d0c1e98e7289afd4cd8f6b05d91cdf789dcd00dd7"
+    }
+  ]
+}

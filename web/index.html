@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agent SkillOS</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">Local SkillOS MVP</div>
+      <h1>Agent SkillOS</h1>
+      <p>The operating system for self-improving AI agents.</p>
+      <div class="hero-grid">
+        <button onclick="runJob()">Run sample job</button>
+        <button onclick="learn()">Find lessons</button>
+        <button onclick="refresh()">Refresh dashboard</button>
+      </div>
+    </section>
+
+    <section class="cards" id="stats"></section>
+
+    <section class="panel">
+      <h2>Run a Job</h2>
+      <label>Goal</label>
+      <input id="goal" value="Draft a sales follow-up email from call notes" />
+      <div class="two">
+        <div>
+          <label>Prospect</label>
+          <input id="prospect" value="Maya" />
+        </div>
+        <div>
+          <label>Company</label>
+          <input id="company" value="Orion Labs" />
+        </div>
+      </div>
+      <label>Agreed next step</label>
+      <input id="nextStep" value="review the pilot plan on Friday" />
+      <label>Human edit signal</label>
+      <input id="edits" value="Moved the next step to the opening lines and made the ask clearer." />
+      <button onclick="runJob()">Run Job</button>
+      <pre id="jobOutput">Ready.</pre>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>Learning Inbox</h2>
+        <div id="lessons"></div>
+      </div>
+      <div class="panel">
+        <h2>Skill Registry</h2>
+        <div id="skills"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Recent Releases</h2>
+      <div id="releases"></div>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

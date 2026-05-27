@@ -1,0 +1,7 @@
+services:
+  skillos:
+    build: .
+    ports:
+      - "8765:8765"
+    volumes:
+      - ./.skillos:/app/.skillos

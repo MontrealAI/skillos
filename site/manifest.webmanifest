@@ -1,0 +1,15 @@
+{
+  "name": "Agent SkillOS",
+  "short_name": "SkillOS",
+  "start_url": "/skillos/",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "icons": [
+    {
+      "src": "assets/skillos-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

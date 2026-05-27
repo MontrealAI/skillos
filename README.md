@@ -1,0 +1,114 @@
+# Agent SkillOS
+
+**The operating system for self-improving AI agents.**
+
+Every job teaches the network. Every approved skill upgrades every authorized Agent. One Agent learns, all Agents level up.
+
+This repository is preconfigured for:
+
+```text
+GitHub organization: MontrealAI
+Repository name: skillos
+Live website: https://montrealai.github.io/skillos/
+Deployment: GitHub Actions → GitHub Pages
+```
+
+## Nontechnical start
+
+Open this first:
+
+**[`README_FIRST_GITHUB_WEB_USERS.md`](README_FIRST_GITHUB_WEB_USERS.md)**
+
+The short version:
+
+```text
+1. Create MontrealAI/skillos on GitHub.
+2. Upload the CONTENTS of UPLOAD_THE_CONTENTS_OF_THIS_FOLDER_TO_GITHUB.
+3. Go to Settings → Pages → Source → GitHub Actions.
+4. Open Actions and wait for green checks.
+5. Visit https://montrealai.github.io/skillos/
+```
+
+## What works after upload
+
+GitHub Actions will automatically:
+
+1. verify the repository files;
+2. run the SkillOS implementation tests;
+3. run the full SkillOS loop;
+4. generate `dist/data/demo.json` from the live demo;
+5. generate `dist/data/wealth_proof.json` from the economic proof;
+6. publish the website to `https://montrealai.github.io/skillos/`.
+
+The website is deliberately static HTML/CSS/JS, so it is a good fit for GitHub Pages.
+
+## What the demo proves
+
+The repo now proves two things.
+
+First, it demonstrates the core SkillOS loop:
+
+```text
+Work → Trace → Learn → Skill → Test → Approve → Release → Improve
+```
+
+A successful build produces a visible demo showing:
+
+```text
+jobs captured → lesson discovered → candidate skill created → test passed → canary release approved
+```
+
+Second, it proves one concrete wealth-accumulation workflow:
+
+```text
+sales follow-up email from call notes
+→ every job creates a trace and lesson
+→ every lesson creates a tested skill release
+→ cost/job decreases
+→ minutes/job decrease
+→ quality score increases
+```
+
+Run it locally with:
+
+```bash
+python -m skillos.cli wealth-proof
+```
+
+The proof report is generated at [`docs/wealth_accumulation_proof.md`](docs/wealth_accumulation_proof.md).
+
+## Local run for technical users
+
+No API keys are required.
+
+```bash
+python -m skillos.cli demo
+python -m skillos.cli wealth-proof
+python -m skillos.cli status
+python -m skillos.cli serve
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8765
+```
+
+## Repository contents
+
+```text
+.github/workflows/pages.yml      Deploys the website
+.github/workflows/tests.yml      Runs verification and tests
+site/                            Public GitHub Pages website source
+scripts/build_pages.py           Builds the static website, demo JSON, and wealth proof JSON
+scripts/prove_wealth_loop.py      Proves one workflow gets cheaper, faster, and better
+scripts/verify_repo.py           Fast repository sanity check
+skillos/                         Python SkillOS reference implementation
+tests/                           End-to-end and Pages build tests
+docs/                            Architecture, roadmap, governance, troubleshooting
+COPY_PASTE_GITHUB_ACTIONS/       Backup workflow files for GitHub web upload issues
+```
+
+## Best first click
+
+[`README_FIRST_GITHUB_WEB_USERS.md`](README_FIRST_GITHUB_WEB_USERS.md)

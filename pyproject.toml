@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skillos"
+version = "3.0.0"
+description = "Agent SkillOS: the operating system for self-improving AI agents."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "MontrealAI"}]
+dependencies = []
+
+[project.urls]
+Homepage = "https://montrealai.github.io/skillos/"
+Repository = "https://github.com/MontrealAI/skillos"
+
+[project.scripts]
+skillos = "skillos.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["skillos*"]

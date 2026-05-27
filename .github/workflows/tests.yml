@@ -1,0 +1,30 @@
+name: SkillOS tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test implementation and generated site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+
+      - name: Run SkillOS QA
+        run: python scripts/qa_check.py
+
+      - name: JavaScript syntax check
+        run: node --check site/app.js

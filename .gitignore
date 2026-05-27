@@ -1,0 +1,12 @@
+.skillos/
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite
+.env
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+.DS_Store

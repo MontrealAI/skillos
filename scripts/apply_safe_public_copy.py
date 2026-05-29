@@ -1,72 +1,20 @@
 #!/usr/bin/env python3
-"""Apply SkillOS safe public copy policy.
+"""Apply SkillOS safe public copy policy everywhere public copy can appear.
 
-This script is intentionally idempotent. It can run on every GitHub Actions
-deployment. It rewrites public-facing phrases into the safer reference-workflow
-posture before the website is built and deployed.
+This script is intentionally idempotent and broad. It patches source files,
+generated files, JSON proof files, and documentation files so every GitHub
+Actions deploy reverts the website to the safe "reference workflow" posture.
 """
 
 from __future__ import annotations
-
-import json
+import json, re
 from pathlib import Path
 from typing import Any
 
-
 ROOT = Path(__file__).resolve().parents[1]
 
-TEXT_FILES = [
-    "site/index.html",
-    "index.html",
-    "site/app.js",
-    "app.js",
-    "README.md",
-    "PROOF_OF_WEALTH_ACCUMULATION.md",
-    "docs/demo_walkthrough.md",
-    "docs/production_blueprint.md",
-    "docs/wealth_accumulation_proof.md",
-]
-
-JSON_FILES = [
-    "data/wealth_proof.json",
-    "data/demo.json",
-]
-
-
-REPLACEMENTS = [
-    ("The wealth-accumulation layer for self-improving AI agents.", "The work-compounding layer for self-improving AI agents."),
-    ("the wealth-accumulation layer for self-improving AI agents.", "the work-compounding layer for self-improving AI agents."),
-    ("The wealth-accumulation layer", "The work-compounding layer"),
-    ("the wealth-accumulation layer", "the work-compounding layer"),
-    ("wealth-accumulation layer", "work-compounding layer"),
-    ("Wealth-accumulation proof", "Reference workflow proof"),
-    ("wealth-accumulation proof", "reference workflow proof"),
-    ("Wealth Accumulation Proof", "Reference Workflow Proof"),
-    ("Wealth Proof", "Reference Workflow Proof"),
-    ("wealth proof", "reference workflow proof"),
-    ("one real workflow", "one concrete reference workflow"),
-    ("One real workflow", "One concrete reference workflow"),
-    ("real workflow gets cheaper, faster, and better", "reference workflow improves across cost, time, and quality"),
-    ("Real workflow gets cheaper, faster, and better", "Reference workflow improves across cost, time, and quality"),
-    ("one workflow gets cheaper, faster, and better", "one reference workflow improves across cost, time, and quality"),
-    ("One workflow gets cheaper, faster, and better", "One reference workflow improves across cost, time, and quality"),
-    ("real skill releases", "tested skill releases"),
-    ("Real skill releases", "Tested skill releases"),
-    ("Skills become margin.", "Skills improve future work."),
-    ("skills become margin", "skills improve future work"),
-    ("Work becomes traces. Traces become skills. Skills become margin.", "Work becomes traces. Traces become skills. Skills improve future work."),
-    ("wealth-producing capability", "work-compounding capability"),
-    ("Wealth-producing capability", "Work-compounding capability"),
-    ("projected annual savings</", "projected annual savings under demo assumptions</"),
-    ("projected annual savings\\n", "projected annual savings under demo assumptions\\n"),
-    ("projected annual savings", "projected annual savings under demo assumptions"),
-    ("projected annual savings under demo assumptions under demo assumptions", "projected annual savings under demo assumptions"),
-    ("under demo assumptions under demo assumptions", "under demo assumptions"),
-    ("Real workflows. Real results. Real compounding.", "Reference workflow. Reproducible proof. Measurable compounding."),
-    ("Real results.", "Reproducible proof."),
-    ("real results", "reproducible proof"),
-]
-
+SKIP_DIRS = {".git", ".venv", "venv", "__pycache__", "node_modules", ".mypy_cache", ".pytest_cache"}
+TEXT_EXTS = {".html", ".js", ".md", ".json", ".txt", ".xml", ".css", ".webmanifest"}
 
 SAFE_NOTE = (
     "Important: SkillOS is an open-source reference implementation. Current metrics are "
@@ -75,77 +23,106 @@ SAFE_NOTE = (
     "medical advice, employment guidance, credit guidance, or promises of future outcomes."
 )
 
+REGEX_REPLACEMENTS = [
+    (r"\bthe wealth[- ]accumulation layer for self[- ]improving ai agents\b", "the work-compounding layer for self-improving AI agents"),
+    (r"\bwealth[- ]accumulation layer\b", "work-compounding layer"),
+    (r"\bwealth[- ]accumulation proof\b", "reference workflow proof"),
+    (r"\bwealth proof\b", "reference workflow proof"),
+    (r"\bone real workflow\b", "one concrete reference workflow"),
+    (r"\breal workflow gets cheaper, faster, and better\b", "reference workflow improves across cost, time, and quality"),
+    (r"\bone workflow gets cheaper, faster, and better\b", "one reference workflow improves across cost, time, and quality"),
+    (r"\breal skill releases\b", "tested skill releases"),
+    (r"\bskills become margin\b", "skills improve future work"),
+    (r"\bwealth[- ]producing capability\b", "work-compounding capability"),
+    (r"\bReal workflows\. Real results\. Real compounding\.", "Reference workflow. Reproducible proof. Measurable compounding."),
+    (r"\breal results\b", "reproducible proof"),
+]
 
-def replace_text(text: str) -> str:
-    original = text
-    for old, new in REPLACEMENTS:
+EXACT_REPLACEMENTS = {
+    "Work becomes traces. Traces become skills. Skills become margin.": "Work becomes traces. Traces become skills. Skills improve future work.",
+    "SkillOS now proves one real workflow gets cheaper, faster, and better as agents do the work and repeated corrections become tested skill releases.": "SkillOS demonstrates, in one concrete reference workflow, how AI-agent work can become traces, traces can become tested skills, and tested skills can improve unit economics.",
+    "One workflow improves across real skill releases.": "One reference workflow improves across tested skill releases.",
+}
+
+def is_text_file(path: Path) -> bool:
+    return path.suffix.lower() in TEXT_EXTS
+
+def iter_public_text_files():
+    for path in ROOT.rglob("*"):
+        if not path.is_file():
+            continue
+        rel_parts = path.relative_to(ROOT).parts
+        if any(part in SKIP_DIRS for part in rel_parts):
+            continue
+        if is_text_file(path):
+            yield path
+
+def patch_text(text: str) -> str:
+    for old, new in EXACT_REPLACEMENTS.items():
         text = text.replace(old, new)
-    # De-duplicate common accidental wording.
-    text = text.replace("under demo assumptions under demo assumptions", "under demo assumptions")
+    for pattern, replacement in REGEX_REPLACEMENTS:
+        text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
+
+    # Qualify projected annual savings unless already qualified.
+    text = re.sub(
+        r"\bprojected annual savings\b(?!\s+under demo assumptions)",
+        "projected annual savings under demo assumptions",
+        text,
+        flags=re.IGNORECASE,
+    )
+
+    # Clean accidental duplicates.
+    text = re.sub(r"(under demo assumptions)(\s+under demo assumptions)+", r"\1", text, flags=re.IGNORECASE)
     return text
-
-
-def patch_text_file(path: Path) -> bool:
-    if not path.exists():
-        return False
-    text = path.read_text(encoding="utf-8", errors="ignore")
-    new_text = replace_text(text)
-
-    if path.name == "README.md" and SAFE_NOTE not in new_text:
-        marker = "\n## "
-        insert = "\n\n## Important public note\n\n" + SAFE_NOTE + "\n"
-        if marker in new_text:
-            parts = new_text.split(marker, 1)
-            new_text = parts[0] + insert + "\n## " + parts[1]
-        else:
-            new_text += insert
-
-    if new_text != text:
-        path.write_text(new_text, encoding="utf-8")
-        return True
-    return False
-
 
 def patch_json_strings(obj: Any) -> Any:
     if isinstance(obj, str):
-        return replace_text(obj)
+        return patch_text(obj)
     if isinstance(obj, list):
         return [patch_json_strings(x) for x in obj]
     if isinstance(obj, dict):
         return {k: patch_json_strings(v) for k, v in obj.items()}
     return obj
 
+def patch_file(path: Path) -> bool:
+    raw = path.read_text(encoding="utf-8", errors="ignore")
+    if path.suffix.lower() == ".json":
+        try:
+            obj = json.loads(raw)
+            new_obj = patch_json_strings(obj)
+            if new_obj != obj:
+                path.write_text(json.dumps(new_obj, indent=2) + "\n", encoding="utf-8")
+                return True
+            return False
+        except Exception:
+            pass
 
-def patch_json_file(path: Path) -> bool:
-    if not path.exists():
-        return False
-    try:
-        obj = json.loads(path.read_text(encoding="utf-8"))
-    except Exception:
-        return patch_text_file(path)
-    new_obj = patch_json_strings(obj)
-    if new_obj != obj:
-        path.write_text(json.dumps(new_obj, indent=2) + "\n", encoding="utf-8")
+    new = patch_text(raw)
+
+    if path.name == "README.md" and SAFE_NOTE not in new:
+        insert = "\n\n## Important public note\n\n" + SAFE_NOTE + "\n"
+        if "\n## " in new:
+            head, tail = new.split("\n## ", 1)
+            new = head + insert + "\n## " + tail
+        else:
+            new += insert
+
+    if new != raw:
+        path.write_text(new, encoding="utf-8")
         return True
     return False
 
-
-def main() -> None:
+def main():
     changed = []
-    for rel in TEXT_FILES:
-        if patch_text_file(ROOT / rel):
-            changed.append(rel)
-    for rel in JSON_FILES:
-        if patch_json_file(ROOT / rel):
-            changed.append(rel)
-
+    for path in iter_public_text_files():
+        if patch_file(path):
+            changed.append(str(path.relative_to(ROOT)))
     if changed:
         print("Safe public copy applied to:")
         for rel in changed:
             print(f" - {rel}")
     else:
         print("Safe public copy already up to date.")
-
 
 if __name__ == "__main__":
     main()

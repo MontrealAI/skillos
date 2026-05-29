@@ -1,102 +1,71 @@
 #!/usr/bin/env python3
-"""Verify SkillOS safe public copy.
-
-This verifier is designed for GitHub Actions. It checks the source website and,
-when present, the generated dist website. It does not fail merely because dist
-has not been generated yet unless a checked file actually contains unsafe copy.
-"""
+"""Verify SkillOS public copy stays in the safe reference-workflow posture."""
 
 from __future__ import annotations
-
-import argparse
+import argparse, re
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
+SKIP_DIRS = {".git", ".venv", "venv", "__pycache__", "node_modules", ".mypy_cache", ".pytest_cache"}
+TEXT_EXTS = {".html", ".js", ".md", ".json", ".txt", ".xml", ".css", ".webmanifest"}
 
-UNSAFE_PHRASES = [
-    "The wealth-accumulation layer for self-improving AI agents",
-    "wealth-accumulation layer",
-    "Wealth-accumulation proof",
-    "wealth-accumulation proof",
-    "Wealth Proof",
-    "one real workflow",
-    "real workflow gets cheaper",
-    "real skill releases",
-    "Skills become margin",
-    "wealth-producing capability",
-    "Real workflows. Real results.",
+UNSAFE_PATTERNS = [
+    r"\bwealth[- ]accumulation layer\b",
+    r"\bwealth[- ]accumulation proof\b",
+    r"\bwealth proof\b",
+    r"\bone real workflow\b",
+    r"\breal workflow gets cheaper\b",
+    r"\breal skill releases\b",
+    r"\bskills become margin\b",
+    r"\bwealth[- ]producing capability\b",
+    r"\breal workflows\. real results\b",
 ]
 
-CHECK_RELATIVE = [
-    "site/index.html",
-    "index.html",
-    "site/app.js",
-    "app.js",
-    "README.md",
-    "PROOF_OF_WEALTH_ACCUMULATION.md",
-    "data/wealth_proof.json",
-    "dist/index.html",
-    "dist/app.js",
-    "dist/wealth_accumulation_proof.md",
-    "dist/data/wealth_proof.json",
-]
+def iter_public_text_files():
+    for path in ROOT.rglob("*"):
+        if not path.is_file():
+            continue
+        rel_parts = path.relative_to(ROOT).parts
+        if any(part in SKIP_DIRS for part in rel_parts):
+            continue
+        if path.suffix.lower() in TEXT_EXTS:
+            yield path
 
-PUBLIC_PAGE_FILES = [
-    "site/index.html",
-    "index.html",
-    "dist/index.html",
-]
-
-
-def read(rel: str) -> str | None:
-    path = ROOT / rel
-    if not path.exists():
-        return None
-    return path.read_text(encoding="utf-8", errors="ignore")
-
-
-def main() -> None:
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--strict", action="store_true")
     args = parser.parse_args()
 
-    findings: list[str] = []
+    findings = []
     checked = 0
-
-    for rel in CHECK_RELATIVE:
-        text = read(rel)
-        if text is None:
-            continue
+    for path in iter_public_text_files():
+        text = path.read_text(encoding="utf-8", errors="ignore")
         checked += 1
-        lower_text = text.lower()
-        for phrase in UNSAFE_PHRASES:
-            if phrase.lower() in lower_text:
-                findings.append(f"Unsafe phrase in {rel}: {phrase}")
+        for pattern in UNSAFE_PATTERNS:
+            if re.search(pattern, text, flags=re.IGNORECASE):
+                findings.append(f"Unsafe phrase in {path.relative_to(ROOT)}: {pattern}")
 
-    page_texts = [read(rel) for rel in PUBLIC_PAGE_FILES if read(rel) is not None]
-    combined_pages = "\n".join(t for t in page_texts if t).lower()
+    public_pages = []
+    for rel in ["site/index.html", "index.html", "dist/index.html"]:
+        path = ROOT / rel
+        if path.exists():
+            public_pages.append(path.read_text(encoding="utf-8", errors="ignore").lower())
+    combined = "\n".join(public_pages)
 
-    required_phrases = [
-        "reference workflow",
-        "unit economics",
-        "demo assumptions",
-    ]
-    for phrase in required_phrases:
-        if phrase not in combined_pages:
+    if not public_pages:
+        findings.append("No public page files found to verify.")
+
+    for phrase in ["reference workflow", "unit economics", "demo assumptions"]:
+        if phrase not in combined:
             findings.append(f"Missing required safe phrase in public page copy: {phrase}")
-
-    if checked == 0:
-        findings.append("No public copy files were available to check.")
 
     if findings:
         print("Safe public copy verification failed:")
-        for item in findings:
-            print(f" - {item}")
+        for finding in findings:
+            print(f" - {finding}")
         raise SystemExit(1)
 
     print(f"Safe public copy verification passed ({checked} files checked).")
-
 
 if __name__ == "__main__":
     main()

@@ -1,4 +1,4 @@
-# SkillOS Wealth-Accumulation Proof
+# SkillOS reference workflow proof
 
 **Workflow:** Sales follow-up email from call notes
 

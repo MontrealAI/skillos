@@ -1,8 +1,8 @@
-# SkillOS Wealth-Accumulation Proof
+# SkillOS reference workflow proof
 
 This repository now proves the core claim:
 
-**One workflow gets cheaper, faster, and better as agents do the work.**
+**one reference workflow improves across cost, time, and quality as agents do the work.**
 
 The workflow is sales follow-up emails from call notes.
 
@@ -33,7 +33,7 @@ GitHub Actions runs:
 repository verification
 unit tests
 SkillOS verification loop
-wealth proof
+reference workflow proof
 GitHub Pages build
 GitHub Pages verification
 ```
@@ -50,4 +50,4 @@ data/wealth_proof.json
 Work → Trace → Lesson → Skill → Test → Release → Better Work → Lower Cost → Higher Margin
 ```
 
-That is the wealth-accumulation layer.
+That is the work-compounding layer.

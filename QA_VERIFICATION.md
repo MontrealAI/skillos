@@ -25,7 +25,7 @@ What is checked:
 - End-to-end SkillOS loop: Work → Trace → Learn → Skill → Test → Release.
 - SQLite storage initialization.
 - GitHub Pages demo snapshot generation.
-- Wealth proof generation at `data/wealth_proof.json` and `dist/data/wealth_proof.json`.
+- reference workflow proof generation at `data/wealth_proof.json` and `dist/data/wealth_proof.json`.
 - Monotonic economic checks: every release decreases cost, decreases minutes, increases quality, and increases accepted rate.
 - `dist/index.html`, `dist/styles.css`, `dist/app.js`, `dist/data/demo.json`, `dist/data/wealth_proof.json`, `.nojekyll`, and manifest creation.
 - Repository targets `MontrealAI/skillos` and `https://montrealai.github.io/skillos/`.
@@ -34,7 +34,7 @@ What is checked:
 
 GitHub Actions re-runs the same QA path during deployment.
 
-## v3.0 wealth-accumulation proof
+## v3.0 reference workflow proof
 
 This repository includes `scripts/prove_wealth_loop.py`, `skillos/wealth_proof.py`, `tests/test_wealth_proof.py`, and `data/wealth_proof.json`.
 
@@ -48,7 +48,7 @@ Final skill version: v6
 Quality: 0.50 → 0.96
 Minutes/job: 6.75 → 2.55
 Cost/job: $8.48 → $3.23
-Projected annual savings vs human baseline at 10,000 jobs: $117,700
+projected annual savings under demo assumptions vs human baseline at 10,000 jobs: $117,700
 ```
 
-The GitHub Pages deploy refuses to publish if the wealth proof fails.
+The GitHub Pages deploy refuses to publish if the reference workflow proof fails.

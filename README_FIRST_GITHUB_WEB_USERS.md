@@ -25,7 +25,7 @@ Then this URL will load the polished SkillOS site:
 https://montrealai.github.io/skillos/
 ```
 
-The page should show the Agent SkillOS hero, workflow badges, demo metrics, the generated proof loop showing `approve_canary`, and the wealth proof showing one workflow becoming cheaper, faster, and better after each SkillOS release.
+The page should show the Agent SkillOS hero, workflow badges, demo metrics, the generated proof loop showing `approve_canary`, and the reference workflow proof showing one workflow becoming cheaper, faster, and better after each SkillOS release.
 
 ---
 
@@ -161,7 +161,7 @@ That means the wrapper folder was uploaded instead of its contents. Delete the r
 
 Open the failed workflow, click the red step, and read the error. The repo includes `scripts/verify_repo.py`, `scripts/prove_wealth_loop.py`, and `scripts/verify_pages.py` so common problems fail with plain-English messages.
 
-### The wealth proof does not appear
+### The reference workflow proof does not appear
 
 The deploy workflow did not finish. Open **Actions → Deploy SkillOS website to GitHub Pages** and confirm the green checkmark. The website only publishes after `data/wealth_proof.json` proves that sales follow-up emails got cheaper, faster, and better after every tested skill release.
 

@@ -44,6 +44,6 @@ Private data never becomes shared skill.
 ```
 
 
-## v3 wealth proof
+## v3 reference workflow proof
 
 This repository now includes `scripts/prove_wealth_loop.py`, `skillos/wealth_proof.py`, and `data/wealth_proof.json`. The proof uses the sales follow-up workflow to verify that each completed job creates a tested release and that the workflow gets cheaper, faster, and better after every release. The GitHub Pages deploy refuses to publish if the monotonic economic checks fail.

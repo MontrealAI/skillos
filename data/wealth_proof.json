@@ -1,6 +1,6 @@
 {
   "schema": "skillos.wealth_proof.v1",
-  "generated_at": "2026-05-27T00:51:00Z",
+  "generated_at": "2026-05-29T01:59:19Z",
   "target_site": "https://montrealai.github.io/skillos/",
   "workflow": {
     "name": "Sales follow-up email from call notes",
@@ -1266,7 +1266,7 @@
   },
   "conclusion": {
     "proved": true,
-    "claim": "One real workflow gets cheaper, faster, and better as SkillOS converts each completed job into a tested skill release.",
+    "claim": "one concrete reference workflow gets cheaper, faster, and better as SkillOS converts each completed job into a tested skill release.",
     "workflow": "Sales follow-up email from call notes",
     "final_skill_version": 6,
     "jobs_used_for_learning": 5,

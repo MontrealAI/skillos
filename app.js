@@ -49,7 +49,7 @@ function normalizeProof(raw){
     const conclusion = proof.conclusion || {};
     return {
       workflow: proof.workflow?.name || 'Sales follow-up email from call notes',
-      claim: conclusion.claim || 'SkillOS proved one real workflow gets cheaper, faster, and better as agents do the work.',
+      claim: conclusion.claim || 'SkillOS proved one concrete reference workflow gets cheaper, faster, and better as agents do the work.',
       proofPassed: !!conclusion.proved,
       before: { skill_version: before.active_skill_version, quality_percent: Math.round(safe(before.quality_score)*100), total_minutes_per_job: safe(before.minutes_per_job), cost_per_job: safe(before.cost_per_job_usd), accepted_percent: Math.round(safe(before.accepted_rate)*100), enabled_rules: before.active_rules || [] },
       after: { skill_version: after.active_skill_version, quality_percent: Math.round(safe(after.quality_score)*100), total_minutes_per_job: safe(after.minutes_per_job), cost_per_job: safe(after.cost_per_job_usd), accepted_percent: Math.round(safe(after.accepted_rate)*100), enabled_rules: after.active_rules || [] },
@@ -69,7 +69,7 @@ function normalizeProof(raw){
   }
   return {
     workflow: 'Sales follow-up email from call notes',
-    claim: proof.claim || 'SkillOS proved one real workflow gets cheaper, faster, and better.',
+    claim: proof.claim || 'SkillOS proved one concrete reference workflow gets cheaper, faster, and better.',
     proofPassed: !!proof.proof_checks?.passed,
     before: proof.before || {},
     after: proof.after || {},

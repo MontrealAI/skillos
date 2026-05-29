@@ -32,7 +32,28 @@
       </div>
       <div class="proof-orb"><div class="orb"></div><div class="proof-pill p1">Cheaper</div><div class="proof-pill p2">Faster</div><div class="proof-pill p3">Better</div><div class="center-card"><p>Workflow proof</p><strong id="heroProof">Loading…</strong><small>Sales follow-up from call notes</small></div></div>
     </section>
-    <section class="metrics">
+    
+<!-- SKILLOS_SHADOW_PILOT_CARD_START -->
+<section id="shadow-pilot-proof" class="shadow-pilot-card" aria-labelledby="shadow-pilot-title">
+  <div class="shadow-pilot-copy">
+    <p class="eyebrow">Autonomous no-send proof</p>
+    <h2 id="shadow-pilot-title">Shadow Pilot Proof</h2>
+    <p>GitHub Actions now runs a no-send reference evaluation that shows SkillOS can turn call-note examples into traces, lessons, tested skill rules, and improved holdout performance.</p>
+    <p class="shadow-pilot-safe-note">No emails sent. No customers contacted. No private data. No API keys. Anyone can rerun the proof in GitHub Actions.</p>
+    <div class="shadow-pilot-actions">
+      <a class="button" href="./shadow-pilot-proof.html">View visual proof</a>
+      <a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/workflows/shadow-pilot-proof.yml">Run on GitHub</a>
+    </div>
+  </div>
+  <div class="shadow-pilot-metrics" aria-label="Shadow pilot proof metrics">
+    <div><strong>+29.8 pts</strong><span>quality gain</span></div>
+    <div><strong>64.1%</strong><span>edit-time reduction</span></div>
+    <div><strong>+80.0 pts</strong><span>accepted-rate lift</span></div>
+    <div><strong>0%</strong><span>hallucination rate after learned skill</span></div>
+  </div>
+</section>
+<!-- SKILLOS_SHADOW_PILOT_CARD_END -->
+<section class="metrics">
       <article><span id="costDrop">—</span><p>cost per job reduction</p></article><article><span id="timeDrop">—</span><p>time per job reduction</p></article><article><span id="qualityGain">—</span><p>quality gain</p></article><article><span id="annualSavings">—</span><p>projected annual savings under demo assumptions</p></article>
     </section>
     <section id="wealth-proof" class="section proof">
@@ -45,7 +66,11 @@
     <section id="architecture" class="section"><div class="section-head"><p class="eyebrow">Reference implementation</p><h2>The proof is code, not just copy.</h2></div><div class="grid"><article><h3>Agent Runtime</h3><p>Runs jobs and creates traces.</p></article><article><h3>Trace Store</h3><p>Stores outputs, feedback, scores, tools, and skill usage.</p></article><article><h3>Learning Engine</h3><p>Finds reusable lessons.</p></article><article><h3>Skill Trainer</h3><p>Creates bounded skill edits.</p></article><article><h3>reference workflow proof</h3><p>Checks quality rises while time and cost fall.</p></article><article><h3>Release Center</h3><p>Publishes approved skill upgrades.</p></article></div></section>
     <section class="section quote-section"><blockquote><p>“Work stops being disposable and becomes capital.”</p><footer>SkillOS turns completed jobs into reusable, governed, work-compounding capability.</footer></blockquote></section>
   </main>
-  <footer class="footer"><p><strong>Agent SkillOS</strong> — the operating system for self-improving AI agents.</p><p><a href="https://github.com/MontrealAI/skillos">GitHub repository</a> · <a href="https://montrealai.github.io/skillos/">Live site</a></p></footer>
+  <footer class="footer"><p><strong>Agent SkillOS</strong> — the operating system for self-improving AI agents.</p><p>
+<!-- SKILLOS_SHADOW_PILOT_NAV_START -->
+<a href="./shadow-pilot-proof.html">Shadow Pilot Proof</a>
+<!-- SKILLOS_SHADOW_PILOT_NAV_END -->
+<a href="https://github.com/MontrealAI/skillos">GitHub repository</a> · <a href="https://montrealai.github.io/skillos/">Live site</a></p></footer>
   <script src="app.js"></script>
 </body>
 </html>

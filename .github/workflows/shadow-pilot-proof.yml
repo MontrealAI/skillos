@@ -1,0 +1,55 @@
+name: Autonomous Shadow Pilot Proof
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/run_shadow_pilot_proof.py"
+      - "data/shadow_pilot_benchmark.json"
+      - ".github/workflows/shadow-pilot-proof.yml"
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  proof:
+    name: No-send shadow pilot proof
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run autonomous no-send shadow pilot proof
+        run: |
+          python scripts/run_shadow_pilot_proof.py --summary "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload proof artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: skillos-shadow-pilot-proof
+          path: |
+            data/shadow_pilot_proof.json
+            docs/shadow_pilot_proof.md
+            site/shadow-pilot-proof.html
+            badges/shadow_pilot_proof.svg
+          if-no-files-found: error
+
+      - name: Commit generated proof outputs
+        continue-on-error: true
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/shadow_pilot_proof.json docs/shadow_pilot_proof.md site/shadow-pilot-proof.html badges/shadow_pilot_proof.svg
+            git commit -m "Update autonomous shadow pilot proof"
+            git push
+          else
+            echo "No generated proof changes to commit."
+          fi

@@ -1,0 +1,25 @@
+name: Safe public copy check
+
+on:
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  safe-public-copy:
+    name: Verify public-safe wording
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply safe public copy in check mode
+        run: python scripts/apply_safe_public_copy.py --check
+      - name: Verify safe public copy
+        run: python scripts/verify_safe_public_copy.py

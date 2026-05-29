@@ -1,12 +1,17 @@
-name: Deploy SkillOS website to GitHub Pages
+name: Deploy SkillOS website with autonomous safe public copy
 
 on:
   push:
-    branches: [main]
+    branches: [main, master]
   workflow_dispatch:
+  schedule:
+    # Daily safety refresh. Also useful if generated content changes later.
+    - cron: '17 11 * * *'
 
 permissions:
-  contents: read
+  contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: skillos-pages-${{ github.ref }}
@@ -14,19 +19,40 @@ concurrency:
 
 jobs:
   build:
-    name: Verify, build, and package website
+    name: Safe-copy check, proof, tests, and website build
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: '3.12'
 
-      - name: Run SkillOS QA and build GitHub Pages site
+      - name: Apply safe public copy policy
+        run: python scripts/apply_safe_public_copy.py --write
+
+      - name: Run SkillOS QA, regenerate proof, and build site
         run: python scripts/qa_check.py
+
+      - name: Verify safe public copy before deploy
+        run: python scripts/verify_safe_public_copy.py --strict
+
+      - name: Commit autonomous safe-copy updates back to repository
+        shell: bash
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add README.md PROOF_OF_WEALTH_ACCUMULATION.md data docs site index.html skillos scripts dist || true
+            git commit -m "Apply safe public copy policy [skip ci]"
+            git push || echo "Warning: safe-copy commit could not be pushed. The deployed website is still safe because the workflow patched the build before deployment. To allow auto-commits, enable Read and write workflow permissions in repository settings."
+          else
+            echo "No safe-copy changes to commit."
+          fi
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -35,16 +61,11 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: dist
-          include-hidden-files: true
 
   deploy:
     name: Publish to https://montrealai.github.io/skillos/
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

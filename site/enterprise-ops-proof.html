@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkillOS Enterprise Ops Market Proof</title>
+<style>
+:root { color-scheme: dark; --text:#eef7ff; --muted:#aab8c8; --line:rgba(255,255,255,.14); --cyan:#74f7ff; --green:#79ffac; --gold:#ffd56a; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif; background:radial-gradient(circle at 85% 10%,#314267 0,transparent 35%),linear-gradient(135deg,#071421,#162138 65%,#232a51); color:var(--text); }
+main { max-width:1200px; margin:0 auto; padding:58px 24px 82px; }
+.hero { display:grid; grid-template-columns:1.1fr .9fr; gap:26px; align-items:center; }
+h1 { font-size:clamp(42px,6vw,82px); line-height:.9; margin:0; letter-spacing:-.065em; }
+.eyebrow { color:var(--cyan); text-transform:uppercase; letter-spacing:.18em; font-weight:900; font-size:13px; }
+p { color:var(--muted); font-size:19px; line-height:1.55; }
+.card { background:rgba(16,34,53,.76); border:1px solid var(--line); border-radius:26px; padding:26px; box-shadow:0 20px 80px rgba(0,0,0,.25); }
+.status { font-size:28px; font-weight:900; color:var(--green); }
+.grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:28px 0; }
+.metric { background:rgba(255,255,255,.06); border:1px solid var(--line); border-radius:20px; padding:22px; }
+.metric strong { display:block; font-size:32px; color:var(--green); }
+.metric span { color:var(--muted); }
+table { width:100%; border-collapse:collapse; margin-top:12px; }
+td, th { border-bottom:1px solid var(--line); padding:12px; text-align:left; }
+th:last-child, td:last-child { text-align:right; }
+ul { color:var(--muted); line-height:1.8; }
+.notice { border-left:4px solid var(--gold); padding:14px 18px; background:rgba(255,213,106,.08); border-radius:14px; }
+.links a { color:var(--cyan); margin-right:16px; font-weight:800; }
+@media(max-width:850px) { .hero,.grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+<div>
+<div class="eyebrow">MONTREAL.AI / SKILLOS</div>
+<h1>Enterprise Ops Market Proof</h1>
+<p>100% autonomous GitHub Actions proof for procurement invoice reconciliation and payment-risk triage.</p>
+</div>
+<div class="card">
+<div class="eyebrow">Current status</div>
+<div class="status">PASSED_AUTONOMOUS_ENTERPRISE_OPS_MARKET_PROOF</div>
+<p>No human review. No emails. No customers. No private data. No API keys. Deterministic holdout benchmark.</p>
+</div>
+</section>
+<section class="grid">
+<div class="metric"><strong>+75.0 pts</strong><span>decision accuracy gain</span></div>
+<div class="metric"><strong>100.0%</strong><span>critical-risk recall</span></div>
+<div class="metric"><strong>0.0%</strong><span>false approval rate</span></div>
+<div class="metric"><strong>$5,977,753.86</strong><span>synthetic risk reduced</span></div>
+</section>
+<section class="card">
+<h2>Before / after on holdout cases</h2>
+<table>
+<tr><th>Metric</th><th>Baseline</th><th>SkillOS</th></tr>
+<tr><td>Decision accuracy</td><td>25.0%</td><td>100.0%</td></tr>
+<tr><td>Critical-risk recall</td><td>19.5%</td><td>100.0%</td></tr>
+<tr><td>False approval rate</td><td>66.1%</td><td>0.0%</td></tr>
+<tr><td>Minutes per case</td><td>9.5</td><td>2.2</td></tr>
+<tr><td>Cost per case</td><td>$11.88</td><td>$2.75</td></tr>
+<tr><td>Synthetic dollars at risk left unblocked</td><td>$5,977,753.86</td><td>$0</td></tr>
+</table>
+</section>
+<section class="card">
+<h2>Learned SkillOS rules</h2>
+<ul><li>Require a three-way match: purchase order, invoice, and receipt.</li>
+<li>Block duplicate invoice IDs for the same vendor or repeated invoice patterns.</li>
+<li>Escalate vendor identity mismatch or bank-account changes.</li>
+<li>Hold invoices with amount, tax, currency, terms, or delivery mismatches.</li>
+<li>Escalate missing receipts before payment approval.</li>
+<li>Approve clean invoices and preserve early-payment discount opportunities.</li>
+<li>Never approve a payable when a critical risk signal is present.</li></ul>
+</section>
+<section class="card">
+<h2>Proof gates</h2>
+<ul><li>✅ no human review required</li>
+<li>✅ not an email workflow</li>
+<li>✅ no emails sent</li>
+<li>✅ no customers contacted</li>
+<li>✅ no private data used</li>
+<li>✅ no api keys required</li>
+<li>✅ deterministic reproducible benchmark</li>
+<li>✅ enterprise ops workflow</li>
+<li>✅ train cases at least 100</li>
+<li>✅ holdout cases at least 300</li>
+<li>✅ learned rules created</li>
+<li>✅ decision accuracy gain at least 25 points</li>
+<li>✅ critical risk recall at least 99 percent</li>
+<li>✅ false approval rate zero</li>
+<li>✅ review time reduction at least 70 percent</li>
+<li>✅ cost reduction at least 70 percent</li>
+<li>✅ synthetic dollars at risk reduced positive</li></ul>
+</section>
+<section class="notice">
+<strong>Boundary:</strong> This is a fully autonomous reference proof using deterministic synthetic/redacted-style data. It is not audited customer ROI, financial advice, investment advice, or a guarantee of future outcomes.
+</section>
+<p class="links">
+<a href="https://github.com/MontrealAI/skillos/actions/workflows/enterprise-ops-proof.yml">Run in GitHub Actions</a>
+<a href="https://github.com/MontrealAI/skillos/blob/main/docs/enterprise_ops_market_proof.md">Markdown report</a>
+<a href="https://github.com/MontrealAI/skillos/blob/main/data/enterprise_ops_market_proof.json">JSON proof</a>
+</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,63 @@
+name: Fully Autonomous Market-Readiness Proof
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/run_autonomous_market_readiness_proof.py"
+      - "scripts/make_autonomous_market_readiness_visible.py"
+      - "scripts/verify_autonomous_market_readiness.py"
+      - ".github/workflows/autonomous-market-readiness.yml"
+  schedule:
+    - cron: "11 11 * * *"
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  autonomous-market-readiness:
+    name: Run fully autonomous proof
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run autonomous market-readiness proof
+        run: python scripts/run_autonomous_market_readiness_proof.py
+
+      - name: Make proof visible from homepage
+        run: python scripts/make_autonomous_market_readiness_visible.py
+
+      - name: Verify proof visibility
+        run: python scripts/verify_autonomous_market_readiness.py
+
+      - name: Upload proof artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: skillos-autonomous-market-readiness-proof
+          path: |
+            site/autonomous-market-readiness.html
+            docs/autonomous_market_readiness.md
+            data/autonomous_market_readiness.json
+            data/autonomous_market_benchmark.json
+            badges/autonomous_market_readiness.svg
+
+      - name: Commit generated autonomous proof outputs
+        continue-on-error: true
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add site/autonomous-market-readiness.html site/index.html docs/autonomous_market_readiness.md data/autonomous_market_readiness.json data/autonomous_market_benchmark.json badges/autonomous_market_readiness.svg
+            git commit -m "Update autonomous market-readiness proof"
+            git push
+          else
+            echo "No autonomous proof changes to commit."
+          fi

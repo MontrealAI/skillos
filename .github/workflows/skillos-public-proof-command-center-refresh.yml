@@ -59,7 +59,7 @@ jobs:
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add site/index.html site/proofs.html site/actions.html site/multi-agent.html site/runbook.html site/assets/command-center.css site/assets/command-center.js site/public_site_status.json data/public_site_status.json docs/SKILLOS_PUBLIC_SITE_STATUS.md
+            git add site/index.html site/proofs.html site/actions.html site/multi-agent.html site/receipts.html site/leaderboard.html site/architecture.html site/runbook.html site/assets/command-center.css site/assets/command-center.js site/manifest.webmanifest site/robots.txt site/sitemap.xml site/og-card.svg site/public_site_status.json data/public_site_status.json docs/SKILLOS_PUBLIC_SITE_STATUS.md
             git commit -m "Refresh SkillOS public proof command center"
             git push
           else

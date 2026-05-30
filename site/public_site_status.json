@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "8285705d9d960edc6b2caa259458c9be5c9ffe03",
+  "commit": "bc495fc6c09d7228293dda965277a16ca59a4303",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -50,7 +50,7 @@
     },
     "doc_path": "docs/rsi_capability_command_center_v17_proof.md",
     "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/rsi_capability_command_center_v17_proof.md",
-    "generated_at": "2026-05-30T18:55:06Z",
+    "generated_at": "2026-05-30T20:28:06Z",
     "holdout_count": 1280,
     "json_path": "data/rsi_capability_command_center_v17_proof.json",
     "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/rsi_capability_command_center_v17_proof.json",
@@ -453,7 +453,7 @@
       "train_validation_holdout_sizes_pass": true,
       "validation_monotonicity_passes": true
     },
-    "generated_at_utc": "2026-05-30T18:55:06Z",
+    "generated_at_utc": "2026-05-30T20:28:06Z",
     "holdout_count": 1280,
     "preregistered_gates": {
       "maximum_material_miss_rate_percent": 0.0,
@@ -485,11 +485,11 @@
       "requires_safe_kardashev_boundary": true
     },
     "proof_receipts": {
-      "commit_sha": "6bddadfb1d81a5d059824f762ffa2aec22e4ec1d",
+      "commit_sha": "4795ac897b0cb09ebd75b5c69d91f1745e95ba26",
       "ref": "main",
       "repository": "MontrealAI/skillos",
-      "run_id": "26692147890",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692147890",
+      "run_id": "26694122622",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26694122622",
       "workflow": "Autonomous RSI Capital-to-Capability Command Center v17 Proof"
     },
     "proof_type": "adversarial capital-to-capability command center proof with recursive self-improvement and large-scale specialist-agent coordination",
@@ -1166,7 +1166,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-05-30T20:27:20Z",
+  "generated_at_utc": "2026-05-30T20:28:31Z",
   "proof_count": 63,
   "proofs": [
     {
@@ -1218,7 +1218,7 @@
       },
       "doc_path": "docs/rsi_capability_command_center_v17_proof.md",
       "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/rsi_capability_command_center_v17_proof.md",
-      "generated_at": "2026-05-30T18:55:06Z",
+      "generated_at": "2026-05-30T20:28:06Z",
       "holdout_count": 1280,
       "json_path": "data/rsi_capability_command_center_v17_proof.json",
       "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/rsi_capability_command_center_v17_proof.json",
@@ -1468,10 +1468,10 @@
     },
     {
       "key": "autonomous-rsi-capital-to-capability-command-center-v17-proof",
-      "latest_run_conclusion": "cancelled",
+      "latest_run_conclusion": "success",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-30T19:26:00Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692796088",
+      "latest_run_updated_at": "2026-05-30T20:28:20Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26694122622",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -3078,7 +3078,7 @@
   "recent_failed_runs": 7,
   "recent_running_runs": 2,
   "recent_successful_runs": 38,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26694106584",
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26694132858",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
@@ -3087,22 +3087,32 @@
     {
       "conclusion": null,
       "event": "workflow_run",
-      "name": "SkillOS Public Proof Command Center Refresh",
-      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26694106593",
+      "name": "SkillOS Public Site Command Center Refresh",
+      "path": ".github/workflows/skillos-public-site-refresh.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26694132859",
       "status": "in_progress",
-      "updated_at": "2026-05-30T20:27:14Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
+      "updated_at": "2026-05-30T20:28:27Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {
       "conclusion": null,
       "event": "workflow_run",
-      "name": "SkillOS Public Site Command Center Refresh",
-      "path": ".github/workflows/skillos-public-site-refresh.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26694106584",
+      "name": "SkillOS Public Proof Command Center Refresh",
+      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26694132858",
       "status": "in_progress",
-      "updated_at": "2026-05-30T20:27:14Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
+      "updated_at": "2026-05-30T20:28:26Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Capital-to-Capability Command Center v17 Proof",
+      "path": ".github/workflows/rsi-capability-command-center-v17-proof.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26694122622",
+      "status": "completed",
+      "updated_at": "2026-05-30T20:28:20Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capability-command-center-v17-proof.yml"
     },
     {
       "conclusion": "success",
@@ -3253,16 +3263,6 @@
       "status": "completed",
       "updated_at": "2026-05-30T19:26:03Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capital-to-capability-engine-proof.yml"
-    },
-    {
-      "conclusion": "cancelled",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Capital-to-Capability Command Center v17 Proof",
-      "path": ".github/workflows/rsi-capability-command-center-v17-proof.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692796088",
-      "status": "completed",
-      "updated_at": "2026-05-30T19:26:00Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capability-command-center-v17-proof.yml"
     },
     {
       "conclusion": "success",

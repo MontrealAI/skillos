@@ -73,7 +73,16 @@
     <section id="launch" class="section"><div class="section-head narrow"><p class="eyebrow">For GitHub web users</p><h2>Upload it, click Pages, wait for green checks.</h2><p>No terminal is required.</p></div><div class="steps"><article><span>1</span><h3>Create</h3><p>Create a public repository named <strong>skillos</strong> under <strong>MontrealAI</strong>.</p></article><article><span>2</span><h3>Upload</h3><p>Upload everything inside <strong>UPLOAD_THE_CONTENTS_OF_THIS_FOLDER_TO_GITHUB</strong>.</p></article><article><span>3</span><h3>Enable Pages</h3><p>Go to <strong>Settings → Pages</strong> and choose <strong>GitHub Actions</strong>.</p></article><article><span>4</span><h3>Open</h3><p>Visit <strong>montrealai.github.io/skillos</strong> after the deploy check turns green.</p></article></div><div class="callout"><strong>What green means:</strong><p>The Action verified the repo, ran unit tests, ran the reference workflow proof, generated <code>data/wealth_proof.json</code>, and deployed the dashboard.</p></div></section>
     <section id="architecture" class="section"><div class="section-head"><p class="eyebrow">Reference implementation</p><h2>The proof is code, not just copy.</h2></div><div class="grid"><article><h3>Agent Runtime</h3><p>Runs jobs and creates traces.</p></article><article><h3>Trace Store</h3><p>Stores outputs, feedback, scores, tools, and skill usage.</p></article><article><h3>Learning Engine</h3><p>Finds reusable lessons.</p></article><article><h3>Skill Trainer</h3><p>Creates bounded skill edits.</p></article><article><h3>reference workflow proof</h3><p>Checks quality rises while time and cost fall.</p></article><article><h3>Release Center</h3><p>Publishes approved skill upgrades.</p></article></div></section>
     <section class="section quote-section"><blockquote><p>“Work stops being disposable and becomes capital.”</p><footer>SkillOS turns completed jobs into reusable, governed, work-compounding capability.</footer></blockquote></section>
-  </main>
+  <section id="autonomous-market-readiness" style="margin:48px 0;padding:28px;border:1px solid rgba(255,255,255,.14);border-radius:24px;background:rgba(255,255,255,.06)">
+  <p style="text-transform:uppercase;letter-spacing:.16em;color:#74f7ff;font-weight:800;font-size:12px;margin:0 0 10px">100% autonomous proof</p>
+  <h2 style="font-size:clamp(30px,4vw,54px);line-height:1;margin:0 0 14px">Market-Readiness Proof</h2>
+  <p style="color:#aab8c8;font-size:18px;max-width:780px">Runs entirely in GitHub Actions with no human review, no emails sent, no customers contacted, no private data, no API keys, and a deterministic holdout benchmark.</p>
+  <p>
+    <a href="autonomous-market-readiness.html" style="display:inline-block;margin-right:12px;padding:12px 18px;border-radius:999px;background:#8af7ff;color:#071421;font-weight:800;text-decoration:none">View autonomous proof</a>
+    <a href="https://github.com/MontrealAI/skillos/actions/workflows/autonomous-market-readiness.yml" style="display:inline-block;padding:12px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.25);color:#eef7ff;font-weight:800;text-decoration:none">Run on GitHub</a>
+  </p>
+</section>
+</main>
   <footer class="footer"><p><strong>Agent SkillOS</strong> — the operating system for self-improving AI agents.</p><p>
 
 

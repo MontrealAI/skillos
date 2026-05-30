@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       proof_filter:
-        description: "Optional filter, e.g. capability, marketplace, revenue, multi-agent"
+        description: "Optional filter, e.g. capability, multi-agent, marketplace"
         required: false
         default: ""
       dry_run:
-        description: "Preview selected proof workflows without dispatching them"
+        description: "Preview selected proof workflows without dispatching"
         type: boolean
         required: false
         default: false
@@ -41,4 +41,4 @@ jobs:
         run: |
           echo "Public proof workflows were selected and dispatched."
           echo "Open https://github.com/MontrealAI/skillos/actions to watch them run."
-          echo "The public site refresh workflow will update https://montrealai.github.io/skillos/ after proof outputs are generated."
+          echo "The public proof command center will refresh automatically."

@@ -1,0 +1,46 @@
+name: _SkillOS Public Proof Command Center Refresh Reusable
+
+on:
+  workflow_call:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+jobs:
+  refresh:
+    name: Refresh public proof command center
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate public proof command center
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/refresh_public_site.py
+
+      - name: Verify public proof command center
+        run: python scripts/verify_public_site_refresh.py
+
+      - name: Commit refreshed public site
+        continue-on-error: true
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add site/index.html site/proofs.html site/actions.html site/multi-agent.html site/runbook.html site/public_site_status.json data/public_site_status.json docs/SKILLOS_PUBLIC_SITE_STATUS.md
+            git commit -m "Refresh SkillOS public proof command center"
+            git push
+          else
+            echo "Public proof command center already fresh."
+          fi

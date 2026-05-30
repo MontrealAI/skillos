@@ -1,0 +1,92 @@
+name: SkillOS Public Proof Command Center Refresh
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/**"
+      - "scripts/**"
+      - "docs/**"
+      - "data/**"
+      - "site/**"
+      - "badges/**"
+  workflow_run:
+    workflows:
+      - "Autonomous RSI Capital-to-Capability Command Center v17 Proof"
+      - "Autonomous RSI Adversarial Capability Command Center Proof"
+      - "Autonomous RSI Capital-to-Capability Engine Proof"
+      - "Autonomous RSI Adversarial Multi-Agent Market Command Center Proof"
+      - "Autonomous RSI Multi-Agent Market Command Center Proof"
+      - "Autonomous RSI Marketplace Flywheel Market Proof"
+      - "Autonomous RSI Revenue Experiment Factory Market Proof"
+      - "Autonomous RSI Unit Economics Profit Engine Market Proof"
+      - "Autonomous Shadow Pilot Proof"
+    types: [completed]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: skillos-public-proof-command-center
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    name: Refresh public proof command center
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: https://montrealai.github.io/skillos/
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate fresh public proof command center
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/refresh_public_site.py
+
+      - name: Verify public proof command center
+        run: python scripts/verify_public_site_refresh.py
+
+      - name: Commit refreshed public site
+        continue-on-error: true
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add site/index.html site/proofs.html site/actions.html site/multi-agent.html site/runbook.html site/public_site_status.json data/public_site_status.json docs/SKILLOS_PUBLIC_SITE_STATUS.md
+            git commit -m "Refresh SkillOS public proof command center"
+            git push
+          else
+            echo "Public proof command center already fresh."
+          fi
+
+      - name: Build Pages artifact
+        run: |
+          mkdir -p dist
+          cp -R site/* dist/
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy GitHub Pages
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,146 @@
+[
+  {
+    "case_id": "HOLDOUT-CCE-V17-00960",
+    "market_state": "talent_bottleneck_automation_leverage",
+    "selected_protocol": "protocol_talent_to_automation_leverage",
+    "required_roles": [
+      "talent_allocator",
+      "automation_leverage_designer",
+      "training_loop_agent",
+      "human_agency_guardian",
+      "quality_governor"
+    ],
+    "roles_used": [
+      "talent_allocator",
+      "automation_leverage_designer",
+      "training_loop_agent",
+      "human_agency_guardian",
+      "quality_governor"
+    ],
+    "agent_messages": 712,
+    "consensus_score": 98,
+    "quorum_passed": true,
+    "decision": "convert_expert_bottlenecks_into_agentic_tools_and_training_loops",
+    "risk_control": "human_agency_and_quality_guardrail"
+  },
+  {
+    "case_id": "HOLDOUT-CCE-V17-00961",
+    "market_state": "distribution_arbitrage_with_quality_risk",
+    "selected_protocol": "protocol_distribution_arbitrage",
+    "required_roles": [
+      "distribution_operator",
+      "partner_channel_agent",
+      "quality_governor",
+      "strategic_finance_agent",
+      "customer_success_agent"
+    ],
+    "roles_used": [
+      "distribution_operator",
+      "partner_channel_agent",
+      "quality_governor",
+      "strategic_finance_agent",
+      "customer_success_agent"
+    ],
+    "agent_messages": 712,
+    "consensus_score": 98,
+    "quorum_passed": true,
+    "decision": "scale_distribution_only_where_quality_and_margin_guardrails_pass",
+    "risk_control": "quality_margin_and_channel_integrity"
+  },
+  {
+    "case_id": "HOLDOUT-CCE-V17-00962",
+    "market_state": "safety_case_bottleneck",
+    "selected_protocol": "protocol_safety_case_reinvestment",
+    "required_roles": [
+      "safety_case_agent",
+      "red_team_coordinator",
+      "regulatory_boundary_agent",
+      "validation_lead",
+      "coordination_chair"
+    ],
+    "roles_used": [
+      "safety_case_agent",
+      "red_team_coordinator",
+      "regulatory_boundary_agent",
+      "validation_lead",
+      "coordination_chair"
+    ],
+    "agent_messages": 712,
+    "consensus_score": 98,
+    "quorum_passed": true,
+    "decision": "fund_safety_case_workstream_before_capability_acceleration",
+    "risk_control": "safety_evidence_and_deployment_boundary"
+  },
+  {
+    "case_id": "HOLDOUT-CCE-V17-00963",
+    "market_state": "geopolitical_risk_to_capability_chain",
+    "selected_protocol": "protocol_geopolitical_resilience",
+    "required_roles": [
+      "geopolitical_risk_agent",
+      "hardware_supply_chain_agent",
+      "resilience_planner",
+      "regulatory_boundary_agent",
+      "capital_allocator"
+    ],
+    "roles_used": [
+      "geopolitical_risk_agent",
+      "hardware_supply_chain_agent",
+      "resilience_planner",
+      "regulatory_boundary_agent",
+      "capital_allocator"
+    ],
+    "agent_messages": 712,
+    "consensus_score": 98,
+    "quorum_passed": true,
+    "decision": "shift_capability_chain_to_resilient_regions_and_redundant_suppliers",
+    "risk_control": "regulatory_supply_and_latency_tradeoff"
+  },
+  {
+    "case_id": "HOLDOUT-CCE-V17-00964",
+    "market_state": "high_signal_data_with_privacy_boundary",
+    "selected_protocol": "protocol_data_moat_privacy_loop",
+    "required_roles": [
+      "privacy_boundary_agent",
+      "validation_lead",
+      "skill_registry_operator",
+      "product_packaging_agent",
+      "auditability_agent"
+    ],
+    "roles_used": [
+      "privacy_boundary_agent",
+      "validation_lead",
+      "skill_registry_operator",
+      "product_packaging_agent",
+      "auditability_agent"
+    ],
+    "agent_messages": 712,
+    "consensus_score": 98,
+    "quorum_passed": true,
+    "decision": "reinvest_high_signal_traces_into_privacy_preserving_skill_release_loop",
+    "risk_control": "privacy_boundary_and_trace_quality"
+  },
+  {
+    "case_id": "HOLDOUT-CCE-V17-00965",
+    "market_state": "private_registry_lockin_compounding_window",
+    "selected_protocol": "protocol_private_registry_compounding",
+    "required_roles": [
+      "private_registry_agent",
+      "skill_registry_operator",
+      "customer_success_agent",
+      "privacy_boundary_agent",
+      "validation_lead"
+    ],
+    "roles_used": [
+      "private_registry_agent",
+      "skill_registry_operator",
+      "customer_success_agent",
+      "privacy_boundary_agent",
+      "validation_lead"
+    ],
+    "agent_messages": 712,
+    "consensus_score": 98,
+    "quorum_passed": true,
+    "decision": "create_private_skill_registry_with_customer_specific_release_loop",
+    "risk_control": "privacy_trace_ownership_and_quality"
+  }
+]

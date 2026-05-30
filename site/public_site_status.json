@@ -1,8 +1,8 @@
 {
   "branch": "main",
-  "commit": "0eee6c3a44be6dd3bbbd5e8916ecf9ed31564072",
-  "generated_at_utc": "2026-05-30T19:09:18Z",
-  "proof_count": 62,
+  "commit": "93b1a9337ccfd68aa7f539760df1f7b5e9fb7482",
+  "generated_at_utc": "2026-05-30T19:09:40Z",
+  "proof_count": 63,
   "proofs": [
     {
       "agent_count": 320,
@@ -20449,6 +20449,15 @@
       "title": "Metamaterials Discovery"
     },
     {
+      "page_path": "site/proofs.html",
+      "page_url": "https://montrealai.github.io/skillos/proofs.html",
+      "source": "page",
+      "sources": [
+        "page"
+      ],
+      "title": "Proofs"
+    },
+    {
       "page_path": "site/rsi-revenue-experiment-factory-proof.html",
       "page_url": "https://montrealai.github.io/skillos/rsi-revenue-experiment-factory-proof.html",
       "source": "page",
@@ -22086,8 +22095,8 @@
   "proved_or_passed_proof_count": 14,
   "recent_failed_runs": 0,
   "recent_running_runs": 1,
-  "recent_successful_runs": 48,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692441340",
+  "recent_successful_runs": 49,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692446891",
   "repository": "MontrealAI/skillos",
   "site_url": "https://montrealai.github.io/skillos/",
   "workflow_count": 21,
@@ -22099,8 +22108,8 @@
       "path": ".github/workflows/skillos-public-site-refresh.yml",
       "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692446891",
       "state": "active",
-      "status": "pending",
-      "updated_at": "2026-05-30T19:09:10Z",
+      "status": "in_progress",
+      "updated_at": "2026-05-30T19:09:35Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {

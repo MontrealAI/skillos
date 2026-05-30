@@ -1,14 +1,14 @@
 # SkillOS Public Site Command Center Status
 
-Generated: `2026-05-30T19:09:18Z`
+Generated: `2026-05-30T19:09:40Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 62
+- Proof entries: 63
 - Workflows tracked: 21
-- Recent successful runs: 48
+- Recent successful runs: 49
 - Recent failed runs: 0
 - Recent running runs: 1
 
@@ -73,6 +73,8 @@ Site: https://montrealai.github.io/skillos/
   - Visual page: https://montrealai.github.io/skillos/rsi-marketplace-flywheel-proof.html
 - **Metamaterials Discovery**
   - Visual page: https://montrealai.github.io/skillos/rsi-metamaterials-discovery-proof.html
+- **Proofs**
+  - Visual page: https://montrealai.github.io/skillos/proofs.html
 - **Revenue Experiment Factory**
   - Visual page: https://montrealai.github.io/skillos/rsi-revenue-experiment-factory-proof.html
 - **Shadow Pilot**

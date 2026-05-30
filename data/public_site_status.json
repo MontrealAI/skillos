@@ -1,7 +1,7 @@
 {
   "branch": "main",
-  "commit": "93b1a9337ccfd68aa7f539760df1f7b5e9fb7482",
-  "generated_at_utc": "2026-05-30T19:09:40Z",
+  "commit": "78f3d82c672c86c24bb595b2b498574c7b6e9427",
+  "generated_at_utc": "2026-05-30T19:11:13Z",
   "proof_count": 63,
   "proofs": [
     {
@@ -22096,20 +22096,20 @@
   "recent_failed_runs": 0,
   "recent_running_runs": 1,
   "recent_successful_runs": 49,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692446891",
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692485375",
   "repository": "MontrealAI/skillos",
   "site_url": "https://montrealai.github.io/skillos/",
   "workflow_count": 21,
   "workflows": [
     {
       "conclusion": null,
-      "event": "workflow_run",
+      "event": "workflow_dispatch",
       "name": "SkillOS Public Site Command Center Refresh",
       "path": ".github/workflows/skillos-public-site-refresh.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692446891",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692485375",
       "state": "active",
       "status": "in_progress",
-      "updated_at": "2026-05-30T19:09:35Z",
+      "updated_at": "2026-05-30T19:11:06Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {

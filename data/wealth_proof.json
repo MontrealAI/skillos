@@ -1,6 +1,6 @@
 {
   "schema": "skillos.wealth_proof.v1",
-  "generated_at": "2026-05-30T17:34:29Z",
+  "generated_at": "2026-05-30T18:05:07Z",
   "target_site": "https://montrealai.github.io/skillos/",
   "workflow": {
     "name": "Sales follow-up email from call notes",

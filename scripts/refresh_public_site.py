@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""SkillOS Public Proof Command Center v3.
+"""SkillOS Public Proof Command Center v4.
 
 World-class, dependency-free generator for the live SkillOS public proof site.
 
@@ -16,9 +16,10 @@ It generates dynamic, client-side SVG charts from public_site_status.json:
 - workflow status chart
 - RSI release curve
 - multi-agent ablation bars
-- capability lever radar
+- capability coordination radar
 - agent-role constellation
-- proof timeline / status tables
+- business-effect metric bars
+- proof receipts, leaderboard, architecture and runbook pages
 
 Safe boundary:
 The site presents deterministic, public market-readiness proofs using
@@ -471,41 +472,30 @@ JS = r"""
       return `<text x="14" y="${y+24}" fill="#b3c0cd" font-size="14">${safe(r.label)}</text>
       <rect x="${left}" y="${y+6}" width="${w-left-right}" height="28" fill="rgba(255,255,255,.06)" rx="8"/>
       <rect x="${left}" y="${y+6}" width="${bw}" height="28" fill="${color(i)}" rx="8"/>
-      <text x="${left+bw+10}" y="${y+25}" fill="#f4fbff" font-size="13" font-weight="700">${safe(r.display ?? r.value)}</text>`;
+      <text x="${Math.min(left+bw+10,w-85)}" y="${y+25}" fill="#f4fbff" font-size="13" font-weight="700">${safe(r.display ?? r.value)}</text>`;
     }).join("");
     chartShell(el,title,note,`<svg viewBox="0 0 ${w} ${h}" role="img"><rect width="${w}" height="${h}" fill="transparent"/>${bars}</svg>`);
   }
 
+  function polar(cx,cy,r,deg){ const a=(deg-90)*Math.PI/180; return {x:cx+r*Math.cos(a), y:cy+r*Math.sin(a)}; }
+
   function donutChart(el, title, rows, note){
     const total = rows.reduce((a,r)=>a+(Number(r.value)||0),0) || 1;
-    let start=0;
-    const cx=160, cy=142, r=90, sw=28;
+    let start=0; const cx=160, cy=142, r=90, sw=28;
     const arcs=rows.map((row,i)=>{
-      const val=(Number(row.value)||0)/total;
-      const end=start+val*360;
-      const large=end-start>180?1:0;
+      const val=(Number(row.value)||0)/total; const end=start+val*360; const large=end-start>180?1:0;
       const p1=polar(cx,cy,r,start), p2=polar(cx,cy,r,end);
       const dash=`<path d="M ${p1.x} ${p1.y} A ${r} ${r} 0 ${large} 1 ${p2.x} ${p2.y}" fill="none" stroke="${color(i)}" stroke-width="${sw}" stroke-linecap="round"/>`;
-      start=end;
-      return dash;
+      start=end; return dash;
     }).join("");
     const legend=rows.map((row,i)=>`<g transform="translate(320 ${70+i*30})"><rect width="12" height="12" rx="3" fill="${color(i)}"/><text x="20" y="11" fill="#b3c0cd" font-size="13">${safe(row.label)}: ${safe(row.display ?? row.value)}</text></g>`).join("");
     chartShell(el,title,note,`<svg viewBox="0 0 760 300" role="img"><circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="${sw}"/>${arcs}<text x="${cx}" y="${cy-2}" text-anchor="middle" fill="#f4fbff" font-size="28" font-weight="900">${total}</text><text x="${cx}" y="${cy+24}" text-anchor="middle" fill="#b3c0cd" font-size="12">total</text>${legend}</svg>`);
   }
 
-  function polar(cx,cy,r,deg){
-    const a=(deg-90)*Math.PI/180;
-    return {x:cx+r*Math.cos(a), y:cy+r*Math.sin(a)};
-  }
-
   function lineChart(el, title, vals, note){
     const w=760,h=300,left=48,bottom=250,top=36,right=28;
     const max=Math.max(100,...vals), min=0;
-    const pts=vals.map((v,i)=>{
-      const x=left+i*((w-left-right)/Math.max(1,vals.length-1));
-      const y=bottom-((v-min)/(max-min))*(bottom-top);
-      return {x,y,v};
-    });
+    const pts=vals.map((v,i)=>({x:left+i*((w-left-right)/Math.max(1,vals.length-1)), y:bottom-((v-min)/(max-min))*(bottom-top), v}));
     const poly=pts.map(p=>`${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(" ");
     const circles=pts.map((p,i)=>`<circle cx="${p.x}" cy="${p.y}" r="5" fill="#7dffb0"/><text x="${p.x}" y="276" text-anchor="middle" fill="#b3c0cd" font-size="11">v${i}</text>`).join("");
     chartShell(el,title,note,`<svg viewBox="0 0 ${w} ${h}" role="img"><line x1="${left}" y1="${bottom}" x2="${w-right}" y2="${bottom}" stroke="rgba(255,255,255,.18)"/><line x1="${left}" y1="${top}" x2="${left}" y2="${bottom}" stroke="rgba(255,255,255,.18)"/><polyline points="${poly}" fill="none" stroke="#7dffb0" stroke-width="4"/><path d="M ${poly.replaceAll(" "," L ")} L ${pts[pts.length-1]?.x||left} ${bottom} L ${left} ${bottom} Z" fill="rgba(125,255,176,.08)"/>${circles}</svg>`);
@@ -513,15 +503,8 @@ JS = r"""
 
   function radarChart(el, title, rows, note){
     const cx=380,cy=170,r=120,n=rows.length||1;
-    const points=rows.map((row,i)=>{
-      const a=-Math.PI/2+i*2*Math.PI/n;
-      const val=Math.max(0,Math.min(100,Number(row.value)||0))/100;
-      return {x:cx+r*val*Math.cos(a),y:cy+r*val*Math.sin(a), lx:cx+(r+32)*Math.cos(a), ly:cy+(r+32)*Math.sin(a), label:row.label, value:row.value};
-    });
-    const rings=[.25,.5,.75,1].map(fr=>{
-      const p=rows.map((_,i)=>{const a=-Math.PI/2+i*2*Math.PI/n;return `${cx+r*fr*Math.cos(a)},${cy+r*fr*Math.sin(a)}`}).join(" ");
-      return `<polygon points="${p}" fill="none" stroke="rgba(255,255,255,.11)"/>`;
-    }).join("");
+    const points=rows.map((row,i)=>{ const a=-Math.PI/2+i*2*Math.PI/n; const val=Math.max(0,Math.min(100,Number(row.value)||0))/100; return {x:cx+r*val*Math.cos(a),y:cy+r*val*Math.sin(a), lx:cx+(r+32)*Math.cos(a), ly:cy+(r+32)*Math.sin(a), label:row.label}; });
+    const rings=[.25,.5,.75,1].map(fr=>{ const p=rows.map((_,i)=>{const a=-Math.PI/2+i*2*Math.PI/n;return `${cx+r*fr*Math.cos(a)},${cy+r*fr*Math.sin(a)}`}).join(" "); return `<polygon points="${p}" fill="none" stroke="rgba(255,255,255,.11)"/>`; }).join("");
     const poly=points.map(p=>`${p.x},${p.y}`).join(" ");
     const axes=points.map(p=>`<line x1="${cx}" y1="${cy}" x2="${p.lx}" y2="${p.ly}" stroke="rgba(255,255,255,.08)"/><text x="${p.lx}" y="${p.ly}" text-anchor="middle" fill="#b3c0cd" font-size="11">${safe(p.label)}</text>`).join("");
     chartShell(el,title,note,`<svg viewBox="0 0 760 360" role="img">${rings}${axes}<polygon points="${poly}" fill="rgba(134,248,255,.18)" stroke="#86f8ff" stroke-width="3"/><circle cx="${cx}" cy="${cy}" r="3" fill="#fff"/></svg>`);
@@ -530,14 +513,7 @@ JS = r"""
   function constellation(el, title, roles, note){
     const w=760,h=520,cx=380,cy=260;
     const list=(roles&&roles.length?roles:["capital allocator","compute allocator","energy strategist","data moat","trust","talent","product","distribution","validation","risk","reinvestment","coordination"]);
-    const nodes=list.slice(0,64).map((role,i)=>{
-      const ring=i<20?120:i<44?175:225;
-      const idx=i<20?i:i<44?i-20:i-44;
-      const count=i<20?20:i<44?24:20;
-      const a=-Math.PI/2+idx*2*Math.PI/count+(i<20?0:i<44?.13:.27);
-      const x=cx+ring*Math.cos(a), y=cy+ring*Math.sin(a);
-      return `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="rgba(134,248,255,.08)"/><circle cx="${x}" cy="${y}" r="${i<20?6:5}" fill="${color(i)}"/><title>${safe(role)}</title>`;
-    }).join("");
+    const nodes=list.slice(0,80).map((role,i)=>{ const ring=i<24?120:i<52?178:226; const idx=i<24?i:i<52?i-24:i-52; const count=i<24?24:i<52?28:28; const a=-Math.PI/2+idx*2*Math.PI/count+(i<24?0:i<52?.13:.27); const x=cx+ring*Math.cos(a), y=cy+ring*Math.sin(a); return `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="rgba(134,248,255,.08)"/><circle cx="${x}" cy="${y}" r="${i<24?6:5}" fill="${color(i)}"/><title>${safe(role)}</title>`; }).join("");
     chartShell(el,title,note,`<svg viewBox="0 0 ${w} ${h}" role="img"><circle cx="${cx}" cy="${cy}" r="70" fill="rgba(125,255,176,.11)" stroke="#7dffb0"/><text x="${cx}" y="${cy-6}" text-anchor="middle" fill="#f4fbff" font-size="18" font-weight="900">SkillOS</text><text x="${cx}" y="${cy+18}" text-anchor="middle" fill="#b3c0cd" font-size="12">coordination core</text>${nodes}</svg>`);
   }
 
@@ -549,58 +525,35 @@ JS = r"""
     const stat=flagship.static_coordination||{};
     const agentSystem=flagship.agent_system||status.flagship||{};
     const releases=(flagship.rsi_releases||[]).filter(r=>r.released || r.generation===0);
-    document.querySelectorAll("[data-live-count]").forEach(el=>{
-      const key=el.getAttribute("data-live-count");
-      el.textContent = status[key] ?? "—";
-    });
-    const charts=document.querySelectorAll("[data-chart]");
-    charts.forEach(el=>{
+    document.querySelectorAll("[data-live-count]").forEach(el=>{ const key=el.getAttribute("data-live-count"); el.textContent = status[key] ?? "—"; });
+    document.querySelectorAll("[data-chart]").forEach(el=>{
       const type=el.getAttribute("data-chart");
-      if(type==="proof-status"){
-        const passed=(status.proved_or_passed_proof_count||0), total=(status.proof_count||0);
-        donutChart(el,"Proof status",[{"label":"passed or ready","value":passed},{"label":"other entries","value":Math.max(0,total-passed)}],"Autonomously rebuilt from proof JSON, pages, reports, and workflow metadata.");
-      }
-      if(type==="workflow-status"){
-        const rows=status.workflows||[];
-        const counts={passing:0,running:0,failed:0,other:0};
-        rows.forEach(w=>{const l=(w.conclusion==="success")?"passing":(["queued","in_progress","requested","waiting"].includes(w.status)?"running":(w.conclusion==="failure"?"failed":"other"));counts[l]++;});
-        donutChart(el,"Workflow status",Object.entries(counts).map(([k,v])=>({label:k,value:v})),"Latest visible GitHub Actions state.");
-      }
-      if(type==="rsi-curve"){
-        const vals=releases.map(r=>(r.validation||{}).fully_correct_percent ?? 0);
-        lineChart(el,"Recursive self-improvement curve", vals.length?vals:[0,25,50,75,100],"Validation fully-correct rate across released protocol versions.");
-      }
-      if(type==="ablation-bars"){
-        barChart(el,"Ablation: single agent vs pool vs coordination vs RSI",[
-          {label:"Single agent", value:single.fully_correct_percent||0, display:pct(single.fully_correct_percent)},
-          {label:"Uncoordinated pool", value:uncoord.fully_correct_percent||0, display:pct(uncoord.fully_correct_percent)},
-          {label:"Static coordination", value:stat.fully_correct_percent||0, display:pct(stat.fully_correct_percent)},
-          {label:"SkillOS RSI", value:final.fully_correct_percent||0, display:pct(final.fully_correct_percent)},
-        ],"Shows whether recursive coordination beats both single-agent and uncoordinated multi-agent baselines.");
-      }
-      if(type==="capability-radar"){
-        radarChart(el,"Capability coordination radar",[
-          {label:"Coordination", value:final.coordination_protocol_accuracy_percent||0},
-          {label:"Risk control", value:final.risk_control_accuracy_percent||0},
-          {label:"Role quorum", value:final.role_quorum_accuracy_percent||0},
-          {label:"Capability lever", value:final.capability_lever_accuracy_percent||0},
-          {label:"Value capture", value:final.value_capture_rate_percent||0},
-          {label:"Compounding", value:final.avg_compounding_index||0},
-          {label:"Capacity", value:final.avg_productive_capacity_index||0},
-        ],"The flagship proof measures coordination quality, risk discipline, compounding, and productive capacity.");
-      }
-      if(type==="agent-constellation"){
-        constellation(el,"Specialist agent organization", (agentSystem.roles||status.flagship.roles||[]), "Visualizes the specialist roles coordinated by the flagship proof.");
-      }
-      if(type==="value-bars"){
-        barChart(el,"Business effect metrics",[
-          {label:"Value capture", value:final.value_capture_rate_percent||0, display:pct(final.value_capture_rate_percent)},
-          {label:"Compounding index", value:final.avg_compounding_index||0},
-          {label:"Productive capacity", value:final.avg_productive_capacity_index||0},
-          {label:"Consensus", value:final.avg_consensus_score||0},
-          {label:"Risk breach", value:final.risk_breach_rate_percent||0, display:pct(final.risk_breach_rate_percent)},
-        ],"Benchmark values, not audited customer revenue.");
-      }
+      if(type==="proof-status"){ const passed=(status.proved_or_passed_proof_count||0), total=(status.proof_count||0); donutChart(el,"Proof status",[{label:"passed or ready",value:passed},{label:"other entries",value:Math.max(0,total-passed)}],"Autonomously rebuilt from proof JSON, pages, reports, and workflow metadata."); }
+      if(type==="workflow-status"){ const rows=status.workflows||[]; const counts={passing:0,running:0,failed:0,other:0}; rows.forEach(w=>{const l=(w.conclusion==="success")?"passing":(["queued","in_progress","requested","waiting"].includes(w.status)?"running":(w.conclusion==="failure"?"failed":"other"));counts[l]++;}); donutChart(el,"Workflow status",Object.entries(counts).map(([k,v])=>({label:k,value:v})),"Latest visible GitHub Actions state."); }
+      if(type==="rsi-curve"){ const vals=releases.map(r=>(r.validation||{}).fully_correct_percent ?? 0); lineChart(el,"Recursive self-improvement curve", vals.length?vals:[0,25,50,75,100],"Validation fully-correct rate across released protocol versions."); }
+      if(type==="ablation-bars"){ barChart(el,"Ablation: single agent vs pool vs coordination vs RSI",[
+        {label:"Single agent", value:single.fully_correct_percent||0, display:pct(single.fully_correct_percent)},
+        {label:"Uncoordinated pool", value:uncoord.fully_correct_percent||0, display:pct(uncoord.fully_correct_percent)},
+        {label:"Static coordination", value:stat.fully_correct_percent||0, display:pct(stat.fully_correct_percent)},
+        {label:"SkillOS RSI", value:final.fully_correct_percent||0, display:pct(final.fully_correct_percent)},
+      ],"Shows whether recursive coordination beats both single-agent and uncoordinated multi-agent baselines."); }
+      if(type==="capability-radar"){ radarChart(el,"Capability coordination radar",[
+        {label:"Coordination", value:final.coordination_protocol_accuracy_percent||0},
+        {label:"Risk control", value:final.risk_control_accuracy_percent||0},
+        {label:"Role quorum", value:final.role_quorum_accuracy_percent||0},
+        {label:"Capability lever", value:final.capability_lever_accuracy_percent||0},
+        {label:"Value capture", value:final.value_capture_rate_percent||0},
+        {label:"Compounding", value:final.avg_compounding_index||0},
+        {label:"Capacity", value:final.avg_productive_capacity_index||0},
+      ],"The flagship proof measures coordination quality, risk discipline, compounding, and productive capacity."); }
+      if(type==="agent-constellation"){ constellation(el,"Specialist agent organization", (agentSystem.roles||status.flagship.roles||[]), "Visualizes the specialist roles coordinated by the flagship proof."); }
+      if(type==="value-bars"){ barChart(el,"Business effect metrics",[
+        {label:"Value capture", value:final.value_capture_rate_percent||0, display:pct(final.value_capture_rate_percent)},
+        {label:"Compounding index", value:final.avg_compounding_index||0},
+        {label:"Productive capacity", value:final.avg_productive_capacity_index||0},
+        {label:"Consensus", value:final.avg_consensus_score||0},
+        {label:"Risk breach", value:final.risk_breach_rate_percent||0, display:pct(final.risk_breach_rate_percent)},
+      ],"Benchmark values, not audited customer revenue."); }
     });
   }
 
@@ -626,6 +579,8 @@ def shell(title: str, body: str) -> str:
     <a href="proofs.html">Proofs</a>
     <a href="actions.html">Actions</a>
     <a href="multi-agent.html">Multi-Agent</a>
+    <a href="receipts.html">Receipts</a>
+    <a href="architecture.html">Architecture</a>
     <a href="runbook.html">Run / Regenerate</a>
     <a href="{html.escape(repo_url())}">GitHub</a>
   </div>
@@ -728,6 +683,35 @@ def build_pages(status: dict[str, Any]) -> None:
     flagship_workflow = flagship.get("workflow_url") or repo_url("actions")
     flagship_page = flagship.get("page_url") or "rsi-capability-command-center-v17-proof.html"
 
+    (SITE / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://montrealai.github.io/skillos/sitemap.xml\n", encoding="utf-8")
+    pages_for_sitemap = ["index.html","proofs.html","actions.html","multi-agent.html","receipts.html","leaderboard.html","architecture.html","runbook.html"]
+    sitemap = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n" + "\n".join(
+        f"  <url><loc>{SITE_URL}{p}</loc><lastmod>{status['generated_at_utc'][:10]}</lastmod></url>" for p in pages_for_sitemap
+    ) + "\n</urlset>\n"
+    (SITE / "sitemap.xml").write_text(sitemap, encoding="utf-8")
+    (SITE / "manifest.webmanifest").write_text(json.dumps({
+        "name": "SkillOS Public Proof Command Center",
+        "short_name": "SkillOS Proofs",
+        "start_url": "index.html",
+        "display": "standalone",
+        "background_color": "#06131f",
+        "theme_color": "#86f8ff",
+        "description": "Autonomous public proof hub for SkillOS GitHub Actions and RSI multi-agent proofs."
+    }, indent=2), encoding="utf-8")
+    agent_label = html.escape(str(flagship.get('agent_count') or agent_system.get('agent_count') or '512'))
+    role_label = html.escape(str(flagship.get('role_count') or agent_system.get('role_count') or '64'))
+    og = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06131f"/><stop offset=".65" stop-color="#13243d"/><stop offset="1" stop-color="#26295a"/></linearGradient></defs>
+<rect width="1200" height="630" fill="url(#g)"/>
+<circle cx="920" cy="80" r="260" fill="#3b407c" opacity=".55"/>
+<text x="70" y="130" fill="#86f8ff" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="800" letter-spacing="6">MONTREAL.AI / SKILLOS</text>
+<text x="70" y="260" fill="#f4fbff" font-family="Inter,Arial,sans-serif" font-size="82" font-weight="900">Public Proof</text>
+<text x="70" y="350" fill="#f4fbff" font-family="Inter,Arial,sans-serif" font-size="82" font-weight="900">Command Center</text>
+<text x="70" y="430" fill="#b3c0cd" font-family="Inter,Arial,sans-serif" font-size="34">Autonomous. Visual. Reproducible. GitHub-native.</text>
+<text x="70" y="510" fill="#7dffb0" font-family="Inter,Arial,sans-serif" font-size="38" font-weight="800">{agent_label} agents - {role_label} roles - RSI coordination</text>
+</svg>"""
+    (SITE / "og-card.svg").write_text(og, encoding="utf-8")
+
     hero = f"""
 <section class="hero">
   <div>
@@ -738,6 +722,7 @@ def build_pages(status: dict[str, Any]) -> None:
       <a class="button gold" href="{html.escape(str(flagship_page))}">View flagship proof</a>
       <a class="button" href="{html.escape(str(flagship_workflow))}">Run flagship Action</a>
       <a class="button secondary" href="{html.escape(run_all_url)}">Run all proofs</a>
+      <a class="button secondary" href="receipts.html">Inspect receipts</a>
     </div>
   </div>
   <div class="card">
@@ -785,6 +770,16 @@ def build_pages(status: dict[str, Any]) -> None:
 <section class="two">
   <div class="chart" data-chart="proof-status"></div>
   <div class="chart" data-chart="workflow-status"></div>
+</section>
+
+<section class="section">
+  <h2>Command center dashboards</h2>
+  <div class="proof-grid">
+    <div class="proof-card"><span class="badge ok">receipts</span><h3>Machine-readable proof receipts</h3><p>Inspect JSON proof receipts, Markdown reports, generated timestamps, run metadata, and safe boundaries.</p><div class="actions"><a class="button" href="receipts.html">Open receipts</a></div></div>
+    <div class="proof-card"><span class="badge ok">leaderboard</span><h3>Proof leaderboard</h3><p>See proofs ranked by agent count, RSI releases, holdout cases, and public status.</p><div class="actions"><a class="button" href="leaderboard.html">Open leaderboard</a></div></div>
+    <div class="proof-card"><span class="badge ok">architecture</span><h3>Capital-to-capability architecture</h3><p>Visual explanation of the mechanism under the Kardashev-scale value thesis.</p><div class="actions"><a class="button" href="architecture.html">Open architecture</a></div></div>
+    <div class="proof-card"><span class="badge ok">actions</span><h3>Run and regenerate</h3><p>Rerun one proof, rerun all public proofs, or refresh the entire public website.</p><div class="actions"><a class="button" href="runbook.html">Open runbook</a></div></div>
+  </div>
 </section>
 
 <section class="section">
@@ -890,6 +885,68 @@ def build_pages(status: dict[str, Any]) -> None:
 """
     (SITE / "multi-agent.html").write_text(shell("SkillOS Multi-Agent Command Center", multi_body), encoding="utf-8")
 
+    receipts_rows = []
+    for p in proofs:
+        receipts_rows.append(f"""<tr>
+<td><strong>{html.escape(str(p.get('title')))}</strong><br><span class="small">{html.escape(str(p.get('status','')))}</span></td>
+<td>{f'<a href="{html.escape(str(p.get("json_url")))}">JSON receipt</a>' if p.get('json_url') else '—'}</td>
+<td>{f'<a href="{html.escape(str(p.get("doc_url")))}">Markdown report</a>' if p.get('doc_url') else '—'}</td>
+<td>{f'<a href="{html.escape(str(p.get("page_url")))}">Visual page</a>' if p.get('page_url') else '—'}</td>
+<td>{html.escape(str(p.get('generated_at') or '—'))}</td>
+</tr>""")
+    receipts_body = f"""
+<section class="section">
+  <div class="eyebrow">Receipts and audit trail</div>
+  <h2>Proof Receipts</h2>
+  <p class="lead">Machine-readable JSON, Markdown reports, visual pages, timestamps, and generated proof status.</p>
+  <table><tr><th>Proof</th><th>JSON</th><th>Report</th><th>Visual</th><th>Generated</th></tr>{''.join(receipts_rows)}</table>
+</section>
+<section class="notice"><strong>Proof receipt boundary:</strong> Receipts are benchmark artifacts and public reproducibility records, not audited customer ROI.</section>
+"""
+    (SITE / "receipts.html").write_text(shell("SkillOS Proof Receipts", receipts_body), encoding="utf-8")
+
+    leaderboard_rows = []
+    for p in proofs:
+        leaderboard_rows.append(f"""<tr>
+<td><strong>{html.escape(str(p.get('title')))}</strong></td>
+<td>{html.escape(str(p.get('agent_count') or '—'))}</td>
+<td>{html.escape(str(p.get('role_count') or '—'))}</td>
+<td>{html.escape(str(p.get('rsi_releases') or '—'))}</td>
+<td>{html.escape(str(p.get('holdout_count') or '—'))}</td>
+<td>{html.escape(str(p.get('status') or '—'))}</td>
+</tr>""")
+    leaderboard_body = f"""
+<section class="section">
+  <div class="eyebrow">Public proof ranking</div>
+  <h2>Proof Leaderboard</h2>
+  <p class="lead">Ranked public proof entries by agent count, roles, RSI releases, and holdout scale where available.</p>
+  <div class="chart" data-chart="proof-status"></div>
+  <table><tr><th>Proof</th><th>Agents</th><th>Roles</th><th>RSI releases</th><th>Holdout cases</th><th>Status</th></tr>{''.join(leaderboard_rows)}</table>
+</section>
+"""
+    (SITE / "leaderboard.html").write_text(shell("SkillOS Proof Leaderboard", leaderboard_body), encoding="utf-8")
+
+    architecture_body = f"""
+<section class="section">
+  <div class="eyebrow">Mechanism under the thesis</div>
+  <h2>Capital-to-Capability Architecture</h2>
+  <p class="lead">The site makes the Kardashev-scale quote concrete without overclaiming. It tests the coordination mechanism underneath the thesis.</p>
+</section>
+<section class="section card">
+  <div class="quote">capital → compute → energy → data → trust → talent → product → distribution → validation → risk control → reinvestment → compounding productive capability</div>
+  <p>SkillOS proves the mechanism as a benchmark: coordinate specialists, identify failures, release better coordination protocols, validate, and retest on adversarial holdout cases.</p>
+</section>
+<section class="two">
+  <div class="chart" data-chart="capability-radar"></div>
+  <div class="chart" data-chart="agent-constellation"></div>
+</section>
+<section class="section card">
+  <h2>Safe interpretation</h2>
+  <p>This is not a claim of achieved superintelligence or Kardashev Type II civilization. It is a public proof that the capital-to-capability coordination loop can be modeled, benchmarked, rerun, and improved through RSI.</p>
+</section>
+"""
+    (SITE / "architecture.html").write_text(shell("SkillOS Capital-to-Capability Architecture", architecture_body), encoding="utf-8")
+
     runbook_body = f"""
 <section class="section">
   <div class="eyebrow">Friendly runbook</div>
@@ -980,9 +1037,16 @@ def main() -> None:
             "site/proofs.html",
             "site/actions.html",
             "site/multi-agent.html",
+            "site/receipts.html",
+            "site/leaderboard.html",
+            "site/architecture.html",
             "site/runbook.html",
             "site/assets/command-center.css",
             "site/assets/command-center.js",
+            "site/manifest.webmanifest",
+            "site/robots.txt",
+            "site/sitemap.xml",
+            "site/og-card.svg",
             "site/public_site_status.json",
             "data/public_site_status.json",
             "docs/SKILLOS_PUBLIC_SITE_STATUS.md",

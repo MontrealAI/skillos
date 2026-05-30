@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import argparse, json, os, time, urllib.request, urllib.error
+import argparse, json, os, time, urllib.request
 from typing import Any
 
 REPO = os.environ.get("GITHUB_REPOSITORY", "MontrealAI/skillos")

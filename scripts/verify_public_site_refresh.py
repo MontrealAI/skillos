@@ -9,13 +9,16 @@ REQUIRED = {
     "site/index.html": [
         "Autonomous Proof Command Center",
         "Capital-to-capability thesis",
+        "data-chart=\"rsi-curve\"",
         "Run all proofs",
         "Public boundary",
         "multi-agent.html",
     ],
-    "site/proofs.html": ["Proof Library"],
-    "site/actions.html": ["GitHub Actions Status"],
-    "site/multi-agent.html": ["Multi-Agent Command Center", "Ablation comparison", "SkillOS RSI"],
+    "site/assets/command-center.css": [":root", ".chart", ".hero"],
+    "site/assets/command-center.js": ["function render", "data-chart", "agent-constellation"],
+    "site/proofs.html": ["Proof Library", "data-chart=\"proof-status\""],
+    "site/actions.html": ["GitHub Actions Status", "data-chart=\"workflow-status\""],
+    "site/multi-agent.html": ["Multi-Agent Command Center", "Ablation comparison", "data-chart=\"ablation-bars\"", "SkillOS RSI"],
     "site/runbook.html": ["Run and regenerate everything"],
     "docs/SKILLOS_PUBLIC_SITE_STATUS.md": ["SkillOS Public Proof Command Center Status"],
     "data/public_site_status.json": ["generated_at_utc", "workflow_count", "proof_count", "flagship"],
@@ -41,6 +44,8 @@ def main() -> None:
                 failures.append("workflow_count should be at least 1")
             if "safe_boundary" not in obj:
                 failures.append("safe_boundary missing")
+            if "flagship_raw" not in obj:
+                failures.append("flagship_raw missing")
         except Exception as exc:
             failures.append(f"Invalid public_site_status.json: {exc}")
 

@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "81cc0ac747177666ee2d2d13b9e43c5dd3348631",
+  "commit": "b457138aa035f692729d55201d333db66bc85d1e",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -88,7 +88,7 @@
     "validation_count": 320,
     "workflow": "adversarial capital-to-capability command center proof with recursive self-improvement and large-scale specialist-agent coordination"
   },
-  "generated_at_utc": "2026-05-30T19:24:51Z",
+  "generated_at_utc": "2026-05-30T19:28:17Z",
   "proof_count": 63,
   "proofs": [
     {
@@ -355,10 +355,10 @@
     },
     {
       "key": "autonomous-rsi-adversarial-capability-command-center-proof",
-      "latest_run_conclusion": "success",
+      "latest_run_conclusion": "cancelled",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-30T18:34:49Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26691707393",
+      "latest_run_updated_at": "2026-05-30T19:25:57Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692795022",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -390,10 +390,10 @@
     },
     {
       "key": "autonomous-rsi-capital-to-capability-command-center-v17-proof",
-      "latest_run_conclusion": "success",
+      "latest_run_conclusion": "cancelled",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-30T18:55:18Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692147890",
+      "latest_run_updated_at": "2026-05-30T19:26:00Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692796088",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -634,10 +634,10 @@
     },
     {
       "key": "autonomous-rsi-capital-to-capability-engine-proof",
-      "latest_run_conclusion": "success",
+      "latest_run_conclusion": "cancelled",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-30T18:07:13Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26691125408",
+      "latest_run_updated_at": "2026-05-30T19:26:03Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692796992",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -829,10 +829,10 @@
     },
     {
       "key": "autonomous-rsi-adversarial-multi-agent-market-command-center-proof",
-      "latest_run_conclusion": "success",
+      "latest_run_conclusion": "cancelled",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-30T17:59:23Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26690951657",
+      "latest_run_updated_at": "2026-05-30T19:25:54Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692793975",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -898,7 +898,7 @@
       },
       "doc_path": "docs/rsi_cloudops_market_proof.md",
       "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/rsi_cloudops_market_proof.md",
-      "generated_at": "2026-05-30T13:14:03Z",
+      "generated_at": "2026-05-30T19:26:12Z",
       "holdout_count": 420,
       "json_path": "data/rsi_cloudops_market_proof.json",
       "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/rsi_cloudops_market_proof.json",
@@ -1357,7 +1357,7 @@
     {
       "doc_path": "docs/shadow_pilot_proof.md",
       "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/shadow_pilot_proof.md",
-      "generated_at": "2026-05-30T19:22:12.866474+00:00",
+      "generated_at": "2026-05-30T19:26:32.484192+00:00",
       "json_path": "data/shadow_pilot_proof.json",
       "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/shadow_pilot_proof.json",
       "key": "shadow_pilot_proof",
@@ -1654,8 +1654,8 @@
       "key": "autonomous-enterprise-ops-market-proof",
       "latest_run_conclusion": "success",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-30T12:41:28Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26684066559",
+      "latest_run_updated_at": "2026-05-30T19:26:06Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692793008",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -1669,8 +1669,8 @@
       "key": "autonomous-rsi-cloudops-market-proof",
       "latest_run_conclusion": "success",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-30T13:14:17Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26684723290",
+      "latest_run_updated_at": "2026-05-30T19:26:23Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692798048",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -1682,10 +1682,10 @@
     },
     {
       "key": "autonomous-rsi-corporate-operating-system-market-proof",
-      "latest_run_conclusion": "success",
+      "latest_run_conclusion": "cancelled",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-30T15:19:59Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26687426663",
+      "latest_run_updated_at": "2026-05-30T19:26:09Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692799134",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -1697,10 +1697,10 @@
     },
     {
       "key": "autonomous-rsi-cyber-defense-market-proof",
-      "latest_run_conclusion": "success",
+      "latest_run_conclusion": "cancelled",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-30T13:41:49Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26685294961",
+      "latest_run_updated_at": "2026-05-30T19:26:12Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692800235",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -1712,10 +1712,10 @@
     },
     {
       "key": "autonomous-rsi-marketplace-flywheel-market-proof",
-      "latest_run_conclusion": "success",
+      "latest_run_conclusion": "cancelled",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-30T16:18:56Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26688757363",
+      "latest_run_updated_at": "2026-05-30T19:26:15Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692801330",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -1727,10 +1727,10 @@
     },
     {
       "key": "autonomous-rsi-metamaterials-discovery-market-proof",
-      "latest_run_conclusion": "success",
+      "latest_run_conclusion": "cancelled",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-30T14:49:04Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26686748645",
+      "latest_run_updated_at": "2026-05-30T19:26:18Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692802584",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -1742,10 +1742,10 @@
     },
     {
       "key": "autonomous-rsi-revenue-experiment-factory-market-proof",
-      "latest_run_conclusion": "success",
+      "latest_run_conclusion": "cancelled",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-30T16:45:45Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26689357224",
+      "latest_run_updated_at": "2026-05-30T19:26:21Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692803739",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -1757,10 +1757,10 @@
     },
     {
       "key": "autonomous-rsi-silicon-verification-market-proof",
-      "latest_run_conclusion": "success",
+      "latest_run_conclusion": "cancelled",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-30T14:15:50Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26686017322",
+      "latest_run_updated_at": "2026-05-30T19:26:24Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692804837",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -1774,8 +1774,8 @@
       "key": "autonomous-rsi-unit-economics-profit-engine-market-proof",
       "latest_run_conclusion": "success",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-30T15:47:26Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26688060051",
+      "latest_run_updated_at": "2026-05-30T19:26:47Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692805973",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -1787,6 +1787,10 @@
     },
     {
       "key": "autonomous-shadow-pilot-proof",
+      "latest_run_conclusion": "success",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-05-30T19:26:36Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692807073",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -1813,6 +1817,10 @@
     },
     {
       "key": "fully-autonomous-market-readiness-proof",
+      "latest_run_conclusion": "success",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-05-30T19:25:54Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692792020",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -1991,8 +1999,8 @@
   "proved_or_passed_proof_count": 14,
   "recent_failed_runs": 0,
   "recent_running_runs": 1,
-  "recent_successful_runs": 48,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692768344",
+  "recent_successful_runs": 38,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692841985",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
@@ -2001,22 +2009,182 @@
     {
       "conclusion": null,
       "event": "workflow_dispatch",
-      "name": "SkillOS Public Proof Command Center Refresh",
-      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692768344",
+      "name": "SkillOS Public Site Command Center Refresh",
+      "path": ".github/workflows/skillos-public-site-refresh.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692841985",
       "status": "in_progress",
-      "updated_at": "2026-05-30T19:24:43Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
+      "updated_at": "2026-05-30T19:28:10Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {
       "conclusion": "success",
-      "event": "workflow_run",
-      "name": "SkillOS Public Site Command Center Refresh",
-      "path": ".github/workflows/skillos-public-site-refresh.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692737600",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Unit Economics Profit Engine Market Proof",
+      "path": ".github/workflows/rsi-unit-economics-proof.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692805973",
       "status": "completed",
-      "updated_at": "2026-05-30T19:23:52Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
+      "updated_at": "2026-05-30T19:26:47Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-unit-economics-proof.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "workflow_dispatch",
+      "name": "Autonomous Shadow Pilot Proof",
+      "path": ".github/workflows/shadow-pilot-proof.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692807073",
+      "status": "completed",
+      "updated_at": "2026-05-30T19:26:36Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/shadow-pilot-proof.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "workflow_dispatch",
+      "name": "SkillOS Run All Public Proofs",
+      "path": ".github/workflows/skillos-run-all-public-proofs.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692789167",
+      "status": "completed",
+      "updated_at": "2026-05-30T19:26:31Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-run-all-public-proofs.yml"
+    },
+    {
+      "conclusion": "cancelled",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Silicon Verification Market Proof",
+      "path": ".github/workflows/rsi-silicon-verification-proof.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692804837",
+      "status": "completed",
+      "updated_at": "2026-05-30T19:26:24Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-silicon-verification-proof.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI CloudOps Market Proof",
+      "path": ".github/workflows/rsi-cloudops-proof.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692798048",
+      "status": "completed",
+      "updated_at": "2026-05-30T19:26:23Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cloudops-proof.yml"
+    },
+    {
+      "conclusion": "cancelled",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Revenue Experiment Factory Market Proof",
+      "path": ".github/workflows/rsi-revenue-experiment-factory-proof.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692803739",
+      "status": "completed",
+      "updated_at": "2026-05-30T19:26:21Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-revenue-experiment-factory-proof.yml"
+    },
+    {
+      "conclusion": "cancelled",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Metamaterials Discovery Market Proof",
+      "path": ".github/workflows/rsi-metamaterials-discovery-proof.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692802584",
+      "status": "completed",
+      "updated_at": "2026-05-30T19:26:18Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-metamaterials-discovery-proof.yml"
+    },
+    {
+      "conclusion": "cancelled",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Marketplace Flywheel Market Proof",
+      "path": ".github/workflows/rsi-marketplace-flywheel-proof.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692801330",
+      "status": "completed",
+      "updated_at": "2026-05-30T19:26:15Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-marketplace-flywheel-proof.yml"
+    },
+    {
+      "conclusion": "cancelled",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Cyber Defense Market Proof",
+      "path": ".github/workflows/rsi-cyberdefense-proof.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692800235",
+      "status": "completed",
+      "updated_at": "2026-05-30T19:26:12Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cyberdefense-proof.yml"
+    },
+    {
+      "conclusion": "cancelled",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Corporate Operating System Market Proof",
+      "path": ".github/workflows/rsi-corporate-os-proof.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692799134",
+      "status": "completed",
+      "updated_at": "2026-05-30T19:26:09Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-corporate-os-proof.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "workflow_dispatch",
+      "name": "Autonomous Enterprise Ops Market Proof",
+      "path": ".github/workflows/enterprise-ops-proof.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692793008",
+      "status": "completed",
+      "updated_at": "2026-05-30T19:26:06Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/enterprise-ops-proof.yml"
+    },
+    {
+      "conclusion": "cancelled",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Capital-to-Capability Engine Proof",
+      "path": ".github/workflows/rsi-capital-to-capability-engine-proof.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692796992",
+      "status": "completed",
+      "updated_at": "2026-05-30T19:26:03Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capital-to-capability-engine-proof.yml"
+    },
+    {
+      "conclusion": "cancelled",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Capital-to-Capability Command Center v17 Proof",
+      "path": ".github/workflows/rsi-capability-command-center-v17-proof.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692796088",
+      "status": "completed",
+      "updated_at": "2026-05-30T19:26:00Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capability-command-center-v17-proof.yml"
+    },
+    {
+      "conclusion": "cancelled",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Adversarial Capability Command Center Proof",
+      "path": ".github/workflows/rsi-capability-command-center-proof.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692795022",
+      "status": "completed",
+      "updated_at": "2026-05-30T19:25:57Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capability-command-center-proof.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "workflow_dispatch",
+      "name": "Fully Autonomous Market-Readiness Proof",
+      "path": ".github/workflows/autonomous-market-readiness.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692792020",
+      "status": "completed",
+      "updated_at": "2026-05-30T19:25:54Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-market-readiness.yml"
+    },
+    {
+      "conclusion": "cancelled",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Adversarial Multi-Agent Market Command Center Proof",
+      "path": ".github/workflows/rsi-adversarial-multi-agent-market-command-center-proof.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692793975",
+      "status": "completed",
+      "updated_at": "2026-05-30T19:25:54Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-adversarial-multi-agent-market-command-center-proof.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "workflow_dispatch",
+      "name": "SkillOS Public Proof Command Center Refresh",
+      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692768344",
+      "status": "completed",
+      "updated_at": "2026-05-30T19:25:03Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
       "conclusion": "success",
@@ -2037,136 +2205,6 @@
       "status": "completed",
       "updated_at": "2026-05-30T19:22:48Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Capital-to-Capability Command Center v17 Proof",
-      "path": ".github/workflows/rsi-capability-command-center-v17-proof.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692147890",
-      "status": "completed",
-      "updated_at": "2026-05-30T18:55:18Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capability-command-center-v17-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Adversarial Capability Command Center Proof",
-      "path": ".github/workflows/rsi-capability-command-center-proof.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26691707393",
-      "status": "completed",
-      "updated_at": "2026-05-30T18:34:49Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capability-command-center-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Capital-to-Capability Engine Proof",
-      "path": ".github/workflows/rsi-capital-to-capability-engine-proof.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26691125408",
-      "status": "completed",
-      "updated_at": "2026-05-30T18:07:13Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capital-to-capability-engine-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Adversarial Multi-Agent Market Command Center Proof",
-      "path": ".github/workflows/rsi-adversarial-multi-agent-market-command-center-proof.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26690951657",
-      "status": "completed",
-      "updated_at": "2026-05-30T17:59:23Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-adversarial-multi-agent-market-command-center-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Revenue Experiment Factory Market Proof",
-      "path": ".github/workflows/rsi-revenue-experiment-factory-proof.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26689357224",
-      "status": "completed",
-      "updated_at": "2026-05-30T16:45:45Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-revenue-experiment-factory-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Marketplace Flywheel Market Proof",
-      "path": ".github/workflows/rsi-marketplace-flywheel-proof.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26688757363",
-      "status": "completed",
-      "updated_at": "2026-05-30T16:18:56Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-marketplace-flywheel-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Unit Economics Profit Engine Market Proof",
-      "path": ".github/workflows/rsi-unit-economics-proof.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26688060051",
-      "status": "completed",
-      "updated_at": "2026-05-30T15:47:26Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-unit-economics-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Corporate Operating System Market Proof",
-      "path": ".github/workflows/rsi-corporate-os-proof.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26687426663",
-      "status": "completed",
-      "updated_at": "2026-05-30T15:19:59Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-corporate-os-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Metamaterials Discovery Market Proof",
-      "path": ".github/workflows/rsi-metamaterials-discovery-proof.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26686748645",
-      "status": "completed",
-      "updated_at": "2026-05-30T14:49:04Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-metamaterials-discovery-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Silicon Verification Market Proof",
-      "path": ".github/workflows/rsi-silicon-verification-proof.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26686017322",
-      "status": "completed",
-      "updated_at": "2026-05-30T14:15:50Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-silicon-verification-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Cyber Defense Market Proof",
-      "path": ".github/workflows/rsi-cyberdefense-proof.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26685294961",
-      "status": "completed",
-      "updated_at": "2026-05-30T13:41:49Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cyberdefense-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI CloudOps Market Proof",
-      "path": ".github/workflows/rsi-cloudops-proof.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26684723290",
-      "status": "completed",
-      "updated_at": "2026-05-30T13:14:17Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cloudops-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous Enterprise Ops Market Proof",
-      "path": ".github/workflows/enterprise-ops-proof.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26684066559",
-      "status": "completed",
-      "updated_at": "2026-05-30T12:41:28Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/enterprise-ops-proof.yml"
     },
     {
       "conclusion": null,
@@ -2191,42 +2229,12 @@
     {
       "conclusion": null,
       "event": null,
-      "name": "Fully Autonomous Market-Readiness Proof",
-      "path": ".github/workflows/autonomous-market-readiness.yml",
-      "run_url": null,
-      "status": "not_run",
-      "updated_at": "",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-market-readiness.yml"
-    },
-    {
-      "conclusion": null,
-      "event": null,
       "name": "Safe public copy check",
       "path": ".github/workflows/safe-public-copy-check.yml",
       "run_url": null,
       "status": "not_run",
       "updated_at": "",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/safe-public-copy-check.yml"
-    },
-    {
-      "conclusion": null,
-      "event": null,
-      "name": "Autonomous Shadow Pilot Proof",
-      "path": ".github/workflows/shadow-pilot-proof.yml",
-      "run_url": null,
-      "status": "not_run",
-      "updated_at": "",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/shadow-pilot-proof.yml"
-    },
-    {
-      "conclusion": null,
-      "event": null,
-      "name": "SkillOS Run All Public Proofs",
-      "path": ".github/workflows/skillos-run-all-public-proofs.yml",
-      "run_url": null,
-      "status": "not_run",
-      "updated_at": "",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-run-all-public-proofs.yml"
     }
   ]
 }

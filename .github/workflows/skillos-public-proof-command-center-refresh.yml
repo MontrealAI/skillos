@@ -14,6 +14,28 @@ on:
       - "site/**"
       - "badges/**"
   workflow_run:
+    workflows:
+      - "Deploy SkillOS website with autonomous safe public copy"
+      - "SkillOS tests"
+      - "Autonomous Shadow Pilot Proof"
+      - "Autonomous Enterprise Ops Market Proof"
+      - "Autonomous RSI Corporate Operating System Market Proof"
+      - "Autonomous RSI Unit Economics Profit Engine Market Proof"
+      - "Autonomous RSI Marketplace Flywheel Market Proof"
+      - "Autonomous RSI Revenue Experiment Factory Market Proof"
+      - "Autonomous RSI Multi-Agent Market Command Center Proof"
+      - "Autonomous RSI Adversarial Multi-Agent Market Command Center Proof"
+      - "Autonomous RSI Capital-to-Capability Engine Proof"
+      - "Autonomous RSI Capital-to-Capability Command Center Proof"
+      - "Autonomous RSI Capital-to-Capability Command Center v17 Proof"
+      - "Autonomous RSI Capability Command Center Proof"
+      - "Autonomous RSI Adversarial Capability Command Center Proof"
+      - "Autonomous RSI CloudOps Market Proof"
+      - "Autonomous RSI Cyber Defense Market Proof"
+      - "Autonomous RSI Silicon Verification Market Proof"
+      - "Autonomous RSI Metamaterials Discovery Market Proof"
+      - "Autonomous RSI Corporate OS Market Proof"
+      - "Autonomous RSI Unit Economics Market Proof"
     types: [completed]
 
 permissions:
@@ -29,7 +51,6 @@ concurrency:
 jobs:
   refresh:
     name: Refresh public proof command center
-    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.name != 'SkillOS Public Proof Command Center Refresh' && github.event.workflow_run.name != 'SkillOS Run All Public Proofs') }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -67,17 +88,21 @@ jobs:
           fi
 
       - name: Build Pages artifact
+        if: ${{ github.event_name != 'push' }}
         run: |
           mkdir -p dist
           cp -R site/* dist/
 
       - name: Configure GitHub Pages
+        if: ${{ github.event_name != 'push' }}
         uses: actions/configure-pages@v5
 
       - name: Upload GitHub Pages artifact
+        if: ${{ github.event_name != 'push' }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
       - name: Deploy GitHub Pages
+        if: ${{ github.event_name != 'push' }}
         uses: actions/deploy-pages@v4

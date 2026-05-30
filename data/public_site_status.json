@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "b457138aa035f692729d55201d333db66bc85d1e",
+  "commit": "c7e9f4b2629fc6b4ecd5707ad3e94a65a0eb2c6e",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -88,7 +88,7 @@
     "validation_count": 320,
     "workflow": "adversarial capital-to-capability command center proof with recursive self-improvement and large-scale specialist-agent coordination"
   },
-  "generated_at_utc": "2026-05-30T19:28:17Z",
+  "generated_at_utc": "2026-05-30T19:46:05Z",
   "proof_count": 63,
   "proofs": [
     {
@@ -2000,7 +2000,7 @@
   "recent_failed_runs": 0,
   "recent_running_runs": 1,
   "recent_successful_runs": 38,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692841985",
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26693225805",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
@@ -2008,12 +2008,12 @@
   "workflows": [
     {
       "conclusion": null,
-      "event": "workflow_dispatch",
+      "event": "schedule",
       "name": "SkillOS Public Site Command Center Refresh",
       "path": ".github/workflows/skillos-public-site-refresh.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26692841985",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26693225805",
       "status": "in_progress",
-      "updated_at": "2026-05-30T19:28:10Z",
+      "updated_at": "2026-05-30T19:45:58Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {

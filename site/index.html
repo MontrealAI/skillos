@@ -14,6 +14,8 @@
     <a href="proofs.html">Proofs</a>
     <a href="actions.html">Actions</a>
     <a href="multi-agent.html">Multi-Agent</a>
+    <a href="receipts.html">Receipts</a>
+    <a href="architecture.html">Architecture</a>
     <a href="runbook.html">Run / Regenerate</a>
     <a href="https://github.com/MontrealAI/skillos">GitHub</a>
   </div>
@@ -28,11 +30,12 @@
       <a class="button gold" href="rsi-capability-command-center-v17-proof.html">View flagship proof</a>
       <a class="button" href="https://github.com/MontrealAI/skillos/actions">Run flagship Action</a>
       <a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/workflows/skillos-run-all-public-proofs.yml">Run all proofs</a>
+      <a class="button secondary" href="receipts.html">Inspect receipts</a>
     </div>
   </div>
   <div class="card">
     <div class="eyebrow">Live freshness</div>
-    <div class="status">Updated 2026-05-30T19:58:33Z</div>
+    <div class="status">Updated 2026-05-30T20:07:10Z</div>
     <p>Autonomously regenerated from GitHub Actions workflows, latest runs, proof JSON receipts, proof reports, badges, and visual pages.</p>
     <p class="small">Repository: <a href="https://github.com/MontrealAI/skillos">MontrealAI/skillos</a></p>
   </div>
@@ -48,7 +51,7 @@
   <div class="metric"><strong>512</strong><span>flagship agents</span></div>
   <div class="metric"><strong>64</strong><span>specialist roles</span></div>
   <div class="metric"><strong data-live-count="proof_count">64</strong><span>proof entries</span></div>
-  <div class="metric"><strong data-live-count="recent_successful_runs">33</strong><span>recent successful runs</span></div>
+  <div class="metric"><strong data-live-count="recent_successful_runs">31</strong><span>recent successful runs</span></div>
 </section>
 
 <section class="two">
@@ -83,6 +86,16 @@
 <section class="two">
   <div class="chart" data-chart="proof-status"></div>
   <div class="chart" data-chart="workflow-status"></div>
+</section>
+
+<section class="section">
+  <h2>Command center dashboards</h2>
+  <div class="proof-grid">
+    <div class="proof-card"><span class="badge ok">receipts</span><h3>Machine-readable proof receipts</h3><p>Inspect JSON proof receipts, Markdown reports, generated timestamps, run metadata, and safe boundaries.</p><div class="actions"><a class="button" href="receipts.html">Open receipts</a></div></div>
+    <div class="proof-card"><span class="badge ok">leaderboard</span><h3>Proof leaderboard</h3><p>See proofs ranked by agent count, RSI releases, holdout cases, and public status.</p><div class="actions"><a class="button" href="leaderboard.html">Open leaderboard</a></div></div>
+    <div class="proof-card"><span class="badge ok">architecture</span><h3>Capital-to-capability architecture</h3><p>Visual explanation of the mechanism under the Kardashev-scale value thesis.</p><div class="actions"><a class="button" href="architecture.html">Open architecture</a></div></div>
+    <div class="proof-card"><span class="badge ok">actions</span><h3>Run and regenerate</h3><p>Rerun one proof, rerun all public proofs, or refresh the entire public website.</p><div class="actions"><a class="button" href="runbook.html">Open runbook</a></div></div>
+  </div>
 </section>
 
 <section class="section">
@@ -167,28 +180,28 @@
 <section class="section">
   <h2>Latest Actions status</h2>
   <table><tr><th>Workflow</th><th>Status</th><th>Event</th><th>Latest run</th></tr><tr>
-<td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"><strong>Deploy SkillOS website with autonomous safe public copy</strong></a><br><span class="small mono">.github/workflows/pages.yml</span></td>
-<td><span class="badge warn">running</span></td>
-<td>push</td>
-<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26693485409">2026-05-30T19:58:31Z</a></td>
-</tr>
-<tr>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"><strong>SkillOS Public Site Command Center Refresh</strong></a><br><span class="small mono">.github/workflows/skillos-public-site-refresh.yml</span></td>
 <td><span class="badge warn">running</span></td>
-<td>workflow_run</td>
-<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26693489768">2026-05-30T19:58:27Z</a></td>
+<td>push</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26693678722">2026-05-30T20:07:05Z</a></td>
 </tr>
 <tr>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"><strong>SkillOS tests</strong></a><br><span class="small mono">.github/workflows/tests.yml</span></td>
-<td><span class="badge ok">passing</span></td>
+<td><span class="badge warn">running</span></td>
 <td>push</td>
-<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26693485395">2026-05-30T19:58:20Z</a></td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26693678734">2026-05-30T20:07:04Z</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"><strong>Deploy SkillOS website with autonomous safe public copy</strong></a><br><span class="small mono">.github/workflows/pages.yml</span></td>
+<td><span class="badge warn">not run yet</span></td>
+<td>push</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26693678725">2026-05-30T20:07:01Z</a></td>
 </tr>
 <tr>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"><strong>.github/workflows/skillos-public-proof-command-center-refresh.yml</strong></a><br><span class="small mono">.github/workflows/skillos-public-proof-command-center-refresh.yml</span></td>
 <td><span class="badge bad">failure</span></td>
 <td>push</td>
-<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26693485161">2026-05-30T19:58:10Z</a></td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26693678397">2026-05-30T20:06:59Z</a></td>
 </tr>
 <tr>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-unit-economics-proof.yml"><strong>Autonomous RSI Unit Economics Profit Engine Market Proof</strong></a><br><span class="small mono">.github/workflows/rsi-unit-economics-proof.yml</span></td>

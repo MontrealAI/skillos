@@ -14,16 +14,6 @@ on:
       - "site/**"
       - "badges/**"
   workflow_run:
-    workflows:
-      - "Autonomous RSI Capital-to-Capability Command Center v17 Proof"
-      - "Autonomous RSI Adversarial Capability Command Center Proof"
-      - "Autonomous RSI Capital-to-Capability Engine Proof"
-      - "Autonomous RSI Adversarial Multi-Agent Market Command Center Proof"
-      - "Autonomous RSI Multi-Agent Market Command Center Proof"
-      - "Autonomous RSI Marketplace Flywheel Market Proof"
-      - "Autonomous RSI Revenue Experiment Factory Market Proof"
-      - "Autonomous RSI Unit Economics Profit Engine Market Proof"
-      - "Autonomous Shadow Pilot Proof"
     types: [completed]
 
 permissions:
@@ -39,6 +29,7 @@ concurrency:
 jobs:
   refresh:
     name: Refresh public proof command center
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.name != 'SkillOS Public Proof Command Center Refresh' && github.event.workflow_run.name != 'SkillOS Run All Public Proofs') }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -68,7 +59,7 @@ jobs:
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add site/index.html site/proofs.html site/actions.html site/multi-agent.html site/runbook.html site/public_site_status.json data/public_site_status.json docs/SKILLOS_PUBLIC_SITE_STATUS.md
+            git add site/index.html site/proofs.html site/actions.html site/multi-agent.html site/runbook.html site/assets/command-center.css site/assets/command-center.js site/public_site_status.json data/public_site_status.json docs/SKILLOS_PUBLIC_SITE_STATUS.md
             git commit -m "Refresh SkillOS public proof command center"
             git push
           else

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SkillOS Runbook</title>
+<title>SkillOS Multi-Agent Command Center</title>
 <style>:root{color-scheme:dark;--text:#f2fbff;--muted:#b3c0cd;--line:rgba(255,255,255,.14);--panel:rgba(255,255,255,.065);--cyan:#84f8ff;--green:#7dffb0;--gold:#ffd66b;--red:#ff7979;--blue:#91a7ff}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:radial-gradient(circle at 85% 0,#3c3e78 0,transparent 34%),radial-gradient(circle at 5% 18%,#104d63 0,transparent 24%),linear-gradient(135deg,#06131f,#13243d 60%,#26295a);color:var(--text)}
 a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}nav{display:flex;align-items:center;justify-content:space-between;gap:18px;position:sticky;top:0;z-index:20;background:rgba(6,19,31,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:14px 22px}.brand{font-weight:950;letter-spacing:-.03em}.navlinks{display:flex;gap:14px;flex-wrap:wrap}.navlinks a{color:var(--muted);font-weight:850;font-size:14px}
@@ -25,20 +25,40 @@ table{width:100%;border-collapse:collapse;background:var(--panel);border:1px sol
 </nav>
 <main>
 <section class="section">
-  <div class="eyebrow">Friendly runbook</div>
-  <h2>Run and regenerate everything</h2>
-  <p class="lead">Designed for non-technical viewers and maintainers. Every proof can be rerun from GitHub Actions, and this site can be refreshed on demand.</p>
-  <div class="steps">
-    <div class="step"><strong>1. Run flagship proof</strong><p>Open the flagship workflow and press <span class="mono">Run workflow</span>.</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions">Run flagship</a></p></div>
-    <div class="step"><strong>2. Run all proofs</strong><p>Dispatch all public proof workflows from one place.</p><p><a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/workflows/skillos-run-all-public-proofs.yml">Run all proofs</a></p></div>
-    <div class="step"><strong>3. Refresh public site</strong><p>Regenerate the command center from latest proof receipts and workflow metadata.</p><p><a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/workflows/skillos-public-proof-command-center-refresh.yml">Refresh site</a></p></div>
-  </div>
+  <div class="eyebrow">Large-scale agentic coordination</div>
+  <h2>Multi-Agent Command Center</h2>
+  <p class="lead">This page spotlights the flagship proof: a large specialist-agent system coordinating to maximum effect through validation-gated Recursive Self-Improvement.</p>
+</section>
+<section class="grid">
+  <div class="metric"><strong>512</strong><span>specialist agents</span></div>
+  <div class="metric"><strong>64</strong><span>roles</span></div>
+  <div class="metric"><strong>—</strong><span>gain vs single agent</span></div>
+  <div class="metric"><strong>—</strong><span>benchmark value over baseline</span></div>
 </section>
 <section class="section card">
-  <h2>Future-proofing rule</h2>
-  <p>For new proofs: include <span class="mono">Proof</span> or <span class="mono">RSI</span> in the workflow name, generate JSON into <span class="mono">data/</span>, Markdown into <span class="mono">docs/</span>, and visual HTML into <span class="mono">site/</span>. The command center discovers them automatically.</p>
+  <h2>Specialist roles</h2>
+  <div class="roles"></div>
 </section>
-<section class="notice"><strong>Safe boundary:</strong> This site makes proof outputs easy to inspect and rerun. It does not convert benchmark results into audited customer results or guarantees.</section>
+<section class="section">
+  <h2>Ablation comparison</h2>
+  <table>
+    <tr><th>Metric</th><th>Single agent</th><th>Uncoordinated pool</th><th>Static coordination</th><th>SkillOS RSI</th></tr>
+    <tr><td>Fully correct</td><td>—%</td><td>—%</td><td>—%</td><td>—%</td></tr>
+    <tr><td>Coordination accuracy</td><td>—%</td><td>—%</td><td>—%</td><td>—%</td></tr>
+    <tr><td>Risk control</td><td>—%</td><td>—%</td><td>—%</td><td>—%</td></tr>
+    <tr><td>Value capture</td><td>—%</td><td>—%</td><td>—%</td><td>—%</td></tr>
+    <tr><td>Risk breach</td><td>—%</td><td>—%</td><td>—%</td><td>—%</td></tr>
+  </table>
+</section>
+<section class="section card">
+  <h2>What it proves</h2>
+  <p>Many agents alone are not enough. Uncoordinated agents are not enough. Static coordination is not enough. SkillOS tests whether the coordination layer can recursively improve through validation-gated protocol releases and then generalize to adversarial holdout market states.</p>
+  <div class="actions">
+    <a class="button" href="rsi-capability-command-center-v17-proof.html">View flagship proof</a>
+    <a class="button secondary" href="https://github.com/MontrealAI/skillos/actions">Run flagship Action</a>
+  </div>
+</section>
+<section class="notice"><strong>Boundary:</strong> This is a benchmark proof of coordination mechanics, not a claim of superintelligence, audited customer ROI, or Kardashev Type II achievement.</section>
 </main>
 </body>
 </html>

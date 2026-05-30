@@ -3,59 +3,59 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SkillOS Actions Status</title>
-<style>:root{color-scheme:dark;--bg:#071421;--panel:rgba(255,255,255,.065);--line:rgba(255,255,255,.14);--text:#eff8ff;--muted:#aebdca;--cyan:#82f7ff;--green:#7dffb0;--gold:#ffd66b;--red:#ff7b7b}
-*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:radial-gradient(circle at 80% 0,#3a3b72 0,transparent 36%),linear-gradient(135deg,#06131e,#13243d 60%,#252958);color:var(--text)}
-a{color:var(--cyan);text-decoration:none} a:hover{text-decoration:underline}
-main{max-width:1240px;margin:0 auto;padding:42px 22px 80px}
-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:0;z-index:10;background:rgba(7,20,33,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:13px 22px}
-.brand{font-weight:900;letter-spacing:-.02em}.navlinks{display:flex;gap:14px;flex-wrap:wrap}.navlinks a{color:var(--muted);font-weight:800;font-size:14px}
-.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center;padding:48px 0 28px}.eyebrow{color:var(--cyan);font-size:12px;text-transform:uppercase;letter-spacing:.16em;font-weight:950}.hero h1{font-size:clamp(42px,7vw,92px);line-height:.88;letter-spacing:-.075em;margin:10px 0}.hero p,.lead{font-size:20px;color:var(--muted);line-height:1.55}.card{background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:24px;box-shadow:0 20px 80px rgba(0,0,0,.24)}.status{font-size:28px;font-weight:950;color:var(--green);overflow-wrap:anywhere}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:22px 0}.metric{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.metric strong{display:block;color:var(--green);font-size:34px}.metric span{color:var(--muted)}
-.section{margin:26px 0}.section h2{font-size:clamp(28px,4vw,54px);letter-spacing:-.045em;margin:0 0 14px}.proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.proof-card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:22px}.proof-card h3{font-size:24px;line-height:1.05;letter-spacing:-.035em;margin:8px 0}.proof-card p{color:var(--muted);line-height:1.45}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.button{display:inline-block;padding:11px 15px;border-radius:999px;font-weight:900;background:var(--cyan);color:#061421}.button.secondary{background:transparent;color:var(--text);border:1px solid var(--line)}
-.badge{display:inline-flex;align-items:center;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.04em}.badge.ok{background:rgba(125,255,176,.16);color:var(--green)}.badge.warn{background:rgba(255,214,107,.16);color:var(--gold)}.badge.bad{background:rgba(255,123,123,.16);color:var(--red)}.badge.neutral{background:rgba(255,255,255,.08);color:var(--muted)}
-table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:18px;overflow:hidden;border:1px solid var(--line)}th,td{padding:13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.07em}td{color:var(--text)}tr:last-child td{border-bottom:0}
-.notice{border-left:4px solid var(--gold);background:rgba(255,214,107,.08);border-radius:16px;padding:16px 18px;color:var(--muted);line-height:1.5}.small{font-size:13px;color:var(--muted)}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.step strong{display:block;color:var(--cyan);font-size:15px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+<style>:root{color-scheme:dark;--text:#f2fbff;--muted:#b3c0cd;--line:rgba(255,255,255,.14);--panel:rgba(255,255,255,.065);--cyan:#84f8ff;--green:#7dffb0;--gold:#ffd66b;--red:#ff7979;--blue:#91a7ff}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:radial-gradient(circle at 85% 0,#3c3e78 0,transparent 34%),radial-gradient(circle at 5% 18%,#104d63 0,transparent 24%),linear-gradient(135deg,#06131f,#13243d 60%,#26295a);color:var(--text)}
+a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}nav{display:flex;align-items:center;justify-content:space-between;gap:18px;position:sticky;top:0;z-index:20;background:rgba(6,19,31,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:14px 22px}.brand{font-weight:950;letter-spacing:-.03em}.navlinks{display:flex;gap:14px;flex-wrap:wrap}.navlinks a{color:var(--muted);font-weight:850;font-size:14px}
+main{max-width:1260px;margin:0 auto;padding:44px 22px 86px}.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:28px;align-items:center;padding:42px 0 24px}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.18em;font-weight:950;font-size:12px}.hero h1{font-size:clamp(44px,7vw,98px);line-height:.86;letter-spacing:-.08em;margin:10px 0}.hero p,.lead{color:var(--muted);font-size:20px;line-height:1.55}.card{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:0 24px 90px rgba(0,0,0,.26)}.status{font-size:28px;font-weight:950;color:var(--green);overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}.metric{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.metric strong{display:block;color:var(--green);font-size:34px;letter-spacing:-.04em}.metric span{color:var(--muted)}.section{margin:30px 0}.section h2{font-size:clamp(30px,4.8vw,58px);letter-spacing:-.055em;line-height:.95;margin:0 0 16px}.proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.proof-card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:22px}.proof-card h3{font-size:24px;line-height:1.05;letter-spacing:-.035em;margin:10px 0}.proof-card p{color:var(--muted);line-height:1.45}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.button{display:inline-block;border-radius:999px;padding:11px 16px;background:var(--cyan);color:#071521;font-weight:950}.button.secondary{background:transparent;border:1px solid var(--line);color:var(--text)}.button.gold{background:var(--gold);color:#15110a}
+.badge{display:inline-flex;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.04em}.badge.ok{background:rgba(125,255,176,.16);color:var(--green)}.badge.warn{background:rgba(255,214,107,.16);color:var(--gold)}.badge.bad{background:rgba(255,121,121,.16);color:var(--red)}.badge.neutral{background:rgba(255,255,255,.08);color:var(--muted)}
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}th,td{padding:13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}tr:last-child td{border-bottom:0}.small{font-size:13px;color:var(--muted)}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.notice{border-left:4px solid var(--gold);background:rgba(255,214,107,.08);border-radius:16px;padding:16px 18px;color:var(--muted);line-height:1.55}.roles{display:flex;flex-wrap:wrap;gap:8px}.roles span{border:1px solid var(--line);border-radius:999px;padding:8px 10px;color:var(--muted);background:rgba(255,255,255,.05);font-size:13px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.step strong{display:block;color:var(--cyan);font-size:13px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px}.quote{font-size:clamp(24px,3.6vw,46px);line-height:1.05;letter-spacing:-.04em;color:var(--text);margin:8px 0 12px}.divider{height:1px;background:var(--line);margin:24px 0}
 @media(max-width:900px){.hero,.grid,.proof-grid,.steps{grid-template-columns:1fr}nav{align-items:flex-start;flex-direction:column}.navlinks{gap:10px}}</style>
 </head>
 <body>
 <nav>
-  <a class="brand" href="index.html">SkillOS Public Proof Command Center</a>
+  <a class="brand" href="index.html">SkillOS Proof Command Center</a>
   <div class="navlinks">
     <a href="index.html">Home</a>
     <a href="proofs.html">Proofs</a>
     <a href="actions.html">Actions</a>
+    <a href="multi-agent.html">Multi-Agent</a>
     <a href="runbook.html">Run / Regenerate</a>
     <a href="https://github.com/MontrealAI/skillos">GitHub</a>
   </div>
 </nav>
 <main>
 <section class="section">
-  <div class="eyebrow">GitHub Actions</div>
-  <h2>Workflow status command board</h2>
-  <p class="lead">Latest visible workflow status from the repository. This page is regenerated by the autonomous site refresh workflow.</p>
+  <div class="eyebrow">Workflow command board</div>
+  <h2>GitHub Actions Status</h2>
+  <p class="lead">The public website refreshes from workflow files and latest workflow runs. Use this page to see what can be rerun.</p>
   <div class="actions">
     <a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/skillos-run-all-public-proofs.yml">Run all public proofs</a>
-    <a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/workflows/skillos-public-site-refresh.yml">Refresh this site</a>
+    <a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/workflows/skillos-public-proof-command-center-refresh.yml">Refresh site</a>
     <a class="button secondary" href="https://github.com/MontrealAI/skillos/actions">Open all Actions</a>
   </div>
   <table><tr><th>Workflow</th><th>Status</th><th>Event</th><th>Latest run</th></tr><tr>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"><strong>SkillOS Public Site Command Center Refresh</strong></a><br><span class="small mono">.github/workflows/skillos-public-site-refresh.yml</span></td>
 <td><span class="badge warn">running</span></td>
-<td>workflow_dispatch</td>
-<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26692485375">2026-05-30T19:11:06Z</a></td>
+<td>push</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26692727444">2026-05-30T19:22:45Z</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"><strong>SkillOS Public Proof Command Center Refresh</strong></a><br><span class="small mono">.github/workflows/skillos-public-proof-command-center-refresh.yml</span></td>
+<td><span class="badge warn">running</span></td>
+<td>push</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26692727459">2026-05-30T19:22:41Z</a></td>
 </tr>
 <tr>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"><strong>Deploy SkillOS website with autonomous safe public copy</strong></a><br><span class="small mono">.github/workflows/pages.yml</span></td>
-<td><span class="badge ok">passing</span></td>
+<td><span class="badge warn">running</span></td>
 <td>push</td>
-<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26692437081">2026-05-30T19:09:08Z</a></td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26692727456">2026-05-30T19:22:40Z</a></td>
 </tr>
 <tr>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"><strong>SkillOS tests</strong></a><br><span class="small mono">.github/workflows/tests.yml</span></td>
-<td><span class="badge ok">passing</span></td>
+<td><span class="badge warn">running</span></td>
 <td>push</td>
-<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26692437094">2026-05-30T19:08:51Z</a></td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26692727458">2026-05-30T19:22:40Z</a></td>
 </tr>
 <tr>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capability-command-center-v17-proof.yml"><strong>Autonomous RSI Capital-to-Capability Command Center v17 Proof</strong></a><br><span class="small mono">.github/workflows/rsi-capability-command-center-v17-proof.yml</span></td>
@@ -142,26 +142,32 @@ table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:
 <td><a href="https://github.com/MontrealAI/skillos/actions/runs/26682938896">2026-05-30T11:43:29Z</a></td>
 </tr>
 <tr>
+<td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/_skillos-public-proof-command-center-refresh-reusable.yml"><strong>_SkillOS Public Proof Command Center Refresh Reusable</strong></a><br><span class="small mono">.github/workflows/_skillos-public-proof-command-center-refresh-reusable.yml</span></td>
+<td><span class="badge warn">not run yet</span></td>
+<td></td>
+<td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/_skillos-public-proof-command-center-refresh-reusable.yml">not run yet</a></td>
+</tr>
+<tr>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/_skillos-public-site-refresh-reusable.yml"><strong>_SkillOS Public Site Refresh Reusable</strong></a><br><span class="small mono">.github/workflows/_skillos-public-site-refresh-reusable.yml</span></td>
-<td><span class="badge neutral">not run yet</span></td>
+<td><span class="badge warn">not run yet</span></td>
 <td></td>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/_skillos-public-site-refresh-reusable.yml">not run yet</a></td>
 </tr>
 <tr>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/safe-public-copy-check.yml"><strong>Safe public copy check</strong></a><br><span class="small mono">.github/workflows/safe-public-copy-check.yml</span></td>
-<td><span class="badge neutral">not run yet</span></td>
+<td><span class="badge warn">not run yet</span></td>
 <td></td>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/safe-public-copy-check.yml">not run yet</a></td>
 </tr>
 <tr>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/shadow-pilot-proof.yml"><strong>Autonomous Shadow Pilot Proof</strong></a><br><span class="small mono">.github/workflows/shadow-pilot-proof.yml</span></td>
-<td><span class="badge neutral">not run yet</span></td>
+<td><span class="badge warn">not run yet</span></td>
 <td></td>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/shadow-pilot-proof.yml">not run yet</a></td>
 </tr>
 <tr>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-run-all-public-proofs.yml"><strong>SkillOS Run All Public Proofs</strong></a><br><span class="small mono">.github/workflows/skillos-run-all-public-proofs.yml</span></td>
-<td><span class="badge neutral">not run yet</span></td>
+<td><span class="badge warn">not run yet</span></td>
 <td></td>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-run-all-public-proofs.yml">not run yet</a></td>
 </tr></table>

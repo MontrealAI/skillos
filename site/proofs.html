@@ -3,116 +3,117 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SkillOS Proof Library</title>
-<style>:root{color-scheme:dark;--bg:#071421;--panel:rgba(255,255,255,.065);--line:rgba(255,255,255,.14);--text:#eff8ff;--muted:#aebdca;--cyan:#82f7ff;--green:#7dffb0;--gold:#ffd66b;--red:#ff7b7b}
-*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:radial-gradient(circle at 80% 0,#3a3b72 0,transparent 36%),linear-gradient(135deg,#06131e,#13243d 60%,#252958);color:var(--text)}
-a{color:var(--cyan);text-decoration:none} a:hover{text-decoration:underline}
-main{max-width:1240px;margin:0 auto;padding:42px 22px 80px}
-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:0;z-index:10;background:rgba(7,20,33,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:13px 22px}
-.brand{font-weight:900;letter-spacing:-.02em}.navlinks{display:flex;gap:14px;flex-wrap:wrap}.navlinks a{color:var(--muted);font-weight:800;font-size:14px}
-.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center;padding:48px 0 28px}.eyebrow{color:var(--cyan);font-size:12px;text-transform:uppercase;letter-spacing:.16em;font-weight:950}.hero h1{font-size:clamp(42px,7vw,92px);line-height:.88;letter-spacing:-.075em;margin:10px 0}.hero p,.lead{font-size:20px;color:var(--muted);line-height:1.55}.card{background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:24px;box-shadow:0 20px 80px rgba(0,0,0,.24)}.status{font-size:28px;font-weight:950;color:var(--green);overflow-wrap:anywhere}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:22px 0}.metric{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.metric strong{display:block;color:var(--green);font-size:34px}.metric span{color:var(--muted)}
-.section{margin:26px 0}.section h2{font-size:clamp(28px,4vw,54px);letter-spacing:-.045em;margin:0 0 14px}.proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.proof-card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:22px}.proof-card h3{font-size:24px;line-height:1.05;letter-spacing:-.035em;margin:8px 0}.proof-card p{color:var(--muted);line-height:1.45}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.button{display:inline-block;padding:11px 15px;border-radius:999px;font-weight:900;background:var(--cyan);color:#061421}.button.secondary{background:transparent;color:var(--text);border:1px solid var(--line)}
-.badge{display:inline-flex;align-items:center;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.04em}.badge.ok{background:rgba(125,255,176,.16);color:var(--green)}.badge.warn{background:rgba(255,214,107,.16);color:var(--gold)}.badge.bad{background:rgba(255,123,123,.16);color:var(--red)}.badge.neutral{background:rgba(255,255,255,.08);color:var(--muted)}
-table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:18px;overflow:hidden;border:1px solid var(--line)}th,td{padding:13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.07em}td{color:var(--text)}tr:last-child td{border-bottom:0}
-.notice{border-left:4px solid var(--gold);background:rgba(255,214,107,.08);border-radius:16px;padding:16px 18px;color:var(--muted);line-height:1.5}.small{font-size:13px;color:var(--muted)}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.step strong{display:block;color:var(--cyan);font-size:15px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+<style>:root{color-scheme:dark;--text:#f2fbff;--muted:#b3c0cd;--line:rgba(255,255,255,.14);--panel:rgba(255,255,255,.065);--cyan:#84f8ff;--green:#7dffb0;--gold:#ffd66b;--red:#ff7979;--blue:#91a7ff}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:radial-gradient(circle at 85% 0,#3c3e78 0,transparent 34%),radial-gradient(circle at 5% 18%,#104d63 0,transparent 24%),linear-gradient(135deg,#06131f,#13243d 60%,#26295a);color:var(--text)}
+a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}nav{display:flex;align-items:center;justify-content:space-between;gap:18px;position:sticky;top:0;z-index:20;background:rgba(6,19,31,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:14px 22px}.brand{font-weight:950;letter-spacing:-.03em}.navlinks{display:flex;gap:14px;flex-wrap:wrap}.navlinks a{color:var(--muted);font-weight:850;font-size:14px}
+main{max-width:1260px;margin:0 auto;padding:44px 22px 86px}.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:28px;align-items:center;padding:42px 0 24px}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.18em;font-weight:950;font-size:12px}.hero h1{font-size:clamp(44px,7vw,98px);line-height:.86;letter-spacing:-.08em;margin:10px 0}.hero p,.lead{color:var(--muted);font-size:20px;line-height:1.55}.card{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:0 24px 90px rgba(0,0,0,.26)}.status{font-size:28px;font-weight:950;color:var(--green);overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}.metric{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.metric strong{display:block;color:var(--green);font-size:34px;letter-spacing:-.04em}.metric span{color:var(--muted)}.section{margin:30px 0}.section h2{font-size:clamp(30px,4.8vw,58px);letter-spacing:-.055em;line-height:.95;margin:0 0 16px}.proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.proof-card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:22px}.proof-card h3{font-size:24px;line-height:1.05;letter-spacing:-.035em;margin:10px 0}.proof-card p{color:var(--muted);line-height:1.45}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.button{display:inline-block;border-radius:999px;padding:11px 16px;background:var(--cyan);color:#071521;font-weight:950}.button.secondary{background:transparent;border:1px solid var(--line);color:var(--text)}.button.gold{background:var(--gold);color:#15110a}
+.badge{display:inline-flex;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.04em}.badge.ok{background:rgba(125,255,176,.16);color:var(--green)}.badge.warn{background:rgba(255,214,107,.16);color:var(--gold)}.badge.bad{background:rgba(255,121,121,.16);color:var(--red)}.badge.neutral{background:rgba(255,255,255,.08);color:var(--muted)}
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}th,td{padding:13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}tr:last-child td{border-bottom:0}.small{font-size:13px;color:var(--muted)}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.notice{border-left:4px solid var(--gold);background:rgba(255,214,107,.08);border-radius:16px;padding:16px 18px;color:var(--muted);line-height:1.55}.roles{display:flex;flex-wrap:wrap;gap:8px}.roles span{border:1px solid var(--line);border-radius:999px;padding:8px 10px;color:var(--muted);background:rgba(255,255,255,.05);font-size:13px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.step strong{display:block;color:var(--cyan);font-size:13px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px}.quote{font-size:clamp(24px,3.6vw,46px);line-height:1.05;letter-spacing:-.04em;color:var(--text);margin:8px 0 12px}.divider{height:1px;background:var(--line);margin:24px 0}
 @media(max-width:900px){.hero,.grid,.proof-grid,.steps{grid-template-columns:1fr}nav{align-items:flex-start;flex-direction:column}.navlinks{gap:10px}}</style>
 </head>
 <body>
 <nav>
-  <a class="brand" href="index.html">SkillOS Public Proof Command Center</a>
+  <a class="brand" href="index.html">SkillOS Proof Command Center</a>
   <div class="navlinks">
     <a href="index.html">Home</a>
     <a href="proofs.html">Proofs</a>
     <a href="actions.html">Actions</a>
+    <a href="multi-agent.html">Multi-Agent</a>
     <a href="runbook.html">Run / Regenerate</a>
     <a href="https://github.com/MontrealAI/skillos">GitHub</a>
   </div>
 </nav>
 <main>
 <section class="section">
-  <div class="eyebrow">Proof library</div>
-  <h2>All public SkillOS proofs</h2>
-  <p class="lead">Every proof card links to the visual page when available, the workflow that reruns it, the documentation, and machine-readable JSON receipts.</p>
+  <div class="eyebrow">All public proof entries</div>
+  <h2>Proof Library</h2>
+  <p class="lead">Every proof card links to the visual page when available, the GitHub Action that regenerates it, the Markdown report, and the machine-readable JSON receipt.</p>
   <div class="proof-grid">
-<div class="proof-card">
-  <span class="badge ok">passed autonomous rsi adversarial capability command center proof</span>
-  <h3>Capability Command Center</h3>
-  <p>adversarial large-scale agentic coordination for capital-to-capability compounding, market capture, resource allocation, risk control, and validated reinvestment</p>
-  <p class="small">320 agents · 32 roles · 11 RSI releases · 1280 holdout cases</p>
-  <div class='actions'><span class='badge neutral'>fully correct: 100.0%</span><span class='badge neutral'>value capture: 91.4%</span><span class='badge neutral'>coordination: 100.0%</span><span class='badge neutral'>risk control: 100.0%</span></div>
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_capability_command_center_proof.md">Read doc</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_capability_command_center_proof.json">Inspect JSON</a></div>
-</div>
-
 <div class="proof-card">
   <span class="badge ok">passed autonomous rsi capital to capability command center v17 proof</span>
   <h3>Capability Command Center V17</h3>
   <p>adversarial capital-to-capability command center proof with recursive self-improvement and large-scale specialist-agent coordination</p>
-  <p class="small">512 agents · 64 roles · 11 RSI releases · 1280 holdout cases</p>
-  <div class='actions'><span class='badge neutral'>fully correct: 100.0%</span><span class='badge neutral'>coordination: 100.0%</span><span class='badge neutral'>risk control: 100.0%</span><span class='badge neutral'>capability lever: 100.0%</span></div>
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_capability_command_center_v17_proof.md">Read doc</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_capability_command_center_v17_proof.json">Inspect JSON</a></div>
+  <p class="small">512 agents · 64 roles · 1280 holdout · 11 RSI releases</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_capability_command_center_v17_proof.json">JSON</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_capability_command_center_v17_proof.md">Docs</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">not run yet</span>
+  <span class="badge ok">passed autonomous rsi adversarial capability command center proof</span>
   <h3>Capability Command Center</h3>
-  <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-capability-command-center-proof.html">View proof</a></div>
-</div>
-
-<div class="proof-card">
-  <span class="badge neutral">not run yet</span>
-  <h3>Capability Command Center V17</h3>
-  <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-capability-command-center-v17-proof.html">View proof</a></div>
+  <p>adversarial large-scale agentic coordination for capital-to-capability compounding, market capture, resource allocation, risk control, and validated reinvestment</p>
+  <p class="small">320 agents · 32 roles · 1280 holdout · 11 RSI releases</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_capability_command_center_proof.json">JSON</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_capability_command_center_proof.md">Docs</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passing</span>
   <h3>Autonomous RSI Adversarial Capability Command Center Proof</h3>
   <p>Autonomous RSI Adversarial Capability Command Center Proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capability-command-center-proof.yml">Run on GitHub</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">not run yet</span>
-  <h3>Autonomous Rsi Capability Command Center Proof</h3>
+  <span class="badge warn">not run yet</span>
+  <h3>Capability Command Center</h3>
   <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_CAPABILITY_COMMAND_CENTER_PROOF.md">Read doc</a></div>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-capability-command-center-proof.html">View proof</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">not run yet</span>
-  <h3>Autonomous Rsi Capability Command Center V17 Proof</h3>
+  <span class="badge warn">not run yet</span>
+  <h3>Capability Command Center V17</h3>
   <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_CAPABILITY_COMMAND_CENTER_V17_PROOF.md">Read doc</a></div>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-capability-command-center-v17-proof.html">View proof</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passing</span>
   <h3>Autonomous RSI Capital-to-Capability Command Center v17 Proof</h3>
   <p>Autonomous RSI Capital-to-Capability Command Center v17 Proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capability-command-center-v17-proof.yml">Run on GitHub</a></div>
+</div>
+
+<div class="proof-card">
+  <span class="badge warn">not run yet</span>
+  <h3>Rsi Capability Command Center</h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_CAPABILITY_COMMAND_CENTER_PROOF.md">Docs</a></div>
+</div>
+
+<div class="proof-card">
+  <span class="badge warn">not run yet</span>
+  <h3>Rsi Capability Command Center V17</h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_CAPABILITY_COMMAND_CENTER_V17_PROOF.md">Docs</a></div>
+</div>
+
+<div class="proof-card">
+  <span class="badge ok">passed autonomous rsi capital to capability engine proof</span>
+  <h3>Capital To Capability Engine</h3>
+  <p>large-scale agentic coordination for capital-to-capability compounding, market capture, resource allocation, risk control, and validated reinvestment</p>
+  <p class="small">256 agents · 32 roles · 1440 holdout · 13 RSI releases</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_capital_to_capability_engine_proof.json">JSON</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_capital_to_capability_engine_proof.md">Docs</a></div>
+</div>
+
+<div class="proof-card">
+  <span class="badge warn">not run yet</span>
+  <h3>Capital To Capability Engine</h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-capital-to-capability-engine-proof.html">View proof</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passing</span>
   <h3>Autonomous RSI Capital-to-Capability Engine Proof</h3>
   <p>Autonomous RSI Capital-to-Capability Engine Proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capital-to-capability-engine-proof.yml">Run on GitHub</a></div>
 </div>
 
@@ -120,296 +121,215 @@ table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:
   <span class="badge ok">passed autonomous rsi adversarial multi agent market command center proof</span>
   <h3>Adversarial Multi Agent Command Center</h3>
   <p>adversarial large-scale agentic coordination for profitable market-capture portfolio selection, resource allocation, risk control, and compounding business strategy</p>
-  <p class="small">160 agents · 20 roles · 13 RSI releases · 1200 holdout cases</p>
-  <div class='actions'><span class='badge neutral'>fully correct: 100.0%</span><span class='badge neutral'>value capture: 89.3%</span><span class='badge neutral'>coordination: 100.0%</span><span class='badge neutral'>risk control: 100.0%</span></div>
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_adversarial_multi_agent_market_command_center_proof.md">Read doc</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_adversarial_multi_agent_market_command_center_proof.json">Inspect JSON</a></div>
+  <p class="small">160 agents · 20 roles · 1200 holdout · 13 RSI releases</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_adversarial_multi_agent_market_command_center_proof.json">JSON</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_adversarial_multi_agent_market_command_center_proof.md">Docs</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">not run yet</span>
+  <span class="badge warn">not run yet</span>
   <h3>Adversarial Multi Agent Command Center</h3>
   <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-adversarial-multi-agent-market-command-center-proof.html">View proof</a></div>
-</div>
-
-<div class="proof-card">
-  <span class="badge neutral">not run yet</span>
-  <h3>Autonomous Rsi Adversarial Multi Agent Market Command Center Proof</h3>
-  <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_ADVERSARIAL_MULTI_AGENT_MARKET_COMMAND_CENTER_PROOF.md">Read doc</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passing</span>
   <h3>Autonomous RSI Adversarial Multi-Agent Market Command Center Proof</h3>
   <p>Autonomous RSI Adversarial Multi-Agent Market Command Center Proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-adversarial-multi-agent-market-command-center-proof.yml">Run on GitHub</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge ok">passed autonomous rsi capital to capability engine proof</span>
-  <h3>Capital To Capability Engine</h3>
-  <p>large-scale agentic coordination for capital-to-capability compounding, market capture, resource allocation, risk control, and validated reinvestment</p>
-  <p class="small">256 agents · 32 roles · 13 RSI releases · 1440 holdout cases</p>
-  <div class='actions'><span class='badge neutral'>fully correct: 100.0%</span><span class='badge neutral'>value capture: 90.5%</span><span class='badge neutral'>coordination: 100.0%</span><span class='badge neutral'>risk control: 100.0%</span></div>
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_capital_to_capability_engine_proof.md">Read doc</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_capital_to_capability_engine_proof.json">Inspect JSON</a></div>
+  <span class="badge warn">not run yet</span>
+  <h3>Rsi Adversarial Multi Agent Command Center</h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_ADVERSARIAL_MULTI_AGENT_MARKET_COMMAND_CENTER_PROOF.md">Docs</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passed autonomous rsi cloudops market proof</span>
   <h3>Cloudops</h3>
   <p>cloud reliability incident triage and cloud-cost remediation planning</p>
-  <p class="small">8 RSI releases · 420 holdout cases</p>
-  <div class='actions'><span class='badge neutral'>fully correct: 100.0%</span></div>
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_cloudops_market_proof.md">Read doc</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_cloudops_market_proof.json">Inspect JSON</a></div>
+  <p class="small">420 holdout · 8 RSI releases</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_cloudops_market_proof.json">JSON</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_cloudops_market_proof.md">Docs</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passed autonomous rsi corporate os market proof</span>
   <h3>Corporate Os</h3>
   <p>corporate operating-system diagnosis and board-ready operating-plan generation</p>
-  <p class="small">11 RSI releases · 720 holdout cases</p>
-  <div class='actions'><span class='badge neutral'>fully correct: 100.0%</span><span class='badge neutral'>value capture: 100.0%</span></div>
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_corporate_os_market_proof.md">Read doc</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_corporate_os_market_proof.json">Inspect JSON</a></div>
+  <p class="small">720 holdout · 11 RSI releases</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_corporate_os_market_proof.json">JSON</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_corporate_os_market_proof.md">Docs</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passed autonomous rsi cyberdefense market proof</span>
   <h3>Cyberdefense</h3>
   <p>security operations alert triage and incident containment planning</p>
-  <p class="small">9 RSI releases · 640 holdout cases</p>
-  <div class='actions'><span class='badge neutral'>fully correct: 100.0%</span></div>
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_cyberdefense_market_proof.md">Read doc</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_cyberdefense_market_proof.json">Inspect JSON</a></div>
+  <p class="small">640 holdout · 9 RSI releases</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_cyberdefense_market_proof.json">JSON</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_cyberdefense_market_proof.md">Docs</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passed autonomous enterprise ops market proof</span>
   <h3>Enterprise Ops</h3>
   <p>procurement invoice reconciliation and payment-risk triage</p>
-  <p class="small">360 holdout cases</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/enterprise_ops_market_proof.md">Read doc</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/enterprise_ops_market_proof.json">Inspect JSON</a></div>
+  <p class="small">360 holdout</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/enterprise_ops_market_proof.json">JSON</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/enterprise_ops_market_proof.md">Docs</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passed autonomous rsi marketplace flywheel market proof</span>
   <h3>Marketplace Flywheel</h3>
   <p>AI work marketplace liquidity, skill-supply allocation, pricing, routing, and compounding flywheel optimization</p>
-  <p class="small">11 RSI releases · 900 holdout cases</p>
-  <div class='actions'><span class='badge neutral'>fully correct: 100.0%</span><span class='badge neutral'>value capture: 87.0%</span><span class='badge neutral'>compounding: 95</span></div>
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_marketplace_flywheel_market_proof.md">Read doc</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_marketplace_flywheel_market_proof.json">Inspect JSON</a></div>
+  <p class="small">900 holdout · 11 RSI releases</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_marketplace_flywheel_market_proof.json">JSON</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_marketplace_flywheel_market_proof.md">Docs</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passed autonomous rsi metamaterials discovery market proof</span>
   <h3>Metamaterials Discovery</h3>
   <p>autonomous lightweight metamaterial discovery for load-bearing structures</p>
-  <p class="small">7 RSI releases · 840 holdout cases</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_metamaterials_discovery_market_proof.md">Read doc</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_metamaterials_discovery_market_proof.json">Inspect JSON</a></div>
+  <p class="small">840 holdout · 7 RSI releases</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_metamaterials_discovery_market_proof.json">JSON</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_metamaterials_discovery_market_proof.md">Docs</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passed autonomous rsi revenue experiment factory market proof</span>
   <h3>Revenue Experiment Factory</h3>
   <p>revenue experiment design, causal validation, portfolio allocation, and scalable growth-plan selection</p>
-  <p class="small">11 RSI releases · 960 holdout cases</p>
-  <div class='actions'><span class='badge neutral'>fully correct: 100.0%</span><span class='badge neutral'>value capture: 82.4%</span></div>
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_revenue_experiment_factory_market_proof.md">Read doc</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_revenue_experiment_factory_market_proof.json">Inspect JSON</a></div>
+  <p class="small">960 holdout · 11 RSI releases</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_revenue_experiment_factory_market_proof.json">JSON</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_revenue_experiment_factory_market_proof.md">Docs</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passed</span>
   <h3>Shadow Pilot</h3>
   <p>Sales follow-up email drafts from call notes</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/shadow_pilot_proof.md">Read doc</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/shadow_pilot_proof.json">Inspect JSON</a></div>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/shadow_pilot_proof.json">JSON</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/shadow_pilot_proof.md">Docs</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passed autonomous rsi silicon verification market proof</span>
   <h3>Silicon Verification</h3>
   <p>semiconductor RTL verification, bug triage, assertion selection, and fix-plan recommendation</p>
-  <p class="small">10 RSI releases · 720 holdout cases</p>
-  <div class='actions'><span class='badge neutral'>fully correct: 100.0%</span></div>
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_silicon_verification_market_proof.md">Read doc</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_silicon_verification_market_proof.json">Inspect JSON</a></div>
+  <p class="small">720 holdout · 10 RSI releases</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_silicon_verification_market_proof.json">JSON</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_silicon_verification_market_proof.md">Docs</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passed autonomous rsi unit economics profit engine market proof</span>
   <h3>Unit Economics</h3>
   <p>AI workflow marketplace unit-economics optimization and scalable profit-capture planning</p>
-  <p class="small">11 RSI releases · 840 holdout cases</p>
-  <div class='actions'><span class='badge neutral'>fully correct: 100.0%</span><span class='badge neutral'>value capture: 84.7%</span></div>
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_unit_economics_market_proof.md">Read doc</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_unit_economics_market_proof.json">Inspect JSON</a></div>
+  <p class="small">840 holdout · 11 RSI releases</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_unit_economics_market_proof.json">JSON</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_unit_economics_market_proof.md">Docs</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">not run yet</span>
-  <h3>Capital To Capability Engine</h3>
-  <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-capital-to-capability-engine-proof.html">View proof</a></div>
-</div>
-
-<div class="proof-card">
-  <span class="badge neutral">not run yet</span>
+  <span class="badge warn">not run yet</span>
   <h3>Cloudops</h3>
   <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-cloudops-proof.html">View proof</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">not run yet</span>
+  <span class="badge warn">not run yet</span>
   <h3>Corporate Os</h3>
   <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-corporate-os-proof.html">View proof</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">not run yet</span>
+  <span class="badge warn">not run yet</span>
   <h3>Cyberdefense</h3>
   <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-cyberdefense-proof.html">View proof</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">not run yet</span>
+  <span class="badge warn">not run yet</span>
   <h3>Enterprise Ops</h3>
   <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/enterprise-ops-proof.html">View proof</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">not run yet</span>
+  <span class="badge warn">not run yet</span>
   <h3>Marketplace Flywheel</h3>
   <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-marketplace-flywheel-proof.html">View proof</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">not run yet</span>
+  <span class="badge warn">not run yet</span>
   <h3>Metamaterials Discovery</h3>
   <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-metamaterials-discovery-proof.html">View proof</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">not run yet</span>
+  <span class="badge warn">not run yet</span>
   <h3>Proofs</h3>
   <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/proofs.html">View proof</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">not run yet</span>
+  <span class="badge warn">not run yet</span>
   <h3>Revenue Experiment Factory</h3>
   <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-revenue-experiment-factory-proof.html">View proof</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">not run yet</span>
+  <span class="badge warn">not run yet</span>
   <h3>Shadow Pilot</h3>
   <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/shadow-pilot-proof.html">View proof</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">not run yet</span>
+  <span class="badge warn">not run yet</span>
   <h3>Silicon Verification</h3>
   <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-silicon-verification-proof.html">View proof</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">not run yet</span>
+  <span class="badge warn">not run yet</span>
   <h3>Unit Economics</h3>
   <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-unit-economics-proof.html">View proof</a></div>
-</div>
-
-<div class="proof-card">
-  <span class="badge neutral">not run yet</span>
-  <h3>Autonomous Enterprise Ops Market Proof</h3>
-  <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_ENTERPRISE_OPS_MARKET_PROOF.md">Read doc</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passing</span>
   <h3>Autonomous Enterprise Ops Market Proof</h3>
   <p>Autonomous Enterprise Ops Market Proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/enterprise-ops-proof.yml">Run on GitHub</a></div>
-</div>
-
-<div class="proof-card">
-  <span class="badge neutral">not run yet</span>
-  <h3>Autonomous Market Readiness Proof</h3>
-  <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_MARKET_READINESS_PROOF.md">Read doc</a></div>
-</div>
-
-<div class="proof-card">
-  <span class="badge neutral">not run yet</span>
-  <h3>Autonomous Rsi Capital To Capability Engine Proof</h3>
-  <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_CAPITAL_TO_CAPABILITY_ENGINE_PROOF.md">Read doc</a></div>
-</div>
-
-<div class="proof-card">
-  <span class="badge neutral">not run yet</span>
-  <h3>Autonomous Rsi Cloudops Market Proof</h3>
-  <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_CLOUDOPS_MARKET_PROOF.md">Read doc</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passing</span>
   <h3>Autonomous RSI CloudOps Market Proof</h3>
   <p>Autonomous RSI CloudOps Market Proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cloudops-proof.yml">Run on GitHub</a></div>
 </div>
 
@@ -417,71 +337,31 @@ table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:
   <span class="badge ok">passing</span>
   <h3>Autonomous RSI Corporate Operating System Market Proof</h3>
   <p>Autonomous RSI Corporate Operating System Market Proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-corporate-os-proof.yml">Run on GitHub</a></div>
-</div>
-
-<div class="proof-card">
-  <span class="badge neutral">not run yet</span>
-  <h3>Autonomous Rsi Corporate Os Market Proof</h3>
-  <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_CORPORATE_OS_MARKET_PROOF.md">Read doc</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passing</span>
   <h3>Autonomous RSI Cyber Defense Market Proof</h3>
   <p>Autonomous RSI Cyber Defense Market Proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cyberdefense-proof.yml">Run on GitHub</a></div>
-</div>
-
-<div class="proof-card">
-  <span class="badge neutral">not run yet</span>
-  <h3>Autonomous Rsi Cyberdefense Market Proof</h3>
-  <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_CYBERDEFENSE_MARKET_PROOF.md">Read doc</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passing</span>
   <h3>Autonomous RSI Marketplace Flywheel Market Proof</h3>
   <p>Autonomous RSI Marketplace Flywheel Market Proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-marketplace-flywheel-proof.yml">Run on GitHub</a></div>
-</div>
-
-<div class="proof-card">
-  <span class="badge neutral">not run yet</span>
-  <h3>Autonomous Rsi Marketplace Flywheel Proof</h3>
-  <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_MARKETPLACE_FLYWHEEL_PROOF.md">Read doc</a></div>
-</div>
-
-<div class="proof-card">
-  <span class="badge neutral">not run yet</span>
-  <h3>Autonomous Rsi Metamaterials Discovery Market Proof</h3>
-  <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_METAMATERIALS_DISCOVERY_MARKET_PROOF.md">Read doc</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passing</span>
   <h3>Autonomous RSI Metamaterials Discovery Market Proof</h3>
   <p>Autonomous RSI Metamaterials Discovery Market Proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-metamaterials-discovery-proof.yml">Run on GitHub</a></div>
 </div>
 
@@ -489,80 +369,39 @@ table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:
   <span class="badge ok">passing</span>
   <h3>Autonomous RSI Revenue Experiment Factory Market Proof</h3>
   <p>Autonomous RSI Revenue Experiment Factory Market Proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-revenue-experiment-factory-proof.yml">Run on GitHub</a></div>
-</div>
-
-<div class="proof-card">
-  <span class="badge neutral">not run yet</span>
-  <h3>Autonomous Rsi Revenue Experiment Factory Proof</h3>
-  <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_REVENUE_EXPERIMENT_FACTORY_PROOF.md">Read doc</a></div>
-</div>
-
-<div class="proof-card">
-  <span class="badge neutral">not run yet</span>
-  <h3>Autonomous Rsi Silicon Verification Market Proof</h3>
-  <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_SILICON_VERIFICATION_MARKET_PROOF.md">Read doc</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passing</span>
   <h3>Autonomous RSI Silicon Verification Market Proof</h3>
   <p>Autonomous RSI Silicon Verification Market Proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-silicon-verification-proof.yml">Run on GitHub</a></div>
-</div>
-
-<div class="proof-card">
-  <span class="badge neutral">not run yet</span>
-  <h3>Autonomous Rsi Unit Economics Market Proof</h3>
-  <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_UNIT_ECONOMICS_MARKET_PROOF.md">Read doc</a></div>
 </div>
 
 <div class="proof-card">
   <span class="badge ok">passing</span>
   <h3>Autonomous RSI Unit Economics Profit Engine Market Proof</h3>
   <p>Autonomous RSI Unit Economics Profit Engine Market Proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-unit-economics-proof.yml">Run on GitHub</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">not run yet</span>
-  <h3>Autonomous Shadow Pilot Proof</h3>
-  <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_SHADOW_PILOT_PROOF.md">Read doc</a></div>
-</div>
-
-<div class="proof-card">
-  <span class="badge neutral">not run yet</span>
+  <span class="badge warn">not run yet</span>
   <h3>Autonomous Shadow Pilot Proof</h3>
   <p>Autonomous Shadow Pilot Proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/shadow-pilot-proof.yml">Run on GitHub</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge ok">passing</span>
+  <span class="badge warn">running</span>
   <h3>Deploy SkillOS website with autonomous safe public copy</h3>
   <p>Deploy SkillOS website with autonomous safe public copy</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml">Run on GitHub</a></div>
 </div>
 
@@ -570,36 +409,128 @@ table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:
   <span class="badge ok">passing</span>
   <h3>Fully Autonomous Market-Readiness Proof</h3>
   <p>Fully Autonomous Market-Readiness Proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-market-readiness.yml">Run on GitHub</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge ok">passing</span>
+  <span class="badge warn">running</span>
   <h3>SkillOS tests</h3>
   <p>SkillOS tests</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
+  <p class="small">public, reproducible proof</p>
   <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml">Run on GitHub</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">pending</span>
-  <h3>Wealth</h3>
-  <p>{&#x27;name&#x27;: &#x27;Sales follow-up email from call notes&#x27;, &#x27;why_this_workflow&#x27;: &#x27;Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.&#x27;, &#x27;real_work_unit&#x27;: &#x27;Draft one buyer-specific follow-up email from call notes.&#x27;, &#x27;note&#x27;: &#x27;The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.&#x27;}</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/wealth_proof.json">Inspect JSON</a></div>
+  <span class="badge warn">not run yet</span>
+  <h3>Enterprise Ops</h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_ENTERPRISE_OPS_MARKET_PROOF.md">Docs</a></div>
 </div>
 
 <div class="proof-card">
-  <span class="badge neutral">not run yet</span>
+  <span class="badge warn">not run yet</span>
+  <h3>Readiness</h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_MARKET_READINESS_PROOF.md">Docs</a></div>
+</div>
+
+<div class="proof-card">
+  <span class="badge warn">not run yet</span>
+  <h3>Rsi Capital To Capability Engine</h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_CAPITAL_TO_CAPABILITY_ENGINE_PROOF.md">Docs</a></div>
+</div>
+
+<div class="proof-card">
+  <span class="badge warn">not run yet</span>
+  <h3>Rsi Cloudops</h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_CLOUDOPS_MARKET_PROOF.md">Docs</a></div>
+</div>
+
+<div class="proof-card">
+  <span class="badge warn">not run yet</span>
+  <h3>Rsi Corporate Os</h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_CORPORATE_OS_MARKET_PROOF.md">Docs</a></div>
+</div>
+
+<div class="proof-card">
+  <span class="badge warn">not run yet</span>
+  <h3>Rsi Cyberdefense</h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_CYBERDEFENSE_MARKET_PROOF.md">Docs</a></div>
+</div>
+
+<div class="proof-card">
+  <span class="badge warn">not run yet</span>
+  <h3>Rsi Marketplace Flywheel</h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_MARKETPLACE_FLYWHEEL_PROOF.md">Docs</a></div>
+</div>
+
+<div class="proof-card">
+  <span class="badge warn">not run yet</span>
+  <h3>Rsi Metamaterials Discovery</h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_METAMATERIALS_DISCOVERY_MARKET_PROOF.md">Docs</a></div>
+</div>
+
+<div class="proof-card">
+  <span class="badge warn">not run yet</span>
+  <h3>Rsi Revenue Experiment Factory</h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_REVENUE_EXPERIMENT_FACTORY_PROOF.md">Docs</a></div>
+</div>
+
+<div class="proof-card">
+  <span class="badge warn">not run yet</span>
+  <h3>Rsi Silicon Verification</h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_SILICON_VERIFICATION_MARKET_PROOF.md">Docs</a></div>
+</div>
+
+<div class="proof-card">
+  <span class="badge warn">not run yet</span>
+  <h3>Rsi Unit Economics</h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_UNIT_ECONOMICS_MARKET_PROOF.md">Docs</a></div>
+</div>
+
+<div class="proof-card">
+  <span class="badge warn">not run yet</span>
+  <h3>Shadow Pilot</h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_SHADOW_PILOT_PROOF.md">Docs</a></div>
+</div>
+
+<div class="proof-card">
+  <span class="badge warn">not run yet</span>
   <h3>Wealth Accumulation</h3>
   <p>Autonomous public proof</p>
-  <p class="small">public, reproducible GitHub proof</p>
-  
-  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/wealth_accumulation_proof.md">Read doc</a></div>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/wealth_accumulation_proof.md">Docs</a></div>
+</div>
+
+<div class="proof-card">
+  <span class="badge warn">pending</span>
+  <h3>Wealth</h3>
+  <p>{&#x27;name&#x27;: &#x27;Sales follow-up email from call notes&#x27;, &#x27;why_this_workflow&#x27;: &#x27;Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.&#x27;, &#x27;real_work_unit&#x27;: &#x27;Draft one buyer-specific follow-up email from call notes.&#x27;, &#x27;note&#x27;: &#x27;The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.&#x27;}</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/wealth_proof.json">JSON</a></div>
 </div>
 </div>
 </section>

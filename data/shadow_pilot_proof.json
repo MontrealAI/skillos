@@ -1,6 +1,6 @@
 {
   "proved": true,
-  "generated_at_utc": "2026-05-30T13:40:30.367760+00:00",
+  "generated_at_utc": "2026-05-30T14:13:31.691104+00:00",
   "proof_type": "autonomous_no_send_shadow_pilot",
   "important_note": "This is a deterministic no-send benchmark using synthetic/redacted call notes. It demonstrates the SkillOS mechanism and does not claim audited customer results or financial guarantees.",
   "workflow": "Sales follow-up email drafts from call notes",

@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkillOS Proof Leaderboard</title>
+<link rel="stylesheet" href="assets/command-center.css">
+<script defer src="assets/command-center.js"></script>
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">SkillOS Proof Command Center</a>
+  <div class="navlinks">
+    <a href="index.html">Home</a>
+    <a href="proofs.html">Proofs</a>
+    <a href="actions.html">Actions</a>
+    <a href="multi-agent.html">Multi-Agent</a>
+    <a href="receipts.html">Receipts</a>
+    <a href="architecture.html">Architecture</a>
+    <a href="runbook.html">Run / Regenerate</a>
+    <a href="https://github.com/MontrealAI/skillos">GitHub</a>
+  </div>
+</nav>
+<main>
+<section class="section">
+  <div class="eyebrow">Public proof ranking</div>
+  <h2>Proof Leaderboard</h2>
+  <p class="lead">Ranked public proof entries by agent count, roles, RSI releases, and holdout scale where available.</p>
+  <div class="chart" data-chart="proof-status"></div>
+  <table><tr><th>Proof</th><th>Agents</th><th>Roles</th><th>RSI releases</th><th>Holdout cases</th><th>Status</th></tr><tr>
+<td><strong>Capability Command Center V17</strong></td>
+<td>512</td>
+<td>64</td>
+<td>11</td>
+<td>1280</td>
+<td>PASSED_AUTONOMOUS_RSI_CAPITAL_TO_CAPABILITY_COMMAND_CENTER_V17_PROOF</td>
+</tr><tr>
+<td><strong>Capability Command Center</strong></td>
+<td>320</td>
+<td>32</td>
+<td>11</td>
+<td>1280</td>
+<td>PASSED_AUTONOMOUS_RSI_ADVERSARIAL_CAPABILITY_COMMAND_CENTER_PROOF</td>
+</tr><tr>
+<td><strong>Autonomous RSI Adversarial Capability Command Center Proof</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Capability Command Center</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Capability Command Center V17</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Autonomous RSI Capital-to-Capability Command Center v17 Proof</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Rsi Capability Command Center</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Rsi Capability Command Center V17</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Capital To Capability Engine</strong></td>
+<td>256</td>
+<td>32</td>
+<td>13</td>
+<td>1440</td>
+<td>PASSED_AUTONOMOUS_RSI_CAPITAL_TO_CAPABILITY_ENGINE_PROOF</td>
+</tr><tr>
+<td><strong>Capital To Capability Engine</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Autonomous RSI Capital-to-Capability Engine Proof</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Adversarial Multi Agent Command Center</strong></td>
+<td>160</td>
+<td>20</td>
+<td>13</td>
+<td>1200</td>
+<td>PASSED_AUTONOMOUS_RSI_ADVERSARIAL_MULTI_AGENT_MARKET_COMMAND_CENTER_PROOF</td>
+</tr><tr>
+<td><strong>Adversarial Multi Agent Command Center</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Autonomous RSI Adversarial Multi-Agent Market Command Center Proof</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Rsi Adversarial Multi Agent Command Center</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Cloudops</strong></td>
+<td>—</td>
+<td>—</td>
+<td>8</td>
+<td>420</td>
+<td>PASSED_AUTONOMOUS_RSI_CLOUDOPS_MARKET_PROOF</td>
+</tr><tr>
+<td><strong>Corporate Os</strong></td>
+<td>—</td>
+<td>—</td>
+<td>11</td>
+<td>720</td>
+<td>PASSED_AUTONOMOUS_RSI_CORPORATE_OS_MARKET_PROOF</td>
+</tr><tr>
+<td><strong>Cyberdefense</strong></td>
+<td>—</td>
+<td>—</td>
+<td>9</td>
+<td>640</td>
+<td>PASSED_AUTONOMOUS_RSI_CYBERDEFENSE_MARKET_PROOF</td>
+</tr><tr>
+<td><strong>Enterprise Ops</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>360</td>
+<td>PASSED_AUTONOMOUS_ENTERPRISE_OPS_MARKET_PROOF</td>
+</tr><tr>
+<td><strong>Marketplace Flywheel</strong></td>
+<td>—</td>
+<td>—</td>
+<td>11</td>
+<td>900</td>
+<td>PASSED_AUTONOMOUS_RSI_MARKETPLACE_FLYWHEEL_MARKET_PROOF</td>
+</tr><tr>
+<td><strong>Metamaterials Discovery</strong></td>
+<td>—</td>
+<td>—</td>
+<td>7</td>
+<td>840</td>
+<td>PASSED_AUTONOMOUS_RSI_METAMATERIALS_DISCOVERY_MARKET_PROOF</td>
+</tr><tr>
+<td><strong>Revenue Experiment Factory</strong></td>
+<td>—</td>
+<td>—</td>
+<td>11</td>
+<td>960</td>
+<td>PASSED_AUTONOMOUS_RSI_REVENUE_EXPERIMENT_FACTORY_MARKET_PROOF</td>
+</tr><tr>
+<td><strong>Shadow Pilot</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>PASSED</td>
+</tr><tr>
+<td><strong>Silicon Verification</strong></td>
+<td>—</td>
+<td>—</td>
+<td>10</td>
+<td>720</td>
+<td>PASSED_AUTONOMOUS_RSI_SILICON_VERIFICATION_MARKET_PROOF</td>
+</tr><tr>
+<td><strong>Unit Economics</strong></td>
+<td>—</td>
+<td>—</td>
+<td>11</td>
+<td>840</td>
+<td>PASSED_AUTONOMOUS_RSI_UNIT_ECONOMICS_PROFIT_ENGINE_MARKET_PROOF</td>
+</tr><tr>
+<td><strong>Cloudops</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Corporate Os</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Cyberdefense</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Enterprise Ops</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Marketplace Flywheel</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Metamaterials Discovery</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Proofs</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Revenue Experiment Factory</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Shadow Pilot</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Silicon Verification</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Unit Economics</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Autonomous Enterprise Ops Market Proof</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Autonomous RSI CloudOps Market Proof</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Autonomous RSI Corporate Operating System Market Proof</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Autonomous RSI Cyber Defense Market Proof</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Autonomous RSI Marketplace Flywheel Market Proof</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Autonomous RSI Metamaterials Discovery Market Proof</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Autonomous RSI Revenue Experiment Factory Market Proof</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Autonomous RSI Silicon Verification Market Proof</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Autonomous RSI Unit Economics Profit Engine Market Proof</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Autonomous Shadow Pilot Proof</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Deploy SkillOS website with autonomous safe public copy</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Fully Autonomous Market-Readiness Proof</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>SkillOS tests</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Enterprise Ops</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Readiness</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Rsi Capital To Capability Engine</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Rsi Cloudops</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Rsi Corporate Os</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Rsi Cyberdefense</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Rsi Marketplace Flywheel</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Rsi Metamaterials Discovery</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Rsi Revenue Experiment Factory</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Rsi Silicon Verification</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Rsi Unit Economics</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Shadow Pilot</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Wealth Accumulation</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr><tr>
+<td><strong>Wealth</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>PENDING</td>
+</tr></table>
+</section>
+</main>
+</body>
+</html>

@@ -1,15 +1,9 @@
 {
-  "name": "Agent SkillOS",
-  "short_name": "SkillOS",
-  "start_url": "/skillos/",
+  "name": "SkillOS Public Proof Command Center",
+  "short_name": "SkillOS Proofs",
+  "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#07111f",
-  "theme_color": "#07111f",
-  "icons": [
-    {
-      "src": "assets/skillos-mark.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
-    }
-  ]
+  "background_color": "#06131f",
+  "theme_color": "#86f8ff",
+  "description": "Autonomous public proof hub for SkillOS GitHub Actions and RSI multi-agent proofs."
 }

@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-30T20:09:19Z`
+Generated: `2026-05-30T20:22:34Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 64
+- Proof entries: 63
 - Workflows tracked: 23
 - Recent successful runs: 29
 - Recent failed runs: 7
-- Recent running runs: 1
+- Recent running runs: 4
 
 ## Flagship
 
@@ -90,8 +90,6 @@ Site: https://montrealai.github.io/skillos/
   - Page: https://montrealai.github.io/skillos/rsi-silicon-verification-proof.html
 - **Unit Economics**
   - Page: https://montrealai.github.io/skillos/rsi-unit-economics-proof.html
-- **.github/workflows/skillos-public-proof-command-center-refresh.yml**
-  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml
 - **Autonomous Enterprise Ops Market Proof**
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/enterprise-ops-proof.yml
 - **Autonomous RSI CloudOps Market Proof**

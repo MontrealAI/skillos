@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06131f"/><stop offset=".65" stop-color="#13243d"/><stop offset="1" stop-color="#26295a"/></linearGradient></defs>
+<rect width="1200" height="630" fill="url(#g)"/>
+<circle cx="920" cy="80" r="260" fill="#3b407c" opacity=".55"/>
+<text x="70" y="130" fill="#86f8ff" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="800" letter-spacing="6">MONTREAL.AI / SKILLOS</text>
+<text x="70" y="260" fill="#f4fbff" font-family="Inter,Arial,sans-serif" font-size="82" font-weight="900">Public Proof</text>
+<text x="70" y="350" fill="#f4fbff" font-family="Inter,Arial,sans-serif" font-size="82" font-weight="900">Command Center</text>
+<text x="70" y="430" fill="#b3c0cd" font-family="Inter,Arial,sans-serif" font-size="34">Autonomous. Visual. Reproducible. GitHub-native.</text>
+<text x="70" y="510" fill="#7dffb0" font-family="Inter,Arial,sans-serif" font-size="38" font-weight="800">512 agents - 64 roles - RSI coordination</text>
+</svg>

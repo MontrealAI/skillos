@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkillOS Runbook</title>
+<style>:root{color-scheme:dark;--bg:#071421;--panel:rgba(255,255,255,.065);--line:rgba(255,255,255,.14);--text:#eff8ff;--muted:#aebdca;--cyan:#82f7ff;--green:#7dffb0;--gold:#ffd66b;--red:#ff7b7b}
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:radial-gradient(circle at 80% 0,#3a3b72 0,transparent 36%),linear-gradient(135deg,#06131e,#13243d 60%,#252958);color:var(--text)}
+a{color:var(--cyan);text-decoration:none} a:hover{text-decoration:underline}
+main{max-width:1240px;margin:0 auto;padding:42px 22px 80px}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:0;z-index:10;background:rgba(7,20,33,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:13px 22px}
+.brand{font-weight:900;letter-spacing:-.02em}.navlinks{display:flex;gap:14px;flex-wrap:wrap}.navlinks a{color:var(--muted);font-weight:800;font-size:14px}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center;padding:48px 0 28px}.eyebrow{color:var(--cyan);font-size:12px;text-transform:uppercase;letter-spacing:.16em;font-weight:950}.hero h1{font-size:clamp(42px,7vw,92px);line-height:.88;letter-spacing:-.075em;margin:10px 0}.hero p,.lead{font-size:20px;color:var(--muted);line-height:1.55}.card{background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:24px;box-shadow:0 20px 80px rgba(0,0,0,.24)}.status{font-size:28px;font-weight:950;color:var(--green);overflow-wrap:anywhere}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:22px 0}.metric{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.metric strong{display:block;color:var(--green);font-size:34px}.metric span{color:var(--muted)}
+.section{margin:26px 0}.section h2{font-size:clamp(28px,4vw,54px);letter-spacing:-.045em;margin:0 0 14px}.proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.proof-card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:22px}.proof-card h3{font-size:24px;line-height:1.05;letter-spacing:-.035em;margin:8px 0}.proof-card p{color:var(--muted);line-height:1.45}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.button{display:inline-block;padding:11px 15px;border-radius:999px;font-weight:900;background:var(--cyan);color:#061421}.button.secondary{background:transparent;color:var(--text);border:1px solid var(--line)}
+.badge{display:inline-flex;align-items:center;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.04em}.badge.ok{background:rgba(125,255,176,.16);color:var(--green)}.badge.warn{background:rgba(255,214,107,.16);color:var(--gold)}.badge.bad{background:rgba(255,123,123,.16);color:var(--red)}.badge.neutral{background:rgba(255,255,255,.08);color:var(--muted)}
+table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:18px;overflow:hidden;border:1px solid var(--line)}th,td{padding:13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.07em}td{color:var(--text)}tr:last-child td{border-bottom:0}
+.notice{border-left:4px solid var(--gold);background:rgba(255,214,107,.08);border-radius:16px;padding:16px 18px;color:var(--muted);line-height:1.5}.small{font-size:13px;color:var(--muted)}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.step strong{display:block;color:var(--cyan);font-size:15px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+@media(max-width:900px){.hero,.grid,.proof-grid,.steps{grid-template-columns:1fr}nav{align-items:flex-start;flex-direction:column}.navlinks{gap:10px}}</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">SkillOS Public Proof Command Center</a>
+  <div class="navlinks">
+    <a href="index.html">Home</a>
+    <a href="proofs.html">Proofs</a>
+    <a href="actions.html">Actions</a>
+    <a href="runbook.html">Run / Regenerate</a>
+    <a href="https://github.com/MontrealAI/skillos">GitHub</a>
+  </div>
+</nav>
+<main>
+<section class="section">
+  <div class="eyebrow">For viewers, users, maintainers</div>
+  <h2>Run and regenerate the proofs</h2>
+  <p class="lead">This site is designed so a non-technical viewer can understand the proof and a maintainer can rerun the full proof suite from GitHub Actions.</p>
+  <div class="steps">
+    <div class="step"><strong>Run one proof</strong><p>Open a proof card, click <span class="mono">Run on GitHub</span>, then click <span class="mono">Run workflow</span>.</p></div>
+    <div class="step"><strong>Run all proofs</strong><p>Use the orchestrator workflow to dispatch public proof workflows from one place.</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/skillos-run-all-public-proofs.yml">Run all public proofs</a></p></div>
+    <div class="step"><strong>Refresh the hub</strong><p>Use the refresh workflow to rebuild the site from latest workflows, JSON receipts, docs, and proof pages.</p><p><a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/workflows/skillos-public-site-refresh.yml">Refresh site</a></p></div>
+  </div>
+</section>
+<section class="section card">
+  <h2>What the automation guarantees</h2>
+  <ul>
+    <li>Scans GitHub workflow files and latest workflow runs.</li>
+    <li>Scans generated proof JSON, proof pages, proof docs, and badges.</li>
+    <li>Regenerates a fresh, public, user-friendly proof hub.</li>
+    <li>Commits generated site/status files back to the repository.</li>
+    <li>Deploys the static site to GitHub Pages.</li>
+  </ul>
+</section>
+<section class="section card">
+  <h2>Future-proofing rule</h2>
+  <p>For any future proof workflow, include the word <span class="mono">Proof</span> or <span class="mono">RSI</span> in the workflow name, generate proof JSON into <span class="mono">data/</span>, and a visual proof page into <span class="mono">site/</span>. The command center will discover it automatically.</p>
+</section>
+<section class="notice">
+  <strong>Safe claim boundary:</strong> The hub makes proof outputs visible and reproducible. It does not convert benchmark results into audited customer results or guarantees.
+</section>
+</main>
+</body>
+</html>

@@ -1,67 +1,68 @@
-# SkillOS Public Site Command Center Automation
+# SkillOS Public Proof Command Center Automation v2
 
-This pack makes `https://montrealai.github.io/skillos/` a living public proof hub.
+This automation turns `https://montrealai.github.io/skillos/` into a living public proof command center.
 
-It automatically scans:
+## What it does
 
-- GitHub Actions workflows
-- latest workflow runs
-- generated proof HTML pages
-- generated proof JSON receipts
-- generated proof Markdown reports
-- badges and site assets
+It scans:
 
-It then regenerates:
+- GitHub Actions workflow files
+- latest GitHub Actions runs
+- proof HTML pages
+- proof Markdown reports
+- proof JSON receipts
+- generated badges and site files
+
+It regenerates:
 
 - `site/index.html`
 - `site/proofs.html`
 - `site/actions.html`
+- `site/multi-agent.html`
 - `site/runbook.html`
 - `site/public_site_status.json`
 - `data/public_site_status.json`
 - `docs/SKILLOS_PUBLIC_SITE_STATUS.md`
 
-## Public goal
+## What viewers see
 
-Make the SkillOS site always feel fresh, complete, useful, beautiful, and easy to understand.
+The public website makes the proof system user-friendly:
 
-The viewer should immediately see:
+- flagship multi-agent proof
+- proof library
+- workflow status board
+- run/regenerate instructions
+- proof receipts
+- safe public boundaries
 
-1. what proofs exist,
-2. which ones passed,
-3. how to inspect the receipts,
-4. how to run or regenerate the proofs,
-5. what GitHub Actions recently ran,
-6. where the proof boundary is.
+## Flagship posture
+
+The site spotlights the large-scale multi-agent RSI capability proof:
+
+> capital → compute → energy → data → trust → talent → product → distribution → validation → risk control → reinvestment → compounding productive capability
+
+It does **not** claim superintelligence or Kardashev Type II achievement. It tests the business mechanism underneath that thesis.
 
 ## Autonomy
 
-The command center refresh runs on:
+The refresh workflow runs on:
 
-- manual dispatch,
-- hourly schedule,
-- repository pushes that touch workflows/scripts/docs/data/site/badges,
-- completion of known proof workflows.
+- manual dispatch
+- hourly schedule
+- relevant pushes
+- known proof workflow completions
 
-For future workflows, include `Proof` or `RSI` in the workflow name and generate proof outputs into `data/`, `docs/`, and `site/`. The command center will discover them.
+For future proof workflows, include `Proof` or `RSI` in the workflow name and generate:
 
-## Run all public proofs
+- visual HTML into `site/`
+- report Markdown into `docs/`
+- proof JSON into `data/`
 
-The workflow `SkillOS Run All Public Proofs` uses the GitHub Actions workflow dispatch API to dispatch proof workflows. It supports:
-
-- optional filter,
-- dry run mode,
-- one-place regeneration.
-
-## Safe public boundary
-
-This public site presents autonomous, deterministic market-readiness proofs using synthetic/redacted-style benchmark data.
-
-It does not claim audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guaranteed future outcomes.
+The command center discovers them automatically.
 
 ## Upload order
 
-Upload the source files first:
+Upload source files first:
 
 ```text
 docs/SKILLOS_PUBLIC_SITE_AUTOMATION.md
@@ -70,38 +71,30 @@ scripts/verify_public_site_refresh.py
 scripts/run_all_public_proofs.py
 ```
 
-Then upload the workflows:
+Then upload workflow files:
 
 ```text
-.github/workflows/skillos-public-site-refresh.yml
+.github/workflows/skillos-public-proof-command-center-refresh.yml
 .github/workflows/skillos-run-all-public-proofs.yml
-.github/workflows/_skillos-public-site-refresh-reusable.yml
+.github/workflows/_skillos-public-proof-command-center-refresh-reusable.yml
 ```
 
 ## Commit messages
 
-For source files:
+Source files:
 
 ```text
 Add autonomous SkillOS public proof command center
 ```
 
-For workflow files:
+Workflow files:
 
 ```text
-Add autonomous SkillOS public site refresh workflows
+Add autonomous SkillOS public proof command center workflows
 ```
 
-## After upload
-
-Run:
+## Run
 
 ```text
-GitHub → Actions → SkillOS Public Site Command Center Refresh → Run workflow
-```
-
-Then view:
-
-```text
-https://montrealai.github.io/skillos/
+GitHub → Actions → SkillOS Public Proof Command Center Refresh → Run workflow
 ```

@@ -1,25 +1,24 @@
 #!/usr/bin/env python3
-"""Refresh the SkillOS public site into a live proof command center.
+"""SkillOS Public Proof Command Center v2.
 
-This script is intentionally dependency-free and safe for GitHub Actions.
+Dependency-free generator for a living, GitHub-native public proof site.
 
-It generates:
-- site/index.html
-- site/proofs.html
-- site/actions.html
-- site/runbook.html
-- site/public_site_status.json
-- data/public_site_status.json
-- docs/SKILLOS_PUBLIC_SITE_STATUS.md
+It keeps https://montrealai.github.io/skillos/ fresh by scanning:
+- GitHub Actions workflows
+- latest workflow runs
+- proof HTML pages
+- proof Markdown reports
+- proof JSON receipts
+- badges and public site files
 
-Design goal:
-Make https://montrealai.github.io/skillos/ fresh, complete, useful, beautiful,
-and easy for non-technical viewers to understand and for maintainers to rerun.
+It emphasizes the flagship proof theme:
+large-scale autonomous multi-agent coordination + Recursive Self-Improvement
++ capital-to-capability compounding.
 
-Boundary:
-The generated site presents deterministic public proof/benchmark outputs. It
-does not claim audited customer ROI, live customer adoption, financial advice,
-investment advice, superintelligence, or Kardashev Type II achievement.
+Safe boundary:
+This is a public market-readiness proof hub. It does not claim audited customer
+ROI, live customer adoption, financial advice, investment advice,
+superintelligence, Kardashev Type II achievement, or guarantees.
 """
 
 from __future__ import annotations
@@ -29,8 +28,6 @@ import html
 import json
 import os
 import re
-import shutil
-import urllib.error
 import urllib.request
 from pathlib import Path
 from typing import Any
@@ -39,34 +36,44 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
 DATA = ROOT / "data"
 DOCS = ROOT / "docs"
+BADGES = ROOT / "badges"
 WORKFLOWS = ROOT / ".github" / "workflows"
 
-for folder in [SITE, DATA, DOCS]:
+for folder in [SITE, DATA, DOCS, BADGES]:
     folder.mkdir(parents=True, exist_ok=True)
 
 REPO = os.environ.get("GITHUB_REPOSITORY", "MontrealAI/skillos")
-OWNER, REPO_NAME = REPO.split("/", 1)
-TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN") or ""
 SERVER_URL = os.environ.get("GITHUB_SERVER_URL", "https://github.com")
+TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN") or ""
 RUN_ID = os.environ.get("GITHUB_RUN_ID", "")
 RUN_URL = f"{SERVER_URL}/{REPO}/actions/runs/{RUN_ID}" if RUN_ID else ""
-REF_NAME = os.environ.get("GITHUB_REF_NAME", "main")
 SHA = os.environ.get("GITHUB_SHA", "")
+REF_NAME = os.environ.get("GITHUB_REF_NAME", "main")
+SITE_URL = "https://montrealai.github.io/skillos/"
 
-EXCLUDE_WORKFLOW_NAME_PATTERNS = [
-    "public site command center refresh",
+META_WORKFLOW_PATTERNS = [
+    "public proof command center",
+    "public site command center",
     "run all public proofs",
-    "public site refresh reusable",
+    "refresh reusable",
 ]
 
-PROOF_KEYWORDS = [
-    "proof", "rsi", "market", "command", "capability", "capital", "flywheel",
-    "experiment", "shadow", "wealth", "skillos"
+PROOF_HINTS = [
+    "proof", "rsi", "capability", "capital", "command", "market", "multi-agent",
+    "flywheel", "experiment", "unit", "shadow", "wealth", "skillos",
+]
+
+FLAGSHIP_HINTS = [
+    "capital", "capability", "command", "multi", "agent", "kardashev", "v17", "v16"
 ]
 
 
 def now_iso() -> str:
     return dt.datetime.now(dt.UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def repo_url(path: str = "") -> str:
+    return f"{SERVER_URL}/{REPO}{('/' + path.lstrip('/')) if path else ''}"
 
 
 def api_json(path: str) -> dict[str, Any]:
@@ -80,7 +87,7 @@ def api_json(path: str) -> dict[str, Any]:
             "X-GitHub-Api-Version": "2022-11-28",
         },
     )
-    with urllib.request.urlopen(req, timeout=20) as resp:
+    with urllib.request.urlopen(req, timeout=25) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
 
@@ -92,8 +99,7 @@ def parse_workflow_name(path: Path) -> str:
     for line in text.splitlines():
         m = re.match(r"^\s*name:\s*(.+?)\s*$", line)
         if m:
-            raw = m.group(1).strip().strip('"').strip("'")
-            return raw or path.stem
+            return m.group(1).strip().strip('"').strip("'") or path.stem
     return path.stem
 
 
@@ -105,7 +111,7 @@ def local_workflows() -> list[dict[str, Any]]:
                 "id": path.name,
                 "name": parse_workflow_name(path),
                 "path": f".github/workflows/{path.name}",
-                "html_url": f"{SERVER_URL}/{REPO}/actions/workflows/{path.name}",
+                "html_url": repo_url(f"actions/workflows/{path.name}"),
                 "state": "active",
                 "source": "local",
             })
@@ -121,7 +127,7 @@ def github_workflows() -> list[dict[str, Any]]:
                 "id": w.get("id"),
                 "name": w.get("name") or Path(w.get("path", "")).stem,
                 "path": w.get("path"),
-                "html_url": w.get("html_url") or f"{SERVER_URL}/{REPO}/actions/workflows/{Path(w.get('path','')).name}",
+                "html_url": w.get("html_url") or repo_url(f"actions/workflows/{Path(w.get('path','')).name}"),
                 "state": w.get("state"),
                 "source": "api",
             } for w in rows]
@@ -133,7 +139,6 @@ def github_workflows() -> list[dict[str, Any]]:
 def github_runs() -> list[dict[str, Any]]:
     try:
         data = api_json(f"/repos/{REPO}/actions/runs?per_page=100")
-        rows = data.get("workflow_runs", [])
         return [{
             "id": r.get("id"),
             "name": r.get("name") or "",
@@ -147,186 +152,198 @@ def github_runs() -> list[dict[str, Any]]:
             "head_sha": r.get("head_sha"),
             "head_branch": r.get("head_branch"),
             "actor": (r.get("actor") or {}).get("login"),
-        } for r in rows]
+        } for r in data.get("workflow_runs", [])]
     except Exception as exc:
         print(f"Runs API unavailable; continuing without live run data: {exc}")
         return []
 
 
-def latest_run_by_workflow(runs: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+def latest_run_by_name(runs: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
     out: dict[str, dict[str, Any]] = {}
     for r in runs:
-        key = str(r.get("name") or "").lower()
-        if key and key not in out:
-            out[key] = r
+        name = str(r.get("name") or "").lower()
+        if name and name not in out:
+            out[name] = r
     return out
 
 
 def is_meta_workflow(name: str, path: str = "") -> bool:
     text = f"{name} {path}".lower()
-    return any(p in text for p in EXCLUDE_WORKFLOW_NAME_PATTERNS)
+    return any(p in text for p in META_WORKFLOW_PATTERNS)
 
 
 def is_proof_workflow(name: str, path: str = "") -> bool:
     text = f"{name} {path}".lower()
     if is_meta_workflow(name, path):
         return False
-    return any(k in text for k in PROOF_KEYWORDS)
+    return any(h in text for h in PROOF_HINTS)
 
 
-def read_json_file(path: Path) -> dict[str, Any] | None:
+def titleize(slug: str) -> str:
+    cleaned = re.sub(r"^(rsi|autonomous)[_-]*", "", slug, flags=re.I)
+    cleaned = cleaned.replace("_", " ").replace("-", " ")
+    cleaned = re.sub(r"\b(proof|market|benchmark|json|html)\b", "", cleaned, flags=re.I)
+    return re.sub(r"\s+", " ", cleaned).strip().title() or slug.title()
+
+
+def read_json(path: Path) -> dict[str, Any] | None:
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
+        obj = json.loads(path.read_text(encoding="utf-8"))
+        return obj if isinstance(obj, dict) else None
     except Exception:
         return None
 
 
-def human_name_from_slug(slug: str) -> str:
-    slug = re.sub(r"^rsi[_-]?", "", slug)
-    slug = slug.replace("_", " ").replace("-", " ")
-    words = [w for w in slug.split() if w not in {"proof", "market", "benchmark"}]
-    title = " ".join(words).strip().title()
-    return title or slug.title()
-
-
-def proof_jsons() -> list[dict[str, Any]]:
+def collect_proof_jsons() -> list[dict[str, Any]]:
     rows = []
-    seen = set()
     for path in sorted(DATA.glob("*.json")):
         name = path.name.lower()
-        if "proof" not in name and "command_center" not in name and "wealth" not in name:
+        if "benchmark" in name or "preregistered" in name or "status" in name:
             continue
-        if "benchmark" in name or "preregistered" in name:
+        if not any(k in name for k in ["proof", "command", "capability", "wealth", "shadow"]):
             continue
-        obj = read_json_file(path)
-        if not isinstance(obj, dict):
+        obj = read_json(path)
+        if not obj:
             continue
-        key = path.name
-        if key in seen:
-            continue
-        seen.add(key)
         slug = path.stem
-        status = obj.get("status") or ("PASSED" if obj.get("proved") else "PENDING")
-        workflow = obj.get("workflow") or obj.get("proof_type") or human_name_from_slug(slug)
         final = obj.get("final") or {}
         agent_system = obj.get("agent_system") or {}
         metrics = {}
-        for k in [
-            "fully_correct_percent", "value_capture_rate_percent", "coordination_protocol_accuracy_percent",
-            "risk_control_accuracy_percent", "capability_lever_accuracy_percent", "avg_compounding_index",
-            "avg_productive_capacity_index", "risk_breach_rate_percent", "avg_consensus_score"
-        ]:
-            if k in final:
-                metrics[k] = final[k]
+        for k, v in final.items():
+            if isinstance(v, (int, float)) and any(h in k for h in ["percent", "index", "score", "accuracy", "rate"]):
+                metrics[k] = v
+        status = obj.get("status") or ("PASSED" if obj.get("proved") else "PENDING")
         rows.append({
-            "title": human_name_from_slug(slug),
-            "slug": slug,
+            "key": slug,
+            "title": titleize(slug),
             "status": status,
-            "proved": bool(obj.get("proved", "PASSED" in str(status))),
-            "workflow": workflow,
+            "proved": bool(obj.get("proved")) or "PASSED" in str(status),
+            "workflow": obj.get("workflow") or obj.get("proof_type") or titleize(slug),
             "json_path": f"data/{path.name}",
-            "json_url": f"{SERVER_URL}/{REPO}/blob/main/data/{path.name}",
+            "json_url": repo_url(f"blob/main/data/{path.name}"),
             "generated_at": obj.get("generated_at_utc") or obj.get("generated_at"),
             "safe_interpretation": obj.get("safe_interpretation", ""),
             "agent_count": agent_system.get("agent_count"),
             "role_count": agent_system.get("role_count"),
+            "agents_per_role": agent_system.get("agents_per_role"),
+            "coordination_style": agent_system.get("coordination_style"),
+            "roles": agent_system.get("roles") or [],
             "holdout_count": obj.get("holdout_count"),
-            "rsi_releases": len([r for r in obj.get("rsi_releases", []) if r.get("released")]),
+            "train_count": obj.get("train_count"),
+            "validation_count": obj.get("validation_count"),
+            "rsi_releases": len([r for r in obj.get("rsi_releases", []) if isinstance(r, dict) and r.get("released")]),
+            "proof_type": obj.get("proof_type"),
+            "benchmark_public": obj.get("benchmark_public") or {},
             "metrics": metrics,
             "raw": obj,
+            "source": "json",
         })
     return rows
 
 
-def proof_pages() -> list[dict[str, str]]:
-    rows = []
-    for path in sorted(SITE.glob("*proof*.html")):
-        rows.append({
-            "title": human_name_from_slug(path.stem),
-            "path": f"site/{path.name}",
-            "url": f"https://montrealai.github.io/skillos/{path.name}",
-            "name": path.name,
-        })
-    return rows
-
-
-def proof_docs() -> list[dict[str, str]]:
-    rows = []
-    for path in sorted(DOCS.glob("*PROOF*.md")) + sorted(DOCS.glob("*proof*.md")):
-        if path.name == "SKILLOS_PUBLIC_SITE_STATUS.md":
+def collect_pages_docs() -> tuple[list[dict[str, str]], list[dict[str, str]]]:
+    pages = [{
+        "key": p.stem,
+        "title": titleize(p.stem),
+        "page_path": f"site/{p.name}",
+        "page_url": f"{SITE_URL}{p.name}",
+        "source": "page",
+    } for p in sorted(SITE.glob("*proof*.html"))]
+    docs = []
+    for p in sorted(DOCS.glob("*PROOF*.md")) + sorted(DOCS.glob("*proof*.md")):
+        if p.name in {"SKILLOS_PUBLIC_SITE_STATUS.md"}:
             continue
-        rows.append({
-            "title": human_name_from_slug(path.stem),
-            "path": f"docs/{path.name}",
-            "url": f"{SERVER_URL}/{REPO}/blob/main/docs/{path.name}",
-            "name": path.name,
+        docs.append({
+            "key": p.stem.lower(),
+            "title": titleize(p.stem),
+            "doc_path": f"docs/{p.name}",
+            "doc_url": repo_url(f"blob/main/docs/{p.name}"),
+            "source": "doc",
         })
-    return rows
+    return pages, docs
 
 
-def merge_proofs(workflows: list[dict[str, Any]], runs: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    by_run_name = latest_run_by_workflow(runs)
-    pages = proof_pages()
-    docs = proof_docs()
-    json_rows = proof_jsons()
-
+def collect_proofs(workflows: list[dict[str, Any]], runs: list[dict[str, Any]]) -> list[dict[str, Any]]:
     entries: dict[str, dict[str, Any]] = {}
+    latest = latest_run_by_name(runs)
 
-    def add_entry(key: str, data: dict[str, Any]) -> None:
+    def add(key: str, item: dict[str, Any]) -> None:
         if key not in entries:
-            entries[key] = {"title": data.get("title") or key, "sources": []}
-        for k, v in data.items():
-            if v not in (None, "", [], {}):
-                entries[key][k] = v
-        entries[key]["sources"].append(data.get("source", "unknown"))
+            entries[key] = {"key": key, "title": item.get("title") or titleize(key), "sources": []}
+        entries[key].update({k: v for k, v in item.items() if v not in (None, "", [], {})})
+        entries[key]["sources"].append(item.get("source", "unknown"))
 
-    for j in json_rows:
-        add_entry(j["slug"], {**j, "source": "json"})
+    for p in collect_proof_jsons():
+        add(p["key"], p)
 
+    pages, docs = collect_pages_docs()
     for p in pages:
-        key = p["name"].replace(".html", "")
-        add_entry(key, {"title": p["title"], "page_url": p["url"], "page_path": p["path"], "source": "page"})
-
+        add(p["key"], p)
     for d in docs:
-        key = d["name"].replace(".md", "").lower()
-        add_entry(key, {"title": d["title"], "doc_url": d["url"], "doc_path": d["path"], "source": "doc"})
+        add(d["key"], d)
 
     for w in workflows:
-        if is_proof_workflow(str(w.get("name", "")), str(w.get("path", ""))):
-            name = str(w.get("name") or "")
-            key = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
-            run = by_run_name.get(name.lower(), {})
-            add_entry(key, {
-                "title": name,
-                "workflow_name": name,
-                "workflow_path": w.get("path"),
-                "workflow_url": w.get("html_url"),
-                "latest_run_url": run.get("html_url"),
-                "latest_run_status": run.get("status"),
-                "latest_run_conclusion": run.get("conclusion"),
-                "latest_run_updated_at": run.get("updated_at"),
-                "source": "workflow",
-            })
+        name = str(w.get("name") or "")
+        path = str(w.get("path") or "")
+        if not is_proof_workflow(name, path):
+            continue
+        key = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+        run = latest.get(name.lower(), {})
+        add(key, {
+            "title": name,
+            "workflow_name": name,
+            "workflow_path": path,
+            "workflow_url": w.get("html_url"),
+            "latest_run_url": run.get("html_url"),
+            "latest_run_status": run.get("status"),
+            "latest_run_conclusion": run.get("conclusion"),
+            "latest_run_updated_at": run.get("updated_at"),
+            "source": "workflow",
+        })
 
-    proof_list = list(entries.values())
+    rows = list(entries.values())
 
-    def rank(item: dict[str, Any]) -> tuple[int, str]:
-        title = str(item.get("title", "")).lower()
-        score = 100
-        if "v17" in title or "capital-to-capability" in title or "capability command center" in title:
-            score -= 50
-        if "multi-agent" in title or "command center" in title:
-            score -= 25
+    def score(item: dict[str, Any]) -> tuple[int, str]:
+        text = f"{item.get('title','')} {item.get('key','')} {item.get('workflow','')}".lower()
+        s = 1000
+        if any(h in text for h in ["capital-to-capability", "capability command", "v17", "v16"]):
+            s -= 400
+        if "multi-agent" in text or "command center" in text:
+            s -= 200
+        if "adversarial" in text:
+            s -= 100
+        if item.get("agent_count"):
+            s -= min(100, int(item.get("agent_count") or 0) // 5)
         if item.get("proved"):
-            score -= 10
+            s -= 40
         if item.get("page_url"):
-            score -= 5
-        return (score, title)
+            s -= 20
+        if item.get("workflow_url"):
+            s -= 10
+        return (s, text)
 
-    return sorted(proof_list, key=rank)
+    return sorted(rows, key=score)
 
 
-def status_badge(conclusion: str | None, status: str | None = None) -> str:
+def pick_flagship(proofs: list[dict[str, Any]]) -> dict[str, Any]:
+    if proofs:
+        return proofs[0]
+    # Placeholder if the proof has not generated JSON yet.
+    return {
+        "title": "Autonomous RSI Capital-to-Capability Command Center",
+        "status": "READY_TO_RUN",
+        "workflow": "Large-scale multi-agent capital-to-capability coordination proof",
+        "agent_count": 512,
+        "role_count": 64,
+        "holdout_count": 0,
+        "rsi_releases": 0,
+        "page_url": "rsi-capability-command-center-v17-proof.html",
+        "workflow_url": repo_url("actions"),
+        "safe_interpretation": "Pending generated proof receipt. Run the GitHub Action to generate the latest public proof.",
+    }
+
+
+def status_label(conclusion: str | None, status: str | None = None) -> str:
     c = (conclusion or "").lower()
     s = (status or "").lower()
     if c == "success":
@@ -339,76 +356,69 @@ def status_badge(conclusion: str | None, status: str | None = None) -> str:
 
 
 def badge_class(label: str) -> str:
-    if label in {"success", "passing", "passed"} or "passed" in label:
+    t = label.lower()
+    if "pass" in t or t == "success" or t == "passing":
         return "ok"
-    if label in {"running", "queued", "in_progress"}:
+    if "run" in t or "ready" in t or "pending" in t or "not run" in t:
         return "warn"
-    if label in {"failure", "failed", "cancelled", "timed_out"}:
+    if "fail" in t or "cancel" in t or "timed" in t:
         return "bad"
     return "neutral"
 
 
-def latest_status_rows(workflows: list[dict[str, Any]], runs: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    by_name = latest_run_by_workflow(runs)
+def workflow_statuses(workflows: list[dict[str, Any]], runs: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    latest = latest_run_by_name(runs)
     rows = []
     for w in workflows:
-        run = by_name.get(str(w.get("name") or "").lower(), {})
+        name = str(w.get("name") or "")
+        run = latest.get(name.lower(), {})
         rows.append({
-            "name": w.get("name"),
+            "name": name,
             "path": w.get("path"),
             "workflow_url": w.get("html_url"),
-            "state": w.get("state"),
             "run_url": run.get("html_url"),
             "status": run.get("status") or "not_run",
             "conclusion": run.get("conclusion"),
-            "updated_at": run.get("updated_at"),
             "event": run.get("event"),
+            "updated_at": run.get("updated_at") or "",
         })
-    return sorted(rows, key=lambda r: (r.get("updated_at") or ""), reverse=True)
+    return sorted(rows, key=lambda r: r.get("updated_at") or "", reverse=True)
 
 
-def public_status(workflows: list[dict[str, Any]], runs: list[dict[str, Any]], proofs: list[dict[str, Any]]) -> dict[str, Any]:
-    success = sum(1 for r in runs[:50] if r.get("conclusion") == "success")
-    failed = sum(1 for r in runs[:50] if r.get("conclusion") == "failure")
-    running = sum(1 for r in runs[:50] if r.get("status") in {"in_progress", "queued", "requested", "waiting"})
-    proven = sum(1 for p in proofs if p.get("proved") or "PASSED" in str(p.get("status")))
+def status_object(workflows: list[dict[str, Any]], runs: list[dict[str, Any]], proofs: list[dict[str, Any]], flagship: dict[str, Any]) -> dict[str, Any]:
+    recent = runs[:50]
     return {
         "generated_at_utc": now_iso(),
         "repository": REPO,
+        "site_url": SITE_URL,
         "branch": REF_NAME,
         "commit": SHA,
         "refresh_run_url": RUN_URL,
-        "site_url": "https://montrealai.github.io/skillos/",
         "workflow_count": len(workflows),
         "proof_count": len(proofs),
-        "proved_or_passed_proof_count": proven,
-        "recent_successful_runs": success,
-        "recent_failed_runs": failed,
-        "recent_running_runs": running,
-        "workflows": latest_status_rows(workflows, runs),
-        "proofs": proofs,
+        "proved_or_passed_proof_count": sum(1 for p in proofs if p.get("proved") or "PASSED" in str(p.get("status"))),
+        "recent_successful_runs": sum(1 for r in recent if r.get("conclusion") == "success"),
+        "recent_failed_runs": sum(1 for r in recent if r.get("conclusion") == "failure"),
+        "recent_running_runs": sum(1 for r in recent if r.get("status") in {"in_progress", "queued", "requested", "waiting"}),
+        "flagship": {k: v for k, v in flagship.items() if k != "raw"},
+        "workflows": workflow_statuses(workflows, runs),
+        "proofs": [{k: v for k, v in p.items() if k != "raw"} for p in proofs],
+        "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
     }
 
 
 CSS = """
-:root{color-scheme:dark;--bg:#071421;--panel:rgba(255,255,255,.065);--line:rgba(255,255,255,.14);--text:#eff8ff;--muted:#aebdca;--cyan:#82f7ff;--green:#7dffb0;--gold:#ffd66b;--red:#ff7b7b}
-*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:radial-gradient(circle at 80% 0,#3a3b72 0,transparent 36%),linear-gradient(135deg,#06131e,#13243d 60%,#252958);color:var(--text)}
-a{color:var(--cyan);text-decoration:none} a:hover{text-decoration:underline}
-main{max-width:1240px;margin:0 auto;padding:42px 22px 80px}
-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:0;z-index:10;background:rgba(7,20,33,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:13px 22px}
-.brand{font-weight:900;letter-spacing:-.02em}.navlinks{display:flex;gap:14px;flex-wrap:wrap}.navlinks a{color:var(--muted);font-weight:800;font-size:14px}
-.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center;padding:48px 0 28px}.eyebrow{color:var(--cyan);font-size:12px;text-transform:uppercase;letter-spacing:.16em;font-weight:950}.hero h1{font-size:clamp(42px,7vw,92px);line-height:.88;letter-spacing:-.075em;margin:10px 0}.hero p,.lead{font-size:20px;color:var(--muted);line-height:1.55}.card{background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:24px;box-shadow:0 20px 80px rgba(0,0,0,.24)}.status{font-size:28px;font-weight:950;color:var(--green);overflow-wrap:anywhere}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:22px 0}.metric{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.metric strong{display:block;color:var(--green);font-size:34px}.metric span{color:var(--muted)}
-.section{margin:26px 0}.section h2{font-size:clamp(28px,4vw,54px);letter-spacing:-.045em;margin:0 0 14px}.proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.proof-card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:22px}.proof-card h3{font-size:24px;line-height:1.05;letter-spacing:-.035em;margin:8px 0}.proof-card p{color:var(--muted);line-height:1.45}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.button{display:inline-block;padding:11px 15px;border-radius:999px;font-weight:900;background:var(--cyan);color:#061421}.button.secondary{background:transparent;color:var(--text);border:1px solid var(--line)}
-.badge{display:inline-flex;align-items:center;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.04em}.badge.ok{background:rgba(125,255,176,.16);color:var(--green)}.badge.warn{background:rgba(255,214,107,.16);color:var(--gold)}.badge.bad{background:rgba(255,123,123,.16);color:var(--red)}.badge.neutral{background:rgba(255,255,255,.08);color:var(--muted)}
-table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:18px;overflow:hidden;border:1px solid var(--line)}th,td{padding:13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.07em}td{color:var(--text)}tr:last-child td{border-bottom:0}
-.notice{border-left:4px solid var(--gold);background:rgba(255,214,107,.08);border-radius:16px;padding:16px 18px;color:var(--muted);line-height:1.5}.small{font-size:13px;color:var(--muted)}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.step strong{display:block;color:var(--cyan);font-size:15px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+:root{color-scheme:dark;--text:#f2fbff;--muted:#b3c0cd;--line:rgba(255,255,255,.14);--panel:rgba(255,255,255,.065);--cyan:#84f8ff;--green:#7dffb0;--gold:#ffd66b;--red:#ff7979;--blue:#91a7ff}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:radial-gradient(circle at 85% 0,#3c3e78 0,transparent 34%),radial-gradient(circle at 5% 18%,#104d63 0,transparent 24%),linear-gradient(135deg,#06131f,#13243d 60%,#26295a);color:var(--text)}
+a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}nav{display:flex;align-items:center;justify-content:space-between;gap:18px;position:sticky;top:0;z-index:20;background:rgba(6,19,31,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:14px 22px}.brand{font-weight:950;letter-spacing:-.03em}.navlinks{display:flex;gap:14px;flex-wrap:wrap}.navlinks a{color:var(--muted);font-weight:850;font-size:14px}
+main{max-width:1260px;margin:0 auto;padding:44px 22px 86px}.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:28px;align-items:center;padding:42px 0 24px}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.18em;font-weight:950;font-size:12px}.hero h1{font-size:clamp(44px,7vw,98px);line-height:.86;letter-spacing:-.08em;margin:10px 0}.hero p,.lead{color:var(--muted);font-size:20px;line-height:1.55}.card{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:0 24px 90px rgba(0,0,0,.26)}.status{font-size:28px;font-weight:950;color:var(--green);overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}.metric{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.metric strong{display:block;color:var(--green);font-size:34px;letter-spacing:-.04em}.metric span{color:var(--muted)}.section{margin:30px 0}.section h2{font-size:clamp(30px,4.8vw,58px);letter-spacing:-.055em;line-height:.95;margin:0 0 16px}.proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.proof-card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:22px}.proof-card h3{font-size:24px;line-height:1.05;letter-spacing:-.035em;margin:10px 0}.proof-card p{color:var(--muted);line-height:1.45}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.button{display:inline-block;border-radius:999px;padding:11px 16px;background:var(--cyan);color:#071521;font-weight:950}.button.secondary{background:transparent;border:1px solid var(--line);color:var(--text)}.button.gold{background:var(--gold);color:#15110a}
+.badge{display:inline-flex;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.04em}.badge.ok{background:rgba(125,255,176,.16);color:var(--green)}.badge.warn{background:rgba(255,214,107,.16);color:var(--gold)}.badge.bad{background:rgba(255,121,121,.16);color:var(--red)}.badge.neutral{background:rgba(255,255,255,.08);color:var(--muted)}
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}th,td{padding:13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}tr:last-child td{border-bottom:0}.small{font-size:13px;color:var(--muted)}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.notice{border-left:4px solid var(--gold);background:rgba(255,214,107,.08);border-radius:16px;padding:16px 18px;color:var(--muted);line-height:1.55}.roles{display:flex;flex-wrap:wrap;gap:8px}.roles span{border:1px solid var(--line);border-radius:999px;padding:8px 10px;color:var(--muted);background:rgba(255,255,255,.05);font-size:13px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.step strong{display:block;color:var(--cyan);font-size:13px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px}.quote{font-size:clamp(24px,3.6vw,46px);line-height:1.05;letter-spacing:-.04em;color:var(--text);margin:8px 0 12px}.divider{height:1px;background:var(--line);margin:24px 0}
 @media(max-width:900px){.hero,.grid,.proof-grid,.steps{grid-template-columns:1fr}nav{align-items:flex-start;flex-direction:column}.navlinks{gap:10px}}
 """.strip()
 
 
-def page_shell(title: str, body: str, active: str = "") -> str:
+def shell(title: str, body: str) -> str:
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -418,13 +428,14 @@ def page_shell(title: str, body: str, active: str = "") -> str:
 </head>
 <body>
 <nav>
-  <a class="brand" href="index.html">SkillOS Public Proof Command Center</a>
+  <a class="brand" href="index.html">SkillOS Proof Command Center</a>
   <div class="navlinks">
     <a href="index.html">Home</a>
     <a href="proofs.html">Proofs</a>
     <a href="actions.html">Actions</a>
+    <a href="multi-agent.html">Multi-Agent</a>
     <a href="runbook.html">Run / Regenerate</a>
-    <a href="https://github.com/{html.escape(REPO)}">GitHub</a>
+    <a href="{html.escape(repo_url())}">GitHub</a>
   </div>
 </nav>
 <main>{body}</main>
@@ -433,205 +444,257 @@ def page_shell(title: str, body: str, active: str = "") -> str:
 """
 
 
+def metric_value(p: dict[str, Any], key: str, default: str = "—") -> str:
+    raw = p.get("raw") or {}
+    if key in raw:
+        return str(raw[key])
+    final = raw.get("final") or {}
+    if key in final:
+        return str(final[key])
+    if key in p:
+        return str(p[key])
+    return default
+
+
+def proof_badge(p: dict[str, Any]) -> str:
+    label = str(p.get("status") or status_label(p.get("latest_run_conclusion"), p.get("latest_run_status"))).lower().replace("_", " ")[:90]
+    return f'<span class="badge {badge_class(label)}">{html.escape(label)}</span>'
+
+
 def proof_card(p: dict[str, Any]) -> str:
     title = html.escape(str(p.get("title") or "SkillOS proof"))
-    status = str(p.get("status") or status_badge(p.get("latest_run_conclusion"), p.get("latest_run_status")))
-    status_clean = status.lower().replace("_", " ")
-    klass = badge_class(status_clean)
     workflow = html.escape(str(p.get("workflow") or p.get("workflow_name") or "Autonomous public proof"))
-    page_url = p.get("page_url") or ""
-    workflow_url = p.get("workflow_url") or p.get("latest_run_url") or ""
-    doc_url = p.get("doc_url") or ""
-    json_url = p.get("json_url") or ""
-    agent = p.get("agent_count")
-    roles = p.get("role_count")
-    releases = p.get("rsi_releases")
-    meta = []
-    if agent:
-        meta.append(f"{agent} agents")
-    if roles:
-        meta.append(f"{roles} roles")
-    if releases:
-        meta.append(f"{releases} RSI releases")
-    if p.get("holdout_count"):
-        meta.append(f"{p.get('holdout_count')} holdout cases")
-    meta_html = " · ".join(html.escape(str(x)) for x in meta) or "public, reproducible GitHub proof"
+    page_url = p.get("page_url")
+    workflow_url = p.get("workflow_url") or p.get("latest_run_url")
+    doc_url = p.get("doc_url")
+    json_url = p.get("json_url")
+    facts = []
+    for label, key in [("agents", "agent_count"), ("roles", "role_count"), ("holdout", "holdout_count"), ("RSI releases", "rsi_releases")]:
+        val = p.get(key)
+        if val:
+            facts.append(f"{val} {label}")
+    fact_line = " · ".join(facts) or "public, reproducible proof"
     actions = []
     if page_url:
-        actions.append(f'<a class="button" href="{html.escape(page_url)}">View proof</a>')
+        actions.append(f'<a class="button" href="{html.escape(str(page_url))}">View proof</a>')
     if workflow_url:
-        actions.append(f'<a class="button secondary" href="{html.escape(workflow_url)}">Run on GitHub</a>')
-    if doc_url:
-        actions.append(f'<a class="button secondary" href="{html.escape(doc_url)}">Read doc</a>')
+        actions.append(f'<a class="button secondary" href="{html.escape(str(workflow_url))}">Run on GitHub</a>')
     if json_url:
-        actions.append(f'<a class="button secondary" href="{html.escape(json_url)}">Inspect JSON</a>')
+        actions.append(f'<a class="button secondary" href="{html.escape(str(json_url))}">JSON</a>')
+    if doc_url:
+        actions.append(f'<a class="button secondary" href="{html.escape(str(doc_url))}">Docs</a>')
     if not actions:
-        actions.append(f'<a class="button secondary" href="https://github.com/{html.escape(REPO)}/actions">Open Actions</a>')
-    metrics = p.get("metrics") or {}
-    metric_html = ""
-    if metrics:
-        items = []
-        labels = {
-            "fully_correct_percent": "fully correct",
-            "value_capture_rate_percent": "value capture",
-            "coordination_protocol_accuracy_percent": "coordination",
-            "risk_control_accuracy_percent": "risk control",
-            "capability_lever_accuracy_percent": "capability lever",
-            "avg_compounding_index": "compounding",
-            "risk_breach_rate_percent": "risk breach",
-        }
-        for k, v in list(metrics.items())[:4]:
-            suffix = "%" if "percent" in k else ""
-            items.append(f"<span class='badge neutral'>{html.escape(labels.get(k,k))}: {html.escape(str(v))}{suffix}</span>")
-        metric_html = "<div class='actions'>" + "".join(items) + "</div>"
+        actions.append(f'<a class="button secondary" href="{html.escape(repo_url("actions"))}">Open Actions</a>')
     return f"""
 <div class="proof-card">
-  <span class="badge {klass}">{html.escape(status_clean[:80])}</span>
+  {proof_badge(p)}
   <h3>{title}</h3>
   <p>{workflow}</p>
-  <p class="small">{meta_html}</p>
-  {metric_html}
+  <p class="small">{html.escape(fact_line)}</p>
   <div class="actions">{''.join(actions)}</div>
 </div>
 """
 
 
-def workflow_table(rows: list[dict[str, Any]], limit: int | None = None) -> str:
-    subset = rows if limit is None else rows[:limit]
-    tr = []
-    for r in subset:
-        label = status_badge(r.get("conclusion"), r.get("status"))
-        klass = badge_class(label)
-        name = html.escape(str(r.get("name") or "Workflow"))
-        wf_url = html.escape(str(r.get("workflow_url") or "#"))
-        run_url = html.escape(str(r.get("run_url") or wf_url))
-        updated = html.escape(str(r.get("updated_at") or "not run yet"))
-        event = html.escape(str(r.get("event") or ""))
-        path = html.escape(str(r.get("path") or ""))
-        tr.append(f"""<tr>
-<td><a href="{wf_url}"><strong>{name}</strong></a><br><span class="small mono">{path}</span></td>
-<td><span class="badge {klass}">{html.escape(label)}</span></td>
-<td>{event}</td>
-<td><a href="{run_url}">{updated}</a></td>
+def workflows_table(workflows: list[dict[str, Any]], limit: int | None = None) -> str:
+    rows = workflows if limit is None else workflows[:limit]
+    body = []
+    for w in rows:
+        label = status_label(w.get("conclusion"), w.get("status"))
+        wf_url = html.escape(str(w.get("workflow_url") or "#"))
+        run_url = html.escape(str(w.get("run_url") or wf_url))
+        body.append(f"""<tr>
+<td><a href="{wf_url}"><strong>{html.escape(str(w.get("name") or "Workflow"))}</strong></a><br><span class="small mono">{html.escape(str(w.get("path") or ""))}</span></td>
+<td><span class="badge {badge_class(label)}">{html.escape(label)}</span></td>
+<td>{html.escape(str(w.get("event") or ""))}</td>
+<td><a href="{run_url}">{html.escape(str(w.get("updated_at") or "not run yet"))}</a></td>
 </tr>""")
-    return "<table><tr><th>Workflow</th><th>Status</th><th>Event</th><th>Latest run</th></tr>" + "\n".join(tr) + "</table>"
+    return "<table><tr><th>Workflow</th><th>Status</th><th>Event</th><th>Latest run</th></tr>" + "\n".join(body) + "</table>"
+
+
+def role_chips(roles: list[str]) -> str:
+    return "".join(f"<span>{html.escape(str(r).replace('_',' '))}</span>" for r in roles[:80])
 
 
 def build_pages(status: dict[str, Any]) -> None:
     proofs = status["proofs"]
     workflows = status["workflows"]
-    generated = html.escape(status["generated_at_utc"])
-    run_all_url = f"{SERVER_URL}/{REPO}/actions/workflows/skillos-run-all-public-proofs.yml"
-    refresh_url = f"{SERVER_URL}/{REPO}/actions/workflows/skillos-public-site-refresh.yml"
-    github_url = f"{SERVER_URL}/{REPO}"
+    flagship = status["flagship"]
+    raw = flagship.get("raw") or {}
+    final = raw.get("final") or {}
+    single = raw.get("single_agent_baseline") or {}
+    uncoord = raw.get("uncoordinated_pool") or {}
+    static = raw.get("static_coordination") or {}
+    agent_system = raw.get("agent_system") or {}
+    roles = agent_system.get("roles") or flagship.get("roles") or []
+    run_all_url = repo_url("actions/workflows/skillos-run-all-public-proofs.yml")
+    refresh_url = repo_url("actions/workflows/skillos-public-proof-command-center-refresh.yml")
+    flagship_workflow = flagship.get("workflow_url") or repo_url("actions")
+    flagship_page = flagship.get("page_url") or "rsi-capability-command-center-v17-proof.html"
 
     hero = f"""
 <section class="hero">
   <div>
     <div class="eyebrow">MONTREAL.AI / SKILLOS</div>
-    <h1>Public Proof Command Center</h1>
-    <p>Fresh public proof hub for every SkillOS GitHub Action run: proofs, dashboards, reports, JSON receipts, workflow status, and one-click regeneration instructions.</p>
+    <h1>Autonomous Proof Command Center</h1>
+    <p>Fresh, beautiful, GitHub-native hub for every SkillOS proof, run, receipt, report, and visual dashboard.</p>
     <div class="actions">
-      <a class="button" href="proofs.html">View proofs</a>
-      <a class="button secondary" href="{html.escape(run_all_url)}">Run all public proofs</a>
-      <a class="button secondary" href="{html.escape(refresh_url)}">Refresh site</a>
+      <a class="button gold" href="{html.escape(str(flagship_page))}">View flagship proof</a>
+      <a class="button" href="{html.escape(str(flagship_workflow))}">Run flagship Action</a>
+      <a class="button secondary" href="{html.escape(run_all_url)}">Run all proofs</a>
     </div>
   </div>
   <div class="card">
-    <div class="eyebrow">Live site freshness</div>
-    <div class="status">Updated {generated}</div>
-    <p>Generated autonomously from repository files, proof JSON, GitHub Actions workflows, and latest run metadata.</p>
-    <p class="small">Repository: <a href="{html.escape(github_url)}">{html.escape(REPO)}</a></p>
+    <div class="eyebrow">Live freshness</div>
+    <div class="status">Updated {html.escape(status['generated_at_utc'])}</div>
+    <p>Autonomously regenerated from GitHub Actions workflows, latest runs, proof JSON receipts, proof reports, and visual pages.</p>
+    <p class="small">Repository: <a href="{html.escape(repo_url())}">{html.escape(REPO)}</a></p>
   </div>
 </section>
+
+<section class="section card">
+  <div class="eyebrow">Capital-to-capability thesis</div>
+  <div class="quote">Can autonomous coordination turn capital, compute, energy, data, trust, talent, product, distribution, validation, risk control, and reinvestment into compounding productive capability?</div>
+  <p>This hub does not claim superintelligence or Kardashev Type II achievement. It makes the mechanism publicly testable: a large specialist-agent organization improves its own coordination layer through validation-gated RSI releases.</p>
+</section>
+
 <section class="grid">
-  <div class="metric"><strong>{status['proof_count']}</strong><span>proof entries</span></div>
-  <div class="metric"><strong>{status['workflow_count']}</strong><span>workflows tracked</span></div>
-  <div class="metric"><strong>{status['recent_successful_runs']}</strong><span>recent successful runs</span></div>
-  <div class="metric"><strong>{status['recent_running_runs']}</strong><span>recent running runs</span></div>
+  <div class="metric"><strong>{html.escape(str(flagship.get('agent_count') or agent_system.get('agent_count') or '—'))}</strong><span>flagship agents</span></div>
+  <div class="metric"><strong>{html.escape(str(flagship.get('role_count') or agent_system.get('role_count') or '—'))}</strong><span>specialist roles</span></div>
+  <div class="metric"><strong>{html.escape(str(status['proof_count']))}</strong><span>proof entries</span></div>
+  <div class="metric"><strong>{html.escape(str(status['recent_successful_runs']))}</strong><span>recent successful runs</span></div>
 </section>
+
 <section class="section">
-  <h2>Flagship public proofs</h2>
-  <div class="proof-grid">{''.join(proof_card(p) for p in proofs[:6])}</div>
+  <h2>Flagship multi-agent proof</h2>
+  <div class="proof-grid">
+    {proof_card(flagship)}
+    <div class="proof-card">
+      <span class="badge ok">large-scale coordination</span>
+      <h3>Single agent vs pool vs coordinated RSI</h3>
+      <p>The flagship proof compares a single-agent baseline, an uncoordinated multi-agent pool, static coordination, and a SkillOS RSI coordinated organization.</p>
+      <p class="small">Many agents alone are not the moat. Recursive improvement of the coordination layer is the moat.</p>
+      <div class="actions">
+        <a class="button" href="multi-agent.html">See comparison</a>
+        <a class="button secondary" href="{html.escape(str(flagship_workflow))}">Run proof</a>
+      </div>
+    </div>
+  </div>
 </section>
+
+<section class="section">
+  <h2>Proof library</h2>
+  <div class="proof-grid">{''.join(proof_card(p) for p in proofs[:8])}</div>
+  <div class="actions"><a class="button secondary" href="proofs.html">View all proofs</a></div>
+</section>
+
 <section class="section">
   <h2>Run or regenerate</h2>
   <div class="steps">
-    <div class="step"><strong>1. Open Actions</strong><p>Click a proof card or the Run All button. GitHub opens the workflow page.</p></div>
-    <div class="step"><strong>2. Run workflow</strong><p>Use the green <span class="mono">Run workflow</span> button. No API keys, no private data, no customers.</p></div>
-    <div class="step"><strong>3. Watch receipts</strong><p>The Action regenerates proof HTML, Markdown, JSON, badges, and updates this hub.</p></div>
+    <div class="step"><strong>Run one proof</strong><p>Open a proof card, click <span class="mono">Run on GitHub</span>, then click <span class="mono">Run workflow</span>.</p></div>
+    <div class="step"><strong>Run all proofs</strong><p>Use the orchestrator workflow to dispatch public proof workflows from one place.</p><p><a class="button" href="{html.escape(run_all_url)}">Run all public proofs</a></p></div>
+    <div class="step"><strong>Refresh hub</strong><p>The refresh workflow rebuilds the public site from proof receipts and latest run metadata.</p><p><a class="button secondary" href="{html.escape(refresh_url)}">Refresh site</a></p></div>
   </div>
 </section>
-<section class="notice">
-  <strong>Public boundary:</strong> These are autonomous, deterministic market-readiness proofs using synthetic/redacted-style benchmark data. They are not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees of future outcomes.
-</section>
+
 <section class="section">
-  <h2>Latest workflow status</h2>
-  {workflow_table(workflows, limit=12)}
+  <h2>Latest Actions status</h2>
+  {workflows_table(workflows, limit=12)}
+</section>
+
+<section class="notice">
+  <strong>Public boundary:</strong> These are autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. They are not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.
 </section>
 """
-    (SITE / "index.html").write_text(page_shell("SkillOS Public Proof Command Center", hero), encoding="utf-8")
+    (SITE / "index.html").write_text(shell("SkillOS Public Proof Command Center", hero), encoding="utf-8")
 
     proofs_body = f"""
 <section class="section">
-  <div class="eyebrow">Proof library</div>
-  <h2>All public SkillOS proofs</h2>
-  <p class="lead">Every proof card links to the visual page when available, the workflow that reruns it, the documentation, and machine-readable JSON receipts.</p>
+  <div class="eyebrow">All public proof entries</div>
+  <h2>Proof Library</h2>
+  <p class="lead">Every proof card links to the visual page when available, the GitHub Action that regenerates it, the Markdown report, and the machine-readable JSON receipt.</p>
   <div class="proof-grid">{''.join(proof_card(p) for p in proofs)}</div>
 </section>
 """
-    (SITE / "proofs.html").write_text(page_shell("SkillOS Proof Library", proofs_body), encoding="utf-8")
+    (SITE / "proofs.html").write_text(shell("SkillOS Proof Library", proofs_body), encoding="utf-8")
 
     actions_body = f"""
 <section class="section">
-  <div class="eyebrow">GitHub Actions</div>
-  <h2>Workflow status command board</h2>
-  <p class="lead">Latest visible workflow status from the repository. This page is regenerated by the autonomous site refresh workflow.</p>
+  <div class="eyebrow">Workflow command board</div>
+  <h2>GitHub Actions Status</h2>
+  <p class="lead">The public website refreshes from workflow files and latest workflow runs. Use this page to see what can be rerun.</p>
   <div class="actions">
     <a class="button" href="{html.escape(run_all_url)}">Run all public proofs</a>
-    <a class="button secondary" href="{html.escape(refresh_url)}">Refresh this site</a>
-    <a class="button secondary" href="{html.escape(github_url + '/actions')}">Open all Actions</a>
+    <a class="button secondary" href="{html.escape(refresh_url)}">Refresh site</a>
+    <a class="button secondary" href="{html.escape(repo_url('actions'))}">Open all Actions</a>
   </div>
-  {workflow_table(workflows)}
+  {workflows_table(workflows)}
 </section>
 """
-    (SITE / "actions.html").write_text(page_shell("SkillOS Actions Status", actions_body), encoding="utf-8")
+    (SITE / "actions.html").write_text(shell("SkillOS Actions Status", actions_body), encoding="utf-8")
+
+    multi_body = f"""
+<section class="section">
+  <div class="eyebrow">Large-scale agentic coordination</div>
+  <h2>Multi-Agent Command Center</h2>
+  <p class="lead">This page spotlights the flagship proof: a large specialist-agent system coordinating to maximum effect through validation-gated Recursive Self-Improvement.</p>
+</section>
+<section class="grid">
+  <div class="metric"><strong>{html.escape(str(agent_system.get('agent_count') or flagship.get('agent_count') or '—'))}</strong><span>specialist agents</span></div>
+  <div class="metric"><strong>{html.escape(str(agent_system.get('role_count') or flagship.get('role_count') or '—'))}</strong><span>roles</span></div>
+  <div class="metric"><strong>{html.escape(str(metric_value(flagship,'fully_correct_gain_vs_single_agent_points')))}</strong><span>gain vs single agent</span></div>
+  <div class="metric"><strong>{html.escape(str(metric_value(flagship,'synthetic_value_captured_over_single_agent_usd')))}</strong><span>benchmark value over baseline</span></div>
+</section>
+<section class="section card">
+  <h2>Specialist roles</h2>
+  <div class="roles">{role_chips(roles)}</div>
+</section>
+<section class="section">
+  <h2>Ablation comparison</h2>
+  <table>
+    <tr><th>Metric</th><th>Single agent</th><th>Uncoordinated pool</th><th>Static coordination</th><th>SkillOS RSI</th></tr>
+    <tr><td>Fully correct</td><td>{single.get('fully_correct_percent','—')}%</td><td>{uncoord.get('fully_correct_percent','—')}%</td><td>{static.get('fully_correct_percent','—')}%</td><td>{final.get('fully_correct_percent','—')}%</td></tr>
+    <tr><td>Coordination accuracy</td><td>{single.get('coordination_protocol_accuracy_percent','—')}%</td><td>{uncoord.get('coordination_protocol_accuracy_percent','—')}%</td><td>{static.get('coordination_protocol_accuracy_percent','—')}%</td><td>{final.get('coordination_protocol_accuracy_percent','—')}%</td></tr>
+    <tr><td>Risk control</td><td>{single.get('risk_control_accuracy_percent','—')}%</td><td>{uncoord.get('risk_control_accuracy_percent','—')}%</td><td>{static.get('risk_control_accuracy_percent','—')}%</td><td>{final.get('risk_control_accuracy_percent','—')}%</td></tr>
+    <tr><td>Value capture</td><td>{single.get('value_capture_rate_percent','—')}%</td><td>{uncoord.get('value_capture_rate_percent','—')}%</td><td>{static.get('value_capture_rate_percent','—')}%</td><td>{final.get('value_capture_rate_percent','—')}%</td></tr>
+    <tr><td>Risk breach</td><td>{single.get('risk_breach_rate_percent','—')}%</td><td>{uncoord.get('risk_breach_rate_percent','—')}%</td><td>{static.get('risk_breach_rate_percent','—')}%</td><td>{final.get('risk_breach_rate_percent','—')}%</td></tr>
+  </table>
+</section>
+<section class="section card">
+  <h2>What it proves</h2>
+  <p>Many agents alone are not enough. Uncoordinated agents are not enough. Static coordination is not enough. SkillOS tests whether the coordination layer can recursively improve through validation-gated protocol releases and then generalize to adversarial holdout market states.</p>
+  <div class="actions">
+    <a class="button" href="{html.escape(str(flagship_page))}">View flagship proof</a>
+    <a class="button secondary" href="{html.escape(str(flagship_workflow))}">Run flagship Action</a>
+  </div>
+</section>
+<section class="notice"><strong>Boundary:</strong> This is a benchmark proof of coordination mechanics, not a claim of superintelligence, audited customer ROI, or Kardashev Type II achievement.</section>
+"""
+    (SITE / "multi-agent.html").write_text(shell("SkillOS Multi-Agent Command Center", multi_body), encoding="utf-8")
 
     runbook_body = f"""
 <section class="section">
-  <div class="eyebrow">For viewers, users, maintainers</div>
-  <h2>Run and regenerate the proofs</h2>
-  <p class="lead">This site is designed so a non-technical viewer can understand the proof and a maintainer can rerun the full proof suite from GitHub Actions.</p>
+  <div class="eyebrow">Friendly runbook</div>
+  <h2>Run and regenerate everything</h2>
+  <p class="lead">Designed for non-technical viewers and maintainers. Every proof can be rerun from GitHub Actions, and this site can be refreshed on demand.</p>
   <div class="steps">
-    <div class="step"><strong>Run one proof</strong><p>Open a proof card, click <span class="mono">Run on GitHub</span>, then click <span class="mono">Run workflow</span>.</p></div>
-    <div class="step"><strong>Run all proofs</strong><p>Use the orchestrator workflow to dispatch public proof workflows from one place.</p><p><a class="button" href="{html.escape(run_all_url)}">Run all public proofs</a></p></div>
-    <div class="step"><strong>Refresh the hub</strong><p>Use the refresh workflow to rebuild the site from latest workflows, JSON receipts, docs, and proof pages.</p><p><a class="button secondary" href="{html.escape(refresh_url)}">Refresh site</a></p></div>
+    <div class="step"><strong>1. Run flagship proof</strong><p>Open the flagship workflow and press <span class="mono">Run workflow</span>.</p><p><a class="button" href="{html.escape(str(flagship_workflow))}">Run flagship</a></p></div>
+    <div class="step"><strong>2. Run all proofs</strong><p>Dispatch all public proof workflows from one place.</p><p><a class="button secondary" href="{html.escape(run_all_url)}">Run all proofs</a></p></div>
+    <div class="step"><strong>3. Refresh public site</strong><p>Regenerate the command center from latest proof receipts and workflow metadata.</p><p><a class="button secondary" href="{html.escape(refresh_url)}">Refresh site</a></p></div>
   </div>
 </section>
 <section class="section card">
-  <h2>What the automation guarantees</h2>
-  <ul>
-    <li>Scans GitHub workflow files and latest workflow runs.</li>
-    <li>Scans generated proof JSON, proof pages, proof docs, and badges.</li>
-    <li>Regenerates a fresh, public, user-friendly proof hub.</li>
-    <li>Commits generated site/status files back to the repository.</li>
-    <li>Deploys the static site to GitHub Pages.</li>
-  </ul>
-</section>
-<section class="section card">
   <h2>Future-proofing rule</h2>
-  <p>For any future proof workflow, include the word <span class="mono">Proof</span> or <span class="mono">RSI</span> in the workflow name, generate proof JSON into <span class="mono">data/</span>, and a visual proof page into <span class="mono">site/</span>. The command center will discover it automatically.</p>
+  <p>For new proofs: include <span class="mono">Proof</span> or <span class="mono">RSI</span> in the workflow name, generate JSON into <span class="mono">data/</span>, Markdown into <span class="mono">docs/</span>, and visual HTML into <span class="mono">site/</span>. The command center discovers them automatically.</p>
 </section>
-<section class="notice">
-  <strong>Safe claim boundary:</strong> The hub makes proof outputs visible and reproducible. It does not convert benchmark results into audited customer results or guarantees.
-</section>
+<section class="notice"><strong>Safe boundary:</strong> This site makes proof outputs easy to inspect and rerun. It does not convert benchmark results into audited customer results or guarantees.</section>
 """
-    (SITE / "runbook.html").write_text(page_shell("SkillOS Runbook", runbook_body), encoding="utf-8")
+    (SITE / "runbook.html").write_text(shell("SkillOS Runbook", runbook_body), encoding="utf-8")
 
 
-def build_markdown_status(status: dict[str, Any]) -> str:
+def markdown_status(status: dict[str, Any]) -> str:
     lines = [
-        "# SkillOS Public Site Command Center Status",
+        "# SkillOS Public Proof Command Center Status",
         "",
         f"Generated: `{status['generated_at_utc']}`",
         f"Repository: `{status['repository']}`",
@@ -645,25 +708,29 @@ def build_markdown_status(status: dict[str, Any]) -> str:
         f"- Recent failed runs: {status['recent_failed_runs']}",
         f"- Recent running runs: {status['recent_running_runs']}",
         "",
-        "## Public proof entries",
+        "## Flagship",
+        "",
+        f"- Title: {status['flagship'].get('title')}",
+        f"- Status: {status['flagship'].get('status')}",
+        f"- Agents: {status['flagship'].get('agent_count')}",
+        f"- Roles: {status['flagship'].get('role_count')}",
+        "",
+        "## Proof entries",
         "",
     ]
     for p in status["proofs"]:
-        title = p.get("title", "Proof")
-        page = p.get("page_url", "")
-        workflow = p.get("workflow_url", "")
-        lines.append(f"- **{title}**")
-        if page:
-            lines.append(f"  - Visual page: {page}")
-        if workflow:
-            lines.append(f"  - Workflow: {workflow}")
+        lines.append(f"- **{p.get('title')}**")
+        if p.get("page_url"):
+            lines.append(f"  - Page: {p.get('page_url')}")
+        if p.get("workflow_url"):
+            lines.append(f"  - Workflow: {p.get('workflow_url')}")
         if p.get("json_url"):
-            lines.append(f"  - JSON receipt: {p['json_url']}")
+            lines.append(f"  - JSON: {p.get('json_url')}")
     lines += [
         "",
         "## Safe boundary",
         "",
-        "This command center presents autonomous, deterministic market-readiness proofs using synthetic/redacted-style benchmark data. It is not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or a guarantee of future outcomes.",
+        status["safe_boundary"],
         "",
     ]
     return "\n".join(lines)
@@ -672,27 +739,29 @@ def build_markdown_status(status: dict[str, Any]) -> str:
 def main() -> None:
     workflows = github_workflows()
     runs = github_runs()
-    proofs = merge_proofs(workflows, runs)
-    status = public_status(workflows, runs, proofs)
+    proofs = collect_proofs(workflows, runs)
+    flagship = pick_flagship(proofs)
+    status = status_object(workflows, runs, proofs, flagship)
 
     build_pages(status)
+
     status_json = json.dumps(status, indent=2, sort_keys=True) + "\n"
     (SITE / "public_site_status.json").write_text(status_json, encoding="utf-8")
     (DATA / "public_site_status.json").write_text(status_json, encoding="utf-8")
-    (DOCS / "SKILLOS_PUBLIC_SITE_STATUS.md").write_text(build_markdown_status(status), encoding="utf-8")
+    (DOCS / "SKILLOS_PUBLIC_SITE_STATUS.md").write_text(markdown_status(status), encoding="utf-8")
 
     print(json.dumps({
-        "status": "PUBLIC_SITE_COMMAND_CENTER_REFRESHED",
-        "site_url": status["site_url"],
+        "status": "PUBLIC_PROOF_COMMAND_CENTER_REFRESHED",
+        "site_url": SITE_URL,
         "generated_at_utc": status["generated_at_utc"],
         "proof_count": status["proof_count"],
         "workflow_count": status["workflow_count"],
-        "recent_successful_runs": status["recent_successful_runs"],
-        "recent_failed_runs": status["recent_failed_runs"],
+        "flagship": status["flagship"].get("title"),
         "outputs": [
             "site/index.html",
             "site/proofs.html",
             "site/actions.html",
+            "site/multi-agent.html",
             "site/runbook.html",
             "site/public_site_status.json",
             "data/public_site_status.json",

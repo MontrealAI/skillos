@@ -1,25 +1,6 @@
 #!/usr/bin/env python3
-"""Dispatch all public SkillOS proof workflows from one friendly workflow.
-
-This script uses GitHub's workflow_dispatch API. It intentionally excludes:
-- this orchestrator workflow
-- public site refresh workflows
-- reusable workflows
-- test-only workflows unless the user filter explicitly asks for them
-
-It is safe to run repeatedly.
-"""
-
 from __future__ import annotations
-
-import argparse
-import json
-import os
-import re
-import sys
-import time
-import urllib.error
-import urllib.request
+import argparse, json, os, time, urllib.request, urllib.error
 from typing import Any
 
 REPO = os.environ.get("GITHUB_REPOSITORY", "MontrealAI/skillos")
@@ -29,14 +10,13 @@ SERVER_URL = os.environ.get("GITHUB_SERVER_URL", "https://github.com")
 
 EXCLUDE = [
     "run all public proofs",
-    "public site command center refresh",
-    "public site refresh reusable",
+    "proof command center refresh",
+    "public site",
+    "refresh reusable",
     "pages",
     "safe public copy",
-    "tests",
 ]
-INCLUDE_HINTS = ["proof", "rsi", "shadow", "wealth", "market", "capability", "command"]
-
+INCLUDE = ["proof", "rsi", "capability", "market", "command", "capital", "multi-agent"]
 
 def api(method: str, path: str, body: dict[str, Any] | None = None) -> dict[str, Any] | None:
     if not TOKEN:
@@ -52,21 +32,15 @@ def api(method: str, path: str, body: dict[str, Any] | None = None) -> dict[str,
             "X-GitHub-Api-Version": "2022-11-28",
         },
     )
-    try:
-        with urllib.request.urlopen(req, timeout=25) as resp:
-            raw = resp.read().decode("utf-8")
-            return json.loads(raw) if raw else None
-    except urllib.error.HTTPError as exc:
-        detail = exc.read().decode("utf-8", errors="ignore")
-        raise RuntimeError(f"{method} {path} failed: {exc.code} {detail}") from exc
+    with urllib.request.urlopen(req, timeout=25) as resp:
+        raw = resp.read().decode("utf-8")
+        return json.loads(raw) if raw else None
 
-
-def workflow_rows() -> list[dict[str, Any]]:
+def workflows() -> list[dict[str, Any]]:
     data = api("GET", f"/repos/{REPO}/actions/workflows?per_page=100") or {}
     return data.get("workflows", [])
 
-
-def is_public_proof_workflow(w: dict[str, Any], filter_text: str = "") -> bool:
+def selected(w: dict[str, Any], filter_text: str) -> bool:
     name = (w.get("name") or "").lower()
     path = (w.get("path") or "").lower()
     text = f"{name} {path}"
@@ -76,8 +50,7 @@ def is_public_proof_workflow(w: dict[str, Any], filter_text: str = "") -> bool:
         return False
     if any(x in text for x in EXCLUDE):
         return False
-    return any(x in text for x in INCLUDE_HINTS)
-
+    return any(x in text for x in INCLUDE)
 
 def main() -> None:
     parser = argparse.ArgumentParser()
@@ -87,31 +60,27 @@ def main() -> None:
     parser.add_argument("--sleep", type=float, default=2.0)
     args = parser.parse_args()
 
-    workflows = workflow_rows()
-    selected = [w for w in workflows if is_public_proof_workflow(w, args.filter)]
-
+    rows = [w for w in workflows() if selected(w, args.filter)]
     print(json.dumps({
         "status": "PUBLIC_PROOF_WORKFLOWS_SELECTED",
         "repository": REPO,
         "ref": args.ref,
         "dry_run": args.dry_run,
-        "selected_count": len(selected),
-        "selected": [{"name": w.get("name"), "path": w.get("path"), "html_url": w.get("html_url")} for w in selected],
+        "selected_count": len(rows),
+        "selected": [{"name": w.get("name"), "path": w.get("path"), "html_url": w.get("html_url")} for w in rows],
     }, indent=2))
 
     if args.dry_run:
         return
 
-    for w in selected:
-        workflow_id = w.get("id")
-        name = w.get("name")
-        print(f"Dispatching {name} ({workflow_id}) on ref {args.ref}")
-        api("POST", f"/repos/{REPO}/actions/workflows/{workflow_id}/dispatches", {"ref": args.ref})
+    for w in rows:
+        print(f"Dispatching {w.get('name')}")
+        api("POST", f"/repos/{REPO}/actions/workflows/{w.get('id')}/dispatches", {"ref": args.ref})
         time.sleep(args.sleep)
 
     print(json.dumps({
         "status": "PUBLIC_PROOF_WORKFLOWS_DISPATCHED",
-        "selected_count": len(selected),
+        "selected_count": len(rows),
         "actions_url": f"{SERVER_URL}/{REPO}/actions",
     }, indent=2))
 

@@ -1,6 +1,6 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-30T19:46:05Z`
+Generated: `2026-05-30T19:54:15Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
@@ -8,7 +8,7 @@ Site: https://montrealai.github.io/skillos/
 
 - Proof entries: 63
 - Workflows tracked: 23
-- Recent successful runs: 38
+- Recent successful runs: 37
 - Recent failed runs: 0
 - Recent running runs: 1
 
@@ -134,4 +134,4 @@ Site: https://montrealai.github.io/skillos/
 
 ## Safe boundary
 
-Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.
+Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.

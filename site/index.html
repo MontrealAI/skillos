@@ -3,13 +3,8 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SkillOS Public Proof Command Center</title>
-<style>:root{color-scheme:dark;--text:#f2fbff;--muted:#b3c0cd;--line:rgba(255,255,255,.14);--panel:rgba(255,255,255,.065);--cyan:#84f8ff;--green:#7dffb0;--gold:#ffd66b;--red:#ff7979;--blue:#91a7ff}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:radial-gradient(circle at 85% 0,#3c3e78 0,transparent 34%),radial-gradient(circle at 5% 18%,#104d63 0,transparent 24%),linear-gradient(135deg,#06131f,#13243d 60%,#26295a);color:var(--text)}
-a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}nav{display:flex;align-items:center;justify-content:space-between;gap:18px;position:sticky;top:0;z-index:20;background:rgba(6,19,31,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:14px 22px}.brand{font-weight:950;letter-spacing:-.03em}.navlinks{display:flex;gap:14px;flex-wrap:wrap}.navlinks a{color:var(--muted);font-weight:850;font-size:14px}
-main{max-width:1260px;margin:0 auto;padding:44px 22px 86px}.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:28px;align-items:center;padding:42px 0 24px}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.18em;font-weight:950;font-size:12px}.hero h1{font-size:clamp(44px,7vw,98px);line-height:.86;letter-spacing:-.08em;margin:10px 0}.hero p,.lead{color:var(--muted);font-size:20px;line-height:1.55}.card{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:0 24px 90px rgba(0,0,0,.26)}.status{font-size:28px;font-weight:950;color:var(--green);overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}.metric{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.metric strong{display:block;color:var(--green);font-size:34px;letter-spacing:-.04em}.metric span{color:var(--muted)}.section{margin:30px 0}.section h2{font-size:clamp(30px,4.8vw,58px);letter-spacing:-.055em;line-height:.95;margin:0 0 16px}.proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.proof-card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:22px}.proof-card h3{font-size:24px;line-height:1.05;letter-spacing:-.035em;margin:10px 0}.proof-card p{color:var(--muted);line-height:1.45}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.button{display:inline-block;border-radius:999px;padding:11px 16px;background:var(--cyan);color:#071521;font-weight:950}.button.secondary{background:transparent;border:1px solid var(--line);color:var(--text)}.button.gold{background:var(--gold);color:#15110a}
-.badge{display:inline-flex;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.04em}.badge.ok{background:rgba(125,255,176,.16);color:var(--green)}.badge.warn{background:rgba(255,214,107,.16);color:var(--gold)}.badge.bad{background:rgba(255,121,121,.16);color:var(--red)}.badge.neutral{background:rgba(255,255,255,.08);color:var(--muted)}
-table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}th,td{padding:13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}tr:last-child td{border-bottom:0}.small{font-size:13px;color:var(--muted)}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.notice{border-left:4px solid var(--gold);background:rgba(255,214,107,.08);border-radius:16px;padding:16px 18px;color:var(--muted);line-height:1.55}.roles{display:flex;flex-wrap:wrap;gap:8px}.roles span{border:1px solid var(--line);border-radius:999px;padding:8px 10px;color:var(--muted);background:rgba(255,255,255,.05);font-size:13px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.step strong{display:block;color:var(--cyan);font-size:13px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px}.quote{font-size:clamp(24px,3.6vw,46px);line-height:1.05;letter-spacing:-.04em;color:var(--text);margin:8px 0 12px}.divider{height:1px;background:var(--line);margin:24px 0}
-@media(max-width:900px){.hero,.grid,.proof-grid,.steps{grid-template-columns:1fr}nav{align-items:flex-start;flex-direction:column}.navlinks{gap:10px}}</style>
+<link rel="stylesheet" href="assets/command-center.css">
+<script defer src="assets/command-center.js"></script>
 </head>
 <body>
 <nav>
@@ -20,11 +15,7 @@ table{width:100%;border-collapse:collapse;background:var(--panel);border:1px sol
     <a href="actions.html">Actions</a>
     <a href="multi-agent.html">Multi-Agent</a>
     <a href="runbook.html">Run / Regenerate</a>
-    
-<!-- SKILLOS_SHADOW_PILOT_NAV_START -->
-<a href="./shadow-pilot-proof.html">Shadow Pilot Proof</a>
-<!-- SKILLOS_SHADOW_PILOT_NAV_END -->
-<a href="https://github.com/MontrealAI/skillos">GitHub</a>
+    <a href="https://github.com/MontrealAI/skillos">GitHub</a>
   </div>
 </nav>
 <main>
@@ -32,7 +23,7 @@ table{width:100%;border-collapse:collapse;background:var(--panel);border:1px sol
   <div>
     <div class="eyebrow">MONTREAL.AI / SKILLOS</div>
     <h1>Autonomous Proof Command Center</h1>
-    <p>Fresh, beautiful, GitHub-native hub for every SkillOS proof, run, receipt, report, and visual dashboard.</p>
+    <p>Fresh, beautiful, GitHub-native hub for every SkillOS proof, run, receipt, report, chart, and visual dashboard.</p>
     <div class="actions">
       <a class="button gold" href="rsi-capability-command-center-v17-proof.html">View flagship proof</a>
       <a class="button" href="https://github.com/MontrealAI/skillos/actions">Run flagship Action</a>
@@ -41,44 +32,28 @@ table{width:100%;border-collapse:collapse;background:var(--panel);border:1px sol
   </div>
   <div class="card">
     <div class="eyebrow">Live freshness</div>
-    <div class="status">Updated 2026-05-30T19:46:05Z</div>
-    <p>Autonomously regenerated from GitHub Actions workflows, latest runs, proof JSON receipts, proof reports, and visual pages.</p>
+    <div class="status">Updated 2026-05-30T19:54:15Z</div>
+    <p>Autonomously regenerated from GitHub Actions workflows, latest runs, proof JSON receipts, proof reports, badges, and visual pages.</p>
     <p class="small">Repository: <a href="https://github.com/MontrealAI/skillos">MontrealAI/skillos</a></p>
   </div>
 </section>
-<!-- SKILLOS_SHADOW_PILOT_CARD_START -->
-<section id="shadow-pilot-proof" class="shadow-pilot-card" aria-labelledby="shadow-pilot-title">
-  <div class="shadow-pilot-copy">
-    <p class="eyebrow">Autonomous no-send proof</p>
-    <h2 id="shadow-pilot-title">Shadow Pilot Proof</h2>
-    <p>GitHub Actions now runs a no-send reference evaluation that shows SkillOS can turn call-note examples into traces, lessons, tested skill rules, and improved holdout performance.</p>
-    <p class="shadow-pilot-safe-note">No emails sent. No customers contacted. No private data. No API keys. Anyone can rerun the proof in GitHub Actions.</p>
-    <div class="shadow-pilot-actions">
-      <a class="button" href="./shadow-pilot-proof.html">View visual proof</a>
-      <a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/workflows/shadow-pilot-proof.yml">Run on GitHub</a>
-    </div>
-  </div>
-  <div class="shadow-pilot-metrics" aria-label="Shadow pilot proof metrics">
-    <div><strong>+29.8 pts</strong><span>quality gain</span></div>
-    <div><strong>64.1%</strong><span>edit-time reduction</span></div>
-    <div><strong>+80.0 pts</strong><span>accepted-rate lift</span></div>
-    <div><strong>0%</strong><span>hallucination rate after learned skill</span></div>
-  </div>
-</section>
-<!-- SKILLOS_SHADOW_PILOT_CARD_END -->
-
 
 <section class="section card">
   <div class="eyebrow">Capital-to-capability thesis</div>
   <div class="quote">Can autonomous coordination turn capital, compute, energy, data, trust, talent, product, distribution, validation, risk control, and reinvestment into compounding productive capability?</div>
-  <p>This hub does not claim superintelligence or Kardashev Type II achievement. It makes the mechanism publicly testable: a large specialist-agent organization improves its own coordination layer through validation-gated RSI releases.</p>
+  <p>This site does not claim superintelligence or Kardashev Type II achievement. It makes the mechanism publicly testable: a large specialist-agent organization improves its coordination layer through validation-gated Recursive Self-Improvement.</p>
 </section>
 
 <section class="grid">
   <div class="metric"><strong>512</strong><span>flagship agents</span></div>
   <div class="metric"><strong>64</strong><span>specialist roles</span></div>
-  <div class="metric"><strong>63</strong><span>proof entries</span></div>
-  <div class="metric"><strong>38</strong><span>recent successful runs</span></div>
+  <div class="metric"><strong data-live-count="proof_count">63</strong><span>proof entries</span></div>
+  <div class="metric"><strong data-live-count="recent_successful_runs">37</strong><span>recent successful runs</span></div>
+</section>
+
+<section class="two">
+  <div class="chart" data-chart="rsi-curve"></div>
+  <div class="chart" data-chart="capability-radar"></div>
 </section>
 
 <section class="section">
@@ -95,15 +70,19 @@ table{width:100%;border-collapse:collapse;background:var(--panel);border:1px sol
 
     <div class="proof-card">
       <span class="badge ok">large-scale coordination</span>
-      <h3>Single agent vs pool vs coordinated RSI</h3>
-      <p>The flagship proof compares a single-agent baseline, an uncoordinated multi-agent pool, static coordination, and a SkillOS RSI coordinated organization.</p>
-      <p class="small">Many agents alone are not the moat. Recursive improvement of the coordination layer is the moat.</p>
+      <h3>Single agent vs uncoordinated pool vs static coordination vs SkillOS RSI</h3>
+      <p>Many agents alone are not the moat. Recursive improvement of the coordination layer is the moat.</p>
       <div class="actions">
         <a class="button" href="multi-agent.html">See comparison</a>
         <a class="button secondary" href="https://github.com/MontrealAI/skillos/actions">Run proof</a>
       </div>
     </div>
   </div>
+</section>
+
+<section class="two">
+  <div class="chart" data-chart="proof-status"></div>
+  <div class="chart" data-chart="workflow-status"></div>
 </section>
 
 <section class="section">
@@ -189,9 +168,27 @@ table{width:100%;border-collapse:collapse;background:var(--panel);border:1px sol
   <h2>Latest Actions status</h2>
   <table><tr><th>Workflow</th><th>Status</th><th>Event</th><th>Latest run</th></tr><tr>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"><strong>SkillOS Public Site Command Center Refresh</strong></a><br><span class="small mono">.github/workflows/skillos-public-site-refresh.yml</span></td>
-<td><span class="badge warn">running</span></td>
-<td>schedule</td>
-<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26693225805">2026-05-30T19:45:58Z</a></td>
+<td><span class="badge warn">not run yet</span></td>
+<td>workflow_run</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26693402044">2026-05-30T19:54:12Z</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"><strong>Deploy SkillOS website with autonomous safe public copy</strong></a><br><span class="small mono">.github/workflows/pages.yml</span></td>
+<td><span class="badge ok">passing</span></td>
+<td>push</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26693389929">2026-05-30T19:54:08Z</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"><strong>SkillOS Public Proof Command Center Refresh</strong></a><br><span class="small mono">.github/workflows/skillos-public-proof-command-center-refresh.yml</span></td>
+<td><span class="badge ok">passing</span></td>
+<td>push</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26693389915">2026-05-30T19:54:05Z</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"><strong>SkillOS tests</strong></a><br><span class="small mono">.github/workflows/tests.yml</span></td>
+<td><span class="badge ok">passing</span></td>
+<td>push</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26693389910">2026-05-30T19:53:50Z</a></td>
 </tr>
 <tr>
 <td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-unit-economics-proof.yml"><strong>Autonomous RSI Unit Economics Profit Engine Market Proof</strong></a><br><span class="small mono">.github/workflows/rsi-unit-economics-proof.yml</span></td>
@@ -240,24 +237,6 @@ table{width:100%;border-collapse:collapse;background:var(--panel);border:1px sol
 <td><span class="badge bad">cancelled</span></td>
 <td>workflow_dispatch</td>
 <td><a href="https://github.com/MontrealAI/skillos/actions/runs/26692801330">2026-05-30T19:26:15Z</a></td>
-</tr>
-<tr>
-<td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cyberdefense-proof.yml"><strong>Autonomous RSI Cyber Defense Market Proof</strong></a><br><span class="small mono">.github/workflows/rsi-cyberdefense-proof.yml</span></td>
-<td><span class="badge bad">cancelled</span></td>
-<td>workflow_dispatch</td>
-<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26692800235">2026-05-30T19:26:12Z</a></td>
-</tr>
-<tr>
-<td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-corporate-os-proof.yml"><strong>Autonomous RSI Corporate Operating System Market Proof</strong></a><br><span class="small mono">.github/workflows/rsi-corporate-os-proof.yml</span></td>
-<td><span class="badge bad">cancelled</span></td>
-<td>workflow_dispatch</td>
-<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26692799134">2026-05-30T19:26:09Z</a></td>
-</tr>
-<tr>
-<td><a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/enterprise-ops-proof.yml"><strong>Autonomous Enterprise Ops Market Proof</strong></a><br><span class="small mono">.github/workflows/enterprise-ops-proof.yml</span></td>
-<td><span class="badge ok">passing</span></td>
-<td>workflow_dispatch</td>
-<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26692793008">2026-05-30T19:26:06Z</a></td>
 </tr></table>
 </section>
 

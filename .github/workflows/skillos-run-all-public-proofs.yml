@@ -1,0 +1,44 @@
+name: SkillOS Run All Public Proofs
+
+on:
+  workflow_dispatch:
+    inputs:
+      proof_filter:
+        description: "Optional filter, e.g. capability, marketplace, revenue, multi-agent"
+        required: false
+        default: ""
+      dry_run:
+        description: "Preview selected proof workflows without dispatching them"
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  dispatch:
+    name: Dispatch public proof workflows
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Dispatch selected proof workflows
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PROOF_FILTER: ${{ inputs.proof_filter }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: python scripts/run_all_public_proofs.py --ref main
+
+      - name: Summary
+        run: |
+          echo "Public proof workflows were selected and dispatched."
+          echo "Open https://github.com/MontrealAI/skillos/actions to watch them run."
+          echo "The public site refresh workflow will update https://montrealai.github.io/skillos/ after proof outputs are generated."

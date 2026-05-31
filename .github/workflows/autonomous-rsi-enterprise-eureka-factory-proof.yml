@@ -1,0 +1,136 @@
+name: Autonomous RSI Enterprise Eureka Factory Proof
+
+on:
+  workflow_dispatch:
+    inputs:
+      seed:
+        description: "Deterministic benchmark seed"
+        required: false
+        default: "20260530"
+      deploy_pages:
+        description: "Deploy GitHub Pages after generating the proof"
+        type: boolean
+        required: false
+        default: true
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/autonomous-rsi-enterprise-eureka-factory-proof.yml"
+      - "scripts/run_rsi_enterprise_eureka_factory_proof.py"
+      - "scripts/verify_rsi_enterprise_eureka_factory_proof.py"
+      - "scripts/make_rsi_enterprise_eureka_factory_visible.py"
+      - "docs/AUTONOMOUS_RSI_ENTERPRISE_EUREKA_FACTORY_PROOF.md"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  proof:
+    name: Run autonomous enterprise eureka RSI proof
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: https://montrealai.github.io/skillos/
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run autonomous RSI enterprise eureka factory proof
+        env:
+          GITHUB_STEP_SUMMARY: ${{ github.step_summary }}
+        run: |
+          python scripts/run_rsi_enterprise_eureka_factory_proof.py \
+            --seed "${{ inputs.seed || '20260530' }}" \
+            --summary "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify autonomous RSI enterprise eureka factory proof
+        run: python scripts/verify_rsi_enterprise_eureka_factory_proof.py
+
+      - name: Generate public visual proof page and badge
+        run: python scripts/make_rsi_enterprise_eureka_factory_visible.py
+
+      - name: Refresh public proof command center if available
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if [ -f scripts/refresh_public_site.py ]; then
+            python scripts/refresh_public_site.py
+          else
+            echo "Public proof command center generator not present; standalone proof page was generated."
+          fi
+
+      - name: Verify public proof command center if available
+        run: |
+          if [ -f scripts/verify_public_site_refresh.py ]; then
+            python scripts/verify_public_site_refresh.py
+          else
+            echo "Public proof command center verifier not present; skipping."
+          fi
+
+      - name: Upload proof artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: rsi-enterprise-eureka-factory-proof
+          path: |
+            data/rsi_enterprise_eureka_factory_proof.json
+            docs/rsi_enterprise_eureka_factory_proof.md
+            site/rsi-enterprise-eureka-factory-proof.html
+            badges/rsi_enterprise_eureka_factory_proof.svg
+            site/public_site_status.json
+            docs/SKILLOS_PUBLIC_SITE_STATUS.md
+          if-no-files-found: ignore
+
+      - name: Commit generated proof outputs
+        continue-on-error: true
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/rsi_enterprise_eureka_factory_proof.json docs/rsi_enterprise_eureka_factory_proof.md site/rsi-enterprise-eureka-factory-proof.html badges/rsi_enterprise_eureka_factory_proof.svg
+            if [ -f site/index.html ]; then
+              git add site/index.html site/proofs.html site/actions.html site/multi-agent.html site/receipts.html site/leaderboard.html site/architecture.html site/runbook.html site/assets/command-center.css site/assets/command-center.js site/manifest.webmanifest site/robots.txt site/sitemap.xml site/og-card.svg site/public_site_status.json data/public_site_status.json docs/SKILLOS_PUBLIC_SITE_STATUS.md || true
+            fi
+            git commit -m "Run autonomous RSI enterprise eureka factory proof"
+            git push
+          else
+            echo "Proof outputs already fresh."
+          fi
+
+      - name: Build Pages artifact
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        run: |
+          mkdir -p dist
+          if [ -d site ]; then
+            cp -R site/* dist/
+          else
+            mkdir -p dist
+            cp docs/rsi_enterprise_eureka_factory_proof.md dist/index.md
+          fi
+
+      - name: Configure GitHub Pages
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy GitHub Pages
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/deploy-pages@v4

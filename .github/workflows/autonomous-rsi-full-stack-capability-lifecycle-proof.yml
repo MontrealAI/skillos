@@ -1,0 +1,100 @@
+name: Autonomous RSI Full-Stack Capability Lifecycle Proof
+
+on:
+  workflow_dispatch:
+    inputs:
+      seed:
+        description: "Deterministic benchmark seed"
+        required: false
+        default: "20260530"
+      publish_to_repo:
+        description: "Commit generated proof outputs"
+        type: boolean
+        required: false
+        default: true
+      deploy_pages:
+        description: "Deploy GitHub Pages directly from this workflow"
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: skillos-pages
+  cancel-in-progress: false
+
+jobs:
+  proof:
+    name: Run autonomous full-stack capability lifecycle proof
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Run proof
+        env:
+          GITHUB_STEP_SUMMARY: ${{ github.step_summary }}
+        run: |
+          python scripts/run_rsi_full_stack_capability_lifecycle_proof.py --seed "${{ inputs.seed || '20260530' }}" --summary "$GITHUB_STEP_SUMMARY"
+      - name: Verify proof receipt
+        run: python scripts/verify_rsi_full_stack_capability_lifecycle_proof.py
+      - name: Render proof webpage and badge
+        run: python scripts/render_rsi_full_stack_capability_lifecycle_site.py
+      - name: Publish proof to SkillOS hub
+        run: python scripts/publish_rsi_full_stack_capability_lifecycle_to_hub.py
+      - name: Verify site integration
+        run: python scripts/verify_rsi_full_stack_capability_lifecycle_site.py
+      - name: Upload proof artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: rsi-full-stack-capability-lifecycle-proof
+          path: |
+            data/rsi-full-stack-capability-lifecycle-proof.json
+            docs/rsi-full-stack-capability-lifecycle-proof.md
+            site/rsi-full-stack-capability-lifecycle-proof.html
+            site/data/rsi-full-stack-capability-lifecycle-proof.json
+            site/docs/rsi-full-stack-capability-lifecycle-proof.md
+            site/badges/rsi-full-stack-capability-lifecycle-proof.svg
+            badges/rsi-full-stack-capability-lifecycle-proof.svg
+            site/index.html
+            site/proof-registry.json
+            site/sitemap.xml
+            site/robots.txt
+      - name: Commit generated outputs
+        if: ${{ inputs.publish_to_repo }}
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/rsi-full-stack-capability-lifecycle-proof.json docs/rsi-full-stack-capability-lifecycle-proof.md badges/rsi-full-stack-capability-lifecycle-proof.svg site/rsi-full-stack-capability-lifecycle-proof.html site/data/rsi-full-stack-capability-lifecycle-proof.json site/docs/rsi-full-stack-capability-lifecycle-proof.md site/badges/rsi-full-stack-capability-lifecycle-proof.svg site/index.html site/proof-registry.json site/sitemap.xml site/robots.txt
+            git commit -m "Run autonomous RSI full-stack capability lifecycle proof"
+            git push
+          else
+            echo "Generated outputs already fresh."
+          fi
+      - name: Build Pages artifact
+        if: ${{ inputs.deploy_pages }}
+        run: |
+          mkdir -p dist
+          cp -R site/* dist/
+      - name: Configure GitHub Pages
+        if: ${{ inputs.deploy_pages }}
+        uses: actions/configure-pages@v5
+      - name: Upload GitHub Pages artifact
+        if: ${{ inputs.deploy_pages }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - name: Deploy GitHub Pages
+        if: ${{ inputs.deploy_pages }}
+        uses: actions/deploy-pages@v4

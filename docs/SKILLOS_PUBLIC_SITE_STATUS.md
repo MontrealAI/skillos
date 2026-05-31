@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T19:38:45Z`
+Generated: `2026-05-31T19:45:12Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 55
+- Proof entries: 56
 - Workflows tracked: 36
-- Recent successful runs: 37
+- Recent successful runs: 39
 - Recent failed runs: 5
-- Recent running runs: 2
+- Recent running runs: 1
 
 ## Flagship
 
@@ -103,6 +103,9 @@ Site: https://montrealai.github.io/skillos/
   - Page: https://montrealai.github.io/skillos/proof-cyber-defense.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cyberdefense-proof.yml
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_cyberdefense_market_proof.json
+- **Autonomous RSI Skill Provenance Ledger Proof**
+  - Page: https://montrealai.github.io/skillos/proof-skill-provenance-ledger-skill-provenance-ledger-skill-provenance-ledger-skill-provenance-ledger.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-skill-provenance-ledger-proof.json
 - **procurement invoice reconciliation and payment-risk triage**
   - Page: https://montrealai.github.io/skillos/proof-enterprise-ops-procurement-invoice-reconciliation-and-payment-risk-triage-fully-enterprise-operations.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/enterprise_ops_market_proof.json
@@ -128,6 +131,8 @@ Site: https://montrealai.github.io/skillos/
 - **Governance Frontier**
   - Page: https://montrealai.github.io/skillos/rsi-governance-frontier-proof.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-governance-frontier-proof.json
+- **Skill Provenance Ledger**
+  - Page: https://montrealai.github.io/skillos/rsi-skill-provenance-ledger-proof.html
 - **Autonomous Enterprise Ops Market Proof**
   - Page: https://montrealai.github.io/skillos/proof-enterprise-ops-github-enterprise-ops-enterprise-ops-enterprise-ops.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/enterprise-ops-proof.yml
@@ -180,8 +185,6 @@ Site: https://montrealai.github.io/skillos/
   - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
 - **Rsi Cross Domain Capability Transfer Atlas**
   - Page: https://montrealai.github.io/skillos/proof-cross-domain-capability-transfer-atlas-cross-domain-capability-transfer-atlas.html
-- **Rsi Skill Provenance Ledger**
-  - Page: https://montrealai.github.io/skillos/proof-skill-provenance-ledger-skill-provenance-ledger.html
 - **Wealth Accumulation**
   - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
 - **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**

@@ -1,14 +1,14 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T12:02:35Z`
+Generated: `2026-05-31T12:05:44Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 30
+- Proof entries: 31
 - Workflows tracked: 25
-- Recent successful runs: 48
+- Recent successful runs: 49
 - Recent failed runs: 0
 - Recent running runs: 1
 
@@ -49,6 +49,9 @@ Site: https://montrealai.github.io/skillos/
   - Page: https://montrealai.github.io/skillos/rsi-enterprise-eureka-factory-proof.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-eureka-factory-proof.yml
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_enterprise_eureka_factory_proof.json
+- **Autonomous RSI Enterprise Capability Foundry Proof**
+  - Page: https://montrealai.github.io/skillos/proof-enterprise-capability-foundry-enterprise-capability-foundry-enterprise-capability-foundry-enterprise-capability-foundry.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_enterprise_capability_foundry_proof.json
 - **Autonomous RSI CloudOps Market Proof**
   - Page: https://montrealai.github.io/skillos/rsi-cloudops-proof.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cloudops-proof.yml
@@ -90,6 +93,8 @@ Site: https://montrealai.github.io/skillos/
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/enterprise_ops_market_proof.json
 - **Cyberdefense**
   - Page: https://montrealai.github.io/skillos/rsi-cyberdefense-proof.html
+- **Enterprise Capability Foundry**
+  - Page: https://montrealai.github.io/skillos/rsi-enterprise-capability-foundry-proof.html
 - **Enterprise Ops**
   - Page: https://montrealai.github.io/skillos/enterprise-ops-proof.html
 - **Autonomous Enterprise Ops Market Proof**
@@ -109,8 +114,6 @@ Site: https://montrealai.github.io/skillos/
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml
 - **Readiness**
   - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
-- **Rsi Enterprise Capability Foundry**
-  - Page: https://montrealai.github.io/skillos/proof-enterprise-capability-foundry-enterprise-capability-foundry.html
 - **Wealth Accumulation**
   - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
 - **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**

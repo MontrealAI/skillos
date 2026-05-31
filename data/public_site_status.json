@@ -1166,8 +1166,8 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-05-31T00:43:39Z",
-  "proof_count": 64,
+  "generated_at_utc": "2026-05-31T00:43:49Z",
+  "proof_count": 65,
   "proofs": [
     {
       "agent_count": 512,
@@ -2789,6 +2789,20 @@
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cyberdefense-proof.yml"
     },
     {
+      "key": "autonomous-rsi-enterprise-eureka-factory-proof",
+      "latest_run_status": "queued",
+      "latest_run_updated_at": "2026-05-31T00:43:45Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26699188256",
+      "source": "workflow",
+      "sources": [
+        "workflow"
+      ],
+      "title": "Autonomous RSI Enterprise Eureka Factory Proof",
+      "workflow_name": "Autonomous RSI Enterprise Eureka Factory Proof",
+      "workflow_path": ".github/workflows/autonomous-rsi-enterprise-eureka-factory-proof.yml",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-eureka-factory-proof.yml"
+    },
+    {
       "key": "autonomous-rsi-marketplace-flywheel-market-proof",
       "latest_run_conclusion": "success",
       "latest_run_status": "completed",
@@ -2880,9 +2894,9 @@
     },
     {
       "key": "deploy-skillos-website-with-autonomous-safe-public-copy",
-      "latest_run_status": "in_progress",
-      "latest_run_updated_at": "2026-05-31T00:43:35Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26699180649",
+      "latest_run_status": "queued",
+      "latest_run_updated_at": "2026-05-31T00:43:46Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26699188252",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -2909,10 +2923,9 @@
     },
     {
       "key": "skillos-tests",
-      "latest_run_conclusion": "success",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-31T00:43:28Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26699180646",
+      "latest_run_status": "queued",
+      "latest_run_updated_at": "2026-05-31T00:43:43Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26699188250",
       "source": "workflow",
       "sources": [
         "workflow"
@@ -3084,53 +3097,63 @@
     }
   ],
   "proved_or_passed_proof_count": 14,
-  "recent_failed_runs": 5,
-  "recent_running_runs": 3,
+  "recent_failed_runs": 2,
+  "recent_running_runs": 5,
   "recent_successful_runs": 39,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26699184557",
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26699184549",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
-  "workflow_count": 23,
+  "workflow_count": 24,
   "workflows": [
     {
       "conclusion": null,
       "event": "push",
       "name": "Deploy SkillOS website with autonomous safe public copy",
       "path": ".github/workflows/pages.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26699180649",
-      "status": "in_progress",
-      "updated_at": "2026-05-31T00:43:35Z",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26699188252",
+      "status": "queued",
+      "updated_at": "2026-05-31T00:43:46Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"
     },
     {
       "conclusion": null,
-      "event": "workflow_run",
+      "event": "push",
+      "name": "Autonomous RSI Enterprise Eureka Factory Proof",
+      "path": ".github/workflows/autonomous-rsi-enterprise-eureka-factory-proof.yml",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26699188256",
+      "status": "queued",
+      "updated_at": "2026-05-31T00:43:45Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-eureka-factory-proof.yml"
+    },
+    {
+      "conclusion": null,
+      "event": "push",
       "name": "SkillOS Public Proof Command Center Refresh",
       "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26699184557",
-      "status": "in_progress",
-      "updated_at": "2026-05-31T00:43:34Z",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26699188261",
+      "status": "pending",
+      "updated_at": "2026-05-31T00:43:44Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
       "conclusion": null,
-      "event": "workflow_run",
+      "event": "push",
       "name": "SkillOS Public Site Command Center Refresh",
       "path": ".github/workflows/skillos-public-site-refresh.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26699184549",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26699188262",
       "status": "pending",
-      "updated_at": "2026-05-31T00:43:30Z",
+      "updated_at": "2026-05-31T00:43:44Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {
-      "conclusion": "success",
+      "conclusion": null,
       "event": "push",
       "name": "SkillOS tests",
       "path": ".github/workflows/tests.yml",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26699180646",
-      "status": "completed",
-      "updated_at": "2026-05-31T00:43:28Z",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26699188250",
+      "status": "queued",
+      "updated_at": "2026-05-31T00:43:43Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"
     },
     {

@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T00:43:39Z`
+Generated: `2026-05-31T00:43:49Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 64
-- Workflows tracked: 23
+- Proof entries: 65
+- Workflows tracked: 24
 - Recent successful runs: 39
-- Recent failed runs: 5
-- Recent running runs: 3
+- Recent failed runs: 2
+- Recent running runs: 5
 
 ## Flagship
 
@@ -98,6 +98,8 @@ Site: https://montrealai.github.io/skillos/
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-corporate-os-proof.yml
 - **Autonomous RSI Cyber Defense Market Proof**
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cyberdefense-proof.yml
+- **Autonomous RSI Enterprise Eureka Factory Proof**
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-eureka-factory-proof.yml
 - **Autonomous RSI Marketplace Flywheel Market Proof**
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-marketplace-flywheel-proof.yml
 - **Autonomous RSI Metamaterials Discovery Market Proof**

@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T20:30:16Z`
+Generated: `2026-05-31T20:30:46Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 57
-- Workflows tracked: 36
-- Recent successful runs: 42
-- Recent failed runs: 3
-- Recent running runs: 4
+- Proof entries: 58
+- Workflows tracked: 37
+- Recent successful runs: 39
+- Recent failed runs: 2
+- Recent running runs: 5
 
 ## Flagship
 
@@ -151,6 +151,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI Capability Liquidity Engine Proof**
   - Page: https://montrealai.github.io/skillos/proof-capability-liquidity-engine-github-capability-liquidity-engine-capability-liquidity-engine-capability-liquidity.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml
+- **Autonomous RSI Causal Attribution Engine Proof**
+  - Page: https://montrealai.github.io/skillos/proof-causal-attribution-engine-github-causal-attribution-engine-causal-attribution-engine-causal-attribution.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-causal-attribution-engine-proof.yml
 - **Autonomous RSI Corporate Capability Frontier Proof**
   - Page: https://montrealai.github.io/skillos/proof-corporate-capability-frontier-github-corporate-capability-frontier-corporate-capability-frontier-corporate-capability.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-corporate-capability-frontier-proof.yml

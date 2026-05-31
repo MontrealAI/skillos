@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T17:12:45Z`
+Generated: `2026-05-31T17:13:14Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 46
-- Workflows tracked: 31
-- Recent successful runs: 41
+- Proof entries: 47
+- Workflows tracked: 32
+- Recent successful runs: 39
 - Recent failed runs: 0
-- Recent running runs: 3
+- Recent running runs: 4
 
 ## Flagship
 
@@ -146,6 +146,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI Enterprise Superorganization Proof**
   - Page: https://montrealai.github.io/skillos/proof-enterprise-superorganization-github-enterprise-superorganization-enterprise-superorganization-enterprise-superorganization.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-superorganization-proof.yml
+- **Autonomous RSI Governance Frontier Proof**
+  - Page: https://montrealai.github.io/skillos/proof-governance-frontier-github-governance-frontier-governance-frontier-governance-frontier.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-governance-frontier-proof.yml
 - **Deploy SkillOS website with autonomous safe public copy**
   - Page: https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml

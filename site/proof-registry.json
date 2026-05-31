@@ -2,7 +2,7 @@
   "proofs": [
     {
       "badge": "badges/rsi-open-replication-mesh-proof.svg",
-      "generated_at_utc": "2026-05-31T21:33:53+00:00",
+      "generated_at_utc": "2026-05-31T21:36:34+00:00",
       "headline": "Open replication for SkillOS RSI: signed replica receipts, Merkle-style receipt tree, locked holdout replay, and GitHub-runnable verification.",
       "href": "rsi-open-replication-mesh-proof.html",
       "id": "rsi-open-replication-mesh-proof",
@@ -139,5 +139,5 @@
   "schema_version": 2,
   "site_base_url": "https://montrealai.github.io/skillos/",
   "source": "SkillOS autonomous GitHub Actions proof publisher",
-  "updated_at_utc": "2026-05-31T21:33:53+00:00"
+  "updated_at_utc": "2026-05-31T21:36:34+00:00"
 }

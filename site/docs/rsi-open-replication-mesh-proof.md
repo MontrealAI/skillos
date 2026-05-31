@@ -30,4 +30,4 @@ This proof does not claim achieved superintelligence, live revenue, customer out
 
 - JSON: `data/rsi-open-replication-mesh-proof.json`
 - Public page: `site/rsi-open-replication-mesh-proof.html`
-- SHA-256: `012b7a54c72dc415f1399dd2151f19f6df97c70d810b15b2ae01bbe3a17dff1b`
+- SHA-256: `5a112b1ee2b69ef7b1cdf5187d19f0e9514712d5afed4aae4bce800887482b06`

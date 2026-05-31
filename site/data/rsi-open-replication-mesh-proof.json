@@ -69,7 +69,7 @@
     "risk_breach_zero": true,
     "unauthorized_action_zero": true
   },
-  "generated_at_utc": "2026-05-31T21:33:53+00:00",
+  "generated_at_utc": "2026-05-31T21:36:34+00:00",
   "mechanism": "demand → decomposition → specialist-agent coordination → verifier courts → signed replica receipts → Merkle receipt tree → open replay → release selection → hub publication → reinvestment → stronger future proofs",
   "metrics": {
     "benchmark_capital_equivalent_gain_vs_best_control_trillions": 21.78253,
@@ -102,7 +102,7 @@
   "proof_id": "rsi-open-replication-mesh-proof",
   "proved": true,
   "public_claim_boundary": "This proof does not claim achieved superintelligence, live revenue, customer outcomes, legal advice, investment advice, token advice, policy advice, or Kardashev Type II civilization. It makes the replication layer under the SkillOS RSI value thesis publicly runnable, inspectable, and falsifiable.",
-  "receipt_sha256": "012b7a54c72dc415f1399dd2151f19f6df97c70d810b15b2ae01bbe3a17dff1b",
+  "receipt_sha256": "5a112b1ee2b69ef7b1cdf5187d19f0e9514712d5afed4aae4bce800887482b06",
   "release_curve": [
     {
       "release": "v0",

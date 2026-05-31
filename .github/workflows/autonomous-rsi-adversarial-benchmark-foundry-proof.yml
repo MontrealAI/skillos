@@ -1,0 +1,122 @@
+name: Autonomous RSI Adversarial Benchmark Foundry Proof
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_to_repo:
+        description: "Commit generated proof outputs back to the repository"
+        required: true
+        default: "true"
+        type: choice
+        options: ["true", "false"]
+      deploy_pages:
+        description: "Deploy GitHub Pages directly from this workflow. Keep false if another Pages workflow deploys after commits."
+        required: true
+        default: "false"
+        type: choice
+        options: ["true", "false"]
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/autonomous-rsi-adversarial-benchmark-foundry-proof.yml"
+      - "scripts/run_rsi_adversarial_benchmark_foundry_proof.py"
+      - "scripts/verify_rsi_adversarial_benchmark_foundry_proof.py"
+      - "scripts/render_rsi_adversarial_benchmark_foundry_site.py"
+      - "scripts/publish_rsi_adversarial_benchmark_foundry_to_hub.py"
+      - "scripts/verify_rsi_adversarial_benchmark_foundry_site.py"
+      - "docs/AUTONOMOUS_RSI_ADVERSARIAL_BENCHMARK_FOUNDRY_PROOF.md"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: skillos-rsi-adversarial-benchmark-foundry-proof-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  proof:
+    name: Generate, verify, publish, and optionally deploy proof
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: https://montrealai.github.io/skillos/
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run autonomous adversarial benchmark foundry proof
+        run: python scripts/run_rsi_adversarial_benchmark_foundry_proof.py --summary "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify proof receipt
+        run: python scripts/verify_rsi_adversarial_benchmark_foundry_proof.py
+
+      - name: Render proof webpage
+        run: python scripts/render_rsi_adversarial_benchmark_foundry_site.py
+
+      - name: Update public command center and registry
+        run: python scripts/publish_rsi_adversarial_benchmark_foundry_to_hub.py
+
+      - name: Verify site integration
+        run: python scripts/verify_rsi_adversarial_benchmark_foundry_site.py
+
+      - name: Upload proof artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rsi-adversarial-benchmark-foundry-proof
+          path: |
+            data/rsi-adversarial-benchmark-foundry-proof.json
+            docs/rsi-adversarial-benchmark-foundry-proof.md
+            docs/AUTONOMOUS_RSI_ADVERSARIAL_BENCHMARK_FOUNDRY_PROOF.md
+            badges/rsi-adversarial-benchmark-foundry-proof.svg
+            site/rsi-adversarial-benchmark-foundry-proof.html
+            site/data/rsi-adversarial-benchmark-foundry-proof.json
+            site/docs/rsi-adversarial-benchmark-foundry-proof.md
+            site/badges/rsi-adversarial-benchmark-foundry-proof.svg
+            site/index.html
+            site/proof-registry.json
+            site/sitemap.xml
+            site/robots.txt
+
+      - name: Commit generated proof outputs
+        if: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.publish_to_repo == 'true') }}
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/rsi-adversarial-benchmark-foundry-proof.json docs/rsi-adversarial-benchmark-foundry-proof.md docs/AUTONOMOUS_RSI_ADVERSARIAL_BENCHMARK_FOUNDRY_PROOF.md badges/rsi-adversarial-benchmark-foundry-proof.svg site/rsi-adversarial-benchmark-foundry-proof.html site/data/rsi-adversarial-benchmark-foundry-proof.json site/docs/rsi-adversarial-benchmark-foundry-proof.md site/badges/rsi-adversarial-benchmark-foundry-proof.svg site/index.html site/proof-registry.json site/sitemap.xml site/robots.txt
+            git commit -m "Update autonomous RSI adversarial benchmark foundry proof"
+            git pull --rebase origin main
+            git push
+          else
+            echo "No generated proof changes to commit."
+          fi
+
+      - name: Configure GitHub Pages
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages == 'true' }}
+        uses: actions/configure-pages@v5
+
+      - name: Build Pages artifact
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages == 'true' }}
+        run: |
+          mkdir -p dist
+          cp -R site/* dist/
+
+      - name: Upload GitHub Pages artifact
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages == 'true' }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy GitHub Pages
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages == 'true' }}
+        uses: actions/deploy-pages@v4

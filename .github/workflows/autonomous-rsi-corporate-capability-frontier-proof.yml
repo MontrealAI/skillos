@@ -1,0 +1,142 @@
+name: Autonomous RSI Corporate Capability Frontier Proof
+
+on:
+  workflow_dispatch:
+    inputs:
+      seed:
+        description: "Deterministic benchmark seed"
+        required: false
+        default: "20260531"
+      deploy_pages:
+        description: "Deploy GitHub Pages after regenerating the proof and command center"
+        type: boolean
+        required: false
+        default: true
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/autonomous-rsi-corporate-capability-frontier-proof.yml"
+      - "scripts/run_rsi_corporate_capability_frontier_proof.py"
+      - "scripts/verify_rsi_corporate_capability_frontier_proof.py"
+      - "scripts/make_rsi_corporate_capability_frontier_visible.py"
+      - "scripts/publish_rsi_corporate_capability_frontier_to_site.py"
+      - "scripts/verify_rsi_corporate_capability_frontier_site.py"
+      - "docs/AUTONOMOUS_RSI_CORPORATE_CAPABILITY_FRONTIER_PROOF.md"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: skillos-pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    name: Run, verify, publish, and deploy corporate capability frontier proof
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: https://montrealai.github.io/skillos/
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run autonomous RSI corporate capability frontier proof
+        env:
+          GITHUB_STEP_SUMMARY: ${{ github.step_summary }}
+        run: |
+          python scripts/run_rsi_corporate_capability_frontier_proof.py \
+            --seed "${{ inputs.seed || '20260531' }}" \
+            --summary "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify autonomous RSI corporate capability frontier proof
+        run: python scripts/verify_rsi_corporate_capability_frontier_proof.py
+
+      - name: Generate specific visual proof webpage and badge
+        run: python scripts/make_rsi_corporate_capability_frontier_visible.py
+
+      - name: Refresh existing SkillOS public command center if present
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if [ -f scripts/refresh_public_site.py ]; then
+            python scripts/refresh_public_site.py
+          else
+            echo "No existing refresh_public_site.py found; standalone command center pages will be created."
+          fi
+
+      - name: Publish proof into SkillOS homepage, proof registry, and command center pages
+        run: python scripts/publish_rsi_corporate_capability_frontier_to_site.py
+
+      - name: Verify public website integration
+        run: python scripts/verify_rsi_corporate_capability_frontier_site.py
+
+      - name: Upload proof artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: rsi-corporate-capability-frontier-proof
+          path: |
+            data/rsi_corporate_capability_frontier_proof.json
+            docs/rsi_corporate_capability_frontier_proof.md
+            site/rsi-corporate-capability-frontier-proof.html
+            badges/rsi_corporate_capability_frontier_proof.svg
+            site/index.html
+            site/proofs.html
+            site/multi-agent.html
+            site/actions.html
+            site/receipts.html
+            site/runbook.html
+            site/proof-index.json
+            site/sitemap.xml
+            site/robots.txt
+          if-no-files-found: error
+
+      - name: Commit generated proof and public-site outputs
+        continue-on-error: true
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add \
+              data/rsi_corporate_capability_frontier_proof.json \
+              docs/rsi_corporate_capability_frontier_proof.md \
+              site/rsi-corporate-capability-frontier-proof.html \
+              badges/rsi_corporate_capability_frontier_proof.svg \
+              site/index.html site/proofs.html site/multi-agent.html site/actions.html site/receipts.html site/runbook.html \
+              site/proof-index.json site/sitemap.xml site/robots.txt || true
+            git commit -m "Run autonomous RSI corporate capability frontier proof"
+            git push
+          else
+            echo "Proof and public site already fresh."
+          fi
+
+      - name: Build GitHub Pages artifact
+        if: ${{ github.event_name == 'push' || inputs.deploy_pages }}
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          cp -R site/* dist/
+
+      - name: Configure GitHub Pages
+        if: ${{ github.event_name == 'push' || inputs.deploy_pages }}
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: ${{ github.event_name == 'push' || inputs.deploy_pages }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy GitHub Pages
+        if: ${{ github.event_name == 'push' || inputs.deploy_pages }}
+        uses: actions/deploy-pages@v4

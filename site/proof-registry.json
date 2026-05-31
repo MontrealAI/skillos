@@ -1,6 +1,22 @@
 {
   "proofs": [
     {
+      "badge": "badges/rsi-full-stack-capability-lifecycle-proof.svg",
+      "doc": "docs/rsi-full-stack-capability-lifecycle-proof.md",
+      "generated_at_utc": "2026-05-31T23:27:46Z",
+      "href": "rsi-full-stack-capability-lifecycle-proof.html",
+      "id": "rsi-full-stack-capability-lifecycle-proof",
+      "json": "data/rsi-full-stack-capability-lifecycle-proof.json",
+      "minimum_domain_value_capture_percent": 94.7299,
+      "proved": true,
+      "rsi_release_count": 13,
+      "specialist_roles": 10485760,
+      "status": "PASSED_AUTONOMOUS_RSI_FULL_STACK_CAPABILITY_LIFECYCLE_PROOF",
+      "title": "Autonomous RSI Full-Stack Capability Lifecycle Proof",
+      "value_capture_rate_percent": 96.2057,
+      "virtual_specialist_agents": 335544320
+    },
+    {
       "badge": "badges/rsi-continual-capability-frontier-proof.svg",
       "catastrophic_forgetting_rate_percent": 0.0,
       "doc": "docs/rsi-continual-capability-frontier-proof.md",
@@ -178,5 +194,5 @@
   "schema_version": 2,
   "site_base_url": "https://montrealai.github.io/skillos/",
   "source": "SkillOS autonomous GitHub Actions proof publisher",
-  "updated_at_utc": "2026-05-31T23:19:17Z"
+  "updated_at_utc": "2026-05-31T23:27:46Z"
 }

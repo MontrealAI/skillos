@@ -1,6 +1,6 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T15:47:03Z`
+Generated: `2026-05-31T16:42:13Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
@@ -8,9 +8,9 @@ Site: https://montrealai.github.io/skillos/
 
 - Proof entries: 43
 - Workflows tracked: 30
-- Recent successful runs: 41
-- Recent failed runs: 1
-- Recent running runs: 2
+- Recent successful runs: 43
+- Recent failed runs: 0
+- Recent running runs: 1
 
 ## Flagship
 
@@ -103,6 +103,9 @@ Site: https://montrealai.github.io/skillos/
 - **procurement invoice reconciliation and payment-risk triage**
   - Page: https://montrealai.github.io/skillos/proof-enterprise-ops-procurement-invoice-reconciliation-and-payment-risk-triage-fully-enterprise-operations.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/enterprise_ops_market_proof.json
+- **Ai First Blockchain Capital Machine**
+  - Page: https://montrealai.github.io/skillos/rsi-ai-first-blockchain-capital-machine-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-ai-first-blockchain-capital-machine-proof.json
 - **Corporate Capability Frontier**
   - Page: https://montrealai.github.io/skillos/rsi-corporate-capability-frontier-proof.html
 - **Cyberdefense**
@@ -145,8 +148,6 @@ Site: https://montrealai.github.io/skillos/
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml
 - **Readiness**
   - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
-- **Rsi Ai First Blockchain Capital Machine**
-  - Page: https://montrealai.github.io/skillos/proof-ai-first-blockchain-capital-machine-ai-first-blockchain-capital-machine.html
 - **Wealth Accumulation**
   - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
 - **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**

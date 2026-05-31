@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "96931b5a0573c402b646d4089aa068be7e3d87c2",
+  "commit": "7debdfca8323cc0736fe80351d4528ef1e248a6b",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1178,7 +1178,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-05-31T15:47:03Z",
+  "generated_at_utc": "2026-05-31T16:42:13Z",
   "proof_count": 43,
   "proofs": [
     {
@@ -4946,6 +4946,27 @@
       "workflow": "procurement invoice reconciliation and payment-risk triage"
     },
     {
+      "doc_path": "docs/rsi-ai-first-blockchain-capital-machine-proof.md",
+      "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/rsi-ai-first-blockchain-capital-machine-proof.md",
+      "json_path": "data/rsi-ai-first-blockchain-capital-machine-proof.json",
+      "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/rsi-ai-first-blockchain-capital-machine-proof.json",
+      "key": "ai-first-blockchain-capital-machine",
+      "page_path": "site/rsi-ai-first-blockchain-capital-machine-proof.html",
+      "page_url": "https://montrealai.github.io/skillos/rsi-ai-first-blockchain-capital-machine-proof.html",
+      "proved": false,
+      "rsi_releases": 0,
+      "source": "doc",
+      "sources": [
+        "json",
+        "page",
+        "doc",
+        "doc"
+      ],
+      "status": "PENDING",
+      "title": "Ai First Blockchain Capital Machine",
+      "workflow": "Ai First Blockchain Capital Machine"
+    },
+    {
       "doc_path": "docs/rsi_corporate_capability_frontier_proof.md",
       "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/rsi_corporate_capability_frontier_proof.md",
       "key": "corporate-capability-frontier",
@@ -5030,10 +5051,10 @@
     },
     {
       "key": "ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai",
-      "latest_run_conclusion": "failure",
+      "latest_run_conclusion": "success",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-31T15:46:36Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26717084112",
+      "latest_run_updated_at": "2026-05-31T16:03:05Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26717469593",
       "page_path": "site/proof-ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai.html",
       "page_url": "https://montrealai.github.io/skillos/proof-ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai.html",
       "source": "workflow",
@@ -5182,18 +5203,6 @@
       "title": "Readiness"
     },
     {
-      "doc_path": "docs/AUTONOMOUS_RSI_AI_FIRST_BLOCKCHAIN_CAPITAL_MACHINE_PROOF.md",
-      "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_AI_FIRST_BLOCKCHAIN_CAPITAL_MACHINE_PROOF.md",
-      "key": "ai-first-blockchain-capital-machine-ai-first-blockchain-capital-machine",
-      "page_path": "site/proof-ai-first-blockchain-capital-machine-ai-first-blockchain-capital-machine.html",
-      "page_url": "https://montrealai.github.io/skillos/proof-ai-first-blockchain-capital-machine-ai-first-blockchain-capital-machine.html",
-      "source": "doc",
-      "sources": [
-        "doc"
-      ],
-      "title": "Rsi Ai First Blockchain Capital Machine"
-    },
-    {
       "doc_path": "docs/wealth_accumulation_proof.md",
       "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/wealth_accumulation_proof.md",
       "key": "wealth-accumulation-wealth-accumulation",
@@ -5234,10 +5243,10 @@
     }
   ],
   "proved_or_passed_proof_count": 20,
-  "recent_failed_runs": 1,
-  "recent_running_runs": 2,
-  "recent_successful_runs": 41,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26717096682",
+  "recent_failed_runs": 0,
+  "recent_running_runs": 1,
+  "recent_successful_runs": 43,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26718394549",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
@@ -5245,27 +5254,39 @@
   "workflows": [
     {
       "conclusion": null,
+      "event": "schedule",
+      "name": "SkillOS Public Site Command Center Refresh",
+      "path": ".github/workflows/skillos-public-site-refresh.yml",
+      "proof_page_url": null,
+      "proof_title": null,
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26718394549",
+      "status": "in_progress",
+      "updated_at": "2026-05-31T16:42:07Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
+      "path": ".github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai.html",
+      "proof_title": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26717469593",
+      "status": "completed",
+      "updated_at": "2026-05-31T16:03:05Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml"
+    },
+    {
+      "conclusion": "success",
       "event": "workflow_run",
       "name": "SkillOS Public Proof Command Center Refresh",
       "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
       "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26717096693",
-      "status": "in_progress",
-      "updated_at": "2026-05-31T15:47:00Z",
+      "status": "completed",
+      "updated_at": "2026-05-31T15:47:17Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
-    },
-    {
-      "conclusion": null,
-      "event": "workflow_run",
-      "name": "SkillOS Public Site Command Center Refresh",
-      "path": ".github/workflows/skillos-public-site-refresh.yml",
-      "proof_page_url": null,
-      "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26717096682",
-      "status": "in_progress",
-      "updated_at": "2026-05-31T15:46:56Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {
       "conclusion": "success",
@@ -5278,18 +5299,6 @@
       "status": "completed",
       "updated_at": "2026-05-31T15:46:38Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"
-    },
-    {
-      "conclusion": "failure",
-      "event": "push",
-      "name": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
-      "path": ".github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai.html",
-      "proof_title": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26717084112",
-      "status": "completed",
-      "updated_at": "2026-05-31T15:46:36Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml"
     },
     {
       "conclusion": "success",

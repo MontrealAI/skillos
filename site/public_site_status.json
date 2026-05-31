@@ -1178,7 +1178,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-05-31T15:07:51Z",
+  "generated_at_utc": "2026-05-31T15:08:13Z",
   "proof_count": 41,
   "proofs": [
     {
@@ -1940,10 +1940,6 @@
       "json_path": "data/rsi_enterprise_eureka_factory_proof.json",
       "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/rsi_enterprise_eureka_factory_proof.json",
       "key": "enterprise-eureka-factory",
-      "latest_run_conclusion": "cancelled",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-31T13:15:08Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26713633053",
       "metrics": {
         "avg_compounding_index": 57.964,
         "avg_consensus_score": 86.741,
@@ -5032,8 +5028,9 @@
     },
     {
       "key": "blockchain-protocol-capital-frontier-github-blockchain-protocol-capital-frontier-blockchain-protocol-capital",
-      "latest_run_status": "in_progress",
-      "latest_run_updated_at": "2026-05-31T15:07:36Z",
+      "latest_run_conclusion": "failure",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-05-31T15:08:08Z",
       "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26716201550",
       "page_path": "site/proof-blockchain-protocol-capital-frontier-github-blockchain-protocol-capital-frontier-blockchain-protocol-capital.html",
       "page_url": "https://montrealai.github.io/skillos/proof-blockchain-protocol-capital-frontier-github-blockchain-protocol-capital-frontier-blockchain-protocol-capital.html",
@@ -5082,10 +5079,6 @@
     },
     {
       "key": "enterprise-capability-foundry-github-enterprise-capability-foundry-enterprise-capability-foundry-enterprise-capability",
-      "latest_run_conclusion": "success",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-31T13:15:50Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26713631685",
       "page_path": "site/proof-enterprise-capability-foundry-github-enterprise-capability-foundry-enterprise-capability-foundry-enterprise-capability.html",
       "page_url": "https://montrealai.github.io/skillos/proof-enterprise-capability-foundry-github-enterprise-capability-foundry-enterprise-capability-foundry-enterprise-capability.html",
       "source": "workflow",
@@ -5116,8 +5109,9 @@
     },
     {
       "key": "deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with",
-      "latest_run_status": "queued",
-      "latest_run_updated_at": "2026-05-31T15:07:48Z",
+      "latest_run_conclusion": "success",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-05-31T15:08:03Z",
       "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26716201522",
       "page_path": "site/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
       "page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
@@ -5225,26 +5219,26 @@
     }
   ],
   "proved_or_passed_proof_count": 19,
-  "recent_failed_runs": 0,
-  "recent_running_runs": 4,
-  "recent_successful_runs": 39,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26716202116",
+  "recent_failed_runs": 1,
+  "recent_running_runs": 2,
+  "recent_successful_runs": 40,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26716206733",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
   "workflow_count": 29,
   "workflows": [
     {
-      "conclusion": null,
+      "conclusion": "failure",
       "event": "push",
-      "name": "Deploy SkillOS website with autonomous safe public copy",
-      "path": ".github/workflows/pages.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
-      "proof_title": "Deploy SkillOS website with autonomous safe public copy",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26716201522",
-      "status": "queued",
-      "updated_at": "2026-05-31T15:07:48Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"
+      "name": "Autonomous RSI Blockchain Protocol Capital Frontier Proof",
+      "path": ".github/workflows/autonomous-rsi-blockchain-protocol-capital-frontier-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-blockchain-protocol-capital-frontier-github-blockchain-protocol-capital-frontier-blockchain-protocol-capital.html",
+      "proof_title": "Autonomous RSI Blockchain Protocol Capital Frontier Proof",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26716201550",
+      "status": "completed",
+      "updated_at": "2026-05-31T15:08:08Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-blockchain-protocol-capital-frontier-proof.yml"
     },
     {
       "conclusion": null,
@@ -5253,9 +5247,9 @@
       "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26716206733",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26716214590",
       "status": "pending",
-      "updated_at": "2026-05-31T15:07:46Z",
+      "updated_at": "2026-05-31T15:08:06Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
@@ -5265,10 +5259,22 @@
       "path": ".github/workflows/skillos-public-site-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26716206740",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26716214539",
       "status": "pending",
-      "updated_at": "2026-05-31T15:07:46Z",
+      "updated_at": "2026-05-31T15:08:06Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "name": "Deploy SkillOS website with autonomous safe public copy",
+      "path": ".github/workflows/pages.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
+      "proof_title": "Deploy SkillOS website with autonomous safe public copy",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26716201522",
+      "status": "completed",
+      "updated_at": "2026-05-31T15:08:03Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"
     },
     {
       "conclusion": "success",
@@ -5281,18 +5287,6 @@
       "status": "completed",
       "updated_at": "2026-05-31T15:07:43Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"
-    },
-    {
-      "conclusion": null,
-      "event": "push",
-      "name": "Autonomous RSI Blockchain Protocol Capital Frontier Proof",
-      "path": ".github/workflows/autonomous-rsi-blockchain-protocol-capital-frontier-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-blockchain-protocol-capital-frontier-github-blockchain-protocol-capital-frontier-blockchain-protocol-capital.html",
-      "proof_title": "Autonomous RSI Blockchain Protocol Capital Frontier Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26716201550",
-      "status": "in_progress",
-      "updated_at": "2026-05-31T15:07:36Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-blockchain-protocol-capital-frontier-proof.yml"
     },
     {
       "conclusion": "success",
@@ -5463,18 +5457,6 @@
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/shadow-pilot-proof.yml"
     },
     {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Enterprise Capability Foundry Proof",
-      "path": ".github/workflows/autonomous-rsi-enterprise-capability-foundry-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-enterprise-capability-foundry-github-enterprise-capability-foundry-enterprise-capability-foundry-enterprise-capability.html",
-      "proof_title": "Autonomous RSI Enterprise Capability Foundry Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26713631685",
-      "status": "completed",
-      "updated_at": "2026-05-31T13:15:50Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-capability-foundry-proof.yml"
-    },
-    {
       "conclusion": "cancelled",
       "event": "workflow_dispatch",
       "name": "Autonomous RSI Cyber Defense Market Proof",
@@ -5511,18 +5493,6 @@
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/enterprise-ops-proof.yml"
     },
     {
-      "conclusion": "cancelled",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Enterprise Eureka Factory Proof",
-      "path": ".github/workflows/autonomous-rsi-enterprise-eureka-factory-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/rsi-enterprise-eureka-factory-proof.html",
-      "proof_title": "Autonomous RSI Enterprise Eureka Factory Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26713633053",
-      "status": "completed",
-      "updated_at": "2026-05-31T13:15:08Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-eureka-factory-proof.yml"
-    },
-    {
       "conclusion": null,
       "event": null,
       "name": "_SkillOS Public Proof Command Center Refresh Reusable",
@@ -5557,6 +5527,30 @@
       "status": "not_run",
       "updated_at": "",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-market-readiness.yml"
+    },
+    {
+      "conclusion": null,
+      "event": null,
+      "name": "Autonomous RSI Enterprise Capability Foundry Proof",
+      "path": ".github/workflows/autonomous-rsi-enterprise-capability-foundry-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-enterprise-capability-foundry-github-enterprise-capability-foundry-enterprise-capability-foundry-enterprise-capability.html",
+      "proof_title": "Autonomous RSI Enterprise Capability Foundry Proof",
+      "run_url": null,
+      "status": "not_run",
+      "updated_at": "",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-capability-foundry-proof.yml"
+    },
+    {
+      "conclusion": null,
+      "event": null,
+      "name": "Autonomous RSI Enterprise Eureka Factory Proof",
+      "path": ".github/workflows/autonomous-rsi-enterprise-eureka-factory-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/rsi-enterprise-eureka-factory-proof.html",
+      "proof_title": "Autonomous RSI Enterprise Eureka Factory Proof",
+      "run_url": null,
+      "status": "not_run",
+      "updated_at": "",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-eureka-factory-proof.yml"
     },
     {
       "conclusion": null,

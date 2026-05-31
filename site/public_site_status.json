@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "5fd8274ba6251d29799ab53c7293a75c741aaf50",
+  "commit": "f7c4baec9ae8774c52195f461f8d778dd74a076a",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,7 +1174,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-05-31T23:11:35Z",
+  "generated_at_utc": "2026-05-31T23:11:50Z",
   "proof_count": 64,
   "proofs": [
     {
@@ -5615,8 +5615,8 @@
   "proved_or_passed_proof_count": 26,
   "recent_failed_runs": 2,
   "recent_running_runs": 3,
-  "recent_successful_runs": 38,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727223805",
+  "recent_successful_runs": 39,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727231977",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
@@ -5630,8 +5630,8 @@
       "proof_page_url": null,
       "proof_title": null,
       "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727231977",
-      "status": "pending",
-      "updated_at": "2026-05-31T23:11:30Z",
+      "status": "in_progress",
+      "updated_at": "2026-05-31T23:11:44Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {

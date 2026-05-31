@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "1fb070464b4032e8d7946f8b64acb89e790ed73c",
+  "commit": "f2800fda2bfd02450f5522d720f83bcd1aed9146",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,7 +1174,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-05-31T21:34:00Z",
+  "generated_at_utc": "2026-05-31T21:34:16Z",
   "proof_count": 62,
   "proofs": [
     {
@@ -5438,8 +5438,9 @@
     },
     {
       "key": "open-replication-mesh-github-open-replication-mesh-open-replication-mesh-open-replication",
-      "latest_run_status": "in_progress",
-      "latest_run_updated_at": "2026-05-31T21:33:39Z",
+      "latest_run_conclusion": "success",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-05-31T21:34:00Z",
       "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26725097193",
       "page_path": "site/proof-open-replication-mesh-github-open-replication-mesh-open-replication-mesh-open-replication.html",
       "page_url": "https://montrealai.github.io/skillos/proof-open-replication-mesh-github-open-replication-mesh-open-replication-mesh-open-replication.html",
@@ -5582,9 +5583,9 @@
   ],
   "proved_or_passed_proof_count": 26,
   "recent_failed_runs": 1,
-  "recent_running_runs": 6,
-  "recent_successful_runs": 38,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26725097184",
+  "recent_running_runs": 3,
+  "recent_successful_runs": 40,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26725105523",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
@@ -5598,9 +5599,21 @@
       "proof_page_url": null,
       "proof_title": null,
       "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26725105523",
-      "status": "queued",
-      "updated_at": "2026-05-31T21:33:58Z",
+      "status": "in_progress",
+      "updated_at": "2026-05-31T21:34:09Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "name": "Autonomous RSI Open Replication Mesh Proof",
+      "path": ".github/workflows/autonomous-rsi-open-replication-mesh-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-open-replication-mesh-github-open-replication-mesh-open-replication-mesh-open-replication.html",
+      "proof_title": "Autonomous RSI Open Replication Mesh Proof",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26725097193",
+      "status": "completed",
+      "updated_at": "2026-05-31T21:34:00Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-open-replication-mesh-proof.yml"
     },
     {
       "conclusion": null,
@@ -5610,8 +5623,8 @@
       "proof_page_url": null,
       "proof_title": null,
       "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26725105542",
-      "status": "queued",
-      "updated_at": "2026-05-31T21:33:58Z",
+      "status": "pending",
+      "updated_at": "2026-05-31T21:33:59Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {
@@ -5625,18 +5638,6 @@
       "status": "completed",
       "updated_at": "2026-05-31T21:33:56Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"
-    },
-    {
-      "conclusion": null,
-      "event": "push",
-      "name": "Autonomous RSI Open Replication Mesh Proof",
-      "path": ".github/workflows/autonomous-rsi-open-replication-mesh-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-open-replication-mesh-github-open-replication-mesh-open-replication-mesh-open-replication.html",
-      "proof_title": "Autonomous RSI Open Replication Mesh Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26725097193",
-      "status": "in_progress",
-      "updated_at": "2026-05-31T21:33:39Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-open-replication-mesh-proof.yml"
     },
     {
       "conclusion": null,

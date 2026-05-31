@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-30T23:39:17Z`
+Generated: `2026-05-31T00:43:25Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 63
+- Proof entries: 64
 - Workflows tracked: 23
-- Recent successful runs: 41
-- Recent failed runs: 6
-- Recent running runs: 1
+- Recent successful runs: 39
+- Recent failed runs: 5
+- Recent running runs: 4
 
 ## Flagship
 
@@ -122,6 +122,7 @@ Site: https://montrealai.github.io/skillos/
 - **Rsi Cloudops**
 - **Rsi Corporate Os**
 - **Rsi Cyberdefense**
+- **Rsi Enterprise Eureka Factory**
 - **Rsi Marketplace Flywheel**
 - **Rsi Metamaterials Discovery**
 - **Rsi Revenue Experiment Factory**

@@ -14,11 +14,11 @@
       "roles": "32,768",
       "short_title": "RSI Governance Frontier Proof",
       "title": "Autonomous RSI Governance Frontier Proof",
-      "updated_at": "2026-05-31T16:37:55Z",
+      "updated_at": "2026-05-31T17:13:05Z",
       "value_captured": "$133.44T",
       "workflow": ".github/workflows/autonomous-rsi-governance-frontier-proof.yml",
       "workflow_url": "https://github.com/MontrealAI/skillos/actions/workflows/autonomous-rsi-governance-frontier-proof.yml"
     }
   ],
-  "updated_at": "2026-05-31T16:38:02Z"
+  "updated_at": "2026-05-31T17:13:06Z"
 }

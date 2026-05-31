@@ -159,7 +159,7 @@
     "value_over_no_rsi": "$46.19T",
     "value_over_uncoordinated_swarm": "$35.02T"
   },
-  "generated_at": "2026-05-31T16:37:55Z",
+  "generated_at": "2026-05-31T17:13:05Z",
   "holdout_evaluation_rows": [
     {
       "baseline_capture_rates": {
@@ -75317,9 +75317,9 @@
     }
   ],
   "run_context": {
-    "github_ref": "local",
-    "github_run_id": "local",
-    "github_sha": "local"
+    "github_ref": "refs/heads/main",
+    "github_run_id": "26719101362",
+    "github_sha": "3e3f63420aa2b82a2f9e6c884e5caa6e611b8507"
   },
   "seed": 2026053101,
   "thesis": "AI-first governance becomes a capital engine when evidence, role quorum, incentives, policy, permissions, capital, compute, energy, execution, audit, risk courts, and reinvestment recursively improve the institution's ability to improve itself.",

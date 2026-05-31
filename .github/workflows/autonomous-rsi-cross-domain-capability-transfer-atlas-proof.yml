@@ -9,7 +9,7 @@ on:
         type: boolean
         default: true
       deploy_pages:
-        description: "Deploy GitHub Pages from this workflow. Keep false if a Pages workflow already deploys site/."
+        description: "Deploy GitHub Pages from this workflow. Keep false if the existing Pages workflow deploys site/."
         required: true
         type: boolean
         default: false
@@ -32,15 +32,12 @@ permissions:
 
 concurrency:
   group: skillos-rsi-cross-domain-capability-transfer-atlas-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   proof:
     name: Generate, verify, publish, and optionally deploy proof
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: https://montrealai.github.io/skillos/
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -72,6 +69,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: skillos-rsi-cross-domain-capability-transfer-atlas-proof
+          retention-days: 30
           path: |
             data/rsi-cross-domain-capability-transfer-atlas-proof.json
             docs/rsi-cross-domain-capability-transfer-atlas-proof.md
@@ -102,8 +100,11 @@ jobs:
                     site/badges/rsi-cross-domain-capability-transfer-atlas-proof.svg \
                     site/index.html site/proof-registry.json site/sitemap.xml site/robots.txt
             git commit -m "Refresh autonomous RSI cross-domain transfer atlas proof"
-            git pull --rebase origin main
-            git push
+            for attempt in 1 2 3; do
+              git pull --rebase --autostash origin main && git push && break
+              if [ "$attempt" = "3" ]; then exit 1; fi
+              sleep $((attempt * 5))
+            done
           else
             echo "Proof outputs already fresh."
           fi

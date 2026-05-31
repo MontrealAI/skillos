@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T13:07:51Z`
+Generated: `2026-05-31T13:12:17Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 33
+- Proof entries: 34
 - Workflows tracked: 26
-- Recent successful runs: 45
+- Recent successful runs: 46
 - Recent failed runs: 1
-- Recent running runs: 3
+- Recent running runs: 2
 
 ## Flagship
 
@@ -52,6 +52,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI Enterprise Capability Foundry Proof**
   - Page: https://montrealai.github.io/skillos/proof-enterprise-capability-foundry-enterprise-capability-foundry-enterprise-capability-foundry-enterprise-capability-foundry.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_enterprise_capability_foundry_proof.json
+- **Autonomous RSI Enterprise Superorganization Proof**
+  - Page: https://montrealai.github.io/skillos/proof-enterprise-superorganization-enterprise-superorganization-enterprise-superorganization-enterprise-superorganization-enterprise-superorganization.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_enterprise_superorganization_proof.json
 - **Autonomous RSI CloudOps Market Proof**
   - Page: https://montrealai.github.io/skillos/rsi-cloudops-proof.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cloudops-proof.yml
@@ -97,6 +100,8 @@ Site: https://montrealai.github.io/skillos/
   - Page: https://montrealai.github.io/skillos/rsi-enterprise-capability-foundry-proof.html
 - **Enterprise Ops**
   - Page: https://montrealai.github.io/skillos/enterprise-ops-proof.html
+- **Enterprise Superorganization**
+  - Page: https://montrealai.github.io/skillos/rsi-enterprise-superorganization-proof.html
 - **Autonomous Enterprise Ops Market Proof**
   - Page: https://montrealai.github.io/skillos/proof-enterprise-ops-github-enterprise-ops-enterprise-ops-enterprise-ops.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/enterprise-ops-proof.yml
@@ -117,8 +122,6 @@ Site: https://montrealai.github.io/skillos/
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml
 - **Readiness**
   - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
-- **Rsi Enterprise Superorganization**
-  - Page: https://montrealai.github.io/skillos/proof-enterprise-superorganization-enterprise-superorganization.html
 - **Wealth Accumulation**
   - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
 - **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**

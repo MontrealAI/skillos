@@ -1,6 +1,6 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T18:31:17Z`
+Generated: `2026-05-31T18:31:39Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
@@ -8,9 +8,9 @@ Site: https://montrealai.github.io/skillos/
 
 - Proof entries: 51
 - Workflows tracked: 34
-- Recent successful runs: 36
+- Recent successful runs: 38
 - Recent failed runs: 2
-- Recent running runs: 5
+- Recent running runs: 3
 
 ## Flagship
 
@@ -96,6 +96,9 @@ Site: https://montrealai.github.io/skillos/
 - **Corporate Strategy Frontier**
   - Page: https://montrealai.github.io/skillos/rsi-corporate-strategy-frontier-proof.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-corporate-strategy-frontier-proof.json
+- **Forge Meta Coordination**
+  - Page: https://montrealai.github.io/skillos/rsi-proof-forge-meta-coordination-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-proof-forge-meta-coordination-proof.json
 - **Autonomous RSI Cyber Defense Market Proof**
   - Page: https://montrealai.github.io/skillos/proof-cyber-defense.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cyberdefense-proof.yml
@@ -169,8 +172,6 @@ Site: https://montrealai.github.io/skillos/
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml
 - **Readiness**
   - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
-- **Rsi Forge Meta Coordination**
-  - Page: https://montrealai.github.io/skillos/proof-forge-meta-coordination-forge-meta-coordination.html
 - **Wealth Accumulation**
   - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
 - **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**

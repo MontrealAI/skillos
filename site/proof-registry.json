@@ -1,6 +1,23 @@
 {
   "proofs": [
     {
+      "badge": "badges/rsi-skill-compounding-moat-proof.svg",
+      "doc": "docs/rsi-skill-compounding-moat-proof.md",
+      "generated_at_utc": "2026-05-31T23:41:21Z",
+      "href": "rsi-skill-compounding-moat-proof.html",
+      "id": "rsi-skill-compounding-moat-proof",
+      "json": "data/rsi-skill-compounding-moat-proof.json",
+      "minimum_domain_value_capture_percent": 94.3155,
+      "proved": true,
+      "rsi_release_count": 12,
+      "skill_reuse_score": 55.707,
+      "specialist_roles": 8388608,
+      "status": "PASSED_AUTONOMOUS_RSI_SKILL_COMPOUNDING_MOAT_PROOF",
+      "title": "Autonomous RSI Skill Compounding Moat Proof",
+      "value_capture_rate_percent": 96.9765,
+      "virtual_specialist_agents": 268435456
+    },
+    {
       "badge": "badges/rsi-full-stack-capability-lifecycle-proof.svg",
       "doc": "docs/rsi-full-stack-capability-lifecycle-proof.md",
       "generated_at_utc": "2026-05-31T23:27:46Z",
@@ -194,5 +211,5 @@
   "schema_version": 2,
   "site_base_url": "https://montrealai.github.io/skillos/",
   "source": "SkillOS autonomous GitHub Actions proof publisher",
-  "updated_at_utc": "2026-05-31T23:27:46Z"
+  "updated_at_utc": "2026-05-31T23:41:21Z"
 }

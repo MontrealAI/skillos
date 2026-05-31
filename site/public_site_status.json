@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "dfb77b3cc763da78a689d502f4a56c627cc45297",
+  "commit": "2c262b5c0f15eed9b4ba7dd3ee5cad689a16f22f",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,8 +1174,8 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-05-31T23:18:16Z",
-  "proof_count": 66,
+  "generated_at_utc": "2026-05-31T23:19:57Z",
+  "proof_count": 67,
   "proofs": [
     {
       "agent_count": 512,
@@ -5027,6 +5027,89 @@
     },
     {
       "benchmark_public": {
+        "candidate_actions_per_case": 9,
+        "data_boundary": "synthetic/redacted-style public benchmark; no private customer data",
+        "features": [
+          "demand_value",
+          "execution_margin",
+          "latency_pressure",
+          "reliability_need",
+          "customer_trust",
+          "risk_exposure",
+          "compliance_load",
+          "security_exposure",
+          "compute_cost",
+          "energy_cost",
+          "talent_load",
+          "data_reuse",
+          "provenance_strength",
+          "verification_density",
+          "interoperability",
+          "capability_liquidity",
+          "feedback_density",
+          "distribution_reach",
+          "novelty",
+          "ambiguity",
+          "rollback_option",
+          "legacy_dependency"
+        ],
+        "locked_holdout_count": 1536,
+        "name": "Continual Capability Frontier benchmark",
+        "regimes": [
+          "enterprise_ai_workflows",
+          "regulated_agent_work",
+          "protocol_coordination",
+          "capability_marketplace",
+          "governance_execution",
+          "compute_capital_allocation",
+          "trust_and_safety",
+          "data_flywheel",
+          "proof_engineering",
+          "cross_domain_transfer",
+          "deployment_drift",
+          "adversarial_benchmarking"
+        ],
+        "train_count": 1024,
+        "validation_count": 768
+      },
+      "coordination_style": "continual validation-gated RSI with drift detection, replay-buffer retention, specialist-agent market clearing, verifier courts, rollback gates, and locked multi-regime holdouts",
+      "generated_at": "2026-05-31T23:19:17Z",
+      "json_path": "data/rsi-continual-capability-frontier-proof.json",
+      "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/rsi-continual-capability-frontier-proof.json",
+      "key": "continual-capability-frontier-continual-capability-frontier-continual-capability-frontier-continual-capability-frontier",
+      "metrics": {
+        "benchmark_value_capture_rate_percent": 96.652,
+        "capability_liquidity_score": 54.2014,
+        "catastrophic_forgetting_rate_percent": 0.0,
+        "frontier_correct_rate_percent": 61.3932,
+        "invalid_action_rate_percent": 0.0,
+        "maximum_regime_value_capture_percent": 97.9675,
+        "minimum_regime_value_capture_percent": 95.0635,
+        "regime_spread_percent": 2.904,
+        "risk_breach_rate_percent": 0.0,
+        "top3_rate_percent": 92.6432,
+        "trace_compounding_score": 51.417,
+        "unauthorized_action_rate_percent": 0.0,
+        "value_capture_rate_percent": 96.652
+      },
+      "page_path": "site/proof-continual-capability-frontier-continual-capability-frontier-continual-capability-frontier-continual-capability-frontier.html",
+      "page_url": "https://montrealai.github.io/skillos/proof-continual-capability-frontier-continual-capability-frontier-continual-capability-frontier-continual-capability-frontier.html",
+      "proof_type": "Autonomous RSI Continual Capability Frontier Proof",
+      "proved": true,
+      "rsi_releases": 10,
+      "safe_interpretation": "A deterministic benchmark proof that validation-gated RSI improves continual capability routing under distribution shift while avoiding catastrophic forgetting and risk breaches. Not live revenue, customer results, financial advice, legal advice, policy advice, token advice, or achieved superintelligence.",
+      "source": "json",
+      "sources": [
+        "json"
+      ],
+      "status": "PASSED_AUTONOMOUS_RSI_CONTINUAL_CAPABILITY_FRONTIER_PROOF",
+      "title": "Autonomous RSI Continual Capability Frontier Proof",
+      "train_count": 1024,
+      "validation_count": 768,
+      "workflow": "Autonomous RSI Continual Capability Frontier Proof"
+    },
+    {
+      "benchmark_public": {
         "candidate_skill_releases_per_case": 15,
         "data_boundary": "synthetic/redacted-style public benchmark; no private customer data",
         "features": [
@@ -5179,6 +5262,20 @@
       "status": "PENDING",
       "title": "Capability Liquidity Engine",
       "workflow": "Capability Liquidity Engine"
+    },
+    {
+      "doc_path": "docs/rsi-continual-capability-frontier-proof.md",
+      "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/rsi-continual-capability-frontier-proof.md",
+      "key": "continual-capability-frontier",
+      "page_path": "site/rsi-continual-capability-frontier-proof.html",
+      "page_url": "https://montrealai.github.io/skillos/rsi-continual-capability-frontier-proof.html",
+      "source": "doc",
+      "sources": [
+        "page",
+        "doc",
+        "doc"
+      ],
+      "title": "Continual Capability Frontier"
     },
     {
       "doc_path": "docs/rsi_corporate_capability_frontier_proof.md",
@@ -5370,6 +5467,10 @@
     },
     {
       "key": "continual-capability-frontier-github-continual-capability-frontier-continual-capability-frontier-continual-capability",
+      "latest_run_conclusion": "success",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-05-31T23:19:22Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727384180",
       "page_path": "site/proof-continual-capability-frontier-github-continual-capability-frontier-continual-capability-frontier-continual-capability.html",
       "page_url": "https://montrealai.github.io/skillos/proof-continual-capability-frontier-github-continual-capability-frontier-continual-capability-frontier-continual-capability.html",
       "source": "workflow",
@@ -5409,10 +5510,6 @@
     },
     {
       "key": "cross-domain-capability-transfer-atlas-github-cross-domain-capability-transfer-atlas-cross",
-      "latest_run_conclusion": "success",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-31T20:05:39Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26723057557",
       "page_path": "site/proof-cross-domain-capability-transfer-atlas-github-cross-domain-capability-transfer-atlas-cross.html",
       "page_url": "https://montrealai.github.io/skillos/proof-cross-domain-capability-transfer-atlas-github-cross-domain-capability-transfer-atlas-cross.html",
       "source": "workflow",
@@ -5583,18 +5680,6 @@
       "title": "Readiness"
     },
     {
-      "doc_path": "docs/AUTONOMOUS_RSI_CONTINUAL_CAPABILITY_FRONTIER_PROOF.md",
-      "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_CONTINUAL_CAPABILITY_FRONTIER_PROOF.md",
-      "key": "continual-capability-frontier-continual-capability-frontier",
-      "page_path": "site/proof-continual-capability-frontier-continual-capability-frontier.html",
-      "page_url": "https://montrealai.github.io/skillos/proof-continual-capability-frontier-continual-capability-frontier.html",
-      "source": "doc",
-      "sources": [
-        "doc"
-      ],
-      "title": "Rsi Continual Capability Frontier"
-    },
-    {
       "doc_path": "docs/wealth_accumulation_proof.md",
       "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/wealth_accumulation_proof.md",
       "key": "wealth-accumulation-wealth-accumulation",
@@ -5634,16 +5719,40 @@
       }
     }
   ],
-  "proved_or_passed_proof_count": 26,
+  "proved_or_passed_proof_count": 27,
   "recent_failed_runs": 0,
   "recent_running_runs": 1,
-  "recent_successful_runs": 45,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727361471",
+  "recent_successful_runs": 46,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727345355",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
   "workflow_count": 41,
   "workflows": [
+    {
+      "conclusion": "success",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Continual Capability Frontier Proof",
+      "path": ".github/workflows/autonomous-rsi-continual-capability-frontier-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-continual-capability-frontier-github-continual-capability-frontier-continual-capability-frontier-continual-capability.html",
+      "proof_title": "Autonomous RSI Continual Capability Frontier Proof",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727384180",
+      "status": "completed",
+      "updated_at": "2026-05-31T23:19:22Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-continual-capability-frontier-proof.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "workflow_run",
+      "name": "SkillOS Public Proof Command Center Refresh",
+      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
+      "proof_page_url": null,
+      "proof_title": null,
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727361471",
+      "status": "completed",
+      "updated_at": "2026-05-31T23:18:29Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
+    },
     {
       "conclusion": "success",
       "event": "workflow_run",
@@ -5655,18 +5764,6 @@
       "status": "completed",
       "updated_at": "2026-05-31T23:18:13Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
-    },
-    {
-      "conclusion": null,
-      "event": "workflow_run",
-      "name": "SkillOS Public Proof Command Center Refresh",
-      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
-      "proof_page_url": null,
-      "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727361471",
-      "status": "in_progress",
-      "updated_at": "2026-05-31T23:18:08Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
       "conclusion": "success",
@@ -5739,18 +5836,6 @@
       "status": "completed",
       "updated_at": "2026-05-31T20:31:58Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-causal-attribution-engine-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "push",
-      "name": "Autonomous RSI Cross-Domain Capability Transfer Atlas Proof",
-      "path": ".github/workflows/autonomous-rsi-cross-domain-capability-transfer-atlas-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-cross-domain-capability-transfer-atlas-github-cross-domain-capability-transfer-atlas-cross.html",
-      "proof_title": "Autonomous RSI Cross-Domain Capability Transfer Atlas Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26723057557",
-      "status": "completed",
-      "updated_at": "2026-05-31T20:05:39Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-cross-domain-capability-transfer-atlas-proof.yml"
     },
     {
       "conclusion": null,
@@ -5839,18 +5924,6 @@
     {
       "conclusion": null,
       "event": null,
-      "name": "Autonomous RSI Continual Capability Frontier Proof",
-      "path": ".github/workflows/autonomous-rsi-continual-capability-frontier-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-continual-capability-frontier-github-continual-capability-frontier-continual-capability-frontier-continual-capability.html",
-      "proof_title": "Autonomous RSI Continual Capability Frontier Proof",
-      "run_url": null,
-      "status": "not_run",
-      "updated_at": "",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-continual-capability-frontier-proof.yml"
-    },
-    {
-      "conclusion": null,
-      "event": null,
       "name": "Autonomous RSI Corporate Capability Frontier Proof",
       "path": ".github/workflows/autonomous-rsi-corporate-capability-frontier-proof.yml",
       "proof_page_url": "https://montrealai.github.io/skillos/proof-corporate-capability-frontier-github-corporate-capability-frontier-corporate-capability-frontier-corporate-capability.html",
@@ -5871,6 +5944,18 @@
       "status": "not_run",
       "updated_at": "",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-corporate-strategy-frontier-proof.yml"
+    },
+    {
+      "conclusion": null,
+      "event": null,
+      "name": "Autonomous RSI Cross-Domain Capability Transfer Atlas Proof",
+      "path": ".github/workflows/autonomous-rsi-cross-domain-capability-transfer-atlas-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-cross-domain-capability-transfer-atlas-github-cross-domain-capability-transfer-atlas-cross.html",
+      "proof_title": "Autonomous RSI Cross-Domain Capability Transfer Atlas Proof",
+      "run_url": null,
+      "status": "not_run",
+      "updated_at": "",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-cross-domain-capability-transfer-atlas-proof.yml"
     },
     {
       "conclusion": null,

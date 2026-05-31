@@ -1,14 +1,14 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T23:18:16Z`
+Generated: `2026-05-31T23:19:57Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 66
+- Proof entries: 67
 - Workflows tracked: 41
-- Recent successful runs: 45
+- Recent successful runs: 46
 - Recent failed runs: 0
 - Recent running runs: 1
 
@@ -120,6 +120,9 @@ Site: https://montrealai.github.io/skillos/
   - Page: https://montrealai.github.io/skillos/proof-cyber-defense.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cyberdefense-proof.yml
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_cyberdefense_market_proof.json
+- **Autonomous RSI Continual Capability Frontier Proof**
+  - Page: https://montrealai.github.io/skillos/proof-continual-capability-frontier-continual-capability-frontier-continual-capability-frontier-continual-capability-frontier.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-continual-capability-frontier-proof.json
 - **Autonomous RSI Skill Provenance Ledger Proof**
   - Page: https://montrealai.github.io/skillos/proof-skill-provenance-ledger-skill-provenance-ledger-skill-provenance-ledger-skill-provenance-ledger.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-skill-provenance-ledger-proof.json
@@ -135,6 +138,8 @@ Site: https://montrealai.github.io/skillos/
 - **Capability Liquidity Engine**
   - Page: https://montrealai.github.io/skillos/rsi-capability-liquidity-engine-proof.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-capability-liquidity-engine-proof.json
+- **Continual Capability Frontier**
+  - Page: https://montrealai.github.io/skillos/rsi-continual-capability-frontier-proof.html
 - **Corporate Capability Frontier**
   - Page: https://montrealai.github.io/skillos/rsi-corporate-capability-frontier-proof.html
 - **Cyberdefense**
@@ -212,8 +217,6 @@ Site: https://montrealai.github.io/skillos/
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml
 - **Readiness**
   - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
-- **Rsi Continual Capability Frontier**
-  - Page: https://montrealai.github.io/skillos/proof-continual-capability-frontier-continual-capability-frontier.html
 - **Wealth Accumulation**
   - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
 - **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**

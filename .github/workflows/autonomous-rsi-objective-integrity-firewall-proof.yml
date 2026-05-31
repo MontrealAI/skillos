@@ -1,0 +1,111 @@
+name: Autonomous RSI Objective Integrity Firewall Proof
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_to_repo:
+        description: Commit generated proof outputs back to the repository
+        required: true
+        type: boolean
+        default: true
+      deploy_pages:
+        description: Deploy GitHub Pages from the generated site artifact
+        required: true
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/autonomous-rsi-objective-integrity-firewall-proof.yml"
+      - "scripts/run_rsi_objective_integrity_firewall_proof.py"
+      - "scripts/verify_rsi_objective_integrity_firewall_proof.py"
+      - "scripts/render_rsi_objective_integrity_firewall_site.py"
+      - "scripts/publish_rsi_objective_integrity_firewall_to_hub.py"
+      - "scripts/verify_rsi_objective_integrity_firewall_site.py"
+      - "docs/AUTONOMOUS_RSI_OBJECTIVE_INTEGRITY_FIREWALL_PROOF.md"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: autonomous-rsi-objective-integrity-firewall-proof
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    name: Generate, verify, publish, and optionally deploy proof
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run autonomous RSI objective-integrity firewall proof
+        run: python scripts/run_rsi_objective_integrity_firewall_proof.py --summary "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify proof receipt
+        run: python scripts/verify_rsi_objective_integrity_firewall_proof.py
+
+      - name: Render proof webpage
+        run: python scripts/render_rsi_objective_integrity_firewall_site.py
+
+      - name: Update public command center and registry
+        run: python scripts/publish_rsi_objective_integrity_firewall_to_hub.py
+
+      - name: Verify site integration
+        run: python scripts/verify_rsi_objective_integrity_firewall_site.py
+
+      - name: Upload proof artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: skillos-rsi-objective-integrity-firewall-proof
+          if-no-files-found: error
+          path: |
+            data/rsi-objective-integrity-firewall-proof.json
+            docs/rsi-objective-integrity-firewall-proof.md
+            docs/AUTONOMOUS_RSI_OBJECTIVE_INTEGRITY_FIREWALL_PROOF.md
+            badges/rsi-objective-integrity-firewall-proof.svg
+            site/rsi-objective-integrity-firewall-proof.html
+            site/index.html
+            site/proof-registry.json
+            site/sitemap.xml
+            site/robots.txt
+            site/data/rsi-objective-integrity-firewall-proof.json
+            site/docs/rsi-objective-integrity-firewall-proof.md
+            site/badges/rsi-objective-integrity-firewall-proof.svg
+
+      - name: Commit generated proof outputs
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.publish_to_repo }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/rsi-objective-integrity-firewall-proof.json docs/rsi-objective-integrity-firewall-proof.md docs/AUTONOMOUS_RSI_OBJECTIVE_INTEGRITY_FIREWALL_PROOF.md badges/rsi-objective-integrity-firewall-proof.svg site/rsi-objective-integrity-firewall-proof.html site/index.html site/proof-registry.json site/sitemap.xml site/robots.txt site/data/rsi-objective-integrity-firewall-proof.json site/docs/rsi-objective-integrity-firewall-proof.md site/badges/rsi-objective-integrity-firewall-proof.svg
+          if git diff --cached --quiet; then
+            echo "No generated proof changes to commit."
+          else
+            git commit -m "Refresh autonomous RSI objective integrity firewall proof"
+            git push
+          fi
+
+      - name: Configure GitHub Pages
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/configure-pages@v5
+
+      - name: Build Pages artifact
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy GitHub Pages
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/deploy-pages@v4

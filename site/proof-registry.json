@@ -14,11 +14,11 @@
       "roles": "65,536",
       "short_title": "RSI Capability Liquidity Engine",
       "title": "Autonomous RSI Capability Liquidity Engine Proof",
-      "updated_at": "2026-05-31T17:21:23Z",
+      "updated_at": "2026-05-31T17:46:48Z",
       "value_captured": "$32.07T",
       "workflow": ".github/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml",
       "workflow_url": "https://github.com/MontrealAI/skillos/actions/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml"
     }
   ],
-  "updated_at": "2026-05-31T17:21:29Z"
+  "updated_at": "2026-05-31T17:46:48Z"
 }

@@ -1,0 +1,116 @@
+name: Autonomous RSI Blockchain Protocol Capital Frontier Proof
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy_pages:
+        description: "Deploy the generated proof website to GitHub Pages"
+        required: false
+        default: true
+        type: boolean
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/autonomous-rsi-blockchain-protocol-capital-frontier-proof.yml"
+      - "scripts/run_rsi_blockchain_protocol_capital_frontier_proof.py"
+      - "scripts/verify_rsi_blockchain_protocol_capital_frontier_proof.py"
+      - "scripts/make_rsi_blockchain_protocol_capital_frontier_visible.py"
+      - "scripts/publish_rsi_blockchain_protocol_capital_frontier_to_site.py"
+      - "scripts/verify_rsi_blockchain_protocol_capital_frontier_site.py"
+      - "docs/AUTONOMOUS_RSI_BLOCKCHAIN_PROTOCOL_CAPITAL_FRONTIER_PROOF.md"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: skillos-pages
+  cancel-in-progress: false
+
+jobs:
+  proof:
+    name: Run autonomous blockchain RSI proof and publish site
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: https://montrealai.github.io/skillos/
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run autonomous RSI blockchain protocol capital frontier proof
+        run: python scripts/run_rsi_blockchain_protocol_capital_frontier_proof.py --summary "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify proof gates
+        run: python scripts/verify_rsi_blockchain_protocol_capital_frontier_proof.py data/rsi-blockchain-protocol-capital-frontier-proof.json
+
+      - name: Generate proof webpage, report, and badge
+        run: python scripts/make_rsi_blockchain_protocol_capital_frontier_visible.py data/rsi-blockchain-protocol-capital-frontier-proof.json
+
+      - name: Update public SkillOS homepage and proof registry
+        run: python scripts/publish_rsi_blockchain_protocol_capital_frontier_to_site.py
+
+      - name: Verify public site integration
+        run: python scripts/verify_rsi_blockchain_protocol_capital_frontier_site.py
+
+      - name: Commit generated proof outputs
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/rsi-blockchain-protocol-capital-frontier-proof.json \
+                    docs/rsi-blockchain-protocol-capital-frontier-proof.md \
+                    site/rsi-blockchain-protocol-capital-frontier-proof.html \
+                    badges/rsi-blockchain-protocol-capital-frontier-proof.svg \
+                    site/index.html site/proof-registry.json site/sitemap.xml site/robots.txt
+            git commit -m "Publish autonomous RSI blockchain protocol capital frontier proof"
+            git push
+          else
+            echo "Generated blockchain proof outputs already fresh."
+          fi
+
+      - name: Upload proof artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: skillos-rsi-blockchain-protocol-capital-frontier-proof
+          path: |
+            data/rsi-blockchain-protocol-capital-frontier-proof.json
+            docs/rsi-blockchain-protocol-capital-frontier-proof.md
+            site/rsi-blockchain-protocol-capital-frontier-proof.html
+            badges/rsi-blockchain-protocol-capital-frontier-proof.svg
+            site/proof-registry.json
+          if-no-files-found: error
+
+      - name: Build GitHub Pages artifact
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages == true }}
+        run: |
+          mkdir -p dist
+          cp -R site/* dist/
+          mkdir -p dist/data dist/docs dist/badges
+          cp data/rsi-blockchain-protocol-capital-frontier-proof.json dist/data/
+          cp docs/rsi-blockchain-protocol-capital-frontier-proof.md dist/docs/
+          cp badges/rsi-blockchain-protocol-capital-frontier-proof.svg dist/badges/
+
+      - name: Configure GitHub Pages
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages == true }}
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages == true }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy GitHub Pages
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages == true }}
+        uses: actions/deploy-pages@v4

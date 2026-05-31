@@ -1,0 +1,126 @@
+name: Autonomous RSI AI-First Governance Capital Engine Proof
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy_pages:
+        description: Deploy the regenerated SkillOS site to GitHub Pages
+        required: false
+        default: 'true'
+        type: choice
+        options: ['true', 'false']
+      publish_to_repo:
+        description: Commit generated proof receipts, report, badge, and pages back to main
+        required: false
+        default: 'true'
+        type: choice
+        options: ['true', 'false']
+  schedule:
+    - cron: '23 */8 * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/autonomous-rsi-ai-first-governance-capital-engine-proof.yml'
+      - 'scripts/run_rsi_ai_first_governance_capital_engine_proof.py'
+      - 'scripts/verify_rsi_ai_first_governance_capital_engine_proof.py'
+      - 'scripts/make_rsi_ai_first_governance_capital_engine_visible.py'
+      - 'scripts/publish_rsi_ai_first_governance_capital_engine_to_site.py'
+      - 'scripts/verify_rsi_ai_first_governance_capital_engine_site.py'
+      - 'docs/AUTONOMOUS_RSI_AI_FIRST_GOVERNANCE_CAPITAL_ENGINE_PROOF.md'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: skillos-rsi-ai-first-governance-capital-engine
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    name: Run proof, regenerate webpage, refresh SkillOS site
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run autonomous RSI governance proof
+        run: python scripts/run_rsi_ai_first_governance_capital_engine_proof.py
+
+      - name: Verify proof gates
+        run: python scripts/verify_rsi_ai_first_governance_capital_engine_proof.py --strict
+
+      - name: Generate specific proof webpage
+        run: python scripts/make_rsi_ai_first_governance_capital_engine_visible.py
+
+      - name: Refresh SkillOS homepage, registry, sitemap, and run hub
+        run: python scripts/publish_rsi_ai_first_governance_capital_engine_to_site.py
+
+      - name: Verify public site integration
+        run: python scripts/verify_rsi_ai_first_governance_capital_engine_site.py --strict
+
+      - name: Upload proof artifact bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: skillos-rsi-ai-first-governance-capital-engine-proof
+          path: |
+            data/rsi-ai-first-governance-capital-engine-proof.json
+            docs/rsi-ai-first-governance-capital-engine-proof.md
+            docs/AUTONOMOUS_RSI_AI_FIRST_GOVERNANCE_CAPITAL_ENGINE_PROOF.md
+            site/rsi-ai-first-governance-capital-engine-proof.html
+            badges/rsi-ai-first-governance-capital-engine-proof.svg
+            site/data/rsi-ai-first-governance-capital-engine-proof.json
+            site/docs/rsi-ai-first-governance-capital-engine-proof.md
+            site/badges/rsi-ai-first-governance-capital-engine-proof.svg
+            site/index.html
+            site/proof-registry.json
+            site/sitemap.xml
+            site/robots.txt
+
+      - name: Commit generated proof outputs
+        if: ${{ github.event_name != 'pull_request' && (github.event_name != 'workflow_dispatch' || inputs.publish_to_repo != 'false') }}
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/rsi-ai-first-governance-capital-engine-proof.json docs/rsi-ai-first-governance-capital-engine-proof.md docs/AUTONOMOUS_RSI_AI_FIRST_GOVERNANCE_CAPITAL_ENGINE_PROOF.md site/rsi-ai-first-governance-capital-engine-proof.html badges/rsi-ai-first-governance-capital-engine-proof.svg site/data/rsi-ai-first-governance-capital-engine-proof.json site/docs/rsi-ai-first-governance-capital-engine-proof.md site/badges/rsi-ai-first-governance-capital-engine-proof.svg site/index.html site/proof-registry.json site/sitemap.xml site/robots.txt
+            git commit -m "Refresh autonomous RSI AI-first governance proof"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo "Autonomous RSI AI-first governance proof outputs already fresh."
+          fi
+
+      - name: Configure GitHub Pages
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages != 'false' }}
+        uses: actions/configure-pages@v5
+
+      - name: Build Pages artifact
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages != 'false' }}
+        run: |
+          mkdir -p dist
+          cp -R site/. dist/
+
+      - name: Upload GitHub Pages artifact
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages != 'false' }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy GitHub Pages
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages != 'false' }}
+        id: deployment
+        uses: actions/deploy-pages@v4

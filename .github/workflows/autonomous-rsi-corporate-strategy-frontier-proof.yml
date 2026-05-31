@@ -1,0 +1,154 @@
+name: Autonomous RSI Corporate Strategy Frontier Proof
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy_pages:
+        description: "Deploy the refreshed SkillOS public site to GitHub Pages"
+        type: boolean
+        default: true
+  schedule:
+    - cron: "37 5 * * 1"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/autonomous-rsi-corporate-strategy-frontier-proof.yml"
+      - "scripts/run_rsi_corporate_strategy_frontier_proof.py"
+      - "scripts/verify_rsi_corporate_strategy_frontier_proof.py"
+      - "scripts/make_rsi_corporate_strategy_frontier_visible.py"
+      - "scripts/publish_rsi_corporate_strategy_frontier_to_site.py"
+      - "scripts/verify_rsi_corporate_strategy_frontier_site.py"
+      - "docs/AUTONOMOUS_RSI_CORPORATE_STRATEGY_FRONTIER_PROOF.md"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  prove-publish-deploy:
+    name: Run autonomous corporate strategy RSI proof, publish page, refresh hub
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: https://montrealai.github.io/skillos/
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run autonomous RSI corporate strategy frontier proof
+        run: python scripts/run_rsi_corporate_strategy_frontier_proof.py --summary "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify proof receipt and pre-registered gates
+        run: python scripts/verify_rsi_corporate_strategy_frontier_proof.py
+
+      - name: Build specific executive proof webpage and badge
+        run: python scripts/make_rsi_corporate_strategy_frontier_visible.py
+
+      - name: Update SkillOS homepage, proof registry, sitemap, and robots.txt
+        run: python scripts/publish_rsi_corporate_strategy_frontier_to_site.py
+
+      - name: Verify public site integration
+        run: python scripts/verify_rsi_corporate_strategy_frontier_site.py
+
+      - name: Upload proof artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: skillos-rsi-corporate-strategy-frontier-proof
+          path: |
+            data/rsi-corporate-strategy-frontier-proof.json
+            docs/rsi-corporate-strategy-frontier-proof.md
+            site/rsi-corporate-strategy-frontier-proof.html
+            badges/rsi-corporate-strategy-frontier-proof.svg
+            site/index.html
+            site/proof-registry.json
+            site/sitemap.xml
+            site/robots.txt
+
+      - name: Commit generated proof outputs back to repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add \
+            data/rsi-corporate-strategy-frontier-proof.json \
+            docs/rsi-corporate-strategy-frontier-proof.md \
+            site/rsi-corporate-strategy-frontier-proof.html \
+            badges/rsi-corporate-strategy-frontier-proof.svg \
+            site/index.html \
+            site/proof-registry.json \
+            site/sitemap.xml \
+            site/robots.txt
+          if git diff --cached --quiet; then
+            echo "Corporate Strategy Frontier proof already fresh."
+          else
+            git commit -m "Update autonomous RSI corporate strategy frontier proof [skip ci]"
+            git push
+          fi
+
+      - name: Build GitHub Pages artifact
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          cp -R site/. dist/
+          test -f dist/index.html
+          test -f dist/rsi-corporate-strategy-frontier-proof.html
+
+      - name: Configure GitHub Pages
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy GitHub Pages attempt 1
+        id: deploy1
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+
+      - name: Wait if another Pages deployment is finishing
+        if: ${{ (github.event_name != 'workflow_dispatch' || inputs.deploy_pages) && steps.deploy1.outcome == 'failure' }}
+        run: sleep 45
+
+      - name: Deploy GitHub Pages attempt 2
+        id: deploy2
+        if: ${{ (github.event_name != 'workflow_dispatch' || inputs.deploy_pages) && steps.deploy1.outcome == 'failure' }}
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+
+      - name: Wait once more if deployment is still locked
+        if: ${{ (github.event_name != 'workflow_dispatch' || inputs.deploy_pages) && steps.deploy1.outcome == 'failure' && steps.deploy2.outcome == 'failure' }}
+        run: sleep 90
+
+      - name: Deploy GitHub Pages attempt 3
+        id: deploy3
+        if: ${{ (github.event_name != 'workflow_dispatch' || inputs.deploy_pages) && steps.deploy1.outcome == 'failure' && steps.deploy2.outcome == 'failure' }}
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+
+      - name: Confirm GitHub Pages deployment
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
+        run: |
+          if [ "${{ steps.deploy1.outcome }}" = "success" ] || [ "${{ steps.deploy2.outcome }}" = "success" ] || [ "${{ steps.deploy3.outcome }}" = "success" ]; then
+            echo "Published https://montrealai.github.io/skillos/rsi-corporate-strategy-frontier-proof.html"
+          else
+            echo "Pages deployment did not succeed after retries. The proof outputs were still generated, verified, uploaded, and committed."
+            exit 1
+          fi

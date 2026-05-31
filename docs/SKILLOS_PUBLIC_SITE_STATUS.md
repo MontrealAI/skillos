@@ -1,6 +1,6 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T20:31:31Z`
+Generated: `2026-05-31T20:32:42Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
@@ -8,9 +8,9 @@ Site: https://montrealai.github.io/skillos/
 
 - Proof entries: 58
 - Workflows tracked: 37
-- Recent successful runs: 42
-- Recent failed runs: 2
-- Recent running runs: 3
+- Recent successful runs: 46
+- Recent failed runs: 1
+- Recent running runs: 1
 
 ## Flagship
 
@@ -93,6 +93,9 @@ Site: https://montrealai.github.io/skillos/
 - **Blockchain Protocol Capital Frontier**
   - Page: https://montrealai.github.io/skillos/rsi-blockchain-protocol-capital-frontier-proof.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-blockchain-protocol-capital-frontier-proof.json
+- **Causal Attribution Engine**
+  - Page: https://montrealai.github.io/skillos/rsi-causal-attribution-engine-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-causal-attribution-engine-proof.json
 - **Corporate Strategy Frontier**
   - Page: https://montrealai.github.io/skillos/rsi-corporate-strategy-frontier-proof.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-corporate-strategy-frontier-proof.json
@@ -189,8 +192,6 @@ Site: https://montrealai.github.io/skillos/
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml
 - **Readiness**
   - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
-- **Rsi Causal Attribution Engine**
-  - Page: https://montrealai.github.io/skillos/proof-causal-attribution-engine-causal-attribution-engine.html
 - **Wealth Accumulation**
   - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
 - **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**

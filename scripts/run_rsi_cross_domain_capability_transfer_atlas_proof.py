@@ -9,7 +9,7 @@ from statistics import mean
 
 PROOF_ID = "rsi-cross-domain-capability-transfer-atlas-proof"
 TITLE = "Autonomous RSI Cross-Domain Capability Transfer Atlas Proof"
-VERSION = "13.0"
+VERSION = "13.1"
 SEED = "SkillOS-v13-cross-domain-capability-transfer-atlas-locked-seed"
 DOMAINS = [
     "AI product strategy", "enterprise governance", "blockchain settlement", "cyber defense", "cloud operations",

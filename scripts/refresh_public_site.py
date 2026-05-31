@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""SkillOS Public Proof Command Center v4.
+"""SkillOS Public Proof Command Center v4.3.
 
 World-class, dependency-free generator for the live SkillOS public proof site.
 
@@ -189,6 +189,87 @@ def titleize(slug: str) -> str:
     return re.sub(r"\s+", " ", cleaned).strip().title() or slug.title()
 
 
+CORE_SITE_PAGES = {
+    "index.html", "proofs.html", "actions.html", "multi-agent.html",
+    "receipts.html", "leaderboard.html", "architecture.html", "runbook.html",
+}
+
+CANONICAL_STOPWORDS = {
+    "autonomous", "rsi", "proof", "market", "benchmark", "json", "html",
+    "receipt", "receipts", "workflow", "workflows", "public", "generated",
+    "docs", "doc", "site", "run", "runs", "action", "actions", "the",
+}
+
+
+def normalized_tokens(*values: object) -> list[str]:
+    text = " ".join(str(v or "") for v in values).lower()
+    text = re.sub(r"\.(json|html|md|ya?ml)$", "", text)
+    text = text.replace("to capability", " capability ")
+    tokens = re.findall(r"[a-z0-9]+", text)
+    return [t for t in tokens if t and t not in CANONICAL_STOPWORDS]
+
+
+def canonical_proof_key(*values: object) -> str:
+    tokens = normalized_tokens(*values)
+    token_set = set(tokens)
+    if {"enterprise", "eureka", "factory"}.issubset(token_set):
+        return "enterprise-eureka-factory"
+    if {"enterprise", "intelligence", "factory"}.issubset(token_set):
+        return "enterprise-intelligence-factory"
+    if {"capability", "command", "center", "v17"}.issubset(token_set):
+        return "capability-command-center-v17"
+    if {"capability", "command", "center"}.issubset(token_set):
+        return "capability-command-center"
+    if {"shadow", "pilot"}.issubset(token_set):
+        return "shadow-pilot"
+    if {"unit", "economics"}.issubset(token_set):
+        return "unit-economics"
+    if {"revenue", "experiment", "factory"}.issubset(token_set):
+        return "revenue-experiment-factory"
+    if {"marketplace", "flywheel"}.issubset(token_set):
+        return "marketplace-flywheel"
+    if {"corporate", "os"}.issubset(token_set):
+        return "corporate-os"
+    if {"cloudops"}.issubset(token_set):
+        return "cloudops"
+    if {"cyber", "defense"}.issubset(token_set):
+        return "cyber-defense"
+    if {"silicon", "verification"}.issubset(token_set):
+        return "silicon-verification"
+    if {"metamaterials", "discovery"}.issubset(token_set):
+        return "metamaterials-discovery"
+    if not tokens:
+        return "proof"
+    return "-".join(tokens[:12])
+
+
+def proof_token_set(item: dict[str, Any]) -> set[str]:
+    return set(normalized_tokens(item.get("key"), item.get("title"), item.get("workflow"), item.get("workflow_name"), item.get("workflow_path")))
+
+
+def best_matching_proof(name: str, path: str, proofs: list[dict[str, Any]]) -> dict[str, Any] | None:
+    key = canonical_proof_key(name, path)
+    for p in proofs:
+        if p.get("key") == key and p.get("page_url"):
+            return p
+    want = set(normalized_tokens(name, path))
+    if not want:
+        return None
+    best: tuple[float, dict[str, Any]] | None = None
+    for p in proofs:
+        if not p.get("page_url"):
+            continue
+        have = proof_token_set(p)
+        if not have:
+            continue
+        score = len(want & have) / max(1, len(want | have))
+        if want.issubset(have) or have.issubset(want):
+            score += 0.35
+        if best is None or score > best[0]:
+            best = (score, p)
+    return best[1] if best and best[0] >= 0.42 else None
+
+
 def read_json(path: Path) -> dict[str, Any] | None:
     try:
         obj = json.loads(path.read_text(encoding="utf-8"))
@@ -209,6 +290,8 @@ def collect_proof_jsons() -> list[dict[str, Any]]:
         if not obj:
             continue
         slug = path.stem
+        key = canonical_proof_key(slug, obj.get("workflow"), obj.get("proof_type"))
+        display_title = obj.get("workflow") or obj.get("proof_type") or titleize(slug)
         final = obj.get("final") or {}
         agent_system = obj.get("agent_system") or {}
         metrics = {}
@@ -218,8 +301,8 @@ def collect_proof_jsons() -> list[dict[str, Any]]:
         status = obj.get("status") or ("PASSED" if obj.get("proved") else "PENDING")
         benchmark = obj.get("benchmark_public") or {}
         rows.append({
-            "key": slug,
-            "title": titleize(slug),
+            "key": key,
+            "title": display_title,
             "status": status,
             "proved": bool(obj.get("proved")) or "PASSED" in str(status),
             "workflow": obj.get("workflow") or obj.get("proof_type") or titleize(slug),
@@ -246,19 +329,29 @@ def collect_proof_jsons() -> list[dict[str, Any]]:
 
 
 def collect_pages_docs() -> tuple[list[dict[str, str]], list[dict[str, str]]]:
-    pages = [{
-        "key": p.stem,
-        "title": titleize(p.stem),
-        "page_path": f"site/{p.name}",
-        "page_url": f"{SITE_URL}{p.name}",
-        "source": "page",
-    } for p in sorted(SITE.glob("*proof*.html"))]
+    pages = []
+    for p in sorted(SITE.glob("*proof*.html")):
+        if p.name in CORE_SITE_PAGES:
+            continue
+        key = canonical_proof_key(p.stem)
+        pages.append({
+            "key": key,
+            "title": titleize(p.stem),
+            "page_path": f"site/{p.name}",
+            "page_url": f"{SITE_URL}{p.name}",
+            "source": "page",
+        })
     docs = []
+    seen: set[Path] = set()
     for p in sorted(DOCS.glob("*PROOF*.md")) + sorted(DOCS.glob("*proof*.md")):
+        if p in seen:
+            continue
+        seen.add(p)
         if p.name in {"SKILLOS_PUBLIC_SITE_STATUS.md"}:
             continue
+        key = canonical_proof_key(p.stem)
         docs.append({
-            "key": p.stem.lower(),
+            "key": key,
             "title": titleize(p.stem),
             "doc_path": f"docs/{p.name}",
             "doc_url": repo_url(f"blob/main/docs/{p.name}"),
@@ -290,7 +383,7 @@ def collect_proofs(workflows: list[dict[str, Any]], runs: list[dict[str, Any]]) 
         path = str(w.get("path") or "")
         if not is_proof_workflow(name, path):
             continue
-        key = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+        key = canonical_proof_key(name, path)
         run = latest.get(name.lower(), {})
         add(key, {
             "title": name,
@@ -380,16 +473,21 @@ def badge_class(label: str) -> str:
     return "neutral"
 
 
-def workflow_statuses(workflows: list[dict[str, Any]], runs: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def workflow_statuses(workflows: list[dict[str, Any]], runs: list[dict[str, Any]], proofs: list[dict[str, Any]] | None = None) -> list[dict[str, Any]]:
     latest = latest_run_by_name(runs)
+    proof_rows = proofs or []
     rows = []
     for w in workflows:
         name = str(w.get("name") or "")
+        path = str(w.get("path") or "")
         run = latest.get(name.lower(), {})
+        proof = best_matching_proof(name, path, proof_rows)
         rows.append({
             "name": name,
             "path": w.get("path"),
             "workflow_url": w.get("html_url"),
+            "proof_page_url": proof.get("page_url") if proof else None,
+            "proof_title": proof.get("title") if proof else None,
             "run_url": run.get("html_url"),
             "status": run.get("status") or "not_run",
             "conclusion": run.get("conclusion"),
@@ -400,6 +498,8 @@ def workflow_statuses(workflows: list[dict[str, Any]], runs: list[dict[str, Any]
 
 
 def status_object(workflows: list[dict[str, Any]], runs: list[dict[str, Any]], proofs: list[dict[str, Any]], flagship: dict[str, Any]) -> dict[str, Any]:
+    proofs = ensure_public_proof_pages(proofs)
+    flagship = next((p for p in proofs if p.get("key") == flagship.get("key")), flagship)
     recent = runs[:50]
     return {
         "generated_at_utc": now_iso(),
@@ -416,7 +516,7 @@ def status_object(workflows: list[dict[str, Any]], runs: list[dict[str, Any]], p
         "recent_running_runs": sum(1 for r in recent if r.get("status") in {"in_progress", "queued", "requested", "waiting"}),
         "flagship": {k: v for k, v in flagship.items() if k != "raw"},
         "flagship_raw": flagship.get("raw") or {},
-        "workflows": workflow_statuses(workflows, runs),
+        "workflows": workflow_statuses(workflows, runs, proofs),
         "proofs": [{k: v for k, v in p.items() if k != "raw"} for p in proofs],
         "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
     }
@@ -427,7 +527,7 @@ CSS = r"""
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:radial-gradient(circle at 83% 0,#3b407c 0,transparent 34%),radial-gradient(circle at 6% 18%,#13576b 0,transparent 25%),linear-gradient(135deg,#06131f,#13243d 60%,#26295a);color:var(--text)}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.8),rgba(0,0,0,.05))}
 a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}nav{display:flex;align-items:center;justify-content:space-between;gap:18px;position:sticky;top:0;z-index:20;background:rgba(6,19,31,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:14px 22px}.brand{font-weight:950;letter-spacing:-.03em}.navlinks{display:flex;gap:14px;flex-wrap:wrap}.navlinks a{color:var(--muted);font-weight:850;font-size:14px}
-main{max-width:1280px;margin:0 auto;padding:44px 22px 86px}.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:28px;align-items:center;padding:42px 0 24px}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.18em;font-weight:950;font-size:12px}.hero h1{font-size:clamp(44px,7vw,100px);line-height:.86;letter-spacing:-.08em;margin:10px 0}.hero p,.lead{color:var(--muted);font-size:20px;line-height:1.55}.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:0 24px 90px rgba(0,0,0,.26)}.status{font-size:28px;font-weight:950;color:var(--green);overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}.metric{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.metric strong{display:block;color:var(--green);font-size:34px;letter-spacing:-.04em}.metric span{color:var(--muted)}.section{margin:30px 0}.section h2{font-size:clamp(30px,4.8vw,60px);letter-spacing:-.055em;line-height:.95;margin:0 0 16px}.proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.proof-card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:22px}.proof-card h3{font-size:24px;line-height:1.05;letter-spacing:-.035em;margin:10px 0}.proof-card p{color:var(--muted);line-height:1.45}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.button{display:inline-block;border-radius:999px;padding:11px 16px;background:var(--cyan);color:#071521;font-weight:950}.button.secondary{background:transparent;border:1px solid var(--line);color:var(--text)}.button.gold{background:var(--gold);color:#15110a}
+main{max-width:1280px;margin:0 auto;padding:44px 22px 86px}.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:28px;align-items:center;padding:42px 0 24px}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.18em;font-weight:950;font-size:12px}.hero h1{font-size:clamp(44px,7vw,100px);line-height:.86;letter-spacing:-.08em;margin:10px 0}.hero p,.lead{color:var(--muted);font-size:20px;line-height:1.55}.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:0 24px 90px rgba(0,0,0,.26)}.status{font-size:28px;font-weight:950;color:var(--green);overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}.metric{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.metric strong{display:block;color:var(--green);font-size:34px;letter-spacing:-.04em}.metric span{color:var(--muted)}.section{margin:30px 0}.section h2{font-size:clamp(30px,4.8vw,60px);letter-spacing:-.055em;line-height:.95;margin:0 0 16px}.proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.proof-card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:22px}.proof-card h3{font-size:24px;line-height:1.05;letter-spacing:-.035em;margin:10px 0}.proof-card h3 a{color:var(--text)}.proof-card.clickable{transition:transform .18s ease,border-color .18s ease,background .18s ease}.proof-card.clickable:hover{transform:translateY(-2px);border-color:rgba(134,248,255,.45);background:rgba(134,248,255,.08)}.proof-card p{color:var(--muted);line-height:1.45}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.button{display:inline-block;border-radius:999px;padding:11px 16px;background:var(--cyan);color:#071521;font-weight:950}.button.secondary{background:transparent;border:1px solid var(--line);color:var(--text)}.button.gold{background:var(--gold);color:#15110a}
 .badge{display:inline-flex;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.04em}.badge.ok{background:rgba(125,255,176,.16);color:var(--green)}.badge.warn{background:rgba(255,214,107,.16);color:var(--gold)}.badge.bad{background:rgba(255,121,121,.16);color:var(--red)}.badge.neutral{background:rgba(255,255,255,.08);color:var(--muted)}
 table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden}th,td{padding:13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}tr:last-child td{border-bottom:0}.small{font-size:13px;color:var(--muted)}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.notice{border-left:4px solid var(--gold);background:rgba(255,214,107,.08);border-radius:16px;padding:16px 18px;color:var(--muted);line-height:1.55}.roles{display:flex;flex-wrap:wrap;gap:8px}.roles span{border:1px solid var(--line);border-radius:999px;padding:8px 10px;color:var(--muted);background:rgba(255,255,255,.05);font-size:13px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.step strong{display:block;color:var(--cyan);font-size:13px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px}.quote{font-size:clamp(24px,3.6vw,46px);line-height:1.05;letter-spacing:-.04em;color:var(--text);margin:8px 0 12px}.divider{height:1px;background:var(--line);margin:24px 0}.chart{min-height:260px;background:rgba(0,0,0,.16);border:1px solid var(--line);border-radius:22px;padding:16px;margin:12px 0;overflow:hidden}.chart svg{width:100%;height:auto;display:block}.chart-title{font-weight:950;margin:0 0 8px}.chart-note{color:var(--muted);font-size:13px;margin:6px 0 0}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:900px){.hero,.grid,.proof-grid,.steps,.two{grid-template-columns:1fr}nav{align-items:flex-start;flex-direction:column}.navlinks{gap:10px}}
@@ -448,6 +548,13 @@ JS = r"""
   const pct = v => (v === undefined || v === null || v === "") ? "—" : Number(v).toFixed(1).replace(".0","") + "%";
   const safe = s => String(s ?? "").replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const color = i => ["#7dffb0","#86f8ff","#ffd66b","#d8a7ff","#9da8ff","#ffb86c"][i%6];
+  const firstNumber = (...xs) => {
+    for (const x of xs) {
+      const n = Number(x);
+      if (Number.isFinite(n)) return n;
+    }
+    return 0;
+  };
 
   async function loadStatus(){
     try{
@@ -537,23 +644,47 @@ JS = r"""
         {label:"Static coordination", value:stat.fully_correct_percent||0, display:pct(stat.fully_correct_percent)},
         {label:"SkillOS RSI", value:final.fully_correct_percent||0, display:pct(final.fully_correct_percent)},
       ],"Shows whether recursive coordination beats both single-agent and uncoordinated multi-agent baselines."); }
-      if(type==="capability-radar"){ radarChart(el,"Capability coordination radar",[
-        {label:"Coordination", value:final.coordination_protocol_accuracy_percent||0},
-        {label:"Risk control", value:final.risk_control_accuracy_percent||0},
-        {label:"Role quorum", value:final.role_quorum_accuracy_percent||0},
-        {label:"Capability lever", value:final.capability_lever_accuracy_percent||0},
-        {label:"Value capture", value:final.value_capture_rate_percent||0},
-        {label:"Compounding", value:final.avg_compounding_index||0},
-        {label:"Capacity", value:final.avg_productive_capacity_index||0},
-      ],"The flagship proof measures coordination quality, risk discipline, compounding, and productive capacity."); }
+      if(type==="capability-radar"){
+        const valueCapture = firstNumber(
+          final.benchmark_value_capture_rate_percent,
+          final.value_capture_rate_percent,
+          final.market_value_capture_rate_percent,
+          final.revenue_capture_rate_percent,
+          final.capture_rate_percent,
+          (final.total_benchmark_value_captured_usd && final.total_benchmark_value_at_stake_usd)
+            ? 100 * final.total_benchmark_value_captured_usd / final.total_benchmark_value_at_stake_usd
+            : undefined
+        );
+        radarChart(el,"Capability coordination radar",[
+          {label:"Coordination", value:firstNumber(final.coordination_protocol_accuracy_percent, final.coordination_accuracy_percent)},
+          {label:"Risk control", value:firstNumber(final.risk_control_accuracy_percent, final.risk_accuracy_percent)},
+          {label:"Role quorum", value:firstNumber(final.role_quorum_accuracy_percent, final.quorum_accuracy_percent)},
+          {label:"Capability lever", value:firstNumber(final.capability_lever_accuracy_percent, final.capability_accuracy_percent)},
+          {label:"Value capture", value:valueCapture},
+          {label:"Compounding", value:firstNumber(final.avg_compounding_index, final.compounding_index)},
+          {label:"Capacity", value:firstNumber(final.avg_productive_capacity_index, final.productive_capacity_index)},
+        ],"The flagship proof measures coordination quality, risk discipline, value capture, compounding, and productive capacity.");
+      }
       if(type==="agent-constellation"){ constellation(el,"Specialist agent organization", (agentSystem.roles||status.flagship.roles||[]), "Visualizes the specialist roles coordinated by the flagship proof."); }
-      if(type==="value-bars"){ barChart(el,"Business effect metrics",[
-        {label:"Value capture", value:final.value_capture_rate_percent||0, display:pct(final.value_capture_rate_percent)},
-        {label:"Compounding index", value:final.avg_compounding_index||0},
-        {label:"Productive capacity", value:final.avg_productive_capacity_index||0},
-        {label:"Consensus", value:final.avg_consensus_score||0},
-        {label:"Risk breach", value:final.risk_breach_rate_percent||0, display:pct(final.risk_breach_rate_percent)},
-      ],"Benchmark values, not audited customer revenue."); }
+      if(type==="value-bars"){
+        const valueCapture = firstNumber(
+          final.benchmark_value_capture_rate_percent,
+          final.value_capture_rate_percent,
+          final.market_value_capture_rate_percent,
+          final.revenue_capture_rate_percent,
+          final.capture_rate_percent,
+          (final.total_benchmark_value_captured_usd && final.total_benchmark_value_at_stake_usd)
+            ? 100 * final.total_benchmark_value_captured_usd / final.total_benchmark_value_at_stake_usd
+            : undefined
+        );
+        barChart(el,"Business effect metrics",[
+          {label:"Benchmark value capture", value:valueCapture, display:pct(valueCapture)},
+          {label:"Value captured", value:valueCapture, display:money(final.total_benchmark_value_captured_usd)},
+          {label:"Value at stake", value:100, display:money(final.total_benchmark_value_at_stake_usd)},
+          {label:"Decision cost", value:Math.max(1, Math.min(100, 100 * (final.total_decision_cost_usd || 0) / Math.max(1, final.total_benchmark_value_at_stake_usd || 1))), display:money(final.total_decision_cost_usd)},
+          {label:"Risk breach", value:firstNumber(final.risk_breach_rate_percent), display:pct(firstNumber(final.risk_breach_rate_percent))},
+        ],"Benchmark values from the public proof receipt; not audited customer revenue.");
+      }
     });
   }
 
@@ -632,15 +763,124 @@ def proof_card(p: dict[str, Any]) -> str:
         actions.append(f'<a class="button secondary" href="{html.escape(str(doc_url))}">Docs</a>')
     if not actions:
         actions.append(f'<a class="button secondary" href="{html.escape(repo_url("actions"))}">Open Actions</a>')
+    title_html = f'<a href="{html.escape(str(page_url))}">{title}</a>' if page_url else title
+    card_class = "proof-card clickable" if page_url else "proof-card"
     return f"""
-<div class="proof-card">
+<div class="{card_class}">
   {proof_badge(p)}
-  <h3>{title}</h3>
+  <h3>{title_html}</h3>
   <p>{workflow}</p>
   <p class="small">{html.escape(fact_line)}</p>
   <div class="actions">{''.join(actions)}</div>
 </div>
 """
+
+
+def money_short(value: Any) -> str:
+    try:
+        n = float(value)
+    except Exception:
+        return "—"
+    if abs(n) >= 1_000_000_000:
+        return f"${n / 1_000_000_000:,.2f}B"
+    if abs(n) >= 1_000_000:
+        return f"${n / 1_000_000:,.2f}M"
+    return f"${n:,.0f}"
+
+
+def ensure_public_proof_pages(proofs: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    # Guarantee every proof entry has a clickable, beautiful public page.
+    enhanced = []
+    for p in proofs:
+        item = dict(p)
+        existing_page = str(item.get("page_url") or "")
+        if existing_page and not existing_page.endswith("proofs.html"):
+            enhanced.append(item)
+            continue
+
+        key = canonical_proof_key(item.get("key"), item.get("title"), item.get("workflow"), item.get("workflow_name"))
+        filename = f"proof-{key}.html"
+        item["key"] = key
+        item["page_path"] = f"site/{filename}"
+        item["page_url"] = f"{SITE_URL}{filename}"
+
+        title = html.escape(str(item.get("title") or item.get("workflow") or titleize(key)))
+        workflow = html.escape(str(item.get("workflow") or item.get("workflow_name") or "Autonomous public proof"))
+        raw = item.get("raw") or {}
+        final = raw.get("final") or {}
+        benchmark = item.get("benchmark_public") or raw.get("benchmark_public") or {}
+        actions = []
+        if item.get("workflow_url"):
+            actions.append(f'<a class="button" href="{html.escape(str(item.get("workflow_url")))}">Run on GitHub</a>')
+        if item.get("latest_run_url"):
+            actions.append(f'<a class="button secondary" href="{html.escape(str(item.get("latest_run_url")))}">Latest run</a>')
+        if item.get("json_url"):
+            actions.append(f'<a class="button secondary" href="{html.escape(str(item.get("json_url")))}">JSON receipt</a>')
+        if item.get("doc_url"):
+            actions.append(f'<a class="button secondary" href="{html.escape(str(item.get("doc_url")))}">Report</a>')
+        if not actions:
+            actions.append(f'<a class="button" href="{html.escape(repo_url("actions"))}">Open GitHub Actions</a>')
+
+        metrics = [
+            ("Agents", item.get("agent_count")),
+            ("Roles", item.get("role_count")),
+            ("Holdout cases", item.get("holdout_count") or benchmark.get("holdout_count")),
+            ("RSI releases", item.get("rsi_releases")),
+            ("Value capture", final.get("benchmark_value_capture_rate_percent") or final.get("value_capture_rate_percent")),
+            ("Fully correct", final.get("fully_correct_percent")),
+            ("Risk breach", final.get("risk_breach_rate_percent")),
+        ]
+        metric_cards = ""
+        for label, value in metrics:
+            if value in (None, "", [], {}):
+                continue
+            suffix = "%" if label in {"Value capture", "Fully correct", "Risk breach"} and str(value) != "—" else ""
+            metric_cards += f'<div class="metric"><strong>{html.escape(str(value))}{suffix}</strong><span>{html.escape(label.lower())}</span></div>'
+        if not metric_cards:
+            metric_cards = '<div class="metric"><strong>Ready</strong><span>run the GitHub Action to generate receipt metrics</span></div>'
+
+        receipt_rows = []
+        for label, value in [
+            ("Status", item.get("status")),
+            ("Workflow", item.get("workflow") or item.get("workflow_name")),
+            ("Generated", item.get("generated_at")),
+            ("Benchmark value at stake", money_short(final.get("total_benchmark_value_at_stake_usd")) if final.get("total_benchmark_value_at_stake_usd") else None),
+            ("Benchmark value captured", money_short(final.get("total_benchmark_value_captured_usd")) if final.get("total_benchmark_value_captured_usd") else None),
+        ]:
+            if value not in (None, "", [], {}):
+                receipt_rows.append(f"<tr><th>{html.escape(label)}</th><td>{html.escape(str(value))}</td></tr>")
+        receipt_table = "<table>" + "".join(receipt_rows) + "</table>" if receipt_rows else ""
+
+        body = f"""
+<section class="hero">
+  <div>
+    <div class="eyebrow">Autonomous Proof Page</div>
+    <h1>{title}</h1>
+    <p>{workflow}</p>
+    <div class="actions">{''.join(actions)}</div>
+  </div>
+  <div class="card">
+    {proof_badge(item)}
+    <div class="status">Clickable proof route</div>
+    <p>Generated automatically by the SkillOS Public Proof Command Center so every proof title opens a readable public page, not a raw workflow screen.</p>
+  </div>
+</section>
+<section class="grid">{metric_cards}</section>
+<section class="section card">
+  <h2>What this page proves</h2>
+  <p>{html.escape(str(item.get('safe_interpretation') or 'This proof is discoverable, runnable, inspectable, and regenerable through GitHub Actions.'))}</p>
+</section>
+<section class="section">
+  <h2>Proof receipt</h2>
+  {receipt_table}
+</section>
+<section class="notice"><strong>Public boundary:</strong> benchmark proof values are not audited customer revenue, investment advice, financial advice, live customer adoption, achieved superintelligence, Kardashev Type II achievement, or guarantees.</section>
+"""
+        (SITE / filename).write_text(shell(str(item.get("title") or titleize(key)), body), encoding="utf-8")
+        enhanced.append(item)
+    return enhanced
+
+
 
 
 def workflows_table(workflows: list[dict[str, Any]], limit: int | None = None) -> str:
@@ -649,9 +889,21 @@ def workflows_table(workflows: list[dict[str, Any]], limit: int | None = None) -
     for w in rows:
         label = status_label(w.get("conclusion"), w.get("status"))
         wf_url = html.escape(str(w.get("workflow_url") or "#"))
+        proof_url_raw = w.get("proof_page_url")
+        title_url = html.escape(str(proof_url_raw or w.get("run_url") or wf_url))
         run_url = html.escape(str(w.get("run_url") or wf_url))
+        extra_links = []
+        if proof_url_raw:
+            extra_links.append(f'<a href="{html.escape(str(proof_url_raw))}">View proof page</a>')
+        if w.get("workflow_url"):
+            extra_links.append(f'<a href="{wf_url}">GitHub Action</a>')
+        if w.get("run_url"):
+            extra_links.append(f'<a href="{run_url}">Latest run</a>')
+        extra = " · ".join(extra_links)
+        if extra:
+            extra = f'<br><span class="small">{extra}</span>'
         body.append(f"""<tr>
-<td><a href="{wf_url}"><strong>{html.escape(str(w.get("name") or "Workflow"))}</strong></a><br><span class="small mono">{html.escape(str(w.get("path") or ""))}</span></td>
+<td><a href="{title_url}"><strong>{html.escape(str(w.get("name") or "Workflow"))}</strong></a><br><span class="small mono">{html.escape(str(w.get("path") or ""))}</span>{extra}</td>
 <td><span class="badge {badge_class(label)}">{html.escape(label)}</span></td>
 <td>{html.escape(str(w.get("event") or ""))}</td>
 <td><a href="{run_url}">{html.escape(str(w.get("updated_at") or "not run yet"))}</a></td>
@@ -684,7 +936,16 @@ def build_pages(status: dict[str, Any]) -> None:
     flagship_page = flagship.get("page_url") or "rsi-capability-command-center-v17-proof.html"
 
     (SITE / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://montrealai.github.io/skillos/sitemap.xml\n", encoding="utf-8")
-    pages_for_sitemap = ["index.html","proofs.html","actions.html","multi-agent.html","receipts.html","leaderboard.html","architecture.html","runbook.html"]
+    core_pages = ["index.html","proofs.html","actions.html","multi-agent.html","receipts.html","leaderboard.html","architecture.html","runbook.html"]
+    proof_pages = []
+    for p in proofs:
+        page_url = str(p.get("page_url") or "")
+        page_path = str(p.get("page_path") or "")
+        if page_url.startswith(SITE_URL):
+            proof_pages.append(page_url.rsplit("/", 1)[-1])
+        elif page_path.startswith("site/"):
+            proof_pages.append(Path(page_path).name)
+    pages_for_sitemap = sorted(set(core_pages + [p for p in proof_pages if p and p not in CORE_SITE_PAGES]))
     sitemap = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n" + "\n".join(
         f"  <url><loc>{SITE_URL}{p}</loc><lastmod>{status['generated_at_utc'][:10]}</lastmod></url>" for p in pages_for_sitemap
     ) + "\n</urlset>\n"
@@ -742,8 +1003,8 @@ def build_pages(status: dict[str, Any]) -> None:
 <section class="grid">
   <div class="metric"><strong>{html.escape(str(flagship.get('agent_count') or agent_system.get('agent_count') or '—'))}</strong><span>flagship agents</span></div>
   <div class="metric"><strong>{html.escape(str(flagship.get('role_count') or agent_system.get('role_count') or '—'))}</strong><span>specialist roles</span></div>
-  <div class="metric"><strong data-live-count="proof_count">{html.escape(str(status['proof_count']))}</strong><span>proof entries</span></div>
-  <div class="metric"><strong data-live-count="recent_successful_runs">{html.escape(str(status['recent_successful_runs']))}</strong><span>recent successful runs</span></div>
+  <div class="metric"><strong>{html.escape(str(final.get('benchmark_value_capture_rate_percent') or '—'))}%</strong><span>benchmark value capture</span></div>
+  <div class="metric"><strong>{html.escape(str(round((final.get('total_benchmark_value_captured_usd') or 0)/1_000_000_000, 1)) if final.get('total_benchmark_value_captured_usd') else '—')}B</strong><span>benchmark value captured</span></div>
 </section>
 
 <section class="two">

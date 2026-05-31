@@ -18,7 +18,7 @@ REQUIRED = {
         "multi-agent.html",
     ],
     "site/assets/command-center.css": [":root", ".chart", ".hero"],
-    "site/assets/command-center.js": ["function render", "data-chart", "agent-constellation"],
+    "site/assets/command-center.js": ["function render", "data-chart", "agent-constellation", "benchmark_value_capture_rate_percent", "total_benchmark_value_captured_usd"],
     "site/proofs.html": ["Proof Library", "data-chart=\"proof-status\""],
     "site/actions.html": ["GitHub Actions Status", "data-chart=\"workflow-status\""],
     "site/multi-agent.html": ["Multi-Agent Command Center", "Ablation comparison", "data-chart=\"ablation-bars\"", "SkillOS RSI"],
@@ -56,6 +56,18 @@ def main() -> None:
                 failures.append("safe_boundary missing")
             if "flagship_raw" not in obj:
                 failures.append("flagship_raw missing")
+            proofs = obj.get("proofs") or []
+            if proofs and not any(p.get("page_url") for p in proofs):
+                failures.append("At least one proof should expose a page_url")
+            workflows = obj.get("workflows") or []
+            linked = [w for w in workflows if w.get("proof_page_url")]
+            if proofs and workflows and not linked:
+                failures.append("At least one workflow should be linked to a public proof page")
+            eureka = [p for p in proofs if "eureka" in str(p.get("title", "")).lower() or "eureka" in str(p.get("key", "")).lower()]
+            for p in eureka:
+                if not p.get("page_url"):
+                    failures.append("Enterprise Eureka proof is missing page_url")
+
         except Exception as exc:
             failures.append(f"Invalid public_site_status.json: {exc}")
 

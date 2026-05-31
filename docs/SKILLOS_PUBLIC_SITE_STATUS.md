@@ -1,14 +1,14 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T23:34:49Z`
+Generated: `2026-05-31T23:35:17Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 71
-- Workflows tracked: 42
-- Recent successful runs: 42
+- Proof entries: 72
+- Workflows tracked: 43
+- Recent successful runs: 40
 - Recent failed runs: 0
 - Recent running runs: 4
 
@@ -211,6 +211,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI Proof Forge Meta-Coordination Proof**
   - Page: https://montrealai.github.io/skillos/proof-forge-meta-coordination-github-forge-meta-coordination-forge-meta-coordination-forge-meta.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml
+- **Autonomous RSI Skill Compounding Moat Proof**
+  - Page: https://montrealai.github.io/skillos/proof-skill-compounding-moat-github-skill-compounding-moat-skill-compounding-moat-skill-compounding.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-skill-compounding-moat-proof.yml
 - **Autonomous RSI Skill Provenance Ledger Proof**
   - Page: https://montrealai.github.io/skillos/proof-skill-provenance-ledger-github-skill-provenance-ledger-skill-provenance-ledger-skill-provenance.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-skill-provenance-ledger-proof.yml

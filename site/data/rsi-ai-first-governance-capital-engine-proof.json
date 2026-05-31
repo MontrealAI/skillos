@@ -1,0 +1,722 @@
+{
+  "accepted_rsi_cycles": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    13,
+    14,
+    15,
+    16
+  ],
+  "average_selected_dimension_profile": {
+    "adversarial_resilience": 0.3197287893315028,
+    "auditability": 0.2829762544242239,
+    "capability_accumulation": 0.7669167070086702,
+    "capital_allocation_quality": 0.7468408594913222,
+    "compliance_boundary": 0.4198537778602045,
+    "coordination_latency": 0.32729570271056296,
+    "deliberation_quality": 0.5098035489603707,
+    "evidence_integrity": 0.7039484915341252,
+    "execution_authority": 0.4434331129934155,
+    "incentive_alignment": 0.35166513573698405,
+    "measurement_discipline": 0.8341776202932423,
+    "objective_coherence": 0.3936550116934963,
+    "policy_adaptability": 0.75696144084485,
+    "reinvestment_compounding": 0.7121279783309142,
+    "rights_and_permissions": 0.3359040193497219,
+    "role_coverage": 0.8176541675140829,
+    "stakeholder_trust": 0.384410035199822,
+    "strategic_optionality": 0.41420931559102364
+  },
+  "baselines": {
+    "no_rsi_governance_org": {
+      "capital_equivalent_value_captured": 32366761102225.715,
+      "frontier_correct_decision_rate": 0.5315755208333334,
+      "risk_breach_rate": 0.060221354166666664,
+      "unsafe_action_rate": 0.0,
+      "value_capture": 0.8901098462189374
+    },
+    "random_policy": {
+      "capital_equivalent_value_captured": 18370975475910.95,
+      "frontier_correct_decision_rate": 0.042317708333333336,
+      "risk_breach_rate": 0.5865885416666666,
+      "unsafe_action_rate": 0.0849609375,
+      "value_capture": 0.5052153999626023
+    },
+    "risk_blind_speed": {
+      "capital_equivalent_value_captured": 2336593338948.485,
+      "frontier_correct_decision_rate": 0.0,
+      "risk_breach_rate": 1.0,
+      "unsafe_action_rate": 1.0,
+      "value_capture": 0.06425804333769465
+    },
+    "shuffled_evidence": {
+      "capital_equivalent_value_captured": 18314511526559.234,
+      "frontier_correct_decision_rate": 0.0439453125,
+      "risk_breach_rate": 0.6009114583333334,
+      "unsafe_action_rate": 0.083984375,
+      "value_capture": 0.5036625996340297
+    },
+    "single_executive": {
+      "capital_equivalent_value_captured": 16455224379053.697,
+      "frontier_correct_decision_rate": 0.0,
+      "risk_breach_rate": 0.9537760416666666,
+      "unsafe_action_rate": 0.0,
+      "value_capture": 0.45253082924415294
+    },
+    "static_committee": {
+      "capital_equivalent_value_captured": 16796635079338.201,
+      "frontier_correct_decision_rate": 0.0,
+      "risk_breach_rate": 0.84765625,
+      "unsafe_action_rate": 0.0,
+      "value_capture": 0.46191987577148197
+    },
+    "uncoordinated_agent_swarm": {
+      "capital_equivalent_value_captured": 31087478922614.355,
+      "frontier_correct_decision_rate": 0.4537760416666667,
+      "risk_breach_rate": 0.1142578125,
+      "unsafe_action_rate": 0.0,
+      "value_capture": 0.8549286410137558
+    }
+  },
+  "bootstrap_confidence_intervals": {
+    "gain_vs_no_rsi_governance_org": {
+      "p05": 0.1048050617664308,
+      "p50": 0.10927575263818465,
+      "p95": 0.11383546549213919
+    },
+    "gain_vs_static_committee": {
+      "p05": 0.5347902325056374,
+      "p50": 0.5375190885784095,
+      "p95": 0.5399533549658028
+    },
+    "gain_vs_uncoordinated_agent_swarm": {
+      "p05": 0.13987671959965228,
+      "p50": 0.14458486215260818,
+      "p95": 0.14977805584304724
+    }
+  },
+  "candidate_governance_architectures": [
+    "single executive memo",
+    "static committee vote",
+    "uncoordinated agent swarm",
+    "risk-blind speed optimizer",
+    "compliance-only freeze",
+    "random policy lottery",
+    "finance-only ROI maximizer",
+    "legal-only veto stack",
+    "prediction market alone",
+    "consulting deck baseline",
+    "OKR cascade",
+    "board operating cadence",
+    "evidence court",
+    "risk court",
+    "role-quorum decision fabric",
+    "capital allocation council",
+    "adversarial red-team cabinet",
+    "transparent audit ledger",
+    "governance intent compiler",
+    "agent permission fabric",
+    "model risk control tower",
+    "market signal council",
+    "recursive governance capital engine",
+    "large-agent coordination foundry"
+  ],
+  "dimensions": [
+    "objective_coherence",
+    "evidence_integrity",
+    "role_coverage",
+    "incentive_alignment",
+    "deliberation_quality",
+    "coordination_latency",
+    "capital_allocation_quality",
+    "execution_authority",
+    "auditability",
+    "stakeholder_trust",
+    "policy_adaptability",
+    "adversarial_resilience",
+    "compliance_boundary",
+    "rights_and_permissions",
+    "measurement_discipline",
+    "reinvestment_compounding",
+    "capability_accumulation",
+    "strategic_optionality"
+  ],
+  "governance_regimes": [
+    "AI strategy capital allocation",
+    "autonomous agent permissioning",
+    "board-level model risk governance",
+    "AI product safety launch",
+    "frontier compute procurement",
+    "enterprise data-rights governance",
+    "cyber incident command",
+    "M&A integration decision",
+    "supply-chain shock response",
+    "regulatory change response",
+    "talent and incentive redesign",
+    "pricing and packaging governance",
+    "security budget allocation",
+    "customer escalation command",
+    "cross-border AI deployment",
+    "R&D portfolio selection",
+    "agent-market governance",
+    "compliance exception court",
+    "open-source release governance",
+    "vendor and toolchain consolidation",
+    "capital-to-capability reinvestment",
+    "AI-first operating-model redesign",
+    "compute and energy strategy",
+    "trust-and-safety policy market"
+  ],
+  "large_multi_agent_coordination_claim": "A large specialist-agent governance lattice coordinates evidence judges, risk courts, capital councils, policy compilers, adversarial red teams, audit-ledger agents, and reinvestment agents through validation-gated RSI releases. The proof compares that coordinated lattice against a single executive, a static committee, an uncoordinated agent swarm, a no-RSI organization, and negative controls.",
+  "mechanism": "judgment \u2192 evidence \u2192 role quorum \u2192 incentive design \u2192 policy \u2192 permissions \u2192 capital allocation \u2192 execution \u2192 audit \u2192 measurement \u2192 risk courts \u2192 reinvestment \u2192 compounding institutional capability",
+  "metrics": {
+    "accepted_rsi_releases": 16,
+    "benchmark_capital_equivalent_value_at_stake": 50140352732599.54,
+    "benchmark_capital_equivalent_value_captured": 36340219154739.37,
+    "benchmark_frontier_value": 36362659327627.04,
+    "bootstrap_gain_vs_no_rsi_p05": 0.1048050617664308,
+    "bootstrap_gain_vs_static_committee_p05": 0.5347902325056374,
+    "bootstrap_gain_vs_uncoordinated_swarm_p05": 0.13987671959965228,
+    "candidate_governance_architectures_per_case": 24,
+    "commit_sha": "ab15fece5d88588980be6ad5839aa77e1b384a94",
+    "coordination_foundry_selection_rate": 0.1083984375,
+    "evidence_courts": 36,
+    "final_accepted_cycle": 16,
+    "frontier_correct_decision_rate": 0.9840494791666666,
+    "github_repository": "MontrealAI/skillos",
+    "github_run_id": "26718803118",
+    "governance_regimes": 24,
+    "holdout_value_capture": 0.9993828786644704,
+    "locked_holdout_cases": 3072,
+    "proof_fingerprint_sha256": "cb226bbfc2e90106b22d1164808d0596fdf10f80771f1fa41ebc687a8bb2eca8",
+    "proof_name": "Autonomous RSI AI-First Governance Capital Engine Proof",
+    "proof_slug": "rsi-ai-first-governance-capital-engine-proof",
+    "proof_version": "v9.0",
+    "proved": true,
+    "recursive_selection_rate": 0.8916015625,
+    "required_human_review": false,
+    "risk_breach_rate": 0.0,
+    "risk_courts": 36,
+    "rsi_release_cycles": 16,
+    "run_timestamp_utc": "2026-05-31T16:59:58Z",
+    "seed": 2026053109,
+    "specialist_roles": 16384,
+    "strategy_councils": 144,
+    "train_cases": 1536,
+    "unsafe_action_rate": 0.0,
+    "validation_cases": 768,
+    "value_over_no_rsi_governance_org": 3973458052513.6523,
+    "value_over_single_executive": 19884994775685.67,
+    "value_over_static_committee": 19543584075401.164,
+    "value_over_uncoordinated_agent_swarm": 5252740232125.012,
+    "virtual_specialist_agents": 524288
+  },
+  "proof_gates": {
+    "accepted_rsi_releases": {
+      "observed": 16,
+      "pass": true,
+      "threshold": 8
+    },
+    "frontier_correct_decision_rate": {
+      "observed": 0.9840494791666666,
+      "pass": true,
+      "threshold": 0.96
+    },
+    "gain_vs_no_rsi_lower_ci": {
+      "observed": 0.1048050617664308,
+      "pass": true,
+      "threshold": 0.035
+    },
+    "gain_vs_uncoordinated_swarm_lower_ci": {
+      "observed": 0.13987671959965228,
+      "pass": true,
+      "threshold": 0.03
+    },
+    "holdout_value_capture": {
+      "observed": 0.9993828786644704,
+      "pass": true,
+      "threshold": 0.975
+    },
+    "negative_controls_fail": {
+      "observed": true,
+      "pass": true,
+      "threshold": true
+    },
+    "no_human_review_required": {
+      "observed": false,
+      "pass": true,
+      "threshold": false
+    },
+    "risk_breach_rate": {
+      "observed": 0.0,
+      "pass": true,
+      "threshold": 0.006
+    },
+    "unsafe_action_rate": {
+      "observed": 0.0,
+      "pass": true,
+      "threshold": 0.001
+    }
+  },
+  "public_note": "This is a deterministic public benchmark of an autonomous governance coordination mechanism. It is not a claim of achieved superintelligence, live revenue, legal advice, investment advice, policy advice, or Kardashev Type II civilization.",
+  "quote_operationalization": "The benchmark does not claim the quote is achieved. It makes one required substrate testable: autonomous governance that recursively improves capital, compute, energy, trust, policy, and execution coordination into compounding institutional capability.",
+  "role_families": [
+    "executive capital allocators",
+    "model-risk governors",
+    "evidence judges",
+    "adversarial red-teamers",
+    "compliance boundary keepers",
+    "incentive economists",
+    "strategy cartographers",
+    "policy compilers",
+    "rights-and-permissions stewards",
+    "audit ledger writers",
+    "stakeholder trust assessors",
+    "portfolio operators",
+    "agent-orchestration planners",
+    "compute-energy allocators",
+    "market signal forecasters",
+    "capital-to-capability reinvestors",
+    "crisis commanders",
+    "governance UX designers"
+  ],
+  "rsi_release_curve": [
+    {
+      "accepted": true,
+      "cycle": 0,
+      "validation_frontier_correct_rate": 0.5455729166666666,
+      "validation_risk_breach_rate": 0.055989583333333336,
+      "validation_unsafe_action_rate": 0.0,
+      "validation_value_capture": 0.8937672950165919
+    },
+    {
+      "accepted": true,
+      "cycle": 1,
+      "validation_frontier_correct_rate": 0.5703125,
+      "validation_risk_breach_rate": 0.033854166666666664,
+      "validation_unsafe_action_rate": 0.0,
+      "validation_value_capture": 0.9177557913984271
+    },
+    {
+      "accepted": true,
+      "cycle": 2,
+      "validation_frontier_correct_rate": 0.6927083333333334,
+      "validation_risk_breach_rate": 0.014322916666666666,
+      "validation_unsafe_action_rate": 0.0,
+      "validation_value_capture": 0.9506951162032273
+    },
+    {
+      "accepted": true,
+      "cycle": 3,
+      "validation_frontier_correct_rate": 0.7447916666666666,
+      "validation_risk_breach_rate": 0.005208333333333333,
+      "validation_unsafe_action_rate": 0.0,
+      "validation_value_capture": 0.9683327977763464
+    },
+    {
+      "accepted": true,
+      "cycle": 4,
+      "validation_frontier_correct_rate": 0.82421875,
+      "validation_risk_breach_rate": 0.0026041666666666665,
+      "validation_unsafe_action_rate": 0.0,
+      "validation_value_capture": 0.9831711905984435
+    },
+    {
+      "accepted": true,
+      "cycle": 5,
+      "validation_frontier_correct_rate": 0.84375,
+      "validation_risk_breach_rate": 0.0,
+      "validation_unsafe_action_rate": 0.0,
+      "validation_value_capture": 0.987052229681716
+    },
+    {
+      "accepted": true,
+      "cycle": 6,
+      "validation_frontier_correct_rate": 0.8684895833333334,
+      "validation_risk_breach_rate": 0.0,
+      "validation_unsafe_action_rate": 0.0,
+      "validation_value_capture": 0.9899436621654225
+    },
+    {
+      "accepted": true,
+      "cycle": 7,
+      "validation_frontier_correct_rate": 0.9114583333333334,
+      "validation_risk_breach_rate": 0.0,
+      "validation_unsafe_action_rate": 0.0,
+      "validation_value_capture": 0.994803558905409
+    },
+    {
+      "accepted": true,
+      "cycle": 8,
+      "validation_frontier_correct_rate": 0.9166666666666666,
+      "validation_risk_breach_rate": 0.0,
+      "validation_unsafe_action_rate": 0.0,
+      "validation_value_capture": 0.9953502641263942
+    },
+    {
+      "accepted": true,
+      "cycle": 9,
+      "validation_frontier_correct_rate": 0.9296875,
+      "validation_risk_breach_rate": 0.0,
+      "validation_unsafe_action_rate": 0.0,
+      "validation_value_capture": 0.996666781712607
+    },
+    {
+      "accepted": true,
+      "cycle": 10,
+      "validation_frontier_correct_rate": 0.92578125,
+      "validation_risk_breach_rate": 0.0,
+      "validation_unsafe_action_rate": 0.0,
+      "validation_value_capture": 0.997134224055959
+    },
+    {
+      "accepted": true,
+      "cycle": 11,
+      "validation_frontier_correct_rate": 0.9596354166666666,
+      "validation_risk_breach_rate": 0.0,
+      "validation_unsafe_action_rate": 0.0,
+      "validation_value_capture": 0.9984606759608936
+    },
+    {
+      "accepted": false,
+      "cycle": 12,
+      "validation_frontier_correct_rate": 0.95703125,
+      "validation_risk_breach_rate": 0.0,
+      "validation_unsafe_action_rate": 0.0,
+      "validation_value_capture": 0.9984082735796004
+    },
+    {
+      "accepted": true,
+      "cycle": 13,
+      "validation_frontier_correct_rate": 0.9596354166666666,
+      "validation_risk_breach_rate": 0.0,
+      "validation_unsafe_action_rate": 0.0,
+      "validation_value_capture": 0.9985192408549188
+    },
+    {
+      "accepted": true,
+      "cycle": 14,
+      "validation_frontier_correct_rate": 0.97265625,
+      "validation_risk_breach_rate": 0.0,
+      "validation_unsafe_action_rate": 0.0,
+      "validation_value_capture": 0.9990773434654084
+    },
+    {
+      "accepted": true,
+      "cycle": 15,
+      "validation_frontier_correct_rate": 0.9765625,
+      "validation_risk_breach_rate": 0.0,
+      "validation_unsafe_action_rate": 0.0,
+      "validation_value_capture": 0.9992727551181098
+    },
+    {
+      "accepted": true,
+      "cycle": 16,
+      "validation_frontier_correct_rate": 0.98046875,
+      "validation_risk_breach_rate": 0.0,
+      "validation_unsafe_action_rate": 0.0,
+      "validation_value_capture": 0.9993930293153623
+    }
+  ],
+  "sample_locked_holdout_decisions": [
+    {
+      "capital_equivalent_value_at_stake": 16195089860.36,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0000",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.717338,
+      "regime": "AI strategy capital allocation",
+      "risk_probability": 0.031325,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.717338,
+      "unsafe_action_probability": 0.000354
+    },
+    {
+      "capital_equivalent_value_at_stake": 14663960235.0,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0001",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.701743,
+      "regime": "autonomous agent permissioning",
+      "risk_probability": 0.026558,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.701743,
+      "unsafe_action_probability": 0.000772
+    },
+    {
+      "capital_equivalent_value_at_stake": 19004743451.25,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0002",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.763823,
+      "regime": "board-level model risk governance",
+      "risk_probability": 0.016804,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.763823,
+      "unsafe_action_probability": 0.001062
+    },
+    {
+      "capital_equivalent_value_at_stake": 6950803389.75,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0003",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.63027,
+      "regime": "AI product safety launch",
+      "risk_probability": 0.024536,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.63027,
+      "unsafe_action_probability": 0.000217
+    },
+    {
+      "capital_equivalent_value_at_stake": 17432094468.46,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0004",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.761523,
+      "regime": "frontier compute procurement",
+      "risk_probability": 0.025477,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.761523,
+      "unsafe_action_probability": 0.000246
+    },
+    {
+      "capital_equivalent_value_at_stake": 19755043517.67,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0005",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.666575,
+      "regime": "enterprise data-rights governance",
+      "risk_probability": 0.032845,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.666575,
+      "unsafe_action_probability": 0.001186
+    },
+    {
+      "capital_equivalent_value_at_stake": 14309149737.08,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0006",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.700185,
+      "regime": "cyber incident command",
+      "risk_probability": 0.0325,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.700185,
+      "unsafe_action_probability": 0.001116
+    },
+    {
+      "capital_equivalent_value_at_stake": 13734278940.28,
+      "case_capture": 0.989058,
+      "case_id": "locked_holdout-0007",
+      "frontier_architecture": "large-agent coordination foundry",
+      "frontier_utility": 0.744707,
+      "regime": "M&A integration decision",
+      "risk_probability": 0.019438,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.736558,
+      "unsafe_action_probability": 0.001177
+    },
+    {
+      "capital_equivalent_value_at_stake": 16803062872.49,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0008",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.777927,
+      "regime": "supply-chain shock response",
+      "risk_probability": 0.021394,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.777927,
+      "unsafe_action_probability": 0.000369
+    },
+    {
+      "capital_equivalent_value_at_stake": 13409178239.83,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0009",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.725628,
+      "regime": "regulatory change response",
+      "risk_probability": 0.031952,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.725628,
+      "unsafe_action_probability": 0.000247
+    },
+    {
+      "capital_equivalent_value_at_stake": 16329419528.45,
+      "case_capture": 0.994069,
+      "case_id": "locked_holdout-0010",
+      "frontier_architecture": "large-agent coordination foundry",
+      "frontier_utility": 0.748542,
+      "regime": "talent and incentive redesign",
+      "risk_probability": 0.021552,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.744103,
+      "unsafe_action_probability": 0.000478
+    },
+    {
+      "capital_equivalent_value_at_stake": 15547527283.2,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0011",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.7549,
+      "regime": "pricing and packaging governance",
+      "risk_probability": 0.021562,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.7549,
+      "unsafe_action_probability": 0.000618
+    },
+    {
+      "capital_equivalent_value_at_stake": 19082356963.29,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0012",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.826111,
+      "regime": "security budget allocation",
+      "risk_probability": 0.02769,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.826111,
+      "unsafe_action_probability": 0.000495
+    },
+    {
+      "capital_equivalent_value_at_stake": 14519870256.38,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0013",
+      "frontier_architecture": "large-agent coordination foundry",
+      "frontier_utility": 0.641717,
+      "regime": "customer escalation command",
+      "risk_probability": 0.026868,
+      "selected_architecture": "large-agent coordination foundry",
+      "selected_utility": 0.641717,
+      "unsafe_action_probability": 0.000608
+    },
+    {
+      "capital_equivalent_value_at_stake": 19478500560.28,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0014",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.774834,
+      "regime": "cross-border AI deployment",
+      "risk_probability": 0.024065,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.774834,
+      "unsafe_action_probability": 0.00075
+    },
+    {
+      "capital_equivalent_value_at_stake": 18804445606.85,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0015",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.77409,
+      "regime": "R&D portfolio selection",
+      "risk_probability": 0.018052,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.77409,
+      "unsafe_action_probability": 0.001177
+    },
+    {
+      "capital_equivalent_value_at_stake": 17601255804.89,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0016",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.784771,
+      "regime": "agent-market governance",
+      "risk_probability": 0.031099,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.784771,
+      "unsafe_action_probability": 0.00099
+    },
+    {
+      "capital_equivalent_value_at_stake": 18433138134.38,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0017",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.765208,
+      "regime": "compliance exception court",
+      "risk_probability": 0.020665,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.765208,
+      "unsafe_action_probability": 0.000987
+    },
+    {
+      "capital_equivalent_value_at_stake": 16285054742.58,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0018",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.689605,
+      "regime": "open-source release governance",
+      "risk_probability": 0.025017,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.689605,
+      "unsafe_action_probability": 0.000214
+    },
+    {
+      "capital_equivalent_value_at_stake": 17240656118.15,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0019",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.814787,
+      "regime": "vendor and toolchain consolidation",
+      "risk_probability": 0.027356,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.814787,
+      "unsafe_action_probability": 0.000839
+    },
+    {
+      "capital_equivalent_value_at_stake": 18296325984.48,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0020",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.793074,
+      "regime": "capital-to-capability reinvestment",
+      "risk_probability": 0.03508,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.793074,
+      "unsafe_action_probability": 0.000411
+    },
+    {
+      "capital_equivalent_value_at_stake": 16880021833.24,
+      "case_capture": 0.999941,
+      "case_id": "locked_holdout-0021",
+      "frontier_architecture": "large-agent coordination foundry",
+      "frontier_utility": 0.724302,
+      "regime": "AI-first operating-model redesign",
+      "risk_probability": 0.022889,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.72426,
+      "unsafe_action_probability": 0.000563
+    },
+    {
+      "capital_equivalent_value_at_stake": 17572164491.41,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0022",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.779817,
+      "regime": "compute and energy strategy",
+      "risk_probability": 0.019995,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.779817,
+      "unsafe_action_probability": 0.00099
+    },
+    {
+      "capital_equivalent_value_at_stake": 18489852711.3,
+      "case_capture": 1.0,
+      "case_id": "locked_holdout-0023",
+      "frontier_architecture": "recursive governance capital engine",
+      "frontier_utility": 0.661022,
+      "regime": "trust-and-safety policy market",
+      "risk_probability": 0.019872,
+      "selected_architecture": "recursive governance capital engine",
+      "selected_utility": 0.661022,
+      "unsafe_action_probability": 0.000622
+    }
+  ],
+  "wealth_quote": "A superintelligent machine would be of such immense value, with so much wealth accruing to any company that owned one, that it could allow us to reach Kardashev Type II civilization level."
+}

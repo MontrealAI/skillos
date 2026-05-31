@@ -12,6 +12,13 @@
   const pct = v => (v === undefined || v === null || v === "") ? "—" : Number(v).toFixed(1).replace(".0","") + "%";
   const safe = s => String(s ?? "").replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const color = i => ["#7dffb0","#86f8ff","#ffd66b","#d8a7ff","#9da8ff","#ffb86c"][i%6];
+  const firstNumber = (...xs) => {
+    for (const x of xs) {
+      const n = Number(x);
+      if (Number.isFinite(n)) return n;
+    }
+    return 0;
+  };
 
   async function loadStatus(){
     try{
@@ -101,23 +108,47 @@
         {label:"Static coordination", value:stat.fully_correct_percent||0, display:pct(stat.fully_correct_percent)},
         {label:"SkillOS RSI", value:final.fully_correct_percent||0, display:pct(final.fully_correct_percent)},
       ],"Shows whether recursive coordination beats both single-agent and uncoordinated multi-agent baselines."); }
-      if(type==="capability-radar"){ radarChart(el,"Capability coordination radar",[
-        {label:"Coordination", value:final.coordination_protocol_accuracy_percent||0},
-        {label:"Risk control", value:final.risk_control_accuracy_percent||0},
-        {label:"Role quorum", value:final.role_quorum_accuracy_percent||0},
-        {label:"Capability lever", value:final.capability_lever_accuracy_percent||0},
-        {label:"Value capture", value:final.value_capture_rate_percent||0},
-        {label:"Compounding", value:final.avg_compounding_index||0},
-        {label:"Capacity", value:final.avg_productive_capacity_index||0},
-      ],"The flagship proof measures coordination quality, risk discipline, compounding, and productive capacity."); }
+      if(type==="capability-radar"){
+        const valueCapture = firstNumber(
+          final.benchmark_value_capture_rate_percent,
+          final.value_capture_rate_percent,
+          final.market_value_capture_rate_percent,
+          final.revenue_capture_rate_percent,
+          final.capture_rate_percent,
+          (final.total_benchmark_value_captured_usd && final.total_benchmark_value_at_stake_usd)
+            ? 100 * final.total_benchmark_value_captured_usd / final.total_benchmark_value_at_stake_usd
+            : undefined
+        );
+        radarChart(el,"Capability coordination radar",[
+          {label:"Coordination", value:firstNumber(final.coordination_protocol_accuracy_percent, final.coordination_accuracy_percent)},
+          {label:"Risk control", value:firstNumber(final.risk_control_accuracy_percent, final.risk_accuracy_percent)},
+          {label:"Role quorum", value:firstNumber(final.role_quorum_accuracy_percent, final.quorum_accuracy_percent)},
+          {label:"Capability lever", value:firstNumber(final.capability_lever_accuracy_percent, final.capability_accuracy_percent)},
+          {label:"Value capture", value:valueCapture},
+          {label:"Compounding", value:firstNumber(final.avg_compounding_index, final.compounding_index)},
+          {label:"Capacity", value:firstNumber(final.avg_productive_capacity_index, final.productive_capacity_index)},
+        ],"The flagship proof measures coordination quality, risk discipline, value capture, compounding, and productive capacity.");
+      }
       if(type==="agent-constellation"){ constellation(el,"Specialist agent organization", (agentSystem.roles||status.flagship.roles||[]), "Visualizes the specialist roles coordinated by the flagship proof."); }
-      if(type==="value-bars"){ barChart(el,"Business effect metrics",[
-        {label:"Value capture", value:final.value_capture_rate_percent||0, display:pct(final.value_capture_rate_percent)},
-        {label:"Compounding index", value:final.avg_compounding_index||0},
-        {label:"Productive capacity", value:final.avg_productive_capacity_index||0},
-        {label:"Consensus", value:final.avg_consensus_score||0},
-        {label:"Risk breach", value:final.risk_breach_rate_percent||0, display:pct(final.risk_breach_rate_percent)},
-      ],"Benchmark values, not audited customer revenue."); }
+      if(type==="value-bars"){
+        const valueCapture = firstNumber(
+          final.benchmark_value_capture_rate_percent,
+          final.value_capture_rate_percent,
+          final.market_value_capture_rate_percent,
+          final.revenue_capture_rate_percent,
+          final.capture_rate_percent,
+          (final.total_benchmark_value_captured_usd && final.total_benchmark_value_at_stake_usd)
+            ? 100 * final.total_benchmark_value_captured_usd / final.total_benchmark_value_at_stake_usd
+            : undefined
+        );
+        barChart(el,"Business effect metrics",[
+          {label:"Benchmark value capture", value:valueCapture, display:pct(valueCapture)},
+          {label:"Value captured", value:valueCapture, display:money(final.total_benchmark_value_captured_usd)},
+          {label:"Value at stake", value:100, display:money(final.total_benchmark_value_at_stake_usd)},
+          {label:"Decision cost", value:Math.max(1, Math.min(100, 100 * (final.total_decision_cost_usd || 0) / Math.max(1, final.total_benchmark_value_at_stake_usd || 1))), display:money(final.total_decision_cost_usd)},
+          {label:"Risk breach", value:firstNumber(final.risk_breach_rate_percent), display:pct(firstNumber(final.risk_breach_rate_percent))},
+        ],"Benchmark values from the public proof receipt; not audited customer revenue.");
+      }
     });
   }
 

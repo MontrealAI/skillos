@@ -1,49 +1,77 @@
-[
-  {
-    "badge": "badges/rsi-skill-provenance-ledger-proof.svg",
-    "docs": "docs/rsi-skill-provenance-ledger-proof.md",
-    "frontier_correct_percent": 95.8496,
-    "generated_at_utc": "2026-05-31T19:40:27Z",
-    "json": "data/rsi-skill-provenance-ledger-proof.json",
-    "page": "rsi-skill-provenance-ledger-proof.html",
-    "provenance_integrity_percent": 100.0,
-    "slug": "rsi-skill-provenance-ledger-proof",
-    "specialist_roles": 524288,
-    "status": "PASSED_AUTONOMOUS_RSI_SKILL_PROVENANCE_LEDGER_PROOF",
-    "title": "Autonomous RSI Skill Provenance Ledger Proof",
-    "value_capture_percent": 99.9463,
-    "virtual_specialist_agents": 16777216
-  },
-  {
-    "coordination_quality": 0.9321799829498979,
-    "fingerprint": "ef32cdf645705a4a0eab40c326cc21046083d25a88c63137244d5a386ae1dcf0",
-    "generated_at_utc": "2026-05-31T18:31:25+00:00",
-    "href": "rsi-proof-forge-meta-coordination-proof.html",
-    "id": "rsi-proof-forge-meta-coordination-proof",
-    "proof_credibility": 0.9994579200067399,
-    "proof_version": "12.0",
-    "status": "passing",
-    "title": "Autonomous RSI Proof Forge Meta-Coordination Proof",
-    "value_capture_rate": 0.9909679137790379,
-    "workflow_url": "https://github.com/MontrealAI/skillos/actions/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml"
-  },
-  {
-    "agents": "2,097,152",
-    "badge": "badges/rsi-capability-liquidity-engine-proof.svg",
-    "capture": "92.931%",
-    "description": "Large autonomous specialist-agent capability marketplace with validation-gated RSI, skill release lanes, verifier courts, locked holdout tasks, negative controls, and public receipts.",
-    "id": "rsi-capability-liquidity-engine-proof",
-    "json": "data/rsi-capability-liquidity-engine-proof.json",
-    "path": "rsi-capability-liquidity-engine-proof.html",
-    "proved": true,
-    "report": "docs/rsi-capability-liquidity-engine-proof.md",
-    "risk": "0.000%",
-    "roles": "65,536",
-    "short_title": "RSI Capability Liquidity Engine",
-    "title": "Autonomous RSI Capability Liquidity Engine Proof",
-    "updated_at": "2026-05-31T17:46:48Z",
-    "value_captured": "$32.07T",
-    "workflow": ".github/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml",
-    "workflow_url": "https://github.com/MontrealAI/skillos/actions/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml"
-  }
-]
+{
+  "proofs": [
+    {
+      "badge": "badges/rsi-cross-domain-capability-transfer-atlas-proof.svg",
+      "generated_at_utc": "2026-05-31T20:05:32.978475+00:00",
+      "headline": "Capability transfer becomes a measurable, reusable, verified SkillOS asset across unseen domains.",
+      "href": "rsi-cross-domain-capability-transfer-atlas-proof.html",
+      "id": "rsi-cross-domain-capability-transfer-atlas-proof",
+      "json": "data/rsi-cross-domain-capability-transfer-atlas-proof.json",
+      "metrics": {
+        "benchmark_value_at_stake_trillions": 63.793529,
+        "benchmark_value_captured_trillions": 60.19794,
+        "frontier_correct": 1.0,
+        "liquidity": 0.9014929030746138,
+        "risk": 0.0,
+        "transfer": 0.8761880190113734,
+        "value_capture": 0.9436370959503808,
+        "verification": 0.9164122541269876
+      },
+      "report": "docs/rsi-cross-domain-capability-transfer-atlas-proof.md",
+      "status": "passing",
+      "summary": "Verified traces become reusable skills; skills become releases; releases improve routing and future cross-domain work.",
+      "title": "Autonomous RSI Cross-Domain Capability Transfer Atlas Proof"
+    },
+    {
+      "badge": "badges/rsi-skill-provenance-ledger-proof.svg",
+      "docs": "docs/rsi-skill-provenance-ledger-proof.md",
+      "frontier_correct_percent": 95.8496,
+      "generated_at_utc": "2026-05-31T19:40:27Z",
+      "json": "data/rsi-skill-provenance-ledger-proof.json",
+      "page": "rsi-skill-provenance-ledger-proof.html",
+      "provenance_integrity_percent": 100.0,
+      "slug": "rsi-skill-provenance-ledger-proof",
+      "specialist_roles": 524288,
+      "status": "PASSED_AUTONOMOUS_RSI_SKILL_PROVENANCE_LEDGER_PROOF",
+      "title": "Autonomous RSI Skill Provenance Ledger Proof",
+      "value_capture_percent": 99.9463,
+      "virtual_specialist_agents": 16777216
+    },
+    {
+      "coordination_quality": 0.9321799829498979,
+      "fingerprint": "ef32cdf645705a4a0eab40c326cc21046083d25a88c63137244d5a386ae1dcf0",
+      "generated_at_utc": "2026-05-31T18:31:25+00:00",
+      "href": "rsi-proof-forge-meta-coordination-proof.html",
+      "id": "rsi-proof-forge-meta-coordination-proof",
+      "proof_credibility": 0.9994579200067399,
+      "proof_version": "12.0",
+      "status": "passing",
+      "title": "Autonomous RSI Proof Forge Meta-Coordination Proof",
+      "value_capture_rate": 0.9909679137790379,
+      "workflow_url": "https://github.com/MontrealAI/skillos/actions/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml"
+    },
+    {
+      "agents": "2,097,152",
+      "badge": "badges/rsi-capability-liquidity-engine-proof.svg",
+      "capture": "92.931%",
+      "description": "Large autonomous specialist-agent capability marketplace with validation-gated RSI, skill release lanes, verifier courts, locked holdout tasks, negative controls, and public receipts.",
+      "id": "rsi-capability-liquidity-engine-proof",
+      "json": "data/rsi-capability-liquidity-engine-proof.json",
+      "path": "rsi-capability-liquidity-engine-proof.html",
+      "proved": true,
+      "report": "docs/rsi-capability-liquidity-engine-proof.md",
+      "risk": "0.000%",
+      "roles": "65,536",
+      "short_title": "RSI Capability Liquidity Engine",
+      "title": "Autonomous RSI Capability Liquidity Engine Proof",
+      "updated_at": "2026-05-31T17:46:48Z",
+      "value_captured": "$32.07T",
+      "workflow": ".github/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml",
+      "workflow_url": "https://github.com/MontrealAI/skillos/actions/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml"
+    }
+  ],
+  "schema_version": 2,
+  "site_base_url": "https://montrealai.github.io/skillos/",
+  "source": "SkillOS autonomous GitHub Actions proof publisher",
+  "updated_at_utc": "2026-05-31T20:05:32.978475+00:00"
+}

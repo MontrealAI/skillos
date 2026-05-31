@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T00:44:48Z`
+Generated: `2026-05-31T00:45:37Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 65
+- Proof entries: 67
 - Workflows tracked: 24
-- Recent successful runs: 44
+- Recent successful runs: 45
 - Recent failed runs: 1
-- Recent running runs: 2
+- Recent running runs: 1
 
 ## Flagship
 
@@ -48,6 +48,8 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI Adversarial Multi-Agent Market Command Center Proof**
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-adversarial-multi-agent-market-command-center-proof.yml
 - **Rsi Adversarial Multi Agent Command Center**
+- **Enterprise Eureka Factory**
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_enterprise_eureka_factory_proof.json
 - **Cloudops**
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_cloudops_market_proof.json
 - **Corporate Os**
@@ -74,6 +76,8 @@ Site: https://montrealai.github.io/skillos/
   - Page: https://montrealai.github.io/skillos/rsi-corporate-os-proof.html
 - **Cyberdefense**
   - Page: https://montrealai.github.io/skillos/rsi-cyberdefense-proof.html
+- **Enterprise Eureka Factory**
+  - Page: https://montrealai.github.io/skillos/rsi-enterprise-eureka-factory-proof.html
 - **Enterprise Ops**
   - Page: https://montrealai.github.io/skillos/enterprise-ops-proof.html
 - **Marketplace Flywheel**

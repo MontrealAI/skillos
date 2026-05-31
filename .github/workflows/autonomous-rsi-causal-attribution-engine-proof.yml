@@ -1,0 +1,111 @@
+name: Autonomous RSI Causal Attribution Engine Proof
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_to_repo:
+        description: Commit generated proof outputs back to the repository
+        required: true
+        type: boolean
+        default: true
+      deploy_pages:
+        description: Deploy GitHub Pages from the generated site artifact
+        required: true
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/autonomous-rsi-causal-attribution-engine-proof.yml"
+      - "scripts/run_rsi_causal_attribution_engine_proof.py"
+      - "scripts/verify_rsi_causal_attribution_engine_proof.py"
+      - "scripts/render_rsi_causal_attribution_engine_site.py"
+      - "scripts/publish_rsi_causal_attribution_engine_to_hub.py"
+      - "scripts/verify_rsi_causal_attribution_engine_site.py"
+      - "docs/AUTONOMOUS_RSI_CAUSAL_ATTRIBUTION_ENGINE_PROOF.md"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: autonomous-rsi-causal-attribution-engine-proof
+  cancel-in-progress: true
+
+jobs:
+  proof:
+    name: Generate, verify, publish, and optionally deploy proof
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run autonomous RSI causal attribution proof
+        run: python scripts/run_rsi_causal_attribution_engine_proof.py --summary "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify proof receipt
+        run: python scripts/verify_rsi_causal_attribution_engine_proof.py
+
+      - name: Render proof webpage
+        run: python scripts/render_rsi_causal_attribution_engine_site.py
+
+      - name: Update public command center and registry
+        run: python scripts/publish_rsi_causal_attribution_engine_to_hub.py
+
+      - name: Verify site integration
+        run: python scripts/verify_rsi_causal_attribution_engine_site.py
+
+      - name: Upload proof artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: skillos-rsi-causal-attribution-engine-proof
+          if-no-files-found: error
+          path: |
+            data/rsi-causal-attribution-engine-proof.json
+            docs/rsi-causal-attribution-engine-proof.md
+            docs/AUTONOMOUS_RSI_CAUSAL_ATTRIBUTION_ENGINE_PROOF.md
+            badges/rsi-causal-attribution-engine-proof.svg
+            site/rsi-causal-attribution-engine-proof.html
+            site/index.html
+            site/proof-registry.json
+            site/sitemap.xml
+            site/robots.txt
+            site/data/rsi-causal-attribution-engine-proof.json
+            site/docs/rsi-causal-attribution-engine-proof.md
+            site/badges/rsi-causal-attribution-engine-proof.svg
+
+      - name: Commit generated proof outputs
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.publish_to_repo }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/rsi-causal-attribution-engine-proof.json docs/rsi-causal-attribution-engine-proof.md docs/AUTONOMOUS_RSI_CAUSAL_ATTRIBUTION_ENGINE_PROOF.md badges/rsi-causal-attribution-engine-proof.svg site/rsi-causal-attribution-engine-proof.html site/index.html site/proof-registry.json site/sitemap.xml site/robots.txt site/data/rsi-causal-attribution-engine-proof.json site/docs/rsi-causal-attribution-engine-proof.md site/badges/rsi-causal-attribution-engine-proof.svg
+          if git diff --cached --quiet; then
+            echo "No generated proof changes to commit."
+          else
+            git commit -m "Refresh autonomous RSI causal attribution engine proof"
+            git push
+          fi
+
+      - name: Configure GitHub Pages
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/configure-pages@v5
+
+      - name: Build Pages artifact
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy GitHub Pages
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/deploy-pages@v4

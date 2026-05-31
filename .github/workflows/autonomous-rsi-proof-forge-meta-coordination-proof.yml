@@ -1,0 +1,110 @@
+name: Autonomous RSI Proof Forge Meta-Coordination Proof
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_to_repo:
+        description: "Commit generated proof outputs back to the repository"
+        type: boolean
+        default: true
+      deploy_pages:
+        description: "Deploy GitHub Pages from the refreshed site artifact"
+        type: boolean
+        default: false
+  schedule:
+    - cron: "23 5 * * *"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml"
+      - "scripts/run_rsi_proof_forge_meta_coordination_proof.py"
+      - "scripts/verify_rsi_proof_forge_meta_coordination_proof.py"
+      - "scripts/render_rsi_proof_forge_meta_coordination_site.py"
+      - "scripts/publish_rsi_proof_forge_meta_coordination_to_hub.py"
+      - "scripts/verify_rsi_proof_forge_meta_coordination_site.py"
+      - "docs/AUTONOMOUS_RSI_PROOF_FORGE_META_COORDINATION_PROOF.md"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: skillos-rsi-proof-forge-meta-coordination
+  cancel-in-progress: false
+
+jobs:
+  proof-forge:
+    name: Run autonomous RSI proof forge meta-coordination proof
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run proof forge benchmark
+        run: python scripts/run_rsi_proof_forge_meta_coordination_proof.py --summary "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify proof gates
+        run: python scripts/verify_rsi_proof_forge_meta_coordination_proof.py
+
+      - name: Render specific proof webpage
+        run: python scripts/render_rsi_proof_forge_meta_coordination_site.py
+
+      - name: Publish proof to SkillOS command center
+        run: python scripts/publish_rsi_proof_forge_meta_coordination_to_hub.py
+
+      - name: Verify site integration
+        run: python scripts/verify_rsi_proof_forge_meta_coordination_site.py
+
+      - name: Upload proof artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: skillos-rsi-proof-forge-meta-coordination-proof
+          path: |
+            data/rsi-proof-forge-meta-coordination-proof.json
+            docs/rsi-proof-forge-meta-coordination-proof.md
+            docs/AUTONOMOUS_RSI_PROOF_FORGE_META_COORDINATION_PROOF.md
+            badges/rsi-proof-forge-meta-coordination-proof.svg
+            site/rsi-proof-forge-meta-coordination-proof.html
+            site/data/rsi-proof-forge-meta-coordination-proof.json
+            site/docs/rsi-proof-forge-meta-coordination-proof.md
+            site/badges/rsi-proof-forge-meta-coordination-proof.svg
+            site/index.html
+            site/proof-registry.json
+            site/sitemap.xml
+            site/robots.txt
+
+      - name: Commit generated proof outputs
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.publish_to_repo }}
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/rsi-proof-forge-meta-coordination-proof.json docs/rsi-proof-forge-meta-coordination-proof.md docs/AUTONOMOUS_RSI_PROOF_FORGE_META_COORDINATION_PROOF.md badges/rsi-proof-forge-meta-coordination-proof.svg site/rsi-proof-forge-meta-coordination-proof.html site/data/rsi-proof-forge-meta-coordination-proof.json site/docs/rsi-proof-forge-meta-coordination-proof.md site/badges/rsi-proof-forge-meta-coordination-proof.svg site/index.html site/proof-registry.json site/sitemap.xml site/robots.txt
+            git commit -m "Refresh autonomous RSI proof forge meta-coordination proof"
+            git push
+          else
+            echo "Proof forge outputs already fresh."
+          fi
+
+      - name: Configure GitHub Pages
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy GitHub Pages
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/deploy-pages@v4

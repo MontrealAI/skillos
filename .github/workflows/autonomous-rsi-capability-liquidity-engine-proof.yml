@@ -1,0 +1,144 @@
+name: Autonomous RSI Capability Liquidity Engine Proof
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_to_repo:
+        description: "Commit generated proof outputs back to the repository"
+        required: true
+        type: boolean
+        default: true
+      deploy_pages:
+        description: "Deploy this generated site directly with GitHub Pages. Keep false if another Pages workflow already deploys on push."
+        required: true
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml"
+      - "scripts/run_rsi_capability_liquidity_engine_proof.py"
+      - "scripts/verify_rsi_capability_liquidity_engine_proof.py"
+      - "scripts/render_rsi_capability_liquidity_engine_site.py"
+      - "scripts/publish_rsi_capability_liquidity_engine_to_hub.py"
+      - "scripts/verify_rsi_capability_liquidity_engine_site.py"
+      - "docs/AUTONOMOUS_RSI_CAPABILITY_LIQUIDITY_ENGINE_PROOF.md"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: skillos-capability-liquidity-engine-proof-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  proof:
+    name: Run, verify, publish, and optionally deploy the capability liquidity proof
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: https://montrealai.github.io/skillos/
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run autonomous RSI capability liquidity engine proof
+        run: |
+          python scripts/run_rsi_capability_liquidity_engine_proof.py \
+            --out data/rsi-capability-liquidity-engine-proof.json \
+            --markdown docs/rsi-capability-liquidity-engine-proof.md \
+            --badge badges/rsi-capability-liquidity-engine-proof.svg
+
+      - name: Verify proof gates, locked holdout, controls, and public-safe copy
+        run: |
+          python scripts/verify_rsi_capability_liquidity_engine_proof.py \
+            --json data/rsi-capability-liquidity-engine-proof.json \
+            --markdown docs/rsi-capability-liquidity-engine-proof.md
+
+      - name: Render iconic proof webpage
+        run: |
+          python scripts/render_rsi_capability_liquidity_engine_site.py \
+            --json data/rsi-capability-liquidity-engine-proof.json \
+            --out site/rsi-capability-liquidity-engine-proof.html
+
+      - name: Publish proof into SkillOS command center
+        run: |
+          python scripts/publish_rsi_capability_liquidity_engine_to_hub.py \
+            --json data/rsi-capability-liquidity-engine-proof.json \
+            --site site
+
+      - name: Verify website integration
+        run: |
+          python scripts/verify_rsi_capability_liquidity_engine_site.py \
+            --json data/rsi-capability-liquidity-engine-proof.json \
+            --site site
+
+      - name: Upload public proof artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: skillos-rsi-capability-liquidity-engine-proof
+          path: |
+            data/rsi-capability-liquidity-engine-proof.json
+            docs/rsi-capability-liquidity-engine-proof.md
+            badges/rsi-capability-liquidity-engine-proof.svg
+            site/rsi-capability-liquidity-engine-proof.html
+            site/data/rsi-capability-liquidity-engine-proof.json
+            site/docs/rsi-capability-liquidity-engine-proof.md
+            site/badges/rsi-capability-liquidity-engine-proof.svg
+            site/index.html
+            site/proof-registry.json
+            site/sitemap.xml
+            site/robots.txt
+          retention-days: 90
+
+      - name: Commit generated proof outputs
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.publish_to_repo }}
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/rsi-capability-liquidity-engine-proof.json \
+              docs/rsi-capability-liquidity-engine-proof.md \
+              badges/rsi-capability-liquidity-engine-proof.svg \
+              site/rsi-capability-liquidity-engine-proof.html \
+              site/data/rsi-capability-liquidity-engine-proof.json \
+              site/docs/rsi-capability-liquidity-engine-proof.md \
+              site/badges/rsi-capability-liquidity-engine-proof.svg \
+              site/index.html site/proof-registry.json site/sitemap.xml site/robots.txt
+            git commit -m "Publish autonomous RSI capability liquidity engine proof"
+            git push
+          else
+            echo "Generated proof outputs already fresh."
+          fi
+
+      - name: Build GitHub Pages artifact
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          cp -R site/. dist/
+
+      - name: Configure GitHub Pages
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy GitHub Pages
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/deploy-pages@v4

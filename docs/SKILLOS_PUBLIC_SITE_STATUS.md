@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T23:40:58Z`
+Generated: `2026-05-31T23:42:10Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 72
+- Proof entries: 73
 - Workflows tracked: 43
-- Recent successful runs: 43
+- Recent successful runs: 45
 - Recent failed runs: 0
-- Recent running runs: 2
+- Recent running runs: 1
 
 ## Flagship
 
@@ -126,6 +126,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI Full-Stack Capability Lifecycle Proof**
   - Page: https://montrealai.github.io/skillos/proof-full-stack-capability-lifecycle-full-stack-capability-lifecycle-full-stack-capability-lifecycle.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-full-stack-capability-lifecycle-proof.json
+- **Autonomous RSI Skill Compounding Moat Proof**
+  - Page: https://montrealai.github.io/skillos/proof-skill-compounding-moat-skill-compounding-moat-skill-compounding-moat-skill-compounding-moat.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-skill-compounding-moat-proof.json
 - **Autonomous RSI Skill Provenance Ledger Proof**
   - Page: https://montrealai.github.io/skillos/proof-skill-provenance-ledger-skill-provenance-ledger-skill-provenance-ledger-skill-provenance-ledger.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-skill-provenance-ledger-proof.json
@@ -158,6 +161,8 @@ Site: https://montrealai.github.io/skillos/
 - **Governance Frontier**
   - Page: https://montrealai.github.io/skillos/rsi-governance-frontier-proof.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-governance-frontier-proof.json
+- **Skill Compounding Moat**
+  - Page: https://montrealai.github.io/skillos/rsi-skill-compounding-moat-proof.html
 - **Skill Provenance Ledger**
   - Page: https://montrealai.github.io/skillos/rsi-skill-provenance-ledger-proof.html
 - **Autonomous Enterprise Ops Market Proof**
@@ -228,8 +233,6 @@ Site: https://montrealai.github.io/skillos/
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml
 - **Readiness**
   - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
-- **Rsi Skill Compounding Moat**
-  - Page: https://montrealai.github.io/skillos/proof-skill-compounding-moat-skill-compounding-moat.html
 - **Wealth Accumulation**
   - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
 - **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**

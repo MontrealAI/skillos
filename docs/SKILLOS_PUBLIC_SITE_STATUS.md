@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T11:51:13Z`
+Generated: `2026-05-31T11:59:40Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 28
+- Proof entries: 29
 - Workflows tracked: 24
-- Recent successful runs: 46
+- Recent successful runs: 43
 - Recent failed runs: 0
-- Recent running runs: 1
+- Recent running runs: 4
 
 ## Flagship
 
@@ -106,6 +106,8 @@ Site: https://montrealai.github.io/skillos/
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml
 - **Readiness**
   - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
+- **Rsi Enterprise Capability Foundry**
+  - Page: https://montrealai.github.io/skillos/proof-enterprise-capability-foundry-enterprise-capability-foundry.html
 - **Wealth Accumulation**
   - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
 - **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**

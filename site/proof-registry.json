@@ -1,6 +1,28 @@
 {
   "proofs": [
     {
+      "badge": "badges/rsi-adversarial-benchmark-foundry-proof.svg",
+      "generated_at_utc": "2026-05-31T23:11:20+00:00",
+      "headline": "SkillOS generates its own harder, leak-resistant adversarial benchmarks and proves causal lift on locked hidden holdouts.",
+      "href": "rsi-adversarial-benchmark-foundry-proof.html",
+      "id": "rsi-adversarial-benchmark-foundry-proof",
+      "json": "data/rsi-adversarial-benchmark-foundry-proof.json",
+      "metrics": {
+        "benchmark_gain_vs_best_control_trillions": 24.535523,
+        "benchmark_value_captured_trillions": 80.208036,
+        "causal_uplift": 0.291648742,
+        "goodhart_gap": 0.00763863,
+        "hardness_gain": 0.305215832,
+        "leakage_rejection": 1.0,
+        "risk": 0.0,
+        "value_capture": 0.953416526
+      },
+      "report": "docs/rsi-adversarial-benchmark-foundry-proof.md",
+      "status": "passing",
+      "summary": "SkillOS can recursively improve by autonomously generating harder leak-resistant adversarial benchmarks, repairing against them, and proving causal lift on locked hidden holdouts.",
+      "title": "Autonomous RSI Adversarial Benchmark Foundry Proof"
+    },
+    {
       "badge": "badges/rsi-open-replication-mesh-proof.svg",
       "generated_at_utc": "2026-05-31T21:36:34+00:00",
       "headline": "Open replication for SkillOS RSI: signed replica receipts, Merkle-style receipt tree, locked holdout replay, and GitHub-runnable verification.",
@@ -139,5 +161,5 @@
   "schema_version": 2,
   "site_base_url": "https://montrealai.github.io/skillos/",
   "source": "SkillOS autonomous GitHub Actions proof publisher",
-  "updated_at_utc": "2026-05-31T21:36:34+00:00"
+  "updated_at_utc": "2026-05-31T23:11:20+00:00"
 }

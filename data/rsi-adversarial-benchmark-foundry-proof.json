@@ -1,0 +1,663 @@
+{
+  "bootstrap": {
+    "mean": 0.290936217,
+    "p01": 0.29021253,
+    "p05": 0.290464815,
+    "p50": 0.290945173,
+    "p95": 0.291394056,
+    "p99": 0.291560962
+  },
+  "case_counts": {
+    "capability_atoms": 24,
+    "domains": 56,
+    "failure_modes": 32,
+    "locked_holdout": 6144,
+    "train": 2048,
+    "validation": 1536
+  },
+  "controls": {
+    "leaky_benchmark_tuner": {
+      "goodhart_gap": 0.149380589,
+      "hidden_score": 0.728560741,
+      "leakage_incident_rate": 1.0,
+      "mean_challenge_hardness": 0.787554841,
+      "mean_value_capture": 0.485664462,
+      "proxy_gaming_rate": 1.0,
+      "risk_breach_rate": 1.0,
+      "visible_score": 0.877941329,
+      "weighted_value_capture": 0.479814119
+    },
+    "no_leakage_firewall_rsi": {
+      "goodhart_gap": 0.066375338,
+      "hidden_score": 0.734892642,
+      "leakage_incident_rate": 1.0,
+      "mean_challenge_hardness": 0.810219523,
+      "mean_value_capture": 0.668120178,
+      "proxy_gaming_rate": 1.0,
+      "risk_breach_rate": 0.899251302,
+      "visible_score": 0.80126798,
+      "weighted_value_capture": 0.660787143
+    },
+    "open_replication_without_adversarial_foundry": {
+      "goodhart_gap": 0.03068568,
+      "hidden_score": 0.680853632,
+      "leakage_incident_rate": 0.246907552,
+      "mean_challenge_hardness": 0.723108838,
+      "mean_value_capture": 0.66931733,
+      "proxy_gaming_rate": 0.674479167,
+      "risk_breach_rate": 0.833984375,
+      "visible_score": 0.711539312,
+      "weighted_value_capture": 0.661767784
+    },
+    "single_generalist": {
+      "goodhart_gap": 0.058675986,
+      "hidden_score": 0.41174007,
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.699459683,
+      "mean_value_capture": 0.385394268,
+      "proxy_gaming_rate": 1.0,
+      "risk_breach_rate": 1.0,
+      "visible_score": 0.470416056,
+      "weighted_value_capture": 0.377421786
+    },
+    "static_skill_catalog": {
+      "goodhart_gap": 0.04447914,
+      "hidden_score": 0.563853691,
+      "leakage_incident_rate": 0.838704427,
+      "mean_challenge_hardness": 0.699459683,
+      "mean_value_capture": 0.544845632,
+      "proxy_gaming_rate": 1.0,
+      "risk_breach_rate": 1.0,
+      "visible_score": 0.608332832,
+      "weighted_value_capture": 0.536100915
+    },
+    "uncoordinated_agent_pool": {
+      "goodhart_gap": 0.052532107,
+      "hidden_score": 0.492199409,
+      "leakage_incident_rate": 1.0,
+      "mean_challenge_hardness": 0.699459683,
+      "mean_value_capture": 0.460624428,
+      "proxy_gaming_rate": 1.0,
+      "risk_breach_rate": 1.0,
+      "visible_score": 0.544731516,
+      "weighted_value_capture": 0.45225586
+    }
+  },
+  "core_mechanism": "observed failures \u2192 adversarial task synthesis \u2192 specialist-agent challenge market \u2192 leakage firewall \u2192 verifier courts \u2192 locked red-team holdouts \u2192 skill repair releases \u2192 causal ablation \u2192 open replication receipts \u2192 reinvestment \u2192 harder future benchmarks",
+  "generated_at_utc": "2026-05-31T23:11:20+00:00",
+  "metrics": {
+    "adversarial_benchmark_hardness_gain_vs_static": 0.305215832,
+    "benchmark_capital_equivalent_gain_vs_strongest_control_trillions": 24.535523,
+    "benchmark_capital_equivalent_strongest_control_trillions": 55.672513,
+    "benchmark_capital_equivalent_value_at_stake_trillions": 84.126962,
+    "benchmark_capital_equivalent_value_captured_trillions": 80.208036,
+    "benchmark_leakage_rejection_rate": 1.0,
+    "causal_uplift_vs_strongest_control": 0.291648742,
+    "causal_uplift_vs_strongest_control_p01": 0.29021253,
+    "causal_uplift_vs_strongest_control_p05": 0.290464815,
+    "goodhart_gap": 0.00763863,
+    "hidden_holdout_success_score": 0.960253547,
+    "leakage_incident_rate": 0.0,
+    "locked_hidden_holdout_value_capture": 0.953416526,
+    "mean_adversarial_challenge_hardness": 0.912945852,
+    "negative_control_max_abs_gain": 0.001894241,
+    "proxy_gaming_rate": 0.0,
+    "receipt_tree_integrity": 1.0,
+    "risk_breach_rate": 0.0,
+    "strongest_control": "open_replication_without_adversarial_foundry",
+    "trace_replayability": 1.0,
+    "unauthorized_action_rate": 0.0,
+    "validation_to_holdout_overfit_gap": 0.002304676,
+    "verifier_agreement": 0.989008029,
+    "visible_holdout_score": 0.967892177
+  },
+  "negative_controls": {
+    "decoy_failure_modes": -0.000634204,
+    "randomized_leakage_flags": 0.000811852,
+    "shuffled_release_labels": -0.000921258,
+    "synthetic_receipt_order": 0.001894241
+  },
+  "proof_id": "rsi-adversarial-benchmark-foundry-proof",
+  "proved": true,
+  "public_safe_boundary": "Deterministic benchmark proof only; not live revenue, customer results, financial advice, legal advice, policy advice, token advice, a security certification, or proof of achieved superintelligence.",
+  "receipt_tree": {
+    "leaf_count": 256,
+    "levels": 9,
+    "root": "a8bd6df3310a3354b795f5998bf8bb03e85440c917d33e4d47bb00c866feed93",
+    "sample_leaves": [
+      "580d674ae2fff1220e821f747b4986efed7fe681367ee95273f85efa73af3622",
+      "5c7266ffbfd9420ea047d3fea53bd6e96e22cc2ce4658cfa151dbf760a73e684",
+      "ba7cb9b9747df04082826be827b4b153232843b62f95e4711dcde8f18b0b3495",
+      "ea9d961715f12bfa25ef57b1bc30cd76ba96357858ea79d5e67bc9947648d30f",
+      "041367aabe7c47c8de10a9c84b613d365d1ccbd4b8ca44c1c13ab8732e0dd753",
+      "b27f57fa7d678d39f1959f136609ae6e6eea96d4b2b0f00202350602f795eecc",
+      "107c979dca9b66b2eb6740f4e160c5b3919662f28279511d88ca1b7eb813a16f",
+      "594adb75dad4891c462da5575fb6ea7759d84ba972e1ca6e89eba230dd878937",
+      "8491e840c71eefb0b22f7276628b88af7de465414019eb49775ee1d12aa2c1b1",
+      "f97fb69d14f13f1f9372746b0af7468e5a950b6bb4656e872609295d7653c7fe",
+      "ad271799ae1aeec674ad097e07e2a1de08d732a387e52f516d36c3517962f6ef",
+      "67994b255c706d5e927bfbb83ecf0056cab28237e45086285a828b98ab1251e1"
+    ]
+  },
+  "release_curve": [
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.801343491,
+      "release": "v0",
+      "release_index": 0,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.799362357,
+      "validation_value_capture": 0.788680318
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.811409548,
+      "release": "v1",
+      "release_index": 1,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.815823253,
+      "validation_value_capture": 0.80513976
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.818631176,
+      "release": "v2",
+      "release_index": 2,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.827918341,
+      "validation_value_capture": 0.81725295
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.824670043,
+      "release": "v3",
+      "release_index": 3,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.838425036,
+      "validation_value_capture": 0.827797777
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.830047472,
+      "release": "v4",
+      "release_index": 4,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.847541425,
+      "validation_value_capture": 0.8369466
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.835002605,
+      "release": "v5",
+      "release_index": 5,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.855658813,
+      "validation_value_capture": 0.845153782
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.839655631,
+      "release": "v6",
+      "release_index": 6,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.862960616,
+      "validation_value_capture": 0.852440677
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.844096923,
+      "release": "v7",
+      "release_index": 7,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.869557448,
+      "validation_value_capture": 0.859068788
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.848370283,
+      "release": "v8",
+      "release_index": 8,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.876177699,
+      "validation_value_capture": 0.865737654
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.852501016,
+      "release": "v9",
+      "release_index": 9,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.881855201,
+      "validation_value_capture": 0.871549095
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.856510593,
+      "release": "v10",
+      "release_index": 10,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.887482484,
+      "validation_value_capture": 0.877261272
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.860409825,
+      "release": "v11",
+      "release_index": 11,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.892544823,
+      "validation_value_capture": 0.882361655
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.864210524,
+      "release": "v12",
+      "release_index": 12,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.897395204,
+      "validation_value_capture": 0.887321809
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.867919453,
+      "release": "v13",
+      "release_index": 13,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.902292855,
+      "validation_value_capture": 0.892312317
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.871542605,
+      "release": "v14",
+      "release_index": 14,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.906796388,
+      "validation_value_capture": 0.896907537
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.8750855,
+      "release": "v15",
+      "release_index": 15,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.911319763,
+      "validation_value_capture": 0.901615538
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.878572061,
+      "release": "v16",
+      "release_index": 16,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.915789615,
+      "validation_value_capture": 0.90617668
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.881996299,
+      "release": "v17",
+      "release_index": 17,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.919951135,
+      "validation_value_capture": 0.910479326
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.885358252,
+      "release": "v18",
+      "release_index": 18,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.923814843,
+      "validation_value_capture": 0.914495021
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.888659281,
+      "release": "v19",
+      "release_index": 19,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.927888495,
+      "validation_value_capture": 0.918799587
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.891893271,
+      "release": "v20",
+      "release_index": 20,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.931720578,
+      "validation_value_capture": 0.922776061
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.895069408,
+      "release": "v21",
+      "release_index": 21,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.935297288,
+      "validation_value_capture": 0.926543636
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.898189378,
+      "release": "v22",
+      "release_index": 22,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.938973989,
+      "validation_value_capture": 0.93041936
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.901259557,
+      "release": "v23",
+      "release_index": 23,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.942634138,
+      "validation_value_capture": 0.934306831
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.904265054,
+      "release": "v24",
+      "release_index": 24,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.946097537,
+      "validation_value_capture": 0.938042457
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.907202215,
+      "release": "v25",
+      "release_index": 25,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.949335255,
+      "validation_value_capture": 0.941496878
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.910078526,
+      "release": "v26",
+      "release_index": 26,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.952451436,
+      "validation_value_capture": 0.94486915
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.912888712,
+      "release": "v27",
+      "release_index": 27,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.955457834,
+      "validation_value_capture": 0.94814042
+    },
+    {
+      "leakage_incident_rate": 0.0,
+      "mean_challenge_hardness": 0.915644088,
+      "release": "v28",
+      "release_index": 28,
+      "risk_breach_rate": 0.0,
+      "validation_hidden_score": 0.958181974,
+      "validation_value_capture": 0.95111185
+    }
+  ],
+  "sample_adversarial_benchmarks": [
+    {
+      "capability_atoms": [
+        "route",
+        "verify",
+        "price",
+        "generalize"
+      ],
+      "challenge_id": "abf-0000",
+      "difficulty": 0.995,
+      "domain": "tokenized asset controls",
+      "failure_mode_targeted": "overfit skill release",
+      "hidden_failure_signature": "092bb6dfe78c69130e019a8e",
+      "leakage_firewall": "passed",
+      "verifier_court": "accepted"
+    },
+    {
+      "capability_atoms": [
+        "plan",
+        "monitor",
+        "decompose",
+        "monitor"
+      ],
+      "challenge_id": "abf-0001",
+      "difficulty": 0.732838,
+      "domain": "compute procurement",
+      "failure_mode_targeted": "domain transfer failure",
+      "hidden_failure_signature": "817ccdfcd7a2b905584f716d",
+      "leakage_firewall": "passed",
+      "verifier_court": "accepted"
+    },
+    {
+      "capability_atoms": [
+        "verify",
+        "red-team",
+        "reuse",
+        "execute"
+      ],
+      "challenge_id": "abf-0002",
+      "difficulty": 0.938956,
+      "domain": "legal operations",
+      "failure_mode_targeted": "governance capture",
+      "hidden_failure_signature": "b00661fc0d0a335871e25478",
+      "leakage_firewall": "passed",
+      "verifier_court": "accepted"
+    },
+    {
+      "capability_atoms": [
+        "release",
+        "attest",
+        "attest",
+        "attest"
+      ],
+      "challenge_id": "abf-0003",
+      "difficulty": 0.797598,
+      "domain": "public goods funding",
+      "failure_mode_targeted": "ambiguous objective",
+      "hidden_failure_signature": "90d083211f3b1dc6a041c301",
+      "leakage_firewall": "passed",
+      "verifier_court": "accepted"
+    },
+    {
+      "capability_atoms": [
+        "price",
+        "simulate",
+        "distill",
+        "reinvest"
+      ],
+      "challenge_id": "abf-0004",
+      "difficulty": 0.995,
+      "domain": "customer success",
+      "failure_mode_targeted": "role collapse",
+      "hidden_failure_signature": "4be601772d56d362a65b16f9",
+      "leakage_firewall": "passed",
+      "verifier_court": "accepted"
+    },
+    {
+      "capability_atoms": [
+        "escalate",
+        "audit",
+        "replicate",
+        "audit"
+      ],
+      "challenge_id": "abf-0005",
+      "difficulty": 0.859742,
+      "domain": "telecom operations",
+      "failure_mode_targeted": "incentive misalignment",
+      "hidden_failure_signature": "9245085e3ddbc4b4618bc4e9",
+      "leakage_firewall": "passed",
+      "verifier_court": "accepted"
+    },
+    {
+      "capability_atoms": [
+        "generalize",
+        "price",
+        "verify",
+        "route"
+      ],
+      "challenge_id": "abf-0006",
+      "difficulty": 0.995,
+      "domain": "government services",
+      "failure_mode_targeted": "late risk escalation",
+      "hidden_failure_signature": "7929d68064da49477dd30bfd",
+      "leakage_firewall": "passed",
+      "verifier_court": "accepted"
+    },
+    {
+      "capability_atoms": [
+        "attest",
+        "repair",
+        "repair",
+        "repair"
+      ],
+      "challenge_id": "abf-0007",
+      "difficulty": 0.939518,
+      "domain": "education operations",
+      "failure_mode_targeted": "negative-control failure",
+      "hidden_failure_signature": "4d06175fbf6db3196249732c",
+      "leakage_firewall": "passed",
+      "verifier_court": "accepted"
+    },
+    {
+      "capability_atoms": [
+        "route",
+        "fork-test",
+        "execute",
+        "reuse"
+      ],
+      "challenge_id": "abf-0008",
+      "difficulty": 0.915264,
+      "domain": "space operations",
+      "failure_mode_targeted": "missing evidence",
+      "hidden_failure_signature": "9b72d3cbe64aafde0d3e68bd",
+      "leakage_firewall": "passed",
+      "verifier_court": "accepted"
+    },
+    {
+      "capability_atoms": [
+        "plan",
+        "plan",
+        "escalate",
+        "plan"
+      ],
+      "challenge_id": "abf-0009",
+      "difficulty": 0.912843,
+      "domain": "AI safety operations",
+      "failure_mode_targeted": "false consensus",
+      "hidden_failure_signature": "a2db4320a181840452c2b5ad",
+      "leakage_firewall": "passed",
+      "verifier_court": "accepted"
+    },
+    {
+      "capability_atoms": [
+        "verify",
+        "distill",
+        "simulate",
+        "sign"
+      ],
+      "challenge_id": "abf-0010",
+      "difficulty": 0.995,
+      "domain": "M&A screening",
+      "failure_mode_targeted": "capability routing error",
+      "hidden_failure_signature": "42ccf30f8a6ab045e96270c2",
+      "leakage_firewall": "passed",
+      "verifier_court": "accepted"
+    },
+    {
+      "capability_atoms": [
+        "release",
+        "govern",
+        "govern",
+        "govern"
+      ],
+      "challenge_id": "abf-0011",
+      "difficulty": 0.995,
+      "domain": "blockchain settlement",
+      "failure_mode_targeted": "forecast drift",
+      "hidden_failure_signature": "2a4e04b2d5bb0f6d7f21272a",
+      "leakage_firewall": "passed",
+      "verifier_court": "accepted"
+    },
+    {
+      "capability_atoms": [
+        "price",
+        "generalize",
+        "route",
+        "verify"
+      ],
+      "challenge_id": "abf-0012",
+      "difficulty": 0.853827,
+      "domain": "model risk management",
+      "failure_mode_targeted": "evidence cherry-pick",
+      "hidden_failure_signature": "b38561991b0003564cc41d98",
+      "leakage_firewall": "passed",
+      "verifier_court": "accepted"
+    },
+    {
+      "capability_atoms": [
+        "escalate",
+        "decompose",
+        "monitor",
+        "decompose"
+      ],
+      "challenge_id": "abf-0013",
+      "difficulty": 0.995,
+      "domain": "agent operations",
+      "failure_mode_targeted": "silent regression",
+      "hidden_failure_signature": "1d65175138bacf5d4ef4e7a4",
+      "leakage_firewall": "passed",
+      "verifier_court": "accepted"
+    },
+    {
+      "capability_atoms": [
+        "generalize",
+        "execute",
+        "fork-test",
+        "red-team"
+      ],
+      "challenge_id": "abf-0014",
+      "difficulty": 0.995,
+      "domain": "payments",
+      "failure_mode_targeted": "data provenance break",
+      "hidden_failure_signature": "ef5a74c6970197dab9b32269",
+      "leakage_firewall": "passed",
+      "verifier_court": "accepted"
+    },
+    {
+      "capability_atoms": [
+        "attest",
+        "release",
+        "release",
+        "release"
+      ],
+      "challenge_id": "abf-0015",
+      "difficulty": 0.907851,
+      "domain": "sales operations",
+      "failure_mode_targeted": "siloed specialist context",
+      "hidden_failure_signature": "277dece7c11e3c266a053743",
+      "leakage_firewall": "passed",
+      "verifier_court": "accepted"
+    }
+  ],
+  "scale": {
+    "adversarial_benchmark_cells": 131072,
+    "challenge_markets": 8192,
+    "leakage_firewall_panels": 2048,
+    "red_team_foundries": 4096,
+    "skill_repair_lanes": 8192,
+    "specialist_roles": 4194304,
+    "verifier_courts": 16384,
+    "virtual_specialist_agents": 134217728
+  },
+  "schema_version": 1,
+  "seed": 18041,
+  "selected_release": "v28",
+  "thesis": "SkillOS can recursively improve by autonomously generating harder leak-resistant adversarial benchmarks, repairing against them, and proving causal lift on locked hidden holdouts.",
+  "title": "Autonomous RSI Adversarial Benchmark Foundry Proof",
+  "version": "18.0"
+}

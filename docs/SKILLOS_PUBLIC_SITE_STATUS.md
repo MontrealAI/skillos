@@ -1,6 +1,6 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T20:53:51Z`
+Generated: `2026-05-31T20:54:11Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
@@ -8,9 +8,9 @@ Site: https://montrealai.github.io/skillos/
 
 - Proof entries: 60
 - Workflows tracked: 38
-- Recent successful runs: 45
-- Recent failed runs: 1
-- Recent running runs: 3
+- Recent successful runs: 41
+- Recent failed runs: 2
+- Recent running runs: 4
 
 ## Flagship
 
@@ -105,6 +105,9 @@ Site: https://montrealai.github.io/skillos/
 - **Forge Meta Coordination**
   - Page: https://montrealai.github.io/skillos/rsi-proof-forge-meta-coordination-proof.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-proof-forge-meta-coordination-proof.json
+- **Objective Integrity Firewall**
+  - Page: https://montrealai.github.io/skillos/rsi-objective-integrity-firewall-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-objective-integrity-firewall-proof.json
 - **Autonomous RSI Cyber Defense Market Proof**
   - Page: https://montrealai.github.io/skillos/proof-cyber-defense.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cyberdefense-proof.yml
@@ -195,8 +198,6 @@ Site: https://montrealai.github.io/skillos/
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml
 - **Readiness**
   - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
-- **Rsi Objective Integrity Firewall**
-  - Page: https://montrealai.github.io/skillos/proof-objective-integrity-firewall-objective-integrity-firewall.html
 - **Wealth Accumulation**
   - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
 - **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**

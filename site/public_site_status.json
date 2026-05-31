@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "6b68446de1933d3500b97f2cbd9d2fb38de94df5",
+  "commit": "d1dd8c2281d5ca4777efe66b2d679fae67a92f02",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,7 +1174,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-05-31T20:53:51Z",
+  "generated_at_utc": "2026-05-31T20:54:11Z",
   "proof_count": 60,
   "proofs": [
     {
@@ -4870,6 +4870,28 @@
       "workflow": "Forge Meta Coordination"
     },
     {
+      "doc_path": "docs/rsi-objective-integrity-firewall-proof.md",
+      "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/rsi-objective-integrity-firewall-proof.md",
+      "generated_at": "2026-05-31T20:54:02Z",
+      "json_path": "data/rsi-objective-integrity-firewall-proof.json",
+      "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/rsi-objective-integrity-firewall-proof.json",
+      "key": "objective-integrity-firewall",
+      "page_path": "site/rsi-objective-integrity-firewall-proof.html",
+      "page_url": "https://montrealai.github.io/skillos/rsi-objective-integrity-firewall-proof.html",
+      "proved": true,
+      "rsi_releases": 0,
+      "source": "doc",
+      "sources": [
+        "json",
+        "page",
+        "doc",
+        "doc"
+      ],
+      "status": "PASSED",
+      "title": "Objective Integrity Firewall",
+      "workflow": "Objective Integrity Firewall"
+    },
+    {
       "benchmark_public": {
         "assets": [
           "identity-provider",
@@ -5377,6 +5399,10 @@
     },
     {
       "key": "objective-integrity-firewall-github-objective-integrity-firewall-objective-integrity-firewall-objective-integrity",
+      "latest_run_conclusion": "success",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-05-31T20:54:09Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724192265",
       "page_path": "site/proof-objective-integrity-firewall-github-objective-integrity-firewall-objective-integrity-firewall-objective-integrity.html",
       "page_url": "https://montrealai.github.io/skillos/proof-objective-integrity-firewall-github-objective-integrity-firewall-objective-integrity-firewall-objective-integrity.html",
       "source": "workflow",
@@ -5390,10 +5416,6 @@
     },
     {
       "key": "forge-meta-coordination-github-forge-meta-coordination-forge-meta-coordination-forge-meta",
-      "latest_run_conclusion": "success",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-31T18:31:32Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26720912444",
       "page_path": "site/proof-forge-meta-coordination-github-forge-meta-coordination-forge-meta-coordination-forge-meta.html",
       "page_url": "https://montrealai.github.io/skillos/proof-forge-meta-coordination-github-forge-meta-coordination-forge-meta-coordination-forge-meta.html",
       "source": "workflow",
@@ -5425,8 +5447,8 @@
     {
       "key": "deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with",
       "latest_run_status": "in_progress",
-      "latest_run_updated_at": "2026-05-31T20:53:22Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724181310",
+      "latest_run_updated_at": "2026-05-31T20:54:01Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724192300",
       "page_path": "site/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
       "page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
       "source": "workflow",
@@ -5453,10 +5475,9 @@
     },
     {
       "key": "skillos-tests-github-tests-skillos-tests-skillos-tests",
-      "latest_run_conclusion": "success",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-31T20:53:39Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724181307",
+      "latest_run_status": "in_progress",
+      "latest_run_updated_at": "2026-05-31T20:53:53Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724192275",
       "page_path": "site/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
       "page_url": "https://montrealai.github.io/skillos/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
       "source": "workflow",
@@ -5479,18 +5500,6 @@
         "doc"
       ],
       "title": "Readiness"
-    },
-    {
-      "doc_path": "docs/AUTONOMOUS_RSI_OBJECTIVE_INTEGRITY_FIREWALL_PROOF.md",
-      "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_OBJECTIVE_INTEGRITY_FIREWALL_PROOF.md",
-      "key": "objective-integrity-firewall-objective-integrity-firewall",
-      "page_path": "site/proof-objective-integrity-firewall-objective-integrity-firewall.html",
-      "page_url": "https://montrealai.github.io/skillos/proof-objective-integrity-firewall-objective-integrity-firewall.html",
-      "source": "doc",
-      "sources": [
-        "doc"
-      ],
-      "title": "Rsi Objective Integrity Firewall"
     },
     {
       "doc_path": "docs/wealth_accumulation_proof.md",
@@ -5532,16 +5541,28 @@
       }
     }
   ],
-  "proved_or_passed_proof_count": 24,
-  "recent_failed_runs": 1,
-  "recent_running_runs": 3,
-  "recent_successful_runs": 45,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724189247",
+  "proved_or_passed_proof_count": 25,
+  "recent_failed_runs": 2,
+  "recent_running_runs": 4,
+  "recent_successful_runs": 41,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724195569",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
   "workflow_count": 38,
   "workflows": [
+    {
+      "conclusion": "success",
+      "event": "push",
+      "name": "Autonomous RSI Objective Integrity Firewall Proof",
+      "path": ".github/workflows/autonomous-rsi-objective-integrity-firewall-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-objective-integrity-firewall-github-objective-integrity-firewall-objective-integrity-firewall-objective-integrity.html",
+      "proof_title": "Autonomous RSI Objective Integrity Firewall Proof",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724192265",
+      "status": "completed",
+      "updated_at": "2026-05-31T20:54:09Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-objective-integrity-firewall-proof.yml"
+    },
     {
       "conclusion": null,
       "event": "workflow_run",
@@ -5549,9 +5570,9 @@
       "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724189237",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724195579",
       "status": "in_progress",
-      "updated_at": "2026-05-31T20:53:46Z",
+      "updated_at": "2026-05-31T20:54:08Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
@@ -5561,22 +5582,10 @@
       "path": ".github/workflows/skillos-public-site-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724189247",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724195569",
       "status": "in_progress",
-      "updated_at": "2026-05-31T20:53:46Z",
+      "updated_at": "2026-05-31T20:54:04Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "push",
-      "name": "SkillOS tests",
-      "path": ".github/workflows/tests.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
-      "proof_title": "SkillOS tests",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724181307",
-      "status": "completed",
-      "updated_at": "2026-05-31T20:53:39Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"
     },
     {
       "conclusion": null,
@@ -5585,10 +5594,22 @@
       "path": ".github/workflows/pages.yml",
       "proof_page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
       "proof_title": "Deploy SkillOS website with autonomous safe public copy",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724181310",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724192300",
       "status": "in_progress",
-      "updated_at": "2026-05-31T20:53:22Z",
+      "updated_at": "2026-05-31T20:54:01Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"
+    },
+    {
+      "conclusion": null,
+      "event": "push",
+      "name": "SkillOS tests",
+      "path": ".github/workflows/tests.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
+      "proof_title": "SkillOS tests",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724192275",
+      "status": "in_progress",
+      "updated_at": "2026-05-31T20:53:53Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"
     },
     {
       "conclusion": "success",
@@ -5625,18 +5646,6 @@
       "status": "completed",
       "updated_at": "2026-05-31T19:40:36Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-skill-provenance-ledger-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "push",
-      "name": "Autonomous RSI Proof Forge Meta-Coordination Proof",
-      "path": ".github/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-forge-meta-coordination-github-forge-meta-coordination-forge-meta-coordination-forge-meta.html",
-      "proof_title": "Autonomous RSI Proof Forge Meta-Coordination Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26720912444",
-      "status": "completed",
-      "updated_at": "2026-05-31T18:31:32Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml"
     },
     {
       "conclusion": null,
@@ -5797,14 +5806,14 @@
     {
       "conclusion": null,
       "event": null,
-      "name": "Autonomous RSI Objective Integrity Firewall Proof",
-      "path": ".github/workflows/autonomous-rsi-objective-integrity-firewall-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-objective-integrity-firewall-github-objective-integrity-firewall-objective-integrity-firewall-objective-integrity.html",
-      "proof_title": "Autonomous RSI Objective Integrity Firewall Proof",
+      "name": "Autonomous RSI Proof Forge Meta-Coordination Proof",
+      "path": ".github/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-forge-meta-coordination-github-forge-meta-coordination-forge-meta-coordination-forge-meta.html",
+      "proof_title": "Autonomous RSI Proof Forge Meta-Coordination Proof",
       "run_url": null,
       "status": "not_run",
       "updated_at": "",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-objective-integrity-firewall-proof.yml"
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml"
     },
     {
       "conclusion": null,

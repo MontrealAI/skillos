@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "08ace606357c95c3a6df8e421075323bc8215130",
+  "commit": "8c706222efcfbcae67c78a6bbd390a49ff584797",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,7 +1174,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-05-31T20:39:29Z",
+  "generated_at_utc": "2026-05-31T20:39:46Z",
   "proof_count": 58,
   "proofs": [
     {
@@ -5265,10 +5265,6 @@
     },
     {
       "key": "capability-liquidity-engine-github-capability-liquidity-engine-capability-liquidity-engine-capability-liquidity",
-      "latest_run_conclusion": "success",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-31T17:46:54Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26719875591",
       "page_path": "site/proof-capability-liquidity-engine-github-capability-liquidity-engine-capability-liquidity-engine-capability-liquidity.html",
       "page_url": "https://montrealai.github.io/skillos/proof-capability-liquidity-engine-github-capability-liquidity-engine-capability-liquidity-engine-capability-liquidity.html",
       "source": "workflow",
@@ -5515,35 +5511,35 @@
   "proved_or_passed_proof_count": 24,
   "recent_failed_runs": 1,
   "recent_running_runs": 1,
-  "recent_successful_runs": 46,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26723863125",
+  "recent_successful_runs": 47,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26723870427",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
   "workflow_count": 37,
   "workflows": [
     {
-      "conclusion": null,
+      "conclusion": "success",
       "event": "schedule",
       "name": "SkillOS Public Site Command Center Refresh",
       "path": ".github/workflows/skillos-public-site-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
       "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26723863125",
-      "status": "in_progress",
-      "updated_at": "2026-05-31T20:39:20Z",
+      "status": "completed",
+      "updated_at": "2026-05-31T20:39:41Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {
-      "conclusion": "success",
-      "event": "workflow_run",
+      "conclusion": null,
+      "event": "schedule",
       "name": "SkillOS Public Proof Command Center Refresh",
       "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26723684652",
-      "status": "completed",
-      "updated_at": "2026-05-31T20:32:05Z",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26723870427",
+      "status": "in_progress",
+      "updated_at": "2026-05-31T20:39:40Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
@@ -5619,18 +5615,6 @@
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml"
     },
     {
-      "conclusion": "success",
-      "event": "push",
-      "name": "Autonomous RSI Capability Liquidity Engine Proof",
-      "path": ".github/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-capability-liquidity-engine-github-capability-liquidity-engine-capability-liquidity-engine-capability-liquidity.html",
-      "proof_title": "Autonomous RSI Capability Liquidity Engine Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26719875591",
-      "status": "completed",
-      "updated_at": "2026-05-31T17:46:54Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml"
-    },
-    {
       "conclusion": null,
       "event": null,
       "name": "_SkillOS Public Proof Command Center Refresh Reusable",
@@ -5701,6 +5685,18 @@
       "status": "not_run",
       "updated_at": "",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-blockchain-protocol-capital-frontier-proof.yml"
+    },
+    {
+      "conclusion": null,
+      "event": null,
+      "name": "Autonomous RSI Capability Liquidity Engine Proof",
+      "path": ".github/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-capability-liquidity-engine-github-capability-liquidity-engine-capability-liquidity-engine-capability-liquidity.html",
+      "proof_title": "Autonomous RSI Capability Liquidity Engine Proof",
+      "run_url": null,
+      "status": "not_run",
+      "updated_at": "",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml"
     },
     {
       "conclusion": null,

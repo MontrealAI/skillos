@@ -1,6 +1,28 @@
 {
   "proofs": [
     {
+      "badge": "badges/rsi-causal-attribution-engine-proof.svg",
+      "generated_at_utc": "2026-05-31T20:31:54Z",
+      "headline": "Causal attribution for SkillOS RSI: paired counterfactual replay, ablations, negative controls, bootstrap confidence, and locked holdout cases.",
+      "href": "rsi-causal-attribution-engine-proof.html",
+      "id": "rsi-causal-attribution-engine-proof",
+      "json": "data/rsi-causal-attribution-engine-proof.json",
+      "metrics": {
+        "benchmark_gain_vs_best_control_trillions": 6.848338,
+        "benchmark_value_captured_trillions": 45.963375,
+        "causal_uplift": 0.135905854,
+        "causal_uplift_p05": 0.134351446,
+        "frontier_correct": 1.0,
+        "negative_control_max_abs_gain": 0.003389334,
+        "risk": 0.0,
+        "value_capture": 0.986474684
+      },
+      "report": "docs/rsi-causal-attribution-engine-proof.md",
+      "status": "passing",
+      "summary": "SkillOS can causally attribute improvement to validation-gated Recursive Self-Improvement rather than demo overfitting, single-agent baseline strength, random routing, static skill reuse, or uncoordinated multi-agent scale.",
+      "title": "Autonomous RSI Causal Attribution Engine Proof"
+    },
+    {
       "badge": "badges/rsi-cross-domain-capability-transfer-atlas-proof.svg",
       "generated_at_utc": "2026-05-31T20:07:05.648700+00:00",
       "headline": "Capability transfer becomes a measurable, reusable, verified SkillOS asset across unseen domains.",
@@ -73,5 +95,5 @@
   "schema_version": 2,
   "site_base_url": "https://montrealai.github.io/skillos/",
   "source": "SkillOS autonomous GitHub Actions proof publisher",
-  "updated_at_utc": "2026-05-31T20:07:05.648700+00:00"
+  "updated_at_utc": "2026-05-31T20:31:54Z"
 }

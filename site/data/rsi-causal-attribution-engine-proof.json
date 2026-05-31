@@ -1,0 +1,491 @@
+{
+  "arms_summary": {
+    "no_provenance_memory": {
+      "mean_risk_breach_probability": 0.01801462,
+      "mean_score": 0.821243523,
+      "mean_value_capture": 0.806515323,
+      "risk_breach_rate": 1.0,
+      "weighted_value_capture": 0.793909812
+    },
+    "no_role_quorum": {
+      "mean_risk_breach_probability": 0.015516082,
+      "mean_score": 0.843249793,
+      "mean_value_capture": 0.830239328,
+      "risk_breach_rate": 1.0,
+      "weighted_value_capture": 0.817594378
+    },
+    "no_rsi_release_selection": {
+      "mean_risk_breach_probability": 0.009510234,
+      "mean_score": 0.861244277,
+      "mean_value_capture": 0.853120563,
+      "risk_breach_rate": 1.0,
+      "weighted_value_capture": 0.83949435
+    },
+    "no_verifier_courts": {
+      "mean_risk_breach_probability": 0.031008825,
+      "mean_score": 0.838095836,
+      "mean_value_capture": 0.812275519,
+      "risk_breach_rate": 1.0,
+      "weighted_value_capture": 0.797955069
+    },
+    "single_generalist": {
+      "mean_risk_breach_probability": 0.035519038,
+      "mean_score": 0.669200714,
+      "mean_value_capture": 0.64577674,
+      "risk_breach_rate": 1.0,
+      "weighted_value_capture": 0.632730152
+    },
+    "skillos_full_rsi": {
+      "mean_risk_breach_probability": 0.0,
+      "mean_score": 0.989026417,
+      "mean_value_capture": 0.989026417,
+      "risk_breach_rate": 0.0,
+      "weighted_value_capture": 0.986474684
+    },
+    "static_skill_catalog": {
+      "mean_risk_breach_probability": 0.020511712,
+      "mean_score": 0.776672922,
+      "mean_value_capture": 0.760923907,
+      "risk_breach_rate": 1.0,
+      "weighted_value_capture": 0.746855978
+    },
+    "uncoordinated_agent_pool": {
+      "mean_risk_breach_probability": 0.02751756,
+      "mean_score": 0.743354217,
+      "mean_value_capture": 0.723108972,
+      "risk_breach_rate": 1.0,
+      "weighted_value_capture": 0.710193348
+    }
+  },
+  "best_control": {
+    "arm": "no_rsi_release_selection",
+    "mean_score": 0.861244277,
+    "weighted_value_capture": 0.83949435
+  },
+  "causal_attribution": {
+    "multi-agent coordination over swarm": 0.276281335,
+    "provenance memory and replayable traces": 0.192564872,
+    "recursive release selection": 0.146980333,
+    "role quorum and specialist routing": 0.168880306,
+    "skill release catalog liquidity": 0.239618706,
+    "verifier courts and risk gates": 0.188519615
+  },
+  "deterministic_seed": 15037,
+  "gates": {
+    "causal_uplift_p05": true,
+    "frontier_correct_rate": true,
+    "locked_holdout_value_capture": true,
+    "negative_controls": true,
+    "risk_breach_rate": true,
+    "trace_replayability": true,
+    "unauthorized_action_rate": true
+  },
+  "generated_at_utc": "2026-05-31T20:31:54Z",
+  "hashes": {
+    "arms_summary_sha256": "065b2b77af4cefe3add7dd175e2153a471d8277ac0b7b16084140ca67d3e0478",
+    "locked_holdout_manifest_sha256": "488f490ce0d53fdf15cc6c7565ca63a147ea1bc4c9f42ab498c922d669ac6943",
+    "release_curve_sha256": "21e9eb626ad5f869c0feee9493eb74fe4ee8c2a1e4c077cff20be1fb45b09dea",
+    "train_manifest_sha256": "2ed45968c01d8e0bfcf0358b054bdf23c094e228b1c46ff202ec5019a725be7f",
+    "validation_manifest_sha256": "b0d1f245419b73799cc2bb9a7c55e69e28de755ab5ff669866814f1198668e0c"
+  },
+  "mechanism": "demand → randomized counterfactual cells → specialist-agent coordination → verifier courts → provenance memory → skill release selection → holdout evaluation → causal attribution → reinvestment → better future coordination",
+  "method": {
+    "causal_estimand": "Mean paired uplift of SkillOS full RSI over the strongest non-SkillOS control arm on locked holdout cases.",
+    "design": "Paired counterfactual benchmark: every locked holdout case is evaluated under SkillOS full RSI and under causal ablations, using the same case, value-at-stake, risk, novelty, and ambiguity parameters.",
+    "negative_controls": "Permuted release labels, shuffled skill identity, and random routing must not create material uplift.",
+    "selection_rule": "Select the highest validation release whose risk gate remains closed, then evaluate once on locked holdout cases."
+  },
+  "metrics": {
+    "benchmark_capital_equivalent_gain_vs_best_control_trillions": 6.848338,
+    "benchmark_capital_equivalent_value_at_stake_trillions": 46.593568,
+    "benchmark_capital_equivalent_value_captured_by_best_control_trillions": 39.115037,
+    "benchmark_capital_equivalent_value_captured_trillions": 45.963375,
+    "causal_uplift_vs_best_control": 0.135905854,
+    "causal_uplift_vs_best_control_p05": 0.134351446,
+    "causal_uplift_vs_best_control_p95": 0.137559083,
+    "coordination_quality": 0.995,
+    "frontier_correct_rate": 1.0,
+    "locked_holdout_value_capture": 0.986474684,
+    "negative_control_max_abs_gain": 0.003389334,
+    "risk_breach_rate": 0.0,
+    "rsi_integrity": 0.997,
+    "selected_release": "v24",
+    "selected_release_index": 24,
+    "trace_replayability": 1.0,
+    "unauthorized_action_rate": 0.0,
+    "verifier_agreement": 0.975064181
+  },
+  "negative_controls": {
+    "negative_control_passed": true,
+    "permuted_release_label_gain": -0.002492182,
+    "random_routing_gain": -0.003389334,
+    "shuffled_skill_identity_gain": 0.002985434
+  },
+  "proof_id": "rsi-causal-attribution-engine-proof",
+  "proved": true,
+  "public_claim_boundary": "Deterministic benchmark proof only: not live revenue, customer results, legal advice, policy advice, financial advice, token advice, or proof of achieved superintelligence.",
+  "receipt_sha256": "4b0accdbb400feb0aa7b3a3a50a609cba32c8ac72f0f5d53625ee45e3b63c803",
+  "release_curve": [
+    {
+      "release": "v0",
+      "release_index": 0,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.850139232,
+      "validation_value_capture": 0.834669834
+    },
+    {
+      "release": "v1",
+      "release_index": 1,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.87134308,
+      "validation_value_capture": 0.856526032
+    },
+    {
+      "release": "v2",
+      "release_index": 2,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.885559714,
+      "validation_value_capture": 0.871270881
+    },
+    {
+      "release": "v3",
+      "release_index": 3,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.897063692,
+      "validation_value_capture": 0.883379223
+    },
+    {
+      "release": "v4",
+      "release_index": 4,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.90594797,
+      "validation_value_capture": 0.892858625
+    },
+    {
+      "release": "v5",
+      "release_index": 5,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.914832261,
+      "validation_value_capture": 0.902349537
+    },
+    {
+      "release": "v6",
+      "release_index": 6,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.921672004,
+      "validation_value_capture": 0.909598519
+    },
+    {
+      "release": "v7",
+      "release_index": 7,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.928677169,
+      "validation_value_capture": 0.917236948
+    },
+    {
+      "release": "v8",
+      "release_index": 8,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.934823062,
+      "validation_value_capture": 0.924036671
+    },
+    {
+      "release": "v9",
+      "release_index": 9,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.941471066,
+      "validation_value_capture": 0.931303903
+    },
+    {
+      "release": "v10",
+      "release_index": 10,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.94587516,
+      "validation_value_capture": 0.936241785
+    },
+    {
+      "release": "v11",
+      "release_index": 11,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.950809906,
+      "validation_value_capture": 0.941766724
+    },
+    {
+      "release": "v12",
+      "release_index": 12,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.955027796,
+      "validation_value_capture": 0.946479428
+    },
+    {
+      "release": "v13",
+      "release_index": 13,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.958892434,
+      "validation_value_capture": 0.950957936
+    },
+    {
+      "release": "v14",
+      "release_index": 14,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.962664859,
+      "validation_value_capture": 0.955242203
+    },
+    {
+      "release": "v15",
+      "release_index": 15,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.966514785,
+      "validation_value_capture": 0.959590924
+    },
+    {
+      "release": "v16",
+      "release_index": 16,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.969727245,
+      "validation_value_capture": 0.963375449
+    },
+    {
+      "release": "v17",
+      "release_index": 17,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.972787584,
+      "validation_value_capture": 0.966916422
+    },
+    {
+      "release": "v18",
+      "release_index": 18,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.975697813,
+      "validation_value_capture": 0.970417448
+    },
+    {
+      "release": "v19",
+      "release_index": 19,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.977843345,
+      "validation_value_capture": 0.972880971
+    },
+    {
+      "release": "v20",
+      "release_index": 20,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.980043783,
+      "validation_value_capture": 0.975507165
+    },
+    {
+      "release": "v21",
+      "release_index": 21,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.982278762,
+      "validation_value_capture": 0.978230387
+    },
+    {
+      "release": "v22",
+      "release_index": 22,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.984074772,
+      "validation_value_capture": 0.980348519
+    },
+    {
+      "release": "v23",
+      "release_index": 23,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.986138105,
+      "validation_value_capture": 0.982873838
+    },
+    {
+      "release": "v24",
+      "release_index": 24,
+      "risk_breach_rate": 0.0,
+      "validation_score": 0.987755373,
+      "validation_value_capture": 0.984878588
+    }
+  ],
+  "sample_locked_holdout_cases": [
+    {
+      "ambiguity": 0.429995,
+      "benchmark_capital_equivalent_value_trillions": 0.01262593,
+      "capability_atoms": [
+        "decompose",
+        "simulate"
+      ],
+      "case_id": "locked-holdout-00000",
+      "complexity": 0.758666,
+      "domain": "enterprise strategy",
+      "novelty": 0.726506,
+      "risk": 0.61282
+    },
+    {
+      "ambiguity": 0.00163,
+      "benchmark_capital_equivalent_value_trillions": 0.011676439,
+      "capability_atoms": [
+        "verify",
+        "govern"
+      ],
+      "case_id": "locked-holdout-00001",
+      "complexity": 0.982448,
+      "domain": "governance",
+      "novelty": 0.089962,
+      "risk": 0.318101
+    },
+    {
+      "ambiguity": 0.570197,
+      "benchmark_capital_equivalent_value_trillions": 0.008561914,
+      "capability_atoms": [
+        "govern",
+        "execute"
+      ],
+      "case_id": "locked-holdout-00002",
+      "complexity": 0.397888,
+      "domain": "blockchain settlement",
+      "novelty": 0.630934,
+      "risk": 0.183891
+    },
+    {
+      "ambiguity": 0.407991,
+      "benchmark_capital_equivalent_value_trillions": 0.007435738,
+      "capability_atoms": [
+        "route",
+        "escalate"
+      ],
+      "case_id": "locked-holdout-00003",
+      "complexity": 0.300589,
+      "domain": "cyber defense",
+      "novelty": 0.420619,
+      "risk": 0.342182
+    },
+    {
+      "ambiguity": 0.76926,
+      "benchmark_capital_equivalent_value_trillions": 0.013512705,
+      "capability_atoms": [
+        "audit",
+        "verify"
+      ],
+      "case_id": "locked-holdout-00004",
+      "complexity": 0.588018,
+      "domain": "capital allocation",
+      "novelty": 0.797829,
+      "risk": 0.751812
+    },
+    {
+      "ambiguity": 0.077343,
+      "benchmark_capital_equivalent_value_trillions": 0.010457314,
+      "capability_atoms": [
+        "reinvest",
+        "repair"
+      ],
+      "case_id": "locked-holdout-00005",
+      "complexity": 0.790083,
+      "domain": "market design",
+      "novelty": 0.523807,
+      "risk": 0.117465
+    },
+    {
+      "ambiguity": 0.627546,
+      "benchmark_capital_equivalent_value_trillions": 0.010714774,
+      "capability_atoms": [
+        "retrieve",
+        "distill"
+      ],
+      "case_id": "locked-holdout-00006",
+      "complexity": 0.423424,
+      "domain": "AI operations",
+      "novelty": 0.77049,
+      "risk": 0.386749
+    },
+    {
+      "ambiguity": 0.793673,
+      "benchmark_capital_equivalent_value_trillions": 0.012955132,
+      "capability_atoms": [
+        "distill",
+        "decompose"
+      ],
+      "case_id": "locked-holdout-00007",
+      "complexity": 0.973417,
+      "domain": "product discovery",
+      "novelty": 0.307233,
+      "risk": 0.645656
+    },
+    {
+      "ambiguity": 0.025449,
+      "benchmark_capital_equivalent_value_trillions": 0.014619247,
+      "capability_atoms": [
+        "escalate",
+        "reuse"
+      ],
+      "case_id": "locked-holdout-00008",
+      "complexity": 0.991471,
+      "domain": "supply chain",
+      "novelty": 0.664567,
+      "risk": 0.630525
+    },
+    {
+      "ambiguity": 0.737011,
+      "benchmark_capital_equivalent_value_trillions": 0.012340044,
+      "capability_atoms": [
+        "simulate",
+        "retrieve"
+      ],
+      "case_id": "locked-holdout-00009",
+      "complexity": 0.708038,
+      "domain": "research operations",
+      "novelty": 0.66153,
+      "risk": 0.281065
+    },
+    {
+      "ambiguity": 0.329098,
+      "benchmark_capital_equivalent_value_trillions": 0.00817204,
+      "capability_atoms": [
+        "release",
+        "price"
+      ],
+      "case_id": "locked-holdout-00010",
+      "complexity": 0.282596,
+      "domain": "compliance automation",
+      "novelty": 0.497859,
+      "risk": 0.266043
+    },
+    {
+      "ambiguity": 0.542621,
+      "benchmark_capital_equivalent_value_trillions": 0.010990209,
+      "capability_atoms": [
+        "red-team",
+        "plan"
+      ],
+      "case_id": "locked-holdout-00011",
+      "complexity": 0.304445,
+      "domain": "data infrastructure",
+      "novelty": 0.263057,
+      "risk": 0.927726
+    }
+  ],
+  "scale": {
+    "candidate_arms": 8,
+    "capability_atoms": 20,
+    "counterfactual_cells": 32768,
+    "domains": 36,
+    "locked_holdout_cases": 4096,
+    "red_team_panels": 1024,
+    "release_lanes": 2048,
+    "rsi_release_cycles": 24,
+    "specialist_roles": 1048576,
+    "train_cases": 1536,
+    "validation_cases": 1024,
+    "verifier_courts": 4096,
+    "virtual_specialist_agents": 33554432
+  },
+  "schema_version": 1,
+  "thesis": "SkillOS can causally attribute improvement to validation-gated Recursive Self-Improvement rather than demo overfitting, single-agent baseline strength, random routing, static skill reuse, or uncoordinated multi-agent scale.",
+  "thresholds": {
+    "max_negative_control_abs_gain": 0.01,
+    "max_risk_breach_rate": 0.0,
+    "max_unauthorized_action_rate": 0.0,
+    "min_causal_uplift_p05": 0.08,
+    "min_frontier_correct_rate": 0.93,
+    "min_locked_holdout_value_capture": 0.88,
+    "min_trace_replayability": 1.0
+  },
+  "title": "Autonomous RSI Causal Attribution Engine Proof",
+  "version": "15.0"
+}

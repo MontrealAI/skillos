@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="80" viewBox="0 0 760 80" role="img" aria-label="PROOF PASSED">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#071827"/><stop offset="1" stop-color="#263468"/></linearGradient></defs>
+  <rect width="760" height="80" rx="18" fill="url(#g)"/>
+  <rect x="18" y="18" width="158" height="44" rx="22" fill="#63ff9b" opacity=".24"/>
+  <text x="36" y="47" fill="#63ff9b" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800">PROOF PASSED</text>
+  <text x="202" y="48" fill="#eaf6ff" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800">SkillOS RSI Proof Forge v12.0 · 99.10% capture</text>
+</svg>

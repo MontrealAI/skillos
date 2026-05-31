@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "136996afcef4f0043ff2ed469dc15f5e2226cde7",
+  "commit": "8c684932b517d1ee39765d6f9598f132519143a3",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1178,7 +1178,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-05-31T13:18:11Z",
+  "generated_at_utc": "2026-05-31T13:24:05Z",
   "proof_count": 34,
   "proofs": [
     {
@@ -3583,15 +3583,15 @@
       },
       "doc_path": "docs/rsi_silicon_verification_market_proof.md",
       "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/rsi_silicon_verification_market_proof.md",
-      "generated_at": "2026-05-30T20:24:45Z",
+      "generated_at": "2026-05-31T13:23:38Z",
       "holdout_count": 720,
       "json_path": "data/rsi_silicon_verification_market_proof.json",
       "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/rsi_silicon_verification_market_proof.json",
       "key": "silicon-verification",
-      "latest_run_conclusion": "cancelled",
+      "latest_run_conclusion": "success",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-31T13:15:48Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26713648978",
+      "latest_run_updated_at": "2026-05-31T13:23:53Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26713817284",
       "metrics": {
         "assertion_accuracy_percent": 100.0,
         "bug_class_accuracy_percent": 100.0,
@@ -3686,8 +3686,9 @@
       "json_path": "data/rsi_unit_economics_market_proof.json",
       "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/rsi_unit_economics_market_proof.json",
       "key": "unit-economics",
-      "latest_run_status": "in_progress",
-      "latest_run_updated_at": "2026-05-31T13:17:59Z",
+      "latest_run_conclusion": "success",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-05-31T13:18:14Z",
       "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26713650040",
       "metrics": {
         "false_intervention_rate_percent": 0.0,
@@ -4070,9 +4071,9 @@
   ],
   "proved_or_passed_proof_count": 17,
   "recent_failed_runs": 2,
-  "recent_running_runs": 2,
-  "recent_successful_runs": 32,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26713696812",
+  "recent_running_runs": 1,
+  "recent_successful_runs": 33,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26713826682",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
@@ -4085,21 +4086,33 @@
       "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26713696812",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26713826682",
       "status": "in_progress",
-      "updated_at": "2026-05-31T13:18:02Z",
+      "updated_at": "2026-05-31T13:23:59Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
-      "conclusion": null,
+      "conclusion": "success",
+      "event": "schedule",
+      "name": "Autonomous RSI Silicon Verification Market Proof",
+      "path": ".github/workflows/rsi-silicon-verification-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/rsi-silicon-verification-proof.html",
+      "proof_title": "Autonomous RSI Silicon Verification Market Proof",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26713817284",
+      "status": "completed",
+      "updated_at": "2026-05-31T13:23:53Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-silicon-verification-proof.yml"
+    },
+    {
+      "conclusion": "success",
       "event": "workflow_dispatch",
       "name": "Autonomous RSI Unit Economics Profit Engine Market Proof",
       "path": ".github/workflows/rsi-unit-economics-proof.yml",
       "proof_page_url": "https://montrealai.github.io/skillos/rsi-unit-economics-proof.html",
       "proof_title": "Autonomous RSI Unit Economics Profit Engine Market Proof",
       "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26713650040",
-      "status": "in_progress",
-      "updated_at": "2026-05-31T13:17:59Z",
+      "status": "completed",
+      "updated_at": "2026-05-31T13:18:14Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-unit-economics-proof.yml"
     },
     {
@@ -4149,18 +4162,6 @@
       "status": "completed",
       "updated_at": "2026-05-31T13:15:50Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-capability-foundry-proof.yml"
-    },
-    {
-      "conclusion": "cancelled",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Silicon Verification Market Proof",
-      "path": ".github/workflows/rsi-silicon-verification-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/rsi-silicon-verification-proof.html",
-      "proof_title": "Autonomous RSI Silicon Verification Market Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26713648978",
-      "status": "completed",
-      "updated_at": "2026-05-31T13:15:48Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-silicon-verification-proof.yml"
     },
     {
       "conclusion": "cancelled",

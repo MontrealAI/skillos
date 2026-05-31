@@ -1,0 +1,19 @@
+{
+  "proofs": [
+    {
+      "agents": 65536,
+      "badge": "badges/rsi-corporate-strategy-frontier-proof.svg",
+      "frontier_equivalent_percent": 95.898438,
+      "json": "data/rsi-corporate-strategy-frontier-proof.json",
+      "page": "rsi-corporate-strategy-frontier-proof.html",
+      "protocol_fingerprint": "a6840b7f8504048a9f991ff4",
+      "report": "docs/rsi-corporate-strategy-frontier-proof.md",
+      "risk_breach_rate_percent": 0.0,
+      "slug": "rsi-corporate-strategy-frontier-proof",
+      "specialist_roles": 2048,
+      "status": "passing",
+      "title": "Autonomous RSI Corporate Strategy Frontier Proof",
+      "value_capture_percent": 98.558142
+    }
+  ]
+}

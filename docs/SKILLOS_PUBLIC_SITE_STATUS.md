@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T15:46:00Z`
+Generated: `2026-05-31T15:46:15Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 42
-- Workflows tracked: 29
-- Recent successful runs: 40
+- Proof entries: 43
+- Workflows tracked: 30
+- Recent successful runs: 39
 - Recent failed runs: 0
-- Recent running runs: 3
+- Recent running runs: 5
 
 ## Flagship
 
@@ -116,6 +116,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous Enterprise Ops Market Proof**
   - Page: https://montrealai.github.io/skillos/proof-enterprise-ops-github-enterprise-ops-enterprise-ops-enterprise-ops.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/enterprise-ops-proof.yml
+- **Autonomous RSI AI-First Blockchain Capital Machine Proof**
+  - Page: https://montrealai.github.io/skillos/proof-ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml
 - **Autonomous RSI Blockchain Protocol Capital Frontier Proof**
   - Page: https://montrealai.github.io/skillos/proof-blockchain-protocol-capital-frontier-github-blockchain-protocol-capital-frontier-blockchain-protocol-capital.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-blockchain-protocol-capital-frontier-proof.yml

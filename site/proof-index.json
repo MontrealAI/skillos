@@ -1,0 +1,18 @@
+{
+  "proofs": [
+    {
+      "agents": 32768,
+      "id": "rsi-corporate-capability-frontier-proof",
+      "json": "../data/rsi_corporate_capability_frontier_proof.json",
+      "markdown": "../docs/rsi_corporate_capability_frontier_proof.md",
+      "page_url": "rsi-corporate-capability-frontier-proof.html",
+      "roles": 1024,
+      "rsi_releases": 9,
+      "status": "passing",
+      "title": "Autonomous RSI Corporate Capability Frontier Proof",
+      "updated_at": "2026-05-31T13:39:41Z",
+      "value_capture_percent": 99.856,
+      "workflow": ".github/workflows/autonomous-rsi-corporate-capability-frontier-proof.yml"
+    }
+  ]
+}

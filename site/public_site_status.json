@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "ba3c3ce127e95ff2ffb3795be976f33d789600b6",
+  "commit": "4082b37757b69d8f22eec5dd32d633acedb11912",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,8 +1174,8 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-05-31T23:12:26Z",
-  "proof_count": 64,
+  "generated_at_utc": "2026-05-31T23:16:19Z",
+  "proof_count": 65,
   "proofs": [
     {
       "agent_count": 512,
@@ -5499,10 +5499,6 @@
     },
     {
       "key": "skill-provenance-ledger-github-skill-provenance-ledger-skill-provenance-ledger-skill-provenance",
-      "latest_run_conclusion": "success",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-31T19:40:36Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26722511412",
       "page_path": "site/proof-skill-provenance-ledger-github-skill-provenance-ledger-skill-provenance-ledger-skill-provenance.html",
       "page_url": "https://montrealai.github.io/skillos/proof-skill-provenance-ledger-github-skill-provenance-ledger-skill-provenance-ledger-skill-provenance.html",
       "source": "workflow",
@@ -5516,10 +5512,9 @@
     },
     {
       "key": "deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with",
-      "latest_run_conclusion": "success",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-31T23:12:10Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727223800",
+      "latest_run_status": "in_progress",
+      "latest_run_updated_at": "2026-05-31T23:16:13Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727329076",
       "page_path": "site/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
       "page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
       "source": "workflow",
@@ -5546,10 +5541,9 @@
     },
     {
       "key": "skillos-tests-github-tests-skillos-tests-skillos-tests",
-      "latest_run_conclusion": "success",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-31T23:11:28Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727223826",
+      "latest_run_status": "in_progress",
+      "latest_run_updated_at": "2026-05-31T23:16:13Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727329065",
       "page_path": "site/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
       "page_url": "https://montrealai.github.io/skillos/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
       "source": "workflow",
@@ -5572,6 +5566,18 @@
         "doc"
       ],
       "title": "Readiness"
+    },
+    {
+      "doc_path": "docs/AUTONOMOUS_RSI_CONTINUAL_CAPABILITY_FRONTIER_PROOF.md",
+      "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_CONTINUAL_CAPABILITY_FRONTIER_PROOF.md",
+      "key": "continual-capability-frontier-continual-capability-frontier",
+      "page_path": "site/proof-continual-capability-frontier-continual-capability-frontier.html",
+      "page_url": "https://montrealai.github.io/skillos/proof-continual-capability-frontier-continual-capability-frontier.html",
+      "source": "doc",
+      "sources": [
+        "doc"
+      ],
+      "title": "Rsi Continual Capability Frontier"
     },
     {
       "doc_path": "docs/wealth_accumulation_proof.md",
@@ -5615,9 +5621,9 @@
   ],
   "proved_or_passed_proof_count": 26,
   "recent_failed_runs": 2,
-  "recent_running_runs": 2,
-  "recent_successful_runs": 42,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727246825",
+  "recent_running_runs": 4,
+  "recent_successful_runs": 41,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727329073",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
@@ -5625,50 +5631,50 @@
   "workflows": [
     {
       "conclusion": null,
-      "event": "workflow_run",
-      "name": "SkillOS Public Site Command Center Refresh",
-      "path": ".github/workflows/skillos-public-site-refresh.yml",
-      "proof_page_url": null,
-      "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727246829",
-      "status": "in_progress",
-      "updated_at": "2026-05-31T23:12:23Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
-    },
-    {
-      "conclusion": null,
-      "event": "workflow_run",
+      "event": "push",
       "name": "SkillOS Public Proof Command Center Refresh",
       "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727246825",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727329062",
       "status": "in_progress",
-      "updated_at": "2026-05-31T23:12:17Z",
+      "updated_at": "2026-05-31T23:16:14Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
-      "conclusion": "success",
+      "conclusion": null,
+      "event": "push",
+      "name": "SkillOS Public Site Command Center Refresh",
+      "path": ".github/workflows/skillos-public-site-refresh.yml",
+      "proof_page_url": null,
+      "proof_title": null,
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727329073",
+      "status": "in_progress",
+      "updated_at": "2026-05-31T23:16:14Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
+    },
+    {
+      "conclusion": null,
       "event": "push",
       "name": "Deploy SkillOS website with autonomous safe public copy",
       "path": ".github/workflows/pages.yml",
       "proof_page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
       "proof_title": "Deploy SkillOS website with autonomous safe public copy",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727223800",
-      "status": "completed",
-      "updated_at": "2026-05-31T23:12:10Z",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727329076",
+      "status": "in_progress",
+      "updated_at": "2026-05-31T23:16:13Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"
     },
     {
-      "conclusion": "success",
+      "conclusion": null,
       "event": "push",
       "name": "SkillOS tests",
       "path": ".github/workflows/tests.yml",
       "proof_page_url": "https://montrealai.github.io/skillos/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
       "proof_title": "SkillOS tests",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727223826",
-      "status": "completed",
-      "updated_at": "2026-05-31T23:11:28Z",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727329065",
+      "status": "in_progress",
+      "updated_at": "2026-05-31T23:16:13Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"
     },
     {
@@ -5730,18 +5736,6 @@
       "status": "completed",
       "updated_at": "2026-05-31T20:05:39Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-cross-domain-capability-transfer-atlas-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Skill Provenance Ledger Proof",
-      "path": ".github/workflows/autonomous-rsi-skill-provenance-ledger-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-skill-provenance-ledger-github-skill-provenance-ledger-skill-provenance-ledger-skill-provenance.html",
-      "proof_title": "Autonomous RSI Skill Provenance Ledger Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26722511412",
-      "status": "completed",
-      "updated_at": "2026-05-31T19:40:36Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-skill-provenance-ledger-proof.yml"
     },
     {
       "conclusion": null,
@@ -5910,6 +5904,18 @@
       "status": "not_run",
       "updated_at": "",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml"
+    },
+    {
+      "conclusion": null,
+      "event": null,
+      "name": "Autonomous RSI Skill Provenance Ledger Proof",
+      "path": ".github/workflows/autonomous-rsi-skill-provenance-ledger-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-skill-provenance-ledger-github-skill-provenance-ledger-skill-provenance-ledger-skill-provenance.html",
+      "proof_title": "Autonomous RSI Skill Provenance Ledger Proof",
+      "run_url": null,
+      "status": "not_run",
+      "updated_at": "",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-skill-provenance-ledger-proof.yml"
     },
     {
       "conclusion": null,

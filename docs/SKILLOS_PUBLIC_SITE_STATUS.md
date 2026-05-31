@@ -1,6 +1,6 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T19:38:18Z`
+Generated: `2026-05-31T19:38:26Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
@@ -8,9 +8,9 @@ Site: https://montrealai.github.io/skillos/
 
 - Proof entries: 55
 - Workflows tracked: 36
-- Recent successful runs: 35
+- Recent successful runs: 36
 - Recent failed runs: 5
-- Recent running runs: 4
+- Recent running runs: 3
 
 ## Flagship
 

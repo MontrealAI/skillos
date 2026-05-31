@@ -1,6 +1,29 @@
 {
   "proofs": [
     {
+      "badge": "badges/rsi-open-replication-mesh-proof.svg",
+      "generated_at_utc": "2026-05-31T21:33:53+00:00",
+      "headline": "Open replication for SkillOS RSI: signed replica receipts, Merkle-style receipt tree, locked holdout replay, and GitHub-runnable verification.",
+      "href": "rsi-open-replication-mesh-proof.html",
+      "id": "rsi-open-replication-mesh-proof",
+      "json": "data/rsi-open-replication-mesh-proof.json",
+      "metrics": {
+        "benchmark_gain_vs_best_control_trillions": 21.78253,
+        "benchmark_value_captured_trillions": 115.51641,
+        "causal_uplift": 0.181667485,
+        "causal_uplift_p05": 0.178291558,
+        "consensus": 1.0,
+        "negative_control_max_abs_gain": 0.002877198,
+        "replication": 0.995601625,
+        "risk": 0.0,
+        "value_capture": 0.96368269
+      },
+      "report": "docs/rsi-open-replication-mesh-proof.md",
+      "status": "passing",
+      "summary": "SkillOS turns proof from a one-off demonstration into a replicated public instrument: independent replica cells replay the same locked cases, emit signed receipts, converge on the same result, and feed validation-gated releases back into future coordination.",
+      "title": "Autonomous RSI Open Replication Mesh Proof"
+    },
+    {
       "badge": "badges/rsi-objective-integrity-firewall-proof.svg",
       "generated_at_utc": "2026-05-31T20:54:02Z",
       "headline": "Objective-integrity firewall proof: SkillOS resists proxy gaming, synthetic receipts, reward tampering, benchmark memorization, and Goodhart failures.",
@@ -116,5 +139,5 @@
   "schema_version": 2,
   "site_base_url": "https://montrealai.github.io/skillos/",
   "source": "SkillOS autonomous GitHub Actions proof publisher",
-  "updated_at_utc": "2026-05-31T20:54:02Z"
+  "updated_at_utc": "2026-05-31T21:33:53+00:00"
 }

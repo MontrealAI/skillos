@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "ab51ed0d9a36b09106b79b5201c34fa72bb9cb38",
+  "commit": "1bee727219bde60f7ca652707e08e2867475351f",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,7 +1174,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-05-31T18:32:02Z",
+  "generated_at_utc": "2026-05-31T18:32:35Z",
   "proof_count": 51,
   "proofs": [
     {
@@ -5252,8 +5252,9 @@
     },
     {
       "key": "deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with",
-      "latest_run_status": "in_progress",
-      "latest_run_updated_at": "2026-05-31T18:31:35Z",
+      "latest_run_conclusion": "success",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-05-31T18:32:20Z",
       "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26720912450",
       "page_path": "site/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
       "page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
@@ -5350,9 +5351,9 @@
   ],
   "proved_or_passed_proof_count": 21,
   "recent_failed_runs": 2,
-  "recent_running_runs": 3,
+  "recent_running_runs": 2,
   "recent_successful_runs": 37,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26720921968",
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26720938893",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
@@ -5365,9 +5366,9 @@
       "path": ".github/workflows/skillos-public-site-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26720921968",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26720938893",
       "status": "in_progress",
-      "updated_at": "2026-05-31T18:31:55Z",
+      "updated_at": "2026-05-31T18:32:27Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {
@@ -5377,10 +5378,22 @@
       "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26720921966",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26720938883",
       "status": "pending",
-      "updated_at": "2026-05-31T18:31:39Z",
+      "updated_at": "2026-05-31T18:32:23Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "name": "Deploy SkillOS website with autonomous safe public copy",
+      "path": ".github/workflows/pages.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
+      "proof_title": "Deploy SkillOS website with autonomous safe public copy",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26720912450",
+      "status": "completed",
+      "updated_at": "2026-05-31T18:32:20Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"
     },
     {
       "conclusion": "success",
@@ -5393,18 +5406,6 @@
       "status": "completed",
       "updated_at": "2026-05-31T18:31:37Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"
-    },
-    {
-      "conclusion": null,
-      "event": "push",
-      "name": "Deploy SkillOS website with autonomous safe public copy",
-      "path": ".github/workflows/pages.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
-      "proof_title": "Deploy SkillOS website with autonomous safe public copy",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26720912450",
-      "status": "in_progress",
-      "updated_at": "2026-05-31T18:31:35Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"
     },
     {
       "conclusion": "success",

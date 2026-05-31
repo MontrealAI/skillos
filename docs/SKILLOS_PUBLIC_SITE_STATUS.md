@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T20:53:31Z`
+Generated: `2026-05-31T20:53:51Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 59
-- Workflows tracked: 37
-- Recent successful runs: 44
+- Proof entries: 60
+- Workflows tracked: 38
+- Recent successful runs: 45
 - Recent failed runs: 1
-- Recent running runs: 4
+- Recent running runs: 3
 
 ## Flagship
 
@@ -175,6 +175,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI Governance Frontier Proof**
   - Page: https://montrealai.github.io/skillos/proof-governance-frontier-github-governance-frontier-governance-frontier-governance-frontier.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-governance-frontier-proof.yml
+- **Autonomous RSI Objective Integrity Firewall Proof**
+  - Page: https://montrealai.github.io/skillos/proof-objective-integrity-firewall-github-objective-integrity-firewall-objective-integrity-firewall-objective-integrity.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-objective-integrity-firewall-proof.yml
 - **Autonomous RSI Proof Forge Meta-Coordination Proof**
   - Page: https://montrealai.github.io/skillos/proof-forge-meta-coordination-github-forge-meta-coordination-forge-meta-coordination-forge-meta.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml

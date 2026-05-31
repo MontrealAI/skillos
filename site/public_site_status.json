@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "9a52f5d1109282790f9d6b7edc248026c98e278f",
+  "commit": "6b68446de1933d3500b97f2cbd9d2fb38de94df5",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,8 +1174,8 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-05-31T20:53:31Z",
-  "proof_count": 59,
+  "generated_at_utc": "2026-05-31T20:53:51Z",
+  "proof_count": 60,
   "proofs": [
     {
       "agent_count": 512,
@@ -5376,6 +5376,19 @@
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-governance-frontier-proof.yml"
     },
     {
+      "key": "objective-integrity-firewall-github-objective-integrity-firewall-objective-integrity-firewall-objective-integrity",
+      "page_path": "site/proof-objective-integrity-firewall-github-objective-integrity-firewall-objective-integrity-firewall-objective-integrity.html",
+      "page_url": "https://montrealai.github.io/skillos/proof-objective-integrity-firewall-github-objective-integrity-firewall-objective-integrity-firewall-objective-integrity.html",
+      "source": "workflow",
+      "sources": [
+        "workflow"
+      ],
+      "title": "Autonomous RSI Objective Integrity Firewall Proof",
+      "workflow_name": "Autonomous RSI Objective Integrity Firewall Proof",
+      "workflow_path": ".github/workflows/autonomous-rsi-objective-integrity-firewall-proof.yml",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-objective-integrity-firewall-proof.yml"
+    },
+    {
       "key": "forge-meta-coordination-github-forge-meta-coordination-forge-meta-coordination-forge-meta",
       "latest_run_conclusion": "success",
       "latest_run_status": "completed",
@@ -5440,8 +5453,9 @@
     },
     {
       "key": "skillos-tests-github-tests-skillos-tests-skillos-tests",
-      "latest_run_status": "in_progress",
-      "latest_run_updated_at": "2026-05-31T20:53:22Z",
+      "latest_run_conclusion": "success",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-05-31T20:53:39Z",
       "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724181307",
       "page_path": "site/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
       "page_url": "https://montrealai.github.io/skillos/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
@@ -5520,37 +5534,49 @@
   ],
   "proved_or_passed_proof_count": 24,
   "recent_failed_runs": 1,
-  "recent_running_runs": 4,
-  "recent_successful_runs": 44,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724181304",
+  "recent_running_runs": 3,
+  "recent_successful_runs": 45,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724189247",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
-  "workflow_count": 37,
+  "workflow_count": 38,
   "workflows": [
     {
       "conclusion": null,
-      "event": "push",
+      "event": "workflow_run",
       "name": "SkillOS Public Proof Command Center Refresh",
       "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724181306",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724189237",
       "status": "in_progress",
-      "updated_at": "2026-05-31T20:53:24Z",
+      "updated_at": "2026-05-31T20:53:46Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
       "conclusion": null,
-      "event": "push",
+      "event": "workflow_run",
       "name": "SkillOS Public Site Command Center Refresh",
       "path": ".github/workflows/skillos-public-site-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724181304",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724189247",
       "status": "in_progress",
-      "updated_at": "2026-05-31T20:53:23Z",
+      "updated_at": "2026-05-31T20:53:46Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "name": "SkillOS tests",
+      "path": ".github/workflows/tests.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
+      "proof_title": "SkillOS tests",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724181307",
+      "status": "completed",
+      "updated_at": "2026-05-31T20:53:39Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"
     },
     {
       "conclusion": null,
@@ -5563,18 +5589,6 @@
       "status": "in_progress",
       "updated_at": "2026-05-31T20:53:22Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"
-    },
-    {
-      "conclusion": null,
-      "event": "push",
-      "name": "SkillOS tests",
-      "path": ".github/workflows/tests.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
-      "proof_title": "SkillOS tests",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26724181307",
-      "status": "in_progress",
-      "updated_at": "2026-05-31T20:53:22Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"
     },
     {
       "conclusion": "success",
@@ -5779,6 +5793,18 @@
       "status": "not_run",
       "updated_at": "",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-governance-frontier-proof.yml"
+    },
+    {
+      "conclusion": null,
+      "event": null,
+      "name": "Autonomous RSI Objective Integrity Firewall Proof",
+      "path": ".github/workflows/autonomous-rsi-objective-integrity-firewall-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-objective-integrity-firewall-github-objective-integrity-firewall-objective-integrity-firewall-objective-integrity.html",
+      "proof_title": "Autonomous RSI Objective Integrity Firewall Proof",
+      "run_url": null,
+      "status": "not_run",
+      "updated_at": "",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-objective-integrity-firewall-proof.yml"
     },
     {
       "conclusion": null,

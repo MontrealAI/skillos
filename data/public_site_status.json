@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "246b2bd449490a8d83094d35acb1f3a039329985",
+  "commit": "f46835683e20dfc964979383a9581a22351b7cf2",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,8 +1174,8 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-05-31T23:24:44Z",
-  "proof_count": 69,
+  "generated_at_utc": "2026-05-31T23:28:41Z",
+  "proof_count": 70,
   "proofs": [
     {
       "agent_count": 512,
@@ -5110,6 +5110,108 @@
     },
     {
       "benchmark_public": {
+        "candidate_actions_per_case": 11,
+        "data_boundary": "synthetic/redacted-style public benchmark; no private customer data",
+        "domains": [
+          "enterprise_ops",
+          "regulated_services",
+          "ai_first_blockchain",
+          "governance",
+          "capability_marketplace",
+          "proof_forge",
+          "cross_domain_transfer",
+          "security",
+          "compute_capital",
+          "customer_trust",
+          "data_flywheel",
+          "deployment_drift"
+        ],
+        "features": [
+          "demand_value",
+          "decomposition_fit",
+          "agent_match_quality",
+          "execution_margin",
+          "trace_quality",
+          "provenance_integrity",
+          "verifier_density",
+          "objective_fidelity",
+          "transfer_relevance",
+          "replication_consensus",
+          "drift_stability",
+          "release_quality",
+          "routing_lift",
+          "feedback_density",
+          "risk_exposure",
+          "compliance_load",
+          "security_exposure",
+          "cost_pressure",
+          "ambiguity",
+          "legacy_friction",
+          "rollback_option",
+          "data_reuse"
+        ],
+        "lifecycle_stages": [
+          "demand_capture",
+          "task_decomposition",
+          "agent_market_clearing",
+          "execution_trace_capture",
+          "provenance_ledger",
+          "verifier_courts",
+          "objective_firewall",
+          "transfer_evaluation",
+          "open_replication",
+          "continual_drift_guard",
+          "release_selection",
+          "routing_upgrade"
+        ],
+        "locked_holdout_count": 2048,
+        "name": "Full-Stack Capability Lifecycle benchmark",
+        "train_count": 1024,
+        "validation_count": 768
+      },
+      "coordination_style": "full-stack lifecycle RSI with specialist-agent market clearing, provenance ledger, verifier courts, objective firewall, transfer tests, open replication, continual drift guards, release gates, and routing upgrades",
+      "generated_at": "2026-05-31T23:27:46Z",
+      "json_path": "data/rsi-full-stack-capability-lifecycle-proof.json",
+      "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/rsi-full-stack-capability-lifecycle-proof.json",
+      "key": "full-stack-capability-lifecycle-full-stack-capability-lifecycle-full-stack-capability-lifecycle",
+      "metrics": {
+        "benchmark_value_capture_rate_percent": 96.2057,
+        "catastrophic_domain_failure_rate_percent": 0.0,
+        "continual_stability_score": 54.2584,
+        "domain_spread_percent": 2.4236,
+        "frontier_correct_rate_percent": 59.2773,
+        "invalid_action_rate_percent": 0.0,
+        "lifecycle_integrity_score": 54.848,
+        "maximum_domain_value_capture_percent": 97.1535,
+        "minimum_domain_value_capture_percent": 94.7299,
+        "objective_integrity_score": 56.6587,
+        "provenance_integrity_score": 60.6452,
+        "proxy_gaming_rate_percent": 0.0,
+        "replication_consensus_score": 53.8425,
+        "risk_breach_rate_percent": 0.0,
+        "top3_rate_percent": 89.3555,
+        "transfer_generalization_score": 53.6963,
+        "unverifiable_release_rate_percent": 0.0,
+        "value_capture_rate_percent": 96.2057
+      },
+      "page_path": "site/proof-full-stack-capability-lifecycle-full-stack-capability-lifecycle-full-stack-capability-lifecycle.html",
+      "page_url": "https://montrealai.github.io/skillos/proof-full-stack-capability-lifecycle-full-stack-capability-lifecycle-full-stack-capability-lifecycle.html",
+      "proof_type": "Autonomous RSI Full-Stack Capability Lifecycle Proof",
+      "proved": true,
+      "rsi_releases": 13,
+      "safe_interpretation": "A deterministic benchmark proof that validation-gated RSI improves the full SkillOS capability lifecycle across decomposition, provenance, verification, objective integrity, transfer, replication, drift, release, and routing. Not live revenue, customer results, financial advice, legal advice, policy advice, token advice, or achieved superintelligence.",
+      "source": "json",
+      "sources": [
+        "json"
+      ],
+      "status": "PASSED_AUTONOMOUS_RSI_FULL_STACK_CAPABILITY_LIFECYCLE_PROOF",
+      "title": "Autonomous RSI Full-Stack Capability Lifecycle Proof",
+      "train_count": 1024,
+      "validation_count": 768,
+      "workflow": "Autonomous RSI Full-Stack Capability Lifecycle Proof"
+    },
+    {
+      "benchmark_public": {
         "candidate_skill_releases_per_case": 15,
         "data_boundary": "synthetic/redacted-style public benchmark; no private customer data",
         "features": [
@@ -5348,6 +5450,20 @@
       "title": "Enterprise Superorganization"
     },
     {
+      "doc_path": "docs/rsi-full-stack-capability-lifecycle-proof.md",
+      "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/rsi-full-stack-capability-lifecycle-proof.md",
+      "key": "full-stack-capability-lifecycle",
+      "page_path": "site/rsi-full-stack-capability-lifecycle-proof.html",
+      "page_url": "https://montrealai.github.io/skillos/rsi-full-stack-capability-lifecycle-proof.html",
+      "source": "doc",
+      "sources": [
+        "page",
+        "doc",
+        "doc"
+      ],
+      "title": "Full Stack Capability Lifecycle"
+    },
+    {
       "doc_path": "docs/rsi-governance-frontier-proof.md",
       "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/rsi-governance-frontier-proof.md",
       "generated_at": "2026-05-31T17:13:05Z",
@@ -5450,10 +5566,6 @@
     },
     {
       "key": "causal-attribution-engine-github-causal-attribution-engine-causal-attribution-engine-causal-attribution",
-      "latest_run_conclusion": "success",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-31T20:31:58Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26723660654",
       "page_path": "site/proof-causal-attribution-engine-github-causal-attribution-engine-causal-attribution-engine-causal-attribution.html",
       "page_url": "https://montrealai.github.io/skillos/proof-causal-attribution-engine-github-causal-attribution-engine-causal-attribution-engine-causal-attribution.html",
       "source": "workflow",
@@ -5549,6 +5661,10 @@
     },
     {
       "key": "full-stack-capability-lifecycle-github-full-stack-capability-lifecycle-full-stack-capability",
+      "latest_run_conclusion": "success",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-05-31T23:27:50Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727564806",
       "page_path": "site/proof-full-stack-capability-lifecycle-github-full-stack-capability-lifecycle-full-stack-capability.html",
       "page_url": "https://montrealai.github.io/skillos/proof-full-stack-capability-lifecycle-github-full-stack-capability-lifecycle-full-stack-capability.html",
       "source": "workflow",
@@ -5635,8 +5751,8 @@
     },
     {
       "key": "deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with",
-      "latest_run_status": "pending",
-      "latest_run_updated_at": "2026-05-31T23:23:41Z",
+      "latest_run_status": "in_progress",
+      "latest_run_updated_at": "2026-05-31T23:28:29Z",
       "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727485287",
       "page_path": "site/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
       "page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
@@ -5692,18 +5808,6 @@
       "title": "Readiness"
     },
     {
-      "doc_path": "docs/AUTONOMOUS_RSI_FULL_STACK_CAPABILITY_LIFECYCLE_PROOF.md",
-      "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_FULL_STACK_CAPABILITY_LIFECYCLE_PROOF.md",
-      "key": "full-stack-capability-lifecycle-full-stack-capability-lifecycle",
-      "page_path": "site/proof-full-stack-capability-lifecycle-full-stack-capability-lifecycle.html",
-      "page_url": "https://montrealai.github.io/skillos/proof-full-stack-capability-lifecycle-full-stack-capability-lifecycle.html",
-      "source": "doc",
-      "sources": [
-        "doc"
-      ],
-      "title": "Rsi Full Stack Capability Lifecycle"
-    },
-    {
       "doc_path": "docs/wealth_accumulation_proof.md",
       "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/wealth_accumulation_proof.md",
       "key": "wealth-accumulation-wealth-accumulation",
@@ -5743,39 +5847,63 @@
       }
     }
   ],
-  "proved_or_passed_proof_count": 27,
+  "proved_or_passed_proof_count": 28,
   "recent_failed_runs": 0,
-  "recent_running_runs": 2,
-  "recent_successful_runs": 44,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727482477",
+  "recent_running_runs": 3,
+  "recent_successful_runs": 43,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727586744",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
   "workflow_count": 42,
   "workflows": [
     {
-      "conclusion": "success",
+      "conclusion": null,
       "event": "workflow_run",
       "name": "SkillOS Public Site Command Center Refresh",
       "path": ".github/workflows/skillos-public-site-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727494789",
-      "status": "completed",
-      "updated_at": "2026-05-31T23:24:39Z",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727586756",
+      "status": "in_progress",
+      "updated_at": "2026-05-31T23:28:34Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {
-      "conclusion": "success",
+      "conclusion": null,
       "event": "workflow_run",
       "name": "SkillOS Public Proof Command Center Refresh",
       "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727494790",
-      "status": "completed",
-      "updated_at": "2026-05-31T23:24:32Z",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727586744",
+      "status": "in_progress",
+      "updated_at": "2026-05-31T23:28:32Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
+    },
+    {
+      "conclusion": null,
+      "event": "push",
+      "name": "Deploy SkillOS website with autonomous safe public copy",
+      "path": ".github/workflows/pages.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
+      "proof_title": "Deploy SkillOS website with autonomous safe public copy",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727485287",
+      "status": "in_progress",
+      "updated_at": "2026-05-31T23:28:29Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Full-Stack Capability Lifecycle Proof",
+      "path": ".github/workflows/autonomous-rsi-full-stack-capability-lifecycle-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-full-stack-capability-lifecycle-github-full-stack-capability-lifecycle-full-stack-capability.html",
+      "proof_title": "Autonomous RSI Full-Stack Capability Lifecycle Proof",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727564806",
+      "status": "completed",
+      "updated_at": "2026-05-31T23:27:50Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-full-stack-capability-lifecycle-proof.yml"
     },
     {
       "conclusion": "success",
@@ -5788,18 +5916,6 @@
       "status": "completed",
       "updated_at": "2026-05-31T23:24:04Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"
-    },
-    {
-      "conclusion": null,
-      "event": "push",
-      "name": "Deploy SkillOS website with autonomous safe public copy",
-      "path": ".github/workflows/pages.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
-      "proof_title": "Deploy SkillOS website with autonomous safe public copy",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26727485287",
-      "status": "pending",
-      "updated_at": "2026-05-31T23:23:41Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"
     },
     {
       "conclusion": "success",
@@ -5848,18 +5964,6 @@
       "status": "completed",
       "updated_at": "2026-05-31T20:54:09Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-objective-integrity-firewall-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "push",
-      "name": "Autonomous RSI Causal Attribution Engine Proof",
-      "path": ".github/workflows/autonomous-rsi-causal-attribution-engine-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-causal-attribution-engine-github-causal-attribution-engine-causal-attribution-engine-causal-attribution.html",
-      "proof_title": "Autonomous RSI Causal Attribution Engine Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26723660654",
-      "status": "completed",
-      "updated_at": "2026-05-31T20:31:58Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-causal-attribution-engine-proof.yml"
     },
     {
       "conclusion": null,
@@ -5948,6 +6052,18 @@
     {
       "conclusion": null,
       "event": null,
+      "name": "Autonomous RSI Causal Attribution Engine Proof",
+      "path": ".github/workflows/autonomous-rsi-causal-attribution-engine-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-causal-attribution-engine-github-causal-attribution-engine-causal-attribution-engine-causal-attribution.html",
+      "proof_title": "Autonomous RSI Causal Attribution Engine Proof",
+      "run_url": null,
+      "status": "not_run",
+      "updated_at": "",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-causal-attribution-engine-proof.yml"
+    },
+    {
+      "conclusion": null,
+      "event": null,
       "name": "Autonomous RSI Corporate Capability Frontier Proof",
       "path": ".github/workflows/autonomous-rsi-corporate-capability-frontier-proof.yml",
       "proof_page_url": "https://montrealai.github.io/skillos/proof-corporate-capability-frontier-github-corporate-capability-frontier-corporate-capability-frontier-corporate-capability.html",
@@ -6016,18 +6132,6 @@
       "status": "not_run",
       "updated_at": "",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-superorganization-proof.yml"
-    },
-    {
-      "conclusion": null,
-      "event": null,
-      "name": "Autonomous RSI Full-Stack Capability Lifecycle Proof",
-      "path": ".github/workflows/autonomous-rsi-full-stack-capability-lifecycle-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-full-stack-capability-lifecycle-github-full-stack-capability-lifecycle-full-stack-capability.html",
-      "proof_title": "Autonomous RSI Full-Stack Capability Lifecycle Proof",
-      "run_url": null,
-      "status": "not_run",
-      "updated_at": "",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-full-stack-capability-lifecycle-proof.yml"
     },
     {
       "conclusion": null,

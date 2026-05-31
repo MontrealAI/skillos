@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T13:38:08Z`
+Generated: `2026-05-31T13:41:00Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 36
+- Proof entries: 37
 - Workflows tracked: 27
-- Recent successful runs: 32
-- Recent failed runs: 2
-- Recent running runs: 2
+- Recent successful runs: 34
+- Recent failed runs: 1
+- Recent running runs: 1
 
 ## Flagship
 
@@ -49,6 +49,9 @@ Site: https://montrealai.github.io/skillos/
   - Page: https://montrealai.github.io/skillos/rsi-enterprise-eureka-factory-proof.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-eureka-factory-proof.yml
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_enterprise_eureka_factory_proof.json
+- **Autonomous RSI Corporate Capability Frontier Proof**
+  - Page: https://montrealai.github.io/skillos/proof-corporate-capability-frontier-corporate-capability-frontier-corporate-capability-frontier-corporate-capability-frontier.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_corporate_capability_frontier_proof.json
 - **Autonomous RSI Enterprise Capability Foundry Proof**
   - Page: https://montrealai.github.io/skillos/proof-enterprise-capability-foundry-enterprise-capability-foundry-enterprise-capability-foundry-enterprise-capability-foundry.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_enterprise_capability_foundry_proof.json
@@ -94,6 +97,8 @@ Site: https://montrealai.github.io/skillos/
 - **procurement invoice reconciliation and payment-risk triage**
   - Page: https://montrealai.github.io/skillos/proof-enterprise-ops-procurement-invoice-reconciliation-and-payment-risk-triage-fully-enterprise-operations.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/enterprise_ops_market_proof.json
+- **Corporate Capability Frontier**
+  - Page: https://montrealai.github.io/skillos/rsi-corporate-capability-frontier-proof.html
 - **Cyberdefense**
   - Page: https://montrealai.github.io/skillos/rsi-cyberdefense-proof.html
 - **Enterprise Capability Foundry**
@@ -125,8 +130,6 @@ Site: https://montrealai.github.io/skillos/
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml
 - **Readiness**
   - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
-- **Rsi Corporate Capability Frontier**
-  - Page: https://montrealai.github.io/skillos/proof-corporate-capability-frontier-corporate-capability-frontier.html
 - **Wealth Accumulation**
   - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
 - **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**

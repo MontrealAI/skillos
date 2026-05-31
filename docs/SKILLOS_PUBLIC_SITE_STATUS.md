@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T18:59:46Z`
+Generated: `2026-05-31T19:00:10Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 52
-- Workflows tracked: 34
-- Recent successful runs: 36
+- Proof entries: 53
+- Workflows tracked: 35
+- Recent successful runs: 32
 - Recent failed runs: 2
-- Recent running runs: 4
+- Recent running runs: 5
 
 ## Flagship
 
@@ -149,6 +149,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI Corporate Strategy Frontier Proof**
   - Page: https://montrealai.github.io/skillos/proof-corporate-strategy-frontier-github-corporate-strategy-frontier-corporate-strategy-frontier-corporate-strategy.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-corporate-strategy-frontier-proof.yml
+- **Autonomous RSI Cross-Domain Capability Transfer Atlas Proof**
+  - Page: https://montrealai.github.io/skillos/proof-cross-domain-capability-transfer-atlas-github-cross-domain-capability-transfer-atlas-cross.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-cross-domain-capability-transfer-atlas-proof.yml
 - **Autonomous RSI Enterprise Capability Foundry Proof**
   - Page: https://montrealai.github.io/skillos/proof-enterprise-capability-foundry-github-enterprise-capability-foundry-enterprise-capability-foundry-enterprise-capability.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-capability-foundry-proof.yml

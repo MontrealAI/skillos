@@ -2,7 +2,7 @@
   "proofs": [
     {
       "badge": "badges/rsi-cross-domain-capability-transfer-atlas-proof.svg",
-      "generated_at_utc": "2026-05-31T20:05:32.978475+00:00",
+      "generated_at_utc": "2026-05-31T20:07:05.648700+00:00",
       "headline": "Capability transfer becomes a measurable, reusable, verified SkillOS asset across unseen domains.",
       "href": "rsi-cross-domain-capability-transfer-atlas-proof.html",
       "id": "rsi-cross-domain-capability-transfer-atlas-proof",
@@ -73,5 +73,5 @@
   "schema_version": 2,
   "site_base_url": "https://montrealai.github.io/skillos/",
   "source": "SkillOS autonomous GitHub Actions proof publisher",
-  "updated_at_utc": "2026-05-31T20:05:32.978475+00:00"
+  "updated_at_utc": "2026-05-31T20:07:05.648700+00:00"
 }

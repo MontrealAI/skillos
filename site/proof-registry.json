@@ -1,6 +1,23 @@
 {
   "proofs": [
     {
+      "badge": "badges/rsi-continual-capability-frontier-proof.svg",
+      "catastrophic_forgetting_rate_percent": 0.0,
+      "doc": "docs/rsi-continual-capability-frontier-proof.md",
+      "generated_at_utc": "2026-05-31T23:19:17Z",
+      "href": "rsi-continual-capability-frontier-proof.html",
+      "id": "rsi-continual-capability-frontier-proof",
+      "json": "data/rsi-continual-capability-frontier-proof.json",
+      "minimum_regime_value_capture_percent": 95.0635,
+      "proved": true,
+      "rsi_release_count": 10,
+      "specialist_roles": 5767168,
+      "status": "PASSED_AUTONOMOUS_RSI_CONTINUAL_CAPABILITY_FRONTIER_PROOF",
+      "title": "Autonomous RSI Continual Capability Frontier Proof",
+      "value_capture_rate_percent": 96.652,
+      "virtual_specialist_agents": 184549376
+    },
+    {
       "badge": "badges/rsi-adversarial-benchmark-foundry-proof.svg",
       "generated_at_utc": "2026-05-31T23:11:20+00:00",
       "headline": "SkillOS generates its own harder, leak-resistant adversarial benchmarks and proves causal lift on locked hidden holdouts.",
@@ -161,5 +178,5 @@
   "schema_version": 2,
   "site_base_url": "https://montrealai.github.io/skillos/",
   "source": "SkillOS autonomous GitHub Actions proof publisher",
-  "updated_at_utc": "2026-05-31T23:11:20+00:00"
+  "updated_at_utc": "2026-05-31T23:19:17Z"
 }

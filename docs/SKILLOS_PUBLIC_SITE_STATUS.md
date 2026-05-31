@@ -1,6 +1,6 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T21:33:40Z`
+Generated: `2026-05-31T21:34:00Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
@@ -8,9 +8,9 @@ Site: https://montrealai.github.io/skillos/
 
 - Proof entries: 62
 - Workflows tracked: 39
-- Recent successful runs: 37
+- Recent successful runs: 38
 - Recent failed runs: 1
-- Recent running runs: 5
+- Recent running runs: 6
 
 ## Flagship
 
@@ -108,6 +108,9 @@ Site: https://montrealai.github.io/skillos/
 - **Objective Integrity Firewall**
   - Page: https://montrealai.github.io/skillos/rsi-objective-integrity-firewall-proof.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-objective-integrity-firewall-proof.json
+- **Open Replication Mesh**
+  - Page: https://montrealai.github.io/skillos/rsi-open-replication-mesh-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-open-replication-mesh-proof.json
 - **Autonomous RSI Cyber Defense Market Proof**
   - Page: https://montrealai.github.io/skillos/proof-cyber-defense.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cyberdefense-proof.yml
@@ -201,8 +204,6 @@ Site: https://montrealai.github.io/skillos/
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml
 - **Readiness**
   - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
-- **Rsi Open Replication Mesh**
-  - Page: https://montrealai.github.io/skillos/proof-open-replication-mesh-open-replication-mesh.html
 - **Wealth Accumulation**
   - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
 - **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**

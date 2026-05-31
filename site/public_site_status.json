@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "62040ce9d8a84bf0068bc69558c6a1871c4a565a",
+  "commit": "703c0833636e941751602c03fffd60b5b0fc0fdf",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1178,8 +1178,8 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-05-31T17:00:50Z",
-  "proof_count": 45,
+  "generated_at_utc": "2026-05-31T17:12:07Z",
+  "proof_count": 46,
   "proofs": [
     {
       "agent_count": 512,
@@ -4729,10 +4729,6 @@
       "json_path": "data/rsi_unit_economics_market_proof.json",
       "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/rsi_unit_economics_market_proof.json",
       "key": "unit-economics",
-      "latest_run_conclusion": "success",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-31T13:58:49Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26714613781",
       "metrics": {
         "false_intervention_rate_percent": 0.0,
         "fully_correct_percent": 100.0,
@@ -5050,6 +5046,28 @@
       "title": "Enterprise Superorganization"
     },
     {
+      "doc_path": "docs/rsi-governance-frontier-proof.md",
+      "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/rsi-governance-frontier-proof.md",
+      "generated_at": "2026-05-31T16:37:55Z",
+      "json_path": "data/rsi-governance-frontier-proof.json",
+      "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/rsi-governance-frontier-proof.json",
+      "key": "governance-frontier",
+      "page_path": "site/rsi-governance-frontier-proof.html",
+      "page_url": "https://montrealai.github.io/skillos/rsi-governance-frontier-proof.html",
+      "proved": false,
+      "rsi_releases": 0,
+      "source": "doc",
+      "sources": [
+        "json",
+        "page",
+        "doc",
+        "doc"
+      ],
+      "status": "PENDING",
+      "title": "Governance Frontier",
+      "workflow": "Governance Frontier"
+    },
+    {
       "key": "enterprise-ops-github-enterprise-ops-enterprise-ops-enterprise-ops",
       "page_path": "site/proof-enterprise-ops-github-enterprise-ops-enterprise-ops-enterprise-ops.html",
       "page_url": "https://montrealai.github.io/skillos/proof-enterprise-ops-github-enterprise-ops-enterprise-ops-enterprise-ops.html",
@@ -5066,8 +5084,8 @@
       "key": "ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai",
       "latest_run_conclusion": "success",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-31T16:03:05Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26717469593",
+      "latest_run_updated_at": "2026-05-31T17:04:42Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26718905825",
       "page_path": "site/proof-ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai.html",
       "page_url": "https://montrealai.github.io/skillos/proof-ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai.html",
       "source": "workflow",
@@ -5171,10 +5189,9 @@
     },
     {
       "key": "deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with",
-      "latest_run_conclusion": "success",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-31T17:00:19Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26718803114",
+      "latest_run_status": "in_progress",
+      "latest_run_updated_at": "2026-05-31T17:11:59Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26719079586",
       "page_path": "site/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
       "page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
       "source": "workflow",
@@ -5201,10 +5218,9 @@
     },
     {
       "key": "skillos-tests-github-tests-skillos-tests-skillos-tests",
-      "latest_run_conclusion": "success",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-05-31T16:59:59Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26718803108",
+      "latest_run_status": "in_progress",
+      "latest_run_updated_at": "2026-05-31T17:11:59Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26719079598",
       "page_path": "site/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
       "page_url": "https://montrealai.github.io/skillos/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
       "source": "workflow",
@@ -5270,9 +5286,9 @@
   ],
   "proved_or_passed_proof_count": 20,
   "recent_failed_runs": 0,
-  "recent_running_runs": 2,
+  "recent_running_runs": 4,
   "recent_successful_runs": 40,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26718818163",
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26719079600",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
@@ -5280,39 +5296,63 @@
   "workflows": [
     {
       "conclusion": null,
-      "event": "workflow_run",
+      "event": "push",
       "name": "SkillOS Public Proof Command Center Refresh",
       "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26718818163",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26719079605",
       "status": "in_progress",
-      "updated_at": "2026-05-31T17:00:44Z",
+      "updated_at": "2026-05-31T17:12:00Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
       "conclusion": null,
-      "event": "workflow_run",
+      "event": "push",
       "name": "SkillOS Public Site Command Center Refresh",
       "path": ".github/workflows/skillos-public-site-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26718818173",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26719079600",
       "status": "in_progress",
-      "updated_at": "2026-05-31T17:00:38Z",
+      "updated_at": "2026-05-31T17:12:00Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {
-      "conclusion": "success",
+      "conclusion": null,
       "event": "push",
       "name": "Deploy SkillOS website with autonomous safe public copy",
       "path": ".github/workflows/pages.yml",
       "proof_page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
       "proof_title": "Deploy SkillOS website with autonomous safe public copy",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26718803114",
-      "status": "completed",
-      "updated_at": "2026-05-31T17:00:19Z",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26719079586",
+      "status": "in_progress",
+      "updated_at": "2026-05-31T17:11:59Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"
+    },
+    {
+      "conclusion": null,
+      "event": "push",
+      "name": "SkillOS tests",
+      "path": ".github/workflows/tests.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
+      "proof_title": "SkillOS tests",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26719079598",
+      "status": "in_progress",
+      "updated_at": "2026-05-31T17:11:59Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "schedule",
+      "name": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
+      "path": ".github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai.html",
+      "proof_title": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26718905825",
+      "status": "completed",
+      "updated_at": "2026-05-31T17:04:42Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml"
     },
     {
       "conclusion": "success",
@@ -5325,30 +5365,6 @@
       "status": "completed",
       "updated_at": "2026-05-31T17:00:10Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-ai-first-governance-capital-engine-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "push",
-      "name": "SkillOS tests",
-      "path": ".github/workflows/tests.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
-      "proof_title": "SkillOS tests",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26718803108",
-      "status": "completed",
-      "updated_at": "2026-05-31T16:59:59Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
-      "path": ".github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai.html",
-      "proof_title": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26717469593",
-      "status": "completed",
-      "updated_at": "2026-05-31T16:03:05Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml"
     },
     {
       "conclusion": "success",
@@ -5445,18 +5461,6 @@
       "status": "completed",
       "updated_at": "2026-05-31T14:11:14Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-marketplace-flywheel-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "schedule",
-      "name": "Autonomous RSI Unit Economics Profit Engine Market Proof",
-      "path": ".github/workflows/rsi-unit-economics-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/rsi-unit-economics-proof.html",
-      "proof_title": "Autonomous RSI Unit Economics Profit Engine Market Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26714613781",
-      "status": "completed",
-      "updated_at": "2026-05-31T13:58:49Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-unit-economics-proof.yml"
     },
     {
       "conclusion": null,
@@ -5613,6 +5617,18 @@
       "status": "not_run",
       "updated_at": "",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-silicon-verification-proof.yml"
+    },
+    {
+      "conclusion": null,
+      "event": null,
+      "name": "Autonomous RSI Unit Economics Profit Engine Market Proof",
+      "path": ".github/workflows/rsi-unit-economics-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/rsi-unit-economics-proof.html",
+      "proof_title": "Autonomous RSI Unit Economics Profit Engine Market Proof",
+      "run_url": null,
+      "status": "not_run",
+      "updated_at": "",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-unit-economics-proof.yml"
     },
     {
       "conclusion": null,

@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T23:10:45Z`
+Generated: `2026-05-31T23:11:08Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 63
-- Workflows tracked: 39
-- Recent successful runs: 41
+- Proof entries: 64
+- Workflows tracked: 40
+- Recent successful runs: 42
 - Recent failed runs: 2
-- Recent running runs: 4
+- Recent running runs: 3
 
 ## Flagship
 
@@ -58,6 +58,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI Enterprise Superorganization Proof**
   - Page: https://montrealai.github.io/skillos/proof-enterprise-superorganization-enterprise-superorganization-enterprise-superorganization-enterprise-superorganization-enterprise-superorganization.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_enterprise_superorganization_proof.json
+- **Autonomous RSI Adversarial Benchmark Foundry Proof**
+  - Page: https://montrealai.github.io/skillos/proof-adversarial-foundry-github-adversarial-foundry-adversarial-foundry-adversarial-foundry.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-adversarial-benchmark-foundry-proof.yml
 - **Rsi Adversarial Foundry**
   - Page: https://montrealai.github.io/skillos/proof-adversarial-foundry-adversarial-foundry.html
 - **Autonomous RSI CloudOps Market Proof**

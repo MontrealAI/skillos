@@ -1,42 +1,51 @@
-{
-  "proofs": [
-    {
-      "badge_url": "badges/rsi-blockchain-protocol-capital-frontier-proof.svg",
-      "generated_at": "2026-05-31T15:10:46+00:00",
-      "json_url": "data/rsi-blockchain-protocol-capital-frontier-proof.json",
-      "metrics": {
-        "benchmark_value_at_stake": "$21.12T",
-        "benchmark_value_captured": "$20.83T",
-        "frontier_correct_percent": "92.656%",
-        "risk_breach_rate_percent": "0.469%",
-        "unsafe_action_rate_percent": "0.000%",
-        "value_capture_percent": "98.618%",
-        "value_over_no_rsi_protocol_org": "$2.06T",
-        "value_over_single_protocol_strategist": "$984.85B",
-        "value_over_static_dao_committee": "$1.87T",
-        "value_over_uncoordinated_agent_swarm": "$1.77T"
-      },
-      "page_url": "rsi-blockchain-protocol-capital-frontier-proof.html",
-      "report_url": "docs/rsi-blockchain-protocol-capital-frontier-proof.md",
-      "slug": "rsi-blockchain-protocol-capital-frontier-proof",
-      "status": "passing",
-      "summary": "Autonomous blockchain protocol RSI proof with locked holdout evaluation and multi-agent coordination.",
-      "title": "Autonomous RSI Blockchain Protocol Capital Frontier Proof"
+[
+  {
+    "agents": 262144,
+    "holdout_value_capture": 0.9990703123366625,
+    "href": "./rsi-ai-first-blockchain-capital-machine-proof.html",
+    "roles": 8192,
+    "slug": "rsi-ai-first-blockchain-capital-machine-proof",
+    "status": "passing",
+    "title": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
+    "updated_at": "2026-05-31T15:49:56Z",
+    "workflow": ".github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml"
+  },
+  {
+    "badge_url": "badges/rsi-blockchain-protocol-capital-frontier-proof.svg",
+    "generated_at": "2026-05-31T15:10:46+00:00",
+    "json_url": "data/rsi-blockchain-protocol-capital-frontier-proof.json",
+    "metrics": {
+      "benchmark_value_at_stake": "$21.12T",
+      "benchmark_value_captured": "$20.83T",
+      "frontier_correct_percent": "92.656%",
+      "risk_breach_rate_percent": "0.469%",
+      "unsafe_action_rate_percent": "0.000%",
+      "value_capture_percent": "98.618%",
+      "value_over_no_rsi_protocol_org": "$2.06T",
+      "value_over_single_protocol_strategist": "$984.85B",
+      "value_over_static_dao_committee": "$1.87T",
+      "value_over_uncoordinated_agent_swarm": "$1.77T"
     },
-    {
-      "agents": 65536,
-      "badge": "badges/rsi-corporate-strategy-frontier-proof.svg",
-      "frontier_equivalent_percent": 95.898438,
-      "json": "data/rsi-corporate-strategy-frontier-proof.json",
-      "page": "rsi-corporate-strategy-frontier-proof.html",
-      "protocol_fingerprint": "a6840b7f8504048a9f991ff4",
-      "report": "docs/rsi-corporate-strategy-frontier-proof.md",
-      "risk_breach_rate_percent": 0.0,
-      "slug": "rsi-corporate-strategy-frontier-proof",
-      "specialist_roles": 2048,
-      "status": "passing",
-      "title": "Autonomous RSI Corporate Strategy Frontier Proof",
-      "value_capture_percent": 98.558142
-    }
-  ]
-}
+    "page_url": "rsi-blockchain-protocol-capital-frontier-proof.html",
+    "report_url": "docs/rsi-blockchain-protocol-capital-frontier-proof.md",
+    "slug": "rsi-blockchain-protocol-capital-frontier-proof",
+    "status": "passing",
+    "summary": "Autonomous blockchain protocol RSI proof with locked holdout evaluation and multi-agent coordination.",
+    "title": "Autonomous RSI Blockchain Protocol Capital Frontier Proof"
+  },
+  {
+    "agents": 65536,
+    "badge": "badges/rsi-corporate-strategy-frontier-proof.svg",
+    "frontier_equivalent_percent": 95.898438,
+    "json": "data/rsi-corporate-strategy-frontier-proof.json",
+    "page": "rsi-corporate-strategy-frontier-proof.html",
+    "protocol_fingerprint": "a6840b7f8504048a9f991ff4",
+    "report": "docs/rsi-corporate-strategy-frontier-proof.md",
+    "risk_breach_rate_percent": 0.0,
+    "slug": "rsi-corporate-strategy-frontier-proof",
+    "specialist_roles": 2048,
+    "status": "passing",
+    "title": "Autonomous RSI Corporate Strategy Frontier Proof",
+    "value_capture_percent": 98.558142
+  }
+]

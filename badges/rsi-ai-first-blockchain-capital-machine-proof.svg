@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="470" height="32" viewBox="0 0 470 32" role="img" aria-label="AI-FIRST BLOCKCHAIN RSI PROOF: PASSED">
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#061726"/><stop offset="1" stop-color="#303068"/></linearGradient></defs>
+<rect width="470" height="32" rx="16" fill="url(#g)"/>
+<rect x="300" y="4" width="166" height="24" rx="12" fill="#72ffb6" opacity=".18"/>
+<text x="18" y="21" fill="#8df8ff" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="800" letter-spacing="1.5">AI-FIRST BLOCKCHAIN RSI PROOF</text>
+<text x="322" y="21" fill="#72ffb6" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="900">PASSED</text>
+</svg>

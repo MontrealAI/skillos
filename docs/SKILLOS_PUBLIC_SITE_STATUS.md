@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T17:41:08Z`
+Generated: `2026-05-31T17:46:13Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 47
+- Proof entries: 48
 - Workflows tracked: 32
-- Recent successful runs: 44
+- Recent successful runs: 42
 - Recent failed runs: 1
-- Recent running runs: 1
+- Recent running runs: 4
 
 ## Flagship
 
@@ -109,6 +109,9 @@ Site: https://montrealai.github.io/skillos/
 - **Ai First Governance Capital Engine**
   - Page: https://montrealai.github.io/skillos/rsi-ai-first-governance-capital-engine-proof.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-ai-first-governance-capital-engine-proof.json
+- **Capability Liquidity Engine**
+  - Page: https://montrealai.github.io/skillos/rsi-capability-liquidity-engine-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-capability-liquidity-engine-proof.json
 - **Corporate Capability Frontier**
   - Page: https://montrealai.github.io/skillos/rsi-corporate-capability-frontier-proof.html
 - **Cyberdefense**

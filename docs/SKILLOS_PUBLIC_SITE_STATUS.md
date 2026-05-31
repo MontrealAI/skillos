@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T19:11:11Z`
+Generated: `2026-05-31T19:37:16Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 53
+- Proof entries: 54
 - Workflows tracked: 35
 - Recent successful runs: 35
-- Recent failed runs: 5
-- Recent running runs: 2
+- Recent failed runs: 4
+- Recent running runs: 4
 
 ## Flagship
 
@@ -177,6 +177,8 @@ Site: https://montrealai.github.io/skillos/
   - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
 - **Rsi Cross Domain Capability Transfer Atlas**
   - Page: https://montrealai.github.io/skillos/proof-cross-domain-capability-transfer-atlas-cross-domain-capability-transfer-atlas.html
+- **Rsi Skill Provenance Ledger**
+  - Page: https://montrealai.github.io/skillos/proof-skill-provenance-ledger-skill-provenance-ledger.html
 - **Wealth Accumulation**
   - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
 - **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**

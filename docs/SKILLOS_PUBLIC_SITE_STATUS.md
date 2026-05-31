@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T16:59:41Z`
+Generated: `2026-05-31T17:00:03Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 44
-- Workflows tracked: 30
-- Recent successful runs: 41
+- Proof entries: 45
+- Workflows tracked: 31
+- Recent successful runs: 36
 - Recent failed runs: 0
-- Recent running runs: 3
+- Recent running runs: 6
 
 ## Flagship
 
@@ -106,6 +106,9 @@ Site: https://montrealai.github.io/skillos/
 - **Ai First Blockchain Capital Machine**
   - Page: https://montrealai.github.io/skillos/rsi-ai-first-blockchain-capital-machine-proof.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-ai-first-blockchain-capital-machine-proof.json
+- **Ai First Governance Capital Engine**
+  - Page: https://montrealai.github.io/skillos/rsi-ai-first-governance-capital-engine-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-ai-first-governance-capital-engine-proof.json
 - **Corporate Capability Frontier**
   - Page: https://montrealai.github.io/skillos/rsi-corporate-capability-frontier-proof.html
 - **Cyberdefense**
@@ -122,6 +125,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI AI-First Blockchain Capital Machine Proof**
   - Page: https://montrealai.github.io/skillos/proof-ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml
+- **Autonomous RSI AI-First Governance Capital Engine Proof**
+  - Page: https://montrealai.github.io/skillos/proof-ai-first-governance-capital-engine-github-ai-first-governance-capital-engine-ai.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-ai-first-governance-capital-engine-proof.yml
 - **Autonomous RSI Blockchain Protocol Capital Frontier Proof**
   - Page: https://montrealai.github.io/skillos/proof-blockchain-protocol-capital-frontier-github-blockchain-protocol-capital-frontier-blockchain-protocol-capital.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-blockchain-protocol-capital-frontier-proof.yml
@@ -148,8 +154,6 @@ Site: https://montrealai.github.io/skillos/
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml
 - **Readiness**
   - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
-- **Rsi Ai First Governance Capital Engine**
-  - Page: https://montrealai.github.io/skillos/proof-ai-first-governance-capital-engine-ai-first-governance-capital-engine.html
 - **Wealth Accumulation**
   - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
 - **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**

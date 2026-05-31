@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "25cf65da090614ac9eb76e0b91f1d06d1b7b0423",
+  "commit": "1ef86c657478935a2b326483536d8ab505776771",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,7 +1174,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-05-31T19:00:29Z",
+  "generated_at_utc": "2026-05-31T19:00:48Z",
   "proof_count": 53,
   "proofs": [
     {
@@ -5375,26 +5375,14 @@
   ],
   "proved_or_passed_proof_count": 21,
   "recent_failed_runs": 3,
-  "recent_running_runs": 5,
-  "recent_successful_runs": 33,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26721589697",
+  "recent_running_runs": 3,
+  "recent_successful_runs": 35,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26721600997",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
   "workflow_count": 35,
   "workflows": [
-    {
-      "conclusion": null,
-      "event": "workflow_run",
-      "name": "SkillOS Public Proof Command Center Refresh",
-      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
-      "proof_page_url": null,
-      "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26721600997",
-      "status": "queued",
-      "updated_at": "2026-05-31T19:00:26Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
-    },
     {
       "conclusion": null,
       "event": "workflow_run",
@@ -5404,8 +5392,20 @@
       "proof_title": null,
       "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26721601007",
       "status": "queued",
-      "updated_at": "2026-05-31T19:00:26Z",
+      "updated_at": "2026-05-31T19:00:44Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
+    },
+    {
+      "conclusion": null,
+      "event": "workflow_run",
+      "name": "SkillOS Public Proof Command Center Refresh",
+      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
+      "proof_page_url": null,
+      "proof_title": null,
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26721600997",
+      "status": "in_progress",
+      "updated_at": "2026-05-31T19:00:40Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
       "conclusion": "failure",

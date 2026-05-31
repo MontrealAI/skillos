@@ -1,5 +1,20 @@
 [
   {
+    "badge": "badges/rsi-skill-provenance-ledger-proof.svg",
+    "docs": "docs/rsi-skill-provenance-ledger-proof.md",
+    "frontier_correct_percent": 95.8496,
+    "generated_at_utc": "2026-05-31T19:40:27Z",
+    "json": "data/rsi-skill-provenance-ledger-proof.json",
+    "page": "rsi-skill-provenance-ledger-proof.html",
+    "provenance_integrity_percent": 100.0,
+    "slug": "rsi-skill-provenance-ledger-proof",
+    "specialist_roles": 524288,
+    "status": "PASSED_AUTONOMOUS_RSI_SKILL_PROVENANCE_LEDGER_PROOF",
+    "title": "Autonomous RSI Skill Provenance Ledger Proof",
+    "value_capture_percent": 99.9463,
+    "virtual_specialist_agents": 16777216
+  },
+  {
     "coordination_quality": 0.9321799829498979,
     "fingerprint": "ef32cdf645705a4a0eab40c326cc21046083d25a88c63137244d5a386ae1dcf0",
     "generated_at_utc": "2026-05-31T18:31:25+00:00",

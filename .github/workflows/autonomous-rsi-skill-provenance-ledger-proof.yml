@@ -1,0 +1,138 @@
+name: Autonomous RSI Skill Provenance Ledger Proof
+
+on:
+  workflow_dispatch:
+    inputs:
+      seed:
+        description: "Deterministic benchmark seed"
+        required: false
+        default: "20260530"
+      publish_to_repo:
+        description: "Commit generated proof outputs back to repository"
+        type: boolean
+        required: false
+        default: true
+      deploy_pages:
+        description: "Deploy GitHub Pages after generation"
+        type: boolean
+        required: false
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/autonomous-rsi-skill-provenance-ledger-proof.yml"
+      - "scripts/run_rsi_skill_provenance_ledger_proof.py"
+      - "scripts/verify_rsi_skill_provenance_ledger_proof.py"
+      - "scripts/render_rsi_skill_provenance_ledger_site.py"
+      - "scripts/publish_rsi_skill_provenance_ledger_to_hub.py"
+      - "scripts/verify_rsi_skill_provenance_ledger_site.py"
+      - "docs/AUTONOMOUS_RSI_SKILL_PROVENANCE_LEDGER_PROOF.md"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: rsi-skill-provenance-ledger-proof
+  cancel-in-progress: false
+
+jobs:
+  proof:
+    name: Run autonomous SkillOS RSI skill provenance proof
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: https://montrealai.github.io/skillos/
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run autonomous RSI Skill Provenance Ledger proof
+        run: |
+          python scripts/run_rsi_skill_provenance_ledger_proof.py \
+            --seed "${{ inputs.seed || '20260530' }}" \
+            --summary "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify proof receipt and pre-registered gates
+        run: python scripts/verify_rsi_skill_provenance_ledger_proof.py
+
+      - name: Render specific public proof webpage and badge
+        run: python scripts/render_rsi_skill_provenance_ledger_site.py
+
+      - name: Publish proof to SkillOS command center
+        run: python scripts/publish_rsi_skill_provenance_ledger_to_hub.py
+
+      - name: Verify SkillOS command-center integration
+        run: python scripts/verify_rsi_skill_provenance_ledger_site.py
+
+      - name: Refresh visual proof command center if installed
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if [ -f scripts/refresh_public_site.py ]; then
+            python scripts/refresh_public_site.py
+          else
+            echo "Public command-center generator not installed; standalone proof page was generated."
+          fi
+
+      - name: Upload proof artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: rsi-skill-provenance-ledger-proof
+          path: |
+            data/rsi-skill-provenance-ledger-proof.json
+            docs/rsi-skill-provenance-ledger-proof.md
+            docs/AUTONOMOUS_RSI_SKILL_PROVENANCE_LEDGER_PROOF.md
+            badges/rsi-skill-provenance-ledger-proof.svg
+            site/rsi-skill-provenance-ledger-proof.html
+            site/data/rsi-skill-provenance-ledger-proof.json
+            site/docs/rsi-skill-provenance-ledger-proof.md
+            site/badges/rsi-skill-provenance-ledger-proof.svg
+            site/index.html
+            site/proof-registry.json
+            site/sitemap.xml
+            site/robots.txt
+          if-no-files-found: ignore
+
+      - name: Commit generated outputs
+        if: ${{ github.event_name == 'push' || inputs.publish_to_repo }}
+        continue-on-error: true
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/rsi-skill-provenance-ledger-proof.json docs/rsi-skill-provenance-ledger-proof.md badges/rsi-skill-provenance-ledger-proof.svg site/rsi-skill-provenance-ledger-proof.html site/data/rsi-skill-provenance-ledger-proof.json site/docs/rsi-skill-provenance-ledger-proof.md site/badges/rsi-skill-provenance-ledger-proof.svg site/index.html site/proof-registry.json site/sitemap.xml site/robots.txt || true
+            git commit -m "Run autonomous RSI skill provenance ledger proof"
+            git push
+          else
+            echo "No generated changes to commit."
+          fi
+
+      - name: Build Pages artifact
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        run: |
+          mkdir -p dist
+          cp -R site/* dist/
+
+      - name: Configure GitHub Pages
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy GitHub Pages
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
+        uses: actions/deploy-pages@v4

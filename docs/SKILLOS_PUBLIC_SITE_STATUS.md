@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-05-31T19:37:16Z`
+Generated: `2026-05-31T19:37:57Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 54
-- Workflows tracked: 35
-- Recent successful runs: 35
-- Recent failed runs: 4
-- Recent running runs: 4
+- Proof entries: 55
+- Workflows tracked: 36
+- Recent successful runs: 34
+- Recent failed runs: 5
+- Recent running runs: 5
 
 ## Flagship
 
@@ -164,6 +164,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI Proof Forge Meta-Coordination Proof**
   - Page: https://montrealai.github.io/skillos/proof-forge-meta-coordination-github-forge-meta-coordination-forge-meta-coordination-forge-meta.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml
+- **Autonomous RSI Skill Provenance Ledger Proof**
+  - Page: https://montrealai.github.io/skillos/proof-skill-provenance-ledger-github-skill-provenance-ledger-skill-provenance-ledger-skill-provenance.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-skill-provenance-ledger-proof.yml
 - **Deploy SkillOS website with autonomous safe public copy**
   - Page: https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml

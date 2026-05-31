@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "29af550e7f7d612dae197221244e407586acf50f",
+  "commit": "62040ce9d8a84bf0068bc69558c6a1871c4a565a",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1178,7 +1178,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-05-31T17:00:29Z",
+  "generated_at_utc": "2026-05-31T17:00:43Z",
   "proof_count": 45,
   "proofs": [
     {
@@ -5271,8 +5271,8 @@
   "proved_or_passed_proof_count": 20,
   "recent_failed_runs": 0,
   "recent_running_runs": 2,
-  "recent_successful_runs": 38,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26718808513",
+  "recent_successful_runs": 40,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26718818173",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
@@ -5286,8 +5286,8 @@
       "proof_page_url": null,
       "proof_title": null,
       "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26718818163",
-      "status": "pending",
-      "updated_at": "2026-05-31T17:00:22Z",
+      "status": "queued",
+      "updated_at": "2026-05-31T17:00:40Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
@@ -5298,8 +5298,8 @@
       "proof_page_url": null,
       "proof_title": null,
       "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26718818173",
-      "status": "pending",
-      "updated_at": "2026-05-31T17:00:22Z",
+      "status": "in_progress",
+      "updated_at": "2026-05-31T17:00:38Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {

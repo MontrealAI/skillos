@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "fb144c0d04c79be387557e44ae8851d4379ec5e0",
+  "commit": "deca1377bf69145372bfab63ef2e8650ff17bfe3",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,8 +1174,8 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-06-01T01:42:22Z",
-  "proof_count": 78,
+  "generated_at_utc": "2026-06-01T01:49:58Z",
+  "proof_count": 79,
   "proofs": [
     {
       "agent_count": 512,
@@ -5023,6 +5023,113 @@
     },
     {
       "benchmark_public": {
+        "candidate_actions_per_case": 12,
+        "data_boundary": "synthetic/redacted-style public benchmark; no private customer data",
+        "domains": [
+          "enterprise_ops",
+          "developer_tools",
+          "regulated_work",
+          "security_review",
+          "proof_generation",
+          "data_engineering",
+          "governance",
+          "blockchain_protocols",
+          "capital_strategy",
+          "customer_success",
+          "product_strategy",
+          "compute_allocation",
+          "energy_scheduling",
+          "quality_assurance",
+          "compliance_evidence",
+          "market_research",
+          "workflow_compression",
+          "agent_marketplace",
+          "knowledge_ops",
+          "platform_growth",
+          "provenance_audit",
+          "cross_domain_transfer",
+          "reliability_engineering",
+          "capability_routing",
+          "partner_distribution",
+          "risk_courts",
+          "skill_exchange",
+          "ecosystem_design",
+          "liquidity_design",
+          "settlement_engineering",
+          "pricing_strategy",
+          "capacity_planning"
+        ],
+        "features": [
+          "demand_value",
+          "urgency",
+          "skill_depth",
+          "supply_capacity",
+          "price_fit",
+          "quality_confidence",
+          "provenance_strength",
+          "verification_density",
+          "routing_precision",
+          "liquidity_depth",
+          "execution_margin",
+          "agent_reputation",
+          "risk_exposure",
+          "compliance_load",
+          "security_exposure",
+          "rollback_option",
+          "switching_cost",
+          "feedback_density",
+          "cross_domain_fit",
+          "compute_cost",
+          "energy_cost",
+          "settlement_trust",
+          "reinvestment_yield",
+          "subsidy_pressure"
+        ],
+        "locked_holdout_count": 2048,
+        "name": "Capability Economy Clearinghouse benchmark",
+        "train_count": 1536,
+        "validation_count": 1024
+      },
+      "coordination_style": "capability-economy clearinghouse with specialist-agent market making, verifier courts, price discovery, settlement trust, risk vetoes, and validation-gated RSI releases",
+      "generated_at": "2026-06-01T01:48:41Z",
+      "json_path": "data/rsi-capability-economy-clearinghouse-proof.json",
+      "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/rsi-capability-economy-clearinghouse-proof.json",
+      "key": "capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy-clearinghouse",
+      "metrics": {
+        "benchmark_value_capture_rate_percent": 96.6013,
+        "clearing_liquidity_score": 53.5639,
+        "frontier_correct_rate_percent": 60.0586,
+        "invalid_action_rate_percent": 0.0,
+        "maximum_domain_value_capture_percent": 98.1583,
+        "minimum_domain_value_capture_percent": 93.3161,
+        "price_discovery_score": 54.764,
+        "reinvestment_compounding_score": 53.3541,
+        "risk_breach_rate_percent": 0.0,
+        "settlement_trust_score": 61.1373,
+        "top3_rate_percent": 89.8438,
+        "unauthorized_action_rate_percent": 0.0,
+        "value_capture_rate_percent": 96.6013,
+        "verified_quality_score": 58.2434,
+        "weak_domain_rate_percent": 0.0
+      },
+      "page_path": "site/proof-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy-clearinghouse.html",
+      "page_url": "https://montrealai.github.io/skillos/proof-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy-clearinghouse.html",
+      "proof_type": "Autonomous RSI Capability Economy Clearinghouse Proof",
+      "proved": true,
+      "rsi_releases": 13,
+      "safe_interpretation": "A deterministic benchmark proof that SkillOS can clear a capability economy through verified skills, price discovery, liquidity, settlement trust, and validation-gated RSI. Not live revenue, customer results, financial advice, legal advice, token advice, policy advice, or achieved superintelligence.",
+      "source": "json",
+      "sources": [
+        "json"
+      ],
+      "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_ECONOMY_CLEARINGHOUSE_PROOF",
+      "title": "Autonomous RSI Capability Economy Clearinghouse Proof",
+      "train_count": 1536,
+      "validation_count": 1024,
+      "workflow": "Autonomous RSI Capability Economy Clearinghouse Proof"
+    },
+    {
+      "benchmark_public": {
         "candidate_actions_per_case": 9,
         "data_boundary": "synthetic/redacted-style public benchmark; no private customer data",
         "features": [
@@ -5536,6 +5643,20 @@
       "workflow": "Ai First Governance Capital Engine"
     },
     {
+      "doc_path": "docs/rsi-capability-economy-clearinghouse-proof.md",
+      "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/rsi-capability-economy-clearinghouse-proof.md",
+      "key": "capability-economy-clearinghouse",
+      "page_path": "site/rsi-capability-economy-clearinghouse-proof.html",
+      "page_url": "https://montrealai.github.io/skillos/rsi-capability-economy-clearinghouse-proof.html",
+      "source": "doc",
+      "sources": [
+        "page",
+        "doc",
+        "doc"
+      ],
+      "title": "Capability Economy Clearinghouse"
+    },
+    {
       "doc_path": "docs/rsi-capability-liquidity-engine-proof.md",
       "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/rsi-capability-liquidity-engine-proof.md",
       "generated_at": "2026-05-31T17:46:48Z",
@@ -5781,6 +5902,10 @@
     },
     {
       "key": "capability-economy-clearinghouse-github-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy",
+      "latest_run_conclusion": "success",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-06-01T01:48:47Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26730964725",
       "page_path": "site/proof-capability-economy-clearinghouse-github-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy.html",
       "page_url": "https://montrealai.github.io/skillos/proof-capability-economy-clearinghouse-github-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy.html",
       "source": "workflow",
@@ -6076,18 +6201,6 @@
       "title": "Readiness"
     },
     {
-      "doc_path": "docs/AUTONOMOUS_RSI_CAPABILITY_ECONOMY_CLEARINGHOUSE_PROOF.md",
-      "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_CAPABILITY_ECONOMY_CLEARINGHOUSE_PROOF.md",
-      "key": "capability-economy-clearinghouse-capability-economy-clearinghouse",
-      "page_path": "site/proof-capability-economy-clearinghouse-capability-economy-clearinghouse.html",
-      "page_url": "https://montrealai.github.io/skillos/proof-capability-economy-clearinghouse-capability-economy-clearinghouse.html",
-      "source": "doc",
-      "sources": [
-        "doc"
-      ],
-      "title": "Rsi Capability Economy Clearinghouse"
-    },
-    {
       "doc_path": "docs/wealth_accumulation_proof.md",
       "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/wealth_accumulation_proof.md",
       "key": "wealth-accumulation-wealth-accumulation",
@@ -6127,39 +6240,51 @@
       }
     }
   ],
-  "proved_or_passed_proof_count": 30,
+  "proved_or_passed_proof_count": 31,
   "recent_failed_runs": 0,
-  "recent_running_runs": 2,
-  "recent_successful_runs": 44,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26730808054",
+  "recent_running_runs": 1,
+  "recent_successful_runs": 46,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26730765640",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
   "workflow_count": 45,
   "workflows": [
     {
-      "conclusion": null,
-      "event": "workflow_run",
-      "name": "SkillOS Public Site Command Center Refresh",
-      "path": ".github/workflows/skillos-public-site-refresh.yml",
-      "proof_page_url": null,
-      "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26730808051",
-      "status": "in_progress",
-      "updated_at": "2026-06-01T01:42:16Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
+      "conclusion": "success",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Capability Economy Clearinghouse Proof",
+      "path": ".github/workflows/autonomous-rsi-capability-economy-clearinghouse-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-capability-economy-clearinghouse-github-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy.html",
+      "proof_title": "Autonomous RSI Capability Economy Clearinghouse Proof",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26730964725",
+      "status": "completed",
+      "updated_at": "2026-06-01T01:48:47Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-economy-clearinghouse-proof.yml"
     },
     {
-      "conclusion": null,
+      "conclusion": "success",
       "event": "workflow_run",
       "name": "SkillOS Public Proof Command Center Refresh",
       "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
       "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26730808054",
-      "status": "in_progress",
-      "updated_at": "2026-06-01T01:42:15Z",
+      "status": "completed",
+      "updated_at": "2026-06-01T01:42:34Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "workflow_run",
+      "name": "SkillOS Public Site Command Center Refresh",
+      "path": ".github/workflows/skillos-public-site-refresh.yml",
+      "proof_page_url": null,
+      "proof_title": null,
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26730808051",
+      "status": "completed",
+      "updated_at": "2026-06-01T01:42:34Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {
       "conclusion": "success",
@@ -6316,18 +6441,6 @@
       "status": "not_run",
       "updated_at": "",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-blockchain-protocol-capital-frontier-proof.yml"
-    },
-    {
-      "conclusion": null,
-      "event": null,
-      "name": "Autonomous RSI Capability Economy Clearinghouse Proof",
-      "path": ".github/workflows/autonomous-rsi-capability-economy-clearinghouse-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-capability-economy-clearinghouse-github-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy.html",
-      "proof_title": "Autonomous RSI Capability Economy Clearinghouse Proof",
-      "run_url": null,
-      "status": "not_run",
-      "updated_at": "",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-economy-clearinghouse-proof.yml"
     },
     {
       "conclusion": null,

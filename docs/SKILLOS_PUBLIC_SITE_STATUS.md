@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-06-01T01:42:22Z`
+Generated: `2026-06-01T01:49:58Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 78
+- Proof entries: 79
 - Workflows tracked: 45
-- Recent successful runs: 44
+- Recent successful runs: 46
 - Recent failed runs: 0
-- Recent running runs: 2
+- Recent running runs: 1
 
 ## Flagship
 
@@ -120,6 +120,9 @@ Site: https://montrealai.github.io/skillos/
   - Page: https://montrealai.github.io/skillos/proof-cyber-defense.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cyberdefense-proof.yml
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_cyberdefense_market_proof.json
+- **Autonomous RSI Capability Economy Clearinghouse Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy-clearinghouse.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-capability-economy-clearinghouse-proof.json
 - **Autonomous RSI Continual Capability Frontier Proof**
   - Page: https://montrealai.github.io/skillos/proof-continual-capability-frontier-continual-capability-frontier-continual-capability-frontier-continual-capability-frontier.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-continual-capability-frontier-proof.json
@@ -144,6 +147,8 @@ Site: https://montrealai.github.io/skillos/
 - **Ai First Governance Capital Engine**
   - Page: https://montrealai.github.io/skillos/rsi-ai-first-governance-capital-engine-proof.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-ai-first-governance-capital-engine-proof.json
+- **Capability Economy Clearinghouse**
+  - Page: https://montrealai.github.io/skillos/rsi-capability-economy-clearinghouse-proof.html
 - **Capability Liquidity Engine**
   - Page: https://montrealai.github.io/skillos/rsi-capability-liquidity-engine-proof.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-capability-liquidity-engine-proof.json
@@ -244,8 +249,6 @@ Site: https://montrealai.github.io/skillos/
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml
 - **Readiness**
   - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
-- **Rsi Capability Economy Clearinghouse**
-  - Page: https://montrealai.github.io/skillos/proof-capability-economy-clearinghouse-capability-economy-clearinghouse.html
 - **Wealth Accumulation**
   - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
 - **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**

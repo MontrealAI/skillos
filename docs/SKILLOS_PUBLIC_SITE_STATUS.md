@@ -1,15 +1,15 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-06-01T03:37:04Z`
+Generated: `2026-06-01T03:39:15Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 84
+- Proof entries: 85
 - Workflows tracked: 47
-- Recent successful runs: 46
-- Recent failed runs: 1
+- Recent successful runs: 49
+- Recent failed runs: 0
 - Recent running runs: 1
 
 ## Flagship
@@ -123,6 +123,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI Capability Economy Clearinghouse Proof**
   - Page: https://montrealai.github.io/skillos/proof-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy-clearinghouse.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-capability-economy-clearinghouse-proof.json
+- **Autonomous RSI Capability SLA Reliability Mesh Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capability-sla-reliability-mesh-capability-sla-reliability-mesh-capability-sla-reliability-mesh.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-capability-sla-reliability-mesh-proof.json
 - **Autonomous RSI Capability Treasury Flywheel Proof**
   - Page: https://montrealai.github.io/skillos/proof-capability-treasury-flywheel-capability-treasury-flywheel-capability-treasury-flywheel-capability-treasury-flywheel.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-capability-treasury-flywheel-proof.json
@@ -155,6 +158,8 @@ Site: https://montrealai.github.io/skillos/
 - **Capability Liquidity Engine**
   - Page: https://montrealai.github.io/skillos/rsi-capability-liquidity-engine-proof.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-capability-liquidity-engine-proof.json
+- **Capability Sla Reliability Mesh**
+  - Page: https://montrealai.github.io/skillos/rsi-capability-sla-reliability-mesh-proof.html
 - **Capability Treasury Flywheel**
   - Page: https://montrealai.github.io/skillos/rsi-capability-treasury-flywheel-proof.html
 - **Continual Capability Frontier**
@@ -260,8 +265,6 @@ Site: https://montrealai.github.io/skillos/
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml
 - **Readiness**
   - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
-- **Rsi Capability Sla Reliability Mesh**
-  - Page: https://montrealai.github.io/skillos/proof-capability-sla-reliability-mesh-capability-sla-reliability-mesh.html
 - **Wealth Accumulation**
   - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
 - **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**

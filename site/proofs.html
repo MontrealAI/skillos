@@ -1,656 +1,103 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="pragma" content="no-cache"><meta http-equiv="expires" content="0">
-<meta name="description" content="All indexed SkillOS proof pages"><meta name="theme-color" content="#07101f">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="description" content="Proof atlas for SkillOS.">
+<meta name="skillos-marker" content="SKILLOS_FLAGSHIP_GOVERNANCE_TWIN_LAUNCH_V1">
 <title>SkillOS Proof Atlas</title>
 <style>
-:root{
-  --ink:#f8fbff; --muted:#bdcce0; --dim:#7d8ca1; --cyan:#7df8ff; --mint:#7dffb1;
-  --gold:#ffd86f; --rose:#ff8cb2; --panel:rgba(255,255,255,.085); --panel2:rgba(255,255,255,.13);
-  --line:rgba(255,255,255,.18); --night:#07101f; --royal:#1d2558; --deep:#0b1c35;
+:root {
+  --ink:#f7fbff; --muted:#b9c8da; --soft:#dfeaff; --line:rgba(255,255,255,.16);
+  --panel:rgba(255,255,255,.075); --panel2:rgba(255,255,255,.115);
+  --cyan:#84f7ff; --green:#75ffae; --gold:#ffd66b; --rose:#ff8fb8;
+  --nav:#05111d; --deep:#06101c;
 }
-*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:linear-gradient(135deg,#07101f 0%,#0d3041 38%,#232b5d 74%,#090d1a 100%);color:var(--ink);overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 15% 5%,rgba(125,248,255,.22),transparent 30%),radial-gradient(circle at 85% 0%,rgba(255,216,111,.15),transparent 25%),radial-gradient(circle at 70% 75%,rgba(125,255,177,.12),transparent 35%),linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:auto,auto,auto,44px 44px,44px 44px;pointer-events:none;z-index:-3}
-body:after{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at center,transparent 20%,rgba(0,0,0,.26) 100%);pointer-events:none;z-index:-2}
-a{color:var(--cyan);text-decoration:none} a:hover{text-decoration:underline}.topbar{position:sticky;top:0;z-index:20;background:rgba(5,13,25,.83);backdrop-filter:blur(22px);border-bottom:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:18px;align-items:center;padding:13px 24px}.brand{font-weight:1000;letter-spacing:-.03em;color:var(--cyan);text-shadow:0 0 20px rgba(125,248,255,.5)}.nav{display:flex;gap:16px;flex-wrap:wrap}.nav a{font-weight:850;color:#d9e5f2;font-size:14px}.wrap{max-width:1320px;margin:0 auto;padding:54px 22px 96px;position:relative}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;min-height:620px}.kicker{color:var(--cyan);text-transform:uppercase;letter-spacing:.22em;font-weight:1000;font-size:12px}.title{font-size:clamp(58px,8.8vw,132px);line-height:.78;letter-spacing:-.105em;margin:20px 0 22px;text-wrap:balance}.subtitle{max-width:770px;color:#d5e2ef;font-size:clamp(18px,2.05vw,27px);line-height:1.32}.glass{background:linear-gradient(145deg,rgba(255,255,255,.14),rgba(255,255,255,.06));border:1px solid var(--line);border-radius:34px;box-shadow:0 35px 110px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.14);backdrop-filter:blur(18px)}.card{padding:28px}.crown{position:relative;overflow:hidden}.crown:before{content:"";position:absolute;inset:-1px;background:linear-gradient(120deg,transparent,rgba(255,216,111,.28),transparent 55%,rgba(125,248,255,.20));opacity:.9;pointer-events:none}.hero-card{min-height:390px;display:flex;flex-direction:column;justify-content:space-between}.hero-card .giant,.giant{font-size:clamp(32px,4.2vw,62px);letter-spacing:-.06em;line-height:.94;font-weight:1000}.pillrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-flex;align-items:center;gap:9px;border-radius:999px;padding:13px 18px;font-weight:1000;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.1);color:var(--ink)}.btn.primary{background:linear-gradient(90deg,var(--gold),#ffef9a);color:#07101f}.btn.cyan{background:linear-gradient(90deg,var(--cyan),#9bfff4);color:#07101f}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:28px 0}.stat{padding:22px;border-radius:25px;background:rgba(255,255,255,.08);border:1px solid var(--line)}.stat b{display:block;color:var(--mint);font-size:clamp(32px,3.4vw,48px);letter-spacing:-.06em;line-height:.9}.stat span{color:#c9d8e8}.section{margin:72px 0}.section h2{font-size:clamp(38px,5vw,78px);line-height:.84;letter-spacing:-.08em;margin:0 0 20px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid.two{grid-template-columns:repeat(2,1fr)}.proof-card,.skill-card,.workflow-card{padding:23px;border-radius:27px;background:rgba(255,255,255,.08);border:1px solid var(--line);min-height:220px}.badge{display:inline-block;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:1000;letter-spacing:.12em;text-transform:uppercase;background:rgba(125,255,177,.18);color:var(--mint);border:1px solid rgba(125,255,177,.25)}.badge.warn{background:rgba(255,216,111,.14);color:var(--gold);border-color:rgba(255,216,111,.28)}.proof-card h3,.skill-card h3{font-size:24px;letter-spacing:-.04em;line-height:1.02;margin:14px 0 10px}.meta{display:flex;gap:10px;flex-wrap:wrap;color:#aebfd3;font-size:13px;margin-top:14px}.meta span{border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.16);border-radius:999px;padding:6px 9px}.bar{display:grid;grid-template-columns:220px 1fr 95px;gap:14px;align-items:center;margin:12px 0;color:#c5d3e4}.bar i{height:18px;display:block;background:rgba(255,255,255,.09);border-radius:999px;overflow:hidden}.bar i:before{content:"";display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--mint),var(--cyan),var(--gold));border-radius:999px}.table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:24px;background:rgba(255,255,255,.07);border:1px solid var(--line)}.table th,.table td{padding:14px;border-bottom:1px solid rgba(255,255,255,.11);text-align:left;vertical-align:top}.table th{color:#aebfd3;font-size:12px;text-transform:uppercase;letter-spacing:.13em}.notice{border-left:4px solid var(--gold);background:rgba(255,216,111,.08);padding:18px 20px;border-radius:18px;color:#d8e4f0}.constellation{height:420px;position:relative;overflow:hidden}.node{position:absolute;border-radius:999px;background:radial-gradient(circle,#fff,var(--cyan) 28%,rgba(125,248,255,.2) 70%,transparent);box-shadow:0 0 28px rgba(125,248,255,.65)}.line{position:absolute;height:1px;background:linear-gradient(90deg,transparent,rgba(125,248,255,.55),transparent);transform-origin:left center}.timeline{display:grid;gap:14px}.step{display:grid;grid-template-columns:70px 1fr;gap:18px;align-items:start}.step b{width:54px;height:54px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold),var(--cyan));color:#07101f}.foot{color:#95a8bc;margin-top:80px;font-size:14px}.quote{font-size:clamp(28px,4vw,58px);line-height:.98;letter-spacing:-.06em;font-weight:1000}.gold{color:var(--gold)}.mint{color:var(--mint)}.cyan{color:var(--cyan)}code{background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:2px 5px}@media(max-width:900px){.hero,.grid,.grid.two,.stats{grid-template-columns:1fr}.title{font-size:64px}.bar{grid-template-columns:1fr}.topbar{align-items:flex-start;flex-direction:column}.nav{gap:10px}.constellation{height:280px}}
-</style><script>
-(function(){
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.getRegistrations().then(function(regs){ regs.forEach(function(r){ r.unregister(); }); }).catch(function(){});
-  }
-  if (window.caches && caches.keys) {
-    caches.keys().then(function(keys){ keys.forEach(function(k){ caches.delete(k); }); }).catch(function(){});
-  }
-})();
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0; color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 86% -8%, rgba(255,214,107,.25), transparent 24%),
+    radial-gradient(circle at 0 12%, rgba(132,247,255,.26), transparent 30%),
+    radial-gradient(circle at 68% 34%, rgba(117,255,174,.12), transparent 22%),
+    linear-gradient(135deg,#06111e 0%, #10223a 42%, #302d68 100%);
+  min-height:100vh;
+}
+body:before {
+  content:""; position:fixed; inset:0; pointer-events:none; opacity:.65;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size:46px 46px; mask-image:linear-gradient(to bottom, rgba(0,0,0,.95), rgba(0,0,0,.18));
+}
+body:after {
+  content:""; position:fixed; inset:0; pointer-events:none;
+  background:radial-gradient(circle at 50% 0, transparent 0, rgba(0,0,0,.32) 86%);
+}
+.nav {
+  position:sticky; top:0; z-index:20; display:flex; justify-content:space-between; align-items:center;
+  padding:13px 22px; background:rgba(5,17,29,.86); border-bottom:1px solid rgba(255,255,255,.12);
+  backdrop-filter:blur(18px);
+}
+.nav a { color:var(--muted); text-decoration:none; font-weight:850; margin-left:16px; letter-spacing:-.01em; }
+.nav a.on,.nav a:hover { color:var(--cyan); }
+.nav .brand { color:var(--cyan); margin-left:0; font-weight:950; }
+main { position:relative; z-index:1; max-width:1240px; margin:0 auto; padding:58px 22px 90px; }
+a { color:var(--cyan); }
+h1 { font-size:clamp(54px,8.5vw,128px); line-height:.80; letter-spacing:-.09em; margin:14px 0 22px; }
+h2 { font-size:clamp(34px,4.8vw,68px); line-height:.90; letter-spacing:-.06em; margin:42px 0 18px; }
+h3 { font-size:24px; letter-spacing:-.035em; margin:8px 0 10px; }
+p { color:var(--muted); font-size:18px; line-height:1.58; }
+.small { font-size:14px; color:var(--muted); }
+.eyebrow { color:var(--cyan); text-transform:uppercase; letter-spacing:.2em; font-size:12px; font-weight:950; }
+.hero { display:grid; grid-template-columns:1.06fr .94fr; gap:28px; align-items:center; min-height:620px; }
+.hero-card, .card, .metric, .proof-card, .skill-card {
+  background:linear-gradient(180deg,var(--panel2),var(--panel));
+  border:1px solid var(--line); border-radius:30px; box-shadow:0 28px 90px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.08);
+}
+.hero-card { padding:30px; }
+.card { padding:28px; margin:20px 0; }
+.quote { font-size:clamp(28px,4.4vw,58px); line-height:.95; letter-spacing:-.06em; color:var(--ink); margin:14px 0; }
+.buttons { display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+.btn { display:inline-block; padding:13px 18px; border-radius:999px; background:rgba(255,255,255,.10); border:1px solid var(--line); color:var(--ink); text-decoration:none; font-weight:950; }
+.btn.primary { background:linear-gradient(135deg,var(--gold),#fff0a3); color:#06111e; border:0; }
+.btn.cyan { background:linear-gradient(135deg,var(--cyan),#b7fffb); color:#06111e; border:0; }
+.metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:24px 0; }
+.metric { padding:22px; min-height:118px; }
+.metric strong { display:block; color:var(--green); font-size:34px; letter-spacing:-.04em; }
+.metric span { color:var(--muted); }
+.stage-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.stage { padding:20px; border:1px solid var(--line); border-radius:24px; background:rgba(255,255,255,.055); }
+.stage b { color:var(--gold); }
+.flywheel { display:grid; grid-template-columns:repeat(7,1fr); gap:10px; align-items:stretch; }
+.flywheel div { padding:16px 10px; text-align:center; border:1px solid var(--line); border-radius:20px; background:rgba(255,255,255,.07); color:var(--soft); font-weight:900; min-height:86px; display:flex; align-items:center; justify-content:center; }
+.skill-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.skill-card { padding:18px; min-height:272px; position:relative; overflow:hidden; }
+.skill-card:before { content:""; position:absolute; inset:-40% -20% auto auto; width:160px; height:160px; border-radius:50%; background:radial-gradient(circle, rgba(132,247,255,.18), transparent 70%); }
+.badge { display:inline-flex; align-items:center; gap:7px; color:#08131f; background:var(--green); border-radius:999px; padding:7px 11px; font-size:12px; font-weight:950; text-transform:uppercase; letter-spacing:.08em; }
+.layer { display:inline-block; border:1px solid rgba(132,247,255,.36); color:var(--cyan); border-radius:999px; padding:5px 9px; font-size:11px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+dl { margin:12px 0 0; }
+dt { color:var(--green); font-size:11px; font-weight:950; text-transform:uppercase; letter-spacing:.08em; margin-top:9px; }
+dd { margin:3px 0 0; color:var(--muted); font-size:13px; line-height:1.35; }
+table { width:100%; border-collapse:collapse; overflow:hidden; border-radius:22px; background:var(--panel); border:1px solid var(--line); }
+th,td { padding:14px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+th { color:var(--muted); text-transform:uppercase; font-size:12px; letter-spacing:.09em; }
+.constellation { min-height:440px; position:relative; overflow:hidden; border-radius:32px; border:1px solid var(--line); background:radial-gradient(circle at 25% 30%, rgba(132,247,255,.18), transparent 20%), radial-gradient(circle at 72% 70%, rgba(255,214,107,.16), transparent 22%), rgba(255,255,255,.06); }
+.node { position:absolute; border-radius:50%; background:rgba(132,247,255,.78); box-shadow:0 0 24px rgba(132,247,255,.65); }
+.node.g { background:rgba(117,255,174,.76); box-shadow:0 0 24px rgba(117,255,174,.55); }
+.node.y { background:rgba(255,214,107,.82); box-shadow:0 0 24px rgba(255,214,107,.55); }
+.line { position:absolute; height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent); transform-origin:left center; }
+.notice { border-left:4px solid var(--gold); padding:16px 18px; background:rgba(255,214,107,.08); border-radius:16px; color:var(--muted); }
+.footer { margin-top:58px; color:var(--muted); border-top:1px solid var(--line); padding-top:26px; }
+@media(max-width:980px) { .hero,.stage-grid { grid-template-columns:1fr; } .metrics,.skill-grid { grid-template-columns:repeat(2,1fr); } .flywheel { grid-template-columns:1fr; } }
+@media(max-width:680px) { h1 { font-size:54px; } .metrics,.skill-grid { grid-template-columns:1fr; } .nav { display:block; } .nav div { margin-top:10px; } .nav a { margin-left:0; margin-right:12px; } }
+</style>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations().then(function(regs) { for (const r of regs) r.unregister(); }).catch(function() {});
+}
 </script>
-</head><body><!-- SKILLOS_COMMAND_CENTER_V5_1_CANONICAL_ROOT --><div class="topbar"><a class="brand" href="index.html">SkillOS Sovereign Command Center v5.1</a><div class="nav">
-<a href="index.html">Home</a><a href="executive.html">Executive</a><a href="proofs.html">Proofs</a><a href="skills.html">Skills Used</a><a href="multi-agent.html">Multi-Agent</a><a href="receipts.html">Receipts</a><a href="health.html">Health</a><a href="runbook.html">Run</a><a href="https://github.com/MontrealAI/skillos">GitHub</a>
-</div></div><main class="wrap">
-<section class="section"><div class="kicker">Proof atlas</div><h1 class="title">Every proof, indexed.</h1><p class="subtitle">Generated at 2026-06-01T17:34:33Z from JSON receipts, reports, badges, and site pages. Each card opens a proof page; each receipt remains machine-readable.</p></section>
-<section class="grid"><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="fully-autonomous-recursive-self-improvement-corporate-operating-system-market-readiness-proof.html">fully autonomous recursive self-improvement corporate operating system market-readiness proof</a></h3>
-<p>Autonomous reference workflow proof using deterministic synthetic/redacted-style corporate data. Not audited customer ROI or guarantee of future outcomes.</p>
-<div class="meta"><span>11 RSI releases</span><span>100.00%</span></div>
-<div class="pillrow"><a class="btn cyan" href="fully-autonomous-recursive-self-improvement-corporate-operating-system-market-readiness-proof.html">Open proof</a><a class="btn" href="data/rsi_corporate_os_market_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="autonomous-rsi-enterprise-capability-foundry-proof.html">Autonomous RSI Enterprise Capability Foundry Proof</a></h3>
-<p>A reproducible benchmark proof that validation-gated recursive coordination improves enterprise decision quality and benchmark value capture. Not audited customer revenue, live adoption, financial advice, investment advice, achieved superintelligence, or Kardashev Type II achievement.</p>
-<div class="meta"><span>9 RSI releases</span><span>99.98%</span></div>
-<div class="pillrow"><a class="btn cyan" href="autonomous-rsi-enterprise-capability-foundry-proof.html">Open proof</a><a class="btn" href="data/rsi_enterprise_capability_foundry_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="autonomous-rsi-enterprise-superorganization-proof.html">Autonomous RSI Enterprise Superorganization Proof</a></h3>
-<p>A reproducible benchmark proof that validation-gated recursive coordination improves enterprise decision quality and benchmark value capture. Not audited customer revenue, live adoption, financial advice, investment advice, achieved superintelligence, or Kardashev Type II achievement.</p>
-<div class="meta"><span>9 RSI releases</span><span>99.98%</span></div>
-<div class="pillrow"><a class="btn cyan" href="autonomous-rsi-enterprise-superorganization-proof.html">Open proof</a><a class="btn" href="data/rsi_enterprise_superorganization_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="autonomous-rsi-enterprise-eureka-factory-proof.html">Autonomous RSI Enterprise Eureka Factory Proof</a></h3>
-<p>A reproducible benchmark proof that validation-gated recursive coordination improves enterprise decision quality and benchmark value capture. Not audited customer revenue, live adoption, financial advice, investment advice, achieved superintelligence, or Kardashev Type II achievement.</p>
-<div class="meta"><span>10 RSI releases</span><span>99.97%</span></div>
-<div class="pillrow"><a class="btn cyan" href="autonomous-rsi-enterprise-eureka-factory-proof.html">Open proof</a><a class="btn" href="data/rsi_enterprise_eureka_factory_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="autonomous-rsi-skill-provenance-ledger-proof.html">Autonomous RSI Skill Provenance Ledger Proof</a></h3>
-<p>A reproducible benchmark proof that validation-gated recursive skill provenance improves verified skill selection, cross-domain transfer, adversarial skill rejection, and benchmark value capture. Not audited customer revenue, live adoption, financial advice, legal advice, investment advice, token advice, or achieved superintelligence.</p>
-<div class="meta"><span>16,777,216 agents</span><span>524,288 roles</span><span>6 RSI releases</span><span>99.95%</span></div>
-<div class="pillrow"><a class="btn cyan" href="autonomous-rsi-skill-provenance-ledger-proof.html">Open proof</a><a class="btn" href="data/rsi-skill-provenance-ledger-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="corporate-capability-frontier.html">corporate-capability-frontier</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"><span>9 RSI releases</span><span>99.86%</span></div>
-<div class="pillrow"><a class="btn cyan" href="corporate-capability-frontier.html">Open proof</a><a class="btn" href="data/rsi_corporate_capability_frontier_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="autonomous-rsi-capability-assurance-case-graph-proof.html">Autonomous RSI Capability Assurance Case Graph Proof</a></h3>
-<p>A deterministic benchmark proof that SkillOS can compile verified skills into audit-ready assurance cases with claims, evidence, controls, verifier independence, residual-risk disclosure, and validation-gated RSI. Not live revenue, customer results, financial advice, legal advice, audit certification, policy advice, medical advice, token advice, or achieved superintelligence.</p>
-<div class="meta"><span>2,147,483,648 agents</span><span>67,108,864 roles</span><span>12 RSI releases</span><span>18 skills</span><span>97.66%</span></div>
-<div class="pillrow"><a class="btn cyan" href="autonomous-rsi-capability-assurance-case-graph-proof.html">Open proof</a><a class="btn" href="data/rsi-capability-assurance-case-graph-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="autonomous-rsi-capability-governance-twin-proof.html">Autonomous RSI Capability Governance Twin Proof</a></h3>
-<p>A deterministic benchmark proof that SkillOS can test capability routing in a governance digital twin before release, enforcing policy, permissions, verifier coverage, rollback, observability, and validation-gated RSI. Not live revenue, customer results, financial advice, legal advice, audit certification, policy advice, medical advice, token advice, or achieved superintelligence.</p>
-<div class="meta"><span>2,147,483,648 agents</span><span>67,108,864 roles</span><span>12 RSI releases</span><span>18 skills</span><span>97.61%</span></div>
-<div class="pillrow"><a class="btn cyan" href="autonomous-rsi-capability-governance-twin-proof.html">Open proof</a><a class="btn" href="data/rsi-capability-governance-twin-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="autonomous-rsi-capability-treasury-flywheel-proof.html">Autonomous RSI Capability Treasury Flywheel Proof</a></h3>
-<p>A deterministic benchmark proof that SkillOS can reinvest capability-market signals into better skill bounties, verifier capacity, routing upgrades, and compounding capability while rejecting waste and unsafe utilization. Not live revenue, customer results, financial advice, legal advice, token advice, policy advice, or achieved superintelligence.</p>
-<div class="meta"><span>2,147,483,648 agents</span><span>67,108,864 roles</span><span>21 RSI releases</span><span>97.10%</span></div>
-<div class="pillrow"><a class="btn cyan" href="autonomous-rsi-capability-treasury-flywheel-proof.html">Open proof</a><a class="btn" href="data/rsi-capability-treasury-flywheel-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="autonomous-rsi-capability-sla-reliability-mesh-proof.html">Autonomous RSI Capability SLA Reliability Mesh Proof</a></h3>
-<p>A deterministic benchmark proof that SkillOS can transform verified skills into SLA-bound capability services with safe routing, verifier coverage, rollback planning, and validation-gated RSI. Not live revenue, customer results, financial advice, legal advice, token advice, policy advice, medical advice, or achieved superintelligence.</p>
-<div class="meta"><span>2,147,483,648 agents</span><span>67,108,864 roles</span><span>12 RSI releases</span><span>18 skills</span><span>97.00%</span></div>
-<div class="pillrow"><a class="btn cyan" href="autonomous-rsi-capability-sla-reliability-mesh-proof.html">Open proof</a><a class="btn" href="data/rsi-capability-sla-reliability-mesh-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="autonomous-rsi-skill-compounding-moat-proof.html">Autonomous RSI Skill Compounding Moat Proof</a></h3>
-<p>A deterministic benchmark proof that verified skill sharing and validation-gated RSI improve capability routing across a network while avoiding unverified reuse, local memory silos, weak domains, and risk breaches. Not live revenue, customer results, financial advice, legal advice, token advice, policy advice, or achieved superintelligence.</p>
-<div class="meta"><span>268,435,456 agents</span><span>8,388,608 roles</span><span>12 RSI releases</span><span>96.98%</span></div>
-<div class="pillrow"><a class="btn cyan" href="autonomous-rsi-skill-compounding-moat-proof.html">Open proof</a><a class="btn" href="data/rsi-skill-compounding-moat-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="autonomous-rsi-continual-capability-frontier-proof.html">Autonomous RSI Continual Capability Frontier Proof</a></h3>
-<p>A deterministic benchmark proof that validation-gated RSI improves continual capability routing under distribution shift while avoiding catastrophic forgetting and risk breaches. Not live revenue, customer results, financial advice, legal advice, policy advice, token advice, or achieved superintelligence.</p>
-<div class="meta"><span>184,549,376 agents</span><span>5,767,168 roles</span><span>10 RSI releases</span><span>96.65%</span></div>
-<div class="pillrow"><a class="btn cyan" href="autonomous-rsi-continual-capability-frontier-proof.html">Open proof</a><a class="btn" href="data/rsi-continual-capability-frontier-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="autonomous-rsi-capability-economy-clearinghouse-proof.html">Autonomous RSI Capability Economy Clearinghouse Proof</a></h3>
-<p>A deterministic benchmark proof that SkillOS can clear a capability economy through verified skills, price discovery, liquidity, settlement trust, and validation-gated RSI. Not live revenue, customer results, financial advice, legal advice, token advice, policy advice, or achieved superintelligence.</p>
-<div class="meta"><span>1,073,741,824 agents</span><span>33,554,432 roles</span><span>13 RSI releases</span><span>96.60%</span></div>
-<div class="pillrow"><a class="btn cyan" href="autonomous-rsi-capability-economy-clearinghouse-proof.html">Open proof</a><a class="btn" href="data/rsi-capability-economy-clearinghouse-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="autonomous-rsi-full-stack-capability-lifecycle-proof.html">Autonomous RSI Full-Stack Capability Lifecycle Proof</a></h3>
-<p>A deterministic benchmark proof that validation-gated RSI improves the full SkillOS capability lifecycle across decomposition, provenance, verification, objective integrity, transfer, replication, drift, release, and routing. Not live revenue, customer results, financial advice, legal advice, policy advice, token advice, or achieved superintelligence.</p>
-<div class="meta"><span>335,544,320 agents</span><span>10,485,760 roles</span><span>13 RSI releases</span><span>96.21%</span></div>
-<div class="pillrow"><a class="btn cyan" href="autonomous-rsi-full-stack-capability-lifecycle-proof.html">Open proof</a><a class="btn" href="data/rsi-full-stack-capability-lifecycle-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="autonomous-rsi-fork-resistant-capability-network-proof.html">Autonomous RSI Fork-Resistant Capability Network Proof</a></h3>
-<p>A deterministic benchmark proof that SkillOS&#x27; verified skill graph, provenance ledger, and network-wide routing releases can resist surface-level forks and keep compounding under competitive pressure. Not live revenue, customer results, financial advice, legal advice, token advice, policy advice, or achieved superintelligence.</p>
-<div class="meta"><span>536,870,912 agents</span><span>16,777,216 roles</span><span>14 RSI releases</span><span>96.19%</span></div>
-<div class="pillrow"><a class="btn cyan" href="autonomous-rsi-fork-resistant-capability-network-proof.html">Open proof</a><a class="btn" href="data/rsi-fork-resistant-capability-network-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="fully-autonomous-recursive-self-improvement-adversarial-large-scale-multi-agent-capital-to-capability-command.html">fully autonomous recursive self-improvement adversarial large-scale multi-agent capital-to-capability command-center proof</a></h3>
-<p>Autonomous deterministic benchmark using synthetic/redacted-style business data and benchmark assumptions. Not audited customer ROI or guarantee of future outcomes.</p>
-<div class="meta"><span>11 RSI releases</span><span>91.40%</span></div>
-<div class="pillrow"><a class="btn cyan" href="fully-autonomous-recursive-self-improvement-adversarial-large-scale-multi-agent-capital-to-capability-command.html">Open proof</a><a class="btn" href="data/rsi_capability_command_center_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="adversarial-capital-to-capability-command-center-proof-with-recursive-self-improvement-and-large-scale-special.html">adversarial capital-to-capability command center proof with recursive self-improvement and large-scale specialist-agent coordination</a></h3>
-<p>Deterministic market-readiness benchmark using synthetic/redacted-style business cases and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, actual superintelligence, Kardashev Type II achievement, or a guarantee of future outcomes.</p>
-<div class="meta"><span>11 RSI releases</span><span>90.50%</span></div>
-<div class="pillrow"><a class="btn cyan" href="adversarial-capital-to-capability-command-center-proof-with-recursive-self-improvement-and-large-scale-special.html">Open proof</a><a class="btn" href="data/rsi_capability_command_center_v17_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="fully-autonomous-recursive-self-improvement-capital-to-capability-engine-benchmark.html">fully autonomous recursive self-improvement capital-to-capability engine benchmark</a></h3>
-<p>Autonomous deterministic market-readiness benchmark using synthetic/redacted-style business data and benchmark assumptions; not audited customer ROI, live customer adoption, financial advice, superintelligence claim, Kardashev Type II claim, or guarantee.</p>
-<div class="meta"><span>13 RSI releases</span><span>90.50%</span></div>
-<div class="pillrow"><a class="btn cyan" href="fully-autonomous-recursive-self-improvement-capital-to-capability-engine-benchmark.html">Open proof</a><a class="btn" href="data/rsi_capital_to_capability_engine_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="fully-autonomous-recursive-self-improvement-adversarial-large-scale-multi-agent-market-command-center-proof.html">fully autonomous recursive self-improvement adversarial large-scale multi-agent market-command-center proof</a></h3>
-<p>Autonomous market-readiness benchmark using deterministic synthetic/redacted-style business data and benchmark assumptions. Not audited customer ROI or guarantee of future outcomes.</p>
-<div class="meta"><span>13 RSI releases</span><span>89.30%</span></div>
-<div class="pillrow"><a class="btn cyan" href="fully-autonomous-recursive-self-improvement-adversarial-large-scale-multi-agent-market-command-center-proof.html">Open proof</a><a class="btn" href="data/rsi_adversarial_multi_agent_market_command_center_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="fully-autonomous-recursive-self-improvement-marketplace-flywheel-market-readiness-proof.html">fully autonomous recursive self-improvement marketplace flywheel market-readiness proof</a></h3>
-<p>Autonomous reference workflow proof using deterministic synthetic/redacted-style business data and benchmark assumptions. Not audited customer ROI or guarantee of future outcomes.</p>
-<div class="meta"><span>11 RSI releases</span><span>87.00%</span></div>
-<div class="pillrow"><a class="btn cyan" href="fully-autonomous-recursive-self-improvement-marketplace-flywheel-market-readiness-proof.html">Open proof</a><a class="btn" href="data/rsi_marketplace_flywheel_market_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="fully-autonomous-recursive-self-improvement-unit-economics-profit-engine-market-readiness-proof.html">fully autonomous recursive self-improvement unit economics profit engine market-readiness proof</a></h3>
-<p>Autonomous reference workflow proof using deterministic synthetic/redacted-style business data and benchmark assumptions. Not audited customer ROI or guarantee of future outcomes.</p>
-<div class="meta"><span>11 RSI releases</span><span>84.70%</span></div>
-<div class="pillrow"><a class="btn cyan" href="fully-autonomous-recursive-self-improvement-unit-economics-profit-engine-market-readiness-proof.html">Open proof</a><a class="btn" href="data/rsi_unit_economics_market_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="fully-autonomous-recursive-self-improvement-revenue-experiment-factory-market-readiness-proof.html">fully autonomous recursive self-improvement revenue experiment factory market-readiness proof</a></h3>
-<p>Autonomous reference workflow proof using deterministic synthetic/redacted-style business data and benchmark assumptions. Not audited customer ROI or guarantee of future outcomes.</p>
-<div class="meta"><span>11 RSI releases</span><span>82.40%</span></div>
-<div class="pillrow"><a class="btn cyan" href="fully-autonomous-recursive-self-improvement-revenue-experiment-factory-market-readiness-proof.html">Open proof</a><a class="btn" href="data/rsi_revenue_experiment_factory_market_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="rsi-adversarial-benchmark-foundry-proof.html">Autonomous RSI Adversarial Benchmark Foundry Proof</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-adversarial-benchmark-foundry-proof.html">Open proof</a><a class="btn" href="data/rsi-adversarial-benchmark-foundry-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="rsi-causal-attribution-engine-proof.html">Autonomous RSI Causal Attribution Engine Proof</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-causal-attribution-engine-proof.html">Open proof</a><a class="btn" href="data/rsi-causal-attribution-engine-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="rsi-cross-domain-capability-transfer-atlas-proof.html">Autonomous RSI Cross-Domain Capability Transfer Atlas Proof</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-cross-domain-capability-transfer-atlas-proof.html">Open proof</a><a class="btn" href="data/rsi-cross-domain-capability-transfer-atlas-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="rsi-objective-integrity-firewall-proof.html">Autonomous RSI Objective Integrity Firewall Proof</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-objective-integrity-firewall-proof.html">Open proof</a><a class="btn" href="data/rsi-objective-integrity-firewall-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="rsi-open-replication-mesh-proof.html">Autonomous RSI Open Replication Mesh Proof</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-open-replication-mesh-proof.html">Open proof</a><a class="btn" href="data/rsi-open-replication-mesh-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="autonomous-no-send-shadow-pilot.html">autonomous_no_send_shadow_pilot</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="autonomous-no-send-shadow-pilot.html">Open proof</a><a class="btn" href="data/shadow_pilot_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="fully-autonomous-enterprise-operations-market-readiness-proof.html">fully autonomous enterprise operations market-readiness proof</a></h3>
-<p>Autonomous reference workflow proof using deterministic synthetic/redacted-style data. Not audited customer ROI or guarantee of future outcomes.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="fully-autonomous-enterprise-operations-market-readiness-proof.html">Open proof</a><a class="btn" href="data/enterprise_ops_market_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="fully-autonomous-no-human-review-market-readiness-proof.html">fully autonomous no-human-review market-readiness proof</a></h3>
-<p>Autonomous reference workflow proof only. Not audited customer ROI, financial advice, investment advice, or guarantee of future outcomes.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="fully-autonomous-no-human-review-market-readiness-proof.html">Open proof</a><a class="btn" href="data/autonomous_market_readiness.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="fully-autonomous-recursive-self-improvement-cyber-defense-market-readiness-proof.html">fully autonomous recursive self-improvement cyber defense market-readiness proof</a></h3>
-<p>Defensive autonomous reference workflow proof using deterministic synthetic/redacted-style data. Not audited customer ROI or guarantee of future outcomes.</p>
-<div class="meta"><span>9 RSI releases</span></div>
-<div class="pillrow"><a class="btn cyan" href="fully-autonomous-recursive-self-improvement-cyber-defense-market-readiness-proof.html">Open proof</a><a class="btn" href="data/rsi_cyberdefense_market_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="fully-autonomous-recursive-self-improvement-market-readiness-proof.html">fully autonomous recursive self-improvement market-readiness proof</a></h3>
-<p>Autonomous reference workflow proof using deterministic synthetic/redacted-style data. Not audited customer ROI or guarantee of future outcomes.</p>
-<div class="meta"><span>8 RSI releases</span></div>
-<div class="pillrow"><a class="btn cyan" href="fully-autonomous-recursive-self-improvement-market-readiness-proof.html">Open proof</a><a class="btn" href="data/rsi_cloudops_market_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="fully-autonomous-recursive-self-improvement-scientific-discovery-market-readiness-proof.html">fully autonomous recursive self-improvement scientific discovery market-readiness proof</a></h3>
-<p>Autonomous reference workflow proof using deterministic synthetic/redacted-style data and a physics-inspired benchmark oracle. Not audited customer ROI or guarantee of future outcomes.</p>
-<div class="meta"><span>7 RSI releases</span></div>
-<div class="pillrow"><a class="btn cyan" href="fully-autonomous-recursive-self-improvement-scientific-discovery-market-readiness-proof.html">Open proof</a><a class="btn" href="data/rsi_metamaterials_discovery_market_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="fully-autonomous-recursive-self-improvement-silicon-verification-market-readiness-proof.html">fully autonomous recursive self-improvement silicon verification market-readiness proof</a></h3>
-<p>Autonomous reference workflow proof using deterministic synthetic/redacted-style data. Not audited customer ROI or guarantee of future outcomes.</p>
-<div class="meta"><span>10 RSI releases</span></div>
-<div class="pillrow"><a class="btn cyan" href="fully-autonomous-recursive-self-improvement-silicon-verification-market-readiness-proof.html">Open proof</a><a class="btn" href="data/rsi_silicon_verification_market_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="rsi-blockchain-protocol-capital-frontier-proof.html">rsi-blockchain-protocol-capital-frontier-proof</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-blockchain-protocol-capital-frontier-proof.html">Open proof</a><a class="btn" href="data/rsi-blockchain-protocol-capital-frontier-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="rsi-corporate-strategy-frontier-proof.html">rsi-corporate-strategy-frontier-proof</a></h3>
-<p>4 65536 7518667768834.79 8350320565739.17 7410259248441.74 15 12 95.898438 39.388021 1536 a6840b7f8504048a9f991ff4 0.0 128 10 10 2048 64 512 1.757812 256 98.558142 144355145937.06 402423056823.86 144206217448.3 109806979964.63</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-corporate-strategy-frontier-proof.html">Open proof</a><a class="btn" href="data/rsi-corporate-strategy-frontier-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge ">PASSED</span>
-<h3><a href="rsi-proof-forge-meta-coordination-proof.html">rsi-proof-forge-meta-coordination-proof</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-proof-forge-meta-coordination-proof.html">Open proof</a><a class="btn" href="data/rsi-proof-forge-meta-coordination-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-capability-command-center-v17-proof.html">adversarial capital-to-capability command center proof with recursive self-improvement and large-scale specialist-agent coordination</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-capability-command-center-v17-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="adversarial-capital-to-capability-coordination-for-capital-compute-energy-data-talent-product-distribution-tru.html">adversarial capital-to-capability coordination for capital, compute, energy, data, talent, product, distribution, trust, validation, risk control, and reinvestment</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="adversarial-capital-to-capability-coordination-for-capital-compute-energy-data-talent-product-distribution-tru.html">Open proof</a><a class="btn" href="data/rsi_capability_command_center_v17_benchmark.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-capability-command-center-v17-benchmark.html">adversarial capital-to-capability coordination for capital, compute, energy, data, talent, product, distribution, trust, validation, risk control, and reinvestment</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-capability-command-center-v17-benchmark.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="adversarial-large-scale-agentic-coordination-for-capital-to-capability-compounding-market-capture-resource-all.html">adversarial large-scale agentic coordination for capital-to-capability compounding, market capture, resource allocation, risk control, and validated reinvestment</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="adversarial-large-scale-agentic-coordination-for-capital-to-capability-compounding-market-capture-resource-all.html">Open proof</a><a class="btn" href="data/rsi_capability_command_center_benchmark.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-capability-command-center-benchmark.html">adversarial large-scale agentic coordination for capital-to-capability compounding, market capture, resource allocation, risk control, and validated reinvestment</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-capability-command-center-benchmark.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="adversarial-large-scale-agentic-coordination-for-profitable-market-capture-portfolio-selection-resource-alloca.html">adversarial large-scale agentic coordination for profitable market-capture portfolio selection, resource allocation, risk control, and compounding business strategy</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="adversarial-large-scale-agentic-coordination-for-profitable-market-capture-portfolio-selection-resource-alloca.html">Open proof</a><a class="btn" href="data/rsi_adversarial_multi_agent_market_command_center_benchmark.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-adversarial-multi-agent-market-command-center-benchmark.html">adversarial large-scale agentic coordination for profitable market-capture portfolio selection, resource allocation, risk control, and compounding business strategy</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-adversarial-multi-agent-market-command-center-benchmark.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="ai-work-marketplace-liquidity-skill-supply-allocation-pricing-routing-and-compounding-flywheel-optimization.html">AI work marketplace liquidity, skill-supply allocation, pricing, routing, and compounding flywheel optimization</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="ai-work-marketplace-liquidity-skill-supply-allocation-pricing-routing-and-compounding-flywheel-optimization.html">Open proof</a><a class="btn" href="data/rsi_marketplace_flywheel_benchmark.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-marketplace-flywheel-benchmark.html">AI work marketplace liquidity, skill-supply allocation, pricing, routing, and compounding flywheel optimization</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-marketplace-flywheel-benchmark.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="ai-workflow-marketplace-unit-economics-optimization-and-scalable-profit-capture-planning.html">AI workflow marketplace unit-economics optimization and scalable profit-capture planning</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="ai-workflow-marketplace-unit-economics-optimization-and-scalable-profit-capture-planning.html">Open proof</a><a class="btn" href="data/rsi_unit_economics_benchmark.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-unit-economics-benchmark.html">AI workflow marketplace unit-economics optimization and scalable profit-capture planning</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-unit-economics-benchmark.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="autonomous-lightweight-metamaterial-discovery-for-load-bearing-structures.html">autonomous lightweight metamaterial discovery for load-bearing structures</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="autonomous-lightweight-metamaterial-discovery-for-load-bearing-structures.html">Open proof</a><a class="btn" href="data/rsi_metamaterials_discovery_benchmark.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-metamaterials-discovery-benchmark.html">autonomous lightweight metamaterial discovery for load-bearing structures</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-metamaterials-discovery-benchmark.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-capability-assurance-case-graph-proof.html">Autonomous RSI Capability Assurance Case Graph Proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-capability-assurance-case-graph-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-capability-economy-clearinghouse-proof.html">Autonomous RSI Capability Economy Clearinghouse Proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-capability-economy-clearinghouse-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-capability-governance-twin-proof.html">Autonomous RSI Capability Governance Twin Proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-capability-governance-twin-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-capability-sla-reliability-mesh-proof.html">Autonomous RSI Capability SLA Reliability Mesh Proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-capability-sla-reliability-mesh-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-capability-treasury-flywheel-proof.html">Autonomous RSI Capability Treasury Flywheel Proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-capability-treasury-flywheel-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-continual-capability-frontier-proof.html">Autonomous RSI Continual Capability Frontier Proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-continual-capability-frontier-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-enterprise-capability-foundry-proof.html">Autonomous RSI Enterprise Capability Foundry Proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-enterprise-capability-foundry-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-enterprise-eureka-factory-proof.html">Autonomous RSI Enterprise Eureka Factory Proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-enterprise-eureka-factory-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-enterprise-superorganization-proof.html">Autonomous RSI Enterprise Superorganization Proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-enterprise-superorganization-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-fork-resistant-capability-network-proof.html">Autonomous RSI Fork-Resistant Capability Network Proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-fork-resistant-capability-network-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-full-stack-capability-lifecycle-proof.html">Autonomous RSI Full-Stack Capability Lifecycle Proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-full-stack-capability-lifecycle-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-skill-compounding-moat-proof.html">Autonomous RSI Skill Compounding Moat Proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-skill-compounding-moat-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-skill-provenance-ledger-proof.html">Autonomous RSI Skill Provenance Ledger Proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-skill-provenance-ledger-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="autonomous-market-benchmark.html">autonomous_market_benchmark</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="autonomous-market-benchmark.html">Open proof</a><a class="btn" href="data/autonomous_market_benchmark.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="shadow-pilot-proof.html">autonomous_no_send_shadow_pilot</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="shadow-pilot-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="cloud-reliability-incident-triage-and-cost-remediation-planning.html">cloud reliability incident triage and cost remediation planning</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="cloud-reliability-incident-triage-and-cost-remediation-planning.html">Open proof</a><a class="btn" href="data/rsi_cloudops_benchmark.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-cloudops-benchmark.html">cloud reliability incident triage and cost remediation planning</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-cloudops-benchmark.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="corporate-operating-system-diagnosis-and-board-ready-operating-plan-generation.html">corporate operating-system diagnosis and board-ready operating-plan generation</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="corporate-operating-system-diagnosis-and-board-ready-operating-plan-generation.html">Open proof</a><a class="btn" href="data/rsi_corporate_os_benchmark.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-corporate-os-benchmark.html">corporate operating-system diagnosis and board-ready operating-plan generation</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-corporate-os-benchmark.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-corporate-capability-frontier-proof.html">corporate-capability-frontier</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-corporate-capability-frontier-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="demo.html">demo</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="demo.html">Open proof</a><a class="btn" href="data/demo.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="enterprise-ops-market-proof.html">fully autonomous enterprise operations market-readiness proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="enterprise-ops-market-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="autonomous-market-readiness.html">fully autonomous no-human-review market-readiness proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="autonomous-market-readiness.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-capability-command-center-proof.html">fully autonomous recursive self-improvement adversarial large-scale multi-agent capital-to-capability command-center proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-capability-command-center-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-adversarial-multi-agent-market-command-center-proof.html">fully autonomous recursive self-improvement adversarial large-scale multi-agent market-command-center proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-adversarial-multi-agent-market-command-center-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-capital-to-capability-engine-proof.html">fully autonomous recursive self-improvement capital-to-capability engine benchmark</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-capital-to-capability-engine-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-corporate-os-market-proof.html">fully autonomous recursive self-improvement corporate operating system market-readiness proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-corporate-os-market-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-cyberdefense-market-proof.html">fully autonomous recursive self-improvement cyber defense market-readiness proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-cyberdefense-market-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-cloudops-market-proof.html">fully autonomous recursive self-improvement market-readiness proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-cloudops-market-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-marketplace-flywheel-market-proof.html">fully autonomous recursive self-improvement marketplace flywheel market-readiness proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-marketplace-flywheel-market-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-revenue-experiment-factory-market-proof.html">fully autonomous recursive self-improvement revenue experiment factory market-readiness proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-revenue-experiment-factory-market-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-metamaterials-discovery-market-proof.html">fully autonomous recursive self-improvement scientific discovery market-readiness proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-metamaterials-discovery-market-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-silicon-verification-market-proof.html">fully autonomous recursive self-improvement silicon verification market-readiness proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-silicon-verification-market-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-unit-economics-market-proof.html">fully autonomous recursive self-improvement unit economics profit engine market-readiness proof</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-unit-economics-market-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="large-scale-agentic-coordination-for-capital-to-capability-compounding-market-capture-resource-allocation-risk.html">large-scale agentic coordination for capital-to-capability compounding, market capture, resource allocation, risk control, and validated reinvestment</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="large-scale-agentic-coordination-for-capital-to-capability-compounding-market-capture-resource-allocation-risk.html">Open proof</a><a class="btn" href="data/rsi_capital_to_capability_engine_benchmark.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-capital-to-capability-engine-benchmark.html">large-scale agentic coordination for capital-to-capability compounding, market capture, resource allocation, risk control, and validated reinvestment</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-capital-to-capability-engine-benchmark.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="procurement-invoice-reconciliation-and-payment-risk-triage.html">procurement invoice reconciliation and payment-risk triage</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="procurement-invoice-reconciliation-and-payment-risk-triage.html">Open proof</a><a class="btn" href="data/enterprise_ops_benchmark.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="enterprise-ops-benchmark.html">procurement invoice reconciliation and payment-risk triage</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="enterprise-ops-benchmark.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="revenue-experiment-design-causal-validation-portfolio-allocation-and-scalable-growth-plan-selection.html">revenue experiment design, causal validation, portfolio allocation, and scalable growth-plan selection</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="revenue-experiment-design-causal-validation-portfolio-allocation-and-scalable-growth-plan-selection.html">Open proof</a><a class="btn" href="data/rsi_revenue_experiment_factory_benchmark.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-revenue-experiment-factory-benchmark.html">revenue experiment design, causal validation, portfolio allocation, and scalable growth-plan selection</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-revenue-experiment-factory-benchmark.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-ai-first-blockchain-capital-machine-proof.html">rsi-ai-first-blockchain-capital-machine-proof</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-ai-first-blockchain-capital-machine-proof.html">Open proof</a><a class="btn" href="data/rsi-ai-first-blockchain-capital-machine-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-ai-first-governance-capital-engine-proof.html">rsi-ai-first-governance-capital-engine-proof</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-ai-first-governance-capital-engine-proof.html">Open proof</a><a class="btn" href="data/rsi-ai-first-governance-capital-engine-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-capability-liquidity-engine-proof.html">rsi-capability-liquidity-engine-proof</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-capability-liquidity-engine-proof.html">Open proof</a><a class="btn" href="data/rsi-capability-liquidity-engine-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-governance-frontier-proof.html">rsi-governance-frontier-proof</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-governance-frontier-proof.html">Open proof</a><a class="btn" href="data/rsi-governance-frontier-proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-capability-command-center-preregistered-gates.html">rsi_capability_command_center_preregistered_gates</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-capability-command-center-preregistered-gates.html">Open proof</a><a class="btn" href="data/rsi_capability_command_center_preregistered_gates.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-capability-command-center-v17-preregistered-gates.html">rsi_capability_command_center_v17_preregistered_gates</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-capability-command-center-v17-preregistered-gates.html">Open proof</a><a class="btn" href="data/rsi_capability_command_center_v17_preregistered_gates.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="sales-follow-up-email-from-call-notes.html">Sales follow-up email from call notes</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="sales-follow-up-email-from-call-notes.html">Open proof</a><a class="btn" href="data/wealth_proof.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="security-operations-alert-triage-and-incident-containment-planning.html">security operations alert triage and incident containment planning</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="security-operations-alert-triage-and-incident-containment-planning.html">Open proof</a><a class="btn" href="data/rsi_cyberdefense_benchmark.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-cyberdefense-benchmark.html">security operations alert triage and incident containment planning</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-cyberdefense-benchmark.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="semiconductor-rtl-verification-bug-triage-assertion-selection-and-fix-plan-recommendation.html">semiconductor RTL verification, bug triage, assertion selection, and fix-plan recommendation</a></h3>
-<p>Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="semiconductor-rtl-verification-bug-triage-assertion-selection-and-fix-plan-recommendation.html">Open proof</a><a class="btn" href="data/rsi_silicon_verification_benchmark.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="rsi-silicon-verification-benchmark.html">semiconductor RTL verification, bug triage, assertion selection, and fix-plan recommendation</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="rsi-silicon-verification-benchmark.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="skillos-no-send-shadow-pilot-benchmark.html">SkillOS No-Send Shadow Pilot Benchmark</a></h3>
-<p>Synthetic/redacted sales-follow-up benchmark for autonomous GitHub Actions proof. No emails are sent and no private customer data is included.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="skillos-no-send-shadow-pilot-benchmark.html">Open proof</a><a class="btn" href="data/shadow_pilot_benchmark.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="shadow-pilot-benchmark.html">SkillOS No-Send Shadow Pilot Benchmark</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="shadow-pilot-benchmark.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article><article class="proof-card glass">
-<span class="badge warn">INDEXED</span>
-<h3><a href="wealth-proof.html">{&#x27;name&#x27;: &#x27;Sales follow-up email from call notes&#x27;, &#x27;why_this_workflow&#x27;: &#x27;Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.&#x27;, &#x27;real_work_unit&#x27;: &#x27;Draft one buyer-specific follow-up email from call notes.&#x27;, &#x27;note&#x27;: &#x27;The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.&#x27;}</a></h3>
-<p>Indexed public proof.</p>
-<div class="meta"></div>
-<div class="pillrow"><a class="btn cyan" href="wealth-proof.html">Open proof</a><a class="btn" href="data/proof-registry.json">JSON</a></div>
-</article></section>
-<div class="foot">Public boundary: deterministic public proof and publication system. Not audited customer ROI, financial advice, investment advice, legal advice, medical advice, policy advice, token advice, achieved superintelligence, Kardashev Type II achievement, or guarantees. <span class="cyan">SKILLOS_COMMAND_CENTER_V5_1_CANONICAL_ROOT</span></div></main></body></html>
+</head>
+<body><nav class="nav"><a class="brand" href="index.html">SkillOS Sovereign Launch</a><div><a class="" href="index.html">Home</a><a class="" href="capability-governance-twin.html">Flagship</a><a class="" href="skills.html">Skills Used</a><a class="on" href="proofs.html">Proofs</a><a class="" href="run.html">Run</a><a class="" href="receipts.html">Receipts</a><a class="" href="health.html">Health</a><a class="" href="architecture.html">Architecture</a><a class="" href="https://github.com/MontrealAI/skillos">GitHub</a></div></nav><main data-skillos-marker="SKILLOS_FLAGSHIP_GOVERNANCE_TWIN_LAUNCH_V1"><section><div class="eyebrow">Proof atlas</div><h1>Proofs.</h1><p style="font-size:21px">The flagship proof is the front door; the broader proof atlas remains available behind it.</p><div class="skill-grid"><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>Autonomous RSI Capability Governance Twin Proof</h3><p>PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>Autonomous RSI Capability Governance Twin Proof</h3><p>PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>Autonomous RSI Capability Governance Twin Proof</h3><p>PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>Autonomous RSI Capability Governance Twin Proof</h3><p>PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>Autonomous RSI Capability Governance Twin Proof</h3><p>PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>Autonomous RSI Capability Governance Twin Proof</h3><p>PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="autonomous-rsi-capability-governance-twin-proof.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>Autonomous RSI Capability Governance Twin Proof</h3><p>PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="autonomous-rsi-capability-governance-twin-proof.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Capability Governance Twin</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Autonomous RSI Capability Governance Twin Proof</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Capability Governance Twin</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Autonomous RSI Capability Governance Twin Proof</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Capability Governance Twin</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Autonomous RSI Capability Governance Twin Proof</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>Autonomous RSI Capability Governance Twin Proof</h3><p>PASSED</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="rsi-capability-governance-twin-proof.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>Autonomous RSI Capability Governance Twin Proof</h3><p>PASSED</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="rsi-capability-governance-twin-proof.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>Autonomous RSI Capability Assurance Case Graph Proof</h3><p>PASSED_AUTONOMOUS_RSI_CAPABILITY_ASSURANCE_CASE_GRAPH_PROOF</p><p class="small">Value capture: 97.6571%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>Autonomous RSI Capability Assurance Case Graph Proof</h3><p>PASSED_AUTONOMOUS_RSI_CAPABILITY_ASSURANCE_CASE_GRAPH_PROOF</p><p class="small">Value capture: 97.6571%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>Autonomous RSI Capability SLA Reliability Mesh Proof</h3><p>PASSED_AUTONOMOUS_RSI_CAPABILITY_SLA_RELIABILITY_MESH_PROOF</p><p class="small">Value capture: 96.9985%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>Autonomous RSI Capability SLA Reliability Mesh Proof</h3><p>PASSED_AUTONOMOUS_RSI_CAPABILITY_SLA_RELIABILITY_MESH_PROOF</p><p class="small">Value capture: 96.9985%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Ai First Governance Capital Engine</h3><p>PENDING</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Governance Frontier</h3><p>PENDING</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Autonomous RSI AI-First Governance Capital Engine Proof</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Autonomous RSI Governance Frontier Proof</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>fully autonomous recursive self-improvement adversarial large-scale multi-agent capital-to-capability command-center proof</h3><p>PASSED_AUTONOMOUS_RSI_ADVERSARIAL_CAPABILITY_COMMAND_CENTER_PROOF</p><p class="small">Value capture: 91.4%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>rsi-governance-frontier-proof</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>rsi-ai-first-governance-capital-engine-proof</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Ai First Governance Capital Engine</h3><p>PENDING</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Governance Frontier</h3><p>PENDING</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Autonomous RSI AI-First Governance Capital Engine Proof</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Autonomous RSI Governance Frontier Proof</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>fully autonomous recursive self-improvement adversarial large-scale multi-agent capital-to-capability command-center proof</h3><p>PASSED_AUTONOMOUS_RSI_ADVERSARIAL_CAPABILITY_COMMAND_CENTER_PROOF</p><p class="small">Value capture: 91.4%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>rsi-governance-frontier-proof</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>rsi-ai-first-governance-capital-engine-proof</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="rsi-ai-first-governance-capital-engine-proof.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>rsi-governance-frontier-proof</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="rsi-governance-frontier-proof.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>rsi-ai-first-governance-capital-engine-proof</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Ai First Governance Capital Engine</h3><p>PENDING</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Governance Frontier</h3><p>PENDING</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Autonomous RSI AI-First Governance Capital Engine Proof</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>Autonomous RSI Governance Frontier Proof</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>Autonomous RSI AI-First Governance Capital Engine Proof</h3><p>passing</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="./rsi-ai-first-governance-capital-engine-proof.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>rsi-ai-first-governance-capital-engine-proof</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="rsi-ai-first-governance-capital-engine-proof.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">indexed</span><h3>rsi-governance-frontier-proof</h3><p>UNKNOWN</p><p class="small">Value capture: 97.6124%</p><a class="btn" href="rsi-governance-frontier-proof.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>adversarial capital-to-capability command center proof with recursive self-improvement and large-scale specialist-agent coordination</h3><p>PASSED_AUTONOMOUS_RSI_CAPITAL_TO_CAPABILITY_COMMAND_CENTER_V17_PROOF</p><p class="small">Value capture: 90.5%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>adversarial capital-to-capability command center proof with recursive self-improvement and large-scale specialist-agent coordination</h3><p>PASSED_AUTONOMOUS_RSI_CAPITAL_TO_CAPABILITY_COMMAND_CENTER_V17_PROOF</p><p class="small">Value capture: 90.5%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>fully autonomous recursive self-improvement revenue experiment factory market-readiness proof</h3><p>PASSED_AUTONOMOUS_RSI_REVENUE_EXPERIMENT_FACTORY_MARKET_PROOF</p><p class="small">Value capture: 82.4%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>fully autonomous recursive self-improvement revenue experiment factory market-readiness proof</h3><p>PASSED_AUTONOMOUS_RSI_REVENUE_EXPERIMENT_FACTORY_MARKET_PROOF</p><p class="small">Value capture: 82.4%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>fully autonomous recursive self-improvement unit economics profit engine market-readiness proof</h3><p>PASSED_AUTONOMOUS_RSI_UNIT_ECONOMICS_PROFIT_ENGINE_MARKET_PROOF</p><p class="small">Value capture: 84.7%</p><a class="btn" href="capability-governance-twin.html">Open</a></article><article class="proof-card" style="padding:20px"><span class="badge">passed</span><h3>fully autonomous recursive self-improvement unit economics profit engine market-readiness proof</h3><p>PASSED_AUTONOMOUS_RSI_UNIT_ECONOMICS_PROFIT_ENGINE_MARKET_PROOF</p><p class="small">Value capture: 84.7%</p><a class="btn" href="capability-governance-twin.html">Open</a></article></div></section><div class="footer"><strong>SKILLOS_FLAGSHIP_GOVERNANCE_TWIN_LAUNCH_V1</strong><br><span class="small">Generated autonomously from repository proof receipts, workflows, docs, badges, and Skills Used metadata. Public benchmark outputs are not financial, legal, medical, policy, token, employment, or investment advice and do not claim achieved superintelligence.</span></div></main></body></html>

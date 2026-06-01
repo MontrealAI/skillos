@@ -1,0 +1,31 @@
+{
+  "counts": {
+    "indexed_proofs": 120,
+    "skills_displayed": 18,
+    "workflows": 55
+  },
+  "flagship": {
+    "badge": "badges/flagship-capability-governance-twin.svg",
+    "doc": "docs/FLAGSHIP_CAPABILITY_GOVERNANCE_TWIN_LAUNCH.md",
+    "href": "capability-governance-twin.html",
+    "id": "autonomous-rsi-capability-governance-twin-proof",
+    "json": "data/rsi-capability-governance-twin-proof.json",
+    "proved": true,
+    "title": "Autonomous RSI Capability Governance Twin Proof"
+  },
+  "generated_at_utc": "2026-06-01T18:37:26Z",
+  "marker": "SKILLOS_FLAGSHIP_GOVERNANCE_TWIN_LAUNCH_V1",
+  "pages_base": "https://montrealai.github.io/skillos/",
+  "repo": "MontrealAI/skillos",
+  "root_policy": {
+    "deploys_pages_artifact_directly": true,
+    "old_phrases_blocked": [
+      "Autonomous Proof Command Center",
+      "SkillOS Proof Command Center",
+      "Public SkillOS Command Center v2",
+      "SkillOS Public Command Center v3"
+    ],
+    "root_and_index_must_match": true
+  },
+  "schema": "skillos.flagship.capability_governance_twin.launch.v1"
+}

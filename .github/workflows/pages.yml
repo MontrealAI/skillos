@@ -1,17 +1,118 @@
-name: Retired legacy SkillOS site refresh
+name: Public SkillOS Command Center Root Authority v7
 
 on:
   workflow_dispatch:
+    inputs:
+      deploy_pages:
+        description: "Deploy the freshly generated Pages artifact"
+        type: boolean
+        required: false
+        default: true
+      verify_live:
+        description: "Verify /skillos/ and /skillos/index.html after deployment"
+        type: boolean
+        required: false
+        default: true
+      cancel_legacy_runs:
+        description: "Cancel legacy refresh/deploy runs before publishing"
+        type: boolean
+        required: false
+        default: true
+  repository_dispatch:
+    types: [skillos-command-center-refresh, skillos-proof-updated, skillos-site-rebuild]
+  workflow_run:
+    workflows:
+      - "SkillOS Flagship Governance Twin Launch"
+      - "Autonomous RSI Capability Governance Twin Proof"
+      - "Autonomous RSI Capability Assurance Case Graph Proof"
+      - "Autonomous RSI Capability SLA Reliability Mesh Proof"
+      - "Autonomous RSI Capability Economy Clearinghouse Proof"
+      - "Autonomous RSI Capability Treasury Flywheel Proof"
+      - "Autonomous RSI Cross-Domain Capability Transfer Atlas Proof"
+      - "SkillOS tests"
+    types: [completed]
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/**"
+      - "scripts/**"
+      - "data/**"
+      - "docs/**"
+      - "badges/**"
+      - "skills/**"
+      - "skillos/**"
+      - "README.md"
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
+  actions: write
+
+concurrency:
+  group: skillos-public-command-center-root-authority
+  cancel-in-progress: true
 
 jobs:
-  retired:
-    name: Retired; v5.1 canonical deploy is the single publisher
+  build-verify-deploy:
+    name: Build, verify, and deploy the canonical Public SkillOS Command Center
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Explain retirement
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Explain root authority contract
         run: |
-          echo "This legacy workflow is intentionally retired."
-          echo "Use: SkillOS Sovereign Command Center v5.1 Canonical Deploy."
+          echo "Root contract: /skillos/ and /skillos/index.html are always the Public SkillOS Command Center."
+          echo "Flagship proofs are subpages, never the root."
+          echo "No pre-made HTML is used as source; dist/ is generated fresh by this Action."
+
+      - name: Cancel legacy refresh/deploy runs
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.cancel_legacy_runs }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/cancel_legacy_skillos_site_runs.py
+
+      - name: Build Public SkillOS Command Center from repository evidence
+        run: python scripts/build_skillos_public_command_center_v7.py --out dist
+
+      - name: Verify generated root authority artifact
+        run: python scripts/verify_skillos_public_command_center_v7.py --out dist
+
+      - name: Upload generated Command Center artifact for inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: skillos-public-command-center-root-authority-v7
+          path: dist
+          if-no-files-found: error
+
+      - name: Configure GitHub Pages
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy GitHub Pages artifact
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Verify live root and index are Command Center
+        if: ${{ (github.event_name != 'workflow_dispatch' || inputs.deploy_pages) && (github.event_name != 'workflow_dispatch' || inputs.verify_live) }}
+        run: python scripts/verify_live_skillos_public_command_center_v7.py --base-url "https://montrealai.github.io/skillos/"

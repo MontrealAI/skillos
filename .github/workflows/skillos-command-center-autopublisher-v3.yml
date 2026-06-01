@@ -1,4 +1,4 @@
-name: Retired legacy SkillOS site refresh
+name: Retired legacy SkillOS site workflow
 
 on:
   workflow_dispatch:
@@ -8,10 +8,8 @@ permissions:
 
 jobs:
   retired:
-    name: Retired; v5.1 canonical deploy is the single publisher
     runs-on: ubuntu-latest
     steps:
-      - name: Explain retirement
-        run: |
-          echo "This legacy workflow is intentionally retired."
-          echo "Use: SkillOS Sovereign Command Center v5.1 Canonical Deploy."
+      - run: |
+          echo "This legacy workflow is retired."
+          echo "Use: Public SkillOS Command Center Root Authority v7."

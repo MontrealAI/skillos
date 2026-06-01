@@ -1,6 +1,6 @@
 # SkillOS Sovereign Command Center v5.1
 
-Generated: `2026-06-01T17:29:13Z`
+Generated: `2026-06-01T17:33:14Z`
 
 This is the canonical public SkillOS Command Center publisher.
 

@@ -1236,7 +1236,7 @@
     "verifier_coverage_score": 57.3935,
     "weak_domain_rate_percent": 0.0
   },
-  "generated_at_utc": "2026-06-01T03:37:34Z",
+  "generated_at_utc": "2026-06-01T03:39:06Z",
   "markdown_report": "docs/rsi-capability-sla-reliability-mesh-proof.md",
   "output": "data/rsi-capability-sla-reliability-mesh-proof.json",
   "pre_registered_gates": {

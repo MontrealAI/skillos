@@ -3,7 +3,7 @@
     {
       "badge": "badges/rsi-capability-sla-reliability-mesh-proof.svg",
       "doc": "docs/rsi-capability-sla-reliability-mesh-proof.md",
-      "generated_at_utc": "2026-06-01T03:37:34Z",
+      "generated_at_utc": "2026-06-01T03:39:06Z",
       "href": "rsi-capability-sla-reliability-mesh-proof.html",
       "id": "rsi-capability-sla-reliability-mesh-proof",
       "json": "data/rsi-capability-sla-reliability-mesh-proof.json",
@@ -297,5 +297,5 @@
       "workflow_url": "https://github.com/MontrealAI/skillos/actions/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml"
     }
   ],
-  "updated_at_utc": "2026-06-01T03:37:34Z"
+  "updated_at_utc": "2026-06-01T03:39:06Z"
 }

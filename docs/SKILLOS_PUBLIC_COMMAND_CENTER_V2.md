@@ -1,6 +1,6 @@
 # SkillOS Public Command Center v2
 
-Generated: `2026-06-01T15:30:38Z`
+Generated: `2026-06-01T15:38:12Z`
 
 Run `SkillOS Command Center Autopublisher v2` with `publish_to_repo=true`, `deploy_pages=true`, and `force_rebuild=true`.
 
@@ -9,19 +9,19 @@ Run `SkillOS Command Center Autopublisher v2` with `publish_to_repo=true`, `depl
 ```json
 {
   "counts": {
-    "manual_workflows": 49,
+    "manual_workflows": 50,
     "proofs_indexed": 72,
     "proofs_passed": 37,
     "skills_surfaced": 53,
-    "workflows_indexed": 51
+    "workflows_indexed": 52
   },
-  "generated_at_utc": "2026-06-01T15:30:38Z",
+  "generated_at_utc": "2026-06-01T15:38:12Z",
   "inventory": {
     "badges": 65,
     "html_pages": 51,
     "json_receipts": 125,
-    "markdown_reports": 127,
-    "workflows": 51
+    "markdown_reports": 128,
+    "workflows": 52
   },
   "proof_ids": [
     "rsi-capability-assurance-case-graph-proof",
@@ -100,7 +100,7 @@ Run `SkillOS Command Center Autopublisher v2` with `publish_to_repo=true`, `depl
   "public_boundary": "These are autonomous deterministic benchmark proofs using synthetic/redacted-style public benchmark data and benchmark assumptions. They are not audited customer ROI, live customer adoption, financial advice, investment advice, legal advice, medical advice, employment advice, policy advice, token advice, achieved superintelligence, Kardashev Type II achievement, or guarantees.",
   "repository": "MontrealAI/skillos",
   "schema": "skillos.command_center.v2",
-  "site_latest_signal_utc": "2026-06-01T15:30:38Z",
+  "site_latest_signal_utc": "2026-06-01T15:38:12Z",
   "skills": [
     {
       "layer": "Access Control",
@@ -469,6 +469,7 @@ Run `SkillOS Command Center Autopublisher v2` with `publish_to_repo=true`, `depl
     ".github/workflows/safe-public-copy-check.yml",
     ".github/workflows/shadow-pilot-proof.yml",
     ".github/workflows/skillos-command-center-autopublisher-v2.yml",
+    ".github/workflows/skillos-command-center-autopublisher-v3.yml",
     ".github/workflows/skillos-public-proof-command-center-refresh.yml",
     ".github/workflows/skillos-public-site-refresh.yml",
     ".github/workflows/skillos-run-all-public-proofs.yml",

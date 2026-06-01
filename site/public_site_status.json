@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "8058f2ace7c61ca418705e90ad5abd4bc4644b0b",
+  "commit": "63c755ae49a16300dc582731ce0179b2e9dcfdfa",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,7 +1174,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-06-01T03:44:14Z",
+  "generated_at_utc": "2026-06-01T03:44:26Z",
   "proof_count": 87,
   "proofs": [
     {
@@ -6128,6 +6128,9 @@
     },
     {
       "key": "capability-assurance-case-graph-github-capability-assurance-case-graph-capability-assurance-case",
+      "latest_run_status": "queued",
+      "latest_run_updated_at": "2026-06-01T03:44:20Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733966935",
       "page_path": "site/proof-capability-assurance-case-graph-github-capability-assurance-case-graph-capability-assurance-case.html",
       "page_url": "https://montrealai.github.io/skillos/proof-capability-assurance-case-graph-github-capability-assurance-case-graph-capability-assurance-case.html",
       "source": "workflow",
@@ -6520,12 +6523,36 @@
   "recent_failed_runs": 0,
   "recent_running_runs": 4,
   "recent_successful_runs": 44,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733957433",
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733963054",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
   "workflow_count": 48,
   "workflows": [
+    {
+      "conclusion": null,
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Capability Assurance Case Graph Proof",
+      "path": ".github/workflows/autonomous-rsi-capability-assurance-case-graph-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-capability-assurance-case-graph-github-capability-assurance-case-graph-capability-assurance-case.html",
+      "proof_title": "Autonomous RSI Capability Assurance Case Graph Proof",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733966935",
+      "status": "queued",
+      "updated_at": "2026-06-01T03:44:20Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-assurance-case-graph-proof.yml"
+    },
+    {
+      "conclusion": null,
+      "event": "workflow_run",
+      "name": "SkillOS Public Site Command Center Refresh",
+      "path": ".github/workflows/skillos-public-site-refresh.yml",
+      "proof_page_url": null,
+      "proof_title": null,
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733963054",
+      "status": "in_progress",
+      "updated_at": "2026-06-01T03:44:20Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
+    },
     {
       "conclusion": null,
       "event": "workflow_run",
@@ -6537,18 +6564,6 @@
       "status": "pending",
       "updated_at": "2026-06-01T03:44:12Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
-    },
-    {
-      "conclusion": null,
-      "event": "workflow_run",
-      "name": "SkillOS Public Site Command Center Refresh",
-      "path": ".github/workflows/skillos-public-site-refresh.yml",
-      "proof_page_url": null,
-      "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733963054",
-      "status": "queued",
-      "updated_at": "2026-06-01T03:44:11Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {
       "conclusion": "success",
@@ -6717,18 +6732,6 @@
       "status": "not_run",
       "updated_at": "",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-blockchain-protocol-capital-frontier-proof.yml"
-    },
-    {
-      "conclusion": null,
-      "event": null,
-      "name": "Autonomous RSI Capability Assurance Case Graph Proof",
-      "path": ".github/workflows/autonomous-rsi-capability-assurance-case-graph-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-capability-assurance-case-graph-github-capability-assurance-case-graph-capability-assurance-case.html",
-      "proof_title": "Autonomous RSI Capability Assurance Case Graph Proof",
-      "run_url": null,
-      "status": "not_run",
-      "updated_at": "",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-assurance-case-graph-proof.yml"
     },
     {
       "conclusion": null,

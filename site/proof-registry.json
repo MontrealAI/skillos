@@ -1,6 +1,74 @@
 {
   "proofs": [
     {
+      "badge": "badges/rsi_silicon_verification_market_proof.svg",
+      "doc": "docs/rsi_silicon_verification_market_proof.md",
+      "generated_at_utc": "2026-06-01T14:55:03Z",
+      "href": "rsi-silicon-verification-market-proof.html",
+      "id": "rsi-silicon-verification-market-proof",
+      "json": "data/rsi_silicon_verification_market_proof.json",
+      "proved": true,
+      "risk_breach_rate_percent": null,
+      "rsi_release_count": null,
+      "skills_used_count": 0,
+      "specialist_roles": null,
+      "status": "PASSED_AUTONOMOUS_RSI_SILICON_VERIFICATION_MARKET_PROOF",
+      "title": "fully autonomous recursive self-improvement silicon verification market-readiness proof",
+      "value_capture_rate_percent": null,
+      "virtual_specialist_agents": null
+    },
+    {
+      "badge": "badges/rsi_cyberdefense_market_proof.svg",
+      "doc": "docs/rsi_cyberdefense_market_proof.md",
+      "generated_at_utc": "2026-06-01T14:40:33Z",
+      "href": "rsi-cyberdefense-market-proof.html",
+      "id": "rsi-cyberdefense-market-proof",
+      "json": "data/rsi_cyberdefense_market_proof.json",
+      "proved": true,
+      "risk_breach_rate_percent": null,
+      "rsi_release_count": null,
+      "skills_used_count": 0,
+      "specialist_roles": null,
+      "status": "PASSED_AUTONOMOUS_RSI_CYBERDEFENSE_MARKET_PROOF",
+      "title": "fully autonomous recursive self-improvement cyber defense market-readiness proof",
+      "value_capture_rate_percent": null,
+      "virtual_specialist_agents": null
+    },
+    {
+      "badge": "badges/rsi_cloudops_market_proof.svg",
+      "doc": "docs/rsi_cloudops_market_proof.md",
+      "generated_at_utc": "2026-06-01T14:30:33Z",
+      "href": "rsi-cloudops-market-proof.html",
+      "id": "rsi-cloudops-market-proof",
+      "json": "data/rsi_cloudops_market_proof.json",
+      "proved": true,
+      "risk_breach_rate_percent": null,
+      "rsi_release_count": null,
+      "skills_used_count": 0,
+      "specialist_roles": null,
+      "status": "PASSED_AUTONOMOUS_RSI_CLOUDOPS_MARKET_PROOF",
+      "title": "fully autonomous recursive self-improvement market-readiness proof",
+      "value_capture_rate_percent": null,
+      "virtual_specialist_agents": null
+    },
+    {
+      "badge": "badges/enterprise_ops_market_proof.svg",
+      "doc": "docs/enterprise_ops_market_proof.md",
+      "generated_at_utc": "2026-06-01T14:27:18Z",
+      "href": "enterprise-ops-market-proof.html",
+      "id": "enterprise-ops-market-proof",
+      "json": "data/enterprise_ops_market_proof.json",
+      "proved": true,
+      "risk_breach_rate_percent": null,
+      "rsi_release_count": null,
+      "skills_used_count": 0,
+      "specialist_roles": null,
+      "status": "PASSED_AUTONOMOUS_ENTERPRISE_OPS_MARKET_PROOF",
+      "title": "fully autonomous enterprise operations market-readiness proof",
+      "value_capture_rate_percent": null,
+      "virtual_specialist_agents": null
+    },
+    {
       "badge": "badges/shadow_pilot_proof.svg",
       "doc": "docs/shadow_pilot_proof.md",
       "generated_at_utc": "2026-06-01T13:23:57.898650+00:00",
@@ -527,23 +595,6 @@
       "virtual_specialist_agents": null
     },
     {
-      "badge": "badges/rsi_silicon_verification_market_proof.svg",
-      "doc": "docs/rsi_silicon_verification_market_proof.md",
-      "generated_at_utc": "2026-05-31T13:23:38Z",
-      "href": "rsi-silicon-verification-market-proof.html",
-      "id": "rsi-silicon-verification-market-proof",
-      "json": "data/rsi_silicon_verification_market_proof.json",
-      "proved": true,
-      "risk_breach_rate_percent": null,
-      "rsi_release_count": null,
-      "skills_used_count": 0,
-      "specialist_roles": null,
-      "status": "PASSED_AUTONOMOUS_RSI_SILICON_VERIFICATION_MARKET_PROOF",
-      "title": "fully autonomous recursive self-improvement silicon verification market-readiness proof",
-      "value_capture_rate_percent": null,
-      "virtual_specialist_agents": null
-    },
-    {
       "badge": "badges/rsi_enterprise_superorganization_proof.svg",
       "doc": "docs/rsi_enterprise_superorganization_proof.md",
       "generated_at_utc": "2026-05-31T13:12:14Z",
@@ -558,40 +609,6 @@
       "status": "PASSED_AUTONOMOUS_RSI_ENTERPRISE_SUPERORGANIZATION_PROOF",
       "title": "Autonomous RSI Enterprise Superorganization Proof",
       "value_capture_rate_percent": 99.978,
-      "virtual_specialist_agents": null
-    },
-    {
-      "badge": "badges/enterprise_ops_market_proof.svg",
-      "doc": "docs/enterprise_ops_market_proof.md",
-      "generated_at_utc": "2026-05-31T12:54:07Z",
-      "href": "enterprise-ops-market-proof.html",
-      "id": "enterprise-ops-market-proof",
-      "json": "data/enterprise_ops_market_proof.json",
-      "proved": true,
-      "risk_breach_rate_percent": null,
-      "rsi_release_count": null,
-      "skills_used_count": 0,
-      "specialist_roles": null,
-      "status": "PASSED_AUTONOMOUS_ENTERPRISE_OPS_MARKET_PROOF",
-      "title": "fully autonomous enterprise operations market-readiness proof",
-      "value_capture_rate_percent": null,
-      "virtual_specialist_agents": null
-    },
-    {
-      "badge": "badges/rsi_cyberdefense_market_proof.svg",
-      "doc": "docs/rsi_cyberdefense_market_proof.md",
-      "generated_at_utc": "2026-05-31T12:07:32Z",
-      "href": "rsi-cyberdefense-market-proof.html",
-      "id": "rsi-cyberdefense-market-proof",
-      "json": "data/rsi_cyberdefense_market_proof.json",
-      "proved": true,
-      "risk_breach_rate_percent": null,
-      "rsi_release_count": null,
-      "skills_used_count": 0,
-      "specialist_roles": null,
-      "status": "PASSED_AUTONOMOUS_RSI_CYBERDEFENSE_MARKET_PROOF",
-      "title": "fully autonomous recursive self-improvement cyber defense market-readiness proof",
-      "value_capture_rate_percent": null,
       "virtual_specialist_agents": null
     },
     {
@@ -626,23 +643,6 @@
       "status": "PASSED_AUTONOMOUS_RSI_ENTERPRISE_EUREKA_FACTORY_PROOF",
       "title": "Autonomous RSI Enterprise Eureka Factory Proof",
       "value_capture_rate_percent": 99.965,
-      "virtual_specialist_agents": null
-    },
-    {
-      "badge": "badges/rsi_cloudops_market_proof.svg",
-      "doc": "docs/rsi_cloudops_market_proof.md",
-      "generated_at_utc": "2026-05-30T19:26:12Z",
-      "href": "rsi-cloudops-market-proof.html",
-      "id": "rsi-cloudops-market-proof",
-      "json": "data/rsi_cloudops_market_proof.json",
-      "proved": true,
-      "risk_breach_rate_percent": null,
-      "rsi_release_count": null,
-      "skills_used_count": 0,
-      "specialist_roles": null,
-      "status": "PASSED_AUTONOMOUS_RSI_CLOUDOPS_MARKET_PROOF",
-      "title": "fully autonomous recursive self-improvement market-readiness proof",
-      "value_capture_rate_percent": null,
       "virtual_specialist_agents": null
     },
     {
@@ -1026,5 +1026,5 @@
       "virtual_specialist_agents": null
     }
   ],
-  "updated_at_utc": "2026-06-01T14:02:54Z"
+  "updated_at_utc": "2026-06-01T15:06:36Z"
 }

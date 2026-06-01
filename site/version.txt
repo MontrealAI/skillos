@@ -1,3 +1,3 @@
 skillos.command_center.root_fix.v4
-2026-06-01T16:26:32Z
-f2af4a5b5041b121
+2026-06-01T16:29:39Z
+c412f2443921388f

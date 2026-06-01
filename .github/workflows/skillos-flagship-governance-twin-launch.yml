@@ -1,0 +1,181 @@
+name: SkillOS Flagship Governance Twin Launch
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_to_repo:
+        description: "Commit generated flagship launch files back to the repository"
+        type: boolean
+        required: false
+        default: true
+      deploy_pages:
+        description: "Deploy the generated site as the live GitHub Pages artifact"
+        type: boolean
+        required: false
+        default: true
+      verify_live:
+        description: "After deployment, verify /skillos/ and /skillos/index.html are the flagship site"
+        type: boolean
+        required: false
+        default: true
+      cancel_legacy_runs:
+        description: "Try to cancel older in-progress site refresh/deploy runs before publishing"
+        type: boolean
+        required: false
+        default: true
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/skillos-flagship-governance-twin-launch.yml"
+      - "scripts/build_skillos_flagship_governance_twin_launch.py"
+      - "scripts/verify_skillos_flagship_governance_twin_launch.py"
+      - "scripts/verify_live_skillos_flagship_governance_twin_launch.py"
+      - "scripts/cancel_legacy_skillos_site_runs.py"
+      - "docs/SKILLOS_FLAGSHIP_CAPABILITY_GOVERNANCE_TWIN_LAUNCH_PACK.md"
+  schedule:
+    - cron: "21 */6 * * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: write
+
+concurrency:
+  group: skillos-canonical-public-site
+  cancel-in-progress: true
+
+jobs:
+  launch:
+    name: Build, verify, commit, and deploy flagship SkillOS site
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: https://montrealai.github.io/skillos/
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Explain flagship launch
+        run: |
+          cat <<'TXT'
+          SkillOS Flagship Governance Twin Launch
+          ------------------------------------------------------------
+          This workflow builds the launch-grade public narrative around
+          Capability Governance Twin, verifies it locally, commits the
+          generated files, deploys the exact GitHub Pages artifact, and
+          optionally verifies the live root.
+
+          Canonical thesis:
+          The capability is not the proof. The governed release of the
+          capability is the proof.
+          TXT
+
+      - name: Cancel legacy public-site runs
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.cancel_legacy_runs }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/cancel_legacy_skillos_site_runs.py
+
+      - name: Build flagship governance twin launch
+        run: python scripts/build_skillos_flagship_governance_twin_launch.py
+
+      - name: Verify local flagship site
+        run: python scripts/verify_skillos_flagship_governance_twin_launch.py
+
+      - name: Commit generated flagship launch files
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.publish_to_repo }}
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add \
+              site/index.html \
+              site/capability-governance-twin.html \
+              site/governance-twin.html \
+              site/skills.html \
+              site/run.html \
+              site/runbook.html \
+              site/health.html \
+              site/receipts.html \
+              site/architecture.html \
+              site/proofs.html \
+              site/actions.html \
+              site/multi-agent.html \
+              site/flywheel.html \
+              site/404.html \
+              site/force-refresh.html \
+              site/data/flagship-capability-governance-twin-manifest.json \
+              site/data/rsi-capability-governance-twin-proof.json \
+              site/docs/FLAGSHIP_CAPABILITY_GOVERNANCE_TWIN_LAUNCH.md \
+              site/badges/flagship-capability-governance-twin.svg \
+              site/proof-registry.json \
+              site/sitemap.xml \
+              site/robots.txt \
+              site/.nojekyll \
+              site/version.txt \
+              site/sw.js \
+              data/flagship-capability-governance-twin-manifest.json \
+              docs/FLAGSHIP_CAPABILITY_GOVERNANCE_TWIN_LAUNCH.md \
+              badges/flagship-capability-governance-twin.svg
+            git commit -m "Launch SkillOS flagship capability governance twin [skip ci]"
+            git push
+          else
+            echo "Flagship launch files already fresh."
+          fi
+
+      - name: Prepare Pages artifact
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          cp -R site/. dist/
+          test -f dist/index.html
+          test -f dist/capability-governance-twin.html
+          test -f dist/data/flagship-capability-governance-twin-manifest.json
+
+      - name: Configure GitHub Pages
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy GitHub Pages
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
+        uses: actions/deploy-pages@v4
+
+      - name: Verify live flagship root
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages && inputs.verify_live }}
+        run: python scripts/verify_live_skillos_flagship_governance_twin_launch.py --base-url "https://montrealai.github.io/skillos/" --attempts 18 --sleep 10
+
+      - name: Upload flagship launch artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: skillos-flagship-governance-twin-launch
+          path: |
+            site/index.html
+            site/capability-governance-twin.html
+            site/skills.html
+            site/run.html
+            site/receipts.html
+            site/health.html
+            site/data/flagship-capability-governance-twin-manifest.json
+            site/data/rsi-capability-governance-twin-proof.json
+            site/docs/FLAGSHIP_CAPABILITY_GOVERNANCE_TWIN_LAUNCH.md
+            site/badges/flagship-capability-governance-twin.svg
+            site/proof-registry.json
+            site/version.txt
+            docs/FLAGSHIP_CAPABILITY_GOVERNANCE_TWIN_LAUNCH.md
+            data/flagship-capability-governance-twin-manifest.json
+            badges/flagship-capability-governance-twin.svg

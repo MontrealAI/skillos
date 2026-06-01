@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "708b545c4c177b29fe1a84bcb653a2a7d5c82398",
+  "commit": "6384052c7ede34a058ade0f3ec797788cfa70f1f",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,8 +1174,8 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-06-01T03:26:34Z",
-  "proof_count": 80,
+  "generated_at_utc": "2026-06-01T03:27:00Z",
+  "proof_count": 81,
   "proofs": [
     {
       "agent_count": 512,
@@ -5931,6 +5931,19 @@
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml"
     },
     {
+      "key": "capability-treasury-flywheel-github-capability-treasury-flywheel-capability-treasury-flywheel-capability-treasury",
+      "page_path": "site/proof-capability-treasury-flywheel-github-capability-treasury-flywheel-capability-treasury-flywheel-capability-treasury.html",
+      "page_url": "https://montrealai.github.io/skillos/proof-capability-treasury-flywheel-github-capability-treasury-flywheel-capability-treasury-flywheel-capability-treasury.html",
+      "source": "workflow",
+      "sources": [
+        "workflow"
+      ],
+      "title": "Autonomous RSI Capability Treasury Flywheel Proof",
+      "workflow_name": "Autonomous RSI Capability Treasury Flywheel Proof",
+      "workflow_path": ".github/workflows/autonomous-rsi-capability-treasury-flywheel-proof.yml",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-treasury-flywheel-proof.yml"
+    },
+    {
       "key": "causal-attribution-engine-github-causal-attribution-engine-causal-attribution-engine-causal-attribution",
       "page_path": "site/proof-causal-attribution-engine-github-causal-attribution-engine-causal-attribution-engine-causal-attribution.html",
       "page_url": "https://montrealai.github.io/skillos/proof-causal-attribution-engine-github-causal-attribution-engine-causal-attribution-engine-causal-attribution.html",
@@ -6143,9 +6156,9 @@
     },
     {
       "key": "deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with",
-      "latest_run_status": "in_progress",
-      "latest_run_updated_at": "2026-06-01T03:26:28Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733489998",
+      "latest_run_status": "pending",
+      "latest_run_updated_at": "2026-06-01T03:26:50Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733500176",
       "page_path": "site/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
       "page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
       "source": "workflow",
@@ -6173,8 +6186,8 @@
     {
       "key": "skillos-tests-github-tests-skillos-tests-skillos-tests",
       "latest_run_status": "in_progress",
-      "latest_run_updated_at": "2026-06-01T03:26:28Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733490008",
+      "latest_run_updated_at": "2026-06-01T03:26:52Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733500146",
       "page_path": "site/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
       "page_url": "https://montrealai.github.io/skillos/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
       "source": "workflow",
@@ -6253,35 +6266,47 @@
   "proved_or_passed_proof_count": 31,
   "recent_failed_runs": 0,
   "recent_running_runs": 4,
-  "recent_successful_runs": 43,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733489993",
+  "recent_successful_runs": 41,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733500154",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
-  "workflow_count": 45,
+  "workflow_count": 46,
   "workflows": [
     {
       "conclusion": null,
       "event": "push",
+      "name": "SkillOS tests",
+      "path": ".github/workflows/tests.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
+      "proof_title": "SkillOS tests",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733500146",
+      "status": "in_progress",
+      "updated_at": "2026-06-01T03:26:52Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"
+    },
+    {
+      "conclusion": null,
+      "event": "workflow_run",
       "name": "SkillOS Public Proof Command Center Refresh",
       "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733490022",
-      "status": "in_progress",
-      "updated_at": "2026-06-01T03:26:29Z",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733501082",
+      "status": "pending",
+      "updated_at": "2026-06-01T03:26:51Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
       "conclusion": null,
-      "event": "push",
+      "event": "workflow_run",
       "name": "SkillOS Public Site Command Center Refresh",
       "path": ".github/workflows/skillos-public-site-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733489993",
-      "status": "in_progress",
-      "updated_at": "2026-06-01T03:26:29Z",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733501075",
+      "status": "pending",
+      "updated_at": "2026-06-01T03:26:51Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {
@@ -6291,22 +6316,10 @@
       "path": ".github/workflows/pages.yml",
       "proof_page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
       "proof_title": "Deploy SkillOS website with autonomous safe public copy",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733489998",
-      "status": "in_progress",
-      "updated_at": "2026-06-01T03:26:28Z",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733500176",
+      "status": "pending",
+      "updated_at": "2026-06-01T03:26:50Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"
-    },
-    {
-      "conclusion": null,
-      "event": "push",
-      "name": "SkillOS tests",
-      "path": ".github/workflows/tests.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html",
-      "proof_title": "SkillOS tests",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733490008",
-      "status": "in_progress",
-      "updated_at": "2026-06-01T03:26:28Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"
     },
     {
       "conclusion": "success",
@@ -6463,6 +6476,18 @@
       "status": "not_run",
       "updated_at": "",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml"
+    },
+    {
+      "conclusion": null,
+      "event": null,
+      "name": "Autonomous RSI Capability Treasury Flywheel Proof",
+      "path": ".github/workflows/autonomous-rsi-capability-treasury-flywheel-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-capability-treasury-flywheel-github-capability-treasury-flywheel-capability-treasury-flywheel-capability-treasury.html",
+      "proof_title": "Autonomous RSI Capability Treasury Flywheel Proof",
+      "run_url": null,
+      "status": "not_run",
+      "updated_at": "",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-treasury-flywheel-proof.yml"
     },
     {
       "conclusion": null,

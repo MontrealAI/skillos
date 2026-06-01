@@ -1,14 +1,14 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-06-01T03:26:34Z`
+Generated: `2026-06-01T03:27:00Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 80
-- Workflows tracked: 45
-- Recent successful runs: 43
+- Proof entries: 81
+- Workflows tracked: 46
+- Recent successful runs: 41
 - Recent failed runs: 0
 - Recent running runs: 4
 
@@ -193,6 +193,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI Capability Liquidity Engine Proof**
   - Page: https://montrealai.github.io/skillos/proof-capability-liquidity-engine-github-capability-liquidity-engine-capability-liquidity-engine-capability-liquidity.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml
+- **Autonomous RSI Capability Treasury Flywheel Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capability-treasury-flywheel-github-capability-treasury-flywheel-capability-treasury-flywheel-capability-treasury.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-treasury-flywheel-proof.yml
 - **Autonomous RSI Causal Attribution Engine Proof**
   - Page: https://montrealai.github.io/skillos/proof-causal-attribution-engine-github-causal-attribution-engine-causal-attribution-engine-causal-attribution.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-causal-attribution-engine-proof.yml

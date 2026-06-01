@@ -1174,7 +1174,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-06-01T03:34:53Z",
+  "generated_at_utc": "2026-06-01T03:35:14Z",
   "proof_count": 84,
   "proofs": [
     {
@@ -6036,8 +6036,9 @@
     },
     {
       "key": "capability-sla-reliability-mesh-github-capability-sla-reliability-mesh-capability-sla-reliability",
-      "latest_run_status": "in_progress",
-      "latest_run_updated_at": "2026-06-01T03:34:44Z",
+      "latest_run_conclusion": "failure",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-06-01T03:35:09Z",
       "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733716819",
       "page_path": "site/proof-capability-sla-reliability-mesh-github-capability-sla-reliability-mesh-capability-sla-reliability.html",
       "page_url": "https://montrealai.github.io/skillos/proof-capability-sla-reliability-mesh-github-capability-sla-reliability-mesh-capability-sla-reliability.html",
@@ -6386,14 +6387,26 @@
   ],
   "proved_or_passed_proof_count": 32,
   "recent_failed_runs": 1,
-  "recent_running_runs": 4,
-  "recent_successful_runs": 39,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733715748",
+  "recent_running_runs": 3,
+  "recent_successful_runs": 41,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733719782",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
   "workflow_count": 47,
   "workflows": [
+    {
+      "conclusion": "failure",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Capability SLA Reliability Mesh Proof",
+      "path": ".github/workflows/autonomous-rsi-capability-sla-reliability-mesh-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-capability-sla-reliability-mesh-github-capability-sla-reliability-mesh-capability-sla-reliability.html",
+      "proof_title": "Autonomous RSI Capability SLA Reliability Mesh Proof",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733716819",
+      "status": "completed",
+      "updated_at": "2026-06-01T03:35:09Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-sla-reliability-mesh-proof.yml"
+    },
     {
       "conclusion": null,
       "event": "workflow_run",
@@ -6402,8 +6415,8 @@
       "proof_page_url": null,
       "proof_title": null,
       "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733719782",
-      "status": "pending",
-      "updated_at": "2026-06-01T03:34:48Z",
+      "status": "in_progress",
+      "updated_at": "2026-06-01T03:35:09Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {
@@ -6414,8 +6427,8 @@
       "proof_page_url": null,
       "proof_title": null,
       "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733719771",
-      "status": "pending",
-      "updated_at": "2026-06-01T03:34:47Z",
+      "status": "in_progress",
+      "updated_at": "2026-06-01T03:35:08Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
@@ -6429,18 +6442,6 @@
       "status": "completed",
       "updated_at": "2026-06-01T03:34:45Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml"
-    },
-    {
-      "conclusion": null,
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Capability SLA Reliability Mesh Proof",
-      "path": ".github/workflows/autonomous-rsi-capability-sla-reliability-mesh-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-capability-sla-reliability-mesh-github-capability-sla-reliability-mesh-capability-sla-reliability.html",
-      "proof_title": "Autonomous RSI Capability SLA Reliability Mesh Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733716819",
-      "status": "in_progress",
-      "updated_at": "2026-06-01T03:34:44Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-sla-reliability-mesh-proof.yml"
     },
     {
       "conclusion": null,

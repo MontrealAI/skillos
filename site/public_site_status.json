@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "99d2cc22790de9ae1231aca863da84c9e5999acd",
+  "commit": "468655b058376878971c653143172866ad4a6b50",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,8 +1174,8 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-06-01T04:04:53Z",
-  "proof_count": 90,
+  "generated_at_utc": "2026-06-01T04:05:49Z",
+  "proof_count": 91,
   "proofs": [
     {
       "agent_count": 512,
@@ -5272,6 +5272,119 @@
           "sla_management",
           "trust_and_safety",
           "reinvestment_loops",
+          "release_engineering",
+          "policy_ops",
+          "access_control",
+          "shadow_testing",
+          "control_plane"
+        ],
+        "features": [
+          "business_value",
+          "simulation_fidelity",
+          "policy_coverage",
+          "permission_hygiene",
+          "verifier_coverage",
+          "rollback_option",
+          "observability",
+          "routing_precision",
+          "skill_fit",
+          "capacity_fit",
+          "sla_pressure",
+          "risk_exposure",
+          "security_exposure",
+          "compliance_load",
+          "drift_pressure",
+          "incident_history",
+          "provenance_strength",
+          "customer_trust",
+          "cost_pressure",
+          "latency_pressure",
+          "cross_domain_fit",
+          "release_confidence",
+          "red_team_pressure",
+          "evidence_quality"
+        ],
+        "locked_holdout_count": 2048,
+        "name": "Capability Governance Twin benchmark",
+        "train_count": 1536,
+        "validation_count": 1024
+      },
+      "coordination_style": "governance digital twin with policy-as-code, permission boundaries, shadow route simulation, verifier coverage, rollback planning, incident replay, and validation-gated RSI releases",
+      "generated_at": "2026-06-01T04:05:24Z",
+      "json_path": "data/rsi-capability-governance-twin-proof.json",
+      "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/rsi-capability-governance-twin-proof.json",
+      "key": "capability-governance-twin-capability-governance-twin-capability-governance-twin-capability-governance-twin",
+      "metrics": {
+        "benchmark_value_capture_rate_percent": 97.6124,
+        "frontier_correct_rate_percent": 70.5566,
+        "governance_twin_fidelity_score": 57.8195,
+        "invalid_action_rate_percent": 0.0,
+        "maximum_domain_value_capture_percent": 98.7018,
+        "minimum_domain_value_capture_percent": 95.478,
+        "observability_score": 70.4825,
+        "permission_hygiene_score": 59.3753,
+        "policy_coverage_score": 60.3235,
+        "policy_violation_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.0,
+        "rollback_readiness_score": 67.2855,
+        "shadow_production_gap_rate_percent": 0.0,
+        "top3_rate_percent": 96.2402,
+        "unauthorized_action_rate_percent": 0.0,
+        "value_capture_rate_percent": 97.6124,
+        "weak_domain_rate_percent": 0.0
+      },
+      "page_path": "site/proof-capability-governance-twin-capability-governance-twin-capability-governance-twin-capability-governance-twin.html",
+      "page_url": "https://montrealai.github.io/skillos/proof-capability-governance-twin-capability-governance-twin-capability-governance-twin-capability-governance-twin.html",
+      "proof_type": "Autonomous RSI Capability Governance Twin Proof",
+      "proved": true,
+      "rsi_releases": 12,
+      "safe_interpretation": "A deterministic benchmark proof that SkillOS can test capability routing in a governance digital twin before release, enforcing policy, permissions, verifier coverage, rollback, observability, and validation-gated RSI. Not live revenue, customer results, financial advice, legal advice, audit certification, policy advice, medical advice, token advice, or achieved superintelligence.",
+      "source": "json",
+      "sources": [
+        "json"
+      ],
+      "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF",
+      "title": "Autonomous RSI Capability Governance Twin Proof",
+      "train_count": 1536,
+      "validation_count": 1024,
+      "workflow": "Autonomous RSI Capability Governance Twin Proof"
+    },
+    {
+      "benchmark_public": {
+        "candidate_actions_per_case": 12,
+        "data_boundary": "synthetic/redacted-style public benchmark; no private customer data",
+        "domains": [
+          "enterprise_ops",
+          "regulated_work",
+          "security_review",
+          "developer_tools",
+          "customer_success",
+          "data_engineering",
+          "proof_generation",
+          "governance",
+          "blockchain_protocols",
+          "compute_allocation",
+          "energy_scheduling",
+          "quality_assurance",
+          "compliance_evidence",
+          "market_research",
+          "platform_growth",
+          "reliability_engineering",
+          "workflow_compression",
+          "agent_marketplace",
+          "capability_routing",
+          "risk_courts",
+          "settlement_engineering",
+          "product_strategy",
+          "knowledge_ops",
+          "cross_domain_transfer",
+          "provenance_audit",
+          "incident_response",
+          "capacity_planning",
+          "executive_reporting",
+          "sla_management",
+          "trust_and_safety",
+          "reinvestment_loops",
           "release_engineering"
         ],
         "features": [
@@ -5977,6 +6090,20 @@
       "title": "Capability Economy Clearinghouse"
     },
     {
+      "doc_path": "docs/rsi-capability-governance-twin-proof.md",
+      "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/rsi-capability-governance-twin-proof.md",
+      "key": "capability-governance-twin",
+      "page_path": "site/rsi-capability-governance-twin-proof.html",
+      "page_url": "https://montrealai.github.io/skillos/rsi-capability-governance-twin-proof.html",
+      "source": "doc",
+      "sources": [
+        "page",
+        "doc",
+        "doc"
+      ],
+      "title": "Capability Governance Twin"
+    },
+    {
       "doc_path": "docs/rsi-capability-liquidity-engine-proof.md",
       "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/rsi-capability-liquidity-engine-proof.md",
       "generated_at": "2026-05-31T17:46:48Z",
@@ -6220,10 +6347,6 @@
     },
     {
       "key": "ai-first-governance-capital-engine-github-ai-first-governance-capital-engine-ai",
-      "latest_run_conclusion": "success",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-06-01T01:31:07Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26730510188",
       "page_path": "site/proof-ai-first-governance-capital-engine-github-ai-first-governance-capital-engine-ai.html",
       "page_url": "https://montrealai.github.io/skillos/proof-ai-first-governance-capital-engine-github-ai-first-governance-capital-engine-ai.html",
       "source": "workflow",
@@ -6284,9 +6407,9 @@
     },
     {
       "key": "capability-governance-twin-github-capability-governance-twin-capability-governance-twin-capability-governance",
-      "latest_run_conclusion": "failure",
+      "latest_run_conclusion": "success",
       "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-06-01T04:04:48Z",
+      "latest_run_updated_at": "2026-06-01T04:05:29Z",
       "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734519022",
       "page_path": "site/proof-capability-governance-twin-github-capability-governance-twin-capability-governance-twin-capability-governance.html",
       "page_url": "https://montrealai.github.io/skillos/proof-capability-governance-twin-github-capability-governance-twin-capability-governance-twin-capability-governance.html",
@@ -6547,8 +6670,9 @@
     },
     {
       "key": "deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with",
-      "latest_run_status": "in_progress",
-      "latest_run_updated_at": "2026-06-01T04:04:37Z",
+      "latest_run_conclusion": "success",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-06-01T04:05:34Z",
       "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734509478",
       "page_path": "site/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
       "page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
@@ -6604,18 +6728,6 @@
       "title": "Readiness"
     },
     {
-      "doc_path": "docs/AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF.md",
-      "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF.md",
-      "key": "capability-governance-twin-capability-governance-twin",
-      "page_path": "site/proof-capability-governance-twin-capability-governance-twin.html",
-      "page_url": "https://montrealai.github.io/skillos/proof-capability-governance-twin-capability-governance-twin.html",
-      "source": "doc",
-      "sources": [
-        "doc"
-      ],
-      "title": "Rsi Capability Governance Twin"
-    },
-    {
       "doc_path": "docs/wealth_accumulation_proof.md",
       "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/wealth_accumulation_proof.md",
       "key": "wealth-accumulation-wealth-accumulation",
@@ -6655,27 +6767,27 @@
       }
     }
   ],
-  "proved_or_passed_proof_count": 34,
-  "recent_failed_runs": 1,
-  "recent_running_runs": 3,
-  "recent_successful_runs": 44,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734527204",
+  "proved_or_passed_proof_count": 35,
+  "recent_failed_runs": 0,
+  "recent_running_runs": 2,
+  "recent_successful_runs": 46,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734555980",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
   "workflow_count": 49,
   "workflows": [
     {
-      "conclusion": "failure",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Capability Governance Twin Proof",
-      "path": ".github/workflows/autonomous-rsi-capability-governance-twin-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-capability-governance-twin-github-capability-governance-twin-capability-governance-twin-capability-governance.html",
-      "proof_title": "Autonomous RSI Capability Governance Twin Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734519022",
-      "status": "completed",
-      "updated_at": "2026-06-01T04:04:48Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-governance-twin-proof.yml"
+      "conclusion": null,
+      "event": "workflow_run",
+      "name": "SkillOS Public Proof Command Center Refresh",
+      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
+      "proof_page_url": null,
+      "proof_title": null,
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734556017",
+      "status": "in_progress",
+      "updated_at": "2026-06-01T04:05:43Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
       "conclusion": null,
@@ -6684,34 +6796,34 @@
       "path": ".github/workflows/skillos-public-site-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734527199",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734555980",
       "status": "in_progress",
-      "updated_at": "2026-06-01T04:04:47Z",
+      "updated_at": "2026-06-01T04:05:41Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
     },
     {
-      "conclusion": null,
-      "event": "workflow_run",
-      "name": "SkillOS Public Proof Command Center Refresh",
-      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
-      "proof_page_url": null,
-      "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734527204",
-      "status": "in_progress",
-      "updated_at": "2026-06-01T04:04:46Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
-    },
-    {
-      "conclusion": null,
+      "conclusion": "success",
       "event": "push",
       "name": "Deploy SkillOS website with autonomous safe public copy",
       "path": ".github/workflows/pages.yml",
       "proof_page_url": "https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html",
       "proof_title": "Deploy SkillOS website with autonomous safe public copy",
       "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734509478",
-      "status": "in_progress",
-      "updated_at": "2026-06-01T04:04:37Z",
+      "status": "completed",
+      "updated_at": "2026-06-01T04:05:34Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Capability Governance Twin Proof",
+      "path": ".github/workflows/autonomous-rsi-capability-governance-twin-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-capability-governance-twin-github-capability-governance-twin-capability-governance-twin-capability-governance.html",
+      "proof_title": "Autonomous RSI Capability Governance Twin Proof",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734519022",
+      "status": "completed",
+      "updated_at": "2026-06-01T04:05:29Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-governance-twin-proof.yml"
     },
     {
       "conclusion": "success",
@@ -6798,18 +6910,6 @@
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-fork-resistant-capability-network-proof.yml"
     },
     {
-      "conclusion": "success",
-      "event": "schedule",
-      "name": "Autonomous RSI AI-First Governance Capital Engine Proof",
-      "path": ".github/workflows/autonomous-rsi-ai-first-governance-capital-engine-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-ai-first-governance-capital-engine-github-ai-first-governance-capital-engine-ai.html",
-      "proof_title": "Autonomous RSI AI-First Governance Capital Engine Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26730510188",
-      "status": "completed",
-      "updated_at": "2026-06-01T01:31:07Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-ai-first-governance-capital-engine-proof.yml"
-    },
-    {
       "conclusion": null,
       "event": null,
       "name": "_SkillOS Public Proof Command Center Refresh Reusable",
@@ -6856,6 +6956,18 @@
       "status": "not_run",
       "updated_at": "",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-adversarial-benchmark-foundry-proof.yml"
+    },
+    {
+      "conclusion": null,
+      "event": null,
+      "name": "Autonomous RSI AI-First Governance Capital Engine Proof",
+      "path": ".github/workflows/autonomous-rsi-ai-first-governance-capital-engine-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-ai-first-governance-capital-engine-github-ai-first-governance-capital-engine-ai.html",
+      "proof_title": "Autonomous RSI AI-First Governance Capital Engine Proof",
+      "run_url": null,
+      "status": "not_run",
+      "updated_at": "",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-ai-first-governance-capital-engine-proof.yml"
     },
     {
       "conclusion": null,

@@ -1,420 +1,394 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SkillOS Proof Registry</title><style>
-:root{--bg:#06131f;--panel:rgba(255,255,255,.075);--panel2:rgba(255,255,255,.108);--line:rgba(255,255,255,.16);--text:#f5fbff;--muted:#b8c8d8;--cyan:#86f8ff;--green:#7dffb0;--gold:#ffd66b;--pink:#ff9ef8}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:radial-gradient(circle at 82% 0,#3d4381 0,transparent 34%),radial-gradient(circle at 0 18%,#095e70 0,transparent 26%),linear-gradient(135deg,#06131f,#13243d 60%,#282a5d);color:var(--text)}
-body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px;pointer-events:none;mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),rgba(0,0,0,.05))}
-a{color:var(--cyan)}main{max-width:1240px;margin:0 auto;padding:44px 20px 84px;position:relative}nav{position:sticky;top:0;z-index:10;background:rgba(6,19,31,.91);border-bottom:1px solid var(--line);backdrop-filter:blur(14px);display:flex;justify-content:space-between;align-items:center;padding:14px 22px}nav a{color:var(--muted);text-decoration:none;font-weight:850;margin-left:14px}
-h1{font-size:clamp(44px,7.2vw,104px);line-height:.84;letter-spacing:-.08em;margin:12px 0}h2{font-size:clamp(30px,4.5vw,58px);letter-spacing:-.05em;margin:36px 0 14px}h3{letter-spacing:-.025em}p{color:var(--muted);font-size:18px;line-height:1.55}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:center}.card,.metric,.proof-card,.workflow-card{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:0 22px 80px rgba(0,0,0,.25)}.card.feature{background:linear-gradient(180deg,var(--panel2),var(--panel))}
-.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.18em;font-weight:950;font-size:12px}.quote{font-size:clamp(24px,3.2vw,42px);line-height:1.08;letter-spacing:-.04em;color:var(--text)}.pill{display:inline-block;border:1px solid rgba(134,248,255,.35);border-radius:999px;padding:7px 10px;margin:4px 6px 4px 0;color:var(--cyan);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}.metric strong{display:block;color:var(--green);font-size:32px}.metric span{color:var(--muted)}.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.proof-card h3{font-size:22px;margin:8px 0}.proof-card p{font-size:15px}.proof-card .links a,.workflow-card a.button,.button{display:inline-block;background:var(--cyan);color:#06131f;text-decoration:none;border-radius:999px;padding:10px 14px;font-weight:950;margin:4px 6px 4px 0}.secondary{background:rgba(255,255,255,.09)!important;color:var(--text)!important;border:1px solid var(--line)}
-.skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.skill-card{background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:22px;padding:16px;min-height:166px}.skill-card h3{font-size:18px;margin:8px 0}.skill-card p{font-size:14px;margin:0}.family{color:var(--gold);font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.1em}.bar{display:grid;grid-template-columns:240px 1fr 120px;gap:12px;align-items:center;margin:12px 0}.bar span,.bar b{color:var(--muted)}.bar div{height:20px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--cyan));border-radius:999px}
-table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:16px 0}td,th{padding:12px;border-bottom:1px solid var(--line);text-align:left}th{color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:.08em}.notice{border-left:4px solid var(--gold);background:rgba(255,214,107,.08);border-radius:16px;padding:16px 18px;color:var(--muted)}.workflow-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.status-ok{color:var(--green);font-weight:950}.status-warn{color:var(--gold);font-weight:950}.small{font-size:14px;color:var(--muted)}code{background:rgba(255,255,255,.08);padding:2px 6px;border-radius:8px}
-@media(max-width:1000px){.proof-grid{grid-template-columns:repeat(2,1fr)}.skill-grid{grid-template-columns:repeat(2,1fr)}.workflow-grid{grid-template-columns:1fr}}@media(max-width:760px){.hero,.grid,.proof-grid,.skill-grid,.bar{grid-template-columns:1fr}nav{display:block}nav a{display:inline-block;margin:8px 10px 0 0}}
-</style></head><body><nav><strong>SkillOS Command Center</strong><div><a href="index.html">Home</a><a href="proofs.html">Proofs</a><a href="actions.html">Run Proofs</a><a href="data/command-center-manifest.json">Manifest</a></div></nav><main><section class="hero"><div><div class="eyebrow">Proof registry</div><h1>All public proofs.</h1><p>Automatically generated from proof receipts in <code>data/</code> and <code>site/data/</code>. Generated at 2026-06-01T16:23:01Z.</p></div><div class="card feature"><div class="quote">51 proof receipts indexed. 37 passed receipts.</div><p>Each card links to the visual page, JSON receipt, and Markdown report when available.</p></div></section><section><h2>Core capability proof</h2><div class="proof-grid"><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>adversarial capital-to-capability command center proof with recursive self-improvement and large-scale specialist-agent coordination</h3>
-<p><span class="status-ok">PASSED</span> · value capture 90.5000%% · risk breach 0.0000%%</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-capability-command-center-v17-proof.html">Open proof page</a><a class="secondary" href="data/rsi_capability_command_center_v17_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_capability_command_center_v17_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_capability_command_center_v17_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>autonomous_no_send_shadow_pilot</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="shadow-pilot-proof.html">Open proof page</a><a class="secondary" href="data/shadow_pilot_proof.json">JSON receipt</a><a class="secondary" href="docs/shadow_pilot_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/shadow_pilot_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>Proof Forge Meta Coordination</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-proof-forge-meta-coordination-proof.html">Open proof page</a><a class="secondary" href="data/rsi-proof-forge-meta-coordination-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-proof-forge-meta-coordination-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-proof-forge-meta-coordination-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>Autonomous RSI Full-Stack Capability Lifecycle Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 96.2057%% · risk breach 0.0000%%</p>
-<p class="small">335544320 agents · 10485760 roles · 0 skills · 13 releases</p>
-<div></div>
-<p class="links"><a href="rsi-full-stack-capability-lifecycle-proof.html">Open proof page</a><a class="secondary" href="data/rsi-full-stack-capability-lifecycle-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-full-stack-capability-lifecycle-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-full-stack-capability-lifecycle-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>Autonomous RSI Skill Provenance Ledger Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 99.9463%% · risk breach 0.0000%%</p>
-<p class="small">16777216 agents · 524288 roles · 0 skills · 6 releases</p>
-<div></div>
-<p class="links"><a href="rsi-skill-provenance-ledger-proof.html">Open proof page</a><a class="secondary" href="data/rsi-skill-provenance-ledger-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-skill-provenance-ledger-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-skill-provenance-ledger-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>corporate-capability-frontier</h3>
-<p><span class="status-ok">PASSED</span> · value capture 99.8560%% · risk breach 0.0000%%</p>
-<p class="small">— agents · — roles · 0 skills · 9 releases</p>
-<div></div>
-<p class="links"><a href="rsi-corporate-capability-frontier-proof.html">Open proof page</a><a class="secondary" href="data/rsi_corporate_capability_frontier_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_corporate_capability_frontier_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_corporate_capability_frontier_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>Autonomous RSI Enterprise Superorganization Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 99.9780%% · risk breach 0.1460%%</p>
-<p class="small">— agents · — roles · 0 skills · 9 releases</p>
-<div></div>
-<p class="links"><a href="rsi-enterprise-superorganization-proof.html">Open proof page</a><a class="secondary" href="data/rsi_enterprise_superorganization_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_enterprise_superorganization_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_enterprise_superorganization_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>Autonomous RSI Enterprise Capability Foundry Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 99.9840%% · risk breach 0.1460%%</p>
-<p class="small">— agents · — roles · 0 skills · 9 releases</p>
-<div></div>
-<p class="links"><a href="rsi-enterprise-capability-foundry-proof.html">Open proof page</a><a class="secondary" href="data/rsi_enterprise_capability_foundry_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_enterprise_capability_foundry_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_enterprise_capability_foundry_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>Autonomous RSI Enterprise Eureka Factory Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 99.9650%% · risk breach 0.0650%%</p>
-<p class="small">— agents · — roles · 0 skills · 10 releases</p>
-<div></div>
-<p class="links"><a href="rsi-enterprise-eureka-factory-proof.html">Open proof page</a><a class="secondary" href="data/rsi_enterprise_eureka_factory_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_enterprise_eureka_factory_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_enterprise_eureka_factory_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>{&#x27;name&#x27;: &#x27;Sales follow-up email from call notes&#x27;, &#x27;why_this_workflow&#x27;: &#x27;Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.&#x27;, &#x27;real_work_unit&#x27;: &#x27;Draft one buyer-specific follow-up email from call notes.&#x27;, &#x27;note&#x27;: &#x27;The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.&#x27;}</h3>
-<p><span class="status-warn">CHECK</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="wealth-proof.html">Open proof page</a><a class="secondary" href="data/wealth_proof.json">JSON receipt</a><a class="secondary" href="#">Report</a></p>
-
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>semiconductor RTL verification, bug triage, assertion selection, and fix-plan recommendation</h3>
-<p><span class="status-warn">CHECK</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-silicon-verification-benchmark.html">Open proof page</a><a class="secondary" href="data/rsi_silicon_verification_benchmark.json">JSON receipt</a><a class="secondary" href="#">Report</a></p>
-
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>security operations alert triage and incident containment planning</h3>
-<p><span class="status-warn">CHECK</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-cyberdefense-benchmark.html">Open proof page</a><a class="secondary" href="data/rsi_cyberdefense_benchmark.json">JSON receipt</a><a class="secondary" href="#">Report</a></p>
-
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>procurement invoice reconciliation and payment-risk triage</h3>
-<p><span class="status-warn">CHECK</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="enterprise-ops-benchmark.html">Open proof page</a><a class="secondary" href="data/enterprise_ops_benchmark.json">JSON receipt</a><a class="secondary" href="#">Report</a></p>
-
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>fully autonomous recursive self-improvement adversarial large-scale multi-agent capital-to-capability command-center proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 91.4000%% · risk breach 0.0000%%</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-capability-command-center-proof.html">Open proof page</a><a class="secondary" href="data/rsi_capability_command_center_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_capability_command_center_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_capability_command_center_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>corporate operating-system diagnosis and board-ready operating-plan generation</h3>
-<p><span class="status-warn">CHECK</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-corporate-os-benchmark.html">Open proof page</a><a class="secondary" href="data/rsi_corporate_os_benchmark.json">JSON receipt</a><a class="secondary" href="#">Report</a></p>
-
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>autonomous lightweight metamaterial discovery for load-bearing structures</h3>
-<p><span class="status-warn">CHECK</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-metamaterials-discovery-benchmark.html">Open proof page</a><a class="secondary" href="data/rsi_metamaterials_discovery_benchmark.json">JSON receipt</a><a class="secondary" href="#">Report</a></p>
-
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>adversarial capital-to-capability coordination for capital, compute, energy, data, talent, product, distribution, trust, validation, risk control, and reinvestment</h3>
-<p><span class="status-warn">CHECK</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-capability-command-center-v17-benchmark.html">Open proof page</a><a class="secondary" href="data/rsi_capability_command_center_v17_benchmark.json">JSON receipt</a><a class="secondary" href="#">Report</a></p>
-
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>Corporate Strategy Frontier</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-corporate-strategy-frontier-proof.html">Open proof page</a><a class="secondary" href="data/rsi-corporate-strategy-frontier-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-corporate-strategy-frontier-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-corporate-strategy-frontier-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>Blockchain Protocol Capital Frontier</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-blockchain-protocol-capital-frontier-proof.html">Open proof page</a><a class="secondary" href="data/rsi-blockchain-protocol-capital-frontier-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-blockchain-protocol-capital-frontier-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-blockchain-protocol-capital-frontier-proof.svg" style="max-width:240px;height:20px">
-</article></div></section><section><h2>Skill markets and compounding moat</h2><div class="proof-grid"><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous recursive self-improvement revenue experiment factory market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 82.4000%% · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-revenue-experiment-factory-market-proof.html">Open proof page</a><a class="secondary" href="data/rsi_revenue_experiment_factory_market_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_revenue_experiment_factory_market_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_revenue_experiment_factory_market_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous recursive self-improvement unit economics profit engine market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 84.7000%% · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-unit-economics-market-proof.html">Open proof page</a><a class="secondary" href="data/rsi_unit_economics_market_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_unit_economics_market_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_unit_economics_market_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous recursive self-improvement scientific discovery market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-metamaterials-discovery-market-proof.html">Open proof page</a><a class="secondary" href="data/rsi_metamaterials_discovery_market_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_metamaterials_discovery_market_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_metamaterials_discovery_market_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous recursive self-improvement corporate operating system market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 100.0000%% · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-corporate-os-market-proof.html">Open proof page</a><a class="secondary" href="data/rsi_corporate_os_market_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_corporate_os_market_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_corporate_os_market_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous recursive self-improvement silicon verification market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-silicon-verification-market-proof.html">Open proof page</a><a class="secondary" href="data/rsi_silicon_verification_market_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_silicon_verification_market_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_silicon_verification_market_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous recursive self-improvement cyber defense market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-cyberdefense-market-proof.html">Open proof page</a><a class="secondary" href="data/rsi_cyberdefense_market_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_cyberdefense_market_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_cyberdefense_market_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous recursive self-improvement market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-cloudops-market-proof.html">Open proof page</a><a class="secondary" href="data/rsi_cloudops_market_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_cloudops_market_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_cloudops_market_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous enterprise operations market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="enterprise-ops-market-proof.html">Open proof page</a><a class="secondary" href="data/enterprise_ops_market_proof.json">JSON receipt</a><a class="secondary" href="docs/enterprise_ops_market_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/enterprise_ops_market_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous no-human-review market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="autonomous-market-readiness.html">Open proof page</a><a class="secondary" href="data/autonomous_market_readiness.json">JSON receipt</a><a class="secondary" href="docs/autonomous_market_readiness.md">Report</a></p>
-<img alt="proof badge" src="badges/autonomous_market_readiness.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>Autonomous RSI Capability Treasury Flywheel Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 97.0953%% · risk breach 0.0000%%</p>
-<p class="small">2147483648 agents · 67108864 roles · 0 skills · 21 releases</p>
-<div></div>
-<p class="links"><a href="rsi-capability-treasury-flywheel-proof.html">Open proof page</a><a class="secondary" href="data/rsi-capability-treasury-flywheel-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-capability-treasury-flywheel-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-capability-treasury-flywheel-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>Autonomous RSI Capability Economy Clearinghouse Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 96.6013%% · risk breach 0.0000%%</p>
-<p class="small">1073741824 agents · 33554432 roles · 0 skills · 13 releases</p>
-<div></div>
-<p class="links"><a href="rsi-capability-economy-clearinghouse-proof.html">Open proof page</a><a class="secondary" href="data/rsi-capability-economy-clearinghouse-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-capability-economy-clearinghouse-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-capability-economy-clearinghouse-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>Autonomous RSI Fork-Resistant Capability Network Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 96.1864%% · risk breach 0.0000%%</p>
-<p class="small">536870912 agents · 16777216 roles · 0 skills · 14 releases</p>
-<div></div>
-<p class="links"><a href="rsi-fork-resistant-capability-network-proof.html">Open proof page</a><a class="secondary" href="data/rsi-fork-resistant-capability-network-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-fork-resistant-capability-network-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-fork-resistant-capability-network-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>Autonomous RSI Skill Compounding Moat Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 96.9765%% · risk breach 0.0000%%</p>
-<p class="small">268435456 agents · 8388608 roles · 0 skills · 12 releases</p>
-<div></div>
-<p class="links"><a href="rsi-skill-compounding-moat-proof.html">Open proof page</a><a class="secondary" href="data/rsi-skill-compounding-moat-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-skill-compounding-moat-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-skill-compounding-moat-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous recursive self-improvement marketplace flywheel market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 87.0000%% · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-marketplace-flywheel-market-proof.html">Open proof page</a><a class="secondary" href="data/rsi_marketplace_flywheel_market_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_marketplace_flywheel_market_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_marketplace_flywheel_market_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous recursive self-improvement adversarial large-scale multi-agent market-command-center proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 89.3000%% · risk breach 0.0000%%</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-adversarial-multi-agent-market-command-center-proof.html">Open proof page</a><a class="secondary" href="data/rsi_adversarial_multi_agent_market_command_center_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_adversarial_multi_agent_market_command_center_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_adversarial_multi_agent_market_command_center_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>large-scale agentic coordination for capital-to-capability compounding, market capture, resource allocation, risk control, and validated reinvestment</h3>
-<p><span class="status-warn">CHECK</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-capital-to-capability-engine-benchmark.html">Open proof page</a><a class="secondary" href="data/rsi_capital_to_capability_engine_benchmark.json">JSON receipt</a><a class="secondary" href="#">Report</a></p>
-
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>adversarial large-scale agentic coordination for profitable market-capture portfolio selection, resource allocation, risk control, and compounding business strategy</h3>
-<p><span class="status-warn">CHECK</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-adversarial-multi-agent-market-command-center-benchmark.html">Open proof page</a><a class="secondary" href="data/rsi_adversarial_multi_agent_market_command_center_benchmark.json">JSON receipt</a><a class="secondary" href="#">Report</a></p>
-
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>adversarial large-scale agentic coordination for capital-to-capability compounding, market capture, resource allocation, risk control, and validated reinvestment</h3>
-<p><span class="status-warn">CHECK</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-capability-command-center-benchmark.html">Open proof page</a><a class="secondary" href="data/rsi_capability_command_center_benchmark.json">JSON receipt</a><a class="secondary" href="#">Report</a></p>
-
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>AI workflow marketplace unit-economics optimization and scalable profit-capture planning</h3>
-<p><span class="status-warn">CHECK</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-unit-economics-benchmark.html">Open proof page</a><a class="secondary" href="data/rsi_unit_economics_benchmark.json">JSON receipt</a><a class="secondary" href="#">Report</a></p>
-
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>AI work marketplace liquidity, skill-supply allocation, pricing, routing, and compounding flywheel optimization</h3>
-<p><span class="status-warn">CHECK</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-marketplace-flywheel-benchmark.html">Open proof page</a><a class="secondary" href="data/rsi_marketplace_flywheel_benchmark.json">JSON receipt</a><a class="secondary" href="#">Report</a></p>
-
-</article></div></section><section><h2>Reliability, assurance, and governance</h2><div class="proof-grid"><article class="proof-card">
-<div class="family">Reliability, assurance, and governance</div>
-<h3>Autonomous RSI Capability Governance Twin Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 97.6124%% · risk breach 0.0000%%</p>
-<p class="small">2147483648 agents · 67108864 roles · 18 skills · 12 releases</p>
-<div><span class="pill">Governance Twin Construction</span><span class="pill">Policy-as-Code Compilation</span><span class="pill">Permission Boundary Mapping</span></div>
-<p class="links"><a href="rsi-capability-governance-twin-proof.html">Open proof page</a><a class="secondary" href="data/rsi-capability-governance-twin-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-capability-governance-twin-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-capability-governance-twin-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Reliability, assurance, and governance</div>
-<h3>Autonomous RSI Capability Assurance Case Graph Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 97.6571%% · risk breach 0.0000%%</p>
-<p class="small">2147483648 agents · 67108864 roles · 18 skills · 12 releases</p>
-<div><span class="pill">Assurance Claim Decomposition</span><span class="pill">Evidence Packet Assembly</span><span class="pill">Control Coverage Mapping</span></div>
-<p class="links"><a href="rsi-capability-assurance-case-graph-proof.html">Open proof page</a><a class="secondary" href="data/rsi-capability-assurance-case-graph-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-capability-assurance-case-graph-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-capability-assurance-case-graph-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Reliability, assurance, and governance</div>
-<h3>Autonomous RSI Capability SLA Reliability Mesh Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 96.9985%% · risk breach 0.0000%%</p>
-<p class="small">2147483648 agents · 67108864 roles · 18 skills · 12 releases</p>
-<div><span class="pill">Demand Decomposition</span><span class="pill">SLA Contract Extraction</span><span class="pill">Latency-Aware Routing</span></div>
-<p class="links"><a href="rsi-capability-sla-reliability-mesh-proof.html">Open proof page</a><a class="secondary" href="data/rsi-capability-sla-reliability-mesh-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-capability-sla-reliability-mesh-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-capability-sla-reliability-mesh-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Reliability, assurance, and governance</div>
-<h3>cloud reliability incident triage and cost remediation planning</h3>
-<p><span class="status-warn">CHECK</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-cloudops-benchmark.html">Open proof page</a><a class="secondary" href="data/rsi_cloudops_benchmark.json">JSON receipt</a><a class="secondary" href="#">Report</a></p>
-
-</article></div></section><section><h2>RSI evidence and robustness</h2><div class="proof-grid"><article class="proof-card">
-<div class="family">RSI evidence and robustness</div>
-<h3>Autonomous RSI Continual Capability Frontier Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 96.6520%% · risk breach 0.0000%%</p>
-<p class="small">184549376 agents · 5767168 roles · 0 skills · 10 releases</p>
-<div></div>
-<p class="links"><a href="rsi-continual-capability-frontier-proof.html">Open proof page</a><a class="secondary" href="data/rsi-continual-capability-frontier-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-continual-capability-frontier-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-continual-capability-frontier-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">RSI evidence and robustness</div>
-<h3>Autonomous RSI Adversarial Benchmark Foundry Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-adversarial-benchmark-foundry-proof.html">Open proof page</a><a class="secondary" href="data/rsi-adversarial-benchmark-foundry-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-adversarial-benchmark-foundry-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-adversarial-benchmark-foundry-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">RSI evidence and robustness</div>
-<h3>Autonomous RSI Open Replication Mesh Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-open-replication-mesh-proof.html">Open proof page</a><a class="secondary" href="data/rsi-open-replication-mesh-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-open-replication-mesh-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-open-replication-mesh-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">RSI evidence and robustness</div>
-<h3>Autonomous RSI Objective Integrity Firewall Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-objective-integrity-firewall-proof.html">Open proof page</a><a class="secondary" href="data/rsi-objective-integrity-firewall-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-objective-integrity-firewall-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-objective-integrity-firewall-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">RSI evidence and robustness</div>
-<h3>Autonomous RSI Causal Attribution Engine Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-causal-attribution-engine-proof.html">Open proof page</a><a class="secondary" href="data/rsi-causal-attribution-engine-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-causal-attribution-engine-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-causal-attribution-engine-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">RSI evidence and robustness</div>
-<h3>Autonomous RSI Cross-Domain Capability Transfer Atlas Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-cross-domain-capability-transfer-atlas-proof.html">Open proof page</a><a class="secondary" href="data/rsi-cross-domain-capability-transfer-atlas-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-cross-domain-capability-transfer-atlas-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-cross-domain-capability-transfer-atlas-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">RSI evidence and robustness</div>
-<h3>fully autonomous recursive self-improvement capital-to-capability engine benchmark</h3>
-<p><span class="status-ok">PASSED</span> · value capture 90.5000%% · risk breach 0.0000%%</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-capital-to-capability-engine-proof.html">Open proof page</a><a class="secondary" href="data/rsi_capital_to_capability_engine_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_capital_to_capability_engine_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_capital_to_capability_engine_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">RSI evidence and robustness</div>
-<h3>revenue experiment design, causal validation, portfolio allocation, and scalable growth-plan selection</h3>
-<p><span class="status-warn">CHECK</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-revenue-experiment-factory-benchmark.html">Open proof page</a><a class="secondary" href="data/rsi_revenue_experiment_factory_benchmark.json">JSON receipt</a><a class="secondary" href="#">Report</a></p>
-
-</article></div></section><section class="notice"><strong>Public boundary:</strong> SkillOS publishes deterministic benchmark proofs and reference workflows. The public command center is not a claim of live customer revenue, independent financial-performance claims, financial advice, legal advice, medical advice, policy advice, token advice, or achieved superintelligence.</section></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#06131f">
+<title>SkillOS Proof Atlas</title>
+<style>
+:root{--ink:#f7fbff;--muted:#bdd0e1;--cyan:#7df7ff;--gold:#ffd86b;--green:#76ffae;--rose:#ff8eb3;--panel:rgba(255,255,255,.082);--panel2:rgba(255,255,255,.125);--line:rgba(255,255,255,.18);}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;color:var(--ink);background:radial-gradient(circle at 12% 10%,rgba(0,245,255,.18),transparent 30%),radial-gradient(circle at 84% 0,rgba(186,129,255,.30),transparent 38%),linear-gradient(135deg,#06131f 0%,#112b44 42%,#25255e 100%);}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.95),rgba(0,0,0,.10));}
+a{color:var(--cyan);text-decoration:none}.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:14px 22px;background:rgba(5,16,28,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.brand{font-weight:950;color:var(--cyan);letter-spacing:-.03em}.nav a{margin-left:16px;color:#d7e7f7;font-weight:850;font-size:14px}main{max-width:1320px;margin:0 auto;padding:58px 24px 100px;position:relative}.hero{display:grid;grid-template-columns:1.06fr .94fr;gap:42px;align-items:center;min-height:540px}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.22em;font-weight:1000;font-size:12px}h1{font-size:clamp(54px,9vw,130px);line-height:.82;margin:18px 0;letter-spacing:-.085em}h2{font-size:clamp(34px,5vw,74px);line-height:.9;letter-spacing:-.065em;margin:42px 0 18px}h3{font-size:25px;letter-spacing:-.035em;margin:0 0 10px}p{font-size:18px;line-height:1.58;color:var(--muted)}.panel,.metric,.proof,.skill,.workflow{border:1px solid var(--line);background:linear-gradient(180deg,var(--panel2),var(--panel));border-radius:30px;box-shadow:0 24px 90px rgba(0,0,0,.23)}.panel{padding:28px}.thesis{font-size:clamp(28px,3.5vw,54px);line-height:1.04;letter-spacing:-.055em;color:var(--ink)}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 19px;font-weight:950;border:1px solid var(--line);color:var(--ink);background:rgba(255,255,255,.09)}.btn.gold{background:var(--gold);color:#091323}.btn.cyan{background:var(--cyan);color:#06131f}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:30px 0}.metric{padding:22px}.metric strong{display:block;font-size:38px;color:var(--green);letter-spacing:-.05em}.metric span{color:var(--muted)}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.proof,.skill,.workflow{padding:20px;min-height:210px}.badge{display:inline-flex;border-radius:999px;padding:6px 10px;background:rgba(118,255,174,.18);border:1px solid rgba(118,255,174,.25);color:var(--green);font-size:11px;font-weight:1000;letter-spacing:.1em;text-transform:uppercase}.badge.warn{background:rgba(255,216,107,.15);border-color:rgba(255,216,107,.3);color:var(--gold)}.skill dl{margin:12px 0 0}.skill dt{font-size:11px;color:var(--green);font-weight:1000;text-transform:uppercase;letter-spacing:.12em;margin-top:9px}.skill dd{margin:3px 0 0;color:var(--muted);font-size:14px;line-height:1.35}table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:22px;background:rgba(255,255,255,.07);border:1px solid var(--line)}th,td{padding:13px 14px;border-bottom:1px solid var(--line);text-align:left;color:var(--muted)}th{color:#e9f5ff;text-transform:uppercase;font-size:12px;letter-spacing:.12em}.footer{margin-top:60px;padding:24px;border-top:1px solid var(--line);color:var(--muted)}code{background:rgba(0,0,0,.22);padding:2px 6px;border-radius:7px;color:#eaffff}.root-fix{border-left:5px solid var(--gold);background:rgba(255,216,107,.09);padding:20px;border-radius:18px;margin:22px 0}@media(max-width:900px){.hero,.grid2,.grid3,.metrics{grid-template-columns:1fr}.nav{display:none}}
+</style>
+<script>
+(function() {
+  const version = "b7bc8fb67033b0c1";
+  document.documentElement.dataset.skillosVersion = version;
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(regs => Promise.all(regs.map(r => r.unregister()))).catch(() => {});
+  }
+  if (window.caches && caches.keys) {
+    caches.keys().then(keys => Promise.all(keys.map(k => caches.delete(k)))).catch(() => {});
+  }
+})();
+</script>
+</head>
+<body>
+<nav class="top"><a class="brand" href="./">SkillOS Public Command Center v4</a><div class="nav"><a href="executive.html">Executive</a><a href="proofs.html">Proofs</a><a href="skills.html">Skills Used</a><a href="actions.html">Run</a><a href="health.html">Health</a><a href="https://github.com/MontrealAI/skillos">GitHub</a></div></nav>
+<main><h1>Proof Atlas</h1><p>All indexed SkillOS proofs and receipts. Each proof card links to a visual page and machine-readable JSON when available.</p><div class="grid3"><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-capability-command-center-v17-proof.html">adversarial capital-to-capability command center proof with recursive self-improvement and large-scale specialist-agent coordination</a></h3>
+<p>Deterministic market-readiness benchmark using synthetic/redacted-style business cases and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, actual superintelligence, Kardashev Typ</p>
+<p><strong>90.50%</strong> value capture · agents agents · 64 roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-command-center-v17-proof.html">Open proof</a><a class="btn" href="data/rsi_capability_command_center_v17_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-adversarial-benchmark-foundry-proof.html">Autonomous RSI Adversarial Benchmark Foundry Proof</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-adversarial-benchmark-foundry-proof.html">Open proof</a><a class="btn" href="data/rsi-adversarial-benchmark-foundry-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-capability-assurance-case-graph-proof.html">Autonomous RSI Capability Assurance Case Graph Proof</a></h3>
+<p>Benchmark-capital-equivalent values are not live revenue, customer results, financial guarantees, legal advice, audit certification, policy advice, token advice, medical advice, or proof of achieved superintelligence.</p>
+<p><strong>97.66%</strong> value capture · 2147483648 agents · 67108864 roles · 12 releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-assurance-case-graph-proof.html">Open proof</a><a class="btn" href="data/rsi-capability-assurance-case-graph-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-capability-economy-clearinghouse-proof.html">Autonomous RSI Capability Economy Clearinghouse Proof</a></h3>
+<p>Benchmark-capital-equivalent values are not live revenue, customer results, financial guarantees, legal advice, policy advice, token advice, or proof of achieved superintelligence.</p>
+<p><strong>96.60%</strong> value capture · 1073741824 agents · 33554432 roles · 13 releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-economy-clearinghouse-proof.html">Open proof</a><a class="btn" href="data/rsi-capability-economy-clearinghouse-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-capability-governance-twin-proof.html">Autonomous RSI Capability Governance Twin Proof</a></h3>
+<p>Benchmark-capital-equivalent values are not live revenue, customer results, financial guarantees, legal advice, audit certification, policy advice, token advice, medical advice, or proof of achieved superintelligence.</p>
+<p><strong>97.61%</strong> value capture · 2147483648 agents · 67108864 roles · 12 releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-governance-twin-proof.html">Open proof</a><a class="btn" href="data/rsi-capability-governance-twin-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-capability-sla-reliability-mesh-proof.html">Autonomous RSI Capability SLA Reliability Mesh Proof</a></h3>
+<p>Benchmark-capital-equivalent values are not live revenue, customer results, financial guarantees, legal advice, policy advice, token advice, medical advice, or proof of achieved superintelligence.</p>
+<p><strong>97.00%</strong> value capture · 2147483648 agents · 67108864 roles · 12 releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-sla-reliability-mesh-proof.html">Open proof</a><a class="btn" href="data/rsi-capability-sla-reliability-mesh-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-capability-treasury-flywheel-proof.html">Autonomous RSI Capability Treasury Flywheel Proof</a></h3>
+<p>Benchmark-capital-equivalent values are not live revenue, customer results, financial guarantees, legal advice, policy advice, token advice, or proof of achieved superintelligence.</p>
+<p><strong>97.10%</strong> value capture · 2147483648 agents · 67108864 roles · 21 releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-treasury-flywheel-proof.html">Open proof</a><a class="btn" href="data/rsi-capability-treasury-flywheel-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-causal-attribution-engine-proof.html">Autonomous RSI Causal Attribution Engine Proof</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-causal-attribution-engine-proof.html">Open proof</a><a class="btn" href="data/rsi-causal-attribution-engine-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-continual-capability-frontier-proof.html">Autonomous RSI Continual Capability Frontier Proof</a></h3>
+<p>Benchmark-capital-equivalent values are not live revenue, customer results, financial guarantees, legal advice, policy advice, token advice, or proof of achieved superintelligence.</p>
+<p><strong>96.65%</strong> value capture · 184549376 agents · 5767168 roles · 10 releases</p>
+<div class="actions"><a class="btn" href="rsi-continual-capability-frontier-proof.html">Open proof</a><a class="btn" href="data/rsi-continual-capability-frontier-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-cross-domain-capability-transfer-atlas-proof.html">Autonomous RSI Cross-Domain Capability Transfer Atlas Proof</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-cross-domain-capability-transfer-atlas-proof.html">Open proof</a><a class="btn" href="data/rsi-cross-domain-capability-transfer-atlas-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-enterprise-capability-foundry-proof.html">Autonomous RSI Enterprise Capability Foundry Proof</a></h3>
+<p>Benchmark proof values are not audited customer revenue, live customer adoption, financial advice, investment advice, achieved superintelligence, or Kardashev Type II achievement.</p>
+<p><strong>99.98%</strong> value capture · agents agents · [&#x27;Capital Architect&#x27;, &#x27;Capital Optimizer&#x27;, &#x27;Capital Governor&#x27;, &#x27;Capital Auditor&#x27;, &#x27;Capital Red Teamer&#x27;, &#x27;Capital Economist&#x27;, &#x27;Capital Planner&#x27;, &#x27;Capital Scientist&#x27;, &#x27;Compute Architect&#x27;, &#x27;Compute Optimizer&#x27;, &#x27;Compute Governor&#x27;, &#x27;Compute Auditor&#x27;, &#x27;Compute Red Teamer&#x27;, &#x27;Compute Economist&#x27;, &#x27;Compute Planner&#x27;, &#x27;Compute Scientist&#x27;, &#x27;Energy Architect&#x27;, &#x27;Energy Optimizer&#x27;, &#x27;Energy Governor&#x27;, &#x27;Energy Auditor&#x27;, &#x27;Energy Red Teamer&#x27;, &#x27;Energy Economist&#x27;, &#x27;Energy Planner&#x27;, &#x27;Energy Scientist&#x27;, &#x27;Data Architect&#x27;, &#x27;Data Optimizer&#x27;, &#x27;Data Governor&#x27;, &#x27;Data Auditor&#x27;, &#x27;Data Red Teamer&#x27;, &#x27;Data Economist&#x27;, &#x27;Data Planner&#x27;, &#x27;Data Scientist&#x27;, &#x27;Trust Architect&#x27;, &#x27;Trust Optimizer&#x27;, &#x27;Trust Governor&#x27;, &#x27;Trust Auditor&#x27;, &#x27;Trust Red Teamer&#x27;, &#x27;Trust Economist&#x27;, &#x27;Trust Planner&#x27;, &#x27;Trust Scientist&#x27;, &#x27;Talent Architect&#x27;, &#x27;Talent Optimizer&#x27;, &#x27;Talent Governor&#x27;, &#x27;Talent Auditor&#x27;, &#x27;Talent Red Teamer&#x27;, &#x27;Talent Economist&#x27;, &#x27;Talent Planner&#x27;, &#x27;Talent Scientist&#x27;, &#x27;Product Architect&#x27;, &#x27;Product Optimizer&#x27;, &#x27;Product Governor&#x27;, &#x27;Product Auditor&#x27;, &#x27;Product Red Teamer&#x27;, &#x27;Product Economist&#x27;, &#x27;Product Planner&#x27;, &#x27;Product Scientist&#x27;, &#x27;Distribution Architect&#x27;, &#x27;Distribution Optimizer&#x27;, &#x27;Distribution Governor&#x27;, &#x27;Distribution Auditor&#x27;, &#x27;Distribution Red Teamer&#x27;, &#x27;Distribution Economist&#x27;, &#x27;Distribution Planner&#x27;, &#x27;Distribution Scientist&#x27;, &#x27;Validation Architect&#x27;, &#x27;Validation Optimizer&#x27;, &#x27;Validation Governor&#x27;, &#x27;Validation Auditor&#x27;, &#x27;Validation Red Teamer&#x27;, &#x27;Validation Economist&#x27;, &#x27;Validation Planner&#x27;, &#x27;Validation Scientist&#x27;, &#x27;Risk Architect&#x27;, &#x27;Risk Optimizer&#x27;, &#x27;Risk Governor&#x27;, &#x27;Risk Auditor&#x27;, &#x27;Risk Red Teamer&#x27;, &#x27;Risk Economist&#x27;, &#x27;Risk Planner&#x27;, &#x27;Risk Scientist&#x27;, &#x27;Security Architect&#x27;, &#x27;Security Optimizer&#x27;, &#x27;Security Governor&#x27;, &#x27;Security Auditor&#x27;, &#x27;Security Red Teamer&#x27;, &#x27;Security Economist&#x27;, &#x27;Security Planner&#x27;, &#x27;Security Scientist&#x27;, &#x27;Compliance Architect&#x27;, &#x27;Compliance Optimizer&#x27;, &#x27;Compliance Governor&#x27;, &#x27;Compliance Auditor&#x27;, &#x27;Compliance Red Teamer&#x27;, &#x27;Compliance Economist&#x27;, &#x27;Compliance Planner&#x27;, &#x27;Compliance Scientist&#x27;, &#x27;Operations Architect&#x27;, &#x27;Operations Optimizer&#x27;, &#x27;Operations Governor&#x27;, &#x27;Operations Auditor&#x27;, &#x27;Operations Red Teamer&#x27;, &#x27;Operations Economist&#x27;, &#x27;Operations Planner&#x27;, &#x27;Operations Scientist&#x27;, &#x27;Revenue Architect&#x27;, &#x27;Revenue Optimizer&#x27;, &#x27;Revenue Governor&#x27;, &#x27;Revenue Auditor&#x27;, &#x27;Revenue Red Teamer&#x27;, &#x27;Revenue Economist&#x27;, &#x27;Revenue Planner&#x27;, &#x27;Revenue Scientist&#x27;, &#x27;Strategy Architect&#x27;, &#x27;Strategy Optimizer&#x27;, &#x27;Strategy Governor&#x27;, &#x27;Strategy Auditor&#x27;, &#x27;Strategy Red Teamer&#x27;, &#x27;Strategy Economist&#x27;, &#x27;Strategy Planner&#x27;, &#x27;Strategy Scientist&#x27;, &#x27;Marketplace Architect&#x27;, &#x27;Marketplace Optimizer&#x27;, &#x27;Marketplace Governor&#x27;, &#x27;Marketplace Auditor&#x27;, &#x27;Marketplace Red Teamer&#x27;, &#x27;Marketplace Economist&#x27;, &#x27;Marketplace Planner&#x27;, &#x27;Marketplace Scientist&#x27;, &#x27;Governance Architect&#x27;, &#x27;Governance Optimizer&#x27;, &#x27;Governance Governor&#x27;, &#x27;Governance Auditor&#x27;, &#x27;Governance Red Teamer&#x27;, &#x27;Governance Economist&#x27;, &#x27;Governance Planner&#x27;, &#x27;Governance Scientist&#x27;, &#x27;Customer Architect&#x27;, &#x27;Customer Optimizer&#x27;, &#x27;Customer Governor&#x27;, &#x27;Customer Auditor&#x27;, &#x27;Customer Red Teamer&#x27;, &#x27;Customer Economist&#x27;, &#x27;Customer Planner&#x27;, &#x27;Customer Scientist&#x27;, &#x27;Platform Architect&#x27;, &#x27;Platform Optimizer&#x27;, &#x27;Platform Governor&#x27;, &#x27;Platform Auditor&#x27;, &#x27;Platform Red Teamer&#x27;, &#x27;Platform Economist&#x27;, &#x27;Platform Planner&#x27;, &#x27;Platform Scientist&#x27;, &#x27;Research Architect&#x27;, &#x27;Research Optimizer&#x27;, &#x27;Research Governor&#x27;, &#x27;Research Auditor&#x27;, &#x27;Research Red Teamer&#x27;, &#x27;Research Economist&#x27;, &#x27;Research Planner&#x27;, &#x27;Research Scientist&#x27;, &#x27;Experimentation Architect&#x27;, &#x27;Experimentation Optimizer&#x27;, &#x27;Experimentation Governor&#x27;, &#x27;Experimentation Auditor&#x27;, &#x27;Experimentation Red Teamer&#x27;, &#x27;Experimentation Economist&#x27;, &#x27;Experimentation Planner&#x27;, &#x27;Experimentation Scientist&#x27;, &#x27;Reinvestment Architect&#x27;, &#x27;Reinvestment Optimizer&#x27;, &#x27;Reinvestment Governor&#x27;, &#x27;Reinvestment Auditor&#x27;, &#x27;Reinvestment Red Teamer&#x27;, &#x27;Reinvestment Economist&#x27;, &#x27;Reinvestment Planner&#x27;, &#x27;Reinvestment Scientist&#x27;, &#x27;Resilience Architect&#x27;, &#x27;Resilience Optimizer&#x27;, &#x27;Resilience Governor&#x27;, &#x27;Resilience Auditor&#x27;, &#x27;Resilience Red Teamer&#x27;, &#x27;Resilience Economist&#x27;, &#x27;Resilience Planner&#x27;, &#x27;Resilience Scientist&#x27;, &#x27;Brand Architect&#x27;, &#x27;Brand Optimizer&#x27;, &#x27;Brand Governor&#x27;, &#x27;Brand Auditor&#x27;, &#x27;Brand Red Teamer&#x27;, &#x27;Brand Economist&#x27;, &#x27;Brand Planner&#x27;, &#x27;Brand Scientist&#x27;, &#x27;Legal Architect&#x27;, &#x27;Legal Optimizer&#x27;, &#x27;Legal Governor&#x27;, &#x27;Legal Auditor&#x27;, &#x27;Legal Red Teamer&#x27;, &#x27;Legal Economist&#x27;, &#x27;Legal Planner&#x27;, &#x27;Legal Scientist&#x27;, &#x27;Procurement Architect&#x27;, &#x27;Procurement Optimizer&#x27;, &#x27;Procurement Governor&#x27;, &#x27;Procurement Auditor&#x27;, &#x27;Procurement Red Teamer&#x27;, &#x27;Procurement Economist&#x27;, &#x27;Procurement Planner&#x27;, &#x27;Procurement Scientist&#x27;, &#x27;Partnerships Architect&#x27;, &#x27;Partnerships Optimizer&#x27;, &#x27;Partnerships Governor&#x27;, &#x27;Partnerships Auditor&#x27;, &#x27;Partnerships Red Teamer&#x27;, &#x27;Partnerships Economist&#x27;, &#x27;Partnerships Planner&#x27;, &#x27;Partnerships Scientist&#x27;, &#x27;Finance Architect&#x27;, &#x27;Finance Optimizer&#x27;, &#x27;Finance Governor&#x27;, &#x27;Finance Auditor&#x27;, &#x27;Finance Red Teamer&#x27;, &#x27;Finance Economist&#x27;, &#x27;Finance Planner&#x27;, &#x27;Finance Scientist&#x27;, &#x27;Pricing Architect&#x27;, &#x27;Pricing Optimizer&#x27;, &#x27;Pricing Governor&#x27;, &#x27;Pricing Auditor&#x27;, &#x27;Pricing Red Teamer&#x27;, &#x27;Pricing Economist&#x27;, &#x27;Pricing Planner&#x27;, &#x27;Pricing Scientist&#x27;, &#x27;Support Architect&#x27;, &#x27;Support Optimizer&#x27;, &#x27;Support Governor&#x27;, &#x27;Support Auditor&#x27;, &#x27;Support Red Teamer&#x27;, &#x27;Support Economist&#x27;, &#x27;Support Planner&#x27;, &#x27;Support Scientist&#x27;, &#x27;Infrastructure Architect&#x27;, &#x27;Infrastructure Optimizer&#x27;, &#x27;Infrastructure Governor&#x27;, &#x27;Infrastructure Auditor&#x27;, &#x27;Infrastructure Red Teamer&#x27;, &#x27;Infrastructure Economist&#x27;, &#x27;Infrastructure Planner&#x27;, &#x27;Infrastructure Scientist&#x27;, &#x27;Coordination Architect&#x27;, &#x27;Coordination Optimizer&#x27;, &#x27;Coordination Governor&#x27;, &#x27;Coordination Auditor&#x27;, &#x27;Coordination Red Teamer&#x27;, &#x27;Coordination Economist&#x27;, &#x27;Coordination Planner&#x27;, &#x27;Coordination Scientist&#x27;] roles · 9 releases</p>
+<div class="actions"><a class="btn" href="rsi-enterprise-capability-foundry-proof.html">Open proof</a><a class="btn" href="data/rsi_enterprise_capability_foundry_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-enterprise-eureka-factory-proof.html">Autonomous RSI Enterprise Eureka Factory Proof</a></h3>
+<p>Benchmark proof values are not audited customer revenue, live customer adoption, financial advice, investment advice, achieved superintelligence, or Kardashev Type II achievement.</p>
+<p><strong>99.97%</strong> value capture · agents agents · [&#x27;Capital Allocator&#x27;, &#x27;Treasury Optimizer&#x27;, &#x27;Budget Governor&#x27;, &#x27;Unit-Economics Architect&#x27;, &#x27;Capital Velocity Analyst&#x27;, &#x27;Reinvestment Planner&#x27;, &#x27;Cash Conversion Strategist&#x27;, &#x27;Option-Value Treasurer&#x27;, &#x27;Pricing Strategist&#x27;, &#x27;Demand Forecaster&#x27;, &#x27;Expansion Planner&#x27;, &#x27;Pipeline Economist&#x27;, &#x27;Revenue Quality Auditor&#x27;, &#x27;Retention Economist&#x27;, &#x27;Monetization Architect&#x27;, &#x27;Growth Portfolio Lead&#x27;, &#x27;Product Strategist&#x27;, &#x27;User Value Analyst&#x27;, &#x27;Roadmap Optimizer&#x27;, &#x27;Adoption Designer&#x27;, &#x27;UX Friction Scout&#x27;, &#x27;Feature Payoff Analyst&#x27;, &#x27;Product-Led Growth Lead&#x27;, &#x27;Customer Outcome Architect&#x27;, &#x27;Data Moat Architect&#x27;, &#x27;Signal Quality Auditor&#x27;, &#x27;Learning Loop Designer&#x27;, &#x27;Benchmark Curator&#x27;, &#x27;Data Flywheel Analyst&#x27;, &#x27;Label-Efficiency Engineer&#x27;, &#x27;Knowledge Base Steward&#x27;, &#x27;Feedback Instrumentation Lead&#x27;, &#x27;Trust Engineer&#x27;, &#x27;Customer Promise Auditor&#x27;, &#x27;Brand Safety Lead&#x27;, &#x27;Reliability Steward&#x27;, &#x27;Transparency Designer&#x27;, &#x27;Expectation Manager&#x27;, &#x27;Proof Copy Auditor&#x27;, &#x27;Stakeholder Confidence Lead&#x27;, &#x27;Risk Governor&#x27;, &#x27;Downside Modeler&#x27;, &#x27;Scenario Red Teamer&#x27;, &#x27;Reversibility Analyst&#x27;, &#x27;Failure-Mode Cartographer&#x27;, &#x27;Kill-Switch Designer&#x27;, &#x27;Exposure Governor&#x27;, &#x27;Adversarial Scenario Lead&#x27;, &#x27;Security Governor&#x27;, &#x27;Abuse-Case Red Teamer&#x27;, &#x27;Access Control Analyst&#x27;, &#x27;Incident Preventer&#x27;, &#x27;Threat Modeler&#x27;, &#x27;Exploit Surface Auditor&#x27;, &#x27;Privilege Boundary Lead&#x27;, &#x27;Recovery Protocol Architect&#x27;, &#x27;Compliance Governor&#x27;, &#x27;Policy Interpreter&#x27;, &#x27;Regulatory Boundary Analyst&#x27;, &#x27;Audit Trail Keeper&#x27;, &#x27;Jurisdiction Mapper&#x27;, &#x27;Evidence Packager&#x27;, &#x27;Consent Boundary Lead&#x27;, &#x27;Disclosure Quality Auditor&#x27;, &#x27;Compute Allocator&#x27;, &#x27;Inference Economist&#x27;, &#x27;Latency-Cost Analyst&#x27;, &#x27;Platform Capacity Planner&#x27;, &#x27;GPU Budgeter&#x27;, &#x27;Batching Strategist&#x27;, &#x27;Cache Optimizer&#x27;, &#x27;Throughput Economist&#x27;, &#x27;Energy Strategist&#x27;, &#x27;Datacenter Efficiency Analyst&#x27;, &#x27;Power Budget Planner&#x27;, &#x27;Sustainability Modeler&#x27;, &#x27;Load Shifting Analyst&#x27;, &#x27;Heat Reuse Planner&#x27;, &#x27;Carbon-Aware Scheduler&#x27;, &#x27;Energy Arbitrage Lead&#x27;, &#x27;Talent Allocator&#x27;, &#x27;Org Design Analyst&#x27;, &#x27;Incentive Designer&#x27;, &#x27;Capability Builder&#x27;, &#x27;Hiring Funnel Optimizer&#x27;, &#x27;Training Loop Architect&#x27;, &#x27;Role Design Lead&#x27;, &#x27;Collaboration Friction Scout&#x27;, &#x27;Process Engineer&#x27;, &#x27;Latency Reducer&#x27;, &#x27;Throughput Optimizer&#x27;, &#x27;Bottleneck Scout&#x27;, &#x27;Automation Planner&#x27;, &#x27;Queueing Analyst&#x27;, &#x27;SLA Guardian&#x27;, &#x27;Operating Cadence Designer&#x27;, &#x27;Distribution Strategist&#x27;, &#x27;Channel Allocator&#x27;, &#x27;Network Effects Analyst&#x27;, &#x27;Partner Architect&#x27;, &#x27;Go-To-Market Economist&#x27;, &#x27;Ecosystem Builder&#x27;, &#x27;Referral Loop Analyst&#x27;, &#x27;Marketplace Liquidity Lead&#x27;, &#x27;Experiment Designer&#x27;, &#x27;Causal Inference Analyst&#x27;, &#x27;A/B Test Governor&#x27;, &#x27;Learning Velocity Lead&#x27;, &#x27;Hypothesis Generator&#x27;, &#x27;Experiment Portfolio Manager&#x27;, &#x27;Guardrail Metric Designer&#x27;, &#x27;Sequential Test Planner&#x27;, &#x27;Strategy Architect&#x27;, &#x27;Moat Designer&#x27;, &#x27;Compounding Analyst&#x27;, &#x27;Option Value Planner&#x27;, &#x27;Category Creator&#x27;, &#x27;Competitive Response Modeler&#x27;, &#x27;Wedge Strategist&#x27;, &#x27;Expansion Sequencer&#x27;, &#x27;Coordination Chair&#x27;, &#x27;Role Quorum Arbiter&#x27;, &#x27;Conflict Resolver&#x27;, &#x27;Protocol Release Manager&#x27;, &#x27;Cross-Board Synthesizer&#x27;, &#x27;Decision Rights Architect&#x27;, &#x27;Escalation Governor&#x27;, &#x27;Consensus Mechanic&#x27;] roles · 10 releases</p>
+<div class="actions"><a class="btn" href="rsi-enterprise-eureka-factory-proof.html">Open proof</a><a class="btn" href="data/rsi_enterprise_eureka_factory_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-enterprise-superorganization-proof.html">Autonomous RSI Enterprise Superorganization Proof</a></h3>
+<p>Benchmark proof values are not audited customer revenue, live customer adoption, financial advice, investment advice, achieved superintelligence, or Kardashev Type II achievement.</p>
+<p><strong>99.98%</strong> value capture · agents agents · [&#x27;Capital Architect&#x27;, &#x27;Capital Optimizer&#x27;, &#x27;Capital Governor&#x27;, &#x27;Capital Auditor&#x27;, &#x27;Capital Red Teamer&#x27;, &#x27;Capital Economist&#x27;, &#x27;Capital Planner&#x27;, &#x27;Capital Scientist&#x27;, &#x27;Capital Synthesizer&#x27;, &#x27;Capital Forecaster&#x27;, &#x27;Capital Strategist&#x27;, &#x27;Capital Operator&#x27;, &#x27;Capital Controller&#x27;, &#x27;Capital Verifier&#x27;, &#x27;Capital Negotiator&#x27;, &#x27;Capital Teacher&#x27;, &#x27;Compute Architect&#x27;, &#x27;Compute Optimizer&#x27;, &#x27;Compute Governor&#x27;, &#x27;Compute Auditor&#x27;, &#x27;Compute Red Teamer&#x27;, &#x27;Compute Economist&#x27;, &#x27;Compute Planner&#x27;, &#x27;Compute Scientist&#x27;, &#x27;Compute Synthesizer&#x27;, &#x27;Compute Forecaster&#x27;, &#x27;Compute Strategist&#x27;, &#x27;Compute Operator&#x27;, &#x27;Compute Controller&#x27;, &#x27;Compute Verifier&#x27;, &#x27;Compute Negotiator&#x27;, &#x27;Compute Teacher&#x27;, &#x27;Energy Architect&#x27;, &#x27;Energy Optimizer&#x27;, &#x27;Energy Governor&#x27;, &#x27;Energy Auditor&#x27;, &#x27;Energy Red Teamer&#x27;, &#x27;Energy Economist&#x27;, &#x27;Energy Planner&#x27;, &#x27;Energy Scientist&#x27;, &#x27;Energy Synthesizer&#x27;, &#x27;Energy Forecaster&#x27;, &#x27;Energy Strategist&#x27;, &#x27;Energy Operator&#x27;, &#x27;Energy Controller&#x27;, &#x27;Energy Verifier&#x27;, &#x27;Energy Negotiator&#x27;, &#x27;Energy Teacher&#x27;, &#x27;Data Architect&#x27;, &#x27;Data Optimizer&#x27;, &#x27;Data Governor&#x27;, &#x27;Data Auditor&#x27;, &#x27;Data Red Teamer&#x27;, &#x27;Data Economist&#x27;, &#x27;Data Planner&#x27;, &#x27;Data Scientist&#x27;, &#x27;Data Synthesizer&#x27;, &#x27;Data Forecaster&#x27;, &#x27;Data Strategist&#x27;, &#x27;Data Operator&#x27;, &#x27;Data Controller&#x27;, &#x27;Data Verifier&#x27;, &#x27;Data Negotiator&#x27;, &#x27;Data Teacher&#x27;, &#x27;Trust Architect&#x27;, &#x27;Trust Optimizer&#x27;, &#x27;Trust Governor&#x27;, &#x27;Trust Auditor&#x27;, &#x27;Trust Red Teamer&#x27;, &#x27;Trust Economist&#x27;, &#x27;Trust Planner&#x27;, &#x27;Trust Scientist&#x27;, &#x27;Trust Synthesizer&#x27;, &#x27;Trust Forecaster&#x27;, &#x27;Trust Strategist&#x27;, &#x27;Trust Operator&#x27;, &#x27;Trust Controller&#x27;, &#x27;Trust Verifier&#x27;, &#x27;Trust Negotiator&#x27;, &#x27;Trust Teacher&#x27;, &#x27;Talent Architect&#x27;, &#x27;Talent Optimizer&#x27;, &#x27;Talent Governor&#x27;, &#x27;Talent Auditor&#x27;, &#x27;Talent Red Teamer&#x27;, &#x27;Talent Economist&#x27;, &#x27;Talent Planner&#x27;, &#x27;Talent Scientist&#x27;, &#x27;Talent Synthesizer&#x27;, &#x27;Talent Forecaster&#x27;, &#x27;Talent Strategist&#x27;, &#x27;Talent Operator&#x27;, &#x27;Talent Controller&#x27;, &#x27;Talent Verifier&#x27;, &#x27;Talent Negotiator&#x27;, &#x27;Talent Teacher&#x27;, &#x27;Product Architect&#x27;, &#x27;Product Optimizer&#x27;, &#x27;Product Governor&#x27;, &#x27;Product Auditor&#x27;, &#x27;Product Red Teamer&#x27;, &#x27;Product Economist&#x27;, &#x27;Product Planner&#x27;, &#x27;Product Scientist&#x27;, &#x27;Product Synthesizer&#x27;, &#x27;Product Forecaster&#x27;, &#x27;Product Strategist&#x27;, &#x27;Product Operator&#x27;, &#x27;Product Controller&#x27;, &#x27;Product Verifier&#x27;, &#x27;Product Negotiator&#x27;, &#x27;Product Teacher&#x27;, &#x27;Distribution Architect&#x27;, &#x27;Distribution Optimizer&#x27;, &#x27;Distribution Governor&#x27;, &#x27;Distribution Auditor&#x27;, &#x27;Distribution Red Teamer&#x27;, &#x27;Distribution Economist&#x27;, &#x27;Distribution Planner&#x27;, &#x27;Distribution Scientist&#x27;, &#x27;Distribution Synthesizer&#x27;, &#x27;Distribution Forecaster&#x27;, &#x27;Distribution Strategist&#x27;, &#x27;Distribution Operator&#x27;, &#x27;Distribution Controller&#x27;, &#x27;Distribution Verifier&#x27;, &#x27;Distribution Negotiator&#x27;, &#x27;Distribution Teacher&#x27;, &#x27;Validation Architect&#x27;, &#x27;Validation Optimizer&#x27;, &#x27;Validation Governor&#x27;, &#x27;Validation Auditor&#x27;, &#x27;Validation Red Teamer&#x27;, &#x27;Validation Economist&#x27;, &#x27;Validation Planner&#x27;, &#x27;Validation Scientist&#x27;, &#x27;Validation Synthesizer&#x27;, &#x27;Validation Forecaster&#x27;, &#x27;Validation Strategist&#x27;, &#x27;Validation Operator&#x27;, &#x27;Validation Controller&#x27;, &#x27;Validation Verifier&#x27;, &#x27;Validation Negotiator&#x27;, &#x27;Validation Teacher&#x27;, &#x27;Risk Architect&#x27;, &#x27;Risk Optimizer&#x27;, &#x27;Risk Governor&#x27;, &#x27;Risk Auditor&#x27;, &#x27;Risk Red Teamer&#x27;, &#x27;Risk Economist&#x27;, &#x27;Risk Planner&#x27;, &#x27;Risk Scientist&#x27;, &#x27;Risk Synthesizer&#x27;, &#x27;Risk Forecaster&#x27;, &#x27;Risk Strategist&#x27;, &#x27;Risk Operator&#x27;, &#x27;Risk Controller&#x27;, &#x27;Risk Verifier&#x27;, &#x27;Risk Negotiator&#x27;, &#x27;Risk Teacher&#x27;, &#x27;Security Architect&#x27;, &#x27;Security Optimizer&#x27;, &#x27;Security Governor&#x27;, &#x27;Security Auditor&#x27;, &#x27;Security Red Teamer&#x27;, &#x27;Security Economist&#x27;, &#x27;Security Planner&#x27;, &#x27;Security Scientist&#x27;, &#x27;Security Synthesizer&#x27;, &#x27;Security Forecaster&#x27;, &#x27;Security Strategist&#x27;, &#x27;Security Operator&#x27;, &#x27;Security Controller&#x27;, &#x27;Security Verifier&#x27;, &#x27;Security Negotiator&#x27;, &#x27;Security Teacher&#x27;, &#x27;Compliance Architect&#x27;, &#x27;Compliance Optimizer&#x27;, &#x27;Compliance Governor&#x27;, &#x27;Compliance Auditor&#x27;, &#x27;Compliance Red Teamer&#x27;, &#x27;Compliance Economist&#x27;, &#x27;Compliance Planner&#x27;, &#x27;Compliance Scientist&#x27;, &#x27;Compliance Synthesizer&#x27;, &#x27;Compliance Forecaster&#x27;, &#x27;Compliance Strategist&#x27;, &#x27;Compliance Operator&#x27;, &#x27;Compliance Controller&#x27;, &#x27;Compliance Verifier&#x27;, &#x27;Compliance Negotiator&#x27;, &#x27;Compliance Teacher&#x27;, &#x27;Operations Architect&#x27;, &#x27;Operations Optimizer&#x27;, &#x27;Operations Governor&#x27;, &#x27;Operations Auditor&#x27;, &#x27;Operations Red Teamer&#x27;, &#x27;Operations Economist&#x27;, &#x27;Operations Planner&#x27;, &#x27;Operations Scientist&#x27;, &#x27;Operations Synthesizer&#x27;, &#x27;Operations Forecaster&#x27;, &#x27;Operations Strategist&#x27;, &#x27;Operations Operator&#x27;, &#x27;Operations Controller&#x27;, &#x27;Operations Verifier&#x27;, &#x27;Operations Negotiator&#x27;, &#x27;Operations Teacher&#x27;, &#x27;Revenue Architect&#x27;, &#x27;Revenue Optimizer&#x27;, &#x27;Revenue Governor&#x27;, &#x27;Revenue Auditor&#x27;, &#x27;Revenue Red Teamer&#x27;, &#x27;Revenue Economist&#x27;, &#x27;Revenue Planner&#x27;, &#x27;Revenue Scientist&#x27;, &#x27;Revenue Synthesizer&#x27;, &#x27;Revenue Forecaster&#x27;, &#x27;Revenue Strategist&#x27;, &#x27;Revenue Operator&#x27;, &#x27;Revenue Controller&#x27;, &#x27;Revenue Verifier&#x27;, &#x27;Revenue Negotiator&#x27;, &#x27;Revenue Teacher&#x27;, &#x27;Strategy Architect&#x27;, &#x27;Strategy Optimizer&#x27;, &#x27;Strategy Governor&#x27;, &#x27;Strategy Auditor&#x27;, &#x27;Strategy Red Teamer&#x27;, &#x27;Strategy Economist&#x27;, &#x27;Strategy Planner&#x27;, &#x27;Strategy Scientist&#x27;, &#x27;Strategy Synthesizer&#x27;, &#x27;Strategy Forecaster&#x27;, &#x27;Strategy Strategist&#x27;, &#x27;Strategy Operator&#x27;, &#x27;Strategy Controller&#x27;, &#x27;Strategy Verifier&#x27;, &#x27;Strategy Negotiator&#x27;, &#x27;Strategy Teacher&#x27;, &#x27;Marketplace Architect&#x27;, &#x27;Marketplace Optimizer&#x27;, &#x27;Marketplace Governor&#x27;, &#x27;Marketplace Auditor&#x27;, &#x27;Marketplace Red Teamer&#x27;, &#x27;Marketplace Economist&#x27;, &#x27;Marketplace Planner&#x27;, &#x27;Marketplace Scientist&#x27;, &#x27;Marketplace Synthesizer&#x27;, &#x27;Marketplace Forecaster&#x27;, &#x27;Marketplace Strategist&#x27;, &#x27;Marketplace Operator&#x27;, &#x27;Marketplace Controller&#x27;, &#x27;Marketplace Verifier&#x27;, &#x27;Marketplace Negotiator&#x27;, &#x27;Marketplace Teacher&#x27;, &#x27;Governance Architect&#x27;, &#x27;Governance Optimizer&#x27;, &#x27;Governance Governor&#x27;, &#x27;Governance Auditor&#x27;, &#x27;Governance Red Teamer&#x27;, &#x27;Governance Economist&#x27;, &#x27;Governance Planner&#x27;, &#x27;Governance Scientist&#x27;, &#x27;Governance Synthesizer&#x27;, &#x27;Governance Forecaster&#x27;, &#x27;Governance Strategist&#x27;, &#x27;Governance Operator&#x27;, &#x27;Governance Controller&#x27;, &#x27;Governance Verifier&#x27;, &#x27;Governance Negotiator&#x27;, &#x27;Governance Teacher&#x27;, &#x27;Customer Architect&#x27;, &#x27;Customer Optimizer&#x27;, &#x27;Customer Governor&#x27;, &#x27;Customer Auditor&#x27;, &#x27;Customer Red Teamer&#x27;, &#x27;Customer Economist&#x27;, &#x27;Customer Planner&#x27;, &#x27;Customer Scientist&#x27;, &#x27;Customer Synthesizer&#x27;, &#x27;Customer Forecaster&#x27;, &#x27;Customer Strategist&#x27;, &#x27;Customer Operator&#x27;, &#x27;Customer Controller&#x27;, &#x27;Customer Verifier&#x27;, &#x27;Customer Negotiator&#x27;, &#x27;Customer Teacher&#x27;, &#x27;Platform Architect&#x27;, &#x27;Platform Optimizer&#x27;, &#x27;Platform Governor&#x27;, &#x27;Platform Auditor&#x27;, &#x27;Platform Red Teamer&#x27;, &#x27;Platform Economist&#x27;, &#x27;Platform Planner&#x27;, &#x27;Platform Scientist&#x27;, &#x27;Platform Synthesizer&#x27;, &#x27;Platform Forecaster&#x27;, &#x27;Platform Strategist&#x27;, &#x27;Platform Operator&#x27;, &#x27;Platform Controller&#x27;, &#x27;Platform Verifier&#x27;, &#x27;Platform Negotiator&#x27;, &#x27;Platform Teacher&#x27;, &#x27;Research Architect&#x27;, &#x27;Research Optimizer&#x27;, &#x27;Research Governor&#x27;, &#x27;Research Auditor&#x27;, &#x27;Research Red Teamer&#x27;, &#x27;Research Economist&#x27;, &#x27;Research Planner&#x27;, &#x27;Research Scientist&#x27;, &#x27;Research Synthesizer&#x27;, &#x27;Research Forecaster&#x27;, &#x27;Research Strategist&#x27;, &#x27;Research Operator&#x27;, &#x27;Research Controller&#x27;, &#x27;Research Verifier&#x27;, &#x27;Research Negotiator&#x27;, &#x27;Research Teacher&#x27;, &#x27;Experimentation Architect&#x27;, &#x27;Experimentation Optimizer&#x27;, &#x27;Experimentation Governor&#x27;, &#x27;Experimentation Auditor&#x27;, &#x27;Experimentation Red Teamer&#x27;, &#x27;Experimentation Economist&#x27;, &#x27;Experimentation Planner&#x27;, &#x27;Experimentation Scientist&#x27;, &#x27;Experimentation Synthesizer&#x27;, &#x27;Experimentation Forecaster&#x27;, &#x27;Experimentation Strategist&#x27;, &#x27;Experimentation Operator&#x27;, &#x27;Experimentation Controller&#x27;, &#x27;Experimentation Verifier&#x27;, &#x27;Experimentation Negotiator&#x27;, &#x27;Experimentation Teacher&#x27;, &#x27;Reinvestment Architect&#x27;, &#x27;Reinvestment Optimizer&#x27;, &#x27;Reinvestment Governor&#x27;, &#x27;Reinvestment Auditor&#x27;, &#x27;Reinvestment Red Teamer&#x27;, &#x27;Reinvestment Economist&#x27;, &#x27;Reinvestment Planner&#x27;, &#x27;Reinvestment Scientist&#x27;, &#x27;Reinvestment Synthesizer&#x27;, &#x27;Reinvestment Forecaster&#x27;, &#x27;Reinvestment Strategist&#x27;, &#x27;Reinvestment Operator&#x27;, &#x27;Reinvestment Controller&#x27;, &#x27;Reinvestment Verifier&#x27;, &#x27;Reinvestment Negotiator&#x27;, &#x27;Reinvestment Teacher&#x27;, &#x27;Resilience Architect&#x27;, &#x27;Resilience Optimizer&#x27;, &#x27;Resilience Governor&#x27;, &#x27;Resilience Auditor&#x27;, &#x27;Resilience Red Teamer&#x27;, &#x27;Resilience Economist&#x27;, &#x27;Resilience Planner&#x27;, &#x27;Resilience Scientist&#x27;, &#x27;Resilience Synthesizer&#x27;, &#x27;Resilience Forecaster&#x27;, &#x27;Resilience Strategist&#x27;, &#x27;Resilience Operator&#x27;, &#x27;Resilience Controller&#x27;, &#x27;Resilience Verifier&#x27;, &#x27;Resilience Negotiator&#x27;, &#x27;Resilience Teacher&#x27;, &#x27;Brand Architect&#x27;, &#x27;Brand Optimizer&#x27;, &#x27;Brand Governor&#x27;, &#x27;Brand Auditor&#x27;, &#x27;Brand Red Teamer&#x27;, &#x27;Brand Economist&#x27;, &#x27;Brand Planner&#x27;, &#x27;Brand Scientist&#x27;, &#x27;Brand Synthesizer&#x27;, &#x27;Brand Forecaster&#x27;, &#x27;Brand Strategist&#x27;, &#x27;Brand Operator&#x27;, &#x27;Brand Controller&#x27;, &#x27;Brand Verifier&#x27;, &#x27;Brand Negotiator&#x27;, &#x27;Brand Teacher&#x27;, &#x27;Legal Architect&#x27;, &#x27;Legal Optimizer&#x27;, &#x27;Legal Governor&#x27;, &#x27;Legal Auditor&#x27;, &#x27;Legal Red Teamer&#x27;, &#x27;Legal Economist&#x27;, &#x27;Legal Planner&#x27;, &#x27;Legal Scientist&#x27;, &#x27;Legal Synthesizer&#x27;, &#x27;Legal Forecaster&#x27;, &#x27;Legal Strategist&#x27;, &#x27;Legal Operator&#x27;, &#x27;Legal Controller&#x27;, &#x27;Legal Verifier&#x27;, &#x27;Legal Negotiator&#x27;, &#x27;Legal Teacher&#x27;, &#x27;Procurement Architect&#x27;, &#x27;Procurement Optimizer&#x27;, &#x27;Procurement Governor&#x27;, &#x27;Procurement Auditor&#x27;, &#x27;Procurement Red Teamer&#x27;, &#x27;Procurement Economist&#x27;, &#x27;Procurement Planner&#x27;, &#x27;Procurement Scientist&#x27;, &#x27;Procurement Synthesizer&#x27;, &#x27;Procurement Forecaster&#x27;, &#x27;Procurement Strategist&#x27;, &#x27;Procurement Operator&#x27;, &#x27;Procurement Controller&#x27;, &#x27;Procurement Verifier&#x27;, &#x27;Procurement Negotiator&#x27;, &#x27;Procurement Teacher&#x27;, &#x27;Partnerships Architect&#x27;, &#x27;Partnerships Optimizer&#x27;, &#x27;Partnerships Governor&#x27;, &#x27;Partnerships Auditor&#x27;, &#x27;Partnerships Red Teamer&#x27;, &#x27;Partnerships Economist&#x27;, &#x27;Partnerships Planner&#x27;, &#x27;Partnerships Scientist&#x27;, &#x27;Partnerships Synthesizer&#x27;, &#x27;Partnerships Forecaster&#x27;, &#x27;Partnerships Strategist&#x27;, &#x27;Partnerships Operator&#x27;, &#x27;Partnerships Controller&#x27;, &#x27;Partnerships Verifier&#x27;, &#x27;Partnerships Negotiator&#x27;, &#x27;Partnerships Teacher&#x27;, &#x27;Finance Architect&#x27;, &#x27;Finance Optimizer&#x27;, &#x27;Finance Governor&#x27;, &#x27;Finance Auditor&#x27;, &#x27;Finance Red Teamer&#x27;, &#x27;Finance Economist&#x27;, &#x27;Finance Planner&#x27;, &#x27;Finance Scientist&#x27;, &#x27;Finance Synthesizer&#x27;, &#x27;Finance Forecaster&#x27;, &#x27;Finance Strategist&#x27;, &#x27;Finance Operator&#x27;, &#x27;Finance Controller&#x27;, &#x27;Finance Verifier&#x27;, &#x27;Finance Negotiator&#x27;, &#x27;Finance Teacher&#x27;, &#x27;Pricing Architect&#x27;, &#x27;Pricing Optimizer&#x27;, &#x27;Pricing Governor&#x27;, &#x27;Pricing Auditor&#x27;, &#x27;Pricing Red Teamer&#x27;, &#x27;Pricing Economist&#x27;, &#x27;Pricing Planner&#x27;, &#x27;Pricing Scientist&#x27;, &#x27;Pricing Synthesizer&#x27;, &#x27;Pricing Forecaster&#x27;, &#x27;Pricing Strategist&#x27;, &#x27;Pricing Operator&#x27;, &#x27;Pricing Controller&#x27;, &#x27;Pricing Verifier&#x27;, &#x27;Pricing Negotiator&#x27;, &#x27;Pricing Teacher&#x27;, &#x27;Support Architect&#x27;, &#x27;Support Optimizer&#x27;, &#x27;Support Governor&#x27;, &#x27;Support Auditor&#x27;, &#x27;Support Red Teamer&#x27;, &#x27;Support Economist&#x27;, &#x27;Support Planner&#x27;, &#x27;Support Scientist&#x27;, &#x27;Support Synthesizer&#x27;, &#x27;Support Forecaster&#x27;, &#x27;Support Strategist&#x27;, &#x27;Support Operator&#x27;, &#x27;Support Controller&#x27;, &#x27;Support Verifier&#x27;, &#x27;Support Negotiator&#x27;, &#x27;Support Teacher&#x27;, &#x27;Infrastructure Architect&#x27;, &#x27;Infrastructure Optimizer&#x27;, &#x27;Infrastructure Governor&#x27;, &#x27;Infrastructure Auditor&#x27;, &#x27;Infrastructure Red Teamer&#x27;, &#x27;Infrastructure Economist&#x27;, &#x27;Infrastructure Planner&#x27;, &#x27;Infrastructure Scientist&#x27;, &#x27;Infrastructure Synthesizer&#x27;, &#x27;Infrastructure Forecaster&#x27;, &#x27;Infrastructure Strategist&#x27;, &#x27;Infrastructure Operator&#x27;, &#x27;Infrastructure Controller&#x27;, &#x27;Infrastructure Verifier&#x27;, &#x27;Infrastructure Negotiator&#x27;, &#x27;Infrastructure Teacher&#x27;, &#x27;Coordination Architect&#x27;, &#x27;Coordination Optimizer&#x27;, &#x27;Coordination Governor&#x27;, &#x27;Coordination Auditor&#x27;, &#x27;Coordination Red Teamer&#x27;, &#x27;Coordination Economist&#x27;, &#x27;Coordination Planner&#x27;, &#x27;Coordination Scientist&#x27;, &#x27;Coordination Synthesizer&#x27;, &#x27;Coordination Forecaster&#x27;, &#x27;Coordination Strategist&#x27;, &#x27;Coordination Operator&#x27;, &#x27;Coordination Controller&#x27;, &#x27;Coordination Verifier&#x27;, &#x27;Coordination Negotiator&#x27;, &#x27;Coordination Teacher&#x27;] roles · 9 releases</p>
+<div class="actions"><a class="btn" href="rsi-enterprise-superorganization-proof.html">Open proof</a><a class="btn" href="data/rsi_enterprise_superorganization_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-fork-resistant-capability-network-proof.html">Autonomous RSI Fork-Resistant Capability Network Proof</a></h3>
+<p>Benchmark-capital-equivalent values are not live revenue, customer results, financial guarantees, legal advice, policy advice, token advice, or proof of achieved superintelligence.</p>
+<p><strong>96.19%</strong> value capture · 536870912 agents · 16777216 roles · 14 releases</p>
+<div class="actions"><a class="btn" href="rsi-fork-resistant-capability-network-proof.html">Open proof</a><a class="btn" href="data/rsi-fork-resistant-capability-network-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-full-stack-capability-lifecycle-proof.html">Autonomous RSI Full-Stack Capability Lifecycle Proof</a></h3>
+<p>Benchmark-capital-equivalent values are not live revenue, customer results, financial guarantees, legal advice, policy advice, token advice, or proof of achieved superintelligence.</p>
+<p><strong>96.21%</strong> value capture · 335544320 agents · 10485760 roles · 13 releases</p>
+<div class="actions"><a class="btn" href="rsi-full-stack-capability-lifecycle-proof.html">Open proof</a><a class="btn" href="data/rsi-full-stack-capability-lifecycle-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-objective-integrity-firewall-proof.html">Autonomous RSI Objective Integrity Firewall Proof</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-objective-integrity-firewall-proof.html">Open proof</a><a class="btn" href="data/rsi-objective-integrity-firewall-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-open-replication-mesh-proof.html">Autonomous RSI Open Replication Mesh Proof</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-open-replication-mesh-proof.html">Open proof</a><a class="btn" href="data/rsi-open-replication-mesh-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-skill-compounding-moat-proof.html">Autonomous RSI Skill Compounding Moat Proof</a></h3>
+<p>Benchmark-capital-equivalent values are not live revenue, customer results, financial guarantees, legal advice, policy advice, token advice, or proof of achieved superintelligence.</p>
+<p><strong>96.98%</strong> value capture · 268435456 agents · 8388608 roles · 12 releases</p>
+<div class="actions"><a class="btn" href="rsi-skill-compounding-moat-proof.html">Open proof</a><a class="btn" href="data/rsi-skill-compounding-moat-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-skill-provenance-ledger-proof.html">Autonomous RSI Skill Provenance Ledger Proof</a></h3>
+<p>Benchmark proof values are not audited customer revenue, live customer adoption, financial advice, legal advice, investment advice, token advice, achieved superintelligence, or Kardashev Type II achievement.</p>
+<p><strong>99.95%</strong> value capture · 16777216 agents · 524288 roles · 6 releases</p>
+<div class="actions"><a class="btn" href="rsi-skill-provenance-ledger-proof.html">Open proof</a><a class="btn" href="data/rsi-skill-provenance-ledger-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="shadow-pilot-proof.html">autonomous_no_send_shadow_pilot</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="shadow-pilot-proof.html">Open proof</a><a class="btn" href="data/shadow_pilot_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-corporate-capability-frontier-proof.html">corporate-capability-frontier</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>99.86%</strong> value capture · agents agents · [&#x27;Capital Allocator&#x27;, &#x27;Capital Optimizer&#x27;, &#x27;Capital Governor&#x27;, &#x27;Capital Auditor&#x27;, &#x27;Capital Forecaster&#x27;, &#x27;Capital Red Teamer&#x27;, &#x27;Capital Architect&#x27;, &#x27;Capital Economist&#x27;, &#x27;Capital Strategist&#x27;, &#x27;Capital Planner&#x27;, &#x27;Capital Verifier&#x27;, &#x27;Capital Compiler&#x27;, &#x27;Capital Analyst&#x27;, &#x27;Capital Synthesizer&#x27;, &#x27;Capital Router&#x27;, &#x27;Capital Steward&#x27;, &#x27;Capital Designer&#x27;, &#x27;Capital Operator&#x27;, &#x27;Capital Modeler&#x27;, &#x27;Capital Orchestrator&#x27;, &#x27;Capital Custodian&#x27;, &#x27;Capital Arbiter&#x27;, &#x27;Capital Engineer&#x27;, &#x27;Capital Cartographer&#x27;, &#x27;Capital Mechanic&#x27;, &#x27;Capital Controller&#x27;, &#x27;Capital Builder&#x27;, &#x27;Capital Mediator&#x27;, &#x27;Capital Scout&#x27;, &#x27;Capital Instrumentor&#x27;, &#x27;Capital Negotiator&#x27;, &#x27;Capital Sequencer&#x27;, &#x27;Compute Allocator&#x27;, &#x27;Compute Optimizer&#x27;, &#x27;Compute Governor&#x27;, &#x27;Compute Auditor&#x27;, &#x27;Compute Forecaster&#x27;, &#x27;Compute Red Teamer&#x27;, &#x27;Compute Architect&#x27;, &#x27;Compute Economist&#x27;, &#x27;Compute Strategist&#x27;, &#x27;Compute Planner&#x27;, &#x27;Compute Verifier&#x27;, &#x27;Compute Compiler&#x27;, &#x27;Compute Analyst&#x27;, &#x27;Compute Synthesizer&#x27;, &#x27;Compute Router&#x27;, &#x27;Compute Steward&#x27;, &#x27;Compute Designer&#x27;, &#x27;Compute Operator&#x27;, &#x27;Compute Modeler&#x27;, &#x27;Compute Orchestrator&#x27;, &#x27;Compute Custodian&#x27;, &#x27;Compute Arbiter&#x27;, &#x27;Compute Engineer&#x27;, &#x27;Compute Cartographer&#x27;, &#x27;Compute Mechanic&#x27;, &#x27;Compute Controller&#x27;, &#x27;Compute Builder&#x27;, &#x27;Compute Mediator&#x27;, &#x27;Compute Scout&#x27;, &#x27;Compute Instrumentor&#x27;, &#x27;Compute Negotiator&#x27;, &#x27;Compute Sequencer&#x27;, &#x27;Energy Allocator&#x27;, &#x27;Energy Optimizer&#x27;, &#x27;Energy Governor&#x27;, &#x27;Energy Auditor&#x27;, &#x27;Energy Forecaster&#x27;, &#x27;Energy Red Teamer&#x27;, &#x27;Energy Architect&#x27;, &#x27;Energy Economist&#x27;, &#x27;Energy Strategist&#x27;, &#x27;Energy Planner&#x27;, &#x27;Energy Verifier&#x27;, &#x27;Energy Compiler&#x27;, &#x27;Energy Analyst&#x27;, &#x27;Energy Synthesizer&#x27;, &#x27;Energy Router&#x27;, &#x27;Energy Steward&#x27;, &#x27;Energy Designer&#x27;, &#x27;Energy Operator&#x27;, &#x27;Energy Modeler&#x27;, &#x27;Energy Orchestrator&#x27;, &#x27;Energy Custodian&#x27;, &#x27;Energy Arbiter&#x27;, &#x27;Energy Engineer&#x27;, &#x27;Energy Cartographer&#x27;, &#x27;Energy Mechanic&#x27;, &#x27;Energy Controller&#x27;, &#x27;Energy Builder&#x27;, &#x27;Energy Mediator&#x27;, &#x27;Energy Scout&#x27;, &#x27;Energy Instrumentor&#x27;, &#x27;Energy Negotiator&#x27;, &#x27;Energy Sequencer&#x27;, &#x27;Data Allocator&#x27;, &#x27;Data Optimizer&#x27;, &#x27;Data Governor&#x27;, &#x27;Data Auditor&#x27;, &#x27;Data Forecaster&#x27;, &#x27;Data Red Teamer&#x27;, &#x27;Data Architect&#x27;, &#x27;Data Economist&#x27;, &#x27;Data Strategist&#x27;, &#x27;Data Planner&#x27;, &#x27;Data Verifier&#x27;, &#x27;Data Compiler&#x27;, &#x27;Data Analyst&#x27;, &#x27;Data Synthesizer&#x27;, &#x27;Data Router&#x27;, &#x27;Data Steward&#x27;, &#x27;Data Designer&#x27;, &#x27;Data Operator&#x27;, &#x27;Data Modeler&#x27;, &#x27;Data Orchestrator&#x27;, &#x27;Data Custodian&#x27;, &#x27;Data Arbiter&#x27;, &#x27;Data Engineer&#x27;, &#x27;Data Cartographer&#x27;, &#x27;Data Mechanic&#x27;, &#x27;Data Controller&#x27;, &#x27;Data Builder&#x27;, &#x27;Data Mediator&#x27;, &#x27;Data Scout&#x27;, &#x27;Data Instrumentor&#x27;, &#x27;Data Negotiator&#x27;, &#x27;Data Sequencer&#x27;, &#x27;Trust Allocator&#x27;, &#x27;Trust Optimizer&#x27;, &#x27;Trust Governor&#x27;, &#x27;Trust Auditor&#x27;, &#x27;Trust Forecaster&#x27;, &#x27;Trust Red Teamer&#x27;, &#x27;Trust Architect&#x27;, &#x27;Trust Economist&#x27;, &#x27;Trust Strategist&#x27;, &#x27;Trust Planner&#x27;, &#x27;Trust Verifier&#x27;, &#x27;Trust Compiler&#x27;, &#x27;Trust Analyst&#x27;, &#x27;Trust Synthesizer&#x27;, &#x27;Trust Router&#x27;, &#x27;Trust Steward&#x27;, &#x27;Trust Designer&#x27;, &#x27;Trust Operator&#x27;, &#x27;Trust Modeler&#x27;, &#x27;Trust Orchestrator&#x27;, &#x27;Trust Custodian&#x27;, &#x27;Trust Arbiter&#x27;, &#x27;Trust Engineer&#x27;, &#x27;Trust Cartographer&#x27;, &#x27;Trust Mechanic&#x27;, &#x27;Trust Controller&#x27;, &#x27;Trust Builder&#x27;, &#x27;Trust Mediator&#x27;, &#x27;Trust Scout&#x27;, &#x27;Trust Instrumentor&#x27;, &#x27;Trust Negotiator&#x27;, &#x27;Trust Sequencer&#x27;, &#x27;Talent Allocator&#x27;, &#x27;Talent Optimizer&#x27;, &#x27;Talent Governor&#x27;, &#x27;Talent Auditor&#x27;, &#x27;Talent Forecaster&#x27;, &#x27;Talent Red Teamer&#x27;, &#x27;Talent Architect&#x27;, &#x27;Talent Economist&#x27;, &#x27;Talent Strategist&#x27;, &#x27;Talent Planner&#x27;, &#x27;Talent Verifier&#x27;, &#x27;Talent Compiler&#x27;, &#x27;Talent Analyst&#x27;, &#x27;Talent Synthesizer&#x27;, &#x27;Talent Router&#x27;, &#x27;Talent Steward&#x27;, &#x27;Talent Designer&#x27;, &#x27;Talent Operator&#x27;, &#x27;Talent Modeler&#x27;, &#x27;Talent Orchestrator&#x27;, &#x27;Talent Custodian&#x27;, &#x27;Talent Arbiter&#x27;, &#x27;Talent Engineer&#x27;, &#x27;Talent Cartographer&#x27;, &#x27;Talent Mechanic&#x27;, &#x27;Talent Controller&#x27;, &#x27;Talent Builder&#x27;, &#x27;Talent Mediator&#x27;, &#x27;Talent Scout&#x27;, &#x27;Talent Instrumentor&#x27;, &#x27;Talent Negotiator&#x27;, &#x27;Talent Sequencer&#x27;, &#x27;Product Allocator&#x27;, &#x27;Product Optimizer&#x27;, &#x27;Product Governor&#x27;, &#x27;Product Auditor&#x27;, &#x27;Product Forecaster&#x27;, &#x27;Product Red Teamer&#x27;, &#x27;Product Architect&#x27;, &#x27;Product Economist&#x27;, &#x27;Product Strategist&#x27;, &#x27;Product Planner&#x27;, &#x27;Product Verifier&#x27;, &#x27;Product Compiler&#x27;, &#x27;Product Analyst&#x27;, &#x27;Product Synthesizer&#x27;, &#x27;Product Router&#x27;, &#x27;Product Steward&#x27;, &#x27;Product Designer&#x27;, &#x27;Product Operator&#x27;, &#x27;Product Modeler&#x27;, &#x27;Product Orchestrator&#x27;, &#x27;Product Custodian&#x27;, &#x27;Product Arbiter&#x27;, &#x27;Product Engineer&#x27;, &#x27;Product Cartographer&#x27;, &#x27;Product Mechanic&#x27;, &#x27;Product Controller&#x27;, &#x27;Product Builder&#x27;, &#x27;Product Mediator&#x27;, &#x27;Product Scout&#x27;, &#x27;Product Instrumentor&#x27;, &#x27;Product Negotiator&#x27;, &#x27;Product Sequencer&#x27;, &#x27;Distribution Allocator&#x27;, &#x27;Distribution Optimizer&#x27;, &#x27;Distribution Governor&#x27;, &#x27;Distribution Auditor&#x27;, &#x27;Distribution Forecaster&#x27;, &#x27;Distribution Red Teamer&#x27;, &#x27;Distribution Architect&#x27;, &#x27;Distribution Economist&#x27;, &#x27;Distribution Strategist&#x27;, &#x27;Distribution Planner&#x27;, &#x27;Distribution Verifier&#x27;, &#x27;Distribution Compiler&#x27;, &#x27;Distribution Analyst&#x27;, &#x27;Distribution Synthesizer&#x27;, &#x27;Distribution Router&#x27;, &#x27;Distribution Steward&#x27;, &#x27;Distribution Designer&#x27;, &#x27;Distribution Operator&#x27;, &#x27;Distribution Modeler&#x27;, &#x27;Distribution Orchestrator&#x27;, &#x27;Distribution Custodian&#x27;, &#x27;Distribution Arbiter&#x27;, &#x27;Distribution Engineer&#x27;, &#x27;Distribution Cartographer&#x27;, &#x27;Distribution Mechanic&#x27;, &#x27;Distribution Controller&#x27;, &#x27;Distribution Builder&#x27;, &#x27;Distribution Mediator&#x27;, &#x27;Distribution Scout&#x27;, &#x27;Distribution Instrumentor&#x27;, &#x27;Distribution Negotiator&#x27;, &#x27;Distribution Sequencer&#x27;, &#x27;Validation Allocator&#x27;, &#x27;Validation Optimizer&#x27;, &#x27;Validation Governor&#x27;, &#x27;Validation Auditor&#x27;, &#x27;Validation Forecaster&#x27;, &#x27;Validation Red Teamer&#x27;, &#x27;Validation Architect&#x27;, &#x27;Validation Economist&#x27;, &#x27;Validation Strategist&#x27;, &#x27;Validation Planner&#x27;, &#x27;Validation Verifier&#x27;, &#x27;Validation Compiler&#x27;, &#x27;Validation Analyst&#x27;, &#x27;Validation Synthesizer&#x27;, &#x27;Validation Router&#x27;, &#x27;Validation Steward&#x27;, &#x27;Validation Designer&#x27;, &#x27;Validation Operator&#x27;, &#x27;Validation Modeler&#x27;, &#x27;Validation Orchestrator&#x27;, &#x27;Validation Custodian&#x27;, &#x27;Validation Arbiter&#x27;, &#x27;Validation Engineer&#x27;, &#x27;Validation Cartographer&#x27;, &#x27;Validation Mechanic&#x27;, &#x27;Validation Controller&#x27;, &#x27;Validation Builder&#x27;, &#x27;Validation Mediator&#x27;, &#x27;Validation Scout&#x27;, &#x27;Validation Instrumentor&#x27;, &#x27;Validation Negotiator&#x27;, &#x27;Validation Sequencer&#x27;, &#x27;Risk Allocator&#x27;, &#x27;Risk Optimizer&#x27;, &#x27;Risk Governor&#x27;, &#x27;Risk Auditor&#x27;, &#x27;Risk Forecaster&#x27;, &#x27;Risk Red Teamer&#x27;, &#x27;Risk Architect&#x27;, &#x27;Risk Economist&#x27;, &#x27;Risk Strategist&#x27;, &#x27;Risk Planner&#x27;, &#x27;Risk Verifier&#x27;, &#x27;Risk Compiler&#x27;, &#x27;Risk Analyst&#x27;, &#x27;Risk Synthesizer&#x27;, &#x27;Risk Router&#x27;, &#x27;Risk Steward&#x27;, &#x27;Risk Designer&#x27;, &#x27;Risk Operator&#x27;, &#x27;Risk Modeler&#x27;, &#x27;Risk Orchestrator&#x27;, &#x27;Risk Custodian&#x27;, &#x27;Risk Arbiter&#x27;, &#x27;Risk Engineer&#x27;, &#x27;Risk Cartographer&#x27;, &#x27;Risk Mechanic&#x27;, &#x27;Risk Controller&#x27;, &#x27;Risk Builder&#x27;, &#x27;Risk Mediator&#x27;, &#x27;Risk Scout&#x27;, &#x27;Risk Instrumentor&#x27;, &#x27;Risk Negotiator&#x27;, &#x27;Risk Sequencer&#x27;, &#x27;Security Allocator&#x27;, &#x27;Security Optimizer&#x27;, &#x27;Security Governor&#x27;, &#x27;Security Auditor&#x27;, &#x27;Security Forecaster&#x27;, &#x27;Security Red Teamer&#x27;, &#x27;Security Architect&#x27;, &#x27;Security Economist&#x27;, &#x27;Security Strategist&#x27;, &#x27;Security Planner&#x27;, &#x27;Security Verifier&#x27;, &#x27;Security Compiler&#x27;, &#x27;Security Analyst&#x27;, &#x27;Security Synthesizer&#x27;, &#x27;Security Router&#x27;, &#x27;Security Steward&#x27;, &#x27;Security Designer&#x27;, &#x27;Security Operator&#x27;, &#x27;Security Modeler&#x27;, &#x27;Security Orchestrator&#x27;, &#x27;Security Custodian&#x27;, &#x27;Security Arbiter&#x27;, &#x27;Security Engineer&#x27;, &#x27;Security Cartographer&#x27;, &#x27;Security Mechanic&#x27;, &#x27;Security Controller&#x27;, &#x27;Security Builder&#x27;, &#x27;Security Mediator&#x27;, &#x27;Security Scout&#x27;, &#x27;Security Instrumentor&#x27;, &#x27;Security Negotiator&#x27;, &#x27;Security Sequencer&#x27;, &#x27;Compliance Allocator&#x27;, &#x27;Compliance Optimizer&#x27;, &#x27;Compliance Governor&#x27;, &#x27;Compliance Auditor&#x27;, &#x27;Compliance Forecaster&#x27;, &#x27;Compliance Red Teamer&#x27;, &#x27;Compliance Architect&#x27;, &#x27;Compliance Economist&#x27;, &#x27;Compliance Strategist&#x27;, &#x27;Compliance Planner&#x27;, &#x27;Compliance Verifier&#x27;, &#x27;Compliance Compiler&#x27;, &#x27;Compliance Analyst&#x27;, &#x27;Compliance Synthesizer&#x27;, &#x27;Compliance Router&#x27;, &#x27;Compliance Steward&#x27;, &#x27;Compliance Designer&#x27;, &#x27;Compliance Operator&#x27;, &#x27;Compliance Modeler&#x27;, &#x27;Compliance Orchestrator&#x27;, &#x27;Compliance Custodian&#x27;, &#x27;Compliance Arbiter&#x27;, &#x27;Compliance Engineer&#x27;, &#x27;Compliance Cartographer&#x27;, &#x27;Compliance Mechanic&#x27;, &#x27;Compliance Controller&#x27;, &#x27;Compliance Builder&#x27;, &#x27;Compliance Mediator&#x27;, &#x27;Compliance Scout&#x27;, &#x27;Compliance Instrumentor&#x27;, &#x27;Compliance Negotiator&#x27;, &#x27;Compliance Sequencer&#x27;, &#x27;Operations Allocator&#x27;, &#x27;Operations Optimizer&#x27;, &#x27;Operations Governor&#x27;, &#x27;Operations Auditor&#x27;, &#x27;Operations Forecaster&#x27;, &#x27;Operations Red Teamer&#x27;, &#x27;Operations Architect&#x27;, &#x27;Operations Economist&#x27;, &#x27;Operations Strategist&#x27;, &#x27;Operations Planner&#x27;, &#x27;Operations Verifier&#x27;, &#x27;Operations Compiler&#x27;, &#x27;Operations Analyst&#x27;, &#x27;Operations Synthesizer&#x27;, &#x27;Operations Router&#x27;, &#x27;Operations Steward&#x27;, &#x27;Operations Designer&#x27;, &#x27;Operations Operator&#x27;, &#x27;Operations Modeler&#x27;, &#x27;Operations Orchestrator&#x27;, &#x27;Operations Custodian&#x27;, &#x27;Operations Arbiter&#x27;, &#x27;Operations Engineer&#x27;, &#x27;Operations Cartographer&#x27;, &#x27;Operations Mechanic&#x27;, &#x27;Operations Controller&#x27;, &#x27;Operations Builder&#x27;, &#x27;Operations Mediator&#x27;, &#x27;Operations Scout&#x27;, &#x27;Operations Instrumentor&#x27;, &#x27;Operations Negotiator&#x27;, &#x27;Operations Sequencer&#x27;, &#x27;Pricing Allocator&#x27;, &#x27;Pricing Optimizer&#x27;, &#x27;Pricing Governor&#x27;, &#x27;Pricing Auditor&#x27;, &#x27;Pricing Forecaster&#x27;, &#x27;Pricing Red Teamer&#x27;, &#x27;Pricing Architect&#x27;, &#x27;Pricing Economist&#x27;, &#x27;Pricing Strategist&#x27;, &#x27;Pricing Planner&#x27;, &#x27;Pricing Verifier&#x27;, &#x27;Pricing Compiler&#x27;, &#x27;Pricing Analyst&#x27;, &#x27;Pricing Synthesizer&#x27;, &#x27;Pricing Router&#x27;, &#x27;Pricing Steward&#x27;, &#x27;Pricing Designer&#x27;, &#x27;Pricing Operator&#x27;, &#x27;Pricing Modeler&#x27;, &#x27;Pricing Orchestrator&#x27;, &#x27;Pricing Custodian&#x27;, &#x27;Pricing Arbiter&#x27;, &#x27;Pricing Engineer&#x27;, &#x27;Pricing Cartographer&#x27;, &#x27;Pricing Mechanic&#x27;, &#x27;Pricing Controller&#x27;, &#x27;Pricing Builder&#x27;, &#x27;Pricing Mediator&#x27;, &#x27;Pricing Scout&#x27;, &#x27;Pricing Instrumentor&#x27;, &#x27;Pricing Negotiator&#x27;, &#x27;Pricing Sequencer&#x27;, &#x27;Customer Allocator&#x27;, &#x27;Customer Optimizer&#x27;, &#x27;Customer Governor&#x27;, &#x27;Customer Auditor&#x27;, &#x27;Customer Forecaster&#x27;, &#x27;Customer Red Teamer&#x27;, &#x27;Customer Architect&#x27;, &#x27;Customer Economist&#x27;, &#x27;Customer Strategist&#x27;, &#x27;Customer Planner&#x27;, &#x27;Customer Verifier&#x27;, &#x27;Customer Compiler&#x27;, &#x27;Customer Analyst&#x27;, &#x27;Customer Synthesizer&#x27;, &#x27;Customer Router&#x27;, &#x27;Customer Steward&#x27;, &#x27;Customer Designer&#x27;, &#x27;Customer Operator&#x27;, &#x27;Customer Modeler&#x27;, &#x27;Customer Orchestrator&#x27;, &#x27;Customer Custodian&#x27;, &#x27;Customer Arbiter&#x27;, &#x27;Customer Engineer&#x27;, &#x27;Customer Cartographer&#x27;, &#x27;Customer Mechanic&#x27;, &#x27;Customer Controller&#x27;, &#x27;Customer Builder&#x27;, &#x27;Customer Mediator&#x27;, &#x27;Customer Scout&#x27;, &#x27;Customer Instrumentor&#x27;, &#x27;Customer Negotiator&#x27;, &#x27;Customer Sequencer&#x27;, &#x27;Ecosystem Allocator&#x27;, &#x27;Ecosystem Optimizer&#x27;, &#x27;Ecosystem Governor&#x27;, &#x27;Ecosystem Auditor&#x27;, &#x27;Ecosystem Forecaster&#x27;, &#x27;Ecosystem Red Teamer&#x27;, &#x27;Ecosystem Architect&#x27;, &#x27;Ecosystem Economist&#x27;, &#x27;Ecosystem Strategist&#x27;, &#x27;Ecosystem Planner&#x27;, &#x27;Ecosystem Verifier&#x27;, &#x27;Ecosystem Compiler&#x27;, &#x27;Ecosystem Analyst&#x27;, &#x27;Ecosystem Synthesizer&#x27;, &#x27;Ecosystem Router&#x27;, &#x27;Ecosystem Steward&#x27;, &#x27;Ecosystem Designer&#x27;, &#x27;Ecosystem Operator&#x27;, &#x27;Ecosystem Modeler&#x27;, &#x27;Ecosystem Orchestrator&#x27;, &#x27;Ecosystem Custodian&#x27;, &#x27;Ecosystem Arbiter&#x27;, &#x27;Ecosystem Engineer&#x27;, &#x27;Ecosystem Cartographer&#x27;, &#x27;Ecosystem Mechanic&#x27;, &#x27;Ecosystem Controller&#x27;, &#x27;Ecosystem Builder&#x27;, &#x27;Ecosystem Mediator&#x27;, &#x27;Ecosystem Scout&#x27;, &#x27;Ecosystem Instrumentor&#x27;, &#x27;Ecosystem Negotiator&#x27;, &#x27;Ecosystem Sequencer&#x27;, &#x27;Strategy Allocator&#x27;, &#x27;Strategy Optimizer&#x27;, &#x27;Strategy Governor&#x27;, &#x27;Strategy Auditor&#x27;, &#x27;Strategy Forecaster&#x27;, &#x27;Strategy Red Teamer&#x27;, &#x27;Strategy Architect&#x27;, &#x27;Strategy Economist&#x27;, &#x27;Strategy Strategist&#x27;, &#x27;Strategy Planner&#x27;, &#x27;Strategy Verifier&#x27;, &#x27;Strategy Compiler&#x27;, &#x27;Strategy Analyst&#x27;, &#x27;Strategy Synthesizer&#x27;, &#x27;Strategy Router&#x27;, &#x27;Strategy Steward&#x27;, &#x27;Strategy Designer&#x27;, &#x27;Strategy Operator&#x27;, &#x27;Strategy Modeler&#x27;, &#x27;Strategy Orchestrator&#x27;, &#x27;Strategy Custodian&#x27;, &#x27;Strategy Arbiter&#x27;, &#x27;Strategy Engineer&#x27;, &#x27;Strategy Cartographer&#x27;, &#x27;Strategy Mechanic&#x27;, &#x27;Strategy Controller&#x27;, &#x27;Strategy Builder&#x27;, &#x27;Strategy Mediator&#x27;, &#x27;Strategy Scout&#x27;, &#x27;Strategy Instrumentor&#x27;, &#x27;Strategy Negotiator&#x27;, &#x27;Strategy Sequencer&#x27;, &#x27;Research Allocator&#x27;, &#x27;Research Optimizer&#x27;, &#x27;Research Governor&#x27;, &#x27;Research Auditor&#x27;, &#x27;Research Forecaster&#x27;, &#x27;Research Red Teamer&#x27;, &#x27;Research Architect&#x27;, &#x27;Research Economist&#x27;, &#x27;Research Strategist&#x27;, &#x27;Research Planner&#x27;, &#x27;Research Verifier&#x27;, &#x27;Research Compiler&#x27;, &#x27;Research Analyst&#x27;, &#x27;Research Synthesizer&#x27;, &#x27;Research Router&#x27;, &#x27;Research Steward&#x27;, &#x27;Research Designer&#x27;, &#x27;Research Operator&#x27;, &#x27;Research Modeler&#x27;, &#x27;Research Orchestrator&#x27;, &#x27;Research Custodian&#x27;, &#x27;Research Arbiter&#x27;, &#x27;Research Engineer&#x27;, &#x27;Research Cartographer&#x27;, &#x27;Research Mechanic&#x27;, &#x27;Research Controller&#x27;, &#x27;Research Builder&#x27;, &#x27;Research Mediator&#x27;, &#x27;Research Scout&#x27;, &#x27;Research Instrumentor&#x27;, &#x27;Research Negotiator&#x27;, &#x27;Research Sequencer&#x27;, &#x27;Automation Allocator&#x27;, &#x27;Automation Optimizer&#x27;, &#x27;Automation Governor&#x27;, &#x27;Automation Auditor&#x27;, &#x27;Automation Forecaster&#x27;, &#x27;Automation Red Teamer&#x27;, &#x27;Automation Architect&#x27;, &#x27;Automation Economist&#x27;, &#x27;Automation Strategist&#x27;, &#x27;Automation Planner&#x27;, &#x27;Automation Verifier&#x27;, &#x27;Automation Compiler&#x27;, &#x27;Automation Analyst&#x27;, &#x27;Automation Synthesizer&#x27;, &#x27;Automation Router&#x27;, &#x27;Automation Steward&#x27;, &#x27;Automation Designer&#x27;, &#x27;Automation Operator&#x27;, &#x27;Automation Modeler&#x27;, &#x27;Automation Orchestrator&#x27;, &#x27;Automation Custodian&#x27;, &#x27;Automation Arbiter&#x27;, &#x27;Automation Engineer&#x27;, &#x27;Automation Cartographer&#x27;, &#x27;Automation Mechanic&#x27;, &#x27;Automation Controller&#x27;, &#x27;Automation Builder&#x27;, &#x27;Automation Mediator&#x27;, &#x27;Automation Scout&#x27;, &#x27;Automation Instrumentor&#x27;, &#x27;Automation Negotiator&#x27;, &#x27;Automation Sequencer&#x27;, &#x27;Governance Allocator&#x27;, &#x27;Governance Optimizer&#x27;, &#x27;Governance Governor&#x27;, &#x27;Governance Auditor&#x27;, &#x27;Governance Forecaster&#x27;, &#x27;Governance Red Teamer&#x27;, &#x27;Governance Architect&#x27;, &#x27;Governance Economist&#x27;, &#x27;Governance Strategist&#x27;, &#x27;Governance Planner&#x27;, &#x27;Governance Verifier&#x27;, &#x27;Governance Compiler&#x27;, &#x27;Governance Analyst&#x27;, &#x27;Governance Synthesizer&#x27;, &#x27;Governance Router&#x27;, &#x27;Governance Steward&#x27;, &#x27;Governance Designer&#x27;, &#x27;Governance Operator&#x27;, &#x27;Governance Modeler&#x27;, &#x27;Governance Orchestrator&#x27;, &#x27;Governance Custodian&#x27;, &#x27;Governance Arbiter&#x27;, &#x27;Governance Engineer&#x27;, &#x27;Governance Cartographer&#x27;, &#x27;Governance Mechanic&#x27;, &#x27;Governance Controller&#x27;, &#x27;Governance Builder&#x27;, &#x27;Governance Mediator&#x27;, &#x27;Governance Scout&#x27;, &#x27;Governance Instrumentor&#x27;, &#x27;Governance Negotiator&#x27;, &#x27;Governance Sequencer&#x27;, &#x27;Finance Allocator&#x27;, &#x27;Finance Optimizer&#x27;, &#x27;Finance Governor&#x27;, &#x27;Finance Auditor&#x27;, &#x27;Finance Forecaster&#x27;, &#x27;Finance Red Teamer&#x27;, &#x27;Finance Architect&#x27;, &#x27;Finance Economist&#x27;, &#x27;Finance Strategist&#x27;, &#x27;Finance Planner&#x27;, &#x27;Finance Verifier&#x27;, &#x27;Finance Compiler&#x27;, &#x27;Finance Analyst&#x27;, &#x27;Finance Synthesizer&#x27;, &#x27;Finance Router&#x27;, &#x27;Finance Steward&#x27;, &#x27;Finance Designer&#x27;, &#x27;Finance Operator&#x27;, &#x27;Finance Modeler&#x27;, &#x27;Finance Orchestrator&#x27;, &#x27;Finance Custodian&#x27;, &#x27;Finance Arbiter&#x27;, &#x27;Finance Engineer&#x27;, &#x27;Finance Cartographer&#x27;, &#x27;Finance Mechanic&#x27;, &#x27;Finance Controller&#x27;, &#x27;Finance Builder&#x27;, &#x27;Finance Mediator&#x27;, &#x27;Finance Scout&#x27;, &#x27;Finance Instrumentor&#x27;, &#x27;Finance Negotiator&#x27;, &#x27;Finance Sequencer&#x27;, &#x27;Supply Chain Allocator&#x27;, &#x27;Supply Chain Optimizer&#x27;, &#x27;Supply Chain Governor&#x27;, &#x27;Supply Chain Auditor&#x27;, &#x27;Supply Chain Forecaster&#x27;, &#x27;Supply Chain Red Teamer&#x27;, &#x27;Supply Chain Architect&#x27;, &#x27;Supply Chain Economist&#x27;, &#x27;Supply Chain Strategist&#x27;, &#x27;Supply Chain Planner&#x27;, &#x27;Supply Chain Verifier&#x27;, &#x27;Supply Chain Compiler&#x27;, &#x27;Supply Chain Analyst&#x27;, &#x27;Supply Chain Synthesizer&#x27;, &#x27;Supply Chain Router&#x27;, &#x27;Supply Chain Steward&#x27;, &#x27;Supply Chain Designer&#x27;, &#x27;Supply Chain Operator&#x27;, &#x27;Supply Chain Modeler&#x27;, &#x27;Supply Chain Orchestrator&#x27;, &#x27;Supply Chain Custodian&#x27;, &#x27;Supply Chain Arbiter&#x27;, &#x27;Supply Chain Engineer&#x27;, &#x27;Supply Chain Cartographer&#x27;, &#x27;Supply Chain Mechanic&#x27;, &#x27;Supply Chain Controller&#x27;, &#x27;Supply Chain Builder&#x27;, &#x27;Supply Chain Mediator&#x27;, &#x27;Supply Chain Scout&#x27;, &#x27;Supply Chain Instrumentor&#x27;, &#x27;Supply Chain Negotiator&#x27;, &#x27;Supply Chain Sequencer&#x27;, &#x27;Marketplace Allocator&#x27;, &#x27;Marketplace Optimizer&#x27;, &#x27;Marketplace Governor&#x27;, &#x27;Marketplace Auditor&#x27;, &#x27;Marketplace Forecaster&#x27;, &#x27;Marketplace Red Teamer&#x27;, &#x27;Marketplace Architect&#x27;, &#x27;Marketplace Economist&#x27;, &#x27;Marketplace Strategist&#x27;, &#x27;Marketplace Planner&#x27;, &#x27;Marketplace Verifier&#x27;, &#x27;Marketplace Compiler&#x27;, &#x27;Marketplace Analyst&#x27;, &#x27;Marketplace Synthesizer&#x27;, &#x27;Marketplace Router&#x27;, &#x27;Marketplace Steward&#x27;, &#x27;Marketplace Designer&#x27;, &#x27;Marketplace Operator&#x27;, &#x27;Marketplace Modeler&#x27;, &#x27;Marketplace Orchestrator&#x27;, &#x27;Marketplace Custodian&#x27;, &#x27;Marketplace Arbiter&#x27;, &#x27;Marketplace Engineer&#x27;, &#x27;Marketplace Cartographer&#x27;, &#x27;Marketplace Mechanic&#x27;, &#x27;Marketplace Controller&#x27;, &#x27;Marketplace Builder&#x27;, &#x27;Marketplace Mediator&#x27;, &#x27;Marketplace Scout&#x27;, &#x27;Marketplace Instrumentor&#x27;, &#x27;Marketplace Negotiator&#x27;, &#x27;Marketplace Sequencer&#x27;, &#x27;Platform Allocator&#x27;, &#x27;Platform Optimizer&#x27;, &#x27;Platform Governor&#x27;, &#x27;Platform Auditor&#x27;, &#x27;Platform Forecaster&#x27;, &#x27;Platform Red Teamer&#x27;, &#x27;Platform Architect&#x27;, &#x27;Platform Economist&#x27;, &#x27;Platform Strategist&#x27;, &#x27;Platform Planner&#x27;, &#x27;Platform Verifier&#x27;, &#x27;Platform Compiler&#x27;, &#x27;Platform Analyst&#x27;, &#x27;Platform Synthesizer&#x27;, &#x27;Platform Router&#x27;, &#x27;Platform Steward&#x27;, &#x27;Platform Designer&#x27;, &#x27;Platform Operator&#x27;, &#x27;Platform Modeler&#x27;, &#x27;Platform Orchestrator&#x27;, &#x27;Platform Custodian&#x27;, &#x27;Platform Arbiter&#x27;, &#x27;Platform Engineer&#x27;, &#x27;Platform Cartographer&#x27;, &#x27;Platform Mechanic&#x27;, &#x27;Platform Controller&#x27;, &#x27;Platform Builder&#x27;, &#x27;Platform Mediator&#x27;, &#x27;Platform Scout&#x27;, &#x27;Platform Instrumentor&#x27;, &#x27;Platform Negotiator&#x27;, &#x27;Platform Sequencer&#x27;, &#x27;Quality Allocator&#x27;, &#x27;Quality Optimizer&#x27;, &#x27;Quality Governor&#x27;, &#x27;Quality Auditor&#x27;, &#x27;Quality Forecaster&#x27;, &#x27;Quality Red Teamer&#x27;, &#x27;Quality Architect&#x27;, &#x27;Quality Economist&#x27;, &#x27;Quality Strategist&#x27;, &#x27;Quality Planner&#x27;, &#x27;Quality Verifier&#x27;, &#x27;Quality Compiler&#x27;, &#x27;Quality Analyst&#x27;, &#x27;Quality Synthesizer&#x27;, &#x27;Quality Router&#x27;, &#x27;Quality Steward&#x27;, &#x27;Quality Designer&#x27;, &#x27;Quality Operator&#x27;, &#x27;Quality Modeler&#x27;, &#x27;Quality Orchestrator&#x27;, &#x27;Quality Custodian&#x27;, &#x27;Quality Arbiter&#x27;, &#x27;Quality Engineer&#x27;, &#x27;Quality Cartographer&#x27;, &#x27;Quality Mechanic&#x27;, &#x27;Quality Controller&#x27;, &#x27;Quality Builder&#x27;, &#x27;Quality Mediator&#x27;, &#x27;Quality Scout&#x27;, &#x27;Quality Instrumentor&#x27;, &#x27;Quality Negotiator&#x27;, &#x27;Quality Sequencer&#x27;, &#x27;Resilience Allocator&#x27;, &#x27;Resilience Optimizer&#x27;, &#x27;Resilience Governor&#x27;, &#x27;Resilience Auditor&#x27;, &#x27;Resilience Forecaster&#x27;, &#x27;Resilience Red Teamer&#x27;, &#x27;Resilience Architect&#x27;, &#x27;Resilience Economist&#x27;, &#x27;Resilience Strategist&#x27;, &#x27;Resilience Planner&#x27;, &#x27;Resilience Verifier&#x27;, &#x27;Resilience Compiler&#x27;, &#x27;Resilience Analyst&#x27;, &#x27;Resilience Synthesizer&#x27;, &#x27;Resilience Router&#x27;, &#x27;Resilience Steward&#x27;, &#x27;Resilience Designer&#x27;, &#x27;Resilience Operator&#x27;, &#x27;Resilience Modeler&#x27;, &#x27;Resilience Orchestrator&#x27;, &#x27;Resilience Custodian&#x27;, &#x27;Resilience Arbiter&#x27;, &#x27;Resilience Engineer&#x27;, &#x27;Resilience Cartographer&#x27;, &#x27;Resilience Mechanic&#x27;, &#x27;Resilience Controller&#x27;, &#x27;Resilience Builder&#x27;, &#x27;Resilience Mediator&#x27;, &#x27;Resilience Scout&#x27;, &#x27;Resilience Instrumentor&#x27;, &#x27;Resilience Negotiator&#x27;, &#x27;Resilience Sequencer&#x27;, &#x27;Legal Allocator&#x27;, &#x27;Legal Optimizer&#x27;, &#x27;Legal Governor&#x27;, &#x27;Legal Auditor&#x27;, &#x27;Legal Forecaster&#x27;, &#x27;Legal Red Teamer&#x27;, &#x27;Legal Architect&#x27;, &#x27;Legal Economist&#x27;, &#x27;Legal Strategist&#x27;, &#x27;Legal Planner&#x27;, &#x27;Legal Verifier&#x27;, &#x27;Legal Compiler&#x27;, &#x27;Legal Analyst&#x27;, &#x27;Legal Synthesizer&#x27;, &#x27;Legal Router&#x27;, &#x27;Legal Steward&#x27;, &#x27;Legal Designer&#x27;, &#x27;Legal Operator&#x27;, &#x27;Legal Modeler&#x27;, &#x27;Legal Orchestrator&#x27;, &#x27;Legal Custodian&#x27;, &#x27;Legal Arbiter&#x27;, &#x27;Legal Engineer&#x27;, &#x27;Legal Cartographer&#x27;, &#x27;Legal Mechanic&#x27;, &#x27;Legal Controller&#x27;, &#x27;Legal Builder&#x27;, &#x27;Legal Mediator&#x27;, &#x27;Legal Scout&#x27;, &#x27;Legal Instrumentor&#x27;, &#x27;Legal Negotiator&#x27;, &#x27;Legal Sequencer&#x27;, &#x27;Brand Allocator&#x27;, &#x27;Brand Optimizer&#x27;, &#x27;Brand Governor&#x27;, &#x27;Brand Auditor&#x27;, &#x27;Brand Forecaster&#x27;, &#x27;Brand Red Teamer&#x27;, &#x27;Brand Architect&#x27;, &#x27;Brand Economist&#x27;, &#x27;Brand Strategist&#x27;, &#x27;Brand Planner&#x27;, &#x27;Brand Verifier&#x27;, &#x27;Brand Compiler&#x27;, &#x27;Brand Analyst&#x27;, &#x27;Brand Synthesizer&#x27;, &#x27;Brand Router&#x27;, &#x27;Brand Steward&#x27;, &#x27;Brand Designer&#x27;, &#x27;Brand Operator&#x27;, &#x27;Brand Modeler&#x27;, &#x27;Brand Orchestrator&#x27;, &#x27;Brand Custodian&#x27;, &#x27;Brand Arbiter&#x27;, &#x27;Brand Engineer&#x27;, &#x27;Brand Cartographer&#x27;, &#x27;Brand Mechanic&#x27;, &#x27;Brand Controller&#x27;, &#x27;Brand Builder&#x27;, &#x27;Brand Mediator&#x27;, &#x27;Brand Scout&#x27;, &#x27;Brand Instrumentor&#x27;, &#x27;Brand Negotiator&#x27;, &#x27;Brand Sequencer&#x27;, &#x27;Partnerships Allocator&#x27;, &#x27;Partnerships Optimizer&#x27;, &#x27;Partnerships Governor&#x27;, &#x27;Partnerships Auditor&#x27;, &#x27;Partnerships Forecaster&#x27;, &#x27;Partnerships Red Teamer&#x27;, &#x27;Partnerships Architect&#x27;, &#x27;Partnerships Economist&#x27;, &#x27;Partnerships Strategist&#x27;, &#x27;Partnerships Planner&#x27;, &#x27;Partnerships Verifier&#x27;, &#x27;Partnerships Compiler&#x27;, &#x27;Partnerships Analyst&#x27;, &#x27;Partnerships Synthesizer&#x27;, &#x27;Partnerships Router&#x27;, &#x27;Partnerships Steward&#x27;, &#x27;Partnerships Designer&#x27;, &#x27;Partnerships Operator&#x27;, &#x27;Partnerships Modeler&#x27;, &#x27;Partnerships Orchestrator&#x27;, &#x27;Partnerships Custodian&#x27;, &#x27;Partnerships Arbiter&#x27;, &#x27;Partnerships Engineer&#x27;, &#x27;Partnerships Cartographer&#x27;, &#x27;Partnerships Mechanic&#x27;, &#x27;Partnerships Controller&#x27;, &#x27;Partnerships Builder&#x27;, &#x27;Partnerships Mediator&#x27;, &#x27;Partnerships Scout&#x27;, &#x27;Partnerships Instrumentor&#x27;, &#x27;Partnerships Negotiator&#x27;, &#x27;Partnerships Sequencer&#x27;, &#x27;Infrastructure Allocator&#x27;, &#x27;Infrastructure Optimizer&#x27;, &#x27;Infrastructure Governor&#x27;, &#x27;Infrastructure Auditor&#x27;, &#x27;Infrastructure Forecaster&#x27;, &#x27;Infrastructure Red Teamer&#x27;, &#x27;Infrastructure Architect&#x27;, &#x27;Infrastructure Economist&#x27;, &#x27;Infrastructure Strategist&#x27;, &#x27;Infrastructure Planner&#x27;, &#x27;Infrastructure Verifier&#x27;, &#x27;Infrastructure Compiler&#x27;, &#x27;Infrastructure Analyst&#x27;, &#x27;Infrastructure Synthesizer&#x27;, &#x27;Infrastructure Router&#x27;, &#x27;Infrastructure Steward&#x27;, &#x27;Infrastructure Designer&#x27;, &#x27;Infrastructure Operator&#x27;, &#x27;Infrastructure Modeler&#x27;, &#x27;Infrastructure Orchestrator&#x27;, &#x27;Infrastructure Custodian&#x27;, &#x27;Infrastructure Arbiter&#x27;, &#x27;Infrastructure Engineer&#x27;, &#x27;Infrastructure Cartographer&#x27;, &#x27;Infrastructure Mechanic&#x27;, &#x27;Infrastructure Controller&#x27;, &#x27;Infrastructure Builder&#x27;, &#x27;Infrastructure Mediator&#x27;, &#x27;Infrastructure Scout&#x27;, &#x27;Infrastructure Instrumentor&#x27;, &#x27;Infrastructure Negotiator&#x27;, &#x27;Infrastructure Sequencer&#x27;, &#x27;Experimentation Allocator&#x27;, &#x27;Experimentation Optimizer&#x27;, &#x27;Experimentation Governor&#x27;, &#x27;Experimentation Auditor&#x27;, &#x27;Experimentation Forecaster&#x27;, &#x27;Experimentation Red Teamer&#x27;, &#x27;Experimentation Architect&#x27;, &#x27;Experimentation Economist&#x27;, &#x27;Experimentation Strategist&#x27;, &#x27;Experimentation Planner&#x27;, &#x27;Experimentation Verifier&#x27;, &#x27;Experimentation Compiler&#x27;, &#x27;Experimentation Analyst&#x27;, &#x27;Experimentation Synthesizer&#x27;, &#x27;Experimentation Router&#x27;, &#x27;Experimentation Steward&#x27;, &#x27;Experimentation Designer&#x27;, &#x27;Experimentation Operator&#x27;, &#x27;Experimentation Modeler&#x27;, &#x27;Experimentation Orchestrator&#x27;, &#x27;Experimentation Custodian&#x27;, &#x27;Experimentation Arbiter&#x27;, &#x27;Experimentation Engineer&#x27;, &#x27;Experimentation Cartographer&#x27;, &#x27;Experimentation Mechanic&#x27;, &#x27;Experimentation Controller&#x27;, &#x27;Experimentation Builder&#x27;, &#x27;Experimentation Mediator&#x27;, &#x27;Experimentation Scout&#x27;, &#x27;Experimentation Instrumentor&#x27;, &#x27;Experimentation Negotiator&#x27;, &#x27;Experimentation Sequencer&#x27;, &#x27;Coordination Allocator&#x27;, &#x27;Coordination Optimizer&#x27;, &#x27;Coordination Governor&#x27;, &#x27;Coordination Auditor&#x27;, &#x27;Coordination Forecaster&#x27;, &#x27;Coordination Red Teamer&#x27;, &#x27;Coordination Architect&#x27;, &#x27;Coordination Economist&#x27;, &#x27;Coordination Strategist&#x27;, &#x27;Coordination Planner&#x27;, &#x27;Coordination Verifier&#x27;, &#x27;Coordination Compiler&#x27;, &#x27;Coordination Analyst&#x27;, &#x27;Coordination Synthesizer&#x27;, &#x27;Coordination Router&#x27;, &#x27;Coordination Steward&#x27;, &#x27;Coordination Designer&#x27;, &#x27;Coordination Operator&#x27;, &#x27;Coordination Modeler&#x27;, &#x27;Coordination Orchestrator&#x27;, &#x27;Coordination Custodian&#x27;, &#x27;Coordination Arbiter&#x27;, &#x27;Coordination Engineer&#x27;, &#x27;Coordination Cartographer&#x27;, &#x27;Coordination Mechanic&#x27;, &#x27;Coordination Controller&#x27;, &#x27;Coordination Builder&#x27;, &#x27;Coordination Mediator&#x27;, &#x27;Coordination Scout&#x27;, &#x27;Coordination Instrumentor&#x27;, &#x27;Coordination Negotiator&#x27;, &#x27;Coordination Sequencer&#x27;] roles · 9 releases</p>
+<div class="actions"><a class="btn" href="rsi-corporate-capability-frontier-proof.html">Open proof</a><a class="btn" href="data/rsi_corporate_capability_frontier_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="enterprise-ops-market-proof.html">fully autonomous enterprise operations market-readiness proof</a></h3>
+<p>Autonomous reference workflow proof using deterministic synthetic/redacted-style data. Not audited customer ROI or guarantee of future outcomes.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="enterprise-ops-market-proof.html">Open proof</a><a class="btn" href="data/enterprise_ops_market_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="autonomous-market-readiness.html">fully autonomous no-human-review market-readiness proof</a></h3>
+<p>Autonomous reference workflow proof only. Not audited customer ROI, financial advice, investment advice, or guarantee of future outcomes.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="autonomous-market-readiness.html">Open proof</a><a class="btn" href="data/autonomous_market_readiness.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-capability-command-center-proof.html">fully autonomous recursive self-improvement adversarial large-scale multi-agent capital-to-capability command-center proof</a></h3>
+<p>Autonomous deterministic benchmark using synthetic/redacted-style business data and benchmark assumptions. Not audited customer ROI or guarantee of future outcomes.</p>
+<p><strong>91.40%</strong> value capture · agents agents · [&#x27;capital_allocator&#x27;, &#x27;compute_capacity_architect&#x27;, &#x27;energy_procurement_strategist&#x27;, &#x27;data_moat_strategist&#x27;, &#x27;model_capability_planner&#x27;, &#x27;robotics_automation_operator&#x27;, &#x27;market_intelligence_lead&#x27;, &#x27;enterprise_demand_operator&#x27;, &#x27;pricing_strategist&#x27;, &#x27;margin_architect&#x27;, &#x27;product_packaging_lead&#x27;, &#x27;platform_ecosystem_designer&#x27;, &#x27;trust_security_lead&#x27;, &#x27;validation_science_lead&#x27;, &#x27;risk_governor&#x27;, &#x27;regulatory_boundary_steward&#x27;, &#x27;procurement_acceleration_lead&#x27;, &#x27;partner_distribution_operator&#x27;, &#x27;customer_success_operator&#x27;, &#x27;retention_strategist&#x27;, &#x27;talent_allocator&#x27;, &#x27;learning_systems_architect&#x27;, &#x27;private_registry_operator&#x27;, &#x27;network_effects_strategist&#x27;, &#x27;proof_audit_lead&#x27;, &#x27;finance_controller&#x27;, &#x27;supply_chain_operator&#x27;, &#x27;deployment_orchestrator&#x27;, &#x27;quality_assurance_lead&#x27;, &#x27;scenario_red_team&#x27;, &#x27;reinvestment_planner&#x27;, &#x27;coordination_chair&#x27;] roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-command-center-proof.html">Open proof</a><a class="btn" href="data/rsi_capability_command_center_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-adversarial-multi-agent-market-command-center-proof.html">fully autonomous recursive self-improvement adversarial large-scale multi-agent market-command-center proof</a></h3>
+<p>Autonomous market-readiness benchmark using deterministic synthetic/redacted-style business data and benchmark assumptions. Not audited customer ROI or guarantee of future outcomes.</p>
+<p><strong>89.30%</strong> value capture · agents agents · [&#x27;market_intelligence&#x27;, &#x27;pricing_strategy&#x27;, &#x27;margin_architecture&#x27;, &#x27;capacity_planning&#x27;, &#x27;risk_governance&#x27;, &#x27;regulatory_boundary&#x27;, &#x27;enterprise_sales&#x27;, &#x27;product_packaging&#x27;, &#x27;customer_success&#x27;, &#x27;data_moat_strategy&#x27;, &#x27;validation_science&#x27;, &#x27;partner_operations&#x27;, &#x27;ecosystem_design&#x27;, &#x27;retention_strategy&#x27;, &#x27;operating_finance&#x27;, &#x27;procurement_strategy&#x27;, &#x27;security_trust&#x27;, &#x27;capital_allocation&#x27;, &#x27;growth_experimentation&#x27;, &#x27;coordination_chair&#x27;] roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-adversarial-multi-agent-market-command-center-proof.html">Open proof</a><a class="btn" href="data/rsi_adversarial_multi_agent_market_command_center_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-capital-to-capability-engine-proof.html">fully autonomous recursive self-improvement capital-to-capability engine benchmark</a></h3>
+<p>Autonomous deterministic market-readiness benchmark using synthetic/redacted-style business data and benchmark assumptions; not audited customer ROI, live customer adoption, financial advice, superintelligence claim, Kardashev Type II claim</p>
+<p><strong>90.50%</strong> value capture · agents agents · [&#x27;market_intelligence&#x27;, &#x27;enterprise_demand&#x27;, &#x27;pricing_strategy&#x27;, &#x27;margin_architecture&#x27;, &#x27;compute_capacity&#x27;, &#x27;energy_infrastructure&#x27;, &#x27;data_moat&#x27;, &#x27;model_capability&#x27;, &#x27;product_packaging&#x27;, &#x27;distribution_strategy&#x27;, &#x27;customer_success&#x27;, &#x27;retention_strategy&#x27;, &#x27;ecosystem_partnerships&#x27;, &#x27;supply_creation&#x27;, &#x27;validation_science&#x27;, &#x27;trust_and_security&#x27;, &#x27;regulatory_boundary&#x27;, &#x27;risk_governance&#x27;, &#x27;capital_allocation&#x27;, &#x27;capex_planning&#x27;, &#x27;talent_allocation&#x27;, &#x27;operations_automation&#x27;, &#x27;quality_evaluation&#x27;, &#x27;procurement_strategy&#x27;, &#x27;research_option_value&#x27;, &#x27;portfolio_correlation&#x27;, &#x27;private_registry&#x27;, &#x27;network_effects&#x27;, &#x27;sales_conversion&#x27;, &#x27;proof_and_auditability&#x27;, &#x27;safety_boundary&#x27;, &#x27;coordination_chair&#x27;] roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-capital-to-capability-engine-proof.html">Open proof</a><a class="btn" href="data/rsi_capital_to_capability_engine_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-corporate-os-market-proof.html">fully autonomous recursive self-improvement corporate operating system market-readiness proof</a></h3>
+<p>Autonomous reference workflow proof using deterministic synthetic/redacted-style corporate data. Not audited customer ROI or guarantee of future outcomes.</p>
+<p><strong>100.00%</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-corporate-os-market-proof.html">Open proof</a><a class="btn" href="data/rsi_corporate_os_market_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-cyberdefense-market-proof.html">fully autonomous recursive self-improvement cyber defense market-readiness proof</a></h3>
+<p>Defensive autonomous reference workflow proof using deterministic synthetic/redacted-style data. Not audited customer ROI or guarantee of future outcomes.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-cyberdefense-market-proof.html">Open proof</a><a class="btn" href="data/rsi_cyberdefense_market_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-cloudops-market-proof.html">fully autonomous recursive self-improvement market-readiness proof</a></h3>
+<p>Autonomous reference workflow proof using deterministic synthetic/redacted-style data. Not audited customer ROI or guarantee of future outcomes.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-cloudops-market-proof.html">Open proof</a><a class="btn" href="data/rsi_cloudops_market_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-marketplace-flywheel-market-proof.html">fully autonomous recursive self-improvement marketplace flywheel market-readiness proof</a></h3>
+<p>Autonomous reference workflow proof using deterministic synthetic/redacted-style business data and benchmark assumptions. Not audited customer ROI or guarantee of future outcomes.</p>
+<p><strong>87.00%</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-marketplace-flywheel-market-proof.html">Open proof</a><a class="btn" href="data/rsi_marketplace_flywheel_market_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-revenue-experiment-factory-market-proof.html">fully autonomous recursive self-improvement revenue experiment factory market-readiness proof</a></h3>
+<p>Autonomous reference workflow proof using deterministic synthetic/redacted-style business data and benchmark assumptions. Not audited customer ROI or guarantee of future outcomes.</p>
+<p><strong>82.40%</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-revenue-experiment-factory-market-proof.html">Open proof</a><a class="btn" href="data/rsi_revenue_experiment_factory_market_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-metamaterials-discovery-market-proof.html">fully autonomous recursive self-improvement scientific discovery market-readiness proof</a></h3>
+<p>Autonomous reference workflow proof using deterministic synthetic/redacted-style data and a physics-inspired benchmark oracle. Not audited customer ROI or guarantee of future outcomes.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-metamaterials-discovery-market-proof.html">Open proof</a><a class="btn" href="data/rsi_metamaterials_discovery_market_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-silicon-verification-market-proof.html">fully autonomous recursive self-improvement silicon verification market-readiness proof</a></h3>
+<p>Autonomous reference workflow proof using deterministic synthetic/redacted-style data. Not audited customer ROI or guarantee of future outcomes.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-silicon-verification-market-proof.html">Open proof</a><a class="btn" href="data/rsi_silicon_verification_market_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-unit-economics-market-proof.html">fully autonomous recursive self-improvement unit economics profit engine market-readiness proof</a></h3>
+<p>Autonomous reference workflow proof using deterministic synthetic/redacted-style business data and benchmark assumptions. Not audited customer ROI or guarantee of future outcomes.</p>
+<p><strong>84.70%</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-unit-economics-market-proof.html">Open proof</a><a class="btn" href="data/rsi_unit_economics_market_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-blockchain-protocol-capital-frontier-proof.html">Rsi Blockchain Protocol Capital Frontier Proof</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-blockchain-protocol-capital-frontier-proof.html">Open proof</a><a class="btn" href="data/rsi-blockchain-protocol-capital-frontier-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-corporate-strategy-frontier-proof.html">Rsi Corporate Strategy Frontier Proof</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-corporate-strategy-frontier-proof.html">Open proof</a><a class="btn" href="data/rsi-corporate-strategy-frontier-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-proof-forge-meta-coordination-proof.html">Rsi Proof Forge Meta Coordination Proof</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-proof-forge-meta-coordination-proof.html">Open proof</a><a class="btn" href="data/rsi-proof-forge-meta-coordination-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-capability-command-center-v17-benchmark.html">adversarial capital-to-capability coordination for capital, compute, energy, data, talent, product, distribution, trust, validation, risk control, and reinvestment</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · 64 roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-command-center-v17-benchmark.html">Open proof</a><a class="btn" href="data/rsi_capability_command_center_v17_benchmark.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-capability-command-center-benchmark.html">adversarial large-scale agentic coordination for capital-to-capability compounding, market capture, resource allocation, risk control, and validated reinvestment</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-command-center-benchmark.html">Open proof</a><a class="btn" href="data/rsi_capability_command_center_benchmark.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-adversarial-multi-agent-market-command-center-benchmark.html">adversarial large-scale agentic coordination for profitable market-capture portfolio selection, resource allocation, risk control, and compounding business strategy</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-adversarial-multi-agent-market-command-center-benchmark.html">Open proof</a><a class="btn" href="data/rsi_adversarial_multi_agent_market_command_center_benchmark.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-marketplace-flywheel-benchmark.html">AI work marketplace liquidity, skill-supply allocation, pricing, routing, and compounding flywheel optimization</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-marketplace-flywheel-benchmark.html">Open proof</a><a class="btn" href="data/rsi_marketplace_flywheel_benchmark.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-unit-economics-benchmark.html">AI workflow marketplace unit-economics optimization and scalable profit-capture planning</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-unit-economics-benchmark.html">Open proof</a><a class="btn" href="data/rsi_unit_economics_benchmark.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-metamaterials-discovery-benchmark.html">autonomous lightweight metamaterial discovery for load-bearing structures</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-metamaterials-discovery-benchmark.html">Open proof</a><a class="btn" href="data/rsi_metamaterials_discovery_benchmark.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="autonomous-market-benchmark.html">Autonomous Market Benchmark</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="autonomous-market-benchmark.html">Open proof</a><a class="btn" href="data/autonomous_market_benchmark.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-cloudops-benchmark.html">cloud reliability incident triage and cost remediation planning</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-cloudops-benchmark.html">Open proof</a><a class="btn" href="data/rsi_cloudops_benchmark.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-corporate-os-benchmark.html">corporate operating-system diagnosis and board-ready operating-plan generation</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-corporate-os-benchmark.html">Open proof</a><a class="btn" href="data/rsi_corporate_os_benchmark.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="demo.html">Demo</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="demo.html">Open proof</a><a class="btn" href="data/demo.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-capital-to-capability-engine-benchmark.html">large-scale agentic coordination for capital-to-capability compounding, market capture, resource allocation, risk control, and validated reinvestment</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-capital-to-capability-engine-benchmark.html">Open proof</a><a class="btn" href="data/rsi_capital_to_capability_engine_benchmark.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="enterprise-ops-benchmark.html">procurement invoice reconciliation and payment-risk triage</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="enterprise-ops-benchmark.html">Open proof</a><a class="btn" href="data/enterprise_ops_benchmark.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-revenue-experiment-factory-benchmark.html">revenue experiment design, causal validation, portfolio allocation, and scalable growth-plan selection</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-revenue-experiment-factory-benchmark.html">Open proof</a><a class="btn" href="data/rsi_revenue_experiment_factory_benchmark.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-ai-first-blockchain-capital-machine-proof.html">Rsi Ai First Blockchain Capital Machine Proof</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-ai-first-blockchain-capital-machine-proof.html">Open proof</a><a class="btn" href="data/rsi-ai-first-blockchain-capital-machine-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-ai-first-governance-capital-engine-proof.html">Rsi Ai First Governance Capital Engine Proof</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-ai-first-governance-capital-engine-proof.html">Open proof</a><a class="btn" href="data/rsi-ai-first-governance-capital-engine-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-capability-command-center-preregistered-gates.html">Rsi Capability Command Center Preregistered Gates</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-command-center-preregistered-gates.html">Open proof</a><a class="btn" href="data/rsi_capability_command_center_preregistered_gates.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-capability-command-center-v17-preregistered-gates.html">Rsi Capability Command Center V17 Preregistered Gates</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-command-center-v17-preregistered-gates.html">Open proof</a><a class="btn" href="data/rsi_capability_command_center_v17_preregistered_gates.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-capability-liquidity-engine-proof.html">Rsi Capability Liquidity Engine Proof</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-liquidity-engine-proof.html">Open proof</a><a class="btn" href="data/rsi-capability-liquidity-engine-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-governance-frontier-proof.html">Rsi Governance Frontier Proof</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-governance-frontier-proof.html">Open proof</a><a class="btn" href="data/rsi-governance-frontier-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-cyberdefense-benchmark.html">security operations alert triage and incident containment planning</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-cyberdefense-benchmark.html">Open proof</a><a class="btn" href="data/rsi_cyberdefense_benchmark.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="rsi-silicon-verification-benchmark.html">semiconductor RTL verification, bug triage, assertion selection, and fix-plan recommendation</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-silicon-verification-benchmark.html">Open proof</a><a class="btn" href="data/rsi_silicon_verification_benchmark.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="shadow-pilot-benchmark.html">SkillOS No-Send Shadow Pilot Benchmark</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="shadow-pilot-benchmark.html">Open proof</a><a class="btn" href="data/shadow_pilot_benchmark.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge warn">INDEXED</div>
+<h3><a href="wealth-proof.html">{&#x27;name&#x27;: &#x27;Sales follow-up email from call notes&#x27;, &#x27;why_this_workflow&#x27;: &#x27;Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.&#x27;, &#x27;real_work_unit&#x27;: &#x27;Draft one buyer-specific follow-up email from call notes.&#x27;, &#x27;note&#x27;: &#x27;The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.&#x27;}</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="wealth-proof.html">Open proof</a><a class="btn" href="data/wealth_proof.json">JSON</a></div>
+</article></div></main>
+</body></html>

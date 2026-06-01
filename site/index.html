@@ -1,90 +1,167 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SkillOS Public Command Center</title><style>
-:root{--bg:#06131f;--panel:rgba(255,255,255,.075);--panel2:rgba(255,255,255,.108);--line:rgba(255,255,255,.16);--text:#f5fbff;--muted:#b8c8d8;--cyan:#86f8ff;--green:#7dffb0;--gold:#ffd66b;--pink:#ff9ef8}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:radial-gradient(circle at 82% 0,#3d4381 0,transparent 34%),radial-gradient(circle at 0 18%,#095e70 0,transparent 26%),linear-gradient(135deg,#06131f,#13243d 60%,#282a5d);color:var(--text)}
-body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px;pointer-events:none;mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),rgba(0,0,0,.05))}
-a{color:var(--cyan)}main{max-width:1240px;margin:0 auto;padding:44px 20px 84px;position:relative}nav{position:sticky;top:0;z-index:10;background:rgba(6,19,31,.91);border-bottom:1px solid var(--line);backdrop-filter:blur(14px);display:flex;justify-content:space-between;align-items:center;padding:14px 22px}nav a{color:var(--muted);text-decoration:none;font-weight:850;margin-left:14px}
-h1{font-size:clamp(44px,7.2vw,104px);line-height:.84;letter-spacing:-.08em;margin:12px 0}h2{font-size:clamp(30px,4.5vw,58px);letter-spacing:-.05em;margin:36px 0 14px}h3{letter-spacing:-.025em}p{color:var(--muted);font-size:18px;line-height:1.55}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:center}.card,.metric,.proof-card,.workflow-card{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:0 22px 80px rgba(0,0,0,.25)}.card.feature{background:linear-gradient(180deg,var(--panel2),var(--panel))}
-.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.18em;font-weight:950;font-size:12px}.quote{font-size:clamp(24px,3.2vw,42px);line-height:1.08;letter-spacing:-.04em;color:var(--text)}.pill{display:inline-block;border:1px solid rgba(134,248,255,.35);border-radius:999px;padding:7px 10px;margin:4px 6px 4px 0;color:var(--cyan);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}.metric strong{display:block;color:var(--green);font-size:32px}.metric span{color:var(--muted)}.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.proof-card h3{font-size:22px;margin:8px 0}.proof-card p{font-size:15px}.proof-card .links a,.workflow-card a.button,.button{display:inline-block;background:var(--cyan);color:#06131f;text-decoration:none;border-radius:999px;padding:10px 14px;font-weight:950;margin:4px 6px 4px 0}.secondary{background:rgba(255,255,255,.09)!important;color:var(--text)!important;border:1px solid var(--line)}
-.skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.skill-card{background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:22px;padding:16px;min-height:166px}.skill-card h3{font-size:18px;margin:8px 0}.skill-card p{font-size:14px;margin:0}.family{color:var(--gold);font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.1em}.bar{display:grid;grid-template-columns:240px 1fr 120px;gap:12px;align-items:center;margin:12px 0}.bar span,.bar b{color:var(--muted)}.bar div{height:20px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--cyan));border-radius:999px}
-table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:16px 0}td,th{padding:12px;border-bottom:1px solid var(--line);text-align:left}th{color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:.08em}.notice{border-left:4px solid var(--gold);background:rgba(255,214,107,.08);border-radius:16px;padding:16px 18px;color:var(--muted)}.workflow-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.status-ok{color:var(--green);font-weight:950}.status-warn{color:var(--gold);font-weight:950}.small{font-size:14px;color:var(--muted)}code{background:rgba(255,255,255,.08);padding:2px 6px;border-radius:8px}
-@media(max-width:1000px){.proof-grid{grid-template-columns:repeat(2,1fr)}.skill-grid{grid-template-columns:repeat(2,1fr)}.workflow-grid{grid-template-columns:1fr}}@media(max-width:760px){.hero,.grid,.proof-grid,.skill-grid,.bar{grid-template-columns:1fr}nav{display:block}nav a{display:inline-block;margin:8px 10px 0 0}}
-</style></head><body><nav><strong>SkillOS Command Center</strong><div><a href="index.html">Home</a><a href="proofs.html">Proofs</a><a href="actions.html">Run Proofs</a><a href="data/command-center-manifest.json">Manifest</a></div></nav><main><section class="hero"><div><div class="eyebrow">Public SkillOS Command Center</div><h1>Autonomous proof, always refreshed.</h1><p>The SkillOS website is regenerated from the repository itself: proof receipts, workflow files, badges, Markdown reports, skills catalogs, and GitHub Actions outputs.</p><p><a class="button" href="proofs.html">Explore proofs</a><a class="button secondary" href="actions.html">Run proofs</a><a class="button secondary" href="https://github.com/MontrealAI/skillos">Open GitHub</a></p></div><div class="card feature"><div class="eyebrow">What this page guarantees</div><div class="quote">No manual homepage curation required. Every refresh scans the repo, rebuilds the command center, verifies the Skills Used displays, and republishes the proof registry.</div><p class="small">Generated at 2026-06-01T16:23:01Z. Latest GitHub run status is fetched best-effort when the GitHub token is available.</p></div></section>
-<section class="grid"><div class="metric"><strong>51</strong><span>proof receipts found</span></div><div class="metric"><strong>37</strong><span>passed proof receipts</span></div><div class="metric"><strong>52</strong><span>workflow files found</span></div><div class="metric"><strong>52</strong><span>unique skills displayed</span></div></section>
-<section class="card"><div class="eyebrow">Core public explanation</div><div class="quote">work → traces → skills → verification → releases → routing upgrades → compounding capability</div><p>SkillOS makes this loop visible. The public site shows the proof visually; GitHub Actions shows the proof regenerating; JSON receipts show machine-readable evidence; Skills Used cards show what the agent system actually did.</p></section>
-<section><h2>Latest proof pages</h2><div class="proof-grid"><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>adversarial capital-to-capability command center proof with recursive self-improvement and large-scale specialist-agent coordination</h3>
-<p><span class="status-ok">PASSED</span> · value capture 90.5000%% · risk breach 0.0000%%</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-capability-command-center-v17-proof.html">Open proof page</a><a class="secondary" href="data/rsi_capability_command_center_v17_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_capability_command_center_v17_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_capability_command_center_v17_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous recursive self-improvement revenue experiment factory market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 82.4000%% · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-revenue-experiment-factory-market-proof.html">Open proof page</a><a class="secondary" href="data/rsi_revenue_experiment_factory_market_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_revenue_experiment_factory_market_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_revenue_experiment_factory_market_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous recursive self-improvement unit economics profit engine market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 84.7000%% · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-unit-economics-market-proof.html">Open proof page</a><a class="secondary" href="data/rsi_unit_economics_market_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_unit_economics_market_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_unit_economics_market_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous recursive self-improvement scientific discovery market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-metamaterials-discovery-market-proof.html">Open proof page</a><a class="secondary" href="data/rsi_metamaterials_discovery_market_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_metamaterials_discovery_market_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_metamaterials_discovery_market_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous recursive self-improvement corporate operating system market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 100.0000%% · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-corporate-os-market-proof.html">Open proof page</a><a class="secondary" href="data/rsi_corporate_os_market_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_corporate_os_market_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_corporate_os_market_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous recursive self-improvement silicon verification market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-silicon-verification-market-proof.html">Open proof page</a><a class="secondary" href="data/rsi_silicon_verification_market_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_silicon_verification_market_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_silicon_verification_market_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous recursive self-improvement cyber defense market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-cyberdefense-market-proof.html">Open proof page</a><a class="secondary" href="data/rsi_cyberdefense_market_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_cyberdefense_market_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_cyberdefense_market_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous recursive self-improvement market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-cloudops-market-proof.html">Open proof page</a><a class="secondary" href="data/rsi_cloudops_market_proof.json">JSON receipt</a><a class="secondary" href="docs/rsi_cloudops_market_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi_cloudops_market_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous enterprise operations market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="enterprise-ops-market-proof.html">Open proof page</a><a class="secondary" href="data/enterprise_ops_market_proof.json">JSON receipt</a><a class="secondary" href="docs/enterprise_ops_market_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/enterprise_ops_market_proof.svg" style="max-width:240px;height:20px">
-</article></div><p><a class="button" href="proofs.html">View all proofs</a></p></section>
-<section id="skills-used"><h2>Skills Used across the network</h2><p>The command center automatically extracts skills from proof receipts and renders them as user-friendly cards. This gives non-technical viewers a concrete way to understand the multi-agent system.</p><div class="skill-grid"><article class="skill-card"><div class="family">Twin</div><h3>Governance Twin Construction</h3><p>Builds a deterministic shadow model of the capability network before production release.</p><p class="small">Verifier: Twin Fidelity Court</p></article><article class="skill-card"><div class="family">Policy</div><h3>Policy-as-Code Compilation</h3><p>Converts governance boundaries into machine-checkable policy constraints.</p><p class="small">Verifier: Policy Coverage Court</p></article><article class="skill-card"><div class="family">Access Control</div><h3>Permission Boundary Mapping</h3><p>Maps each route to allowed skills, agents, tools, and data scopes.</p><p class="small">Verifier: Permission Hygiene Court</p></article><article class="skill-card"><div class="family">Twin</div><h3>Shadow Route Simulation</h3><p>Runs candidate capability routes in the twin before production promotion.</p><p class="small">Verifier: Shadow/Production Gap Court</p></article><article class="skill-card"><div class="family">Verification</div><h3>Verifier Coverage Allocation</h3><p>Allocates verifier courts to high-risk and high-value routes.</p><p class="small">Verifier: Verifier Capacity Court</p></article><article class="skill-card"><div class="family">Safety</div><h3>Policy Violation Detection</h3><p>Rejects candidate routes that violate policy, access, or disclosure constraints.</p><p class="small">Verifier: Policy Violation Court</p></article><article class="skill-card"><div class="family">Safety</div><h3>Rollback Path Planning</h3><p>Ensures a safe containment or reversal path exists before release.</p><p class="small">Verifier: Rollback Court</p></article><article class="skill-card"><div class="family">Reliability</div><h3>Incident Counterfactual Replay</h3><p>Replays past incidents and near misses against candidate protocol updates.</p><p class="small">Verifier: Incident Replay Court</p></article><article class="skill-card"><div class="family">Assurance</div><h3>Assurance Claim Decomposition</h3><p>Breaks broad capability claims into testable subclaims.</p><p class="small">Verifier: Claim Consistency Court</p></article><article class="skill-card"><div class="family">Evidence</div><h3>Evidence Packet Assembly</h3><p>Builds auditable evidence packets from traces, receipts, metrics, and verifier decisions.</p><p class="small">Verifier: Evidence Sufficiency Court</p></article><article class="skill-card"><div class="family">Controls</div><h3>Control Coverage Mapping</h3><p>Maps every material risk to a control, owner, verifier, and residual-risk score.</p><p class="small">Verifier: Control Coverage Court</p></article><article class="skill-card"><div class="family">Verification</div><h3>Trace Replay Verification</h3><p>Checks that claimed outcomes can be replayed from deterministic receipts.</p><p class="small">Verifier: Replay Court</p></article><article class="skill-card"><div class="family">Trust</div><h3>Provenance Integrity Check</h3><p>Validates the origin and chain of skill, evidence, and release artifacts.</p><p class="small">Verifier: Provenance Court</p></article><article class="skill-card"><div class="family">Verification</div><h3>Verifier Independence Scoring</h3><p>Scores whether verifier decisions are sufficiently separated from the generator.</p><p class="small">Verifier: Independence Court</p></article><article class="skill-card"><div class="family">Safety</div><h3>Residual Risk Quantification</h3><p>Quantifies residual risk after controls, rollbacks, and evidence review.</p><p class="small">Verifier: Risk Court</p></article><article class="skill-card"><div class="family">Adversarial</div><h3>Red-Team Challenge Routing</h3><p>Routes each assurance case through adversarial challenge panels.</p><p class="small">Verifier: Red-Team Court</p></article><article class="skill-card"><div class="family">Evidence</div><h3>Demand Decomposition</h3><p>Breaks incoming work into verifiable capability requirements.</p><p class="small">Verifier: Verifier Coverage Planning</p></article><article class="skill-card"><div class="family">Reliability</div><h3>SLA Contract Extraction</h3><p>Extracts latency, quality, safety, and rollback obligations from each job.</p><p class="small">Verifier: Reliability Scoring</p></article><article class="skill-card"><div class="family">Routing</div><h3>Latency-Aware Routing</h3><p>Routes work to skills and agents that can satisfy time-sensitive constraints.</p><p class="small">Verifier: SLA Breach Court</p></article><article class="skill-card"><div class="family">Market</div><h3>Capacity Market Clearing</h3><p>Matches demand to verified specialist capacity without overload.</p><p class="small">Verifier: Capacity Planning Court</p></article><article class="skill-card"><div class="family">Verification</div><h3>Verifier Coverage Planning</h3><p>Allocates verifier capacity to the highest-risk and highest-value work.</p><p class="small">Verifier: Verifier Court</p></article><article class="skill-card"><div class="family">Trust</div><h3>Provenance Audit</h3><p>Checks whether the skill, agent, and trace history are replayable and trustworthy.</p><p class="small">Verifier: Provenance Court</p></article><article class="skill-card"><div class="family">Safety</div><h3>Risk Veto</h3><p>Blocks routes that have unacceptable risk without sufficient rollback.</p><p class="small">Verifier: Risk Court</p></article><article class="skill-card"><div class="family">Safety</div><h3>Rollback Planning</h3><p>Ensures each routed action can be safely reversed or contained.</p><p class="small">Verifier: Incident Replay</p></article></div></section>
-<section><h2>How to see the proof</h2><div class="grid"><div class="card"><div class="eyebrow">1</div><h3>Open a proof page</h3><p>Click a proof card to see the visual evidence, metrics, controls, release history, and Skills Used.</p></div><div class="card"><div class="eyebrow">2</div><h3>Open the JSON receipt</h3><p>The JSON receipt is the machine-readable proof artifact generated by the workflow.</p></div><div class="card"><div class="eyebrow">3</div><h3>Rerun in GitHub Actions</h3><p>Open the Actions page, choose a workflow, and click Run workflow. A green run regenerates the proof autonomously.</p></div><div class="card"><div class="eyebrow">4</div><h3>Return here</h3><p>This command center refreshes from committed proof outputs so viewers always have a single current hub.</p></div></div></section>
-<section><h2>Workflow status</h2><div class="workflow-grid"><article class="workflow-card"><div class="family">Proof workflow</div><h3>_SkillOS Public Proof Command Center Refresh Reusable</h3><p><span class="status-ok">available</span> · _skillos-public-proof-command-center-refresh-reusable.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/_skillos-public-proof-command-center-refresh-reusable.yml">Open workflow</a></p></article><article class="workflow-card"><div class="family">Proof workflow</div><h3>Autonomous RSI Adversarial Capability Command Center Proof</h3><p><span class="status-warn">cancelled</span> · rsi-capability-command-center-proof.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/rsi-capability-command-center-proof.yml">Open workflow</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/runs/26767363069">Latest run</a></p></article><article class="workflow-card"><div class="family">Proof workflow</div><h3>Autonomous RSI Adversarial Multi-Agent Market Command Center Proof</h3><p><span class="status-ok">success</span> · rsi-adversarial-multi-agent-market-command-center-proof.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/rsi-adversarial-multi-agent-market-command-center-proof.yml">Open workflow</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/runs/26767337080">Latest run</a></p></article><article class="workflow-card"><div class="family">Proof workflow</div><h3>Autonomous RSI Capital-to-Capability Command Center v17 Proof</h3><p><span class="status-ok">success</span> · rsi-capability-command-center-v17-proof.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/rsi-capability-command-center-v17-proof.yml">Open workflow</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/runs/26767309768">Latest run</a></p></article><article class="workflow-card"><div class="family">Proof workflow</div><h3>SkillOS Public Proof Command Center Refresh</h3><p><span class="status-warn">in_progress</span> · skillos-public-proof-command-center-refresh.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/skillos-public-proof-command-center-refresh.yml">Open workflow</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/runs/26767537705">Latest run</a></p></article><article class="workflow-card"><div class="family">Repository workflow</div><h3>Refresh SkillOS Public Command Center</h3><p><span class="status-warn">in_progress</span> · refresh-skillos-command-center.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/refresh-skillos-command-center.yml">Open workflow</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/runs/26767537003">Latest run</a></p></article><article class="workflow-card"><div class="family">Repository workflow</div><h3>SkillOS Command Center Autopublisher v2</h3><p><span class="status-warn">in_progress</span> · skillos-command-center-autopublisher-v2.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/skillos-command-center-autopublisher-v2.yml">Open workflow</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/runs/26767537122">Latest run</a></p></article><article class="workflow-card"><div class="family">Repository workflow</div><h3>SkillOS Public Command Center v3 Autopublisher</h3><p><span class="status-warn">in_progress</span> · skillos-command-center-autopublisher-v3.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/skillos-command-center-autopublisher-v3.yml">Open workflow</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/runs/26767537743">Latest run</a></p></article><article class="workflow-card"><div class="family">Repository workflow</div><h3>SkillOS Public Site Command Center Refresh</h3><p><span class="status-warn">in_progress</span> · skillos-public-site-refresh.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/skillos-public-site-refresh.yml">Open workflow</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/runs/26767536998">Latest run</a></p></article><article class="workflow-card"><div class="family">Proof workflow</div><h3>Autonomous Enterprise Ops Market Proof</h3><p><span class="status-warn">failure</span> · enterprise-ops-proof.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/enterprise-ops-proof.yml">Open workflow</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/runs/26761163431">Latest run</a></p></article></div><p><a class="button" href="actions.html">Open all workflows</a></p></section><section class="notice"><strong>Public boundary:</strong> SkillOS publishes deterministic benchmark proofs and reference workflows. The public command center is not a claim of live customer revenue, independent financial-performance claims, financial advice, legal advice, medical advice, policy advice, token advice, or achieved superintelligence.</section></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#06131f">
+<title>SkillOS Public Command Center v4</title>
+<style>
+:root{--ink:#f7fbff;--muted:#bdd0e1;--cyan:#7df7ff;--gold:#ffd86b;--green:#76ffae;--rose:#ff8eb3;--panel:rgba(255,255,255,.082);--panel2:rgba(255,255,255,.125);--line:rgba(255,255,255,.18);}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;color:var(--ink);background:radial-gradient(circle at 12% 10%,rgba(0,245,255,.18),transparent 30%),radial-gradient(circle at 84% 0,rgba(186,129,255,.30),transparent 38%),linear-gradient(135deg,#06131f 0%,#112b44 42%,#25255e 100%);}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.95),rgba(0,0,0,.10));}
+a{color:var(--cyan);text-decoration:none}.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:14px 22px;background:rgba(5,16,28,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.brand{font-weight:950;color:var(--cyan);letter-spacing:-.03em}.nav a{margin-left:16px;color:#d7e7f7;font-weight:850;font-size:14px}main{max-width:1320px;margin:0 auto;padding:58px 24px 100px;position:relative}.hero{display:grid;grid-template-columns:1.06fr .94fr;gap:42px;align-items:center;min-height:540px}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.22em;font-weight:1000;font-size:12px}h1{font-size:clamp(54px,9vw,130px);line-height:.82;margin:18px 0;letter-spacing:-.085em}h2{font-size:clamp(34px,5vw,74px);line-height:.9;letter-spacing:-.065em;margin:42px 0 18px}h3{font-size:25px;letter-spacing:-.035em;margin:0 0 10px}p{font-size:18px;line-height:1.58;color:var(--muted)}.panel,.metric,.proof,.skill,.workflow{border:1px solid var(--line);background:linear-gradient(180deg,var(--panel2),var(--panel));border-radius:30px;box-shadow:0 24px 90px rgba(0,0,0,.23)}.panel{padding:28px}.thesis{font-size:clamp(28px,3.5vw,54px);line-height:1.04;letter-spacing:-.055em;color:var(--ink)}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 19px;font-weight:950;border:1px solid var(--line);color:var(--ink);background:rgba(255,255,255,.09)}.btn.gold{background:var(--gold);color:#091323}.btn.cyan{background:var(--cyan);color:#06131f}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:30px 0}.metric{padding:22px}.metric strong{display:block;font-size:38px;color:var(--green);letter-spacing:-.05em}.metric span{color:var(--muted)}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.proof,.skill,.workflow{padding:20px;min-height:210px}.badge{display:inline-flex;border-radius:999px;padding:6px 10px;background:rgba(118,255,174,.18);border:1px solid rgba(118,255,174,.25);color:var(--green);font-size:11px;font-weight:1000;letter-spacing:.1em;text-transform:uppercase}.badge.warn{background:rgba(255,216,107,.15);border-color:rgba(255,216,107,.3);color:var(--gold)}.skill dl{margin:12px 0 0}.skill dt{font-size:11px;color:var(--green);font-weight:1000;text-transform:uppercase;letter-spacing:.12em;margin-top:9px}.skill dd{margin:3px 0 0;color:var(--muted);font-size:14px;line-height:1.35}table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:22px;background:rgba(255,255,255,.07);border:1px solid var(--line)}th,td{padding:13px 14px;border-bottom:1px solid var(--line);text-align:left;color:var(--muted)}th{color:#e9f5ff;text-transform:uppercase;font-size:12px;letter-spacing:.12em}.footer{margin-top:60px;padding:24px;border-top:1px solid var(--line);color:var(--muted)}code{background:rgba(0,0,0,.22);padding:2px 6px;border-radius:7px;color:#eaffff}.root-fix{border-left:5px solid var(--gold);background:rgba(255,216,107,.09);padding:20px;border-radius:18px;margin:22px 0}@media(max-width:900px){.hero,.grid2,.grid3,.metrics{grid-template-columns:1fr}.nav{display:none}}
+</style>
+<script>
+(function() {
+  const version = "b7bc8fb67033b0c1";
+  document.documentElement.dataset.skillosVersion = version;
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(regs => Promise.all(regs.map(r => r.unregister()))).catch(() => {});
+  }
+  if (window.caches && caches.keys) {
+    caches.keys().then(keys => Promise.all(keys.map(k => caches.delete(k)))).catch(() => {});
+  }
+})();
+</script>
+</head>
+<body>
+<nav class="top"><a class="brand" href="./">SkillOS Public Command Center v4</a><div class="nav"><a href="executive.html">Executive</a><a href="proofs.html">Proofs</a><a href="skills.html">Skills Used</a><a href="actions.html">Run</a><a href="health.html">Health</a><a href="https://github.com/MontrealAI/skillos">GitHub</a></div></nav>
+<main>
+<section class="hero">
+<div>
+<div class="eyebrow">Montreal.AI / SkillOS</div>
+<h1>Public SkillOS Command Center</h1>
+<p>Fresh, GitHub-native, viewer-friendly hub for every SkillOS proof, run, receipt, report, badge, workflow, and Skills Used display.</p>
+<div class="actions"><a class="btn gold" href="proofs.html">View all proofs</a><a class="btn cyan" href="actions.html">Run / regenerate</a><a class="btn" href="skills.html">See Skills Used</a><a class="btn" href="force-refresh.html">Force refresh</a></div>
+</div>
+<div class="panel">
+<div class="eyebrow">Live freshness · v4 root fix</div>
+<div class="thesis">Updated 2026-06-01T16:23:46Z</div>
+<p>This canonical v4 deployment is designed so <code>/skillos/</code> and <code>/skillos/index.html</code> resolve to the same current command center.</p>
+<p>Repository: <a href="https://github.com/MontrealAI/skillos">MontrealAI/skillos</a></p>
+</div>
+</section>
+<section class="panel">
+<div class="eyebrow">Core thesis</div>
+<div class="thesis">Every job can become a reusable skill. Every verified skill can strengthen the whole network. One agent learns; the system can route that learning everywhere.</div>
+<p>SkillOS makes the mechanism public and testable: work → traces → skills → verification → release → routing upgrade → compounding capability.</p>
+</section>
+<section class="metrics">
+<div class="metric"><strong>60</strong><span>indexed proofs and pages</span></div>
+<div class="metric"><strong>37</strong><span>passed / proved receipts</span></div>
+<div class="metric"><strong>52</strong><span>GitHub workflows indexed</span></div>
+<div class="metric"><strong>66</strong><span>skills surfaced</span></div>
+<div class="metric"><strong>11005853696</strong><span>declared specialist agents</span></div>
+<div class="metric"><strong>$67.96T</strong><span>benchmark-capital-equivalent captured</span></div>
+<div class="metric"><strong>b7bc8fb67033b0c1</strong><span>site version hash</span></div>
+<div class="metric"><strong>canonical</strong><span>root URL strategy</span></div>
+</section>
+<section><h2>Featured proof library</h2><div class="grid3"><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-capability-command-center-v17-proof.html">adversarial capital-to-capability command center proof with recursive self-improvement and large-scale specialist-agent coordination</a></h3>
+<p>Deterministic market-readiness benchmark using synthetic/redacted-style business cases and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, actual superintelligence, Kardashev Typ</p>
+<p><strong>90.50%</strong> value capture · agents agents · 64 roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-command-center-v17-proof.html">Open proof</a><a class="btn" href="data/rsi_capability_command_center_v17_proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-adversarial-benchmark-foundry-proof.html">Autonomous RSI Adversarial Benchmark Foundry Proof</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-adversarial-benchmark-foundry-proof.html">Open proof</a><a class="btn" href="data/rsi-adversarial-benchmark-foundry-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-capability-assurance-case-graph-proof.html">Autonomous RSI Capability Assurance Case Graph Proof</a></h3>
+<p>Benchmark-capital-equivalent values are not live revenue, customer results, financial guarantees, legal advice, audit certification, policy advice, token advice, medical advice, or proof of achieved superintelligence.</p>
+<p><strong>97.66%</strong> value capture · 2147483648 agents · 67108864 roles · 12 releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-assurance-case-graph-proof.html">Open proof</a><a class="btn" href="data/rsi-capability-assurance-case-graph-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-capability-economy-clearinghouse-proof.html">Autonomous RSI Capability Economy Clearinghouse Proof</a></h3>
+<p>Benchmark-capital-equivalent values are not live revenue, customer results, financial guarantees, legal advice, policy advice, token advice, or proof of achieved superintelligence.</p>
+<p><strong>96.60%</strong> value capture · 1073741824 agents · 33554432 roles · 13 releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-economy-clearinghouse-proof.html">Open proof</a><a class="btn" href="data/rsi-capability-economy-clearinghouse-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-capability-governance-twin-proof.html">Autonomous RSI Capability Governance Twin Proof</a></h3>
+<p>Benchmark-capital-equivalent values are not live revenue, customer results, financial guarantees, legal advice, audit certification, policy advice, token advice, medical advice, or proof of achieved superintelligence.</p>
+<p><strong>97.61%</strong> value capture · 2147483648 agents · 67108864 roles · 12 releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-governance-twin-proof.html">Open proof</a><a class="btn" href="data/rsi-capability-governance-twin-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-capability-sla-reliability-mesh-proof.html">Autonomous RSI Capability SLA Reliability Mesh Proof</a></h3>
+<p>Benchmark-capital-equivalent values are not live revenue, customer results, financial guarantees, legal advice, policy advice, token advice, medical advice, or proof of achieved superintelligence.</p>
+<p><strong>97.00%</strong> value capture · 2147483648 agents · 67108864 roles · 12 releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-sla-reliability-mesh-proof.html">Open proof</a><a class="btn" href="data/rsi-capability-sla-reliability-mesh-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-capability-treasury-flywheel-proof.html">Autonomous RSI Capability Treasury Flywheel Proof</a></h3>
+<p>Benchmark-capital-equivalent values are not live revenue, customer results, financial guarantees, legal advice, policy advice, token advice, or proof of achieved superintelligence.</p>
+<p><strong>97.10%</strong> value capture · 2147483648 agents · 67108864 roles · 21 releases</p>
+<div class="actions"><a class="btn" href="rsi-capability-treasury-flywheel-proof.html">Open proof</a><a class="btn" href="data/rsi-capability-treasury-flywheel-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-causal-attribution-engine-proof.html">Autonomous RSI Causal Attribution Engine Proof</a></h3>
+<p>Autonomous public proof with machine-readable receipt.</p>
+<p><strong>indexed</strong> value capture · agents agents · roles roles · RSI releases</p>
+<div class="actions"><a class="btn" href="rsi-causal-attribution-engine-proof.html">Open proof</a><a class="btn" href="data/rsi-causal-attribution-engine-proof.json">JSON</a></div>
+</article><article class="proof">
+<div class="badge ">PASSED</div>
+<h3><a href="rsi-continual-capability-frontier-proof.html">Autonomous RSI Continual Capability Frontier Proof</a></h3>
+<p>Benchmark-capital-equivalent values are not live revenue, customer results, financial guarantees, legal advice, policy advice, token advice, or proof of achieved superintelligence.</p>
+<p><strong>96.65%</strong> value capture · 184549376 agents · 5767168 roles · 10 releases</p>
+<div class="actions"><a class="btn" href="rsi-continual-capability-frontier-proof.html">Open proof</a><a class="btn" href="data/rsi-continual-capability-frontier-proof.json">JSON</a></div>
+</article></div></section>
+<section><h2>Operational skill stack</h2><p>The Skills Used section explains the large multi-agent system in plain language: what each skill does, what signal it consumes, what artifact it produces, and which verifier checks it.</p><div class="grid3"><article class="skill">
+<div class="badge">Work-to-Skill</div>
+<h3>Job Trace Capture</h3>
+<p>Turns completed work into structured traces that can be inspected and reused.</p>
+<dl><dt>Input</dt><dd>job output, route trace, execution metadata</dd><dt>Output</dt><dd>candidate trace packet</dd><dt>Verifier</dt><dd>Trace Integrity Court</dd></dl>
+</article><article class="skill">
+<div class="badge">Work-to-Skill</div>
+<h3>Skill Extraction</h3>
+<p>Converts useful traces into reusable candidate skills with clear input/output boundaries.</p>
+<dl><dt>Input</dt><dd>trace packet, task context, observed result</dd><dt>Output</dt><dd>candidate skill definition</dd><dt>Verifier</dt><dd>Skill Utility Court</dd></dl>
+</article><article class="skill">
+<div class="badge">Verification</div>
+<h3>Skill Verification</h3>
+<p>Tests candidate skills against held-out cases before network release.</p>
+<dl><dt>Input</dt><dd>candidate skill, benchmark cases, risk gates</dd><dt>Output</dt><dd>pass/fail receipt</dd><dt>Verifier</dt><dd>Verifier Court</dd></dl>
+</article><article class="skill">
+<div class="badge">Multi-Agent Coordination</div>
+<h3>Large-Agent Role Routing</h3>
+<p>Routes work to specialist roles instead of relying on a single general agent.</p>
+<dl><dt>Input</dt><dd>job intent, constraints, available skills</dd><dt>Output</dt><dd>specialist route plan</dd><dt>Verifier</dt><dd>Routing Quality Court</dd></dl>
+</article><article class="skill">
+<div class="badge">Verification</div>
+<h3>Verifier Court Allocation</h3>
+<p>Assigns independent verifier courts to high-value and high-risk capability claims.</p>
+<dl><dt>Input</dt><dd>risk, novelty, value at stake, evidence quality</dd><dt>Output</dt><dd>verification plan</dd><dt>Verifier</dt><dd>Verifier Capacity Court</dd></dl>
+</article><article class="skill">
+<div class="badge">Adversarial Testing</div>
+<h3>Red-Team Challenge</h3>
+<p>Generates adversarial challenges against new skills and routing protocols.</p>
+<dl><dt>Input</dt><dd>candidate release, policy boundary, failure history</dd><dt>Output</dt><dd>challenge set</dd><dt>Verifier</dt><dd>Red-Team Court</dd></dl>
+</article><article class="skill">
+<div class="badge">Governance</div>
+<h3>Policy Boundary Check</h3>
+<p>Rejects releases that violate public claim boundaries, safety constraints, or permission rules.</p>
+<dl><dt>Input</dt><dd>release candidate, public claims, policy rules</dd><dt>Output</dt><dd>allow/reject verdict</dd><dt>Verifier</dt><dd>Policy Court</dd></dl>
+</article><article class="skill">
+<div class="badge">Trust</div>
+<h3>Provenance Binding</h3>
+<p>Binds skills, routes, policies, verifier decisions, and receipts into a replayable chain.</p>
+<dl><dt>Input</dt><dd>route trace, skill IDs, verifier receipts</dd><dt>Output</dt><dd>provenance binding</dd><dt>Verifier</dt><dd>Provenance Court</dd></dl>
+</article><article class="skill">
+<div class="badge">RSI</div>
+<h3>Release Gate</h3>
+<p>Promotes only skill updates that improve measured outcomes without safety regression.</p>
+<dl><dt>Input</dt><dd>validation metrics, baselines, risk checks</dd><dt>Output</dt><dd>released/rejected update</dd><dt>Verifier</dt><dd>Release Court</dd></dl>
+</article></div><div class="actions"><a class="btn cyan" href="skills.html">Open full skills page</a></div></section>
+<section class="root-fix"><strong>Root fix active:</strong> this v4 command center intentionally blocks the older homepage phrase, clears old browser/service-worker caches, retires legacy refresh workflows, and deploys the Pages artifact directly from the canonical workflow.</section>
+<section class="panel"><div class="eyebrow">Public boundary</div><p>SkillOS public proofs are deterministic benchmark and publication artifacts. They do not claim audited customer ROI, financial advice, investment advice, legal advice, medical advice, achieved superintelligence, Kardashev Type II civilization, or guaranteed outcomes.</p></section>
+</main><footer class="footer">SkillOS Public Command Center v4 · 2026-06-01T16:23:46Z · <a href="data/command-center-manifest.json">manifest</a></footer>
+</body></html>

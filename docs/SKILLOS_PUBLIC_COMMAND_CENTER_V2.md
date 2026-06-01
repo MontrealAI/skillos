@@ -1,6 +1,6 @@
 # SkillOS Public Command Center v2
 
-Generated: `2026-06-01T15:38:12Z`
+Generated: `2026-06-01T16:02:54Z`
 
 Run `SkillOS Command Center Autopublisher v2` with `publish_to_repo=true`, `deploy_pages=true`, and `force_rebuild=true`.
 
@@ -10,17 +10,17 @@ Run `SkillOS Command Center Autopublisher v2` with `publish_to_repo=true`, `depl
 {
   "counts": {
     "manual_workflows": 50,
-    "proofs_indexed": 72,
+    "proofs_indexed": 76,
     "proofs_passed": 37,
     "skills_surfaced": 53,
     "workflows_indexed": 52
   },
-  "generated_at_utc": "2026-06-01T15:38:12Z",
+  "generated_at_utc": "2026-06-01T16:02:54Z",
   "inventory": {
     "badges": 65,
-    "html_pages": 51,
+    "html_pages": 55,
     "json_receipts": 125,
-    "markdown_reports": 128,
+    "markdown_reports": 129,
     "workflows": 52
   },
   "proof_ids": [
@@ -70,6 +70,9 @@ Run `SkillOS Command Center Autopublisher v2` with `publish_to_repo=true`, `depl
     "autonomous-market-benchmark",
     "demo",
     "enterprise-ops-proof",
+    "executive",
+    "flywheel",
+    "health",
     "leaderboard",
     "public-site-status",
     "rsi-ai-first-blockchain-capital-machine-proof",
@@ -88,6 +91,7 @@ Run `SkillOS Command Center Autopublisher v2` with `publish_to_repo=true`, `depl
     "rsi-silicon-verification-proof",
     "rsi-unit-economics-proof",
     "shadow-pilot-benchmark",
+    "skills",
     "rsi-metamaterials-discovery-benchmark",
     "rsi-cloudops-benchmark",
     "rsi-corporate-os-benchmark",
@@ -100,7 +104,7 @@ Run `SkillOS Command Center Autopublisher v2` with `publish_to_repo=true`, `depl
   "public_boundary": "These are autonomous deterministic benchmark proofs using synthetic/redacted-style public benchmark data and benchmark assumptions. They are not audited customer ROI, live customer adoption, financial advice, investment advice, legal advice, medical advice, employment advice, policy advice, token advice, achieved superintelligence, Kardashev Type II achievement, or guarantees.",
   "repository": "MontrealAI/skillos",
   "schema": "skillos.command_center.v2",
-  "site_latest_signal_utc": "2026-06-01T15:38:12Z",
+  "site_latest_signal_utc": "2026-06-01T16:02:54Z",
   "skills": [
     {
       "layer": "Access Control",

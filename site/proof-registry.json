@@ -1,6 +1,24 @@
 {
   "proofs": [
     {
+      "assurance_gap_rate_percent": 0.0,
+      "audit_readiness_score": 58.0494,
+      "badge": "badges/rsi-capability-assurance-case-graph-proof.svg",
+      "doc": "docs/rsi-capability-assurance-case-graph-proof.md",
+      "generated_at_utc": "2026-06-01T03:45:45Z",
+      "href": "rsi-capability-assurance-case-graph-proof.html",
+      "id": "rsi-capability-assurance-case-graph-proof",
+      "json": "data/rsi-capability-assurance-case-graph-proof.json",
+      "proved": true,
+      "rsi_release_count": 12,
+      "skills_used_count": 18,
+      "specialist_roles": 67108864,
+      "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_ASSURANCE_CASE_GRAPH_PROOF",
+      "title": "Autonomous RSI Capability Assurance Case Graph Proof",
+      "value_capture_rate_percent": 97.6571,
+      "virtual_specialist_agents": 2147483648
+    },
+    {
       "badge": "badges/rsi-capability-sla-reliability-mesh-proof.svg",
       "doc": "docs/rsi-capability-sla-reliability-mesh-proof.md",
       "generated_at_utc": "2026-06-01T03:39:06Z",
@@ -297,5 +315,5 @@
       "workflow_url": "https://github.com/MontrealAI/skillos/actions/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml"
     }
   ],
-  "updated_at_utc": "2026-06-01T03:39:06Z"
+  "updated_at_utc": "2026-06-01T03:45:45Z"
 }

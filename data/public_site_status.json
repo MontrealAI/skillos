@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "2326c393490ebc628cdbc3ff56c89cb42a8a6cb8",
+  "commit": "71cc673e8b8e3382dd702640cb30ace4a6cdb1e9",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,7 +1174,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-06-01T03:35:39Z",
+  "generated_at_utc": "2026-06-01T03:36:07Z",
   "proof_count": 84,
   "proofs": [
     {
@@ -6036,8 +6036,9 @@
     },
     {
       "key": "capability-sla-reliability-mesh-github-capability-sla-reliability-mesh-capability-sla-reliability",
-      "latest_run_status": "in_progress",
-      "latest_run_updated_at": "2026-06-01T03:35:32Z",
+      "latest_run_conclusion": "failure",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-06-01T03:35:56Z",
       "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733716819",
       "page_path": "site/proof-capability-sla-reliability-mesh-github-capability-sla-reliability-mesh-capability-sla-reliability.html",
       "page_url": "https://montrealai.github.io/skillos/proof-capability-sla-reliability-mesh-github-capability-sla-reliability-mesh-capability-sla-reliability.html",
@@ -6387,49 +6388,49 @@
   ],
   "proved_or_passed_proof_count": 32,
   "recent_failed_runs": 1,
-  "recent_running_runs": 4,
-  "recent_successful_runs": 41,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733739821",
+  "recent_running_runs": 2,
+  "recent_successful_runs": 43,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733719771",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
   "workflow_count": 47,
   "workflows": [
     {
-      "conclusion": null,
-      "event": "workflow_run",
-      "name": "SkillOS Public Site Command Center Refresh",
-      "path": ".github/workflows/skillos-public-site-refresh.yml",
-      "proof_page_url": null,
-      "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733739822",
-      "status": "in_progress",
-      "updated_at": "2026-06-01T03:35:34Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
-    },
-    {
-      "conclusion": null,
-      "event": "workflow_run",
-      "name": "SkillOS Public Proof Command Center Refresh",
-      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
-      "proof_page_url": null,
-      "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733739821",
-      "status": "in_progress",
-      "updated_at": "2026-06-01T03:35:33Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
-    },
-    {
-      "conclusion": null,
+      "conclusion": "failure",
       "event": "workflow_dispatch",
       "name": "Autonomous RSI Capability SLA Reliability Mesh Proof",
       "path": ".github/workflows/autonomous-rsi-capability-sla-reliability-mesh-proof.yml",
       "proof_page_url": "https://montrealai.github.io/skillos/proof-capability-sla-reliability-mesh-github-capability-sla-reliability-mesh-capability-sla-reliability.html",
       "proof_title": "Autonomous RSI Capability SLA Reliability Mesh Proof",
       "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733716819",
-      "status": "in_progress",
-      "updated_at": "2026-06-01T03:35:32Z",
+      "status": "completed",
+      "updated_at": "2026-06-01T03:35:56Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-sla-reliability-mesh-proof.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "workflow_run",
+      "name": "SkillOS Public Site Command Center Refresh",
+      "path": ".github/workflows/skillos-public-site-refresh.yml",
+      "proof_page_url": null,
+      "proof_title": null,
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733739822",
+      "status": "completed",
+      "updated_at": "2026-06-01T03:35:52Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "workflow_run",
+      "name": "SkillOS Public Proof Command Center Refresh",
+      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
+      "proof_page_url": null,
+      "proof_title": null,
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733739821",
+      "status": "completed",
+      "updated_at": "2026-06-01T03:35:50Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
       "conclusion": "success",

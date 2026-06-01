@@ -1,5 +1,16 @@
 [
   {
+    "agents": 262144,
+    "holdout_value_capture": 0.9990703123366625,
+    "href": "./rsi-ai-first-blockchain-capital-machine-proof.html",
+    "roles": 8192,
+    "slug": "rsi-ai-first-blockchain-capital-machine-proof",
+    "status": "passing",
+    "title": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
+    "updated_at": "2026-06-01T10:30:00Z",
+    "workflow": ".github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml"
+  },
+  {
     "agents": 524288,
     "domain": "AI-first governance",
     "holdout_value_capture": 0.9993828786644704,
@@ -108,17 +119,6 @@
     "title": "Autonomous RSI Capability Economy Clearinghouse Proof",
     "value_capture_rate_percent": 96.6013,
     "virtual_specialist_agents": 1073741824
-  },
-  {
-    "agents": 262144,
-    "holdout_value_capture": 0.9990703123366625,
-    "href": "./rsi-ai-first-blockchain-capital-machine-proof.html",
-    "roles": 8192,
-    "slug": "rsi-ai-first-blockchain-capital-machine-proof",
-    "status": "passing",
-    "title": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
-    "updated_at": "2026-06-01T01:35:18Z",
-    "workflow": ".github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml"
   },
   {
     "badge": "badges/rsi-fork-resistant-capability-network-proof.svg",

@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-06-01T15:33:30Z`
+Generated: `2026-06-01T15:38:40Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 93
-- Workflows tracked: 51
-- Recent successful runs: 41
-- Recent failed runs: 4
-- Recent running runs: 2
+- Proof entries: 94
+- Workflows tracked: 52
+- Recent successful runs: 34
+- Recent failed runs: 7
+- Recent running runs: 3
 
 ## Flagship
 
@@ -51,6 +51,9 @@ Site: https://montrealai.github.io/skillos/
 - **SkillOS Command Center Autopublisher v2**
   - Page: https://montrealai.github.io/skillos/proof-skillos-command-center-autopublisher-v2-github-skillos-command-center-autopublisher-v2-skillos.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-command-center-autopublisher-v2.yml
+- **SkillOS Public Command Center v3 Autopublisher**
+  - Page: https://montrealai.github.io/skillos/proof-skillos-command-center-v3-autopublisher-github-skillos-command-center-autopublisher-v3-skillos.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-command-center-autopublisher-v3.yml
 - **Autonomous RSI Enterprise Eureka Factory Proof**
   - Page: https://montrealai.github.io/skillos/rsi-enterprise-eureka-factory-proof.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-eureka-factory-proof.yml

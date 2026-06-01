@@ -17,7 +17,7 @@ a{color:var(--cyan);text-decoration:none}.top{position:sticky;top:0;z-index:20;d
 </style>
 <script>
 (function() {
-  const version = "b7bc8fb67033b0c1";
+  const version = "a440307e9a2e837f";
   document.documentElement.dataset.skillosVersion = version;
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.getRegistrations().then(regs => Promise.all(regs.map(r => r.unregister()))).catch(() => {});

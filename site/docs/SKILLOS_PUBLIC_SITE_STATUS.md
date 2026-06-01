@@ -1,0 +1,301 @@
+# SkillOS Public Proof Command Center Status
+
+Generated: `2026-06-01T16:22:08Z`
+Repository: `MontrealAI/skillos`
+Site: https://montrealai.github.io/skillos/
+
+## Summary
+
+- Proof entries: 94
+- Workflows tracked: 52
+- Recent successful runs: 46
+- Recent failed runs: 1
+- Recent running runs: 1
+
+## Flagship
+
+- Title: Autonomous RSI Capital-to-Capability Command Center v17 Proof
+- Status: PASSED_AUTONOMOUS_RSI_CAPITAL_TO_CAPABILITY_COMMAND_CENTER_V17_PROOF
+- Agents: 512
+- Roles: 64
+
+## Proof entries
+
+- **Autonomous RSI Capital-to-Capability Command Center v17 Proof**
+  - Page: https://montrealai.github.io/skillos/rsi-capability-command-center-v17-proof.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capability-command-center-v17-proof.yml
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_capability_command_center_v17_proof.json
+- **Autonomous RSI Adversarial Capability Command Center Proof**
+  - Page: https://montrealai.github.io/skillos/rsi-capability-command-center-proof.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capability-command-center-proof.yml
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_capability_command_center_proof.json
+- **large-scale agentic coordination for capital-to-capability compounding, market capture, resource allocation, risk control, and validated reinvestment**
+  - Page: https://montrealai.github.io/skillos/proof-capital-to-capability-engine-large-scale-agentic-coordination-for-capital-to-capability.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_capital_to_capability_engine_proof.json
+- **Capital To Capability Engine**
+  - Page: https://montrealai.github.io/skillos/rsi-capital-to-capability-engine-proof.html
+- **Autonomous RSI Capital-to-Capability Engine Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capital-to-capability-engine-github-capital-to-capability-engine-capital-to-capability.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capital-to-capability-engine-proof.yml
+- **adversarial large-scale agentic coordination for profitable market-capture portfolio selection, resource allocation, risk control, and compounding business strategy**
+  - Page: https://montrealai.github.io/skillos/proof-adversarial-multi-agent-command-center-adversarial-large-scale-agentic-coordination-for-profitable.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_adversarial_multi_agent_market_command_center_proof.json
+- **Adversarial Multi Agent Command Center**
+  - Page: https://montrealai.github.io/skillos/rsi-adversarial-multi-agent-market-command-center-proof.html
+- **Autonomous RSI Adversarial Multi-Agent Market Command Center Proof**
+  - Page: https://montrealai.github.io/skillos/proof-adversarial-multi-agent-command-center-github-adversarial-multi-agent-command-center-adversarial.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-adversarial-multi-agent-market-command-center-proof.yml
+- **Refresh SkillOS Public Command Center**
+  - Page: https://montrealai.github.io/skillos/proof-refresh-skillos-command-center-github-refresh-skillos-command-center-refresh-skillos-command.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/refresh-skillos-command-center.yml
+- **SkillOS Command Center Autopublisher v2**
+  - Page: https://montrealai.github.io/skillos/proof-skillos-command-center-autopublisher-v2-github-skillos-command-center-autopublisher-v2-skillos.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-command-center-autopublisher-v2.yml
+- **SkillOS Public Command Center v3 Autopublisher**
+  - Page: https://montrealai.github.io/skillos/proof-skillos-command-center-v3-autopublisher-github-skillos-command-center-autopublisher-v3-skillos.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-command-center-autopublisher-v3.yml
+- **Autonomous RSI Enterprise Eureka Factory Proof**
+  - Page: https://montrealai.github.io/skillos/rsi-enterprise-eureka-factory-proof.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-eureka-factory-proof.yml
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_enterprise_eureka_factory_proof.json
+- **Autonomous RSI Corporate Capability Frontier Proof**
+  - Page: https://montrealai.github.io/skillos/proof-corporate-capability-frontier-corporate-capability-frontier-corporate-capability-frontier-corporate-capability-frontier.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_corporate_capability_frontier_proof.json
+- **Autonomous RSI Enterprise Capability Foundry Proof**
+  - Page: https://montrealai.github.io/skillos/proof-enterprise-capability-foundry-enterprise-capability-foundry-enterprise-capability-foundry-enterprise-capability-foundry.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_enterprise_capability_foundry_proof.json
+- **Autonomous RSI Enterprise Superorganization Proof**
+  - Page: https://montrealai.github.io/skillos/proof-enterprise-superorganization-enterprise-superorganization-enterprise-superorganization-enterprise-superorganization-enterprise-superorganization.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_enterprise_superorganization_proof.json
+- **Adversarial Foundry**
+  - Page: https://montrealai.github.io/skillos/rsi-adversarial-benchmark-foundry-proof.html
+- **Autonomous RSI Adversarial Benchmark Foundry Proof**
+  - Page: https://montrealai.github.io/skillos/proof-adversarial-foundry-github-adversarial-foundry-adversarial-foundry-adversarial-foundry.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-adversarial-benchmark-foundry-proof.yml
+- **Autonomous RSI CloudOps Market Proof**
+  - Page: https://montrealai.github.io/skillos/rsi-cloudops-proof.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cloudops-proof.yml
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_cloudops_market_proof.json
+- **Autonomous RSI Corporate Operating System Market Proof**
+  - Page: https://montrealai.github.io/skillos/rsi-corporate-os-proof.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-corporate-os-proof.yml
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_corporate_os_market_proof.json
+- **Autonomous RSI Marketplace Flywheel Market Proof**
+  - Page: https://montrealai.github.io/skillos/rsi-marketplace-flywheel-proof.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-marketplace-flywheel-proof.yml
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_marketplace_flywheel_market_proof.json
+- **Autonomous RSI Metamaterials Discovery Market Proof**
+  - Page: https://montrealai.github.io/skillos/rsi-metamaterials-discovery-proof.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-metamaterials-discovery-proof.yml
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_metamaterials_discovery_market_proof.json
+- **Autonomous RSI Revenue Experiment Factory Market Proof**
+  - Page: https://montrealai.github.io/skillos/rsi-revenue-experiment-factory-proof.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-revenue-experiment-factory-proof.yml
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_revenue_experiment_factory_market_proof.json
+- **Autonomous RSI Silicon Verification Market Proof**
+  - Page: https://montrealai.github.io/skillos/rsi-silicon-verification-proof.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-silicon-verification-proof.yml
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_silicon_verification_market_proof.json
+- **Autonomous RSI Unit Economics Profit Engine Market Proof**
+  - Page: https://montrealai.github.io/skillos/rsi-unit-economics-proof.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-unit-economics-proof.yml
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_unit_economics_market_proof.json
+- **Autonomous Shadow Pilot Proof**
+  - Page: https://montrealai.github.io/skillos/shadow-pilot-proof.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/shadow-pilot-proof.yml
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/shadow_pilot_proof.json
+- **Blockchain Protocol Capital Frontier**
+  - Page: https://montrealai.github.io/skillos/rsi-blockchain-protocol-capital-frontier-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-blockchain-protocol-capital-frontier-proof.json
+- **Causal Attribution Engine**
+  - Page: https://montrealai.github.io/skillos/rsi-causal-attribution-engine-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-causal-attribution-engine-proof.json
+- **Corporate Strategy Frontier**
+  - Page: https://montrealai.github.io/skillos/rsi-corporate-strategy-frontier-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-corporate-strategy-frontier-proof.json
+- **Cross Domain Capability Transfer Atlas**
+  - Page: https://montrealai.github.io/skillos/rsi-cross-domain-capability-transfer-atlas-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-cross-domain-capability-transfer-atlas-proof.json
+- **Forge Meta Coordination**
+  - Page: https://montrealai.github.io/skillos/rsi-proof-forge-meta-coordination-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-proof-forge-meta-coordination-proof.json
+- **Objective Integrity Firewall**
+  - Page: https://montrealai.github.io/skillos/rsi-objective-integrity-firewall-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-objective-integrity-firewall-proof.json
+- **Open Replication Mesh**
+  - Page: https://montrealai.github.io/skillos/rsi-open-replication-mesh-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-open-replication-mesh-proof.json
+- **Autonomous RSI Cyber Defense Market Proof**
+  - Page: https://montrealai.github.io/skillos/proof-cyber-defense.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-cyberdefense-proof.yml
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi_cyberdefense_market_proof.json
+- **Autonomous RSI Capability Assurance Case Graph Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capability-assurance-case-graph-capability-assurance-case-graph-capability-assurance-case-graph.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-capability-assurance-case-graph-proof.json
+- **Autonomous RSI Capability Economy Clearinghouse Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy-clearinghouse.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-capability-economy-clearinghouse-proof.json
+- **Autonomous RSI Capability Governance Twin Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capability-governance-twin-capability-governance-twin-capability-governance-twin-capability-governance-twin.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-capability-governance-twin-proof.json
+- **Autonomous RSI Capability SLA Reliability Mesh Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capability-sla-reliability-mesh-capability-sla-reliability-mesh-capability-sla-reliability-mesh.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-capability-sla-reliability-mesh-proof.json
+- **Autonomous RSI Capability Treasury Flywheel Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capability-treasury-flywheel-capability-treasury-flywheel-capability-treasury-flywheel-capability-treasury-flywheel.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-capability-treasury-flywheel-proof.json
+- **Autonomous RSI Continual Capability Frontier Proof**
+  - Page: https://montrealai.github.io/skillos/proof-continual-capability-frontier-continual-capability-frontier-continual-capability-frontier-continual-capability-frontier.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-continual-capability-frontier-proof.json
+- **Autonomous RSI Fork-Resistant Capability Network Proof**
+  - Page: https://montrealai.github.io/skillos/proof-fork-resistant-capability-network-fork-resistant-capability-network-fork-resistant-capability-network.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-fork-resistant-capability-network-proof.json
+- **Autonomous RSI Full-Stack Capability Lifecycle Proof**
+  - Page: https://montrealai.github.io/skillos/proof-full-stack-capability-lifecycle-full-stack-capability-lifecycle-full-stack-capability-lifecycle.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-full-stack-capability-lifecycle-proof.json
+- **Autonomous RSI Skill Compounding Moat Proof**
+  - Page: https://montrealai.github.io/skillos/proof-skill-compounding-moat-skill-compounding-moat-skill-compounding-moat-skill-compounding-moat.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-skill-compounding-moat-proof.json
+- **Autonomous RSI Skill Provenance Ledger Proof**
+  - Page: https://montrealai.github.io/skillos/proof-skill-provenance-ledger-skill-provenance-ledger-skill-provenance-ledger-skill-provenance-ledger.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-skill-provenance-ledger-proof.json
+- **procurement invoice reconciliation and payment-risk triage**
+  - Page: https://montrealai.github.io/skillos/proof-enterprise-ops-procurement-invoice-reconciliation-and-payment-risk-triage-fully-enterprise-operations.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/enterprise_ops_market_proof.json
+- **Ai First Blockchain Capital Machine**
+  - Page: https://montrealai.github.io/skillos/rsi-ai-first-blockchain-capital-machine-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-ai-first-blockchain-capital-machine-proof.json
+- **Ai First Governance Capital Engine**
+  - Page: https://montrealai.github.io/skillos/rsi-ai-first-governance-capital-engine-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-ai-first-governance-capital-engine-proof.json
+- **Capability Assurance Case Graph**
+  - Page: https://montrealai.github.io/skillos/rsi-capability-assurance-case-graph-proof.html
+- **Capability Economy Clearinghouse**
+  - Page: https://montrealai.github.io/skillos/rsi-capability-economy-clearinghouse-proof.html
+- **Capability Governance Twin**
+  - Page: https://montrealai.github.io/skillos/rsi-capability-governance-twin-proof.html
+- **Capability Liquidity Engine**
+  - Page: https://montrealai.github.io/skillos/rsi-capability-liquidity-engine-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-capability-liquidity-engine-proof.json
+- **Capability Sla Reliability Mesh**
+  - Page: https://montrealai.github.io/skillos/rsi-capability-sla-reliability-mesh-proof.html
+- **Capability Treasury Flywheel**
+  - Page: https://montrealai.github.io/skillos/rsi-capability-treasury-flywheel-proof.html
+- **Continual Capability Frontier**
+  - Page: https://montrealai.github.io/skillos/rsi-continual-capability-frontier-proof.html
+- **Corporate Capability Frontier**
+  - Page: https://montrealai.github.io/skillos/rsi-corporate-capability-frontier-proof.html
+- **Cyberdefense**
+  - Page: https://montrealai.github.io/skillos/rsi-cyberdefense-proof.html
+- **Enterprise Capability Foundry**
+  - Page: https://montrealai.github.io/skillos/rsi-enterprise-capability-foundry-proof.html
+- **Enterprise Ops**
+  - Page: https://montrealai.github.io/skillos/enterprise-ops-proof.html
+- **Enterprise Superorganization**
+  - Page: https://montrealai.github.io/skillos/rsi-enterprise-superorganization-proof.html
+- **Fork Resistant Capability Network**
+  - Page: https://montrealai.github.io/skillos/rsi-fork-resistant-capability-network-proof.html
+- **Full Stack Capability Lifecycle**
+  - Page: https://montrealai.github.io/skillos/rsi-full-stack-capability-lifecycle-proof.html
+- **Governance Frontier**
+  - Page: https://montrealai.github.io/skillos/rsi-governance-frontier-proof.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-governance-frontier-proof.json
+- **Skill Compounding Moat**
+  - Page: https://montrealai.github.io/skillos/rsi-skill-compounding-moat-proof.html
+- **Skill Provenance Ledger**
+  - Page: https://montrealai.github.io/skillos/rsi-skill-provenance-ledger-proof.html
+- **Autonomous Enterprise Ops Market Proof**
+  - Page: https://montrealai.github.io/skillos/proof-enterprise-ops-github-enterprise-ops-enterprise-ops-enterprise-ops.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/enterprise-ops-proof.yml
+- **Autonomous RSI AI-First Blockchain Capital Machine Proof**
+  - Page: https://montrealai.github.io/skillos/proof-ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml
+- **Autonomous RSI AI-First Governance Capital Engine Proof**
+  - Page: https://montrealai.github.io/skillos/proof-ai-first-governance-capital-engine-github-ai-first-governance-capital-engine-ai.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-ai-first-governance-capital-engine-proof.yml
+- **Autonomous RSI Blockchain Protocol Capital Frontier Proof**
+  - Page: https://montrealai.github.io/skillos/proof-blockchain-protocol-capital-frontier-github-blockchain-protocol-capital-frontier-blockchain-protocol-capital.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-blockchain-protocol-capital-frontier-proof.yml
+- **Autonomous RSI Capability Assurance Case Graph Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capability-assurance-case-graph-github-capability-assurance-case-graph-capability-assurance-case.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-assurance-case-graph-proof.yml
+- **Autonomous RSI Capability Economy Clearinghouse Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capability-economy-clearinghouse-github-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-economy-clearinghouse-proof.yml
+- **Autonomous RSI Capability Governance Twin Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capability-governance-twin-github-capability-governance-twin-capability-governance-twin-capability-governance.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-governance-twin-proof.yml
+- **Autonomous RSI Capability Liquidity Engine Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capability-liquidity-engine-github-capability-liquidity-engine-capability-liquidity-engine-capability-liquidity.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml
+- **Autonomous RSI Capability SLA Reliability Mesh Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capability-sla-reliability-mesh-github-capability-sla-reliability-mesh-capability-sla-reliability.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-sla-reliability-mesh-proof.yml
+- **Autonomous RSI Capability Treasury Flywheel Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capability-treasury-flywheel-github-capability-treasury-flywheel-capability-treasury-flywheel-capability-treasury.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-treasury-flywheel-proof.yml
+- **Autonomous RSI Causal Attribution Engine Proof**
+  - Page: https://montrealai.github.io/skillos/proof-causal-attribution-engine-github-causal-attribution-engine-causal-attribution-engine-causal-attribution.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-causal-attribution-engine-proof.yml
+- **Autonomous RSI Continual Capability Frontier Proof**
+  - Page: https://montrealai.github.io/skillos/proof-continual-capability-frontier-github-continual-capability-frontier-continual-capability-frontier-continual-capability.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-continual-capability-frontier-proof.yml
+- **Autonomous RSI Corporate Capability Frontier Proof**
+  - Page: https://montrealai.github.io/skillos/proof-corporate-capability-frontier-github-corporate-capability-frontier-corporate-capability-frontier-corporate-capability.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-corporate-capability-frontier-proof.yml
+- **Autonomous RSI Corporate Strategy Frontier Proof**
+  - Page: https://montrealai.github.io/skillos/proof-corporate-strategy-frontier-github-corporate-strategy-frontier-corporate-strategy-frontier-corporate-strategy.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-corporate-strategy-frontier-proof.yml
+- **Autonomous RSI Cross-Domain Capability Transfer Atlas Proof**
+  - Page: https://montrealai.github.io/skillos/proof-cross-domain-capability-transfer-atlas-github-cross-domain-capability-transfer-atlas-cross.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-cross-domain-capability-transfer-atlas-proof.yml
+- **Autonomous RSI Enterprise Capability Foundry Proof**
+  - Page: https://montrealai.github.io/skillos/proof-enterprise-capability-foundry-github-enterprise-capability-foundry-enterprise-capability-foundry-enterprise-capability.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-capability-foundry-proof.yml
+- **Autonomous RSI Enterprise Superorganization Proof**
+  - Page: https://montrealai.github.io/skillos/proof-enterprise-superorganization-github-enterprise-superorganization-enterprise-superorganization-enterprise-superorganization.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-superorganization-proof.yml
+- **Autonomous RSI Fork-Resistant Capability Network Proof**
+  - Page: https://montrealai.github.io/skillos/proof-fork-resistant-capability-network-github-fork-resistant-capability-network-fork-resistant-capability.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-fork-resistant-capability-network-proof.yml
+- **Autonomous RSI Full-Stack Capability Lifecycle Proof**
+  - Page: https://montrealai.github.io/skillos/proof-full-stack-capability-lifecycle-github-full-stack-capability-lifecycle-full-stack-capability.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-full-stack-capability-lifecycle-proof.yml
+- **Autonomous RSI Governance Frontier Proof**
+  - Page: https://montrealai.github.io/skillos/proof-governance-frontier-github-governance-frontier-governance-frontier-governance-frontier.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-governance-frontier-proof.yml
+- **Autonomous RSI Objective Integrity Firewall Proof**
+  - Page: https://montrealai.github.io/skillos/proof-objective-integrity-firewall-github-objective-integrity-firewall-objective-integrity-firewall-objective-integrity.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-objective-integrity-firewall-proof.yml
+- **Autonomous RSI Open Replication Mesh Proof**
+  - Page: https://montrealai.github.io/skillos/proof-open-replication-mesh-github-open-replication-mesh-open-replication-mesh-open-replication.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-open-replication-mesh-proof.yml
+- **Autonomous RSI Proof Forge Meta-Coordination Proof**
+  - Page: https://montrealai.github.io/skillos/proof-forge-meta-coordination-github-forge-meta-coordination-forge-meta-coordination-forge-meta.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml
+- **Autonomous RSI Skill Compounding Moat Proof**
+  - Page: https://montrealai.github.io/skillos/proof-skill-compounding-moat-github-skill-compounding-moat-skill-compounding-moat-skill-compounding.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-skill-compounding-moat-proof.yml
+- **Autonomous RSI Skill Provenance Ledger Proof**
+  - Page: https://montrealai.github.io/skillos/proof-skill-provenance-ledger-github-skill-provenance-ledger-skill-provenance-ledger-skill-provenance.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-skill-provenance-ledger-proof.yml
+- **Deploy SkillOS website with autonomous safe public copy**
+  - Page: https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml
+- **Fully Autonomous Market-Readiness Proof**
+  - Page: https://montrealai.github.io/skillos/proof-fully-readiness-github-readiness-fully-readiness-fully-readiness.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-market-readiness.yml
+- **SkillOS tests**
+  - Page: https://montrealai.github.io/skillos/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml
+- **Readiness**
+  - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
+- **Wealth Accumulation**
+  - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
+- **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**
+  - Page: https://montrealai.github.io/skillos/proof-wealth-name-sales-follow-up-email-from-call-notes-why-this-sales.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/wealth_proof.json
+
+## Safe boundary
+
+Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.

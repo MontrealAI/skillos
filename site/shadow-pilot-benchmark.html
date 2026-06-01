@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#06131f">
+<title>SkillOS No-Send Shadow Pilot Benchmark</title>
+<style>
+:root{--ink:#f7fbff;--muted:#bdd0e1;--cyan:#7df7ff;--gold:#ffd86b;--green:#76ffae;--rose:#ff8eb3;--panel:rgba(255,255,255,.082);--panel2:rgba(255,255,255,.125);--line:rgba(255,255,255,.18);}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;color:var(--ink);background:radial-gradient(circle at 12% 10%,rgba(0,245,255,.18),transparent 30%),radial-gradient(circle at 84% 0,rgba(186,129,255,.30),transparent 38%),linear-gradient(135deg,#06131f 0%,#112b44 42%,#25255e 100%);}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.95),rgba(0,0,0,.10));}
+a{color:var(--cyan);text-decoration:none}.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:14px 22px;background:rgba(5,16,28,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.brand{font-weight:950;color:var(--cyan);letter-spacing:-.03em}.nav a{margin-left:16px;color:#d7e7f7;font-weight:850;font-size:14px}main{max-width:1320px;margin:0 auto;padding:58px 24px 100px;position:relative}.hero{display:grid;grid-template-columns:1.06fr .94fr;gap:42px;align-items:center;min-height:540px}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.22em;font-weight:1000;font-size:12px}h1{font-size:clamp(54px,9vw,130px);line-height:.82;margin:18px 0;letter-spacing:-.085em}h2{font-size:clamp(34px,5vw,74px);line-height:.9;letter-spacing:-.065em;margin:42px 0 18px}h3{font-size:25px;letter-spacing:-.035em;margin:0 0 10px}p{font-size:18px;line-height:1.58;color:var(--muted)}.panel,.metric,.proof,.skill,.workflow{border:1px solid var(--line);background:linear-gradient(180deg,var(--panel2),var(--panel));border-radius:30px;box-shadow:0 24px 90px rgba(0,0,0,.23)}.panel{padding:28px}.thesis{font-size:clamp(28px,3.5vw,54px);line-height:1.04;letter-spacing:-.055em;color:var(--ink)}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 19px;font-weight:950;border:1px solid var(--line);color:var(--ink);background:rgba(255,255,255,.09)}.btn.gold{background:var(--gold);color:#091323}.btn.cyan{background:var(--cyan);color:#06131f}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:30px 0}.metric{padding:22px}.metric strong{display:block;font-size:38px;color:var(--green);letter-spacing:-.05em}.metric span{color:var(--muted)}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.proof,.skill,.workflow{padding:20px;min-height:210px}.badge{display:inline-flex;border-radius:999px;padding:6px 10px;background:rgba(118,255,174,.18);border:1px solid rgba(118,255,174,.25);color:var(--green);font-size:11px;font-weight:1000;letter-spacing:.1em;text-transform:uppercase}.badge.warn{background:rgba(255,216,107,.15);border-color:rgba(255,216,107,.3);color:var(--gold)}.skill dl{margin:12px 0 0}.skill dt{font-size:11px;color:var(--green);font-weight:1000;text-transform:uppercase;letter-spacing:.12em;margin-top:9px}.skill dd{margin:3px 0 0;color:var(--muted);font-size:14px;line-height:1.35}table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:22px;background:rgba(255,255,255,.07);border:1px solid var(--line)}th,td{padding:13px 14px;border-bottom:1px solid var(--line);text-align:left;color:var(--muted)}th{color:#e9f5ff;text-transform:uppercase;font-size:12px;letter-spacing:.12em}.footer{margin-top:60px;padding:24px;border-top:1px solid var(--line);color:var(--muted)}code{background:rgba(0,0,0,.22);padding:2px 6px;border-radius:7px;color:#eaffff}.root-fix{border-left:5px solid var(--gold);background:rgba(255,216,107,.09);padding:20px;border-radius:18px;margin:22px 0}@media(max-width:900px){.hero,.grid2,.grid3,.metrics{grid-template-columns:1fr}.nav{display:none}}
+</style>
+<script>
+(function() {
+  const version = "a440307e9a2e837f";
+  document.documentElement.dataset.skillosVersion = version;
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(regs => Promise.all(regs.map(r => r.unregister()))).catch(() => {});
+  }
+  if (window.caches && caches.keys) {
+    caches.keys().then(keys => Promise.all(keys.map(k => caches.delete(k)))).catch(() => {});
+  }
+})();
+</script>
+</head>
+<body>
+<nav class="top"><a class="brand" href="./">SkillOS Public Command Center v4</a><div class="nav"><a href="executive.html">Executive</a><a href="proofs.html">Proofs</a><a href="skills.html">Skills Used</a><a href="actions.html">Run</a><a href="health.html">Health</a><a href="https://github.com/MontrealAI/skillos">GitHub</a></div></nav>
+<main>
+<section class="hero"><div><div class="eyebrow">SkillOS proof</div><h1>SkillOS No-Send Shadow Pilot Benchmark</h1><p>Autonomous proof page generated from the public receipt registry.</p><div class="actions"><a class="btn cyan" href="data/shadow_pilot_benchmark.json">Open JSON receipt</a><a class="btn" href="proofs.html">All proofs</a></div></div>
+<div class="panel"><div class="eyebrow">Status</div><div class="thesis">INDEXED</div><p>Generated from <code>data/shadow_pilot_benchmark.json</code>.</p></div></section>
+<section class="metrics">
+<div class="metric"><strong>—</strong><span>value capture</span></div>
+<div class="metric"><strong>—</strong><span>declared agents</span></div>
+<div class="metric"><strong>—</strong><span>specialist roles</span></div>
+<div class="metric"><strong>—</strong><span>RSI releases</span></div>
+</section>
+<section><h2>Skills Used</h2><div class="grid3"><article class="skill">
+<div class="badge">Work-to-Skill</div>
+<h3>Job Trace Capture</h3>
+<p>Turns completed work into structured traces that can be inspected and reused.</p>
+<dl><dt>Input</dt><dd>job output, route trace, execution metadata</dd><dt>Output</dt><dd>candidate trace packet</dd><dt>Verifier</dt><dd>Trace Integrity Court</dd></dl>
+</article><article class="skill">
+<div class="badge">Work-to-Skill</div>
+<h3>Skill Extraction</h3>
+<p>Converts useful traces into reusable candidate skills with clear input/output boundaries.</p>
+<dl><dt>Input</dt><dd>trace packet, task context, observed result</dd><dt>Output</dt><dd>candidate skill definition</dd><dt>Verifier</dt><dd>Skill Utility Court</dd></dl>
+</article><article class="skill">
+<div class="badge">Verification</div>
+<h3>Skill Verification</h3>
+<p>Tests candidate skills against held-out cases before network release.</p>
+<dl><dt>Input</dt><dd>candidate skill, benchmark cases, risk gates</dd><dt>Output</dt><dd>pass/fail receipt</dd><dt>Verifier</dt><dd>Verifier Court</dd></dl>
+</article><article class="skill">
+<div class="badge">Multi-Agent Coordination</div>
+<h3>Large-Agent Role Routing</h3>
+<p>Routes work to specialist roles instead of relying on a single general agent.</p>
+<dl><dt>Input</dt><dd>job intent, constraints, available skills</dd><dt>Output</dt><dd>specialist route plan</dd><dt>Verifier</dt><dd>Routing Quality Court</dd></dl>
+</article><article class="skill">
+<div class="badge">Verification</div>
+<h3>Verifier Court Allocation</h3>
+<p>Assigns independent verifier courts to high-value and high-risk capability claims.</p>
+<dl><dt>Input</dt><dd>risk, novelty, value at stake, evidence quality</dd><dt>Output</dt><dd>verification plan</dd><dt>Verifier</dt><dd>Verifier Capacity Court</dd></dl>
+</article><article class="skill">
+<div class="badge">Adversarial Testing</div>
+<h3>Red-Team Challenge</h3>
+<p>Generates adversarial challenges against new skills and routing protocols.</p>
+<dl><dt>Input</dt><dd>candidate release, policy boundary, failure history</dd><dt>Output</dt><dd>challenge set</dd><dt>Verifier</dt><dd>Red-Team Court</dd></dl>
+</article><article class="skill">
+<div class="badge">Governance</div>
+<h3>Policy Boundary Check</h3>
+<p>Rejects releases that violate public claim boundaries, safety constraints, or permission rules.</p>
+<dl><dt>Input</dt><dd>release candidate, public claims, policy rules</dd><dt>Output</dt><dd>allow/reject verdict</dd><dt>Verifier</dt><dd>Policy Court</dd></dl>
+</article><article class="skill">
+<div class="badge">Trust</div>
+<h3>Provenance Binding</h3>
+<p>Binds skills, receipts, workflow runs, reports, and pages into a traceable public record.</p>
+<dl><dt>Input</dt><dd>JSON receipt, workflow metadata, report, badge</dd><dt>Output</dt><dd>provenance record</dd><dt>Verifier</dt><dd>Provenance Court</dd></dl>
+</article><article class="skill">
+<div class="badge">RSI</div>
+<h3>Release Gate</h3>
+<p>Promotes only skill updates that improve measured outcomes without safety regression.</p>
+<dl><dt>Input</dt><dd>validation metrics, baselines, risk checks</dd><dt>Output</dt><dd>released/rejected update</dd><dt>Verifier</dt><dd>Release Court</dd></dl>
+</article><article class="skill">
+<div class="badge">Operations</div>
+<h3>Rollback Planning</h3>
+<p>Defines a safe fallback path for failed or regressed releases.</p>
+<dl><dt>Input</dt><dd>release plan, incident history, affected skills</dd><dt>Output</dt><dd>rollback route</dd><dt>Verifier</dt><dd>Reliability Court</dd></dl>
+</article><article class="skill">
+<div class="badge">Communication</div>
+<h3>Command Center Publishing</h3>
+<p>Renders receipts, proofs, workflows, skills, and run instructions into user-friendly pages.</p>
+<dl><dt>Input</dt><dd>repository artifacts, proof registry, workflows</dd><dt>Output</dt><dd>public command center</dd><dt>Verifier</dt><dd>Site Integration Verifier</dd></dl>
+</article><article class="skill">
+<div class="badge">Operations</div>
+<h3>Freshness Monitor</h3>
+<p>Checks that the public site reflects the latest repository state and workflow outputs.</p>
+<dl><dt>Input</dt><dd>timestamps, manifests, latest runs, generated pages</dd><dt>Output</dt><dd>freshness status</dd><dt>Verifier</dt><dd>Command Center Health Check</dd></dl>
+</article></div></section>
+<section class="root-fix"><strong>Public boundary:</strong> These pages show deterministic public proof receipts and benchmark-safe outputs. They do not claim audited customer ROI, financial advice, achieved superintelligence, or Kardashev Type II achievement.</section>
+</main>
+</body></html>

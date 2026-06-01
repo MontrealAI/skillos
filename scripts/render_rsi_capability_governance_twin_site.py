@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import html, json
+from collections import defaultdict
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[1]
+DATA,DOCS,SITE,BADGES=ROOT/"data",ROOT/"docs",ROOT/"site",ROOT/"badges"
+PROOF=DATA/"rsi-capability-governance-twin-proof.json"
+SITE.mkdir(parents=True,exist_ok=True); BADGES.mkdir(parents=True,exist_ok=True)
+
+def esc(x): return html.escape(str(x))
+def bar(label,value,note=""):
+    return f'<div class="bar"><span>{esc(label)}</span><div><i style="width:{max(0,min(100,float(value))):.2f}%"></i></div><b>{esc(note or str(value))}</b></div>'
+
+def skills_html(skills):
+    grouped=defaultdict(list)
+    for s in skills:
+        grouped[s.get("layer","Other")].append(s)
+    preferred=["Twin","Policy","Access Control","Verification","Safety","Reliability","Continual Learning","Adversarial","RSI","Trust","Operations","Economics","Transfer","Compounding","Communication"]
+    blocks=[]
+    for layer in [x for x in preferred if x in grouped] + sorted([x for x in grouped if x not in preferred]):
+        cards=[]
+        for s in grouped[layer]:
+            cards.append(f"""<article class="skill-card">
+  <div class="skill-layer">{esc(s.get("layer",""))}</div>
+  <h3>{esc(s.get("name",""))}</h3>
+  <p>{esc(s.get("purpose",""))}</p>
+  <dl>
+    <dt>Input</dt><dd>{esc(s.get("input_signal",""))}</dd>
+    <dt>Output</dt><dd>{esc(s.get("output",""))}</dd>
+    <dt>Verifier</dt><dd>{esc(s.get("verifier",""))}</dd>
+  </dl>
+</article>""")
+        blocks.append(f"""<section class="skill-group"><h3>{esc(layer)}</h3><div class="skill-grid">{''.join(cards)}</div></section>""")
+    return "".join(blocks)
+
+def main():
+    proof=json.loads(PROOF.read_text(encoding="utf-8")); f=proof["final"]; controls=proof["baselines_and_controls"]
+    gates="".join(f"<tr><td>{esc(k.replace('_',' '))}</td><td>{'passed' if v else 'failed'}</td></tr>" for k,v in proof["pre_registered_gates"].items())
+    releases="".join(f"<tr><td>v{r['generation']}</td><td>{'released' if r['released'] else 'rejected'}</td><td>{esc(r['lesson'])}</td><td>{r['validation']['value_capture_rate_percent']}%</td><td>{r['validation']['policy_violation_rate_percent']}%</td></tr>" for r in proof["rsi_releases"])
+    skills_section=skills_html(proof.get("skills_used",[]))
+    controls_bars=''.join(bar(k.replace('_',' '),v['value_capture_rate_percent'],f"{v['value_capture_rate_percent']}%") for k,v in controls.items())
+    html_text=f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SkillOS RSI Capability Governance Twin Proof</title><style>:root{{--panel:rgba(255,255,255,.075);--panel2:rgba(255,255,255,.105);--line:rgba(255,255,255,.16);--text:#f5fbff;--muted:#b8c8d8;--cyan:#86f8ff;--green:#7dffb0;--gold:#ffd66b}}*{{box-sizing:border-box}}body{{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:radial-gradient(circle at 82% 0,#3d4381 0,transparent 34%),radial-gradient(circle at 0 18%,#095e70 0,transparent 26%),linear-gradient(135deg,#06131f,#13243d 60%,#282a5d);color:var(--text)}}body:before{{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px;pointer-events:none;mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),rgba(0,0,0,.05))}}a{{color:var(--cyan)}}main{{max-width:1220px;margin:0 auto;padding:44px 20px 80px;position:relative}}nav{{position:sticky;top:0;z-index:5;background:rgba(6,19,31,.9);border-bottom:1px solid var(--line);backdrop-filter:blur(14px);display:flex;justify-content:space-between;padding:14px 22px}}nav a{{color:var(--muted);text-decoration:none;font-weight:850;margin-left:14px}}h1{{font-size:clamp(44px,7vw,96px);line-height:.86;letter-spacing:-.08em;margin:12px 0}}h2{{font-size:clamp(30px,4vw,54px);letter-spacing:-.05em}}p{{color:var(--muted);font-size:18px;line-height:1.55}}.hero{{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:center}}.card,.metric{{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:0 22px 80px rgba(0,0,0,.25)}}.grid{{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}}.metric strong{{display:block;color:var(--green);font-size:32px}}.metric span{{color:var(--muted)}}.eyebrow{{color:var(--cyan);text-transform:uppercase;letter-spacing:.18em;font-weight:950;font-size:12px}}.quote{{font-size:clamp(24px,3.2vw,42px);line-height:1.08;letter-spacing:-.04em;color:var(--text)}}.bar{{display:grid;grid-template-columns:250px 1fr 140px;gap:12px;align-items:center;margin:12px 0}}.bar span,.bar b{{color:var(--muted)}}.bar div{{height:20px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden}}.bar i{{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--cyan));border-radius:999px}}table{{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:16px 0}}td,th{{padding:12px;border-bottom:1px solid var(--line);text-align:left}}th{{color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:.08em}}.notice{{border-left:4px solid var(--gold);background:rgba(255,214,107,.08);border-radius:16px;padding:16px 18px;color:var(--muted)}}.skill-intro{{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:28px;padding:24px;margin:24px 0}}.skill-group{{margin:22px 0}}.skill-group>h3{{color:var(--cyan);font-size:14px;text-transform:uppercase;letter-spacing:.16em;margin:0 0 10px}}.skill-grid{{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}}.skill-card{{background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:22px;padding:18px;min-height:260px}}.skill-card h3{{font-size:22px;letter-spacing:-.03em;margin:8px 0 8px}}.skill-card p{{font-size:15px;margin:0 0 12px}}.skill-layer{{display:inline-block;border:1px solid rgba(134,248,255,.35);color:var(--cyan);border-radius:999px;padding:5px 9px;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}}dl{{margin:10px 0 0}}dt{{color:var(--green);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-top:9px}}dd{{margin:3px 0 0;color:var(--muted);font-size:13px;line-height:1.35}}@media(max-width:1000px){{.skill-grid{{grid-template-columns:repeat(2,1fr)}}}}@media(max-width:700px){{.hero,.grid,.bar,.skill-grid{{grid-template-columns:1fr}}}}</style></head><body><nav><strong>SkillOS Capability Governance Twin</strong><div><a href="index.html">Command Center</a><a href="proofs.html">Proofs</a><a href="data/rsi-capability-governance-twin-proof.json">JSON</a></div></nav><main><section class="hero"><div><div class="eyebrow">MONTREAL.AI / SKILLOS</div><h1>Capability Governance Twin.</h1><p>Autonomous proof that SkillOS can test capability routing in a governance digital twin before release, enforcing policy, permissions, verifier coverage, rollback, observability, and validation-gated RSI.</p></div><div class="card"><div class="eyebrow">proof passed</div><div class="quote">{proof['agent_system']['virtual_specialist_agents']:,} agents. {proof['agent_system']['specialist_roles']:,} roles. {len(proof.get('skills_used',[]))} skills displayed. {proof['rsi_release_count']} RSI releases.</div><p>{esc(proof['safe_interpretation'])}</p></div></section><section class="grid"><div class="metric"><strong>{f['value_capture_rate_percent']}%</strong><span>value capture</span></div><div class="metric"><strong>{f['policy_violation_rate_percent']}%</strong><span>policy violation</span></div><div class="metric"><strong>{f['shadow_production_gap_rate_percent']}%</strong><span>shadow gap</span></div><div class="metric"><strong>{f['risk_breach_rate_percent']}%</strong><span>risk breach</span></div></section><section class="card"><div class="eyebrow">core mechanism</div><div class="quote">capability route → governance twin → policy-as-code → permission boundary → shadow simulation → verifier coverage → rollback path → release gate → public receipt</div></section><section id="skills-used" class="skill-intro"><div class="eyebrow">Skills Used</div><h2>Operational skill stack used by this proof</h2><p>Each card shows the operational skill, the layer it belongs to, the signal it consumes, the artifact it produces, and the verifier that checks it. This section is generated from the machine-readable proof receipt and verified by the GitHub Action.</p>{skills_section}</section><section><h2>Baselines and controls</h2><div class="card">{controls_bars}{bar('SkillOS RSI governance twin', f['value_capture_rate_percent'], str(f['value_capture_rate_percent'])+'%')}</div></section><section><h2>RSI release history</h2><table><tr><th>Generation</th><th>Status</th><th>Lesson</th><th>Validation capture</th><th>Policy violation</th></tr>{releases}</table></section><section><h2>Pre-registered gates</h2><table><tr><th>Gate</th><th>Status</th></tr>{gates}</table></section><section class="notice"><strong>Boundary:</strong> {esc(proof['public_boundary'])} Protocol fingerprint: {esc(proof['protocol_fingerprint_sha256'])}</section></main></body></html>"""
+    (SITE/"rsi-capability-governance-twin-proof.html").write_text(html_text,encoding="utf-8")
+    (BADGES/"rsi-capability-governance-twin-proof.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg" width="330" height="20"><rect width="330" height="20" rx="10" fill="#14233a"/><rect x="228" width="102" height="20" rx="10" fill="#2bb673"/><text x="10" y="14" fill="#dff7ff" font-family="Verdana" font-size="11">capability governance twin</text><text x="246" y="14" fill="#fff" font-family="Verdana" font-size="11">passed</text></svg>',encoding="utf-8")
+    print(json.dumps({"status":"VISIBLE_OUTPUTS_WRITTEN","html":"site/rsi-capability-governance-twin-proof.html","skills_displayed":len(proof.get("skills_used",[]))},indent=2))
+
+if __name__=="__main__":
+    main()

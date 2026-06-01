@@ -1,14 +1,14 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-06-01T01:30:07Z`
+Generated: `2026-06-01T01:30:34Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 74
-- Workflows tracked: 43
-- Recent successful runs: 42
+- Proof entries: 75
+- Workflows tracked: 44
+- Recent successful runs: 40
 - Recent failed runs: 0
 - Recent running runs: 4
 
@@ -201,6 +201,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI Enterprise Superorganization Proof**
   - Page: https://montrealai.github.io/skillos/proof-enterprise-superorganization-github-enterprise-superorganization-enterprise-superorganization-enterprise-superorganization.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-enterprise-superorganization-proof.yml
+- **Autonomous RSI Fork-Resistant Capability Network Proof**
+  - Page: https://montrealai.github.io/skillos/proof-fork-resistant-capability-network-github-fork-resistant-capability-network-fork-resistant-capability.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-fork-resistant-capability-network-proof.yml
 - **Autonomous RSI Full-Stack Capability Lifecycle Proof**
   - Page: https://montrealai.github.io/skillos/proof-full-stack-capability-lifecycle-github-full-stack-capability-lifecycle-full-stack-capability.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-full-stack-capability-lifecycle-proof.yml

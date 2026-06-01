@@ -1,14 +1,14 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-06-01T01:39:50Z`
+Generated: `2026-06-01T01:40:15Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 77
-- Workflows tracked: 44
-- Recent successful runs: 43
+- Proof entries: 78
+- Workflows tracked: 45
+- Recent successful runs: 40
 - Recent failed runs: 0
 - Recent running runs: 4
 
@@ -182,6 +182,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI Blockchain Protocol Capital Frontier Proof**
   - Page: https://montrealai.github.io/skillos/proof-blockchain-protocol-capital-frontier-github-blockchain-protocol-capital-frontier-blockchain-protocol-capital.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-blockchain-protocol-capital-frontier-proof.yml
+- **Autonomous RSI Capability Economy Clearinghouse Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capability-economy-clearinghouse-github-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-economy-clearinghouse-proof.yml
 - **Autonomous RSI Capability Liquidity Engine Proof**
   - Page: https://montrealai.github.io/skillos/proof-capability-liquidity-engine-github-capability-liquidity-engine-capability-liquidity-engine-capability-liquidity.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml

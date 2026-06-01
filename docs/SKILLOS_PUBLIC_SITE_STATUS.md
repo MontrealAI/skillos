@@ -1,16 +1,16 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-06-01T01:32:13Z`
+Generated: `2026-06-01T01:34:35Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 75
+- Proof entries: 76
 - Workflows tracked: 44
 - Recent successful runs: 44
 - Recent failed runs: 0
-- Recent running runs: 2
+- Recent running runs: 3
 
 ## Flagship
 
@@ -123,6 +123,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI Continual Capability Frontier Proof**
   - Page: https://montrealai.github.io/skillos/proof-continual-capability-frontier-continual-capability-frontier-continual-capability-frontier-continual-capability-frontier.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-continual-capability-frontier-proof.json
+- **Autonomous RSI Fork-Resistant Capability Network Proof**
+  - Page: https://montrealai.github.io/skillos/proof-fork-resistant-capability-network-fork-resistant-capability-network-fork-resistant-capability-network.html
+  - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-fork-resistant-capability-network-proof.json
 - **Autonomous RSI Full-Stack Capability Lifecycle Proof**
   - Page: https://montrealai.github.io/skillos/proof-full-stack-capability-lifecycle-full-stack-capability-lifecycle-full-stack-capability-lifecycle.html
   - JSON: https://github.com/MontrealAI/skillos/blob/main/data/rsi-full-stack-capability-lifecycle-proof.json
@@ -156,6 +159,8 @@ Site: https://montrealai.github.io/skillos/
   - Page: https://montrealai.github.io/skillos/enterprise-ops-proof.html
 - **Enterprise Superorganization**
   - Page: https://montrealai.github.io/skillos/rsi-enterprise-superorganization-proof.html
+- **Fork Resistant Capability Network**
+  - Page: https://montrealai.github.io/skillos/rsi-fork-resistant-capability-network-proof.html
 - **Full Stack Capability Lifecycle**
   - Page: https://montrealai.github.io/skillos/rsi-full-stack-capability-lifecycle-proof.html
 - **Governance Frontier**
@@ -236,8 +241,6 @@ Site: https://montrealai.github.io/skillos/
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml
 - **Readiness**
   - Page: https://montrealai.github.io/skillos/proof-readiness-readiness.html
-- **Rsi Fork Resistant Capability Network**
-  - Page: https://montrealai.github.io/skillos/proof-fork-resistant-capability-network-fork-resistant-capability-network.html
 - **Wealth Accumulation**
   - Page: https://montrealai.github.io/skillos/proof-wealth-accumulation-wealth-accumulation.html
 - **{'name': 'Sales follow-up email from call notes', 'why_this_workflow': 'Sales follow-up emails are repeated, economically valuable, easy to score, low-risk, and common across many organizations.', 'real_work_unit': 'Draft one buyer-specific follow-up email from call notes.', 'note': 'The proof uses deterministic local agents and realistic sample call notes so it can run in GitHub Actions without API keys or private customer data.'}**

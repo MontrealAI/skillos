@@ -7,6 +7,7 @@ import html
 import json
 import math
 import re
+import shutil
 from pathlib import Path
 from typing import Any
 
@@ -17,8 +18,8 @@ DOCS = ROOT / "docs"
 BADGES = ROOT / "badges"
 WORKFLOWS = ROOT / ".github" / "workflows"
 
-SCHEMA = "skillos.command_center.sovereign.v5"
-MARKER = "SKILLOS_COMMAND_CENTER_V5_CANONICAL_ROOT"
+SCHEMA = "skillos.command_center.sovereign.v5.1"
+MARKER = "SKILLOS_COMMAND_CENTER_V5_1_CANONICAL_ROOT"
 OLD_PHRASES = [
     "Autonomous Proof Command Center",
     "SkillOS Public Command Center v2",
@@ -35,86 +36,164 @@ def read_json(path: Path) -> Any:
     except Exception:
         return None
 
-def safe_slug(text: str) -> str:
+def textify(value: Any, fallback: str = "") -> str:
+    """Return a safe, human-readable string for heterogeneous receipt fields."""
+    if value is None:
+        return fallback
+    if isinstance(value, str):
+        return value.strip() or fallback
+    if isinstance(value, (int, float, bool)):
+        return str(value)
+    if isinstance(value, dict):
+        preferred = [
+            "text", "title", "name", "id", "proof_id", "proof_type", "workflow",
+            "label", "value", "description", "summary", "status"
+        ]
+        for key in preferred:
+            if key in value:
+                out = textify(value.get(key), "")
+                if out:
+                    return out
+        parts = [textify(v, "") for v in value.values() if isinstance(v, (str, int, float, bool))]
+        out = " ".join(p for p in parts if p).strip()
+        return out[:240] if out else fallback
+    if isinstance(value, (list, tuple, set)):
+        parts = [textify(v, "") for v in list(value)[:6]]
+        out = " ".join(p for p in parts if p).strip()
+        return out[:240] if out else fallback
+    return str(value).strip() or fallback
+
+def first_text(*values: Any, fallback: str = "") -> str:
+    for value in values:
+        out = textify(value, "")
+        if out:
+            return out
+    return fallback
+
+def safe_slug(text: Any) -> str:
+    text = textify(text, "proof")
     out = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
-    return out or "proof"
+    return out[:110].strip("-") or "proof"
+
+def numberify(value: Any) -> float | None:
+    if value is None or value == "":
+        return None
+    if isinstance(value, bool):
+        return float(int(value))
+    if isinstance(value, (int, float)):
+        return float(value)
+    s = textify(value, "").strip().replace(",", "").replace("$", "")
+    if not s:
+        return None
+    if s.endswith("%"):
+        s = s[:-1]
+    scale = 1.0
+    if s[-1:].lower() in {"k", "m", "b", "t"}:
+        suffix = s[-1].lower()
+        s = s[:-1]
+        scale = {"k": 1e3, "m": 1e6, "b": 1e9, "t": 1e12}[suffix]
+    try:
+        return float(s) * scale
+    except Exception:
+        return None
+
+def local_href(value: Any, fallback_id: str) -> str:
+    href = textify(value, "").strip().replace("\\", "/")
+    if re.match(r"^https?://", href):
+        return href
+    href = href.split("#", 1)[0].split("?", 1)[0].lstrip("/")
+    if href.startswith("site/"):
+        href = href[5:]
+    if not href or ".." in href or href.endswith("/"):
+        href = f"{fallback_id}.html"
+    if not href.endswith(".html"):
+        href = f"{safe_slug(href)}.html"
+    return href
 
 def money(v: Any) -> str:
-    try:
-        v = float(v)
-    except Exception:
+    n = numberify(v)
+    if n is None:
         return "—"
-    if abs(v) >= 1e12:
-        return f"${v/1e12:,.2f}T"
-    if abs(v) >= 1e9:
-        return f"${v/1e9:,.2f}B"
-    if abs(v) >= 1e6:
-        return f"${v/1e6:,.2f}M"
-    return f"${v:,.0f}"
+    if abs(n) >= 1e12:
+        return f"${n/1e12:,.2f}T"
+    if abs(n) >= 1e9:
+        return f"${n/1e9:,.2f}B"
+    if abs(n) >= 1e6:
+        return f"${n/1e6:,.2f}M"
+    return f"${n:,.0f}"
 
 def pct(v: Any) -> str:
-    try:
-        return f"{float(v):,.2f}%"
-    except Exception:
-        return "—"
+    n = numberify(v)
+    return f"{n:,.2f}%" if n is not None else "—"
+
 
 def esc(x: Any) -> str:
     return html.escape("" if x is None else str(x), quote=True)
 
 def normalize_proof(path: Path, raw: Any) -> dict[str, Any] | None:
+    """Normalize any known SkillOS receipt shape into a safe registry record.
+
+    This function intentionally accepts heterogeneous public receipts. Some
+    historical files use nested objects for fields like title/name/status. The
+    command center must never fail because an old receipt used a richer JSON
+    shape than expected.
+    """
     if not isinstance(raw, dict):
         return None
-    title = raw.get("proof_type") or raw.get("workflow") or raw.get("title") or raw.get("name")
-    proof_id = raw.get("id") or raw.get("proof_id") or safe_slug(title or path.stem)
+    title = first_text(raw.get("proof_type"), raw.get("workflow"), raw.get("title"), raw.get("name"), path.stem, fallback=path.stem)
+    id_text = first_text(raw.get("id"), raw.get("proof_id"), "")
+    proof_id = safe_slug(id_text or title or path.stem)
     final = raw.get("final") if isinstance(raw.get("final"), dict) else {}
     agent_system = raw.get("agent_system") if isinstance(raw.get("agent_system"), dict) else {}
     benchmark = raw.get("benchmark_public") if isinstance(raw.get("benchmark_public"), dict) else {}
-    status = raw.get("status") or ("PASSED" if raw.get("proved") else "UNKNOWN")
-    proved = bool(raw.get("proved") or str(status).upper().startswith("PASSED"))
+    status = first_text(raw.get("status"), "PASSED" if raw.get("proved") else "UNKNOWN")
+    proved = bool(raw.get("proved") or status.upper().startswith("PASSED") or "PASSED" in status.upper())
     skills = raw.get("skills_used") if isinstance(raw.get("skills_used"), list) else []
-    href = raw.get("href") or f"{proof_id}.html"
-    json_href = f"data/{path.name}"
-    value_capture = (
+    href = local_href(raw.get("href"), proof_id)
+    value_capture = numberify(
         final.get("value_capture_rate_percent")
         or final.get("benchmark_value_capture_rate_percent")
         or raw.get("value_capture_rate_percent")
         or raw.get("benchmark_value_capture_rate_percent")
     )
-    agents = (
+    agents = numberify(
         agent_system.get("virtual_specialist_agents")
         or agent_system.get("agents")
         or raw.get("virtual_specialist_agents")
         or raw.get("agents")
         or final.get("virtual_specialist_agents")
     )
-    roles = (
+    roles = numberify(
         agent_system.get("specialist_roles")
         or agent_system.get("roles")
         or raw.get("specialist_roles")
         or raw.get("roles")
     )
-    releases = raw.get("rsi_release_count") or len([r for r in raw.get("rsi_releases", []) if isinstance(r, dict) and r.get("released")])
-    holdout = benchmark.get("locked_holdout_count") or benchmark.get("holdout_count") or raw.get("locked_holdout_count") or final.get("locked_holdout_count")
-    value_captured = (
+    rsi = raw.get("rsi_releases", [])
+    releases = numberify(raw.get("rsi_release_count"))
+    if releases is None and isinstance(rsi, list):
+        releases = float(len([r for r in rsi if isinstance(r, dict) and r.get("released")]))
+    holdout = numberify(benchmark.get("locked_holdout_count") or benchmark.get("holdout_count") or raw.get("locked_holdout_count") or final.get("locked_holdout_count"))
+    value_captured = numberify(
         final.get("total_benchmark_value_captured_usd")
         or final.get("benchmark_value_captured_usd")
         or raw.get("benchmark_value_captured_usd")
         or raw.get("total_benchmark_value_captured_usd")
     )
-    generated = raw.get("generated_at_utc") or raw.get("updated_at_utc") or raw.get("timestamp") or ""
-    desc = (
-        raw.get("description")
-        or raw.get("safe_interpretation")
-        or raw.get("summary")
-        or "Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence."
+    generated = first_text(raw.get("generated_at_utc"), raw.get("updated_at_utc"), raw.get("timestamp"), "")
+    desc = first_text(
+        raw.get("description"),
+        raw.get("safe_interpretation"),
+        raw.get("summary"),
+        "Autonomous SkillOS public proof with deterministic receipt, verification gates, and visual evidence.",
     )
     return {
         "id": proof_id,
-        "title": str(title or proof_id.replace("-", " ").title()),
-        "status": str(status),
+        "title": title,
+        "status": status,
         "proved": proved,
         "href": href,
-        "json": json_href,
+        "json": f"data/{path.name}",
         "doc": f"docs/{proof_id}.md",
         "badge": f"badges/{proof_id}.svg",
         "source_json": str(path.relative_to(ROOT)),
@@ -123,10 +202,10 @@ def normalize_proof(path: Path, raw: Any) -> dict[str, Any] | None:
         "benchmark_value_captured_usd": value_captured,
         "virtual_specialist_agents": agents,
         "specialist_roles": roles,
-        "rsi_release_count": releases,
-        "holdout_count": holdout,
+        "rsi_release_count": int(releases) if releases is not None and float(releases).is_integer() else releases,
+        "holdout_count": int(holdout) if holdout is not None and float(holdout).is_integer() else holdout,
         "skills_used_count": len(skills),
-        "description": str(desc)[:500],
+        "description": desc[:500],
         "skills_used": skills,
         "raw": raw,
     }
@@ -153,33 +232,33 @@ def collect_proofs() -> list[dict[str, Any]]:
         for entry in entries:
             if not isinstance(entry, dict):
                 continue
-            pid = entry.get("id") or safe_slug(entry.get("title", "proof"))
+            pid = safe_slug(entry.get("id") or entry.get("proof_id") or entry.get("title") or "proof")
             if pid in seen:
                 continue
             proofs.append({
                 "id": pid,
-                "title": entry.get("title") or pid.replace("-", " ").title(),
-                "status": entry.get("status", "INDEXED"),
+                "title": first_text(entry.get("title"), entry.get("name"), pid.replace("-", " ").title()),
+                "status": first_text(entry.get("status"), "INDEXED"),
                 "proved": bool(entry.get("proved")),
-                "href": entry.get("href") or f"{pid}.html",
-                "json": entry.get("json") or "",
-                "doc": entry.get("doc") or "",
-                "badge": entry.get("badge") or "",
+                "href": local_href(entry.get("href"), pid),
+                "json": textify(entry.get("json"), ""),
+                "doc": textify(entry.get("doc"), ""),
+                "badge": textify(entry.get("badge"), ""),
                 "source_json": str(registry_path.relative_to(ROOT)),
-                "generated_at_utc": entry.get("generated_at_utc", ""),
-                "value_capture_rate_percent": entry.get("value_capture_rate_percent"),
-                "benchmark_value_captured_usd": entry.get("benchmark_value_captured_usd"),
-                "virtual_specialist_agents": entry.get("virtual_specialist_agents"),
-                "specialist_roles": entry.get("specialist_roles"),
-                "rsi_release_count": entry.get("rsi_release_count"),
-                "holdout_count": entry.get("holdout_count"),
-                "skills_used_count": entry.get("skills_used_count", 0),
-                "description": entry.get("description", "Indexed public proof."),
+                "generated_at_utc": first_text(entry.get("generated_at_utc"), entry.get("updated_at_utc"), ""),
+                "value_capture_rate_percent": numberify(entry.get("value_capture_rate_percent")),
+                "benchmark_value_captured_usd": numberify(entry.get("benchmark_value_captured_usd")),
+                "virtual_specialist_agents": numberify(entry.get("virtual_specialist_agents")),
+                "specialist_roles": numberify(entry.get("specialist_roles")),
+                "rsi_release_count": numberify(entry.get("rsi_release_count")),
+                "holdout_count": numberify(entry.get("holdout_count")),
+                "skills_used_count": int(numberify(entry.get("skills_used_count")) or 0),
+                "description": first_text(entry.get("description"), entry.get("summary"), "Indexed public proof."),
                 "skills_used": [],
                 "raw": entry,
             })
             seen.add(pid)
-    proofs.sort(key=lambda p: (not p["proved"], -(float(p["value_capture_rate_percent"] or 0)), p["title"].lower()))
+    proofs.sort(key=lambda p: (not p["proved"], -(numberify(p.get("value_capture_rate_percent")) or 0), textify(p.get("title"), "").lower()))
     return proofs
 
 def collect_workflows() -> list[dict[str, Any]]:
@@ -208,22 +287,22 @@ def aggregate_skills(proofs: list[dict[str, Any]]) -> list[dict[str, Any]]:
         for skill in proof.get("skills_used", []):
             if not isinstance(skill, dict):
                 continue
-            name = str(skill.get("name") or "").strip()
+            name = textify(skill.get("name"), "").strip()
             if not name:
                 continue
             rec = index.setdefault(name, {
                 "name": name,
-                "layer": skill.get("layer") or "Skill",
-                "purpose": skill.get("purpose") or "",
-                "input_signal": skill.get("input_signal") or skill.get("input") or "",
-                "output": skill.get("output") or skill.get("output_artifact") or "",
-                "verifier": skill.get("verifier") or "",
+                "layer": textify(skill.get("layer"), "Skill"),
+                "purpose": textify(skill.get("purpose"), ""),
+                "input_signal": textify(skill.get("input_signal") or skill.get("input"), ""),
+                "output": textify(skill.get("output") or skill.get("output_artifact"), ""),
+                "verifier": textify(skill.get("verifier"), ""),
                 "proofs": set(),
             })
             rec["proofs"].add(proof["id"])
             for key in ["purpose", "input_signal", "output", "verifier"]:
                 if not rec.get(key) and skill.get(key):
-                    rec[key] = skill.get(key)
+                    rec[key] = textify(skill.get(key), "")
     if not index:
         fallback = [
             ("Trace Capture", "Work", "Captures completed jobs as reusable evidence traces."),
@@ -242,7 +321,7 @@ def aggregate_skills(proofs: list[dict[str, Any]]) -> list[dict[str, Any]]:
         rec = dict(rec)
         rec["proof_count"] = len(rec.pop("proofs"))
         skills.append(rec)
-    skills.sort(key=lambda s: (-s["proof_count"], s["layer"], s["name"]))
+    skills.sort(key=lambda s: (-int(s.get("proof_count", 0)), textify(s.get("layer"), ""), textify(s.get("name"), "")))
     return skills
 
 CSS = r'''
@@ -276,7 +355,7 @@ def base_head(title: str, desc: str) -> str:
 <meta name="description" content="{esc(desc)}"><meta name="theme-color" content="#07101f">
 <title>{esc(title)}</title>
 <style>{CSS}</style><script>{JS}</script>
-</head><body><!-- {MARKER} --><div class="topbar"><a class="brand" href="index.html">SkillOS Sovereign Command Center v5</a><div class="nav">
+</head><body><!-- {MARKER} --><div class="topbar"><a class="brand" href="index.html">SkillOS Sovereign Command Center v5.1</a><div class="nav">
 <a href="index.html">Home</a><a href="executive.html">Executive</a><a href="proofs.html">Proofs</a><a href="skills.html">Skills Used</a><a href="multi-agent.html">Multi-Agent</a><a href="receipts.html">Receipts</a><a href="health.html">Health</a><a href="runbook.html">Run</a><a href="https://github.com/MontrealAI/skillos">GitHub</a>
 </div></div><main class="wrap">'''
 
@@ -324,6 +403,8 @@ def proof_card(p: dict[str, Any]) -> str:
 def ensure_proof_pages(proofs: list[dict[str, Any]]) -> None:
     for p in proofs:
         href = p.get("href") or f"{p['id']}.html"
+        if re.match(r"^https?://", href):
+            continue
         out = SITE / href
         if out.exists() and MARKER in out.read_text(encoding="utf-8", errors="ignore"):
             continue
@@ -365,7 +446,7 @@ def homepage(proofs, workflows, skills, ts):
         badges += len(list((SITE/"badges").glob("*.svg")))
     featured = "".join(proof_card(p) for p in proofs[:6])
     top_workflows = "".join(f'''<article class="workflow-card"><span class="badge {'warn' if w['retired'] else ''}">{'retired' if w['retired'] else 'active'}</span><h3>{esc(w['name'])}</h3><p>{esc(w['path'])}</p><div class="meta"><span>dispatch {w['dispatch']}</span><span>push {w['push']}</span><span>schedule {w['schedule']}</span></div></article>''' for w in workflows[:6])
-    return base_head("SkillOS Sovereign Command Center v5", "Canonical public SkillOS proof hub") + f'''
+    return base_head("SkillOS Sovereign Command Center v5.1", "Canonical public SkillOS proof hub") + f'''
 <section class="hero"><div><div class="kicker">MONTREAL.AI / SKILLOS</div><h1 class="title">Sovereign SkillOS Command Center.</h1><p class="subtitle">The canonical, self-deploying public proof atlas for SkillOS: every proof, receipt, workflow, badge, Skills Used display, and multi-agent coordination signal is indexed, verified, rendered, and published through one autonomous GitHub Action.</p><div class="pillrow"><a class="btn primary" href="proofs.html">View proof atlas</a><a class="btn cyan" href="runbook.html">Run / regenerate</a><a class="btn" href="skills.html">Inspect Skills Used</a></div></div><div class="hero-card glass card crown"><div><div class="kicker">Canonical live root</div><div class="giant">Root and index are one artifact.</div></div><p>Updated <b class="mint">{esc(ts)}</b>. This v5 publisher blocks legacy overwrite loops and deploys the exact generated <code>site/index.html</code> artifact to GitHub Pages.</p><div class="notice">The old homepage phrase is intentionally forbidden by verification.</div></div></section>
 <section class="glass card"><div class="kicker">Core thesis</div><div class="quote">Every job can become a reusable skill. Every verified skill can strengthen the whole network. One agent learns; the system can route that learning everywhere.</div><p>SkillOS makes the mechanism public and testable: work → traces → skills → verification → release → routing upgrade → compounding capability.</p></section>
 <section class="stats"><div class="stat"><b>{len(proofs):,}</b><span>indexed proofs and pages</span></div><div class="stat"><b>{passed:,}</b><span>passed / proved receipts</span></div><div class="stat"><b>{len(workflows):,}</b><span>GitHub workflows scanned</span></div><div class="stat"><b>{len(skills):,}</b><span>Skills Used surfaced</span></div><div class="stat"><b>{total_agents/1e9:,.2f}B</b><span>declared specialist agents across receipts</span></div><div class="stat"><b>{receipts:,}</b><span>JSON receipt files</span></div><div class="stat"><b>{len(list(DOCS.glob("*.md"))) if DOCS.exists() else 0:,}</b><span>Markdown reports</span></div><div class="stat"><b>{badges:,}</b><span>badges</span></div></section>
@@ -396,7 +477,7 @@ def skills_page(skills, ts):
 def actions_page(workflows, ts):
     rows = "".join(f'<tr><td>{esc(w["name"])}</td><td><code>{esc(w["path"])}</code></td><td>{"retired" if w["retired"] else "active"}</td><td>{w["dispatch"]}</td><td>{w["push"]}</td><td>{w["schedule"]}</td><td>{w["workflow_run"]}</td></tr>' for w in workflows)
     return base_head("SkillOS Actions", "Workflows and run instructions") + f'''
-<section class="section"><div class="kicker">Run / regenerate</div><h1 class="title">One canonical deploy path.</h1><p class="subtitle">Run <b>SkillOS Sovereign Command Center v5 Canonical Deploy</b>. It builds, verifies, commits, uploads the Pages artifact, deploys, and verifies the live root.</p><div class="pillrow"><a class="btn primary" href="https://github.com/MontrealAI/skillos/actions">Open GitHub Actions</a></div></section>
+<section class="section"><div class="kicker">Run / regenerate</div><h1 class="title">One canonical deploy path.</h1><p class="subtitle">Run <b>SkillOS Sovereign Command Center v5.1 Canonical Deploy</b>. It builds, verifies, commits, uploads the Pages artifact, deploys, and verifies the live root.</p><div class="pillrow"><a class="btn primary" href="https://github.com/MontrealAI/skillos/actions">Open GitHub Actions</a></div></section>
 <table class="table"><tr><th>Workflow</th><th>Path</th><th>Status</th><th>Dispatch</th><th>Push</th><th>Schedule</th><th>Workflow run</th></tr>{rows}</table>
 ''' + end()
 
@@ -438,11 +519,66 @@ def manifest(proofs, workflows, skills, ts):
         },
     }
 
+def sync_public_assets(proofs: list[dict[str, Any]]) -> None:
+    """Mirror root receipts/reports/badges into site/ so public links work."""
+    (SITE / "data").mkdir(parents=True, exist_ok=True)
+    (SITE / "docs").mkdir(parents=True, exist_ok=True)
+    (SITE / "badges").mkdir(parents=True, exist_ok=True)
+    for proof in proofs:
+        source_json = textify(proof.get("source_json"), "")
+        if source_json:
+            src = ROOT / source_json
+            if src.exists() and src.suffix.lower() == ".json":
+                dst = SITE / "data" / src.name
+                if src.resolve() != dst.resolve():
+                    shutil.copy2(src, dst)
+                proof["json"] = f"data/{src.name}"
+        raw = proof.get("raw") if isinstance(proof.get("raw"), dict) else {}
+        doc_candidates = [
+            raw.get("markdown_report"),
+            raw.get("doc"),
+            proof.get("doc"),
+            f"docs/{proof.get('id')}.md",
+            f"docs/{proof.get('id','').upper()}.md",
+        ]
+        for cand in doc_candidates:
+            cand_text = textify(cand, "")
+            if not cand_text:
+                continue
+            src = ROOT / cand_text
+            if not src.exists():
+                src = DOCS / Path(cand_text).name
+            if src.exists() and src.suffix.lower() == ".md":
+                dst = SITE / "docs" / src.name
+                if src.resolve() != dst.resolve():
+                    shutil.copy2(src, dst)
+                proof["doc"] = f"docs/{src.name}"
+                break
+        badge_candidates = [
+            raw.get("badge"),
+            proof.get("badge"),
+            f"badges/{proof.get('id')}.svg",
+        ]
+        for cand in badge_candidates:
+            cand_text = textify(cand, "")
+            if not cand_text:
+                continue
+            src = ROOT / cand_text
+            if not src.exists():
+                src = BADGES / Path(cand_text).name
+            if src.exists() and src.suffix.lower() == ".svg":
+                dst = SITE / "badges" / src.name
+                if src.resolve() != dst.resolve():
+                    shutil.copy2(src, dst)
+                proof["badge"] = f"badges/{src.name}"
+                break
+
 def write_pages(proofs, workflows, skills, ts):
     SITE.mkdir(parents=True, exist_ok=True)
     (SITE/"data").mkdir(exist_ok=True)
     (SITE/"badges").mkdir(exist_ok=True)
     (SITE/"docs").mkdir(exist_ok=True)
+    sync_public_assets(proofs)
     ensure_proof_pages(proofs)
     pages = {
         "index.html": homepage(proofs, workflows, skills, ts),
@@ -455,8 +591,8 @@ def write_pages(proofs, workflows, skills, ts):
         "architecture.html": simple_page("Architecture", "The public operating model for the SkillOS compounding flywheel.", '<section class="glass card"><div class="quote">work → trace → skill → verification → release → routing upgrade → compounding capability</div></section>'),
         "flywheel.html": simple_page("The SkillOS Flywheel", "Every verified job can become a reusable skill; every reusable skill can improve future routing.", '<section class="grid">' + "".join(f'<article class="skill-card"><span class="badge">{i}</span><h3>{esc(t)}</h3><p>{esc(d)}</p></article>' for i,(t,d) in enumerate([("Work","A job completes and leaves a trace."),("Trace","The trace becomes evidence."),("Skill","Reusable capability is distilled."),("Verify","Courts test improvement."),("Release","Safe upgrades ship."),("Route","Future jobs use better skills.")],1)) + '</section>'),
         "health.html": simple_page("Command Center Health", "Freshness, root canonicalization, proof registry integrity, and live deployment checks.", '<section class="glass card"><h2>Health contract</h2><p>The verifier blocks old homepage phrases, requires the v5 marker, validates all core pages, checks proof registry JSON, and can verify live / and /index.html after deployment.</p><p><a class="btn cyan" href="data/command-center-health.json">Open health JSON</a></p></section>'),
-        "runbook.html": simple_page("Run or Regenerate", "A non-technical runbook for refreshing the public command center.", '<section class="glass card"><h2>Run this Action</h2><p>GitHub → Actions → <b>SkillOS Sovereign Command Center v5 Canonical Deploy</b> → Run workflow.</p><p>Use: publish_to_repo=true, deploy_pages=true, verify_live=true.</p></section>'),
-        "force-refresh.html": simple_page("Force Refresh", "Clears local browser caches and points viewers back to the canonical root.", '<section class="glass card"><h2>Refresh complete</h2><p>This page unregisters service workers and clears browser caches. Now open the home page.</p><p><a class="btn primary" href="index.html?v=sovereign-v5">Open Command Center</a></p></section>'),
+        "runbook.html": simple_page("Run or Regenerate", "A non-technical runbook for refreshing the public command center.", '<section class="glass card"><h2>Run this Action</h2><p>GitHub → Actions → <b>SkillOS Sovereign Command Center v5.1 Canonical Deploy</b> → Run workflow.</p><p>Use: publish_to_repo=true, deploy_pages=true, verify_live=true.</p></section>'),
+        "force-refresh.html": simple_page("Force Refresh", "Clears local browser caches and points viewers back to the canonical root.", '<section class="glass card"><h2>Refresh complete</h2><p>This page unregisters service workers and clears browser caches. Now open the home page.</p><p><a class="btn primary" href="index.html?v=sovereign-v5-1">Open Command Center</a></p></section>'),
         "404.html": simple_page("SkillOS Page Not Found", "Return to the canonical public command center.", '<p><a class="btn primary" href="index.html">Return home</a></p>'),
     }
     for name, content in pages.items():
@@ -472,12 +608,12 @@ def write_pages(proofs, workflows, skills, ts):
     (SITE/"proof-registry.json").write_text(json.dumps(registry, indent=2, sort_keys=True)+"\n", encoding="utf-8")
     (SITE/"sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"<url><loc>https://montrealai.github.io/skillos/{name}</loc></url>\n" for name in pages) + "</urlset>\n", encoding="utf-8")
     (SITE/"robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://montrealai.github.io/skillos/sitemap.xml\n", encoding="utf-8")
-    badge = '<svg xmlns="http://www.w3.org/2000/svg" width="410" height="22" role="img" aria-label="SkillOS sovereign command center v5: fresh"><linearGradient id="g" x2="1"><stop offset="0" stop-color="#07101f"/><stop offset=".55" stop-color="#243064"/><stop offset="1" stop-color="#0d3041"/></linearGradient><rect width="410" height="22" rx="11" fill="url(#g)"/><rect x="294" width="116" height="22" rx="11" fill="#7dffb1"/><text x="12" y="15" fill="#dff7ff" font-family="Verdana" font-size="11">SkillOS sovereign command center v5</text><text x="317" y="15" fill="#06131f" font-family="Verdana" font-size="11" font-weight="700">fresh</text></svg>'
+    badge = '<svg xmlns="http://www.w3.org/2000/svg" width="410" height="22" role="img" aria-label="SkillOS sovereign command center v5.1: fresh"><linearGradient id="g" x2="1"><stop offset="0" stop-color="#07101f"/><stop offset=".55" stop-color="#243064"/><stop offset="1" stop-color="#0d3041"/></linearGradient><rect width="410" height="22" rx="11" fill="url(#g)"/><rect x="294" width="116" height="22" rx="11" fill="#7dffb1"/><text x="12" y="15" fill="#dff7ff" font-family="Verdana" font-size="11">SkillOS sovereign command center v5.1</text><text x="317" y="15" fill="#06131f" font-family="Verdana" font-size="11" font-weight="700">fresh</text></svg>'
     BADGES.mkdir(exist_ok=True)
-    (BADGES/"command-center-sovereign-v5.svg").write_text(badge, encoding="utf-8")
-    (SITE/"badges"/"command-center-sovereign-v5.svg").write_text(badge, encoding="utf-8")
+    (BADGES/"command-center-sovereign-v5-1.svg").write_text(badge, encoding="utf-8")
+    (SITE/"badges"/"command-center-sovereign-v5-1.svg").write_text(badge, encoding="utf-8")
     DOCS.mkdir(exist_ok=True)
-    (DOCS/"SKILLOS_SOVEREIGN_COMMAND_CENTER_V5.md").write_text(f'''# SkillOS Sovereign Command Center v5
+    (DOCS/"SKILLOS_SOVEREIGN_COMMAND_CENTER_V5.md").write_text(f'''# SkillOS Sovereign Command Center v5.1
 
 Generated: `{ts}`
 
@@ -497,11 +633,11 @@ Every job can become a reusable skill. Every verified skill can strengthen the w
 
 This is deterministic public proof and publication infrastructure. It is not audited customer ROI, financial advice, investment advice, legal advice, medical advice, policy advice, token advice, achieved superintelligence, Kardashev Type II achievement, or a guarantee.
 ''', encoding="utf-8")
-    (DOCS/"SKILLOS_COMMAND_CENTER_ROOT_FIX_V5_RUNBOOK.md").write_text(f'''# Root Fix v5 Runbook
+    (DOCS/"SKILLOS_COMMAND_CENTER_ROOT_FIX_V5_RUNBOOK.md").write_text(f'''# Root Fix v5.1 Runbook
 
 Run:
 
-`GitHub → Actions → SkillOS Sovereign Command Center v5 Canonical Deploy → Run workflow`
+`GitHub → Actions → SkillOS Sovereign Command Center v5.1 Canonical Deploy → Run workflow`
 
 Inputs:
 
@@ -513,8 +649,8 @@ Inputs:
 Verify:
 
 - `https://montrealai.github.io/skillos/data/command-center-manifest.json` contains `{SCHEMA}`
-- `https://montrealai.github.io/skillos/?v=sovereign-v5` contains `{MARKER}`
-- `https://montrealai.github.io/skillos/index.html?v=sovereign-v5` contains `{MARKER}`
+- `https://montrealai.github.io/skillos/?v=sovereign-v5-1` contains `{MARKER}`
+- `https://montrealai.github.io/skillos/index.html?v=sovereign-v5-1` contains `{MARKER}`
 - Neither page contains `Autonomous Proof Command Center`.
 ''', encoding="utf-8")
 

@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
-MARKER = "SKILLOS_COMMAND_CENTER_V5_CANONICAL_ROOT"
+MARKER = "SKILLOS_COMMAND_CENTER_V5_1_CANONICAL_ROOT"
 FORBIDDEN = [
     "Autonomous Proof Command Center",
     "SkillOS Public Command Center v2",
@@ -36,7 +36,7 @@ def main() -> None:
             fail(f"Missing required file: site/{rel}")
     index = read(SITE / "index.html")
     if MARKER not in index:
-        fail("index.html missing canonical v5 marker")
+        fail("index.html missing canonical v5.1 marker")
     for phrase in FORBIDDEN:
         if phrase in index:
             fail(f"index.html contains forbidden legacy phrase: {phrase}")
@@ -44,8 +44,8 @@ def main() -> None:
         if snippet not in index:
             fail(f"index.html missing required snippet: {snippet}")
     manifest = json.loads(read(SITE / "data" / "command-center-manifest.json"))
-    if manifest.get("schema") != "skillos.command_center.sovereign.v5":
-        fail("manifest schema is not v5")
+    if manifest.get("schema") != "skillos.command_center.sovereign.v5.1":
+        fail("manifest schema is not v5.1")
     if manifest.get("marker") != MARKER:
         fail("manifest marker mismatch")
     registry = json.loads(read(SITE / "proof-registry.json"))

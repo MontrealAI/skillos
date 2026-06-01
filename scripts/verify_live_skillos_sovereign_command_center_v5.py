@@ -7,20 +7,20 @@ import time
 import urllib.request
 from urllib.parse import urljoin
 
-MARKER = "SKILLOS_COMMAND_CENTER_V5_CANONICAL_ROOT"
+MARKER = "SKILLOS_COMMAND_CENTER_V5_1_CANONICAL_ROOT"
 FORBIDDEN = ["Autonomous Proof Command Center", "SkillOS Public Command Center v2", "SkillOS Public Command Center v3"]
 
 def fetch(url: str) -> str:
-    req = urllib.request.Request(url, headers={"Cache-Control": "no-cache", "Pragma": "no-cache", "User-Agent": "SkillOS-v5-live-verifier"})
+    req = urllib.request.Request(url, headers={"Cache-Control": "no-cache", "Pragma": "no-cache", "User-Agent": "SkillOS-v5.1-live-verifier"})
     with urllib.request.urlopen(req, timeout=20) as r:
         return r.read().decode("utf-8", "replace")
 
 def check(base: str) -> dict:
     base = base.rstrip("/") + "/"
     urls = {
-        "root": base + "?v=sovereign-v5",
-        "index": urljoin(base, "index.html?v=sovereign-v5"),
-        "manifest": urljoin(base, "data/command-center-manifest.json?v=sovereign-v5"),
+        "root": base + "?v=sovereign-v5-1",
+        "index": urljoin(base, "index.html?v=sovereign-v5-1-1"),
+        "manifest": urljoin(base, "data/command-center-manifest.json?v=sovereign-v5-1-1"),
     }
     root = fetch(urls["root"])
     index = fetch(urls["index"])
@@ -32,8 +32,8 @@ def check(base: str) -> dict:
         for phrase in FORBIDDEN:
             if phrase in text:
                 errors.append(f"{label} contains forbidden phrase: {phrase}")
-    if manifest.get("schema") != "skillos.command_center.sovereign.v5":
-        errors.append("manifest schema is not v5")
+    if manifest.get("schema") != "skillos.command_center.sovereign.v5.1":
+        errors.append("manifest schema is not v5.1")
     return {"urls": urls, "errors": errors, "manifest_schema": manifest.get("schema")}
 
 def main():

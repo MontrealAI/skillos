@@ -1,6 +1,6 @@
-# SkillOS Sovereign Command Center v5
+# SkillOS Sovereign Command Center v5.1
 
-Generated: `2026-06-01T16:17:37Z`
+Generated: `2026-06-01T17:07:59Z`
 
 This is the canonical public SkillOS Command Center publisher.
 
@@ -8,7 +8,7 @@ It scans proof receipts, workflows, reports, badges, and Skills Used metadata; r
 
 ## Canonical marker
 
-`SKILLOS_COMMAND_CENTER_V5_CANONICAL_ROOT`
+`SKILLOS_COMMAND_CENTER_V5_1_CANONICAL_ROOT`
 
 ## Public thesis
 
@@ -17,3 +17,8 @@ Every job can become a reusable skill. Every verified skill can strengthen the w
 ## Boundary
 
 This is deterministic public proof and publication infrastructure. It is not audited customer ROI, financial advice, investment advice, legal advice, medical advice, policy advice, token advice, achieved superintelligence, Kardashev Type II achievement, or a guarantee.
+
+
+## v5.1 robustness note
+
+The builder accepts heterogeneous proof receipts. Nested objects for titles, IDs, statuses, registry entries, skills, and numeric fields are normalized instead of crashing the public-site refresh.

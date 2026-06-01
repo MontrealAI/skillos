@@ -1,0 +1,955 @@
+{
+  "proved": true,
+  "generated_at_utc": "2026-06-01T13:23:57.898650+00:00",
+  "proof_type": "autonomous_no_send_shadow_pilot",
+  "important_note": "This is a deterministic no-send benchmark using synthetic/redacted call notes. It demonstrates the SkillOS mechanism and does not claim audited customer results or financial guarantees.",
+  "workflow": "Sales follow-up email drafts from call notes",
+  "mode": "no_send_shadow_evaluation",
+  "dataset": {
+    "source": "data/shadow_pilot_benchmark.json",
+    "description": "Synthetic/redacted sales-follow-up benchmark for autonomous GitHub Actions proof. No emails are sent and no private customer data is included.",
+    "training_examples": 20,
+    "holdout_examples": 20,
+    "total_examples": 40
+  },
+  "learned_skill_rules": [
+    "Carry forward important constraints so the draft stays accurate.",
+    "Match the requested tone: executive, technical, warm, or concise.",
+    "Put the agreed next step and date in the first three body paragraphs.",
+    "Anchor the message in the buyer's stated pain point.",
+    "Preserve exact dates from call notes instead of using vague timing.",
+    "Do not invent guarantees, savings, or commitments not present in the notes."
+  ],
+  "lessons": [
+    {
+      "issue": "missing constraint",
+      "training_occurrences": 16,
+      "skill_rule": "Carry forward important constraints so the draft stays accurate."
+    },
+    {
+      "issue": "tone could be better matched",
+      "training_occurrences": 14,
+      "skill_rule": "Match the requested tone: executive, technical, warm, or concise."
+    },
+    {
+      "issue": "missing agreed next step",
+      "training_occurrences": 10,
+      "skill_rule": "Put the agreed next step and date in the first three body paragraphs."
+    },
+    {
+      "issue": "missing pain/context",
+      "training_occurrences": 10,
+      "skill_rule": "Anchor the message in the buyer's stated pain point."
+    },
+    {
+      "issue": "missing exact date",
+      "training_occurrences": 5,
+      "skill_rule": "Preserve exact dates from call notes instead of using vague timing."
+    },
+    {
+      "issue": "unsupported commitment or claim",
+      "training_occurrences": 2,
+      "skill_rule": "Do not invent guarantees, savings, or commitments not present in the notes."
+    }
+  ],
+  "holdout_baseline_metrics": {
+    "average_quality_score": 68.1,
+    "average_edit_minutes": 6.55,
+    "average_cost_usd": 8.26,
+    "accepted_rate": 0.2,
+    "hallucination_rate": 0.15
+  },
+  "holdout_skillos_metrics": {
+    "average_quality_score": 97.9,
+    "average_edit_minutes": 2.35,
+    "average_cost_usd": 3.02,
+    "accepted_rate": 1,
+    "hallucination_rate": 0
+  },
+  "improvements": {
+    "quality_gain_points": 29.8,
+    "edit_time_reduction_percent": 64.1,
+    "cost_reduction_percent": 63.4,
+    "accepted_rate_lift_points": 80.0
+  },
+  "pass_checks": {
+    "no_send_mode": true,
+    "holdout_examples_at_least_15": true,
+    "learned_at_least_5_skill_rules": true,
+    "holdout_quality_gain_at_least_15_points": true,
+    "holdout_edit_time_reduction_at_least_25_percent": true,
+    "holdout_acceptance_lift_at_least_20_points": true,
+    "skillos_hallucination_rate_zero": true,
+    "all_holdout_jobs_improve": true
+  },
+  "holdout_results": [
+    {
+      "job_id": "sp-021",
+      "segment": "SaaS revenue operations",
+      "baseline": {
+        "score": 65.0,
+        "accepted": false,
+        "edit_minutes": 8.57,
+        "estimated_cost_usd": 10.79,
+        "issues": [
+          "missing pain/context",
+          "missing exact date",
+          "unsupported commitment or claim"
+        ],
+        "hallucinated_commitment": true,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 100.0,
+        "accepted": true,
+        "edit_minutes": 2.0,
+        "estimated_cost_usd": 2.58,
+        "issues": [],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-022",
+      "segment": "AI consulting",
+      "baseline": {
+        "score": 70.0,
+        "accepted": false,
+        "edit_minutes": 5.55,
+        "estimated_cost_usd": 7.02,
+        "issues": [
+          "missing agreed next step",
+          "missing constraint"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 100.0,
+        "accepted": true,
+        "edit_minutes": 2.0,
+        "estimated_cost_usd": 2.58,
+        "issues": [],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-023",
+      "segment": "Customer support",
+      "baseline": {
+        "score": 51.0,
+        "accepted": false,
+        "edit_minutes": 8.28,
+        "estimated_cost_usd": 10.43,
+        "issues": [
+          "missing pain/context",
+          "missing agreed next step",
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 100.0,
+        "accepted": true,
+        "edit_minutes": 2.0,
+        "estimated_cost_usd": 2.58,
+        "issues": [],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-024",
+      "segment": "Healthcare operations",
+      "baseline": {
+        "score": 86.0,
+        "accepted": true,
+        "edit_minutes": 4.35,
+        "estimated_cost_usd": 5.52,
+        "issues": [
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 93.0,
+        "accepted": true,
+        "edit_minutes": 3.18,
+        "estimated_cost_usd": 4.05,
+        "issues": [
+          "CTA unclear or overloaded"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-025",
+      "segment": "Education services",
+      "baseline": {
+        "score": 51.0,
+        "accepted": false,
+        "edit_minutes": 8.28,
+        "estimated_cost_usd": 10.43,
+        "issues": [
+          "missing pain/context",
+          "missing agreed next step",
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 93.0,
+        "accepted": true,
+        "edit_minutes": 3.18,
+        "estimated_cost_usd": 4.05,
+        "issues": [
+          "CTA unclear or overloaded"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-026",
+      "segment": "Finance operations",
+      "baseline": {
+        "score": 76.0,
+        "accepted": false,
+        "edit_minutes": 5.1,
+        "estimated_cost_usd": 6.46,
+        "issues": [
+          "missing agreed next step",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 100.0,
+        "accepted": true,
+        "edit_minutes": 2.0,
+        "estimated_cost_usd": 2.58,
+        "issues": [],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-027",
+      "segment": "Legal operations",
+      "baseline": {
+        "score": 67.0,
+        "accepted": false,
+        "edit_minutes": 6.43,
+        "estimated_cost_usd": 8.12,
+        "issues": [
+          "missing pain/context",
+          "missing exact date",
+          "missing constraint"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 93.0,
+        "accepted": true,
+        "edit_minutes": 3.18,
+        "estimated_cost_usd": 4.05,
+        "issues": [
+          "CTA unclear or overloaded"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-028",
+      "segment": "Recruiting operations",
+      "baseline": {
+        "score": 78.0,
+        "accepted": false,
+        "edit_minutes": 6.95,
+        "estimated_cost_usd": 8.77,
+        "issues": [
+          "missing constraint",
+          "unsupported commitment or claim"
+        ],
+        "hallucinated_commitment": true,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 100.0,
+        "accepted": true,
+        "edit_minutes": 2.0,
+        "estimated_cost_usd": 2.58,
+        "issues": [],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-029",
+      "segment": "Product operations",
+      "baseline": {
+        "score": 51.0,
+        "accepted": false,
+        "edit_minutes": 8.28,
+        "estimated_cost_usd": 10.43,
+        "issues": [
+          "missing pain/context",
+          "missing agreed next step",
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 100.0,
+        "accepted": true,
+        "edit_minutes": 2.0,
+        "estimated_cost_usd": 2.58,
+        "issues": [],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-030",
+      "segment": "Agency sales",
+      "baseline": {
+        "score": 78.0,
+        "accepted": false,
+        "edit_minutes": 5.6,
+        "estimated_cost_usd": 7.08,
+        "issues": [
+          "missing exact date",
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 100.0,
+        "accepted": true,
+        "edit_minutes": 2.0,
+        "estimated_cost_usd": 2.58,
+        "issues": [],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-031",
+      "segment": "SaaS revenue operations",
+      "baseline": {
+        "score": 61.0,
+        "accepted": false,
+        "edit_minutes": 6.88,
+        "estimated_cost_usd": 8.68,
+        "issues": [
+          "missing pain/context",
+          "missing agreed next step",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 100.0,
+        "accepted": true,
+        "edit_minutes": 2.0,
+        "estimated_cost_usd": 2.58,
+        "issues": [],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-032",
+      "segment": "AI consulting",
+      "baseline": {
+        "score": 90.0,
+        "accepted": true,
+        "edit_minutes": 3.4,
+        "estimated_cost_usd": 4.33,
+        "issues": [
+          "missing constraint"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 100.0,
+        "accepted": true,
+        "edit_minutes": 2.0,
+        "estimated_cost_usd": 2.58,
+        "issues": [],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-033",
+      "segment": "Customer support",
+      "baseline": {
+        "score": 63.0,
+        "accepted": false,
+        "edit_minutes": 7.38,
+        "estimated_cost_usd": 9.3,
+        "issues": [
+          "missing pain/context",
+          "missing exact date",
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 100.0,
+        "accepted": true,
+        "edit_minutes": 2.0,
+        "estimated_cost_usd": 2.58,
+        "issues": [],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-034",
+      "segment": "Healthcare operations",
+      "baseline": {
+        "score": 66.0,
+        "accepted": false,
+        "edit_minutes": 6.5,
+        "estimated_cost_usd": 8.21,
+        "issues": [
+          "missing agreed next step",
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 93.0,
+        "accepted": true,
+        "edit_minutes": 3.18,
+        "estimated_cost_usd": 4.05,
+        "issues": [
+          "CTA unclear or overloaded"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-035",
+      "segment": "Education services",
+      "baseline": {
+        "score": 39.0,
+        "accepted": false,
+        "edit_minutes": 11.82,
+        "estimated_cost_usd": 14.86,
+        "issues": [
+          "missing pain/context",
+          "missing agreed next step",
+          "missing constraint",
+          "tone could be better matched",
+          "unsupported commitment or claim"
+        ],
+        "hallucinated_commitment": true,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 93.0,
+        "accepted": true,
+        "edit_minutes": 3.18,
+        "estimated_cost_usd": 4.05,
+        "issues": [
+          "CTA unclear or overloaded"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-036",
+      "segment": "Finance operations",
+      "baseline": {
+        "score": 96.0,
+        "accepted": true,
+        "edit_minutes": 2.95,
+        "estimated_cost_usd": 3.77,
+        "issues": [
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 100.0,
+        "accepted": true,
+        "edit_minutes": 2.0,
+        "estimated_cost_usd": 2.58,
+        "issues": [],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-037",
+      "segment": "Legal operations",
+      "baseline": {
+        "score": 55.0,
+        "accepted": false,
+        "edit_minutes": 7.33,
+        "estimated_cost_usd": 9.24,
+        "issues": [
+          "missing pain/context",
+          "missing agreed next step",
+          "missing constraint"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 93.0,
+        "accepted": true,
+        "edit_minutes": 3.18,
+        "estimated_cost_usd": 4.05,
+        "issues": [
+          "CTA unclear or overloaded"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-038",
+      "segment": "Recruiting operations",
+      "baseline": {
+        "score": 70.0,
+        "accepted": false,
+        "edit_minutes": 5.55,
+        "estimated_cost_usd": 7.02,
+        "issues": [
+          "missing agreed next step",
+          "missing constraint"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 100.0,
+        "accepted": true,
+        "edit_minutes": 2.0,
+        "estimated_cost_usd": 2.58,
+        "issues": [],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-039",
+      "segment": "Product operations",
+      "baseline": {
+        "score": 63.0,
+        "accepted": false,
+        "edit_minutes": 7.38,
+        "estimated_cost_usd": 9.3,
+        "issues": [
+          "missing pain/context",
+          "missing exact date",
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 100.0,
+        "accepted": true,
+        "edit_minutes": 2.0,
+        "estimated_cost_usd": 2.58,
+        "issues": [],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    },
+    {
+      "job_id": "sp-040",
+      "segment": "Agency sales",
+      "baseline": {
+        "score": 86.0,
+        "accepted": true,
+        "edit_minutes": 4.35,
+        "estimated_cost_usd": 5.52,
+        "issues": [
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "skillos": {
+        "score": 100.0,
+        "accepted": true,
+        "edit_minutes": 2.0,
+        "estimated_cost_usd": 2.58,
+        "issues": [],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      },
+      "improved": true
+    }
+  ],
+  "training_baseline_summary": [
+    {
+      "job_id": "sp-001",
+      "baseline": {
+        "score": 61.0,
+        "accepted": false,
+        "edit_minutes": 6.88,
+        "estimated_cost_usd": 8.68,
+        "issues": [
+          "missing pain/context",
+          "missing agreed next step",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-002",
+      "baseline": {
+        "score": 70.0,
+        "accepted": false,
+        "edit_minutes": 5.55,
+        "estimated_cost_usd": 7.02,
+        "issues": [
+          "missing agreed next step",
+          "missing constraint"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-003",
+      "baseline": {
+        "score": 63.0,
+        "accepted": false,
+        "edit_minutes": 7.38,
+        "estimated_cost_usd": 9.3,
+        "issues": [
+          "missing pain/context",
+          "missing exact date",
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-004",
+      "baseline": {
+        "score": 86.0,
+        "accepted": true,
+        "edit_minutes": 4.35,
+        "estimated_cost_usd": 5.52,
+        "issues": [
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-005",
+      "baseline": {
+        "score": 51.0,
+        "accepted": false,
+        "edit_minutes": 8.28,
+        "estimated_cost_usd": 10.43,
+        "issues": [
+          "missing pain/context",
+          "missing agreed next step",
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-006",
+      "baseline": {
+        "score": 88.0,
+        "accepted": true,
+        "edit_minutes": 4.2,
+        "estimated_cost_usd": 5.33,
+        "issues": [
+          "missing exact date",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-007",
+      "baseline": {
+        "score": 43.0,
+        "accepted": false,
+        "edit_minutes": 10.88,
+        "estimated_cost_usd": 13.68,
+        "issues": [
+          "missing pain/context",
+          "missing agreed next step",
+          "missing constraint",
+          "unsupported commitment or claim"
+        ],
+        "hallucinated_commitment": true,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-008",
+      "baseline": {
+        "score": 90.0,
+        "accepted": true,
+        "edit_minutes": 3.4,
+        "estimated_cost_usd": 4.33,
+        "issues": [
+          "missing constraint"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-009",
+      "baseline": {
+        "score": 63.0,
+        "accepted": false,
+        "edit_minutes": 7.38,
+        "estimated_cost_usd": 9.3,
+        "issues": [
+          "missing pain/context",
+          "missing exact date",
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-010",
+      "baseline": {
+        "score": 66.0,
+        "accepted": false,
+        "edit_minutes": 6.5,
+        "estimated_cost_usd": 8.21,
+        "issues": [
+          "missing agreed next step",
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-011",
+      "baseline": {
+        "score": 61.0,
+        "accepted": false,
+        "edit_minutes": 6.88,
+        "estimated_cost_usd": 8.68,
+        "issues": [
+          "missing pain/context",
+          "missing agreed next step",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-012",
+      "baseline": {
+        "score": 90.0,
+        "accepted": true,
+        "edit_minutes": 3.4,
+        "estimated_cost_usd": 4.33,
+        "issues": [
+          "missing constraint"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-013",
+      "baseline": {
+        "score": 51.0,
+        "accepted": false,
+        "edit_minutes": 8.28,
+        "estimated_cost_usd": 10.43,
+        "issues": [
+          "missing pain/context",
+          "missing agreed next step",
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-014",
+      "baseline": {
+        "score": 54.0,
+        "accepted": false,
+        "edit_minutes": 10.05,
+        "estimated_cost_usd": 12.64,
+        "issues": [
+          "missing agreed next step",
+          "missing constraint",
+          "tone could be better matched",
+          "unsupported commitment or claim"
+        ],
+        "hallucinated_commitment": true,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-015",
+      "baseline": {
+        "score": 63.0,
+        "accepted": false,
+        "edit_minutes": 7.38,
+        "estimated_cost_usd": 9.3,
+        "issues": [
+          "missing pain/context",
+          "missing exact date",
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-016",
+      "baseline": {
+        "score": 96.0,
+        "accepted": true,
+        "edit_minutes": 2.95,
+        "estimated_cost_usd": 3.77,
+        "issues": [
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-017",
+      "baseline": {
+        "score": 55.0,
+        "accepted": false,
+        "edit_minutes": 7.33,
+        "estimated_cost_usd": 9.24,
+        "issues": [
+          "missing pain/context",
+          "missing agreed next step",
+          "missing constraint"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-018",
+      "baseline": {
+        "score": 82.0,
+        "accepted": false,
+        "edit_minutes": 4.65,
+        "estimated_cost_usd": 5.89,
+        "issues": [
+          "missing exact date",
+          "missing constraint"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-019",
+      "baseline": {
+        "score": 51.0,
+        "accepted": false,
+        "edit_minutes": 8.28,
+        "estimated_cost_usd": 10.43,
+        "issues": [
+          "missing pain/context",
+          "missing agreed next step",
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    },
+    {
+      "job_id": "sp-020",
+      "baseline": {
+        "score": 86.0,
+        "accepted": true,
+        "edit_minutes": 4.35,
+        "estimated_cost_usd": 5.52,
+        "issues": [
+          "missing constraint",
+          "tone could be better matched"
+        ],
+        "hallucinated_commitment": false,
+        "unauthorized_send": false
+      }
+    }
+  ]
+}

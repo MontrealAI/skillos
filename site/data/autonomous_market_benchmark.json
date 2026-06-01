@@ -1,0 +1,1208 @@
+{
+  "generated_from": "deterministic synthetic/redacted-style benchmark",
+  "seed": 20260529,
+  "train_count": 40,
+  "holdout_count": 80,
+  "examples": [
+    {
+      "id": "job_001",
+      "split": "train",
+      "prospect_name": "Alex",
+      "company": "Northstar Robotics",
+      "pain": "manual CRM follow-up is inconsistent",
+      "next_step": "schedule a 20-minute implementation review next Tuesday",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Alex at Northstar Robotics. Main pain: manual CRM follow-up is inconsistent. Buyer wants a concise recap and clear next step. Agreed next step: schedule a 20-minute implementation review next Tuesday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_002",
+      "split": "train",
+      "prospect_name": "Maya",
+      "company": "Atlas Revenue Ops",
+      "pain": "handoffs between founder and sales team are messy",
+      "next_step": "review pricing options with the finance owner",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Maya at Atlas Revenue Ops. Main pain: handoffs between founder and sales team are messy. Buyer wants a concise recap and clear next step. Agreed next step: review pricing options with the finance owner. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_003",
+      "split": "train",
+      "prospect_name": "Jordan",
+      "company": "Vector Health",
+      "pain": "follow-ups sound generic and low signal",
+      "next_step": "confirm the pilot success criteria before the next call",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Jordan at Vector Health. Main pain: follow-ups sound generic and low signal. Buyer wants a concise recap and clear next step. Agreed next step: confirm the pilot success criteria before the next call. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_004",
+      "split": "train",
+      "prospect_name": "Sam",
+      "company": "Orion Systems",
+      "pain": "sales notes are scattered after calls",
+      "next_step": "prepare a short proof-of-value plan for the buying committee",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Sam at Orion Systems. Main pain: sales notes are scattered after calls. Buyer wants a concise recap and clear next step. Agreed next step: prepare a short proof-of-value plan for the buying committee. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_005",
+      "split": "train",
+      "prospect_name": "Riley",
+      "company": "Beacon AI",
+      "pain": "proposal recaps lose the buyer's main pain",
+      "next_step": "book a technical scoping session with the operations lead",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Riley at Beacon AI. Main pain: proposal recaps lose the buyer's main pain. Buyer wants a concise recap and clear next step. Agreed next step: book a technical scoping session with the operations lead. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_006",
+      "split": "train",
+      "prospect_name": "Taylor",
+      "company": "Summit Cloud",
+      "pain": "the team forgets to mention the agreed next step",
+      "next_step": "send a two-page rollout plan by Friday",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Taylor at Summit Cloud. Main pain: the team forgets to mention the agreed next step. Buyer wants a concise recap and clear next step. Agreed next step: send a two-page rollout plan by Friday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_007",
+      "split": "train",
+      "prospect_name": "Morgan",
+      "company": "Helio Finance",
+      "pain": "prospects wait too long for next steps",
+      "next_step": "send the security checklist for internal review",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Morgan at Helio Finance. Main pain: prospects wait too long for next steps. Buyer wants a concise recap and clear next step. Agreed next step: send the security checklist for internal review. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_008",
+      "split": "train",
+      "prospect_name": "Casey",
+      "company": "Nova Industrial",
+      "pain": "call summaries do not turn into clear action",
+      "next_step": "share a redacted workflow sample for evaluation",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Casey at Nova Industrial. Main pain: call summaries do not turn into clear action. Buyer wants a concise recap and clear next step. Agreed next step: share a redacted workflow sample for evaluation. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_009",
+      "split": "train",
+      "prospect_name": "Alex",
+      "company": "Northstar Robotics",
+      "pain": "manual CRM follow-up is inconsistent",
+      "next_step": "schedule a 20-minute implementation review next Tuesday",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Alex at Northstar Robotics. Main pain: manual CRM follow-up is inconsistent. Buyer wants a concise recap and clear next step. Agreed next step: schedule a 20-minute implementation review next Tuesday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_010",
+      "split": "train",
+      "prospect_name": "Maya",
+      "company": "Atlas Revenue Ops",
+      "pain": "handoffs between founder and sales team are messy",
+      "next_step": "review pricing options with the finance owner",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Maya at Atlas Revenue Ops. Main pain: handoffs between founder and sales team are messy. Buyer wants a concise recap and clear next step. Agreed next step: review pricing options with the finance owner. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_011",
+      "split": "train",
+      "prospect_name": "Jordan",
+      "company": "Vector Health",
+      "pain": "follow-ups sound generic and low signal",
+      "next_step": "confirm the pilot success criteria before the next call",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Jordan at Vector Health. Main pain: follow-ups sound generic and low signal. Buyer wants a concise recap and clear next step. Agreed next step: confirm the pilot success criteria before the next call. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_012",
+      "split": "train",
+      "prospect_name": "Sam",
+      "company": "Orion Systems",
+      "pain": "sales notes are scattered after calls",
+      "next_step": "prepare a short proof-of-value plan for the buying committee",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Sam at Orion Systems. Main pain: sales notes are scattered after calls. Buyer wants a concise recap and clear next step. Agreed next step: prepare a short proof-of-value plan for the buying committee. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_013",
+      "split": "train",
+      "prospect_name": "Riley",
+      "company": "Beacon AI",
+      "pain": "proposal recaps lose the buyer's main pain",
+      "next_step": "book a technical scoping session with the operations lead",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Riley at Beacon AI. Main pain: proposal recaps lose the buyer's main pain. Buyer wants a concise recap and clear next step. Agreed next step: book a technical scoping session with the operations lead. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_014",
+      "split": "train",
+      "prospect_name": "Taylor",
+      "company": "Summit Cloud",
+      "pain": "the team forgets to mention the agreed next step",
+      "next_step": "send a two-page rollout plan by Friday",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Taylor at Summit Cloud. Main pain: the team forgets to mention the agreed next step. Buyer wants a concise recap and clear next step. Agreed next step: send a two-page rollout plan by Friday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_015",
+      "split": "train",
+      "prospect_name": "Morgan",
+      "company": "Helio Finance",
+      "pain": "prospects wait too long for next steps",
+      "next_step": "send the security checklist for internal review",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Morgan at Helio Finance. Main pain: prospects wait too long for next steps. Buyer wants a concise recap and clear next step. Agreed next step: send the security checklist for internal review. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_016",
+      "split": "train",
+      "prospect_name": "Casey",
+      "company": "Nova Industrial",
+      "pain": "call summaries do not turn into clear action",
+      "next_step": "share a redacted workflow sample for evaluation",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Casey at Nova Industrial. Main pain: call summaries do not turn into clear action. Buyer wants a concise recap and clear next step. Agreed next step: share a redacted workflow sample for evaluation. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_017",
+      "split": "train",
+      "prospect_name": "Alex",
+      "company": "Northstar Robotics",
+      "pain": "manual CRM follow-up is inconsistent",
+      "next_step": "schedule a 20-minute implementation review next Tuesday",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Alex at Northstar Robotics. Main pain: manual CRM follow-up is inconsistent. Buyer wants a concise recap and clear next step. Agreed next step: schedule a 20-minute implementation review next Tuesday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_018",
+      "split": "train",
+      "prospect_name": "Maya",
+      "company": "Atlas Revenue Ops",
+      "pain": "handoffs between founder and sales team are messy",
+      "next_step": "review pricing options with the finance owner",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Maya at Atlas Revenue Ops. Main pain: handoffs between founder and sales team are messy. Buyer wants a concise recap and clear next step. Agreed next step: review pricing options with the finance owner. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_019",
+      "split": "train",
+      "prospect_name": "Jordan",
+      "company": "Vector Health",
+      "pain": "follow-ups sound generic and low signal",
+      "next_step": "confirm the pilot success criteria before the next call",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Jordan at Vector Health. Main pain: follow-ups sound generic and low signal. Buyer wants a concise recap and clear next step. Agreed next step: confirm the pilot success criteria before the next call. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_020",
+      "split": "train",
+      "prospect_name": "Sam",
+      "company": "Orion Systems",
+      "pain": "sales notes are scattered after calls",
+      "next_step": "prepare a short proof-of-value plan for the buying committee",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Sam at Orion Systems. Main pain: sales notes are scattered after calls. Buyer wants a concise recap and clear next step. Agreed next step: prepare a short proof-of-value plan for the buying committee. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_021",
+      "split": "train",
+      "prospect_name": "Riley",
+      "company": "Beacon AI",
+      "pain": "proposal recaps lose the buyer's main pain",
+      "next_step": "book a technical scoping session with the operations lead",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Riley at Beacon AI. Main pain: proposal recaps lose the buyer's main pain. Buyer wants a concise recap and clear next step. Agreed next step: book a technical scoping session with the operations lead. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_022",
+      "split": "train",
+      "prospect_name": "Taylor",
+      "company": "Summit Cloud",
+      "pain": "the team forgets to mention the agreed next step",
+      "next_step": "send a two-page rollout plan by Friday",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Taylor at Summit Cloud. Main pain: the team forgets to mention the agreed next step. Buyer wants a concise recap and clear next step. Agreed next step: send a two-page rollout plan by Friday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_023",
+      "split": "train",
+      "prospect_name": "Morgan",
+      "company": "Helio Finance",
+      "pain": "prospects wait too long for next steps",
+      "next_step": "send the security checklist for internal review",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Morgan at Helio Finance. Main pain: prospects wait too long for next steps. Buyer wants a concise recap and clear next step. Agreed next step: send the security checklist for internal review. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_024",
+      "split": "train",
+      "prospect_name": "Casey",
+      "company": "Nova Industrial",
+      "pain": "call summaries do not turn into clear action",
+      "next_step": "share a redacted workflow sample for evaluation",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Casey at Nova Industrial. Main pain: call summaries do not turn into clear action. Buyer wants a concise recap and clear next step. Agreed next step: share a redacted workflow sample for evaluation. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_025",
+      "split": "train",
+      "prospect_name": "Alex",
+      "company": "Northstar Robotics",
+      "pain": "manual CRM follow-up is inconsistent",
+      "next_step": "schedule a 20-minute implementation review next Tuesday",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Alex at Northstar Robotics. Main pain: manual CRM follow-up is inconsistent. Buyer wants a concise recap and clear next step. Agreed next step: schedule a 20-minute implementation review next Tuesday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_026",
+      "split": "train",
+      "prospect_name": "Maya",
+      "company": "Atlas Revenue Ops",
+      "pain": "handoffs between founder and sales team are messy",
+      "next_step": "review pricing options with the finance owner",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Maya at Atlas Revenue Ops. Main pain: handoffs between founder and sales team are messy. Buyer wants a concise recap and clear next step. Agreed next step: review pricing options with the finance owner. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_027",
+      "split": "train",
+      "prospect_name": "Jordan",
+      "company": "Vector Health",
+      "pain": "follow-ups sound generic and low signal",
+      "next_step": "confirm the pilot success criteria before the next call",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Jordan at Vector Health. Main pain: follow-ups sound generic and low signal. Buyer wants a concise recap and clear next step. Agreed next step: confirm the pilot success criteria before the next call. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_028",
+      "split": "train",
+      "prospect_name": "Sam",
+      "company": "Orion Systems",
+      "pain": "sales notes are scattered after calls",
+      "next_step": "prepare a short proof-of-value plan for the buying committee",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Sam at Orion Systems. Main pain: sales notes are scattered after calls. Buyer wants a concise recap and clear next step. Agreed next step: prepare a short proof-of-value plan for the buying committee. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_029",
+      "split": "train",
+      "prospect_name": "Riley",
+      "company": "Beacon AI",
+      "pain": "proposal recaps lose the buyer's main pain",
+      "next_step": "book a technical scoping session with the operations lead",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Riley at Beacon AI. Main pain: proposal recaps lose the buyer's main pain. Buyer wants a concise recap and clear next step. Agreed next step: book a technical scoping session with the operations lead. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_030",
+      "split": "train",
+      "prospect_name": "Taylor",
+      "company": "Summit Cloud",
+      "pain": "the team forgets to mention the agreed next step",
+      "next_step": "send a two-page rollout plan by Friday",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Taylor at Summit Cloud. Main pain: the team forgets to mention the agreed next step. Buyer wants a concise recap and clear next step. Agreed next step: send a two-page rollout plan by Friday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_031",
+      "split": "train",
+      "prospect_name": "Morgan",
+      "company": "Helio Finance",
+      "pain": "prospects wait too long for next steps",
+      "next_step": "send the security checklist for internal review",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Morgan at Helio Finance. Main pain: prospects wait too long for next steps. Buyer wants a concise recap and clear next step. Agreed next step: send the security checklist for internal review. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_032",
+      "split": "train",
+      "prospect_name": "Casey",
+      "company": "Nova Industrial",
+      "pain": "call summaries do not turn into clear action",
+      "next_step": "share a redacted workflow sample for evaluation",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Casey at Nova Industrial. Main pain: call summaries do not turn into clear action. Buyer wants a concise recap and clear next step. Agreed next step: share a redacted workflow sample for evaluation. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_033",
+      "split": "train",
+      "prospect_name": "Alex",
+      "company": "Northstar Robotics",
+      "pain": "manual CRM follow-up is inconsistent",
+      "next_step": "schedule a 20-minute implementation review next Tuesday",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Alex at Northstar Robotics. Main pain: manual CRM follow-up is inconsistent. Buyer wants a concise recap and clear next step. Agreed next step: schedule a 20-minute implementation review next Tuesday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_034",
+      "split": "train",
+      "prospect_name": "Maya",
+      "company": "Atlas Revenue Ops",
+      "pain": "handoffs between founder and sales team are messy",
+      "next_step": "review pricing options with the finance owner",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Maya at Atlas Revenue Ops. Main pain: handoffs between founder and sales team are messy. Buyer wants a concise recap and clear next step. Agreed next step: review pricing options with the finance owner. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_035",
+      "split": "train",
+      "prospect_name": "Jordan",
+      "company": "Vector Health",
+      "pain": "follow-ups sound generic and low signal",
+      "next_step": "confirm the pilot success criteria before the next call",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Jordan at Vector Health. Main pain: follow-ups sound generic and low signal. Buyer wants a concise recap and clear next step. Agreed next step: confirm the pilot success criteria before the next call. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_036",
+      "split": "train",
+      "prospect_name": "Sam",
+      "company": "Orion Systems",
+      "pain": "sales notes are scattered after calls",
+      "next_step": "prepare a short proof-of-value plan for the buying committee",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Sam at Orion Systems. Main pain: sales notes are scattered after calls. Buyer wants a concise recap and clear next step. Agreed next step: prepare a short proof-of-value plan for the buying committee. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_037",
+      "split": "train",
+      "prospect_name": "Riley",
+      "company": "Beacon AI",
+      "pain": "proposal recaps lose the buyer's main pain",
+      "next_step": "book a technical scoping session with the operations lead",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Riley at Beacon AI. Main pain: proposal recaps lose the buyer's main pain. Buyer wants a concise recap and clear next step. Agreed next step: book a technical scoping session with the operations lead. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_038",
+      "split": "train",
+      "prospect_name": "Taylor",
+      "company": "Summit Cloud",
+      "pain": "the team forgets to mention the agreed next step",
+      "next_step": "send a two-page rollout plan by Friday",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Taylor at Summit Cloud. Main pain: the team forgets to mention the agreed next step. Buyer wants a concise recap and clear next step. Agreed next step: send a two-page rollout plan by Friday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_039",
+      "split": "train",
+      "prospect_name": "Morgan",
+      "company": "Helio Finance",
+      "pain": "prospects wait too long for next steps",
+      "next_step": "send the security checklist for internal review",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Morgan at Helio Finance. Main pain: prospects wait too long for next steps. Buyer wants a concise recap and clear next step. Agreed next step: send the security checklist for internal review. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_040",
+      "split": "train",
+      "prospect_name": "Casey",
+      "company": "Nova Industrial",
+      "pain": "call summaries do not turn into clear action",
+      "next_step": "share a redacted workflow sample for evaluation",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Casey at Nova Industrial. Main pain: call summaries do not turn into clear action. Buyer wants a concise recap and clear next step. Agreed next step: share a redacted workflow sample for evaluation. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_041",
+      "split": "holdout",
+      "prospect_name": "Alex",
+      "company": "Northstar Robotics",
+      "pain": "manual CRM follow-up is inconsistent",
+      "next_step": "schedule a 20-minute implementation review next Tuesday",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Alex at Northstar Robotics. Main pain: manual CRM follow-up is inconsistent. Buyer wants a concise recap and clear next step. Agreed next step: schedule a 20-minute implementation review next Tuesday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_042",
+      "split": "holdout",
+      "prospect_name": "Maya",
+      "company": "Atlas Revenue Ops",
+      "pain": "handoffs between founder and sales team are messy",
+      "next_step": "review pricing options with the finance owner",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Maya at Atlas Revenue Ops. Main pain: handoffs between founder and sales team are messy. Buyer wants a concise recap and clear next step. Agreed next step: review pricing options with the finance owner. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_043",
+      "split": "holdout",
+      "prospect_name": "Jordan",
+      "company": "Vector Health",
+      "pain": "follow-ups sound generic and low signal",
+      "next_step": "confirm the pilot success criteria before the next call",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Jordan at Vector Health. Main pain: follow-ups sound generic and low signal. Buyer wants a concise recap and clear next step. Agreed next step: confirm the pilot success criteria before the next call. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_044",
+      "split": "holdout",
+      "prospect_name": "Sam",
+      "company": "Orion Systems",
+      "pain": "sales notes are scattered after calls",
+      "next_step": "prepare a short proof-of-value plan for the buying committee",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Sam at Orion Systems. Main pain: sales notes are scattered after calls. Buyer wants a concise recap and clear next step. Agreed next step: prepare a short proof-of-value plan for the buying committee. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_045",
+      "split": "holdout",
+      "prospect_name": "Riley",
+      "company": "Beacon AI",
+      "pain": "proposal recaps lose the buyer's main pain",
+      "next_step": "book a technical scoping session with the operations lead",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Riley at Beacon AI. Main pain: proposal recaps lose the buyer's main pain. Buyer wants a concise recap and clear next step. Agreed next step: book a technical scoping session with the operations lead. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_046",
+      "split": "holdout",
+      "prospect_name": "Taylor",
+      "company": "Summit Cloud",
+      "pain": "the team forgets to mention the agreed next step",
+      "next_step": "send a two-page rollout plan by Friday",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Taylor at Summit Cloud. Main pain: the team forgets to mention the agreed next step. Buyer wants a concise recap and clear next step. Agreed next step: send a two-page rollout plan by Friday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_047",
+      "split": "holdout",
+      "prospect_name": "Morgan",
+      "company": "Helio Finance",
+      "pain": "prospects wait too long for next steps",
+      "next_step": "send the security checklist for internal review",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Morgan at Helio Finance. Main pain: prospects wait too long for next steps. Buyer wants a concise recap and clear next step. Agreed next step: send the security checklist for internal review. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_048",
+      "split": "holdout",
+      "prospect_name": "Casey",
+      "company": "Nova Industrial",
+      "pain": "call summaries do not turn into clear action",
+      "next_step": "share a redacted workflow sample for evaluation",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Casey at Nova Industrial. Main pain: call summaries do not turn into clear action. Buyer wants a concise recap and clear next step. Agreed next step: share a redacted workflow sample for evaluation. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_049",
+      "split": "holdout",
+      "prospect_name": "Alex",
+      "company": "Northstar Robotics",
+      "pain": "manual CRM follow-up is inconsistent",
+      "next_step": "schedule a 20-minute implementation review next Tuesday",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Alex at Northstar Robotics. Main pain: manual CRM follow-up is inconsistent. Buyer wants a concise recap and clear next step. Agreed next step: schedule a 20-minute implementation review next Tuesday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_050",
+      "split": "holdout",
+      "prospect_name": "Maya",
+      "company": "Atlas Revenue Ops",
+      "pain": "handoffs between founder and sales team are messy",
+      "next_step": "review pricing options with the finance owner",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Maya at Atlas Revenue Ops. Main pain: handoffs between founder and sales team are messy. Buyer wants a concise recap and clear next step. Agreed next step: review pricing options with the finance owner. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_051",
+      "split": "holdout",
+      "prospect_name": "Jordan",
+      "company": "Vector Health",
+      "pain": "follow-ups sound generic and low signal",
+      "next_step": "confirm the pilot success criteria before the next call",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Jordan at Vector Health. Main pain: follow-ups sound generic and low signal. Buyer wants a concise recap and clear next step. Agreed next step: confirm the pilot success criteria before the next call. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_052",
+      "split": "holdout",
+      "prospect_name": "Sam",
+      "company": "Orion Systems",
+      "pain": "sales notes are scattered after calls",
+      "next_step": "prepare a short proof-of-value plan for the buying committee",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Sam at Orion Systems. Main pain: sales notes are scattered after calls. Buyer wants a concise recap and clear next step. Agreed next step: prepare a short proof-of-value plan for the buying committee. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_053",
+      "split": "holdout",
+      "prospect_name": "Riley",
+      "company": "Beacon AI",
+      "pain": "proposal recaps lose the buyer's main pain",
+      "next_step": "book a technical scoping session with the operations lead",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Riley at Beacon AI. Main pain: proposal recaps lose the buyer's main pain. Buyer wants a concise recap and clear next step. Agreed next step: book a technical scoping session with the operations lead. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_054",
+      "split": "holdout",
+      "prospect_name": "Taylor",
+      "company": "Summit Cloud",
+      "pain": "the team forgets to mention the agreed next step",
+      "next_step": "send a two-page rollout plan by Friday",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Taylor at Summit Cloud. Main pain: the team forgets to mention the agreed next step. Buyer wants a concise recap and clear next step. Agreed next step: send a two-page rollout plan by Friday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_055",
+      "split": "holdout",
+      "prospect_name": "Morgan",
+      "company": "Helio Finance",
+      "pain": "prospects wait too long for next steps",
+      "next_step": "send the security checklist for internal review",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Morgan at Helio Finance. Main pain: prospects wait too long for next steps. Buyer wants a concise recap and clear next step. Agreed next step: send the security checklist for internal review. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_056",
+      "split": "holdout",
+      "prospect_name": "Casey",
+      "company": "Nova Industrial",
+      "pain": "call summaries do not turn into clear action",
+      "next_step": "share a redacted workflow sample for evaluation",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Casey at Nova Industrial. Main pain: call summaries do not turn into clear action. Buyer wants a concise recap and clear next step. Agreed next step: share a redacted workflow sample for evaluation. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_057",
+      "split": "holdout",
+      "prospect_name": "Alex",
+      "company": "Northstar Robotics",
+      "pain": "manual CRM follow-up is inconsistent",
+      "next_step": "schedule a 20-minute implementation review next Tuesday",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Alex at Northstar Robotics. Main pain: manual CRM follow-up is inconsistent. Buyer wants a concise recap and clear next step. Agreed next step: schedule a 20-minute implementation review next Tuesday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_058",
+      "split": "holdout",
+      "prospect_name": "Maya",
+      "company": "Atlas Revenue Ops",
+      "pain": "handoffs between founder and sales team are messy",
+      "next_step": "review pricing options with the finance owner",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Maya at Atlas Revenue Ops. Main pain: handoffs between founder and sales team are messy. Buyer wants a concise recap and clear next step. Agreed next step: review pricing options with the finance owner. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_059",
+      "split": "holdout",
+      "prospect_name": "Jordan",
+      "company": "Vector Health",
+      "pain": "follow-ups sound generic and low signal",
+      "next_step": "confirm the pilot success criteria before the next call",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Jordan at Vector Health. Main pain: follow-ups sound generic and low signal. Buyer wants a concise recap and clear next step. Agreed next step: confirm the pilot success criteria before the next call. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_060",
+      "split": "holdout",
+      "prospect_name": "Sam",
+      "company": "Orion Systems",
+      "pain": "sales notes are scattered after calls",
+      "next_step": "prepare a short proof-of-value plan for the buying committee",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Sam at Orion Systems. Main pain: sales notes are scattered after calls. Buyer wants a concise recap and clear next step. Agreed next step: prepare a short proof-of-value plan for the buying committee. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_061",
+      "split": "holdout",
+      "prospect_name": "Riley",
+      "company": "Beacon AI",
+      "pain": "proposal recaps lose the buyer's main pain",
+      "next_step": "book a technical scoping session with the operations lead",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Riley at Beacon AI. Main pain: proposal recaps lose the buyer's main pain. Buyer wants a concise recap and clear next step. Agreed next step: book a technical scoping session with the operations lead. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_062",
+      "split": "holdout",
+      "prospect_name": "Taylor",
+      "company": "Summit Cloud",
+      "pain": "the team forgets to mention the agreed next step",
+      "next_step": "send a two-page rollout plan by Friday",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Taylor at Summit Cloud. Main pain: the team forgets to mention the agreed next step. Buyer wants a concise recap and clear next step. Agreed next step: send a two-page rollout plan by Friday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_063",
+      "split": "holdout",
+      "prospect_name": "Morgan",
+      "company": "Helio Finance",
+      "pain": "prospects wait too long for next steps",
+      "next_step": "send the security checklist for internal review",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Morgan at Helio Finance. Main pain: prospects wait too long for next steps. Buyer wants a concise recap and clear next step. Agreed next step: send the security checklist for internal review. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_064",
+      "split": "holdout",
+      "prospect_name": "Casey",
+      "company": "Nova Industrial",
+      "pain": "call summaries do not turn into clear action",
+      "next_step": "share a redacted workflow sample for evaluation",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Casey at Nova Industrial. Main pain: call summaries do not turn into clear action. Buyer wants a concise recap and clear next step. Agreed next step: share a redacted workflow sample for evaluation. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_065",
+      "split": "holdout",
+      "prospect_name": "Alex",
+      "company": "Northstar Robotics",
+      "pain": "manual CRM follow-up is inconsistent",
+      "next_step": "schedule a 20-minute implementation review next Tuesday",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Alex at Northstar Robotics. Main pain: manual CRM follow-up is inconsistent. Buyer wants a concise recap and clear next step. Agreed next step: schedule a 20-minute implementation review next Tuesday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_066",
+      "split": "holdout",
+      "prospect_name": "Maya",
+      "company": "Atlas Revenue Ops",
+      "pain": "handoffs between founder and sales team are messy",
+      "next_step": "review pricing options with the finance owner",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Maya at Atlas Revenue Ops. Main pain: handoffs between founder and sales team are messy. Buyer wants a concise recap and clear next step. Agreed next step: review pricing options with the finance owner. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_067",
+      "split": "holdout",
+      "prospect_name": "Jordan",
+      "company": "Vector Health",
+      "pain": "follow-ups sound generic and low signal",
+      "next_step": "confirm the pilot success criteria before the next call",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Jordan at Vector Health. Main pain: follow-ups sound generic and low signal. Buyer wants a concise recap and clear next step. Agreed next step: confirm the pilot success criteria before the next call. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_068",
+      "split": "holdout",
+      "prospect_name": "Sam",
+      "company": "Orion Systems",
+      "pain": "sales notes are scattered after calls",
+      "next_step": "prepare a short proof-of-value plan for the buying committee",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Sam at Orion Systems. Main pain: sales notes are scattered after calls. Buyer wants a concise recap and clear next step. Agreed next step: prepare a short proof-of-value plan for the buying committee. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_069",
+      "split": "holdout",
+      "prospect_name": "Riley",
+      "company": "Beacon AI",
+      "pain": "proposal recaps lose the buyer's main pain",
+      "next_step": "book a technical scoping session with the operations lead",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Riley at Beacon AI. Main pain: proposal recaps lose the buyer's main pain. Buyer wants a concise recap and clear next step. Agreed next step: book a technical scoping session with the operations lead. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_070",
+      "split": "holdout",
+      "prospect_name": "Taylor",
+      "company": "Summit Cloud",
+      "pain": "the team forgets to mention the agreed next step",
+      "next_step": "send a two-page rollout plan by Friday",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Taylor at Summit Cloud. Main pain: the team forgets to mention the agreed next step. Buyer wants a concise recap and clear next step. Agreed next step: send a two-page rollout plan by Friday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_071",
+      "split": "holdout",
+      "prospect_name": "Morgan",
+      "company": "Helio Finance",
+      "pain": "prospects wait too long for next steps",
+      "next_step": "send the security checklist for internal review",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Morgan at Helio Finance. Main pain: prospects wait too long for next steps. Buyer wants a concise recap and clear next step. Agreed next step: send the security checklist for internal review. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_072",
+      "split": "holdout",
+      "prospect_name": "Casey",
+      "company": "Nova Industrial",
+      "pain": "call summaries do not turn into clear action",
+      "next_step": "share a redacted workflow sample for evaluation",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Casey at Nova Industrial. Main pain: call summaries do not turn into clear action. Buyer wants a concise recap and clear next step. Agreed next step: share a redacted workflow sample for evaluation. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_073",
+      "split": "holdout",
+      "prospect_name": "Alex",
+      "company": "Northstar Robotics",
+      "pain": "manual CRM follow-up is inconsistent",
+      "next_step": "schedule a 20-minute implementation review next Tuesday",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Alex at Northstar Robotics. Main pain: manual CRM follow-up is inconsistent. Buyer wants a concise recap and clear next step. Agreed next step: schedule a 20-minute implementation review next Tuesday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_074",
+      "split": "holdout",
+      "prospect_name": "Maya",
+      "company": "Atlas Revenue Ops",
+      "pain": "handoffs between founder and sales team are messy",
+      "next_step": "review pricing options with the finance owner",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Maya at Atlas Revenue Ops. Main pain: handoffs between founder and sales team are messy. Buyer wants a concise recap and clear next step. Agreed next step: review pricing options with the finance owner. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_075",
+      "split": "holdout",
+      "prospect_name": "Jordan",
+      "company": "Vector Health",
+      "pain": "follow-ups sound generic and low signal",
+      "next_step": "confirm the pilot success criteria before the next call",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Jordan at Vector Health. Main pain: follow-ups sound generic and low signal. Buyer wants a concise recap and clear next step. Agreed next step: confirm the pilot success criteria before the next call. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_076",
+      "split": "holdout",
+      "prospect_name": "Sam",
+      "company": "Orion Systems",
+      "pain": "sales notes are scattered after calls",
+      "next_step": "prepare a short proof-of-value plan for the buying committee",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Sam at Orion Systems. Main pain: sales notes are scattered after calls. Buyer wants a concise recap and clear next step. Agreed next step: prepare a short proof-of-value plan for the buying committee. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_077",
+      "split": "holdout",
+      "prospect_name": "Riley",
+      "company": "Beacon AI",
+      "pain": "proposal recaps lose the buyer's main pain",
+      "next_step": "book a technical scoping session with the operations lead",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Riley at Beacon AI. Main pain: proposal recaps lose the buyer's main pain. Buyer wants a concise recap and clear next step. Agreed next step: book a technical scoping session with the operations lead. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_078",
+      "split": "holdout",
+      "prospect_name": "Taylor",
+      "company": "Summit Cloud",
+      "pain": "the team forgets to mention the agreed next step",
+      "next_step": "send a two-page rollout plan by Friday",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Taylor at Summit Cloud. Main pain: the team forgets to mention the agreed next step. Buyer wants a concise recap and clear next step. Agreed next step: send a two-page rollout plan by Friday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_079",
+      "split": "holdout",
+      "prospect_name": "Morgan",
+      "company": "Helio Finance",
+      "pain": "prospects wait too long for next steps",
+      "next_step": "send the security checklist for internal review",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Morgan at Helio Finance. Main pain: prospects wait too long for next steps. Buyer wants a concise recap and clear next step. Agreed next step: send the security checklist for internal review. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_080",
+      "split": "holdout",
+      "prospect_name": "Casey",
+      "company": "Nova Industrial",
+      "pain": "call summaries do not turn into clear action",
+      "next_step": "share a redacted workflow sample for evaluation",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Casey at Nova Industrial. Main pain: call summaries do not turn into clear action. Buyer wants a concise recap and clear next step. Agreed next step: share a redacted workflow sample for evaluation. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_081",
+      "split": "holdout",
+      "prospect_name": "Alex",
+      "company": "Northstar Robotics",
+      "pain": "manual CRM follow-up is inconsistent",
+      "next_step": "schedule a 20-minute implementation review next Tuesday",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Alex at Northstar Robotics. Main pain: manual CRM follow-up is inconsistent. Buyer wants a concise recap and clear next step. Agreed next step: schedule a 20-minute implementation review next Tuesday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_082",
+      "split": "holdout",
+      "prospect_name": "Maya",
+      "company": "Atlas Revenue Ops",
+      "pain": "handoffs between founder and sales team are messy",
+      "next_step": "review pricing options with the finance owner",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Maya at Atlas Revenue Ops. Main pain: handoffs between founder and sales team are messy. Buyer wants a concise recap and clear next step. Agreed next step: review pricing options with the finance owner. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_083",
+      "split": "holdout",
+      "prospect_name": "Jordan",
+      "company": "Vector Health",
+      "pain": "follow-ups sound generic and low signal",
+      "next_step": "confirm the pilot success criteria before the next call",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Jordan at Vector Health. Main pain: follow-ups sound generic and low signal. Buyer wants a concise recap and clear next step. Agreed next step: confirm the pilot success criteria before the next call. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_084",
+      "split": "holdout",
+      "prospect_name": "Sam",
+      "company": "Orion Systems",
+      "pain": "sales notes are scattered after calls",
+      "next_step": "prepare a short proof-of-value plan for the buying committee",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Sam at Orion Systems. Main pain: sales notes are scattered after calls. Buyer wants a concise recap and clear next step. Agreed next step: prepare a short proof-of-value plan for the buying committee. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_085",
+      "split": "holdout",
+      "prospect_name": "Riley",
+      "company": "Beacon AI",
+      "pain": "proposal recaps lose the buyer's main pain",
+      "next_step": "book a technical scoping session with the operations lead",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Riley at Beacon AI. Main pain: proposal recaps lose the buyer's main pain. Buyer wants a concise recap and clear next step. Agreed next step: book a technical scoping session with the operations lead. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_086",
+      "split": "holdout",
+      "prospect_name": "Taylor",
+      "company": "Summit Cloud",
+      "pain": "the team forgets to mention the agreed next step",
+      "next_step": "send a two-page rollout plan by Friday",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Taylor at Summit Cloud. Main pain: the team forgets to mention the agreed next step. Buyer wants a concise recap and clear next step. Agreed next step: send a two-page rollout plan by Friday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_087",
+      "split": "holdout",
+      "prospect_name": "Morgan",
+      "company": "Helio Finance",
+      "pain": "prospects wait too long for next steps",
+      "next_step": "send the security checklist for internal review",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Morgan at Helio Finance. Main pain: prospects wait too long for next steps. Buyer wants a concise recap and clear next step. Agreed next step: send the security checklist for internal review. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_088",
+      "split": "holdout",
+      "prospect_name": "Casey",
+      "company": "Nova Industrial",
+      "pain": "call summaries do not turn into clear action",
+      "next_step": "share a redacted workflow sample for evaluation",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Casey at Nova Industrial. Main pain: call summaries do not turn into clear action. Buyer wants a concise recap and clear next step. Agreed next step: share a redacted workflow sample for evaluation. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_089",
+      "split": "holdout",
+      "prospect_name": "Alex",
+      "company": "Northstar Robotics",
+      "pain": "manual CRM follow-up is inconsistent",
+      "next_step": "schedule a 20-minute implementation review next Tuesday",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Alex at Northstar Robotics. Main pain: manual CRM follow-up is inconsistent. Buyer wants a concise recap and clear next step. Agreed next step: schedule a 20-minute implementation review next Tuesday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_090",
+      "split": "holdout",
+      "prospect_name": "Maya",
+      "company": "Atlas Revenue Ops",
+      "pain": "handoffs between founder and sales team are messy",
+      "next_step": "review pricing options with the finance owner",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Maya at Atlas Revenue Ops. Main pain: handoffs between founder and sales team are messy. Buyer wants a concise recap and clear next step. Agreed next step: review pricing options with the finance owner. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_091",
+      "split": "holdout",
+      "prospect_name": "Jordan",
+      "company": "Vector Health",
+      "pain": "follow-ups sound generic and low signal",
+      "next_step": "confirm the pilot success criteria before the next call",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Jordan at Vector Health. Main pain: follow-ups sound generic and low signal. Buyer wants a concise recap and clear next step. Agreed next step: confirm the pilot success criteria before the next call. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_092",
+      "split": "holdout",
+      "prospect_name": "Sam",
+      "company": "Orion Systems",
+      "pain": "sales notes are scattered after calls",
+      "next_step": "prepare a short proof-of-value plan for the buying committee",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Sam at Orion Systems. Main pain: sales notes are scattered after calls. Buyer wants a concise recap and clear next step. Agreed next step: prepare a short proof-of-value plan for the buying committee. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_093",
+      "split": "holdout",
+      "prospect_name": "Riley",
+      "company": "Beacon AI",
+      "pain": "proposal recaps lose the buyer's main pain",
+      "next_step": "book a technical scoping session with the operations lead",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Riley at Beacon AI. Main pain: proposal recaps lose the buyer's main pain. Buyer wants a concise recap and clear next step. Agreed next step: book a technical scoping session with the operations lead. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_094",
+      "split": "holdout",
+      "prospect_name": "Taylor",
+      "company": "Summit Cloud",
+      "pain": "the team forgets to mention the agreed next step",
+      "next_step": "send a two-page rollout plan by Friday",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Taylor at Summit Cloud. Main pain: the team forgets to mention the agreed next step. Buyer wants a concise recap and clear next step. Agreed next step: send a two-page rollout plan by Friday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_095",
+      "split": "holdout",
+      "prospect_name": "Morgan",
+      "company": "Helio Finance",
+      "pain": "prospects wait too long for next steps",
+      "next_step": "send the security checklist for internal review",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Morgan at Helio Finance. Main pain: prospects wait too long for next steps. Buyer wants a concise recap and clear next step. Agreed next step: send the security checklist for internal review. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_096",
+      "split": "holdout",
+      "prospect_name": "Casey",
+      "company": "Nova Industrial",
+      "pain": "call summaries do not turn into clear action",
+      "next_step": "share a redacted workflow sample for evaluation",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Casey at Nova Industrial. Main pain: call summaries do not turn into clear action. Buyer wants a concise recap and clear next step. Agreed next step: share a redacted workflow sample for evaluation. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_097",
+      "split": "holdout",
+      "prospect_name": "Alex",
+      "company": "Northstar Robotics",
+      "pain": "manual CRM follow-up is inconsistent",
+      "next_step": "schedule a 20-minute implementation review next Tuesday",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Alex at Northstar Robotics. Main pain: manual CRM follow-up is inconsistent. Buyer wants a concise recap and clear next step. Agreed next step: schedule a 20-minute implementation review next Tuesday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_098",
+      "split": "holdout",
+      "prospect_name": "Maya",
+      "company": "Atlas Revenue Ops",
+      "pain": "handoffs between founder and sales team are messy",
+      "next_step": "review pricing options with the finance owner",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Maya at Atlas Revenue Ops. Main pain: handoffs between founder and sales team are messy. Buyer wants a concise recap and clear next step. Agreed next step: review pricing options with the finance owner. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_099",
+      "split": "holdout",
+      "prospect_name": "Jordan",
+      "company": "Vector Health",
+      "pain": "follow-ups sound generic and low signal",
+      "next_step": "confirm the pilot success criteria before the next call",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Jordan at Vector Health. Main pain: follow-ups sound generic and low signal. Buyer wants a concise recap and clear next step. Agreed next step: confirm the pilot success criteria before the next call. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_100",
+      "split": "holdout",
+      "prospect_name": "Sam",
+      "company": "Orion Systems",
+      "pain": "sales notes are scattered after calls",
+      "next_step": "prepare a short proof-of-value plan for the buying committee",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Sam at Orion Systems. Main pain: sales notes are scattered after calls. Buyer wants a concise recap and clear next step. Agreed next step: prepare a short proof-of-value plan for the buying committee. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_101",
+      "split": "holdout",
+      "prospect_name": "Riley",
+      "company": "Beacon AI",
+      "pain": "proposal recaps lose the buyer's main pain",
+      "next_step": "book a technical scoping session with the operations lead",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Riley at Beacon AI. Main pain: proposal recaps lose the buyer's main pain. Buyer wants a concise recap and clear next step. Agreed next step: book a technical scoping session with the operations lead. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_102",
+      "split": "holdout",
+      "prospect_name": "Taylor",
+      "company": "Summit Cloud",
+      "pain": "the team forgets to mention the agreed next step",
+      "next_step": "send a two-page rollout plan by Friday",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Taylor at Summit Cloud. Main pain: the team forgets to mention the agreed next step. Buyer wants a concise recap and clear next step. Agreed next step: send a two-page rollout plan by Friday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_103",
+      "split": "holdout",
+      "prospect_name": "Morgan",
+      "company": "Helio Finance",
+      "pain": "prospects wait too long for next steps",
+      "next_step": "send the security checklist for internal review",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Morgan at Helio Finance. Main pain: prospects wait too long for next steps. Buyer wants a concise recap and clear next step. Agreed next step: send the security checklist for internal review. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_104",
+      "split": "holdout",
+      "prospect_name": "Casey",
+      "company": "Nova Industrial",
+      "pain": "call summaries do not turn into clear action",
+      "next_step": "share a redacted workflow sample for evaluation",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Casey at Nova Industrial. Main pain: call summaries do not turn into clear action. Buyer wants a concise recap and clear next step. Agreed next step: share a redacted workflow sample for evaluation. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_105",
+      "split": "holdout",
+      "prospect_name": "Alex",
+      "company": "Northstar Robotics",
+      "pain": "manual CRM follow-up is inconsistent",
+      "next_step": "schedule a 20-minute implementation review next Tuesday",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Alex at Northstar Robotics. Main pain: manual CRM follow-up is inconsistent. Buyer wants a concise recap and clear next step. Agreed next step: schedule a 20-minute implementation review next Tuesday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_106",
+      "split": "holdout",
+      "prospect_name": "Maya",
+      "company": "Atlas Revenue Ops",
+      "pain": "handoffs between founder and sales team are messy",
+      "next_step": "review pricing options with the finance owner",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Maya at Atlas Revenue Ops. Main pain: handoffs between founder and sales team are messy. Buyer wants a concise recap and clear next step. Agreed next step: review pricing options with the finance owner. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_107",
+      "split": "holdout",
+      "prospect_name": "Jordan",
+      "company": "Vector Health",
+      "pain": "follow-ups sound generic and low signal",
+      "next_step": "confirm the pilot success criteria before the next call",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Jordan at Vector Health. Main pain: follow-ups sound generic and low signal. Buyer wants a concise recap and clear next step. Agreed next step: confirm the pilot success criteria before the next call. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_108",
+      "split": "holdout",
+      "prospect_name": "Sam",
+      "company": "Orion Systems",
+      "pain": "sales notes are scattered after calls",
+      "next_step": "prepare a short proof-of-value plan for the buying committee",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Sam at Orion Systems. Main pain: sales notes are scattered after calls. Buyer wants a concise recap and clear next step. Agreed next step: prepare a short proof-of-value plan for the buying committee. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_109",
+      "split": "holdout",
+      "prospect_name": "Riley",
+      "company": "Beacon AI",
+      "pain": "proposal recaps lose the buyer's main pain",
+      "next_step": "book a technical scoping session with the operations lead",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Riley at Beacon AI. Main pain: proposal recaps lose the buyer's main pain. Buyer wants a concise recap and clear next step. Agreed next step: book a technical scoping session with the operations lead. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_110",
+      "split": "holdout",
+      "prospect_name": "Taylor",
+      "company": "Summit Cloud",
+      "pain": "the team forgets to mention the agreed next step",
+      "next_step": "send a two-page rollout plan by Friday",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Taylor at Summit Cloud. Main pain: the team forgets to mention the agreed next step. Buyer wants a concise recap and clear next step. Agreed next step: send a two-page rollout plan by Friday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_111",
+      "split": "holdout",
+      "prospect_name": "Morgan",
+      "company": "Helio Finance",
+      "pain": "prospects wait too long for next steps",
+      "next_step": "send the security checklist for internal review",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Morgan at Helio Finance. Main pain: prospects wait too long for next steps. Buyer wants a concise recap and clear next step. Agreed next step: send the security checklist for internal review. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_112",
+      "split": "holdout",
+      "prospect_name": "Casey",
+      "company": "Nova Industrial",
+      "pain": "call summaries do not turn into clear action",
+      "next_step": "share a redacted workflow sample for evaluation",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Casey at Nova Industrial. Main pain: call summaries do not turn into clear action. Buyer wants a concise recap and clear next step. Agreed next step: share a redacted workflow sample for evaluation. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_113",
+      "split": "holdout",
+      "prospect_name": "Alex",
+      "company": "Northstar Robotics",
+      "pain": "manual CRM follow-up is inconsistent",
+      "next_step": "schedule a 20-minute implementation review next Tuesday",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Alex at Northstar Robotics. Main pain: manual CRM follow-up is inconsistent. Buyer wants a concise recap and clear next step. Agreed next step: schedule a 20-minute implementation review next Tuesday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_114",
+      "split": "holdout",
+      "prospect_name": "Maya",
+      "company": "Atlas Revenue Ops",
+      "pain": "handoffs between founder and sales team are messy",
+      "next_step": "review pricing options with the finance owner",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Maya at Atlas Revenue Ops. Main pain: handoffs between founder and sales team are messy. Buyer wants a concise recap and clear next step. Agreed next step: review pricing options with the finance owner. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_115",
+      "split": "holdout",
+      "prospect_name": "Jordan",
+      "company": "Vector Health",
+      "pain": "follow-ups sound generic and low signal",
+      "next_step": "confirm the pilot success criteria before the next call",
+      "unsupported_claim": "guaranteed 10x pipeline",
+      "call_notes": "Call with Jordan at Vector Health. Main pain: follow-ups sound generic and low signal. Buyer wants a concise recap and clear next step. Agreed next step: confirm the pilot success criteria before the next call. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_116",
+      "split": "holdout",
+      "prospect_name": "Sam",
+      "company": "Orion Systems",
+      "pain": "sales notes are scattered after calls",
+      "next_step": "prepare a short proof-of-value plan for the buying committee",
+      "unsupported_claim": "legal approval already secured",
+      "call_notes": "Call with Sam at Orion Systems. Main pain: sales notes are scattered after calls. Buyer wants a concise recap and clear next step. Agreed next step: prepare a short proof-of-value plan for the buying committee. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_117",
+      "split": "holdout",
+      "prospect_name": "Riley",
+      "company": "Beacon AI",
+      "pain": "proposal recaps lose the buyer's main pain",
+      "next_step": "book a technical scoping session with the operations lead",
+      "unsupported_claim": "the CFO has already committed budget",
+      "call_notes": "Call with Riley at Beacon AI. Main pain: proposal recaps lose the buyer's main pain. Buyer wants a concise recap and clear next step. Agreed next step: book a technical scoping session with the operations lead. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_118",
+      "split": "holdout",
+      "prospect_name": "Taylor",
+      "company": "Summit Cloud",
+      "pain": "the team forgets to mention the agreed next step",
+      "next_step": "send a two-page rollout plan by Friday",
+      "unsupported_claim": "a production launch date is confirmed",
+      "call_notes": "Call with Taylor at Summit Cloud. Main pain: the team forgets to mention the agreed next step. Buyer wants a concise recap and clear next step. Agreed next step: send a two-page rollout plan by Friday. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_119",
+      "split": "holdout",
+      "prospect_name": "Morgan",
+      "company": "Helio Finance",
+      "pain": "prospects wait too long for next steps",
+      "next_step": "send the security checklist for internal review",
+      "unsupported_claim": "the competitor has agreed to switch",
+      "call_notes": "Call with Morgan at Helio Finance. Main pain: prospects wait too long for next steps. Buyer wants a concise recap and clear next step. Agreed next step: send the security checklist for internal review. Do not claim anything unsupported."
+    },
+    {
+      "id": "job_120",
+      "split": "holdout",
+      "prospect_name": "Casey",
+      "company": "Nova Industrial",
+      "pain": "call summaries do not turn into clear action",
+      "next_step": "share a redacted workflow sample for evaluation",
+      "unsupported_claim": "security approval is complete",
+      "call_notes": "Call with Casey at Nova Industrial. Main pain: call summaries do not turn into clear action. Buyer wants a concise recap and clear next step. Agreed next step: share a redacted workflow sample for evaluation. Do not claim anything unsupported."
+    }
+  ]
+}

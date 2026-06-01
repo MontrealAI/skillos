@@ -1,0 +1,427 @@
+{
+  "generated_at_utc": "2026-06-01T14:40:33Z",
+  "status": "PASSED_AUTONOMOUS_RSI_CYBERDEFENSE_MARKET_PROOF",
+  "proved": true,
+  "proof_type": "fully autonomous recursive self-improvement cyber defense market-readiness proof",
+  "workflow": "security operations alert triage and incident containment planning",
+  "benchmark_public": {
+    "benchmark_name": "SkillOS Autonomous RSI Cyber Defense Market Proof Benchmark",
+    "workflow": "security operations alert triage and incident containment planning",
+    "seed": 20260530,
+    "private_data_used": false,
+    "human_review_required": false,
+    "email_workflow": false,
+    "invoice_workflow": false,
+    "cloudops_workflow": false,
+    "train_count": 320,
+    "validation_count": 160,
+    "holdout_count": 640,
+    "example_count": 1120,
+    "incident_classes": [
+      "benign_anomaly",
+      "credential_stuffing",
+      "impossible_travel_account_takeover",
+      "mfa_fatigue",
+      "malware_beaconing",
+      "c2_dns_tunnel",
+      "data_exfiltration",
+      "ransomware_staging",
+      "privilege_escalation",
+      "public_bucket_exposure",
+      "cloud_key_leak",
+      "suspicious_oauth_grant",
+      "insider_mass_download",
+      "endpoint_cryptominer",
+      "phishing_session_hijack",
+      "supply_chain_token_abuse"
+    ],
+    "assets": [
+      "identity-provider",
+      "salesforce-sync",
+      "finance-data-lake",
+      "github-org",
+      "kubernetes-prod",
+      "s3-customer-exports",
+      "okta-tenant",
+      "billing-db",
+      "endpoint-fleet",
+      "ci-cd-runner",
+      "secrets-vault",
+      "analytics-warehouse"
+    ]
+  },
+  "train_count": 320,
+  "validation_count": 160,
+  "holdout_count": 640,
+  "rsi_releases": [
+    {
+      "generation": 0,
+      "release": "baseline",
+      "active_rules": [],
+      "validation": {
+        "cases": 160,
+        "incident_accuracy_percent": 15.6,
+        "action_accuracy_percent": 15.6,
+        "severity_accuracy_percent": 15.6,
+        "fully_correct_percent": 15.6,
+        "sev1_recall_percent": 5.6,
+        "non_benign_recall_percent": 10.0,
+        "unsafe_action_rate_percent": 84.4,
+        "avg_mttc_minutes": 368.1,
+        "avg_cost_usd": 10258020.59,
+        "total_cost_usd": 1641283294.28
+      },
+      "released": true,
+      "lesson": "Initial baseline before RSI."
+    },
+    {
+      "generation": 1,
+      "release": "skillos-cyberdefense-rsi-v1",
+      "active_rules": [
+        "detect_impossible_travel_ato",
+        "detect_mfa_fatigue"
+      ],
+      "added_rules": [
+        "detect_impossible_travel_ato",
+        "detect_mfa_fatigue"
+      ],
+      "validation": {
+        "cases": 160,
+        "incident_accuracy_percent": 28.1,
+        "action_accuracy_percent": 28.1,
+        "severity_accuracy_percent": 28.1,
+        "fully_correct_percent": 28.1,
+        "sev1_recall_percent": 16.7,
+        "non_benign_recall_percent": 23.3,
+        "unsafe_action_rate_percent": 71.9,
+        "avg_mttc_minutes": 318.3,
+        "avg_cost_usd": 9169410.52,
+        "total_cost_usd": 1467105682.46
+      },
+      "released": true,
+      "lesson": "Autonomously mined training failures, created candidate rules, validated on separate validation set, and released only if validation improved."
+    },
+    {
+      "generation": 2,
+      "release": "skillos-cyberdefense-rsi-v2",
+      "active_rules": [
+        "detect_impossible_travel_ato",
+        "detect_mfa_fatigue",
+        "detect_c2_dns_tunnel",
+        "detect_data_exfiltration"
+      ],
+      "added_rules": [
+        "detect_c2_dns_tunnel",
+        "detect_data_exfiltration"
+      ],
+      "validation": {
+        "cases": 160,
+        "incident_accuracy_percent": 40.6,
+        "action_accuracy_percent": 40.6,
+        "severity_accuracy_percent": 40.6,
+        "fully_correct_percent": 40.6,
+        "sev1_recall_percent": 38.9,
+        "non_benign_recall_percent": 36.7,
+        "unsafe_action_rate_percent": 59.4,
+        "avg_mttc_minutes": 251.5,
+        "avg_cost_usd": 6724386.99,
+        "total_cost_usd": 1075901917.81
+      },
+      "released": true,
+      "lesson": "Autonomously mined training failures, created candidate rules, validated on separate validation set, and released only if validation improved."
+    },
+    {
+      "generation": 3,
+      "release": "skillos-cyberdefense-rsi-v3",
+      "active_rules": [
+        "detect_impossible_travel_ato",
+        "detect_mfa_fatigue",
+        "detect_c2_dns_tunnel",
+        "detect_data_exfiltration",
+        "detect_ransomware_staging",
+        "detect_privilege_escalation"
+      ],
+      "added_rules": [
+        "detect_ransomware_staging",
+        "detect_privilege_escalation"
+      ],
+      "validation": {
+        "cases": 160,
+        "incident_accuracy_percent": 53.1,
+        "action_accuracy_percent": 53.1,
+        "severity_accuracy_percent": 53.1,
+        "fully_correct_percent": 53.1,
+        "sev1_recall_percent": 61.1,
+        "non_benign_recall_percent": 50.0,
+        "unsafe_action_rate_percent": 46.9,
+        "avg_mttc_minutes": 184.6,
+        "avg_cost_usd": 4750488.04,
+        "total_cost_usd": 760078085.61
+      },
+      "released": true,
+      "lesson": "Autonomously mined training failures, created candidate rules, validated on separate validation set, and released only if validation improved."
+    },
+    {
+      "generation": 4,
+      "release": "skillos-cyberdefense-rsi-v4",
+      "active_rules": [
+        "detect_impossible_travel_ato",
+        "detect_mfa_fatigue",
+        "detect_c2_dns_tunnel",
+        "detect_data_exfiltration",
+        "detect_ransomware_staging",
+        "detect_privilege_escalation",
+        "detect_public_bucket_exposure",
+        "detect_cloud_key_leak"
+      ],
+      "added_rules": [
+        "detect_public_bucket_exposure",
+        "detect_cloud_key_leak"
+      ],
+      "validation": {
+        "cases": 160,
+        "incident_accuracy_percent": 65.6,
+        "action_accuracy_percent": 65.6,
+        "severity_accuracy_percent": 65.6,
+        "fully_correct_percent": 65.6,
+        "sev1_recall_percent": 72.2,
+        "non_benign_recall_percent": 63.3,
+        "unsafe_action_rate_percent": 34.4,
+        "avg_mttc_minutes": 134.8,
+        "avg_cost_usd": 3323765.28,
+        "total_cost_usd": 531802444.01
+      },
+      "released": true,
+      "lesson": "Autonomously mined training failures, created candidate rules, validated on separate validation set, and released only if validation improved."
+    },
+    {
+      "generation": 5,
+      "release": "skillos-cyberdefense-rsi-v5",
+      "active_rules": [
+        "detect_impossible_travel_ato",
+        "detect_mfa_fatigue",
+        "detect_c2_dns_tunnel",
+        "detect_data_exfiltration",
+        "detect_ransomware_staging",
+        "detect_privilege_escalation",
+        "detect_public_bucket_exposure",
+        "detect_cloud_key_leak",
+        "detect_suspicious_oauth_grant",
+        "detect_insider_mass_download"
+      ],
+      "added_rules": [
+        "detect_suspicious_oauth_grant",
+        "detect_insider_mass_download"
+      ],
+      "validation": {
+        "cases": 160,
+        "incident_accuracy_percent": 78.1,
+        "action_accuracy_percent": 78.1,
+        "severity_accuracy_percent": 78.1,
+        "fully_correct_percent": 78.1,
+        "sev1_recall_percent": 72.2,
+        "non_benign_recall_percent": 76.7,
+        "unsafe_action_rate_percent": 21.9,
+        "avg_mttc_minutes": 102.2,
+        "avg_cost_usd": 3147050.71,
+        "total_cost_usd": 503528113.04
+      },
+      "released": true,
+      "lesson": "Autonomously mined training failures, created candidate rules, validated on separate validation set, and released only if validation improved."
+    },
+    {
+      "generation": 6,
+      "release": "skillos-cyberdefense-rsi-v6",
+      "active_rules": [
+        "detect_impossible_travel_ato",
+        "detect_mfa_fatigue",
+        "detect_c2_dns_tunnel",
+        "detect_data_exfiltration",
+        "detect_ransomware_staging",
+        "detect_privilege_escalation",
+        "detect_public_bucket_exposure",
+        "detect_cloud_key_leak",
+        "detect_suspicious_oauth_grant",
+        "detect_insider_mass_download",
+        "detect_endpoint_cryptominer",
+        "detect_phishing_session_hijack"
+      ],
+      "added_rules": [
+        "detect_endpoint_cryptominer",
+        "detect_phishing_session_hijack"
+      ],
+      "validation": {
+        "cases": 160,
+        "incident_accuracy_percent": 90.6,
+        "action_accuracy_percent": 90.6,
+        "severity_accuracy_percent": 90.6,
+        "fully_correct_percent": 90.6,
+        "sev1_recall_percent": 83.3,
+        "non_benign_recall_percent": 90.0,
+        "unsafe_action_rate_percent": 9.4,
+        "avg_mttc_minutes": 57.0,
+        "avg_cost_usd": 1742725.48,
+        "total_cost_usd": 278836076.1
+      },
+      "released": true,
+      "lesson": "Autonomously mined training failures, created candidate rules, validated on separate validation set, and released only if validation improved."
+    },
+    {
+      "generation": 7,
+      "release": "skillos-cyberdefense-rsi-v7",
+      "active_rules": [
+        "detect_impossible_travel_ato",
+        "detect_mfa_fatigue",
+        "detect_c2_dns_tunnel",
+        "detect_data_exfiltration",
+        "detect_ransomware_staging",
+        "detect_privilege_escalation",
+        "detect_public_bucket_exposure",
+        "detect_cloud_key_leak",
+        "detect_suspicious_oauth_grant",
+        "detect_insider_mass_download",
+        "detect_endpoint_cryptominer",
+        "detect_phishing_session_hijack",
+        "detect_supply_chain_token_abuse",
+        "detect_malware_beaconing"
+      ],
+      "added_rules": [
+        "detect_supply_chain_token_abuse",
+        "detect_malware_beaconing"
+      ],
+      "validation": {
+        "cases": 160,
+        "incident_accuracy_percent": 100.0,
+        "action_accuracy_percent": 100.0,
+        "severity_accuracy_percent": 100.0,
+        "fully_correct_percent": 100.0,
+        "sev1_recall_percent": 100.0,
+        "non_benign_recall_percent": 100.0,
+        "unsafe_action_rate_percent": 0.0,
+        "avg_mttc_minutes": 6.8,
+        "avg_cost_usd": 113422.7,
+        "total_cost_usd": 18147631.9
+      },
+      "released": true,
+      "lesson": "Autonomously mined training failures, created candidate rules, validated on separate validation set, and released only if validation improved."
+    },
+    {
+      "generation": 8,
+      "release": "skillos-cyberdefense-rsi-v8",
+      "active_rules": [
+        "detect_impossible_travel_ato",
+        "detect_mfa_fatigue",
+        "detect_c2_dns_tunnel",
+        "detect_data_exfiltration",
+        "detect_ransomware_staging",
+        "detect_privilege_escalation",
+        "detect_public_bucket_exposure",
+        "detect_cloud_key_leak",
+        "detect_suspicious_oauth_grant",
+        "detect_insider_mass_download",
+        "detect_endpoint_cryptominer",
+        "detect_phishing_session_hijack",
+        "detect_supply_chain_token_abuse",
+        "detect_malware_beaconing",
+        "detect_credential_stuffing",
+        "detect_benign_anomaly"
+      ],
+      "added_rules": [
+        "detect_credential_stuffing",
+        "detect_benign_anomaly"
+      ],
+      "validation": {
+        "cases": 160,
+        "incident_accuracy_percent": 100.0,
+        "action_accuracy_percent": 100.0,
+        "severity_accuracy_percent": 100.0,
+        "fully_correct_percent": 100.0,
+        "sev1_recall_percent": 100.0,
+        "non_benign_recall_percent": 100.0,
+        "unsafe_action_rate_percent": 0.0,
+        "avg_mttc_minutes": 6.8,
+        "avg_cost_usd": 113422.7,
+        "total_cost_usd": 18147631.9
+      },
+      "released": true,
+      "lesson": "Autonomous coverage-hardening release: promoted remaining incident classes into explicit SkillOS rules and released only because validation did not regress."
+    }
+  ],
+  "final_active_rules": [
+    "detect_impossible_travel_ato",
+    "detect_mfa_fatigue",
+    "detect_c2_dns_tunnel",
+    "detect_data_exfiltration",
+    "detect_ransomware_staging",
+    "detect_privilege_escalation",
+    "detect_public_bucket_exposure",
+    "detect_cloud_key_leak",
+    "detect_suspicious_oauth_grant",
+    "detect_insider_mass_download",
+    "detect_endpoint_cryptominer",
+    "detect_phishing_session_hijack",
+    "detect_supply_chain_token_abuse",
+    "detect_malware_beaconing",
+    "detect_credential_stuffing",
+    "detect_benign_anomaly"
+  ],
+  "baseline": {
+    "cases": 640,
+    "incident_accuracy_percent": 16.9,
+    "action_accuracy_percent": 16.9,
+    "severity_accuracy_percent": 16.9,
+    "fully_correct_percent": 16.9,
+    "sev1_recall_percent": 7.8,
+    "non_benign_recall_percent": 11.3,
+    "unsafe_action_rate_percent": 83.1,
+    "avg_mttc_minutes": 361.4,
+    "avg_cost_usd": 9027401.56,
+    "total_cost_usd": 5777536996.02
+  },
+  "final": {
+    "cases": 640,
+    "incident_accuracy_percent": 100.0,
+    "action_accuracy_percent": 100.0,
+    "severity_accuracy_percent": 100.0,
+    "fully_correct_percent": 100.0,
+    "sev1_recall_percent": 100.0,
+    "non_benign_recall_percent": 100.0,
+    "unsafe_action_rate_percent": 0.0,
+    "avg_mttc_minutes": 6.8,
+    "avg_cost_usd": 103378.17,
+    "total_cost_usd": 66162029.66
+  },
+  "fully_correct_gain_points": 83.1,
+  "incident_accuracy_gain_points": 83.1,
+  "unsafe_action_reduction_percent": 100.0,
+  "mttc_reduction_percent": 98.1,
+  "cost_reduction_percent": 98.9,
+  "synthetic_cost_avoided_usd": 5711374966.36,
+  "gates": {
+    "not_email_workflow": true,
+    "not_invoice_workflow": true,
+    "not_cloudops_workflow": true,
+    "defensive_only_cybersecurity_workflow": true,
+    "no_human_review_required": true,
+    "no_emails_sent": true,
+    "no_customers_contacted": true,
+    "no_private_data_used": true,
+    "no_api_keys_required": true,
+    "deterministic_reproducible_benchmark": true,
+    "recursive_self_improvement_releases_at_least_7": true,
+    "rsi_validation_improves_monotonically": true,
+    "train_cases_at_least_300": true,
+    "validation_cases_at_least_150": true,
+    "holdout_cases_at_least_600": true,
+    "final_rules_at_least_15": true,
+    "fully_correct_gain_at_least_70_points": true,
+    "incident_accuracy_at_least_99_percent": true,
+    "action_accuracy_at_least_99_percent": true,
+    "sev1_recall_at_least_99_percent": true,
+    "unsafe_action_rate_zero": true,
+    "containment_time_reduction_at_least_80_percent": true,
+    "cost_reduction_at_least_80_percent": true,
+    "synthetic_cost_avoided_positive": true
+  },
+  "safe_interpretation": "Defensive autonomous reference workflow proof using deterministic synthetic/redacted-style data. Not audited customer ROI or guarantee of future outcomes."
+}

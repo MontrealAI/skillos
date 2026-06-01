@@ -1,0 +1,369 @@
+{
+  "generated_at_utc": "2026-06-01T14:30:33Z",
+  "status": "PASSED_AUTONOMOUS_RSI_CLOUDOPS_MARKET_PROOF",
+  "proved": true,
+  "proof_type": "fully autonomous recursive self-improvement market-readiness proof",
+  "workflow": "cloud reliability incident triage and cloud-cost remediation planning",
+  "benchmark_public": {
+    "benchmark_name": "SkillOS Autonomous RSI CloudOps Market Proof Benchmark",
+    "workflow": "cloud reliability incident triage and cost remediation planning",
+    "seed": 20260530,
+    "private_data_used": false,
+    "human_review_required": false,
+    "email_workflow": false,
+    "invoice_workflow": false,
+    "train_count": 280,
+    "validation_count": 140,
+    "holdout_count": 420,
+    "example_count": 840,
+    "root_causes": [
+      "deploy_regression",
+      "cpu_saturation",
+      "memory_leak",
+      "cache_stampede",
+      "db_connection_pool_exhaustion",
+      "cert_expiry",
+      "dns_misconfig",
+      "disk_pressure",
+      "queue_backlog",
+      "third_party_outage",
+      "cost_spike_idle_resources",
+      "quota_limit",
+      "secrets_rotation_failure",
+      "feature_flag_misroute"
+    ],
+    "services": [
+      "payments-api",
+      "checkout-api",
+      "auth-service",
+      "search-service",
+      "data-sync",
+      "recommendations",
+      "billing-worker",
+      "scheduler",
+      "inventory-api",
+      "notifications",
+      "analytics-ingest",
+      "pricing-engine"
+    ]
+  },
+  "train_count": 280,
+  "validation_count": 140,
+  "holdout_count": 420,
+  "rsi_releases": [
+    {
+      "generation": 0,
+      "release": "baseline",
+      "active_rules": [],
+      "validation": {
+        "cases": 140,
+        "root_cause_accuracy_percent": 10.0,
+        "action_accuracy_percent": 10.0,
+        "severity_accuracy_percent": 47.9,
+        "fully_correct_percent": 10.0,
+        "sev1_recall_percent": 10.0,
+        "unsafe_action_rate_percent": 35.7,
+        "avg_mttr_minutes": 131.4,
+        "avg_cost_usd": 157180.96,
+        "total_cost_usd": 22005334.81
+      },
+      "released": true,
+      "lesson": "Initial baseline before RSI."
+    },
+    {
+      "generation": 1,
+      "release": "skillos-cloudops-rsi-v1",
+      "active_rules": [
+        "detect_memory_leak",
+        "detect_cache_stampede"
+      ],
+      "added_rules": [
+        "detect_memory_leak",
+        "detect_cache_stampede"
+      ],
+      "validation": {
+        "cases": 140,
+        "root_cause_accuracy_percent": 24.3,
+        "action_accuracy_percent": 24.3,
+        "severity_accuracy_percent": 55.0,
+        "fully_correct_percent": 24.3,
+        "sev1_recall_percent": 24.3,
+        "unsafe_action_rate_percent": 35.7,
+        "avg_mttr_minutes": 114.4,
+        "avg_cost_usd": 137300.04,
+        "total_cost_usd": 19222005.45
+      },
+      "released": true,
+      "lesson": "Autonomously mined training failures, proposed rule update, validated on separate validation set, and released only if validation improved."
+    },
+    {
+      "generation": 2,
+      "release": "skillos-cloudops-rsi-v2",
+      "active_rules": [
+        "detect_memory_leak",
+        "detect_cache_stampede",
+        "detect_db_pool_exhaustion",
+        "detect_cert_expiry"
+      ],
+      "added_rules": [
+        "detect_db_pool_exhaustion",
+        "detect_cert_expiry"
+      ],
+      "validation": {
+        "cases": 140,
+        "root_cause_accuracy_percent": 38.6,
+        "action_accuracy_percent": 38.6,
+        "severity_accuracy_percent": 69.3,
+        "fully_correct_percent": 38.6,
+        "sev1_recall_percent": 52.9,
+        "unsafe_action_rate_percent": 28.6,
+        "avg_mttr_minutes": 92.9,
+        "avg_cost_usd": 104841.55,
+        "total_cost_usd": 14677816.77
+      },
+      "released": true,
+      "lesson": "Autonomously mined training failures, proposed rule update, validated on separate validation set, and released only if validation improved."
+    },
+    {
+      "generation": 3,
+      "release": "skillos-cloudops-rsi-v3",
+      "active_rules": [
+        "detect_memory_leak",
+        "detect_cache_stampede",
+        "detect_db_pool_exhaustion",
+        "detect_cert_expiry",
+        "detect_dns_misconfig",
+        "detect_disk_pressure"
+      ],
+      "added_rules": [
+        "detect_dns_misconfig",
+        "detect_disk_pressure"
+      ],
+      "validation": {
+        "cases": 140,
+        "root_cause_accuracy_percent": 52.9,
+        "action_accuracy_percent": 52.9,
+        "severity_accuracy_percent": 76.4,
+        "fully_correct_percent": 52.9,
+        "sev1_recall_percent": 67.1,
+        "unsafe_action_rate_percent": 21.4,
+        "avg_mttr_minutes": 73.1,
+        "avg_cost_usd": 79500.72,
+        "total_cost_usd": 11130101.07
+      },
+      "released": true,
+      "lesson": "Autonomously mined training failures, proposed rule update, validated on separate validation set, and released only if validation improved."
+    },
+    {
+      "generation": 4,
+      "release": "skillos-cloudops-rsi-v4",
+      "active_rules": [
+        "detect_memory_leak",
+        "detect_cache_stampede",
+        "detect_db_pool_exhaustion",
+        "detect_cert_expiry",
+        "detect_dns_misconfig",
+        "detect_disk_pressure",
+        "detect_queue_backlog",
+        "detect_third_party_outage"
+      ],
+      "added_rules": [
+        "detect_queue_backlog",
+        "detect_third_party_outage"
+      ],
+      "validation": {
+        "cases": 140,
+        "root_cause_accuracy_percent": 67.1,
+        "action_accuracy_percent": 67.1,
+        "severity_accuracy_percent": 83.6,
+        "fully_correct_percent": 67.1,
+        "sev1_recall_percent": 81.4,
+        "unsafe_action_rate_percent": 14.3,
+        "avg_mttr_minutes": 53.3,
+        "avg_cost_usd": 54217.93,
+        "total_cost_usd": 7590509.87
+      },
+      "released": true,
+      "lesson": "Autonomously mined training failures, proposed rule update, validated on separate validation set, and released only if validation improved."
+    },
+    {
+      "generation": 5,
+      "release": "skillos-cloudops-rsi-v5",
+      "active_rules": [
+        "detect_memory_leak",
+        "detect_cache_stampede",
+        "detect_db_pool_exhaustion",
+        "detect_cert_expiry",
+        "detect_dns_misconfig",
+        "detect_disk_pressure",
+        "detect_queue_backlog",
+        "detect_third_party_outage",
+        "detect_cost_spike_idle_resources",
+        "detect_quota_limit"
+      ],
+      "added_rules": [
+        "detect_cost_spike_idle_resources",
+        "detect_quota_limit"
+      ],
+      "validation": {
+        "cases": 140,
+        "root_cause_accuracy_percent": 81.4,
+        "action_accuracy_percent": 81.4,
+        "severity_accuracy_percent": 90.7,
+        "fully_correct_percent": 81.4,
+        "sev1_recall_percent": 81.4,
+        "unsafe_action_rate_percent": 14.3,
+        "avg_mttr_minutes": 39.6,
+        "avg_cost_usd": 48855.37,
+        "total_cost_usd": 6839751.14
+      },
+      "released": true,
+      "lesson": "Autonomously mined training failures, proposed rule update, validated on separate validation set, and released only if validation improved."
+    },
+    {
+      "generation": 6,
+      "release": "skillos-cloudops-rsi-v6",
+      "active_rules": [
+        "detect_memory_leak",
+        "detect_cache_stampede",
+        "detect_db_pool_exhaustion",
+        "detect_cert_expiry",
+        "detect_dns_misconfig",
+        "detect_disk_pressure",
+        "detect_queue_backlog",
+        "detect_third_party_outage",
+        "detect_cost_spike_idle_resources",
+        "detect_quota_limit",
+        "detect_secrets_rotation_failure",
+        "detect_feature_flag_misroute"
+      ],
+      "added_rules": [
+        "detect_secrets_rotation_failure",
+        "detect_feature_flag_misroute"
+      ],
+      "validation": {
+        "cases": 140,
+        "root_cause_accuracy_percent": 95.7,
+        "action_accuracy_percent": 95.7,
+        "severity_accuracy_percent": 97.9,
+        "fully_correct_percent": 95.7,
+        "sev1_recall_percent": 95.7,
+        "unsafe_action_rate_percent": 0.0,
+        "avg_mttr_minutes": 17.0,
+        "avg_cost_usd": 17905.23,
+        "total_cost_usd": 2506732.88
+      },
+      "released": true,
+      "lesson": "Autonomously mined training failures, proposed rule update, validated on separate validation set, and released only if validation improved."
+    },
+    {
+      "generation": 7,
+      "release": "skillos-cloudops-rsi-v7",
+      "active_rules": [
+        "detect_memory_leak",
+        "detect_cache_stampede",
+        "detect_db_pool_exhaustion",
+        "detect_cert_expiry",
+        "detect_dns_misconfig",
+        "detect_disk_pressure",
+        "detect_queue_backlog",
+        "detect_third_party_outage",
+        "detect_cost_spike_idle_resources",
+        "detect_quota_limit",
+        "detect_secrets_rotation_failure",
+        "detect_feature_flag_misroute",
+        "detect_cpu_saturation",
+        "detect_deploy_regression"
+      ],
+      "added_rules": [
+        "detect_cpu_saturation",
+        "detect_deploy_regression"
+      ],
+      "validation": {
+        "cases": 140,
+        "root_cause_accuracy_percent": 100.0,
+        "action_accuracy_percent": 100.0,
+        "severity_accuracy_percent": 100.0,
+        "fully_correct_percent": 100.0,
+        "sev1_recall_percent": 100.0,
+        "unsafe_action_rate_percent": 0.0,
+        "avg_mttr_minutes": 11.9,
+        "avg_cost_usd": 11342.42,
+        "total_cost_usd": 1587939.43
+      },
+      "released": true,
+      "lesson": "Autonomously mined training failures, proposed rule update, validated on separate validation set, and released only if validation improved."
+    }
+  ],
+  "final_active_rules": [
+    "detect_memory_leak",
+    "detect_cache_stampede",
+    "detect_db_pool_exhaustion",
+    "detect_cert_expiry",
+    "detect_dns_misconfig",
+    "detect_disk_pressure",
+    "detect_queue_backlog",
+    "detect_third_party_outage",
+    "detect_cost_spike_idle_resources",
+    "detect_quota_limit",
+    "detect_secrets_rotation_failure",
+    "detect_feature_flag_misroute",
+    "detect_cpu_saturation",
+    "detect_deploy_regression"
+  ],
+  "baseline": {
+    "cases": 420,
+    "root_cause_accuracy_percent": 11.2,
+    "action_accuracy_percent": 11.2,
+    "severity_accuracy_percent": 49.3,
+    "fully_correct_percent": 11.2,
+    "sev1_recall_percent": 12.9,
+    "unsafe_action_rate_percent": 35.7,
+    "avg_mttr_minutes": 129.7,
+    "avg_cost_usd": 144817.31,
+    "total_cost_usd": 60823270.29
+  },
+  "final": {
+    "cases": 420,
+    "root_cause_accuracy_percent": 100.0,
+    "action_accuracy_percent": 100.0,
+    "severity_accuracy_percent": 100.0,
+    "fully_correct_percent": 100.0,
+    "sev1_recall_percent": 100.0,
+    "unsafe_action_rate_percent": 0.0,
+    "avg_mttr_minutes": 11.9,
+    "avg_cost_usd": 10966.61,
+    "total_cost_usd": 4605976.0
+  },
+  "fully_correct_gain_points": 88.8,
+  "root_cause_gain_points": 88.8,
+  "unsafe_action_reduction_percent": 100.0,
+  "mttr_reduction_percent": 90.8,
+  "cost_reduction_percent": 92.4,
+  "synthetic_cost_avoided_usd": 56217294.29,
+  "gates": {
+    "not_email_workflow": true,
+    "not_invoice_workflow": true,
+    "no_human_review_required": true,
+    "no_emails_sent": true,
+    "no_customers_contacted": true,
+    "no_private_data_used": true,
+    "no_api_keys_required": true,
+    "deterministic_reproducible_benchmark": true,
+    "recursive_self_improvement_releases_at_least_5": true,
+    "rsi_validation_improves_monotonically": true,
+    "train_cases_at_least_250": true,
+    "validation_cases_at_least_100": true,
+    "holdout_cases_at_least_400": true,
+    "final_rules_at_least_12": true,
+    "fully_correct_gain_at_least_50_points": true,
+    "root_cause_accuracy_at_least_95_percent": true,
+    "action_accuracy_at_least_95_percent": true,
+    "sev1_recall_at_least_99_percent": true,
+    "unsafe_action_rate_zero": true,
+    "mttr_reduction_at_least_70_percent": true,
+    "cost_reduction_at_least_70_percent": true,
+    "synthetic_cost_avoided_positive": true
+  },
+  "safe_interpretation": "Autonomous reference workflow proof using deterministic synthetic/redacted-style data. Not audited customer ROI or guarantee of future outcomes."
+}

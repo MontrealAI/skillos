@@ -1,0 +1,98 @@
+{
+  "generated_at_utc": "2026-06-01T13:07:07Z",
+  "status": "PASSED_AUTONOMOUS_MARKET_READINESS_PROOF",
+  "proved": true,
+  "proof_type": "fully autonomous no-human-review market-readiness proof",
+  "train_count": 40,
+  "holdout_count": 80,
+  "baseline": {
+    "jobs": 80,
+    "quality_avg": 49.2,
+    "accepted_rate_percent": 0.0,
+    "edit_minutes_per_job": 6.09,
+    "cost_per_job_usd": 7.6,
+    "hallucination_rate_percent": 15.0
+  },
+  "skillos": {
+    "jobs": 80,
+    "quality_avg": 95,
+    "accepted_rate_percent": 100.0,
+    "edit_minutes_per_job": 0.8,
+    "cost_per_job_usd": 1.0,
+    "hallucination_rate_percent": 0.0
+  },
+  "quality_gain_points": 45.8,
+  "accepted_rate_lift_points": 100.0,
+  "edit_time_reduction_percent": 86.9,
+  "cost_reduction_percent": 86.8,
+  "hallucination_reduction_percent": 100.0,
+  "learned_rules": [
+    "Put the agreed next step in the first three lines.",
+    "Include the buyer's main pain in the recap.",
+    "Never add commitments, approvals, budgets, or launch dates not present in the call notes.",
+    "Replace generic filler with a concise, specific recap.",
+    "End with a clear confirmation question tied to the next step.",
+    "Keep the draft under 140 words unless the user asks for more detail."
+  ],
+  "training_error_counts": {
+    "next_step_not_early": 40,
+    "pain_missing": 40,
+    "unsupported_claim": 6,
+    "too_generic": 40,
+    "unclear_cta": 40
+  },
+  "gates": {
+    "no_human_review_required": true,
+    "no_emails_sent": true,
+    "no_customers_contacted": true,
+    "no_private_data_used": true,
+    "no_api_keys_required": true,
+    "deterministic_reproducible_benchmark": true,
+    "train_examples_at_least_20": true,
+    "holdout_examples_at_least_50": true,
+    "learned_rules_created": true,
+    "quality_gain_at_least_20_points": true,
+    "accepted_rate_lift_at_least_50_points": true,
+    "edit_time_reduction_at_least_50_percent": true,
+    "cost_reduction_at_least_50_percent": true,
+    "hallucination_rate_after_skillos_is_zero": true
+  },
+  "sample_holdout_jobs": [
+    {
+      "id": "job_041",
+      "baseline_score": 28,
+      "skillos_score": 95,
+      "baseline_accepted": false,
+      "skillos_accepted": true
+    },
+    {
+      "id": "job_042",
+      "baseline_score": 53,
+      "skillos_score": 95,
+      "baseline_accepted": false,
+      "skillos_accepted": true
+    },
+    {
+      "id": "job_043",
+      "baseline_score": 53,
+      "skillos_score": 95,
+      "baseline_accepted": false,
+      "skillos_accepted": true
+    },
+    {
+      "id": "job_044",
+      "baseline_score": 53,
+      "skillos_score": 95,
+      "baseline_accepted": false,
+      "skillos_accepted": true
+    },
+    {
+      "id": "job_045",
+      "baseline_score": 53,
+      "skillos_score": 95,
+      "baseline_accepted": false,
+      "skillos_accepted": true
+    }
+  ],
+  "safe_interpretation": "Autonomous reference workflow proof only. Not audited customer ROI, financial advice, investment advice, or guarantee of future outcomes."
+}

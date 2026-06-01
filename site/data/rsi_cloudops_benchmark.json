@@ -1,0 +1,43 @@
+{
+  "benchmark_name": "SkillOS Autonomous RSI CloudOps Market Proof Benchmark",
+  "workflow": "cloud reliability incident triage and cost remediation planning",
+  "seed": 20260530,
+  "private_data_used": false,
+  "human_review_required": false,
+  "email_workflow": false,
+  "invoice_workflow": false,
+  "train_count": 280,
+  "validation_count": 140,
+  "holdout_count": 420,
+  "example_count": 840,
+  "root_causes": [
+    "deploy_regression",
+    "cpu_saturation",
+    "memory_leak",
+    "cache_stampede",
+    "db_connection_pool_exhaustion",
+    "cert_expiry",
+    "dns_misconfig",
+    "disk_pressure",
+    "queue_backlog",
+    "third_party_outage",
+    "cost_spike_idle_resources",
+    "quota_limit",
+    "secrets_rotation_failure",
+    "feature_flag_misroute"
+  ],
+  "services": [
+    "payments-api",
+    "checkout-api",
+    "auth-service",
+    "search-service",
+    "data-sync",
+    "recommendations",
+    "billing-worker",
+    "scheduler",
+    "inventory-api",
+    "notifications",
+    "analytics-ingest",
+    "pricing-engine"
+  ]
+}

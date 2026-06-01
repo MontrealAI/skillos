@@ -1,0 +1,3511 @@
+{
+  "agent_system": {
+    "agent_count": 4096,
+    "agents_per_role": 16,
+    "coordination_style": "validation-gated recursive self-improvement with council-of-councils quorum, adversarial risk veto, capital allocation tournament, enterprise regime testing, negative controls, bootstrap intervals, and locked holdout evaluation",
+    "councils": [
+      "capital",
+      "compute",
+      "energy",
+      "data",
+      "trust",
+      "talent",
+      "product",
+      "distribution",
+      "validation",
+      "risk",
+      "security",
+      "compliance",
+      "operations",
+      "revenue",
+      "strategy",
+      "marketplace",
+      "governance",
+      "customer",
+      "platform",
+      "research",
+      "experimentation",
+      "reinvestment",
+      "resilience",
+      "brand",
+      "legal",
+      "procurement",
+      "partnerships",
+      "finance",
+      "pricing",
+      "support",
+      "infrastructure",
+      "coordination"
+    ],
+    "governance_council_count": 32,
+    "role_count": 256,
+    "role_quorum_model": "256 specialist role quorums; each role represents 16 deterministic virtual agents; council signals are aggregated for reproducible public execution.",
+    "roles": [
+      "Capital Architect",
+      "Capital Optimizer",
+      "Capital Governor",
+      "Capital Auditor",
+      "Capital Red Teamer",
+      "Capital Economist",
+      "Capital Planner",
+      "Capital Scientist",
+      "Compute Architect",
+      "Compute Optimizer",
+      "Compute Governor",
+      "Compute Auditor",
+      "Compute Red Teamer",
+      "Compute Economist",
+      "Compute Planner",
+      "Compute Scientist",
+      "Energy Architect",
+      "Energy Optimizer",
+      "Energy Governor",
+      "Energy Auditor",
+      "Energy Red Teamer",
+      "Energy Economist",
+      "Energy Planner",
+      "Energy Scientist",
+      "Data Architect",
+      "Data Optimizer",
+      "Data Governor",
+      "Data Auditor",
+      "Data Red Teamer",
+      "Data Economist",
+      "Data Planner",
+      "Data Scientist",
+      "Trust Architect",
+      "Trust Optimizer",
+      "Trust Governor",
+      "Trust Auditor",
+      "Trust Red Teamer",
+      "Trust Economist",
+      "Trust Planner",
+      "Trust Scientist",
+      "Talent Architect",
+      "Talent Optimizer",
+      "Talent Governor",
+      "Talent Auditor",
+      "Talent Red Teamer",
+      "Talent Economist",
+      "Talent Planner",
+      "Talent Scientist",
+      "Product Architect",
+      "Product Optimizer",
+      "Product Governor",
+      "Product Auditor",
+      "Product Red Teamer",
+      "Product Economist",
+      "Product Planner",
+      "Product Scientist",
+      "Distribution Architect",
+      "Distribution Optimizer",
+      "Distribution Governor",
+      "Distribution Auditor",
+      "Distribution Red Teamer",
+      "Distribution Economist",
+      "Distribution Planner",
+      "Distribution Scientist",
+      "Validation Architect",
+      "Validation Optimizer",
+      "Validation Governor",
+      "Validation Auditor",
+      "Validation Red Teamer",
+      "Validation Economist",
+      "Validation Planner",
+      "Validation Scientist",
+      "Risk Architect",
+      "Risk Optimizer",
+      "Risk Governor",
+      "Risk Auditor",
+      "Risk Red Teamer",
+      "Risk Economist",
+      "Risk Planner",
+      "Risk Scientist",
+      "Security Architect",
+      "Security Optimizer",
+      "Security Governor",
+      "Security Auditor",
+      "Security Red Teamer",
+      "Security Economist",
+      "Security Planner",
+      "Security Scientist",
+      "Compliance Architect",
+      "Compliance Optimizer",
+      "Compliance Governor",
+      "Compliance Auditor",
+      "Compliance Red Teamer",
+      "Compliance Economist",
+      "Compliance Planner",
+      "Compliance Scientist",
+      "Operations Architect",
+      "Operations Optimizer",
+      "Operations Governor",
+      "Operations Auditor",
+      "Operations Red Teamer",
+      "Operations Economist",
+      "Operations Planner",
+      "Operations Scientist",
+      "Revenue Architect",
+      "Revenue Optimizer",
+      "Revenue Governor",
+      "Revenue Auditor",
+      "Revenue Red Teamer",
+      "Revenue Economist",
+      "Revenue Planner",
+      "Revenue Scientist",
+      "Strategy Architect",
+      "Strategy Optimizer",
+      "Strategy Governor",
+      "Strategy Auditor",
+      "Strategy Red Teamer",
+      "Strategy Economist",
+      "Strategy Planner",
+      "Strategy Scientist",
+      "Marketplace Architect",
+      "Marketplace Optimizer",
+      "Marketplace Governor",
+      "Marketplace Auditor",
+      "Marketplace Red Teamer",
+      "Marketplace Economist",
+      "Marketplace Planner",
+      "Marketplace Scientist",
+      "Governance Architect",
+      "Governance Optimizer",
+      "Governance Governor",
+      "Governance Auditor",
+      "Governance Red Teamer",
+      "Governance Economist",
+      "Governance Planner",
+      "Governance Scientist",
+      "Customer Architect",
+      "Customer Optimizer",
+      "Customer Governor",
+      "Customer Auditor",
+      "Customer Red Teamer",
+      "Customer Economist",
+      "Customer Planner",
+      "Customer Scientist",
+      "Platform Architect",
+      "Platform Optimizer",
+      "Platform Governor",
+      "Platform Auditor",
+      "Platform Red Teamer",
+      "Platform Economist",
+      "Platform Planner",
+      "Platform Scientist",
+      "Research Architect",
+      "Research Optimizer",
+      "Research Governor",
+      "Research Auditor",
+      "Research Red Teamer",
+      "Research Economist",
+      "Research Planner",
+      "Research Scientist",
+      "Experimentation Architect",
+      "Experimentation Optimizer",
+      "Experimentation Governor",
+      "Experimentation Auditor",
+      "Experimentation Red Teamer",
+      "Experimentation Economist",
+      "Experimentation Planner",
+      "Experimentation Scientist",
+      "Reinvestment Architect",
+      "Reinvestment Optimizer",
+      "Reinvestment Governor",
+      "Reinvestment Auditor",
+      "Reinvestment Red Teamer",
+      "Reinvestment Economist",
+      "Reinvestment Planner",
+      "Reinvestment Scientist",
+      "Resilience Architect",
+      "Resilience Optimizer",
+      "Resilience Governor",
+      "Resilience Auditor",
+      "Resilience Red Teamer",
+      "Resilience Economist",
+      "Resilience Planner",
+      "Resilience Scientist",
+      "Brand Architect",
+      "Brand Optimizer",
+      "Brand Governor",
+      "Brand Auditor",
+      "Brand Red Teamer",
+      "Brand Economist",
+      "Brand Planner",
+      "Brand Scientist",
+      "Legal Architect",
+      "Legal Optimizer",
+      "Legal Governor",
+      "Legal Auditor",
+      "Legal Red Teamer",
+      "Legal Economist",
+      "Legal Planner",
+      "Legal Scientist",
+      "Procurement Architect",
+      "Procurement Optimizer",
+      "Procurement Governor",
+      "Procurement Auditor",
+      "Procurement Red Teamer",
+      "Procurement Economist",
+      "Procurement Planner",
+      "Procurement Scientist",
+      "Partnerships Architect",
+      "Partnerships Optimizer",
+      "Partnerships Governor",
+      "Partnerships Auditor",
+      "Partnerships Red Teamer",
+      "Partnerships Economist",
+      "Partnerships Planner",
+      "Partnerships Scientist",
+      "Finance Architect",
+      "Finance Optimizer",
+      "Finance Governor",
+      "Finance Auditor",
+      "Finance Red Teamer",
+      "Finance Economist",
+      "Finance Planner",
+      "Finance Scientist",
+      "Pricing Architect",
+      "Pricing Optimizer",
+      "Pricing Governor",
+      "Pricing Auditor",
+      "Pricing Red Teamer",
+      "Pricing Economist",
+      "Pricing Planner",
+      "Pricing Scientist",
+      "Support Architect",
+      "Support Optimizer",
+      "Support Governor",
+      "Support Auditor",
+      "Support Red Teamer",
+      "Support Economist",
+      "Support Planner",
+      "Support Scientist",
+      "Infrastructure Architect",
+      "Infrastructure Optimizer",
+      "Infrastructure Governor",
+      "Infrastructure Auditor",
+      "Infrastructure Red Teamer",
+      "Infrastructure Economist",
+      "Infrastructure Planner",
+      "Infrastructure Scientist",
+      "Coordination Architect",
+      "Coordination Optimizer",
+      "Coordination Governor",
+      "Coordination Auditor",
+      "Coordination Red Teamer",
+      "Coordination Economist",
+      "Coordination Planner",
+      "Coordination Scientist"
+    ]
+  },
+  "benchmark_public": {
+    "candidate_actions_per_case": 11,
+    "data_boundary": "synthetic/redacted-style public benchmark; no private customer data",
+    "features": [
+      "market_size",
+      "revenue_leverage",
+      "margin_expansion",
+      "cycle_speed",
+      "reliability",
+      "customer_trust",
+      "risk_exposure",
+      "compliance_complexity",
+      "security_exposure",
+      "capital_efficiency",
+      "compute_efficiency",
+      "energy_efficiency",
+      "talent_leverage",
+      "distribution_power",
+      "product_fit",
+      "data_moat",
+      "network_effect",
+      "defensibility",
+      "compounding",
+      "reversibility",
+      "option_value",
+      "ecosystem_alignment",
+      "brand_resilience",
+      "learning_velocity",
+      "pricing_power",
+      "support_quality",
+      "infrastructure",
+      "reinvestment"
+    ],
+    "holdout_count": 2048,
+    "locked_holdout": true,
+    "name": "Enterprise Capability Foundry benchmark",
+    "oracle": "risk-adjusted enterprise value capture over market size, revenue, margin, trust, product, distribution, data moat, network effects, compute, energy, talent, compounding, reversibility, compliance, security, and nonlinear interaction terms",
+    "regimes": [
+      "growth_window",
+      "regulatory_shock",
+      "gpu_scarcity",
+      "energy_constraint",
+      "security_incident",
+      "distribution_breakout",
+      "trust_crisis",
+      "platform_shift"
+    ],
+    "seed": 20260530,
+    "train_count": 1536,
+    "validation_count": 768
+  },
+  "bootstrap_confidence_intervals": {
+    "vs_no_rsi_large_agent_organization": {
+      "bootstrap_repetitions": 320,
+      "mean_gain_points": 0.4665,
+      "p05_gain_points": 0.4031,
+      "p50_gain_points": 0.466,
+      "p95_gain_points": 0.5372
+    },
+    "vs_single_agent": {
+      "bootstrap_repetitions": 320,
+      "mean_gain_points": 10.9298,
+      "p05_gain_points": 10.3417,
+      "p50_gain_points": 10.9159,
+      "p95_gain_points": 11.5826
+    },
+    "vs_static_multi_agent_operating_committee": {
+      "bootstrap_repetitions": 320,
+      "mean_gain_points": 0.2358,
+      "p05_gain_points": 0.2,
+      "p50_gain_points": 0.2353,
+      "p95_gain_points": 0.2776
+    },
+    "vs_uncoordinated_large_agent_pool": {
+      "bootstrap_repetitions": 320,
+      "mean_gain_points": 1.9219,
+      "p05_gain_points": 1.7579,
+      "p50_gain_points": 1.924,
+      "p95_gain_points": 2.0842
+    }
+  },
+  "capital_to_capability_thesis": "capital \u2192 compute \u2192 energy \u2192 data \u2192 trust \u2192 talent \u2192 product \u2192 distribution \u2192 validation \u2192 risk control \u2192 reinvestment \u2192 compounding productive capability",
+  "comparisons": {
+    "vs_no_rsi_large_agent_organization": {
+      "benchmark_value_capture_gain_points": 0.465,
+      "benchmark_value_captured_gain_usd": 15291767047.1,
+      "fully_correct_gain_points": 13.965,
+      "risk_breach_reduction_points": 0.049
+    },
+    "vs_random_protocol_control": {
+      "benchmark_value_capture_gain_points": 3.388,
+      "benchmark_value_captured_gain_usd": 111455043838.52,
+      "fully_correct_gain_points": 38.526,
+      "risk_breach_reduction_points": 0.586
+    },
+    "vs_shuffled_reward_rsi_control": {
+      "benchmark_value_capture_gain_points": 28.291,
+      "benchmark_value_captured_gain_usd": 930875672982.57,
+      "fully_correct_gain_points": 83.741,
+      "risk_breach_reduction_points": 6.153
+    },
+    "vs_single_agent": {
+      "benchmark_value_capture_gain_points": 10.939,
+      "benchmark_value_captured_gain_usd": 359916648668.13,
+      "fully_correct_gain_points": 65.577,
+      "risk_breach_reduction_points": 3.125
+    },
+    "vs_static_multi_agent_operating_committee": {
+      "benchmark_value_capture_gain_points": 0.235,
+      "benchmark_value_captured_gain_usd": 7712686403.03,
+      "fully_correct_gain_points": 9.668,
+      "risk_breach_reduction_points": 0.0
+    },
+    "vs_uncoordinated_large_agent_pool": {
+      "benchmark_value_capture_gain_points": 1.919,
+      "benchmark_value_captured_gain_usd": 63133125151.0,
+      "fully_correct_gain_points": 29.688,
+      "risk_breach_reduction_points": 0.049
+    }
+  },
+  "display_name": "Autonomous RSI Enterprise Capability Foundry Proof",
+  "final": {
+    "avg_compounding_index": 59.539,
+    "avg_consensus_score": 94.093,
+    "avg_productive_capacity_index": 54.446,
+    "benchmark_implied_value_captured_over_no_rsi_usd": 15291767047.1,
+    "benchmark_implied_value_captured_over_single_agent_usd": 359916648668.13,
+    "benchmark_implied_value_captured_over_static_committee_usd": 7712686403.03,
+    "benchmark_implied_value_captured_over_uncoordinated_large_agent_pool_usd": 63133125151.0,
+    "benchmark_value_capture_rate_percent": 99.984,
+    "by_regime": {
+      "distribution_breakout": {
+        "case_count": 229,
+        "fully_correct_percent": 98.253,
+        "value_capture_percent": 99.984
+      },
+      "energy_constraint": {
+        "case_count": 272,
+        "fully_correct_percent": 96.691,
+        "value_capture_percent": 99.989
+      },
+      "gpu_scarcity": {
+        "case_count": 279,
+        "fully_correct_percent": 95.699,
+        "value_capture_percent": 99.978
+      },
+      "growth_window": {
+        "case_count": 279,
+        "fully_correct_percent": 97.849,
+        "value_capture_percent": 99.994
+      },
+      "platform_shift": {
+        "case_count": 246,
+        "fully_correct_percent": 95.122,
+        "value_capture_percent": 99.977
+      },
+      "regulatory_shock": {
+        "case_count": 253,
+        "fully_correct_percent": 95.652,
+        "value_capture_percent": 99.979
+      },
+      "security_incident": {
+        "case_count": 258,
+        "fully_correct_percent": 96.899,
+        "value_capture_percent": 99.981
+      },
+      "trust_crisis": {
+        "case_count": 232,
+        "fully_correct_percent": 97.845,
+        "value_capture_percent": 99.987
+      }
+    },
+    "capability_lever_accuracy_percent": 99.984,
+    "case_count": 2048,
+    "coordination_protocol_accuracy_percent": 96.729,
+    "fully_correct_percent": 96.729,
+    "invalid_action_rate_percent": 0.0,
+    "risk_breach_rate_percent": 0.146,
+    "risk_control_accuracy_percent": 99.854,
+    "role_quorum_accuracy_percent": 100.0,
+    "top3_percent": 100.0,
+    "total_benchmark_value_at_stake_usd": 3290336564826.44,
+    "total_benchmark_value_captured_usd": 3289800626452.95,
+    "value_capture_rate_percent": 99.984
+  },
+  "generated_at_utc": "2026-05-31T12:05:40Z",
+  "holdout_samples": [
+    {
+      "case_id": 2304,
+      "chosen_action": 1,
+      "chosen_value_usd": 3407368486.38,
+      "compounding": 0.6102,
+      "data_moat": 0.0369,
+      "learning_velocity": 0.9721,
+      "matched_oracle": true,
+      "oracle_action": 1,
+      "oracle_value_usd": 3407368486.38,
+      "regime": "distribution_breakout",
+      "risk_load": 1.3892,
+      "trust": 0.8372
+    },
+    {
+      "case_id": 2305,
+      "chosen_action": 1,
+      "chosen_value_usd": 383316901.4,
+      "compounding": 0.3238,
+      "data_moat": 0.3862,
+      "learning_velocity": 0.5879,
+      "matched_oracle": true,
+      "oracle_action": 1,
+      "oracle_value_usd": 383316901.4,
+      "regime": "gpu_scarcity",
+      "risk_load": 1.2789,
+      "trust": 0.3096
+    },
+    {
+      "case_id": 2306,
+      "chosen_action": 7,
+      "chosen_value_usd": 515759868.28,
+      "compounding": 0.5722,
+      "data_moat": 0.4124,
+      "learning_velocity": 0.4154,
+      "matched_oracle": true,
+      "oracle_action": 7,
+      "oracle_value_usd": 515759868.28,
+      "regime": "trust_crisis",
+      "risk_load": 0.904,
+      "trust": 0.3588
+    },
+    {
+      "case_id": 2307,
+      "chosen_action": 6,
+      "chosen_value_usd": 655026501.82,
+      "compounding": 0.7226,
+      "data_moat": 0.0638,
+      "learning_velocity": 0.9777,
+      "matched_oracle": true,
+      "oracle_action": 6,
+      "oracle_value_usd": 655026501.82,
+      "regime": "gpu_scarcity",
+      "risk_load": 1.6748,
+      "trust": 0.7697
+    },
+    {
+      "case_id": 2308,
+      "chosen_action": 0,
+      "chosen_value_usd": 3497475142.37,
+      "compounding": 0.459,
+      "data_moat": 0.5918,
+      "learning_velocity": 0.4648,
+      "matched_oracle": true,
+      "oracle_action": 0,
+      "oracle_value_usd": 3497475142.37,
+      "regime": "regulatory_shock",
+      "risk_load": 1.3129,
+      "trust": 0.1852
+    },
+    {
+      "case_id": 2309,
+      "chosen_action": 7,
+      "chosen_value_usd": 333447833.3,
+      "compounding": 0.3149,
+      "data_moat": 0.106,
+      "learning_velocity": 0.4919,
+      "matched_oracle": true,
+      "oracle_action": 7,
+      "oracle_value_usd": 333447833.3,
+      "regime": "energy_constraint",
+      "risk_load": 1.1431,
+      "trust": 0.9735
+    },
+    {
+      "case_id": 2310,
+      "chosen_action": 2,
+      "chosen_value_usd": 3028827958.8,
+      "compounding": 0.5632,
+      "data_moat": 0.2215,
+      "learning_velocity": 0.3118,
+      "matched_oracle": true,
+      "oracle_action": 2,
+      "oracle_value_usd": 3028827958.8,
+      "regime": "regulatory_shock",
+      "risk_load": 1.0688,
+      "trust": 0.5538
+    },
+    {
+      "case_id": 2311,
+      "chosen_action": 10,
+      "chosen_value_usd": 569023475.13,
+      "compounding": 0.8332,
+      "data_moat": 0.9659,
+      "learning_velocity": 0.7011,
+      "matched_oracle": true,
+      "oracle_action": 10,
+      "oracle_value_usd": 569023475.13,
+      "regime": "distribution_breakout",
+      "risk_load": 1.6711,
+      "trust": 0.716
+    },
+    {
+      "case_id": 2312,
+      "chosen_action": 8,
+      "chosen_value_usd": 2658935642.2,
+      "compounding": 0.7575,
+      "data_moat": 0.753,
+      "learning_velocity": 0.6808,
+      "matched_oracle": true,
+      "oracle_action": 8,
+      "oracle_value_usd": 2658935642.2,
+      "regime": "energy_constraint",
+      "risk_load": 1.2077,
+      "trust": 0.4512
+    },
+    {
+      "case_id": 2313,
+      "chosen_action": 8,
+      "chosen_value_usd": 1035212286.61,
+      "compounding": 0.3947,
+      "data_moat": 0.0412,
+      "learning_velocity": 0.5763,
+      "matched_oracle": true,
+      "oracle_action": 8,
+      "oracle_value_usd": 1035212286.61,
+      "regime": "trust_crisis",
+      "risk_load": 1.0932,
+      "trust": 0.3678
+    },
+    {
+      "case_id": 2314,
+      "chosen_action": 7,
+      "chosen_value_usd": 3696192464.18,
+      "compounding": 0.8026,
+      "data_moat": 0.5453,
+      "learning_velocity": 0.9978,
+      "matched_oracle": true,
+      "oracle_action": 7,
+      "oracle_value_usd": 3696192464.18,
+      "regime": "growth_window",
+      "risk_load": 1.6538,
+      "trust": 0.9745
+    },
+    {
+      "case_id": 2315,
+      "chosen_action": 6,
+      "chosen_value_usd": 2240557851.47,
+      "compounding": 0.5634,
+      "data_moat": 0.9421,
+      "learning_velocity": 0.6757,
+      "matched_oracle": true,
+      "oracle_action": 6,
+      "oracle_value_usd": 2240557851.47,
+      "regime": "trust_crisis",
+      "risk_load": 1.5008,
+      "trust": 0.0733
+    },
+    {
+      "case_id": 2316,
+      "chosen_action": 4,
+      "chosen_value_usd": 2291914207.6,
+      "compounding": 0.6851,
+      "data_moat": 0.3382,
+      "learning_velocity": 0.8278,
+      "matched_oracle": true,
+      "oracle_action": 4,
+      "oracle_value_usd": 2291914207.6,
+      "regime": "growth_window",
+      "risk_load": 1.2071,
+      "trust": 0.9198
+    },
+    {
+      "case_id": 2317,
+      "chosen_action": 7,
+      "chosen_value_usd": 513652420.35,
+      "compounding": 0.6979,
+      "data_moat": 0.1903,
+      "learning_velocity": 0.7976,
+      "matched_oracle": true,
+      "oracle_action": 7,
+      "oracle_value_usd": 513652420.35,
+      "regime": "distribution_breakout",
+      "risk_load": 1.146,
+      "trust": 0.9819
+    },
+    {
+      "case_id": 2318,
+      "chosen_action": 2,
+      "chosen_value_usd": 2971083480.94,
+      "compounding": 0.5238,
+      "data_moat": 0.7527,
+      "learning_velocity": 0.8346,
+      "matched_oracle": true,
+      "oracle_action": 2,
+      "oracle_value_usd": 2971083480.94,
+      "regime": "security_incident",
+      "risk_load": 1.4539,
+      "trust": 0.5953
+    },
+    {
+      "case_id": 2319,
+      "chosen_action": 5,
+      "chosen_value_usd": 914133610.48,
+      "compounding": 0.6423,
+      "data_moat": 0.4871,
+      "learning_velocity": 0.0117,
+      "matched_oracle": true,
+      "oracle_action": 5,
+      "oracle_value_usd": 914133610.48,
+      "regime": "gpu_scarcity",
+      "risk_load": 1.4715,
+      "trust": 0.916
+    },
+    {
+      "case_id": 2320,
+      "chosen_action": 1,
+      "chosen_value_usd": 3463853406.29,
+      "compounding": 0.73,
+      "data_moat": 0.4605,
+      "learning_velocity": 0.6752,
+      "matched_oracle": true,
+      "oracle_action": 1,
+      "oracle_value_usd": 3463853406.29,
+      "regime": "growth_window",
+      "risk_load": 1.6103,
+      "trust": 0.4459
+    },
+    {
+      "case_id": 2321,
+      "chosen_action": 7,
+      "chosen_value_usd": 399012629.14,
+      "compounding": 0.3694,
+      "data_moat": 0.4977,
+      "learning_velocity": 0.0675,
+      "matched_oracle": true,
+      "oracle_action": 7,
+      "oracle_value_usd": 399012629.14,
+      "regime": "energy_constraint",
+      "risk_load": 1.2816,
+      "trust": 0.9096
+    },
+    {
+      "case_id": 2322,
+      "chosen_action": 7,
+      "chosen_value_usd": 846912081.03,
+      "compounding": 0.4163,
+      "data_moat": 0.4322,
+      "learning_velocity": 0.373,
+      "matched_oracle": true,
+      "oracle_action": 7,
+      "oracle_value_usd": 846912081.03,
+      "regime": "regulatory_shock",
+      "risk_load": 1.4922,
+      "trust": 0.6195
+    },
+    {
+      "case_id": 2323,
+      "chosen_action": 4,
+      "chosen_value_usd": 2152412194.63,
+      "compounding": 0.6424,
+      "data_moat": 0.5833,
+      "learning_velocity": 0.507,
+      "matched_oracle": true,
+      "oracle_action": 4,
+      "oracle_value_usd": 2152412194.63,
+      "regime": "distribution_breakout",
+      "risk_load": 1.0468,
+      "trust": 0.6311
+    }
+  ],
+  "markdown_report": "docs/rsi_enterprise_capability_foundry_proof.md",
+  "negative_controls": {
+    "random_protocol": {
+      "avg_compounding_index": 55.58,
+      "avg_consensus_score": 94.056,
+      "avg_productive_capacity_index": 58.408,
+      "benchmark_value_capture_rate_percent": 96.596,
+      "by_regime": {
+        "distribution_breakout": {
+          "case_count": 229,
+          "fully_correct_percent": 59.825,
+          "value_capture_percent": 96.495
+        },
+        "energy_constraint": {
+          "case_count": 272,
+          "fully_correct_percent": 58.456,
+          "value_capture_percent": 96.267
+        },
+        "gpu_scarcity": {
+          "case_count": 279,
+          "fully_correct_percent": 55.197,
+          "value_capture_percent": 97.059
+        },
+        "growth_window": {
+          "case_count": 279,
+          "fully_correct_percent": 64.158,
+          "value_capture_percent": 97.267
+        },
+        "platform_shift": {
+          "case_count": 246,
+          "fully_correct_percent": 50.813,
+          "value_capture_percent": 95.996
+        },
+        "regulatory_shock": {
+          "case_count": 253,
+          "fully_correct_percent": 61.66,
+          "value_capture_percent": 96.746
+        },
+        "security_incident": {
+          "case_count": 258,
+          "fully_correct_percent": 58.14,
+          "value_capture_percent": 96.372
+        },
+        "trust_crisis": {
+          "case_count": 232,
+          "fully_correct_percent": 56.897,
+          "value_capture_percent": 96.39
+        }
+      },
+      "capability_lever_accuracy_percent": 96.596,
+      "case_count": 2048,
+      "coordination_protocol_accuracy_percent": 58.203,
+      "fully_correct_percent": 58.203,
+      "invalid_action_rate_percent": 0.0,
+      "risk_breach_rate_percent": 0.732,
+      "risk_control_accuracy_percent": 99.268,
+      "role_quorum_accuracy_percent": 89.16,
+      "top3_percent": 89.16,
+      "total_benchmark_value_at_stake_usd": 3290336564826.44,
+      "total_benchmark_value_captured_usd": 3178345582614.43,
+      "value_capture_rate_percent": 96.596
+    },
+    "shuffled_reward_rsi": {
+      "avg_compounding_index": 57.038,
+      "avg_consensus_score": 93.706,
+      "avg_productive_capacity_index": 56.938,
+      "benchmark_value_capture_rate_percent": 71.693,
+      "by_regime": {
+        "distribution_breakout": {
+          "case_count": 229,
+          "fully_correct_percent": 10.044,
+          "value_capture_percent": 73.693
+        },
+        "energy_constraint": {
+          "case_count": 272,
+          "fully_correct_percent": 11.765,
+          "value_capture_percent": 67.551
+        },
+        "gpu_scarcity": {
+          "case_count": 279,
+          "fully_correct_percent": 11.111,
+          "value_capture_percent": 71.787
+        },
+        "growth_window": {
+          "case_count": 279,
+          "fully_correct_percent": 14.337,
+          "value_capture_percent": 71.086
+        },
+        "platform_shift": {
+          "case_count": 246,
+          "fully_correct_percent": 15.041,
+          "value_capture_percent": 76.715
+        },
+        "regulatory_shock": {
+          "case_count": 253,
+          "fully_correct_percent": 13.439,
+          "value_capture_percent": 69.16
+        },
+        "security_incident": {
+          "case_count": 258,
+          "fully_correct_percent": 13.178,
+          "value_capture_percent": 72.894
+        },
+        "trust_crisis": {
+          "case_count": 232,
+          "fully_correct_percent": 15.086,
+          "value_capture_percent": 71.551
+        }
+      },
+      "capability_lever_accuracy_percent": 71.693,
+      "case_count": 2048,
+      "coordination_protocol_accuracy_percent": 12.988,
+      "fully_correct_percent": 12.988,
+      "invalid_action_rate_percent": 13.77,
+      "risk_breach_rate_percent": 6.299,
+      "risk_control_accuracy_percent": 93.701,
+      "role_quorum_accuracy_percent": 34.18,
+      "top3_percent": 34.18,
+      "total_benchmark_value_at_stake_usd": 3290336564826.44,
+      "total_benchmark_value_captured_usd": 2358924953470.38,
+      "value_capture_rate_percent": 71.693
+    }
+  },
+  "no_rsi_large_agent_organization": {
+    "avg_compounding_index": 57.804,
+    "avg_consensus_score": 94.135,
+    "avg_productive_capacity_index": 55.834,
+    "benchmark_value_capture_rate_percent": 99.519,
+    "by_regime": {
+      "distribution_breakout": {
+        "case_count": 229,
+        "fully_correct_percent": 81.659,
+        "value_capture_percent": 99.461
+      },
+      "energy_constraint": {
+        "case_count": 272,
+        "fully_correct_percent": 85.294,
+        "value_capture_percent": 99.68
+      },
+      "gpu_scarcity": {
+        "case_count": 279,
+        "fully_correct_percent": 82.437,
+        "value_capture_percent": 99.427
+      },
+      "growth_window": {
+        "case_count": 279,
+        "fully_correct_percent": 87.455,
+        "value_capture_percent": 99.651
+      },
+      "platform_shift": {
+        "case_count": 246,
+        "fully_correct_percent": 76.829,
+        "value_capture_percent": 99.214
+      },
+      "regulatory_shock": {
+        "case_count": 253,
+        "fully_correct_percent": 84.98,
+        "value_capture_percent": 99.728
+      },
+      "security_incident": {
+        "case_count": 258,
+        "fully_correct_percent": 82.171,
+        "value_capture_percent": 99.553
+      },
+      "trust_crisis": {
+        "case_count": 232,
+        "fully_correct_percent": 80.172,
+        "value_capture_percent": 99.367
+      }
+    },
+    "capability_lever_accuracy_percent": 99.519,
+    "case_count": 2048,
+    "coordination_protocol_accuracy_percent": 82.764,
+    "fully_correct_percent": 82.764,
+    "invalid_action_rate_percent": 0.0,
+    "risk_breach_rate_percent": 0.195,
+    "risk_control_accuracy_percent": 99.805,
+    "role_quorum_accuracy_percent": 99.219,
+    "top3_percent": 99.219,
+    "total_benchmark_value_at_stake_usd": 3290336564826.44,
+    "total_benchmark_value_captured_usd": 3274508859405.85,
+    "value_capture_rate_percent": 99.519
+  },
+  "output": "data/rsi_enterprise_capability_foundry_proof.json",
+  "page_url": "rsi-enterprise-capability-foundry-proof.html",
+  "pre_registered_gates": {
+    "beats_no_rsi_large_org": true,
+    "beats_single_agent_value_capture": true,
+    "beats_static_multi_agent_committee": true,
+    "beats_uncoordinated_large_agent_pool": true,
+    "benchmark_value_at_stake_scale": true,
+    "benchmark_value_capture": true,
+    "benchmark_value_over_single_agent": true,
+    "bootstrap_lower_bound_positive_vs_no_rsi": true,
+    "bootstrap_lower_bound_positive_vs_static": true,
+    "enterprise_regime_coverage": true,
+    "fully_correct_rate": true,
+    "large_multi_agent_organization": true,
+    "locked_holdout_scale": true,
+    "negative_controls_do_not_match": true,
+    "risk_controlled": true,
+    "single_agent_accuracy_gain": true,
+    "validation_gated_rsi_releases": true
+  },
+  "proof_steps": [
+    "Generate deterministic public enterprise benchmark cases across eight business regimes.",
+    "Define oracle risk-adjusted value capture across eleven candidate actions per case.",
+    "Evaluate single enterprise generalist baseline.",
+    "Evaluate uncoordinated large-agent pool baseline.",
+    "Evaluate static multi-agent operating committee baseline.",
+    "Evaluate no-RSI large organization baseline.",
+    "Run validation-gated recursive self-improvement over the coordination protocol.",
+    "Run shuffled-reward and random-protocol negative controls.",
+    "Lock final protocol fingerprint.",
+    "Evaluate final protocol exactly once on locked holdout cases.",
+    "Compute bootstrap confidence intervals for value-capture gains.",
+    "Write JSON receipt, Markdown report, badge, visual proof page, artifact, and optional Pages deployment."
+  ],
+  "proof_type": "Autonomous RSI Enterprise Capability Foundry Proof",
+  "protocol_fingerprint_sha256": "6d5f233c1530d7b30012f0e2c5dda42a0a47bfe76a94d0e6625953c7e4970597",
+  "proved": true,
+  "public_boundary": "Benchmark proof values are not audited customer revenue, live customer adoption, financial advice, investment advice, achieved superintelligence, or Kardashev Type II achievement.",
+  "rsi_release_count": 9,
+  "rsi_releases": [
+    {
+      "generation": 0,
+      "lesson": "seed large specialist-agent operating protocol",
+      "protocol_fingerprint_sha256": "7950a5065a49c0e4e7299f084c747b41cfa7a53ab0d723c7dea1343220198317",
+      "released": true,
+      "score": 108.38719,
+      "validation": {
+        "avg_compounding_index": 58.003,
+        "avg_consensus_score": 94.187,
+        "avg_productive_capacity_index": 56.112,
+        "benchmark_value_capture_rate_percent": 99.549,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 87.879,
+            "value_capture_percent": 99.644
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 80.952,
+            "value_capture_percent": 99.37
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 83.168,
+            "value_capture_percent": 99.458
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 81.707,
+            "value_capture_percent": 99.325
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 87.0,
+            "value_capture_percent": 99.814
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 83.871,
+            "value_capture_percent": 99.649
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 85.567,
+            "value_capture_percent": 99.512
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 79.121,
+            "value_capture_percent": 99.529
+          }
+        },
+        "capability_lever_accuracy_percent": 99.549,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 83.724,
+        "fully_correct_percent": 83.724,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.391,
+        "risk_control_accuracy_percent": 99.609,
+        "role_quorum_accuracy_percent": 98.828,
+        "top3_percent": 98.828,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1261540640740.99,
+        "value_capture_rate_percent": 99.549
+      }
+    },
+    {
+      "generation": 1,
+      "lesson": "validation-gated RSI update from oracle-regret traces, specialist disagreement, and risk-veto failures",
+      "protocol_fingerprint_sha256": "4e02c7fd9512c2e75efc11f3ef57c5e51ea6586865a5afa9fe8543ca3e8d0649",
+      "released": true,
+      "score": 109.94849,
+      "validation": {
+        "avg_compounding_index": 58.631,
+        "avg_consensus_score": 94.119,
+        "avg_productive_capacity_index": 54.97,
+        "benchmark_value_capture_rate_percent": 99.926,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 89.899,
+            "value_capture_percent": 99.926
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 95.238,
+            "value_capture_percent": 99.929
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 94.059,
+            "value_capture_percent": 99.914
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 97.561,
+            "value_capture_percent": 99.985
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 90.0,
+            "value_capture_percent": 99.906
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 93.548,
+            "value_capture_percent": 99.912
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 93.814,
+            "value_capture_percent": 99.879
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 93.407,
+            "value_capture_percent": 99.984
+          }
+        },
+        "capability_lever_accuracy_percent": 99.926,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 93.359,
+        "fully_correct_percent": 93.359,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 99.87,
+        "top3_percent": 99.87,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266324571081.12,
+        "value_capture_rate_percent": 99.926
+      }
+    },
+    {
+      "generation": 2,
+      "lesson": "validation-gated RSI update from oracle-regret traces, specialist disagreement, and risk-veto failures",
+      "protocol_fingerprint_sha256": "d7b7da9587d0cb2a7b18f820ef7716c1c68037b8a65c0c491eebb671f9320c44",
+      "released": true,
+      "score": 110.0228,
+      "validation": {
+        "avg_compounding_index": 58.934,
+        "avg_consensus_score": 94.082,
+        "avg_productive_capacity_index": 54.751,
+        "benchmark_value_capture_rate_percent": 99.943,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 93.939,
+            "value_capture_percent": 99.969
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 94.286,
+            "value_capture_percent": 99.948
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 96.04,
+            "value_capture_percent": 99.968
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.996
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 92.0,
+            "value_capture_percent": 99.961
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 94.624,
+            "value_capture_percent": 99.932
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 94.845,
+            "value_capture_percent": 99.919
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 86.813,
+            "value_capture_percent": 99.851
+          }
+        },
+        "capability_lever_accuracy_percent": 99.943,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 93.88,
+        "fully_correct_percent": 93.88,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 99.87,
+        "top3_percent": 99.87,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266539541334.08,
+        "value_capture_rate_percent": 99.943
+      }
+    },
+    {
+      "generation": 3,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "d7b7da9587d0cb2a7b18f820ef7716c1c68037b8a65c0c491eebb671f9320c44",
+      "released": false,
+      "score": 110.0228,
+      "validation": {
+        "avg_compounding_index": 58.934,
+        "avg_consensus_score": 94.082,
+        "avg_productive_capacity_index": 54.751,
+        "benchmark_value_capture_rate_percent": 99.943,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 93.939,
+            "value_capture_percent": 99.969
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 94.286,
+            "value_capture_percent": 99.948
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 96.04,
+            "value_capture_percent": 99.968
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.996
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 92.0,
+            "value_capture_percent": 99.961
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 94.624,
+            "value_capture_percent": 99.932
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 94.845,
+            "value_capture_percent": 99.919
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 86.813,
+            "value_capture_percent": 99.851
+          }
+        },
+        "capability_lever_accuracy_percent": 99.943,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 93.88,
+        "fully_correct_percent": 93.88,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 99.87,
+        "top3_percent": 99.87,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266539541334.08,
+        "value_capture_rate_percent": 99.943
+      }
+    },
+    {
+      "generation": 4,
+      "lesson": "validation-gated RSI update from oracle-regret traces, specialist disagreement, and risk-veto failures",
+      "protocol_fingerprint_sha256": "0db515496c32bb1a77eada571be69fc4b4e44ed6eb607b8987037662006f2914",
+      "released": true,
+      "score": 110.2232,
+      "validation": {
+        "avg_compounding_index": 59.063,
+        "avg_consensus_score": 94.079,
+        "avg_productive_capacity_index": 54.598,
+        "benchmark_value_capture_rate_percent": 99.967,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 97.98,
+            "value_capture_percent": 99.987
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 97.143,
+            "value_capture_percent": 99.97
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 97.03,
+            "value_capture_percent": 99.96
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.986
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 97.0,
+            "value_capture_percent": 99.97
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 95.699,
+            "value_capture_percent": 99.942
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 96.907,
+            "value_capture_percent": 99.944
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 92.308,
+            "value_capture_percent": 99.982
+          }
+        },
+        "capability_lever_accuracy_percent": 99.967,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.615,
+        "fully_correct_percent": 96.615,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.391,
+        "risk_control_accuracy_percent": 99.609,
+        "role_quorum_accuracy_percent": 99.87,
+        "top3_percent": 99.87,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266838377651.99,
+        "value_capture_rate_percent": 99.967
+      }
+    },
+    {
+      "generation": 5,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "0db515496c32bb1a77eada571be69fc4b4e44ed6eb607b8987037662006f2914",
+      "released": false,
+      "score": 110.2232,
+      "validation": {
+        "avg_compounding_index": 59.063,
+        "avg_consensus_score": 94.079,
+        "avg_productive_capacity_index": 54.598,
+        "benchmark_value_capture_rate_percent": 99.967,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 97.98,
+            "value_capture_percent": 99.987
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 97.143,
+            "value_capture_percent": 99.97
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 97.03,
+            "value_capture_percent": 99.96
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.986
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 97.0,
+            "value_capture_percent": 99.97
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 95.699,
+            "value_capture_percent": 99.942
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 96.907,
+            "value_capture_percent": 99.944
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 92.308,
+            "value_capture_percent": 99.982
+          }
+        },
+        "capability_lever_accuracy_percent": 99.967,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.615,
+        "fully_correct_percent": 96.615,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.391,
+        "risk_control_accuracy_percent": 99.609,
+        "role_quorum_accuracy_percent": 99.87,
+        "top3_percent": 99.87,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266838377651.99,
+        "value_capture_rate_percent": 99.967
+      }
+    },
+    {
+      "generation": 6,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "0db515496c32bb1a77eada571be69fc4b4e44ed6eb607b8987037662006f2914",
+      "released": false,
+      "score": 110.2232,
+      "validation": {
+        "avg_compounding_index": 59.063,
+        "avg_consensus_score": 94.079,
+        "avg_productive_capacity_index": 54.598,
+        "benchmark_value_capture_rate_percent": 99.967,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 97.98,
+            "value_capture_percent": 99.987
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 97.143,
+            "value_capture_percent": 99.97
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 97.03,
+            "value_capture_percent": 99.96
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.986
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 97.0,
+            "value_capture_percent": 99.97
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 95.699,
+            "value_capture_percent": 99.942
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 96.907,
+            "value_capture_percent": 99.944
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 92.308,
+            "value_capture_percent": 99.982
+          }
+        },
+        "capability_lever_accuracy_percent": 99.967,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.615,
+        "fully_correct_percent": 96.615,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.391,
+        "risk_control_accuracy_percent": 99.609,
+        "role_quorum_accuracy_percent": 99.87,
+        "top3_percent": 99.87,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266838377651.99,
+        "value_capture_rate_percent": 99.967
+      }
+    },
+    {
+      "generation": 7,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "0db515496c32bb1a77eada571be69fc4b4e44ed6eb607b8987037662006f2914",
+      "released": false,
+      "score": 110.2232,
+      "validation": {
+        "avg_compounding_index": 59.063,
+        "avg_consensus_score": 94.079,
+        "avg_productive_capacity_index": 54.598,
+        "benchmark_value_capture_rate_percent": 99.967,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 97.98,
+            "value_capture_percent": 99.987
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 97.143,
+            "value_capture_percent": 99.97
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 97.03,
+            "value_capture_percent": 99.96
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.986
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 97.0,
+            "value_capture_percent": 99.97
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 95.699,
+            "value_capture_percent": 99.942
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 96.907,
+            "value_capture_percent": 99.944
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 92.308,
+            "value_capture_percent": 99.982
+          }
+        },
+        "capability_lever_accuracy_percent": 99.967,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.615,
+        "fully_correct_percent": 96.615,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.391,
+        "risk_control_accuracy_percent": 99.609,
+        "role_quorum_accuracy_percent": 99.87,
+        "top3_percent": 99.87,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266838377651.99,
+        "value_capture_rate_percent": 99.967
+      }
+    },
+    {
+      "generation": 8,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "0db515496c32bb1a77eada571be69fc4b4e44ed6eb607b8987037662006f2914",
+      "released": false,
+      "score": 110.2232,
+      "validation": {
+        "avg_compounding_index": 59.063,
+        "avg_consensus_score": 94.079,
+        "avg_productive_capacity_index": 54.598,
+        "benchmark_value_capture_rate_percent": 99.967,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 97.98,
+            "value_capture_percent": 99.987
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 97.143,
+            "value_capture_percent": 99.97
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 97.03,
+            "value_capture_percent": 99.96
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.986
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 97.0,
+            "value_capture_percent": 99.97
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 95.699,
+            "value_capture_percent": 99.942
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 96.907,
+            "value_capture_percent": 99.944
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 92.308,
+            "value_capture_percent": 99.982
+          }
+        },
+        "capability_lever_accuracy_percent": 99.967,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.615,
+        "fully_correct_percent": 96.615,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.391,
+        "risk_control_accuracy_percent": 99.609,
+        "role_quorum_accuracy_percent": 99.87,
+        "top3_percent": 99.87,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266838377651.99,
+        "value_capture_rate_percent": 99.967
+      }
+    },
+    {
+      "generation": 9,
+      "lesson": "validation-gated RSI update from oracle-regret traces, specialist disagreement, and risk-veto failures",
+      "protocol_fingerprint_sha256": "fc24285337a65d3f8d55c415f897448402e6d3fff19c0c052568cbf259d203e0",
+      "released": true,
+      "score": 110.29622,
+      "validation": {
+        "avg_compounding_index": 59.28,
+        "avg_consensus_score": 94.084,
+        "avg_productive_capacity_index": 54.695,
+        "benchmark_value_capture_rate_percent": 99.964,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 95.96,
+            "value_capture_percent": 99.977
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 97.143,
+            "value_capture_percent": 99.941
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 95.05,
+            "value_capture_percent": 99.942
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 97.561,
+            "value_capture_percent": 99.974
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 95.0,
+            "value_capture_percent": 99.986
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 94.624,
+            "value_capture_percent": 99.96
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 95.876,
+            "value_capture_percent": 99.986
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 89.011,
+            "value_capture_percent": 99.945
+          }
+        },
+        "capability_lever_accuracy_percent": 99.964,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 95.052,
+        "fully_correct_percent": 95.052,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.13,
+        "risk_control_accuracy_percent": 99.87,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266804531995.65,
+        "value_capture_rate_percent": 99.964
+      }
+    },
+    {
+      "generation": 10,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "fc24285337a65d3f8d55c415f897448402e6d3fff19c0c052568cbf259d203e0",
+      "released": false,
+      "score": 110.29622,
+      "validation": {
+        "avg_compounding_index": 59.28,
+        "avg_consensus_score": 94.084,
+        "avg_productive_capacity_index": 54.695,
+        "benchmark_value_capture_rate_percent": 99.964,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 95.96,
+            "value_capture_percent": 99.977
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 97.143,
+            "value_capture_percent": 99.941
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 95.05,
+            "value_capture_percent": 99.942
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 97.561,
+            "value_capture_percent": 99.974
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 95.0,
+            "value_capture_percent": 99.986
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 94.624,
+            "value_capture_percent": 99.96
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 95.876,
+            "value_capture_percent": 99.986
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 89.011,
+            "value_capture_percent": 99.945
+          }
+        },
+        "capability_lever_accuracy_percent": 99.964,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 95.052,
+        "fully_correct_percent": 95.052,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.13,
+        "risk_control_accuracy_percent": 99.87,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266804531995.65,
+        "value_capture_rate_percent": 99.964
+      }
+    },
+    {
+      "generation": 11,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "fc24285337a65d3f8d55c415f897448402e6d3fff19c0c052568cbf259d203e0",
+      "released": false,
+      "score": 110.29622,
+      "validation": {
+        "avg_compounding_index": 59.28,
+        "avg_consensus_score": 94.084,
+        "avg_productive_capacity_index": 54.695,
+        "benchmark_value_capture_rate_percent": 99.964,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 95.96,
+            "value_capture_percent": 99.977
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 97.143,
+            "value_capture_percent": 99.941
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 95.05,
+            "value_capture_percent": 99.942
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 97.561,
+            "value_capture_percent": 99.974
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 95.0,
+            "value_capture_percent": 99.986
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 94.624,
+            "value_capture_percent": 99.96
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 95.876,
+            "value_capture_percent": 99.986
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 89.011,
+            "value_capture_percent": 99.945
+          }
+        },
+        "capability_lever_accuracy_percent": 99.964,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 95.052,
+        "fully_correct_percent": 95.052,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.13,
+        "risk_control_accuracy_percent": 99.87,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266804531995.65,
+        "value_capture_rate_percent": 99.964
+      }
+    },
+    {
+      "generation": 12,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "fc24285337a65d3f8d55c415f897448402e6d3fff19c0c052568cbf259d203e0",
+      "released": false,
+      "score": 110.29622,
+      "validation": {
+        "avg_compounding_index": 59.28,
+        "avg_consensus_score": 94.084,
+        "avg_productive_capacity_index": 54.695,
+        "benchmark_value_capture_rate_percent": 99.964,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 95.96,
+            "value_capture_percent": 99.977
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 97.143,
+            "value_capture_percent": 99.941
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 95.05,
+            "value_capture_percent": 99.942
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 97.561,
+            "value_capture_percent": 99.974
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 95.0,
+            "value_capture_percent": 99.986
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 94.624,
+            "value_capture_percent": 99.96
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 95.876,
+            "value_capture_percent": 99.986
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 89.011,
+            "value_capture_percent": 99.945
+          }
+        },
+        "capability_lever_accuracy_percent": 99.964,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 95.052,
+        "fully_correct_percent": 95.052,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.13,
+        "risk_control_accuracy_percent": 99.87,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266804531995.65,
+        "value_capture_rate_percent": 99.964
+      }
+    },
+    {
+      "generation": 13,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "fc24285337a65d3f8d55c415f897448402e6d3fff19c0c052568cbf259d203e0",
+      "released": false,
+      "score": 110.29622,
+      "validation": {
+        "avg_compounding_index": 59.28,
+        "avg_consensus_score": 94.084,
+        "avg_productive_capacity_index": 54.695,
+        "benchmark_value_capture_rate_percent": 99.964,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 95.96,
+            "value_capture_percent": 99.977
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 97.143,
+            "value_capture_percent": 99.941
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 95.05,
+            "value_capture_percent": 99.942
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 97.561,
+            "value_capture_percent": 99.974
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 95.0,
+            "value_capture_percent": 99.986
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 94.624,
+            "value_capture_percent": 99.96
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 95.876,
+            "value_capture_percent": 99.986
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 89.011,
+            "value_capture_percent": 99.945
+          }
+        },
+        "capability_lever_accuracy_percent": 99.964,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 95.052,
+        "fully_correct_percent": 95.052,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.13,
+        "risk_control_accuracy_percent": 99.87,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266804531995.65,
+        "value_capture_rate_percent": 99.964
+      }
+    },
+    {
+      "generation": 14,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "fc24285337a65d3f8d55c415f897448402e6d3fff19c0c052568cbf259d203e0",
+      "released": false,
+      "score": 110.29622,
+      "validation": {
+        "avg_compounding_index": 59.28,
+        "avg_consensus_score": 94.084,
+        "avg_productive_capacity_index": 54.695,
+        "benchmark_value_capture_rate_percent": 99.964,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 95.96,
+            "value_capture_percent": 99.977
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 97.143,
+            "value_capture_percent": 99.941
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 95.05,
+            "value_capture_percent": 99.942
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 97.561,
+            "value_capture_percent": 99.974
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 95.0,
+            "value_capture_percent": 99.986
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 94.624,
+            "value_capture_percent": 99.96
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 95.876,
+            "value_capture_percent": 99.986
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 89.011,
+            "value_capture_percent": 99.945
+          }
+        },
+        "capability_lever_accuracy_percent": 99.964,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 95.052,
+        "fully_correct_percent": 95.052,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.13,
+        "risk_control_accuracy_percent": 99.87,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266804531995.65,
+        "value_capture_rate_percent": 99.964
+      }
+    },
+    {
+      "generation": 15,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "fc24285337a65d3f8d55c415f897448402e6d3fff19c0c052568cbf259d203e0",
+      "released": false,
+      "score": 110.29622,
+      "validation": {
+        "avg_compounding_index": 59.28,
+        "avg_consensus_score": 94.084,
+        "avg_productive_capacity_index": 54.695,
+        "benchmark_value_capture_rate_percent": 99.964,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 95.96,
+            "value_capture_percent": 99.977
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 97.143,
+            "value_capture_percent": 99.941
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 95.05,
+            "value_capture_percent": 99.942
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 97.561,
+            "value_capture_percent": 99.974
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 95.0,
+            "value_capture_percent": 99.986
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 94.624,
+            "value_capture_percent": 99.96
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 95.876,
+            "value_capture_percent": 99.986
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 89.011,
+            "value_capture_percent": 99.945
+          }
+        },
+        "capability_lever_accuracy_percent": 99.964,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 95.052,
+        "fully_correct_percent": 95.052,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.13,
+        "risk_control_accuracy_percent": 99.87,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266804531995.65,
+        "value_capture_rate_percent": 99.964
+      }
+    },
+    {
+      "generation": 16,
+      "lesson": "validation-gated RSI update from oracle-regret traces, specialist disagreement, and risk-veto failures",
+      "protocol_fingerprint_sha256": "461faf827e6b8d94c84716e9df72767e9825caaafd867c1db352ecb0a2a84608",
+      "released": true,
+      "score": 110.31364,
+      "validation": {
+        "avg_compounding_index": 59.124,
+        "avg_consensus_score": 94.086,
+        "avg_productive_capacity_index": 54.856,
+        "benchmark_value_capture_rate_percent": 99.976,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 94.949,
+            "value_capture_percent": 99.969
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 99.048,
+            "value_capture_percent": 99.989
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 97.03,
+            "value_capture_percent": 99.972
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 96.341,
+            "value_capture_percent": 99.968
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 93.0,
+            "value_capture_percent": 99.971
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 95.699,
+            "value_capture_percent": 99.965
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 97.938,
+            "value_capture_percent": 99.991
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 95.604,
+            "value_capture_percent": 99.987
+          }
+        },
+        "capability_lever_accuracy_percent": 99.976,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.224,
+        "fully_correct_percent": 96.224,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266958782571.82,
+        "value_capture_rate_percent": 99.976
+      }
+    },
+    {
+      "generation": 17,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "461faf827e6b8d94c84716e9df72767e9825caaafd867c1db352ecb0a2a84608",
+      "released": false,
+      "score": 110.31364,
+      "validation": {
+        "avg_compounding_index": 59.124,
+        "avg_consensus_score": 94.086,
+        "avg_productive_capacity_index": 54.856,
+        "benchmark_value_capture_rate_percent": 99.976,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 94.949,
+            "value_capture_percent": 99.969
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 99.048,
+            "value_capture_percent": 99.989
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 97.03,
+            "value_capture_percent": 99.972
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 96.341,
+            "value_capture_percent": 99.968
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 93.0,
+            "value_capture_percent": 99.971
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 95.699,
+            "value_capture_percent": 99.965
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 97.938,
+            "value_capture_percent": 99.991
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 95.604,
+            "value_capture_percent": 99.987
+          }
+        },
+        "capability_lever_accuracy_percent": 99.976,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.224,
+        "fully_correct_percent": 96.224,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266958782571.82,
+        "value_capture_rate_percent": 99.976
+      }
+    },
+    {
+      "generation": 18,
+      "lesson": "validation-gated RSI update from oracle-regret traces, specialist disagreement, and risk-veto failures",
+      "protocol_fingerprint_sha256": "5c0903149205c5cf1184a0e57836c104d9d73e9a084e60ace884f31923a3c7f6",
+      "released": true,
+      "score": 110.34524,
+      "validation": {
+        "avg_compounding_index": 59.069,
+        "avg_consensus_score": 94.091,
+        "avg_productive_capacity_index": 54.738,
+        "benchmark_value_capture_rate_percent": 99.979,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 96.97,
+            "value_capture_percent": 99.985
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 99.048,
+            "value_capture_percent": 99.989
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 98.02,
+            "value_capture_percent": 99.987
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.986
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 93.0,
+            "value_capture_percent": 99.969
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 96.774,
+            "value_capture_percent": 99.967
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 96.907,
+            "value_capture_percent": 99.991
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 92.308,
+            "value_capture_percent": 99.962
+          }
+        },
+        "capability_lever_accuracy_percent": 99.979,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.484,
+        "fully_correct_percent": 96.484,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266998095412.06,
+        "value_capture_rate_percent": 99.979
+      }
+    },
+    {
+      "generation": 19,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "5c0903149205c5cf1184a0e57836c104d9d73e9a084e60ace884f31923a3c7f6",
+      "released": false,
+      "score": 110.34524,
+      "validation": {
+        "avg_compounding_index": 59.069,
+        "avg_consensus_score": 94.091,
+        "avg_productive_capacity_index": 54.738,
+        "benchmark_value_capture_rate_percent": 99.979,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 96.97,
+            "value_capture_percent": 99.985
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 99.048,
+            "value_capture_percent": 99.989
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 98.02,
+            "value_capture_percent": 99.987
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.986
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 93.0,
+            "value_capture_percent": 99.969
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 96.774,
+            "value_capture_percent": 99.967
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 96.907,
+            "value_capture_percent": 99.991
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 92.308,
+            "value_capture_percent": 99.962
+          }
+        },
+        "capability_lever_accuracy_percent": 99.979,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.484,
+        "fully_correct_percent": 96.484,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266998095412.06,
+        "value_capture_rate_percent": 99.979
+      }
+    },
+    {
+      "generation": 20,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "5c0903149205c5cf1184a0e57836c104d9d73e9a084e60ace884f31923a3c7f6",
+      "released": false,
+      "score": 110.34524,
+      "validation": {
+        "avg_compounding_index": 59.069,
+        "avg_consensus_score": 94.091,
+        "avg_productive_capacity_index": 54.738,
+        "benchmark_value_capture_rate_percent": 99.979,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 96.97,
+            "value_capture_percent": 99.985
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 99.048,
+            "value_capture_percent": 99.989
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 98.02,
+            "value_capture_percent": 99.987
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.986
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 93.0,
+            "value_capture_percent": 99.969
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 96.774,
+            "value_capture_percent": 99.967
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 96.907,
+            "value_capture_percent": 99.991
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 92.308,
+            "value_capture_percent": 99.962
+          }
+        },
+        "capability_lever_accuracy_percent": 99.979,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.484,
+        "fully_correct_percent": 96.484,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266998095412.06,
+        "value_capture_rate_percent": 99.979
+      }
+    },
+    {
+      "generation": 21,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "5c0903149205c5cf1184a0e57836c104d9d73e9a084e60ace884f31923a3c7f6",
+      "released": false,
+      "score": 110.34524,
+      "validation": {
+        "avg_compounding_index": 59.069,
+        "avg_consensus_score": 94.091,
+        "avg_productive_capacity_index": 54.738,
+        "benchmark_value_capture_rate_percent": 99.979,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 96.97,
+            "value_capture_percent": 99.985
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 99.048,
+            "value_capture_percent": 99.989
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 98.02,
+            "value_capture_percent": 99.987
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.986
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 93.0,
+            "value_capture_percent": 99.969
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 96.774,
+            "value_capture_percent": 99.967
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 96.907,
+            "value_capture_percent": 99.991
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 92.308,
+            "value_capture_percent": 99.962
+          }
+        },
+        "capability_lever_accuracy_percent": 99.979,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.484,
+        "fully_correct_percent": 96.484,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266998095412.06,
+        "value_capture_rate_percent": 99.979
+      }
+    },
+    {
+      "generation": 22,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "5c0903149205c5cf1184a0e57836c104d9d73e9a084e60ace884f31923a3c7f6",
+      "released": false,
+      "score": 110.34524,
+      "validation": {
+        "avg_compounding_index": 59.069,
+        "avg_consensus_score": 94.091,
+        "avg_productive_capacity_index": 54.738,
+        "benchmark_value_capture_rate_percent": 99.979,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 96.97,
+            "value_capture_percent": 99.985
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 99.048,
+            "value_capture_percent": 99.989
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 98.02,
+            "value_capture_percent": 99.987
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.986
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 93.0,
+            "value_capture_percent": 99.969
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 96.774,
+            "value_capture_percent": 99.967
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 96.907,
+            "value_capture_percent": 99.991
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 92.308,
+            "value_capture_percent": 99.962
+          }
+        },
+        "capability_lever_accuracy_percent": 99.979,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.484,
+        "fully_correct_percent": 96.484,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266998095412.06,
+        "value_capture_rate_percent": 99.979
+      }
+    },
+    {
+      "generation": 23,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "5c0903149205c5cf1184a0e57836c104d9d73e9a084e60ace884f31923a3c7f6",
+      "released": false,
+      "score": 110.34524,
+      "validation": {
+        "avg_compounding_index": 59.069,
+        "avg_consensus_score": 94.091,
+        "avg_productive_capacity_index": 54.738,
+        "benchmark_value_capture_rate_percent": 99.979,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 96.97,
+            "value_capture_percent": 99.985
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 99.048,
+            "value_capture_percent": 99.989
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 98.02,
+            "value_capture_percent": 99.987
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.986
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 93.0,
+            "value_capture_percent": 99.969
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 96.774,
+            "value_capture_percent": 99.967
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 96.907,
+            "value_capture_percent": 99.991
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 92.308,
+            "value_capture_percent": 99.962
+          }
+        },
+        "capability_lever_accuracy_percent": 99.979,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.484,
+        "fully_correct_percent": 96.484,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266998095412.06,
+        "value_capture_rate_percent": 99.979
+      }
+    },
+    {
+      "generation": 24,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "5c0903149205c5cf1184a0e57836c104d9d73e9a084e60ace884f31923a3c7f6",
+      "released": false,
+      "score": 110.34524,
+      "validation": {
+        "avg_compounding_index": 59.069,
+        "avg_consensus_score": 94.091,
+        "avg_productive_capacity_index": 54.738,
+        "benchmark_value_capture_rate_percent": 99.979,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 96.97,
+            "value_capture_percent": 99.985
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 99.048,
+            "value_capture_percent": 99.989
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 98.02,
+            "value_capture_percent": 99.987
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.986
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 93.0,
+            "value_capture_percent": 99.969
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 96.774,
+            "value_capture_percent": 99.967
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 96.907,
+            "value_capture_percent": 99.991
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 92.308,
+            "value_capture_percent": 99.962
+          }
+        },
+        "capability_lever_accuracy_percent": 99.979,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.484,
+        "fully_correct_percent": 96.484,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266998095412.06,
+        "value_capture_rate_percent": 99.979
+      }
+    },
+    {
+      "generation": 25,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "5c0903149205c5cf1184a0e57836c104d9d73e9a084e60ace884f31923a3c7f6",
+      "released": false,
+      "score": 110.34524,
+      "validation": {
+        "avg_compounding_index": 59.069,
+        "avg_consensus_score": 94.091,
+        "avg_productive_capacity_index": 54.738,
+        "benchmark_value_capture_rate_percent": 99.979,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 96.97,
+            "value_capture_percent": 99.985
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 99.048,
+            "value_capture_percent": 99.989
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 98.02,
+            "value_capture_percent": 99.987
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.986
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 93.0,
+            "value_capture_percent": 99.969
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 96.774,
+            "value_capture_percent": 99.967
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 96.907,
+            "value_capture_percent": 99.991
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 92.308,
+            "value_capture_percent": 99.962
+          }
+        },
+        "capability_lever_accuracy_percent": 99.979,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.484,
+        "fully_correct_percent": 96.484,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266998095412.06,
+        "value_capture_rate_percent": 99.979
+      }
+    },
+    {
+      "generation": 26,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "5c0903149205c5cf1184a0e57836c104d9d73e9a084e60ace884f31923a3c7f6",
+      "released": false,
+      "score": 110.34524,
+      "validation": {
+        "avg_compounding_index": 59.069,
+        "avg_consensus_score": 94.091,
+        "avg_productive_capacity_index": 54.738,
+        "benchmark_value_capture_rate_percent": 99.979,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 96.97,
+            "value_capture_percent": 99.985
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 99.048,
+            "value_capture_percent": 99.989
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 98.02,
+            "value_capture_percent": 99.987
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.986
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 93.0,
+            "value_capture_percent": 99.969
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 96.774,
+            "value_capture_percent": 99.967
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 96.907,
+            "value_capture_percent": 99.991
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 92.308,
+            "value_capture_percent": 99.962
+          }
+        },
+        "capability_lever_accuracy_percent": 99.979,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.484,
+        "fully_correct_percent": 96.484,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266998095412.06,
+        "value_capture_rate_percent": 99.979
+      }
+    },
+    {
+      "generation": 27,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "5c0903149205c5cf1184a0e57836c104d9d73e9a084e60ace884f31923a3c7f6",
+      "released": false,
+      "score": 110.34524,
+      "validation": {
+        "avg_compounding_index": 59.069,
+        "avg_consensus_score": 94.091,
+        "avg_productive_capacity_index": 54.738,
+        "benchmark_value_capture_rate_percent": 99.979,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 96.97,
+            "value_capture_percent": 99.985
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 99.048,
+            "value_capture_percent": 99.989
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 98.02,
+            "value_capture_percent": 99.987
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.986
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 93.0,
+            "value_capture_percent": 99.969
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 96.774,
+            "value_capture_percent": 99.967
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 96.907,
+            "value_capture_percent": 99.991
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 92.308,
+            "value_capture_percent": 99.962
+          }
+        },
+        "capability_lever_accuracy_percent": 99.979,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.484,
+        "fully_correct_percent": 96.484,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266998095412.06,
+        "value_capture_rate_percent": 99.979
+      }
+    },
+    {
+      "generation": 28,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "5c0903149205c5cf1184a0e57836c104d9d73e9a084e60ace884f31923a3c7f6",
+      "released": false,
+      "score": 110.34524,
+      "validation": {
+        "avg_compounding_index": 59.069,
+        "avg_consensus_score": 94.091,
+        "avg_productive_capacity_index": 54.738,
+        "benchmark_value_capture_rate_percent": 99.979,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 96.97,
+            "value_capture_percent": 99.985
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 99.048,
+            "value_capture_percent": 99.989
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 98.02,
+            "value_capture_percent": 99.987
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.986
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 93.0,
+            "value_capture_percent": 99.969
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 96.774,
+            "value_capture_percent": 99.967
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 96.907,
+            "value_capture_percent": 99.991
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 92.308,
+            "value_capture_percent": 99.962
+          }
+        },
+        "capability_lever_accuracy_percent": 99.979,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.484,
+        "fully_correct_percent": 96.484,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1266998095412.06,
+        "value_capture_rate_percent": 99.979
+      }
+    },
+    {
+      "generation": 29,
+      "lesson": "validation-gated RSI update from oracle-regret traces, specialist disagreement, and risk-veto failures",
+      "protocol_fingerprint_sha256": "2761d4f6dd4bc48ac42f752babda615b1febc63434704822a7ae7e5035245683",
+      "released": true,
+      "score": 110.36165,
+      "validation": {
+        "avg_compounding_index": 59.207,
+        "avg_consensus_score": 94.085,
+        "avg_productive_capacity_index": 54.673,
+        "benchmark_value_capture_rate_percent": 99.981,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 95.96,
+            "value_capture_percent": 99.971
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 99.048,
+            "value_capture_percent": 99.989
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 98.02,
+            "value_capture_percent": 99.987
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 97.561,
+            "value_capture_percent": 99.982
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 96.0,
+            "value_capture_percent": 99.985
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 95.699,
+            "value_capture_percent": 99.965
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 97.938,
+            "value_capture_percent": 99.996
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 92.308,
+            "value_capture_percent": 99.971
+          }
+        },
+        "capability_lever_accuracy_percent": 99.981,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 96.615,
+        "fully_correct_percent": 96.615,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1267015529579.97,
+        "value_capture_rate_percent": 99.981
+      }
+    },
+    {
+      "generation": 30,
+      "lesson": "validation-gated RSI update from oracle-regret traces, specialist disagreement, and risk-veto failures",
+      "protocol_fingerprint_sha256": "6d5f233c1530d7b30012f0e2c5dda42a0a47bfe76a94d0e6625953c7e4970597",
+      "released": true,
+      "score": 110.45156,
+      "validation": {
+        "avg_compounding_index": 59.215,
+        "avg_consensus_score": 94.096,
+        "avg_productive_capacity_index": 54.646,
+        "benchmark_value_capture_rate_percent": 99.985,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 97.98,
+            "value_capture_percent": 99.998
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 98.095,
+            "value_capture_percent": 99.988
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 99.01,
+            "value_capture_percent": 99.989
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.994
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 95.0,
+            "value_capture_percent": 99.979
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 98.925,
+            "value_capture_percent": 99.983
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 97.938,
+            "value_capture_percent": 99.988
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 93.407,
+            "value_capture_percent": 99.964
+          }
+        },
+        "capability_lever_accuracy_percent": 99.985,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 97.396,
+        "fully_correct_percent": 97.396,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1267070931251.54,
+        "value_capture_rate_percent": 99.985
+      }
+    },
+    {
+      "generation": 31,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "6d5f233c1530d7b30012f0e2c5dda42a0a47bfe76a94d0e6625953c7e4970597",
+      "released": false,
+      "score": 110.45156,
+      "validation": {
+        "avg_compounding_index": 59.215,
+        "avg_consensus_score": 94.096,
+        "avg_productive_capacity_index": 54.646,
+        "benchmark_value_capture_rate_percent": 99.985,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 97.98,
+            "value_capture_percent": 99.998
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 98.095,
+            "value_capture_percent": 99.988
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 99.01,
+            "value_capture_percent": 99.989
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.994
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 95.0,
+            "value_capture_percent": 99.979
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 98.925,
+            "value_capture_percent": 99.983
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 97.938,
+            "value_capture_percent": 99.988
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 93.407,
+            "value_capture_percent": 99.964
+          }
+        },
+        "capability_lever_accuracy_percent": 99.985,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 97.396,
+        "fully_correct_percent": 97.396,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1267070931251.54,
+        "value_capture_rate_percent": 99.985
+      }
+    },
+    {
+      "generation": 32,
+      "lesson": "candidate rejected by validation gate",
+      "protocol_fingerprint_sha256": "6d5f233c1530d7b30012f0e2c5dda42a0a47bfe76a94d0e6625953c7e4970597",
+      "released": false,
+      "score": 110.45156,
+      "validation": {
+        "avg_compounding_index": 59.215,
+        "avg_consensus_score": 94.096,
+        "avg_productive_capacity_index": 54.646,
+        "benchmark_value_capture_rate_percent": 99.985,
+        "by_regime": {
+          "distribution_breakout": {
+            "case_count": 99,
+            "fully_correct_percent": 97.98,
+            "value_capture_percent": 99.998
+          },
+          "energy_constraint": {
+            "case_count": 105,
+            "fully_correct_percent": 98.095,
+            "value_capture_percent": 99.988
+          },
+          "gpu_scarcity": {
+            "case_count": 101,
+            "fully_correct_percent": 99.01,
+            "value_capture_percent": 99.989
+          },
+          "growth_window": {
+            "case_count": 82,
+            "fully_correct_percent": 98.78,
+            "value_capture_percent": 99.994
+          },
+          "platform_shift": {
+            "case_count": 100,
+            "fully_correct_percent": 95.0,
+            "value_capture_percent": 99.979
+          },
+          "regulatory_shock": {
+            "case_count": 93,
+            "fully_correct_percent": 98.925,
+            "value_capture_percent": 99.983
+          },
+          "security_incident": {
+            "case_count": 97,
+            "fully_correct_percent": 97.938,
+            "value_capture_percent": 99.988
+          },
+          "trust_crisis": {
+            "case_count": 91,
+            "fully_correct_percent": 93.407,
+            "value_capture_percent": 99.964
+          }
+        },
+        "capability_lever_accuracy_percent": 99.985,
+        "case_count": 768,
+        "coordination_protocol_accuracy_percent": 97.396,
+        "fully_correct_percent": 97.396,
+        "invalid_action_rate_percent": 0.0,
+        "risk_breach_rate_percent": 0.26,
+        "risk_control_accuracy_percent": 99.74,
+        "role_quorum_accuracy_percent": 100.0,
+        "top3_percent": 100.0,
+        "total_benchmark_value_at_stake_usd": 1267258441626.4,
+        "total_benchmark_value_captured_usd": 1267070931251.54,
+        "value_capture_rate_percent": 99.985
+      }
+    }
+  ],
+  "safe_interpretation": "A reproducible benchmark proof that validation-gated recursive coordination improves enterprise decision quality and benchmark value capture. Not audited customer revenue, live adoption, financial advice, investment advice, achieved superintelligence, or Kardashev Type II achievement.",
+  "seed": 20260530,
+  "single_agent_baseline": {
+    "avg_compounding_index": 53.57,
+    "avg_consensus_score": 93.712,
+    "avg_productive_capacity_index": 49.607,
+    "benchmark_value_capture_rate_percent": 89.045,
+    "by_regime": {
+      "distribution_breakout": {
+        "case_count": 229,
+        "fully_correct_percent": 35.808,
+        "value_capture_percent": 88.536
+      },
+      "energy_constraint": {
+        "case_count": 272,
+        "fully_correct_percent": 28.676,
+        "value_capture_percent": 88.556
+      },
+      "gpu_scarcity": {
+        "case_count": 279,
+        "fully_correct_percent": 27.24,
+        "value_capture_percent": 89.354
+      },
+      "growth_window": {
+        "case_count": 279,
+        "fully_correct_percent": 31.9,
+        "value_capture_percent": 87.291
+      },
+      "platform_shift": {
+        "case_count": 246,
+        "fully_correct_percent": 29.675,
+        "value_capture_percent": 90.64
+      },
+      "regulatory_shock": {
+        "case_count": 253,
+        "fully_correct_percent": 28.458,
+        "value_capture_percent": 88.688
+      },
+      "security_incident": {
+        "case_count": 258,
+        "fully_correct_percent": 36.047,
+        "value_capture_percent": 90.408
+      },
+      "trust_crisis": {
+        "case_count": 232,
+        "fully_correct_percent": 32.328,
+        "value_capture_percent": 89.079
+      }
+    },
+    "capability_lever_accuracy_percent": 89.045,
+    "case_count": 2048,
+    "coordination_protocol_accuracy_percent": 31.152,
+    "fully_correct_percent": 31.152,
+    "invalid_action_rate_percent": 0.977,
+    "risk_breach_rate_percent": 3.271,
+    "risk_control_accuracy_percent": 96.729,
+    "role_quorum_accuracy_percent": 63.037,
+    "top3_percent": 63.037,
+    "total_benchmark_value_at_stake_usd": 3290336564826.44,
+    "total_benchmark_value_captured_usd": 2929883977784.82,
+    "value_capture_rate_percent": 89.045
+  },
+  "static_coordination": {
+    "avg_compounding_index": 58.2,
+    "avg_consensus_score": 94.116,
+    "avg_productive_capacity_index": 55.611,
+    "benchmark_value_capture_rate_percent": 99.749,
+    "by_regime": {
+      "distribution_breakout": {
+        "case_count": 229,
+        "fully_correct_percent": 87.773,
+        "value_capture_percent": 99.735
+      },
+      "energy_constraint": {
+        "case_count": 272,
+        "fully_correct_percent": 88.603,
+        "value_capture_percent": 99.808
+      },
+      "gpu_scarcity": {
+        "case_count": 279,
+        "fully_correct_percent": 86.38,
+        "value_capture_percent": 99.698
+      },
+      "growth_window": {
+        "case_count": 279,
+        "fully_correct_percent": 91.039,
+        "value_capture_percent": 99.883
+      },
+      "platform_shift": {
+        "case_count": 246,
+        "fully_correct_percent": 82.52,
+        "value_capture_percent": 99.56
+      },
+      "regulatory_shock": {
+        "case_count": 253,
+        "fully_correct_percent": 88.538,
+        "value_capture_percent": 99.842
+      },
+      "security_incident": {
+        "case_count": 258,
+        "fully_correct_percent": 84.496,
+        "value_capture_percent": 99.67
+      },
+      "trust_crisis": {
+        "case_count": 232,
+        "fully_correct_percent": 86.638,
+        "value_capture_percent": 99.775
+      }
+    },
+    "capability_lever_accuracy_percent": 99.749,
+    "case_count": 2048,
+    "coordination_protocol_accuracy_percent": 87.061,
+    "fully_correct_percent": 87.061,
+    "invalid_action_rate_percent": 0.0,
+    "risk_breach_rate_percent": 0.146,
+    "risk_control_accuracy_percent": 99.854,
+    "role_quorum_accuracy_percent": 99.658,
+    "top3_percent": 99.658,
+    "total_benchmark_value_at_stake_usd": 3290336564826.44,
+    "total_benchmark_value_captured_usd": 3282087940049.92,
+    "value_capture_rate_percent": 99.749
+  },
+  "static_multi_agent_operating_committee": {
+    "avg_compounding_index": 58.2,
+    "avg_consensus_score": 94.116,
+    "avg_productive_capacity_index": 55.611,
+    "benchmark_value_capture_rate_percent": 99.749,
+    "by_regime": {
+      "distribution_breakout": {
+        "case_count": 229,
+        "fully_correct_percent": 87.773,
+        "value_capture_percent": 99.735
+      },
+      "energy_constraint": {
+        "case_count": 272,
+        "fully_correct_percent": 88.603,
+        "value_capture_percent": 99.808
+      },
+      "gpu_scarcity": {
+        "case_count": 279,
+        "fully_correct_percent": 86.38,
+        "value_capture_percent": 99.698
+      },
+      "growth_window": {
+        "case_count": 279,
+        "fully_correct_percent": 91.039,
+        "value_capture_percent": 99.883
+      },
+      "platform_shift": {
+        "case_count": 246,
+        "fully_correct_percent": 82.52,
+        "value_capture_percent": 99.56
+      },
+      "regulatory_shock": {
+        "case_count": 253,
+        "fully_correct_percent": 88.538,
+        "value_capture_percent": 99.842
+      },
+      "security_incident": {
+        "case_count": 258,
+        "fully_correct_percent": 84.496,
+        "value_capture_percent": 99.67
+      },
+      "trust_crisis": {
+        "case_count": 232,
+        "fully_correct_percent": 86.638,
+        "value_capture_percent": 99.775
+      }
+    },
+    "capability_lever_accuracy_percent": 99.749,
+    "case_count": 2048,
+    "coordination_protocol_accuracy_percent": 87.061,
+    "fully_correct_percent": 87.061,
+    "invalid_action_rate_percent": 0.0,
+    "risk_breach_rate_percent": 0.146,
+    "risk_control_accuracy_percent": 99.854,
+    "role_quorum_accuracy_percent": 99.658,
+    "top3_percent": 99.658,
+    "total_benchmark_value_at_stake_usd": 3290336564826.44,
+    "total_benchmark_value_captured_usd": 3282087940049.92,
+    "value_capture_rate_percent": 99.749
+  },
+  "status": "PASSED_AUTONOMOUS_RSI_ENTERPRISE_CAPABILITY_FOUNDRY_PROOF",
+  "uncoordinated_large_agent_pool": {
+    "avg_compounding_index": 55.46,
+    "avg_consensus_score": 94.128,
+    "avg_productive_capacity_index": 56.157,
+    "benchmark_value_capture_rate_percent": 98.065,
+    "by_regime": {
+      "distribution_breakout": {
+        "case_count": 229,
+        "fully_correct_percent": 65.502,
+        "value_capture_percent": 98.065
+      },
+      "energy_constraint": {
+        "case_count": 272,
+        "fully_correct_percent": 69.853,
+        "value_capture_percent": 98.148
+      },
+      "gpu_scarcity": {
+        "case_count": 279,
+        "fully_correct_percent": 65.591,
+        "value_capture_percent": 97.697
+      },
+      "growth_window": {
+        "case_count": 279,
+        "fully_correct_percent": 71.685,
+        "value_capture_percent": 98.356
+      },
+      "platform_shift": {
+        "case_count": 246,
+        "fully_correct_percent": 61.382,
+        "value_capture_percent": 97.889
+      },
+      "regulatory_shock": {
+        "case_count": 253,
+        "fully_correct_percent": 69.565,
+        "value_capture_percent": 98.329
+      },
+      "security_incident": {
+        "case_count": 258,
+        "fully_correct_percent": 68.992,
+        "value_capture_percent": 98.096
+      },
+      "trust_crisis": {
+        "case_count": 232,
+        "fully_correct_percent": 62.5,
+        "value_capture_percent": 97.895
+      }
+    },
+    "capability_lever_accuracy_percent": 98.065,
+    "case_count": 2048,
+    "coordination_protocol_accuracy_percent": 67.041,
+    "fully_correct_percent": 67.041,
+    "invalid_action_rate_percent": 0.0,
+    "risk_breach_rate_percent": 0.195,
+    "risk_control_accuracy_percent": 99.805,
+    "role_quorum_accuracy_percent": 95.215,
+    "top3_percent": 95.215,
+    "total_benchmark_value_at_stake_usd": 3290336564826.44,
+    "total_benchmark_value_captured_usd": 3226667501301.95,
+    "value_capture_rate_percent": 98.065
+  },
+  "uncoordinated_pool": {
+    "avg_compounding_index": 55.46,
+    "avg_consensus_score": 94.128,
+    "avg_productive_capacity_index": 56.157,
+    "benchmark_value_capture_rate_percent": 98.065,
+    "by_regime": {
+      "distribution_breakout": {
+        "case_count": 229,
+        "fully_correct_percent": 65.502,
+        "value_capture_percent": 98.065
+      },
+      "energy_constraint": {
+        "case_count": 272,
+        "fully_correct_percent": 69.853,
+        "value_capture_percent": 98.148
+      },
+      "gpu_scarcity": {
+        "case_count": 279,
+        "fully_correct_percent": 65.591,
+        "value_capture_percent": 97.697
+      },
+      "growth_window": {
+        "case_count": 279,
+        "fully_correct_percent": 71.685,
+        "value_capture_percent": 98.356
+      },
+      "platform_shift": {
+        "case_count": 246,
+        "fully_correct_percent": 61.382,
+        "value_capture_percent": 97.889
+      },
+      "regulatory_shock": {
+        "case_count": 253,
+        "fully_correct_percent": 69.565,
+        "value_capture_percent": 98.329
+      },
+      "security_incident": {
+        "case_count": 258,
+        "fully_correct_percent": 68.992,
+        "value_capture_percent": 98.096
+      },
+      "trust_crisis": {
+        "case_count": 232,
+        "fully_correct_percent": 62.5,
+        "value_capture_percent": 97.895
+      }
+    },
+    "capability_lever_accuracy_percent": 98.065,
+    "case_count": 2048,
+    "coordination_protocol_accuracy_percent": 67.041,
+    "fully_correct_percent": 67.041,
+    "invalid_action_rate_percent": 0.0,
+    "risk_breach_rate_percent": 0.195,
+    "risk_control_accuracy_percent": 99.805,
+    "role_quorum_accuracy_percent": 95.215,
+    "top3_percent": 95.215,
+    "total_benchmark_value_at_stake_usd": 3290336564826.44,
+    "total_benchmark_value_captured_usd": 3226667501301.95,
+    "value_capture_rate_percent": 98.065
+  },
+  "workflow": "Autonomous RSI Enterprise Capability Foundry Proof",
+  "workflow_file": ".github/workflows/autonomous-rsi-enterprise-capability-foundry-proof.yml"
+}

@@ -1,0 +1,39 @@
+{
+  "benchmark_name": "SkillOS Autonomous RSI Metamaterials Discovery Market-Readiness Benchmark",
+  "workflow": "autonomous lightweight metamaterial discovery for load-bearing structures",
+  "seed": 20260530,
+  "private_data_used": false,
+  "human_review_required": false,
+  "email_workflow": false,
+  "invoice_workflow": false,
+  "cloudops_workflow": false,
+  "cyberdefense_workflow": false,
+  "silicon_verification_workflow": false,
+  "train_count": 420,
+  "validation_count": 210,
+  "holdout_count": 840,
+  "example_count": 1470,
+  "load_modes": [
+    "compression",
+    "tension",
+    "shear",
+    "torsion",
+    "impact",
+    "thermal",
+    "multi_axis"
+  ],
+  "applications": [
+    "aerospace bracket",
+    "robotic arm joint",
+    "EV battery tray",
+    "satellite panel rib",
+    "drone landing strut",
+    "heat-sink support lattice",
+    "prosthetic pylon",
+    "wind-turbine sensor mount",
+    "factory end-effector",
+    "spacecraft cable guide",
+    "high-speed rail bracket",
+    "microfactory fixture"
+  ]
+}

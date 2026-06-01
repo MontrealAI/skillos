@@ -1,0 +1,728 @@
+{
+  "name": "SkillOS No-Send Shadow Pilot Benchmark",
+  "version": "1.0.0",
+  "description": "Synthetic/redacted sales-follow-up benchmark for autonomous GitHub Actions proof. No emails are sent and no private customer data is included.",
+  "important_note": "This dataset is for reference workflow evaluation only; it is not audited customer data.",
+  "jobs": [
+    {
+      "id": "sp-001",
+      "split": "learn",
+      "segment": "SaaS revenue operations",
+      "call_notes": "Prospect: Avery at Northstar CRM Team. Segment: SaaS revenue operations. Pain: pipeline notes are scattered across calls and the CRM. Desired outcome: consistent follow-up timing and cleaner opportunity handoffs. Agreed next step: send a two-paragraph recap and confirm the CRM cleanup checklist on Tuesday 10:00 AM. Tone requested: executive. Important constraint: avoid adding new tooling before the team approves it. Do not claim: guarantee revenue lift.",
+      "facts": {
+        "contact_first_name": "Avery",
+        "organization": "Northstar CRM Team",
+        "pain": "pipeline notes are scattered across calls and the CRM",
+        "outcome": "consistent follow-up timing and cleaner opportunity handoffs",
+        "next_step": "send a two-paragraph recap and confirm the CRM cleanup checklist",
+        "date": "Tuesday 10:00 AM",
+        "tone": "executive",
+        "constraint": "avoid adding new tooling before the team approves it",
+        "no_claim": "guarantee revenue lift",
+        "short_topic": "pipeline recap"
+      }
+    },
+    {
+      "id": "sp-002",
+      "split": "learn",
+      "segment": "AI consulting",
+      "call_notes": "Prospect: Maya at Lighthouse Labs Team. Segment: AI consulting. Pain: research requests arrive without clear scope or priority. Desired outcome: a repeatable intake process for research briefs. Agreed next step: share the intake template and ask for one pilot topic on Wednesday noon. Tone requested: concise. Important constraint: keep the pilot under five hours of analyst time. Do not claim: guarantee analyst savings.",
+      "facts": {
+        "contact_first_name": "Maya",
+        "organization": "Lighthouse Labs Team",
+        "pain": "research requests arrive without clear scope or priority",
+        "outcome": "a repeatable intake process for research briefs",
+        "next_step": "share the intake template and ask for one pilot topic",
+        "date": "Wednesday noon",
+        "tone": "concise",
+        "constraint": "keep the pilot under five hours of analyst time",
+        "no_claim": "guarantee analyst savings",
+        "short_topic": "research intake"
+      }
+    },
+    {
+      "id": "sp-003",
+      "split": "learn",
+      "segment": "Customer support",
+      "call_notes": "Prospect: Jordan at Atlas Support Team. Segment: Customer support. Pain: ticket escalations are inconsistent between tiers. Desired outcome: faster triage with clearer escalation summaries. Agreed next step: send an escalation summary example and schedule reviewer feedback on Friday 2:00 PM. Tone requested: warm. Important constraint: do not change the existing Zendesk workflow yet. Do not claim: replace support agents.",
+      "facts": {
+        "contact_first_name": "Jordan",
+        "organization": "Atlas Support Team",
+        "pain": "ticket escalations are inconsistent between tiers",
+        "outcome": "faster triage with clearer escalation summaries",
+        "next_step": "send an escalation summary example and schedule reviewer feedback",
+        "date": "Friday 2:00 PM",
+        "tone": "warm",
+        "constraint": "do not change the existing Zendesk workflow yet",
+        "no_claim": "replace support agents",
+        "short_topic": "support escalation"
+      }
+    },
+    {
+      "id": "sp-004",
+      "split": "learn",
+      "segment": "Healthcare operations",
+      "call_notes": "Prospect: Sam at Harbor Clinic Team. Segment: Healthcare operations. Pain: manual appointment follow-ups create delays. Desired outcome: fewer missed callbacks with safer draft reminders. Agreed next step: send a redacted reminder draft for compliance review on Thursday 9:30 AM. Tone requested: executive. Important constraint: no patient data should be used in public examples. Do not claim: guarantee patient outcomes.",
+      "facts": {
+        "contact_first_name": "Sam",
+        "organization": "Harbor Clinic Team",
+        "pain": "manual appointment follow-ups create delays",
+        "outcome": "fewer missed callbacks with safer draft reminders",
+        "next_step": "send a redacted reminder draft for compliance review",
+        "date": "Thursday 9:30 AM",
+        "tone": "executive",
+        "constraint": "no patient data should be used in public examples",
+        "no_claim": "guarantee patient outcomes",
+        "short_topic": "appointment follow-up"
+      }
+    },
+    {
+      "id": "sp-005",
+      "split": "learn",
+      "segment": "Education services",
+      "call_notes": "Prospect: Priya at Summit Learning Team. Segment: Education services. Pain: program coordinators rewrite similar parent updates every week. Desired outcome: a reusable draft system with human approval. Agreed next step: share three sample update drafts for review on Monday 3:00 PM. Tone requested: warm. Important constraint: do not send messages without coordinator approval. Do not claim: guarantee enrollment growth.",
+      "facts": {
+        "contact_first_name": "Priya",
+        "organization": "Summit Learning Team",
+        "pain": "program coordinators rewrite similar parent updates every week",
+        "outcome": "a reusable draft system with human approval",
+        "next_step": "share three sample update drafts for review",
+        "date": "Monday 3:00 PM",
+        "tone": "warm",
+        "constraint": "do not send messages without coordinator approval",
+        "no_claim": "guarantee enrollment growth",
+        "short_topic": "parent updates"
+      }
+    },
+    {
+      "id": "sp-006",
+      "split": "learn",
+      "segment": "Finance operations",
+      "call_notes": "Prospect: Leo at Cedar Finance Team. Segment: Finance operations. Pain: invoice exception notes are hard to reconcile. Desired outcome: cleaner exception summaries before month-end close. Agreed next step: send the invoice exception summary format and confirm data fields on Tuesday 4:30 PM. Tone requested: technical. Important constraint: do not connect to the accounting system yet. Do not claim: eliminate audit risk.",
+      "facts": {
+        "contact_first_name": "Leo",
+        "organization": "Cedar Finance Team",
+        "pain": "invoice exception notes are hard to reconcile",
+        "outcome": "cleaner exception summaries before month-end close",
+        "next_step": "send the invoice exception summary format and confirm data fields",
+        "date": "Tuesday 4:30 PM",
+        "tone": "technical",
+        "constraint": "do not connect to the accounting system yet",
+        "no_claim": "eliminate audit risk",
+        "short_topic": "invoice exceptions"
+      }
+    },
+    {
+      "id": "sp-007",
+      "split": "learn",
+      "segment": "Legal operations",
+      "call_notes": "Prospect: Nora at Civic Legal Ops Team. Segment: Legal operations. Pain: contract review notes are inconsistent across reviewers. Desired outcome: a safer first-pass summary with clear human review. Agreed next step: send a redacted contract summary example and validation checklist on Friday 11:00 AM. Tone requested: executive. Important constraint: do not provide legal advice or final conclusions. Do not claim: replace lawyers.",
+      "facts": {
+        "contact_first_name": "Nora",
+        "organization": "Civic Legal Ops Team",
+        "pain": "contract review notes are inconsistent across reviewers",
+        "outcome": "a safer first-pass summary with clear human review",
+        "next_step": "send a redacted contract summary example and validation checklist",
+        "date": "Friday 11:00 AM",
+        "tone": "executive",
+        "constraint": "do not provide legal advice or final conclusions",
+        "no_claim": "replace lawyers",
+        "short_topic": "contract summaries"
+      }
+    },
+    {
+      "id": "sp-008",
+      "split": "learn",
+      "segment": "Recruiting operations",
+      "call_notes": "Prospect: Eli at Signal Talent Team. Segment: Recruiting operations. Pain: candidate follow-up notes are delayed after screens. Desired outcome: faster recruiter drafts with consistent next steps. Agreed next step: send a sample follow-up draft and evaluation rubric on Wednesday 4:00 PM. Tone requested: concise. Important constraint: do not rank candidates automatically. Do not claim: guarantee hiring decisions.",
+      "facts": {
+        "contact_first_name": "Eli",
+        "organization": "Signal Talent Team",
+        "pain": "candidate follow-up notes are delayed after screens",
+        "outcome": "faster recruiter drafts with consistent next steps",
+        "next_step": "send a sample follow-up draft and evaluation rubric",
+        "date": "Wednesday 4:00 PM",
+        "tone": "concise",
+        "constraint": "do not rank candidates automatically",
+        "no_claim": "guarantee hiring decisions",
+        "short_topic": "candidate follow-up"
+      }
+    },
+    {
+      "id": "sp-009",
+      "split": "learn",
+      "segment": "Product operations",
+      "call_notes": "Prospect: Ana at Vector Product Team. Segment: Product operations. Pain: customer feedback from demos is not converted into tickets. Desired outcome: cleaner feedback summaries and next-step ownership. Agreed next step: send a sample demo recap and tag taxonomy on Thursday 1:00 PM. Tone requested: technical. Important constraint: do not create Jira tickets automatically yet. Do not claim: guarantee roadmap accuracy.",
+      "facts": {
+        "contact_first_name": "Ana",
+        "organization": "Vector Product Team",
+        "pain": "customer feedback from demos is not converted into tickets",
+        "outcome": "cleaner feedback summaries and next-step ownership",
+        "next_step": "send a sample demo recap and tag taxonomy",
+        "date": "Thursday 1:00 PM",
+        "tone": "technical",
+        "constraint": "do not create Jira tickets automatically yet",
+        "no_claim": "guarantee roadmap accuracy",
+        "short_topic": "demo recap"
+      }
+    },
+    {
+      "id": "sp-010",
+      "split": "learn",
+      "segment": "Agency sales",
+      "call_notes": "Prospect: Noah at Bluebird Studio Team. Segment: Agency sales. Pain: proposal follow-ups vary by account manager. Desired outcome: more consistent next-step emails after discovery calls. Agreed next step: send a discovery-call follow-up draft and ask for brand edits on Monday 10:30 AM. Tone requested: warm. Important constraint: keep the message under 120 words. Do not claim: guarantee conversion.",
+      "facts": {
+        "contact_first_name": "Noah",
+        "organization": "Bluebird Studio Team",
+        "pain": "proposal follow-ups vary by account manager",
+        "outcome": "more consistent next-step emails after discovery calls",
+        "next_step": "send a discovery-call follow-up draft and ask for brand edits",
+        "date": "Monday 10:30 AM",
+        "tone": "warm",
+        "constraint": "keep the message under 120 words",
+        "no_claim": "guarantee conversion",
+        "short_topic": "proposal follow-up"
+      }
+    },
+    {
+      "id": "sp-011",
+      "split": "learn",
+      "segment": "SaaS revenue operations",
+      "call_notes": "Prospect: Avery2 at Northstar CRM Team. Segment: SaaS revenue operations. Pain: pipeline notes are scattered across calls and the CRM. Desired outcome: consistent follow-up timing and cleaner opportunity handoffs. Agreed next step: send a two-paragraph recap and confirm the CRM cleanup checklist on Tuesday 10:00 AM. Tone requested: executive. Important constraint: avoid adding new tooling before the team approves it. Do not claim: guarantee revenue lift.",
+      "facts": {
+        "contact_first_name": "Avery2",
+        "organization": "Northstar CRM Team",
+        "pain": "pipeline notes are scattered across calls and the CRM",
+        "outcome": "consistent follow-up timing and cleaner opportunity handoffs",
+        "next_step": "send a two-paragraph recap and confirm the CRM cleanup checklist",
+        "date": "Tuesday 10:00 AM",
+        "tone": "executive",
+        "constraint": "avoid adding new tooling before the team approves it",
+        "no_claim": "guarantee revenue lift",
+        "short_topic": "pipeline recap"
+      }
+    },
+    {
+      "id": "sp-012",
+      "split": "learn",
+      "segment": "AI consulting",
+      "call_notes": "Prospect: Maya2 at Lighthouse Labs Team. Segment: AI consulting. Pain: research requests arrive without clear scope or priority. Desired outcome: a repeatable intake process for research briefs. Agreed next step: share the intake template and ask for one pilot topic on Wednesday noon. Tone requested: concise. Important constraint: keep the pilot under five hours of analyst time. Do not claim: guarantee analyst savings.",
+      "facts": {
+        "contact_first_name": "Maya2",
+        "organization": "Lighthouse Labs Team",
+        "pain": "research requests arrive without clear scope or priority",
+        "outcome": "a repeatable intake process for research briefs",
+        "next_step": "share the intake template and ask for one pilot topic",
+        "date": "Wednesday noon",
+        "tone": "concise",
+        "constraint": "keep the pilot under five hours of analyst time",
+        "no_claim": "guarantee analyst savings",
+        "short_topic": "research intake"
+      }
+    },
+    {
+      "id": "sp-013",
+      "split": "learn",
+      "segment": "Customer support",
+      "call_notes": "Prospect: Jordan2 at Atlas Support Team. Segment: Customer support. Pain: ticket escalations are inconsistent between tiers. Desired outcome: faster triage with clearer escalation summaries. Agreed next step: send an escalation summary example and schedule reviewer feedback on Friday 2:00 PM. Tone requested: warm. Important constraint: do not change the existing Zendesk workflow yet. Do not claim: replace support agents.",
+      "facts": {
+        "contact_first_name": "Jordan2",
+        "organization": "Atlas Support Team",
+        "pain": "ticket escalations are inconsistent between tiers",
+        "outcome": "faster triage with clearer escalation summaries",
+        "next_step": "send an escalation summary example and schedule reviewer feedback",
+        "date": "Friday 2:00 PM",
+        "tone": "warm",
+        "constraint": "do not change the existing Zendesk workflow yet",
+        "no_claim": "replace support agents",
+        "short_topic": "support escalation"
+      }
+    },
+    {
+      "id": "sp-014",
+      "split": "learn",
+      "segment": "Healthcare operations",
+      "call_notes": "Prospect: Sam2 at Harbor Clinic Team. Segment: Healthcare operations. Pain: manual appointment follow-ups create delays. Desired outcome: fewer missed callbacks with safer draft reminders. Agreed next step: send a redacted reminder draft for compliance review on Thursday 9:30 AM. Tone requested: executive. Important constraint: no patient data should be used in public examples. Do not claim: guarantee patient outcomes.",
+      "facts": {
+        "contact_first_name": "Sam2",
+        "organization": "Harbor Clinic Team",
+        "pain": "manual appointment follow-ups create delays",
+        "outcome": "fewer missed callbacks with safer draft reminders",
+        "next_step": "send a redacted reminder draft for compliance review",
+        "date": "Thursday 9:30 AM",
+        "tone": "executive",
+        "constraint": "no patient data should be used in public examples",
+        "no_claim": "guarantee patient outcomes",
+        "short_topic": "appointment follow-up"
+      }
+    },
+    {
+      "id": "sp-015",
+      "split": "learn",
+      "segment": "Education services",
+      "call_notes": "Prospect: Priya2 at Summit Learning Team. Segment: Education services. Pain: program coordinators rewrite similar parent updates every week. Desired outcome: a reusable draft system with human approval. Agreed next step: share three sample update drafts for review on Monday 3:00 PM. Tone requested: warm. Important constraint: do not send messages without coordinator approval. Do not claim: guarantee enrollment growth.",
+      "facts": {
+        "contact_first_name": "Priya2",
+        "organization": "Summit Learning Team",
+        "pain": "program coordinators rewrite similar parent updates every week",
+        "outcome": "a reusable draft system with human approval",
+        "next_step": "share three sample update drafts for review",
+        "date": "Monday 3:00 PM",
+        "tone": "warm",
+        "constraint": "do not send messages without coordinator approval",
+        "no_claim": "guarantee enrollment growth",
+        "short_topic": "parent updates"
+      }
+    },
+    {
+      "id": "sp-016",
+      "split": "learn",
+      "segment": "Finance operations",
+      "call_notes": "Prospect: Leo2 at Cedar Finance Team. Segment: Finance operations. Pain: invoice exception notes are hard to reconcile. Desired outcome: cleaner exception summaries before month-end close. Agreed next step: send the invoice exception summary format and confirm data fields on Tuesday 4:30 PM. Tone requested: technical. Important constraint: do not connect to the accounting system yet. Do not claim: eliminate audit risk.",
+      "facts": {
+        "contact_first_name": "Leo2",
+        "organization": "Cedar Finance Team",
+        "pain": "invoice exception notes are hard to reconcile",
+        "outcome": "cleaner exception summaries before month-end close",
+        "next_step": "send the invoice exception summary format and confirm data fields",
+        "date": "Tuesday 4:30 PM",
+        "tone": "technical",
+        "constraint": "do not connect to the accounting system yet",
+        "no_claim": "eliminate audit risk",
+        "short_topic": "invoice exceptions"
+      }
+    },
+    {
+      "id": "sp-017",
+      "split": "learn",
+      "segment": "Legal operations",
+      "call_notes": "Prospect: Nora2 at Civic Legal Ops Team. Segment: Legal operations. Pain: contract review notes are inconsistent across reviewers. Desired outcome: a safer first-pass summary with clear human review. Agreed next step: send a redacted contract summary example and validation checklist on Friday 11:00 AM. Tone requested: executive. Important constraint: do not provide legal advice or final conclusions. Do not claim: replace lawyers.",
+      "facts": {
+        "contact_first_name": "Nora2",
+        "organization": "Civic Legal Ops Team",
+        "pain": "contract review notes are inconsistent across reviewers",
+        "outcome": "a safer first-pass summary with clear human review",
+        "next_step": "send a redacted contract summary example and validation checklist",
+        "date": "Friday 11:00 AM",
+        "tone": "executive",
+        "constraint": "do not provide legal advice or final conclusions",
+        "no_claim": "replace lawyers",
+        "short_topic": "contract summaries"
+      }
+    },
+    {
+      "id": "sp-018",
+      "split": "learn",
+      "segment": "Recruiting operations",
+      "call_notes": "Prospect: Eli2 at Signal Talent Team. Segment: Recruiting operations. Pain: candidate follow-up notes are delayed after screens. Desired outcome: faster recruiter drafts with consistent next steps. Agreed next step: send a sample follow-up draft and evaluation rubric on Wednesday 4:00 PM. Tone requested: concise. Important constraint: do not rank candidates automatically. Do not claim: guarantee hiring decisions.",
+      "facts": {
+        "contact_first_name": "Eli2",
+        "organization": "Signal Talent Team",
+        "pain": "candidate follow-up notes are delayed after screens",
+        "outcome": "faster recruiter drafts with consistent next steps",
+        "next_step": "send a sample follow-up draft and evaluation rubric",
+        "date": "Wednesday 4:00 PM",
+        "tone": "concise",
+        "constraint": "do not rank candidates automatically",
+        "no_claim": "guarantee hiring decisions",
+        "short_topic": "candidate follow-up"
+      }
+    },
+    {
+      "id": "sp-019",
+      "split": "learn",
+      "segment": "Product operations",
+      "call_notes": "Prospect: Ana2 at Vector Product Team. Segment: Product operations. Pain: customer feedback from demos is not converted into tickets. Desired outcome: cleaner feedback summaries and next-step ownership. Agreed next step: send a sample demo recap and tag taxonomy on Thursday 1:00 PM. Tone requested: technical. Important constraint: do not create Jira tickets automatically yet. Do not claim: guarantee roadmap accuracy.",
+      "facts": {
+        "contact_first_name": "Ana2",
+        "organization": "Vector Product Team",
+        "pain": "customer feedback from demos is not converted into tickets",
+        "outcome": "cleaner feedback summaries and next-step ownership",
+        "next_step": "send a sample demo recap and tag taxonomy",
+        "date": "Thursday 1:00 PM",
+        "tone": "technical",
+        "constraint": "do not create Jira tickets automatically yet",
+        "no_claim": "guarantee roadmap accuracy",
+        "short_topic": "demo recap"
+      }
+    },
+    {
+      "id": "sp-020",
+      "split": "learn",
+      "segment": "Agency sales",
+      "call_notes": "Prospect: Noah2 at Bluebird Studio Team. Segment: Agency sales. Pain: proposal follow-ups vary by account manager. Desired outcome: more consistent next-step emails after discovery calls. Agreed next step: send a discovery-call follow-up draft and ask for brand edits on Monday 10:30 AM. Tone requested: warm. Important constraint: keep the message under 120 words. Do not claim: guarantee conversion.",
+      "facts": {
+        "contact_first_name": "Noah2",
+        "organization": "Bluebird Studio Team",
+        "pain": "proposal follow-ups vary by account manager",
+        "outcome": "more consistent next-step emails after discovery calls",
+        "next_step": "send a discovery-call follow-up draft and ask for brand edits",
+        "date": "Monday 10:30 AM",
+        "tone": "warm",
+        "constraint": "keep the message under 120 words",
+        "no_claim": "guarantee conversion",
+        "short_topic": "proposal follow-up"
+      }
+    },
+    {
+      "id": "sp-021",
+      "split": "holdout",
+      "segment": "SaaS revenue operations",
+      "call_notes": "Prospect: Avery3 at Northstar CRM Pilot. Segment: SaaS revenue operations. Pain: pipeline notes are scattered across calls and the CRM. Desired outcome: consistent follow-up timing and cleaner opportunity handoffs. Agreed next step: send a two-paragraph recap and confirm the CRM cleanup checklist on Tuesday 10:00 AM. Tone requested: executive. Important constraint: avoid adding new tooling before the team approves it. Do not claim: guarantee revenue lift.",
+      "facts": {
+        "contact_first_name": "Avery3",
+        "organization": "Northstar CRM Pilot",
+        "pain": "pipeline notes are scattered across calls and the CRM",
+        "outcome": "consistent follow-up timing and cleaner opportunity handoffs",
+        "next_step": "send a two-paragraph recap and confirm the CRM cleanup checklist",
+        "date": "Tuesday 10:00 AM",
+        "tone": "executive",
+        "constraint": "avoid adding new tooling before the team approves it",
+        "no_claim": "guarantee revenue lift",
+        "short_topic": "pipeline recap"
+      }
+    },
+    {
+      "id": "sp-022",
+      "split": "holdout",
+      "segment": "AI consulting",
+      "call_notes": "Prospect: Maya3 at Lighthouse Labs Pilot. Segment: AI consulting. Pain: research requests arrive without clear scope or priority. Desired outcome: a repeatable intake process for research briefs. Agreed next step: share the intake template and ask for one pilot topic on Wednesday noon. Tone requested: concise. Important constraint: keep the pilot under five hours of analyst time. Do not claim: guarantee analyst savings.",
+      "facts": {
+        "contact_first_name": "Maya3",
+        "organization": "Lighthouse Labs Pilot",
+        "pain": "research requests arrive without clear scope or priority",
+        "outcome": "a repeatable intake process for research briefs",
+        "next_step": "share the intake template and ask for one pilot topic",
+        "date": "Wednesday noon",
+        "tone": "concise",
+        "constraint": "keep the pilot under five hours of analyst time",
+        "no_claim": "guarantee analyst savings",
+        "short_topic": "research intake"
+      }
+    },
+    {
+      "id": "sp-023",
+      "split": "holdout",
+      "segment": "Customer support",
+      "call_notes": "Prospect: Jordan3 at Atlas Support Pilot. Segment: Customer support. Pain: ticket escalations are inconsistent between tiers. Desired outcome: faster triage with clearer escalation summaries. Agreed next step: send an escalation summary example and schedule reviewer feedback on Friday 2:00 PM. Tone requested: warm. Important constraint: do not change the existing Zendesk workflow yet. Do not claim: replace support agents.",
+      "facts": {
+        "contact_first_name": "Jordan3",
+        "organization": "Atlas Support Pilot",
+        "pain": "ticket escalations are inconsistent between tiers",
+        "outcome": "faster triage with clearer escalation summaries",
+        "next_step": "send an escalation summary example and schedule reviewer feedback",
+        "date": "Friday 2:00 PM",
+        "tone": "warm",
+        "constraint": "do not change the existing Zendesk workflow yet",
+        "no_claim": "replace support agents",
+        "short_topic": "support escalation"
+      }
+    },
+    {
+      "id": "sp-024",
+      "split": "holdout",
+      "segment": "Healthcare operations",
+      "call_notes": "Prospect: Sam3 at Harbor Clinic Pilot. Segment: Healthcare operations. Pain: manual appointment follow-ups create delays. Desired outcome: fewer missed callbacks with safer draft reminders. Agreed next step: send a redacted reminder draft for compliance review on Thursday 9:30 AM. Tone requested: executive. Important constraint: no patient data should be used in public examples. Do not claim: guarantee patient outcomes.",
+      "facts": {
+        "contact_first_name": "Sam3",
+        "organization": "Harbor Clinic Pilot",
+        "pain": "manual appointment follow-ups create delays",
+        "outcome": "fewer missed callbacks with safer draft reminders",
+        "next_step": "send a redacted reminder draft for compliance review",
+        "date": "Thursday 9:30 AM",
+        "tone": "executive",
+        "constraint": "no patient data should be used in public examples",
+        "no_claim": "guarantee patient outcomes",
+        "short_topic": "appointment follow-up"
+      }
+    },
+    {
+      "id": "sp-025",
+      "split": "holdout",
+      "segment": "Education services",
+      "call_notes": "Prospect: Priya3 at Summit Learning Pilot. Segment: Education services. Pain: program coordinators rewrite similar parent updates every week. Desired outcome: a reusable draft system with human approval. Agreed next step: share three sample update drafts for review on Monday 3:00 PM. Tone requested: warm. Important constraint: do not send messages without coordinator approval. Do not claim: guarantee enrollment growth.",
+      "facts": {
+        "contact_first_name": "Priya3",
+        "organization": "Summit Learning Pilot",
+        "pain": "program coordinators rewrite similar parent updates every week",
+        "outcome": "a reusable draft system with human approval",
+        "next_step": "share three sample update drafts for review",
+        "date": "Monday 3:00 PM",
+        "tone": "warm",
+        "constraint": "do not send messages without coordinator approval",
+        "no_claim": "guarantee enrollment growth",
+        "short_topic": "parent updates"
+      }
+    },
+    {
+      "id": "sp-026",
+      "split": "holdout",
+      "segment": "Finance operations",
+      "call_notes": "Prospect: Leo3 at Cedar Finance Pilot. Segment: Finance operations. Pain: invoice exception notes are hard to reconcile. Desired outcome: cleaner exception summaries before month-end close. Agreed next step: send the invoice exception summary format and confirm data fields on Tuesday 4:30 PM. Tone requested: technical. Important constraint: do not connect to the accounting system yet. Do not claim: eliminate audit risk.",
+      "facts": {
+        "contact_first_name": "Leo3",
+        "organization": "Cedar Finance Pilot",
+        "pain": "invoice exception notes are hard to reconcile",
+        "outcome": "cleaner exception summaries before month-end close",
+        "next_step": "send the invoice exception summary format and confirm data fields",
+        "date": "Tuesday 4:30 PM",
+        "tone": "technical",
+        "constraint": "do not connect to the accounting system yet",
+        "no_claim": "eliminate audit risk",
+        "short_topic": "invoice exceptions"
+      }
+    },
+    {
+      "id": "sp-027",
+      "split": "holdout",
+      "segment": "Legal operations",
+      "call_notes": "Prospect: Nora3 at Civic Legal Ops Pilot. Segment: Legal operations. Pain: contract review notes are inconsistent across reviewers. Desired outcome: a safer first-pass summary with clear human review. Agreed next step: send a redacted contract summary example and validation checklist on Friday 11:00 AM. Tone requested: executive. Important constraint: do not provide legal advice or final conclusions. Do not claim: replace lawyers.",
+      "facts": {
+        "contact_first_name": "Nora3",
+        "organization": "Civic Legal Ops Pilot",
+        "pain": "contract review notes are inconsistent across reviewers",
+        "outcome": "a safer first-pass summary with clear human review",
+        "next_step": "send a redacted contract summary example and validation checklist",
+        "date": "Friday 11:00 AM",
+        "tone": "executive",
+        "constraint": "do not provide legal advice or final conclusions",
+        "no_claim": "replace lawyers",
+        "short_topic": "contract summaries"
+      }
+    },
+    {
+      "id": "sp-028",
+      "split": "holdout",
+      "segment": "Recruiting operations",
+      "call_notes": "Prospect: Eli3 at Signal Talent Pilot. Segment: Recruiting operations. Pain: candidate follow-up notes are delayed after screens. Desired outcome: faster recruiter drafts with consistent next steps. Agreed next step: send a sample follow-up draft and evaluation rubric on Wednesday 4:00 PM. Tone requested: concise. Important constraint: do not rank candidates automatically. Do not claim: guarantee hiring decisions.",
+      "facts": {
+        "contact_first_name": "Eli3",
+        "organization": "Signal Talent Pilot",
+        "pain": "candidate follow-up notes are delayed after screens",
+        "outcome": "faster recruiter drafts with consistent next steps",
+        "next_step": "send a sample follow-up draft and evaluation rubric",
+        "date": "Wednesday 4:00 PM",
+        "tone": "concise",
+        "constraint": "do not rank candidates automatically",
+        "no_claim": "guarantee hiring decisions",
+        "short_topic": "candidate follow-up"
+      }
+    },
+    {
+      "id": "sp-029",
+      "split": "holdout",
+      "segment": "Product operations",
+      "call_notes": "Prospect: Ana3 at Vector Product Pilot. Segment: Product operations. Pain: customer feedback from demos is not converted into tickets. Desired outcome: cleaner feedback summaries and next-step ownership. Agreed next step: send a sample demo recap and tag taxonomy on Thursday 1:00 PM. Tone requested: technical. Important constraint: do not create Jira tickets automatically yet. Do not claim: guarantee roadmap accuracy.",
+      "facts": {
+        "contact_first_name": "Ana3",
+        "organization": "Vector Product Pilot",
+        "pain": "customer feedback from demos is not converted into tickets",
+        "outcome": "cleaner feedback summaries and next-step ownership",
+        "next_step": "send a sample demo recap and tag taxonomy",
+        "date": "Thursday 1:00 PM",
+        "tone": "technical",
+        "constraint": "do not create Jira tickets automatically yet",
+        "no_claim": "guarantee roadmap accuracy",
+        "short_topic": "demo recap"
+      }
+    },
+    {
+      "id": "sp-030",
+      "split": "holdout",
+      "segment": "Agency sales",
+      "call_notes": "Prospect: Noah3 at Bluebird Studio Pilot. Segment: Agency sales. Pain: proposal follow-ups vary by account manager. Desired outcome: more consistent next-step emails after discovery calls. Agreed next step: send a discovery-call follow-up draft and ask for brand edits on Monday 10:30 AM. Tone requested: warm. Important constraint: keep the message under 120 words. Do not claim: guarantee conversion.",
+      "facts": {
+        "contact_first_name": "Noah3",
+        "organization": "Bluebird Studio Pilot",
+        "pain": "proposal follow-ups vary by account manager",
+        "outcome": "more consistent next-step emails after discovery calls",
+        "next_step": "send a discovery-call follow-up draft and ask for brand edits",
+        "date": "Monday 10:30 AM",
+        "tone": "warm",
+        "constraint": "keep the message under 120 words",
+        "no_claim": "guarantee conversion",
+        "short_topic": "proposal follow-up"
+      }
+    },
+    {
+      "id": "sp-031",
+      "split": "holdout",
+      "segment": "SaaS revenue operations",
+      "call_notes": "Prospect: Avery4 at Northstar CRM Pilot. Segment: SaaS revenue operations. Pain: pipeline notes are scattered across calls and the CRM. Desired outcome: consistent follow-up timing and cleaner opportunity handoffs. Agreed next step: send a two-paragraph recap and confirm the CRM cleanup checklist on Tuesday 10:00 AM. Tone requested: executive. Important constraint: avoid adding new tooling before the team approves it. Do not claim: guarantee revenue lift.",
+      "facts": {
+        "contact_first_name": "Avery4",
+        "organization": "Northstar CRM Pilot",
+        "pain": "pipeline notes are scattered across calls and the CRM",
+        "outcome": "consistent follow-up timing and cleaner opportunity handoffs",
+        "next_step": "send a two-paragraph recap and confirm the CRM cleanup checklist",
+        "date": "Tuesday 10:00 AM",
+        "tone": "executive",
+        "constraint": "avoid adding new tooling before the team approves it",
+        "no_claim": "guarantee revenue lift",
+        "short_topic": "pipeline recap"
+      }
+    },
+    {
+      "id": "sp-032",
+      "split": "holdout",
+      "segment": "AI consulting",
+      "call_notes": "Prospect: Maya4 at Lighthouse Labs Pilot. Segment: AI consulting. Pain: research requests arrive without clear scope or priority. Desired outcome: a repeatable intake process for research briefs. Agreed next step: share the intake template and ask for one pilot topic on Wednesday noon. Tone requested: concise. Important constraint: keep the pilot under five hours of analyst time. Do not claim: guarantee analyst savings.",
+      "facts": {
+        "contact_first_name": "Maya4",
+        "organization": "Lighthouse Labs Pilot",
+        "pain": "research requests arrive without clear scope or priority",
+        "outcome": "a repeatable intake process for research briefs",
+        "next_step": "share the intake template and ask for one pilot topic",
+        "date": "Wednesday noon",
+        "tone": "concise",
+        "constraint": "keep the pilot under five hours of analyst time",
+        "no_claim": "guarantee analyst savings",
+        "short_topic": "research intake"
+      }
+    },
+    {
+      "id": "sp-033",
+      "split": "holdout",
+      "segment": "Customer support",
+      "call_notes": "Prospect: Jordan4 at Atlas Support Pilot. Segment: Customer support. Pain: ticket escalations are inconsistent between tiers. Desired outcome: faster triage with clearer escalation summaries. Agreed next step: send an escalation summary example and schedule reviewer feedback on Friday 2:00 PM. Tone requested: warm. Important constraint: do not change the existing Zendesk workflow yet. Do not claim: replace support agents.",
+      "facts": {
+        "contact_first_name": "Jordan4",
+        "organization": "Atlas Support Pilot",
+        "pain": "ticket escalations are inconsistent between tiers",
+        "outcome": "faster triage with clearer escalation summaries",
+        "next_step": "send an escalation summary example and schedule reviewer feedback",
+        "date": "Friday 2:00 PM",
+        "tone": "warm",
+        "constraint": "do not change the existing Zendesk workflow yet",
+        "no_claim": "replace support agents",
+        "short_topic": "support escalation"
+      }
+    },
+    {
+      "id": "sp-034",
+      "split": "holdout",
+      "segment": "Healthcare operations",
+      "call_notes": "Prospect: Sam4 at Harbor Clinic Pilot. Segment: Healthcare operations. Pain: manual appointment follow-ups create delays. Desired outcome: fewer missed callbacks with safer draft reminders. Agreed next step: send a redacted reminder draft for compliance review on Thursday 9:30 AM. Tone requested: executive. Important constraint: no patient data should be used in public examples. Do not claim: guarantee patient outcomes.",
+      "facts": {
+        "contact_first_name": "Sam4",
+        "organization": "Harbor Clinic Pilot",
+        "pain": "manual appointment follow-ups create delays",
+        "outcome": "fewer missed callbacks with safer draft reminders",
+        "next_step": "send a redacted reminder draft for compliance review",
+        "date": "Thursday 9:30 AM",
+        "tone": "executive",
+        "constraint": "no patient data should be used in public examples",
+        "no_claim": "guarantee patient outcomes",
+        "short_topic": "appointment follow-up"
+      }
+    },
+    {
+      "id": "sp-035",
+      "split": "holdout",
+      "segment": "Education services",
+      "call_notes": "Prospect: Priya4 at Summit Learning Pilot. Segment: Education services. Pain: program coordinators rewrite similar parent updates every week. Desired outcome: a reusable draft system with human approval. Agreed next step: share three sample update drafts for review on Monday 3:00 PM. Tone requested: warm. Important constraint: do not send messages without coordinator approval. Do not claim: guarantee enrollment growth.",
+      "facts": {
+        "contact_first_name": "Priya4",
+        "organization": "Summit Learning Pilot",
+        "pain": "program coordinators rewrite similar parent updates every week",
+        "outcome": "a reusable draft system with human approval",
+        "next_step": "share three sample update drafts for review",
+        "date": "Monday 3:00 PM",
+        "tone": "warm",
+        "constraint": "do not send messages without coordinator approval",
+        "no_claim": "guarantee enrollment growth",
+        "short_topic": "parent updates"
+      }
+    },
+    {
+      "id": "sp-036",
+      "split": "holdout",
+      "segment": "Finance operations",
+      "call_notes": "Prospect: Leo4 at Cedar Finance Pilot. Segment: Finance operations. Pain: invoice exception notes are hard to reconcile. Desired outcome: cleaner exception summaries before month-end close. Agreed next step: send the invoice exception summary format and confirm data fields on Tuesday 4:30 PM. Tone requested: technical. Important constraint: do not connect to the accounting system yet. Do not claim: eliminate audit risk.",
+      "facts": {
+        "contact_first_name": "Leo4",
+        "organization": "Cedar Finance Pilot",
+        "pain": "invoice exception notes are hard to reconcile",
+        "outcome": "cleaner exception summaries before month-end close",
+        "next_step": "send the invoice exception summary format and confirm data fields",
+        "date": "Tuesday 4:30 PM",
+        "tone": "technical",
+        "constraint": "do not connect to the accounting system yet",
+        "no_claim": "eliminate audit risk",
+        "short_topic": "invoice exceptions"
+      }
+    },
+    {
+      "id": "sp-037",
+      "split": "holdout",
+      "segment": "Legal operations",
+      "call_notes": "Prospect: Nora4 at Civic Legal Ops Pilot. Segment: Legal operations. Pain: contract review notes are inconsistent across reviewers. Desired outcome: a safer first-pass summary with clear human review. Agreed next step: send a redacted contract summary example and validation checklist on Friday 11:00 AM. Tone requested: executive. Important constraint: do not provide legal advice or final conclusions. Do not claim: replace lawyers.",
+      "facts": {
+        "contact_first_name": "Nora4",
+        "organization": "Civic Legal Ops Pilot",
+        "pain": "contract review notes are inconsistent across reviewers",
+        "outcome": "a safer first-pass summary with clear human review",
+        "next_step": "send a redacted contract summary example and validation checklist",
+        "date": "Friday 11:00 AM",
+        "tone": "executive",
+        "constraint": "do not provide legal advice or final conclusions",
+        "no_claim": "replace lawyers",
+        "short_topic": "contract summaries"
+      }
+    },
+    {
+      "id": "sp-038",
+      "split": "holdout",
+      "segment": "Recruiting operations",
+      "call_notes": "Prospect: Eli4 at Signal Talent Pilot. Segment: Recruiting operations. Pain: candidate follow-up notes are delayed after screens. Desired outcome: faster recruiter drafts with consistent next steps. Agreed next step: send a sample follow-up draft and evaluation rubric on Wednesday 4:00 PM. Tone requested: concise. Important constraint: do not rank candidates automatically. Do not claim: guarantee hiring decisions.",
+      "facts": {
+        "contact_first_name": "Eli4",
+        "organization": "Signal Talent Pilot",
+        "pain": "candidate follow-up notes are delayed after screens",
+        "outcome": "faster recruiter drafts with consistent next steps",
+        "next_step": "send a sample follow-up draft and evaluation rubric",
+        "date": "Wednesday 4:00 PM",
+        "tone": "concise",
+        "constraint": "do not rank candidates automatically",
+        "no_claim": "guarantee hiring decisions",
+        "short_topic": "candidate follow-up"
+      }
+    },
+    {
+      "id": "sp-039",
+      "split": "holdout",
+      "segment": "Product operations",
+      "call_notes": "Prospect: Ana4 at Vector Product Pilot. Segment: Product operations. Pain: customer feedback from demos is not converted into tickets. Desired outcome: cleaner feedback summaries and next-step ownership. Agreed next step: send a sample demo recap and tag taxonomy on Thursday 1:00 PM. Tone requested: technical. Important constraint: do not create Jira tickets automatically yet. Do not claim: guarantee roadmap accuracy.",
+      "facts": {
+        "contact_first_name": "Ana4",
+        "organization": "Vector Product Pilot",
+        "pain": "customer feedback from demos is not converted into tickets",
+        "outcome": "cleaner feedback summaries and next-step ownership",
+        "next_step": "send a sample demo recap and tag taxonomy",
+        "date": "Thursday 1:00 PM",
+        "tone": "technical",
+        "constraint": "do not create Jira tickets automatically yet",
+        "no_claim": "guarantee roadmap accuracy",
+        "short_topic": "demo recap"
+      }
+    },
+    {
+      "id": "sp-040",
+      "split": "holdout",
+      "segment": "Agency sales",
+      "call_notes": "Prospect: Noah4 at Bluebird Studio Pilot. Segment: Agency sales. Pain: proposal follow-ups vary by account manager. Desired outcome: more consistent next-step emails after discovery calls. Agreed next step: send a discovery-call follow-up draft and ask for brand edits on Monday 10:30 AM. Tone requested: warm. Important constraint: keep the message under 120 words. Do not claim: guarantee conversion.",
+      "facts": {
+        "contact_first_name": "Noah4",
+        "organization": "Bluebird Studio Pilot",
+        "pain": "proposal follow-ups vary by account manager",
+        "outcome": "more consistent next-step emails after discovery calls",
+        "next_step": "send a discovery-call follow-up draft and ask for brand edits",
+        "date": "Monday 10:30 AM",
+        "tone": "warm",
+        "constraint": "keep the message under 120 words",
+        "no_claim": "guarantee conversion",
+        "short_topic": "proposal follow-up"
+      }
+    }
+  ]
+}

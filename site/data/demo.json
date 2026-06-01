@@ -1,0 +1,500 @@
+{
+  "headline": "Work → Trace → Learn → Skill → Test → Approve → Release → Improve",
+  "generated_at": "2026-05-27T00:42:27Z",
+  "url": "https://montrealai.github.io/skillos/",
+  "repository": "https://github.com/MontrealAI/skillos",
+  "generated_for": "MontrealAI/skillos",
+  "sample_traces": [
+    {
+      "job_id": "job_9631f07dc6",
+      "trace_id": "trace_8f06171973",
+      "agent_id": "sales_agent",
+      "skill_id": "sales_followup_email",
+      "skill_version": 1,
+      "output": "Hi Maya,\n\nThanks for the conversation about Orion Labs's work on manual CRM follow-up. I attached a concise recap and the proposed path forward.\n\nFor next steps, we can review the pilot plan on Friday.\n\nBest,\nAgent SkillOS",
+      "score": 0.73,
+      "human_edits": "Moved the next step to the opening lines and made the ask clearer."
+    },
+    {
+      "job_id": "job_d951c4ada8",
+      "trace_id": "trace_f08b72d66f",
+      "agent_id": "sales_agent",
+      "skill_id": "sales_followup_email",
+      "skill_version": 1,
+      "output": "Hi Noah,\n\nThanks for the conversation about VectorPay's work on slow sales handoffs. I attached a concise recap and the proposed path forward.\n\nFor next steps, we can send a two-page implementation outline.\n\nBest,\nAgent SkillOS",
+      "score": 0.73,
+      "human_edits": "Moved the next step to the opening lines and made the ask clearer."
+    },
+    {
+      "job_id": "job_67754ce2ee",
+      "trace_id": "trace_3dae9dae5c",
+      "agent_id": "sales_agent",
+      "skill_id": "sales_followup_email",
+      "skill_version": 1,
+      "output": "Hi Iris,\n\nThanks for the conversation about Northwind's work on support backlog triage. I attached a concise recap and the proposed path forward.\n\nFor next steps, we can schedule a technical scoping call.\n\nBest,\nAgent SkillOS",
+      "score": 0.73,
+      "human_edits": "Moved the next step to the opening lines and made the ask clearer."
+    }
+  ],
+  "lessons": [
+    {
+      "lesson_id": "lesson_4ffa1a7c22",
+      "skill_id": "sales_followup_email",
+      "pattern": "Users repeatedly improve follow-up emails by making the agreed next step more prominent.",
+      "suggested_change": "Put the agreed next step in the first three lines of the email.",
+      "confidence": 0.95,
+      "status": "ready_to_train",
+      "created_at": "2026-05-27T00:42:27+00:00",
+      "evidence": {
+        "jobs_analyzed": 6,
+        "supporting_traces": 6,
+        "average_score_before": 0.73,
+        "example_trace_ids": [
+          "trace_8f06171973",
+          "trace_f08b72d66f",
+          "trace_3dae9dae5c",
+          "trace_46825aae23",
+          "trace_309491e13b"
+        ]
+      }
+    }
+  ],
+  "candidate": {
+    "skill_id": "sales_followup_email",
+    "from_version": 1,
+    "candidate_version": 2,
+    "change_summary": "Put the agreed next step in the first three lines of the email.",
+    "candidate_markdown": "# Sales Follow-Up Email\n\n## Purpose\nWrite concise follow-up emails from sales call notes.\n\n## Instructions\n- Thank the prospect for the call.\n- Mention the company and main pain point.\n- Provide a short recap.\n- Include the next step before closing.\n- Keep the email under 180 words.\n\n## Permissions\nAllowed tools:\n- crm.read_contact\n- email.create_draft\n\nBlocked tools:\n- email.send_without_approval\n\n## Learned Behavior\n\n- Put the agreed next step in the first three lines of the email.\n"
+  },
+  "test_result": {
+    "skill_id": "sales_followup_email",
+    "baseline_version": 1,
+    "candidate_version": 2,
+    "cases": 5,
+    "wins": 5,
+    "ties": 0,
+    "losses": 0,
+    "win_rate": 1.0,
+    "baseline_score": 0.74,
+    "candidate_score": 0.92,
+    "quality_delta": 0.18,
+    "safety": {
+      "passed": true,
+      "findings": [],
+      "checks": [
+        "no unauthorized send",
+        "no payment initiation",
+        "no destructive action",
+        "no approval bypass"
+      ]
+    },
+    "recommendation": "approve_canary"
+  },
+  "release": {
+    "release_id": "rel_f130959c8a",
+    "skill_id": "sales_followup_email",
+    "from_version": 1,
+    "to_version": 2,
+    "scope": "team",
+    "rollout": "10_percent_canary",
+    "status": "released",
+    "rollback_version": 1
+  },
+  "dashboard": {
+    "counts": {
+      "agents": 3,
+      "skills": 3,
+      "skill_versions": 4,
+      "jobs": 6,
+      "traces": 6,
+      "lessons": 1,
+      "releases": 1
+    },
+    "average_trace_score": 0.73,
+    "approved_skill_versions": 4,
+    "recent_traces": [
+      {
+        "trace_id": "trace_8f06171973",
+        "job_id": "job_9631f07dc6",
+        "agent_id": "sales_agent",
+        "goal": "Draft a sales follow-up email from call notes",
+        "output": "Hi Maya,\n\nThanks for the conversation about Orion Labs's work on manual CRM follow-up. I attached a concise recap and the proposed path forward.\n\nFor next steps, we can review the pilot plan on Friday.\n\nBest,\nAgent SkillOS",
+        "human_edits": "Moved the next step to the opening lines and made the ask clearer.",
+        "score": 0.73,
+        "created_at": "2026-05-27T00:42:27+00:00",
+        "skills_used": [
+          "sales_followup_email:v1"
+        ],
+        "tools_used": [
+          "crm.read_contact",
+          "email.create_draft"
+        ],
+        "inputs": {
+          "prospect_name": "Maya",
+          "company_name": "Orion Labs",
+          "pain_point": "manual CRM follow-up",
+          "agreed_next_step": "review the pilot plan on Friday"
+        },
+        "failure_tags": [
+          "needs_skill_improvement"
+        ]
+      },
+      {
+        "trace_id": "trace_f08b72d66f",
+        "job_id": "job_d951c4ada8",
+        "agent_id": "sales_agent",
+        "goal": "Draft a sales follow-up email from call notes",
+        "output": "Hi Noah,\n\nThanks for the conversation about VectorPay's work on slow sales handoffs. I attached a concise recap and the proposed path forward.\n\nFor next steps, we can send a two-page implementation outline.\n\nBest,\nAgent SkillOS",
+        "human_edits": "Moved the next step to the opening lines and made the ask clearer.",
+        "score": 0.73,
+        "created_at": "2026-05-27T00:42:27+00:00",
+        "skills_used": [
+          "sales_followup_email:v1"
+        ],
+        "tools_used": [
+          "crm.read_contact",
+          "email.create_draft"
+        ],
+        "inputs": {
+          "prospect_name": "Noah",
+          "company_name": "VectorPay",
+          "pain_point": "slow sales handoffs",
+          "agreed_next_step": "send a two-page implementation outline"
+        },
+        "failure_tags": [
+          "needs_skill_improvement"
+        ]
+      },
+      {
+        "trace_id": "trace_3dae9dae5c",
+        "job_id": "job_67754ce2ee",
+        "agent_id": "sales_agent",
+        "goal": "Draft a sales follow-up email from call notes",
+        "output": "Hi Iris,\n\nThanks for the conversation about Northwind's work on support backlog triage. I attached a concise recap and the proposed path forward.\n\nFor next steps, we can schedule a technical scoping call.\n\nBest,\nAgent SkillOS",
+        "human_edits": "Moved the next step to the opening lines and made the ask clearer.",
+        "score": 0.73,
+        "created_at": "2026-05-27T00:42:27+00:00",
+        "skills_used": [
+          "sales_followup_email:v1"
+        ],
+        "tools_used": [
+          "crm.read_contact",
+          "email.create_draft"
+        ],
+        "inputs": {
+          "prospect_name": "Iris",
+          "company_name": "Northwind",
+          "pain_point": "support backlog triage",
+          "agreed_next_step": "schedule a technical scoping call"
+        },
+        "failure_tags": [
+          "needs_skill_improvement"
+        ]
+      },
+      {
+        "trace_id": "trace_46825aae23",
+        "job_id": "job_a397d5224e",
+        "agent_id": "sales_agent",
+        "goal": "Draft a sales follow-up email from call notes",
+        "output": "Hi Sam,\n\nThanks for the conversation about HelioGrid's work on energy-project reporting. I attached a concise recap and the proposed path forward.\n\nFor next steps, we can share the security questionnaire.\n\nBest,\nAgent SkillOS",
+        "human_edits": "Moved the next step to the opening lines and made the ask clearer.",
+        "score": 0.73,
+        "created_at": "2026-05-27T00:42:27+00:00",
+        "skills_used": [
+          "sales_followup_email:v1"
+        ],
+        "tools_used": [
+          "crm.read_contact",
+          "email.create_draft"
+        ],
+        "inputs": {
+          "prospect_name": "Sam",
+          "company_name": "HelioGrid",
+          "pain_point": "energy-project reporting",
+          "agreed_next_step": "share the security questionnaire"
+        },
+        "failure_tags": [
+          "needs_skill_improvement"
+        ]
+      },
+      {
+        "trace_id": "trace_309491e13b",
+        "job_id": "job_3073602829",
+        "agent_id": "sales_agent",
+        "goal": "Draft a sales follow-up email from call notes",
+        "output": "Hi Jules,\n\nThanks for the conversation about AtlasOps's work on spreadsheet cleanup. I attached a concise recap and the proposed path forward.\n\nFor next steps, we can confirm stakeholder availability.\n\nBest,\nAgent SkillOS",
+        "human_edits": "Moved the next step to the opening lines and made the ask clearer.",
+        "score": 0.73,
+        "created_at": "2026-05-27T00:42:27+00:00",
+        "skills_used": [
+          "sales_followup_email:v1"
+        ],
+        "tools_used": [
+          "crm.read_contact",
+          "email.create_draft"
+        ],
+        "inputs": {
+          "prospect_name": "Jules",
+          "company_name": "AtlasOps",
+          "pain_point": "spreadsheet cleanup",
+          "agreed_next_step": "confirm stakeholder availability"
+        },
+        "failure_tags": [
+          "needs_skill_improvement"
+        ]
+      },
+      {
+        "trace_id": "trace_53f849f9d3",
+        "job_id": "job_aa999e08c3",
+        "agent_id": "sales_agent",
+        "goal": "Draft a sales follow-up email from call notes",
+        "output": "Hi Ari,\n\nThanks for the conversation about NovaWorks's work on manual reporting. I attached a concise recap and the proposed path forward.\n\nFor next steps, we can schedule a workflow review.\n\nBest,\nAgent SkillOS",
+        "human_edits": "Moved the next step to the opening lines and made the ask clearer.",
+        "score": 0.73,
+        "created_at": "2026-05-27T00:42:27+00:00",
+        "skills_used": [
+          "sales_followup_email:v1"
+        ],
+        "tools_used": [
+          "crm.read_contact",
+          "email.create_draft"
+        ],
+        "inputs": {
+          "prospect_name": "Ari",
+          "company_name": "NovaWorks",
+          "pain_point": "manual reporting",
+          "agreed_next_step": "schedule a workflow review"
+        },
+        "failure_tags": [
+          "needs_skill_improvement"
+        ]
+      }
+    ],
+    "recent_lessons": [
+      {
+        "lesson_id": "lesson_4ffa1a7c22",
+        "skill_id": "sales_followup_email",
+        "pattern": "Users repeatedly improve follow-up emails by making the agreed next step more prominent.",
+        "suggested_change": "Put the agreed next step in the first three lines of the email.",
+        "confidence": 0.95,
+        "status": "candidate_created",
+        "created_at": "2026-05-27T00:42:27+00:00",
+        "evidence": {
+          "jobs_analyzed": 6,
+          "supporting_traces": 6,
+          "average_score_before": 0.73,
+          "example_trace_ids": [
+            "trace_8f06171973",
+            "trace_f08b72d66f",
+            "trace_3dae9dae5c",
+            "trace_46825aae23",
+            "trace_309491e13b"
+          ]
+        }
+      }
+    ],
+    "skills": [
+      {
+        "skill_id": "invoice_reconciliation",
+        "name": "Invoice Reconciliation",
+        "description": "Matches invoices against purchase records.",
+        "current_version": 1,
+        "visibility": "team",
+        "status": "active",
+        "created_at": "2026-05-27T00:42:27+00:00",
+        "updated_at": "2026-05-27T00:42:27+00:00",
+        "current": {
+          "id": 2,
+          "skill_id": "invoice_reconciliation",
+          "version": 1,
+          "markdown": "# Invoice Reconciliation\n\n## Purpose\nCompare invoices against purchase records and flag mismatches.\n\n## Instructions\n- Normalize vendor names before matching.\n- Match invoice id, amount, date, and purchase order.\n- Draft an approval note when the match is strong.\n- Never initiate payment without human approval.\n\n## Permissions\nAllowed tools:\n- accounting.read_invoice\n\nBlocked tools:\n- payments.initiate",
+          "status": "approved",
+          "quality_score": 0.86,
+          "created_at": "2026-05-27T00:42:27+00:00",
+          "allowed_tools": [
+            "accounting.read_invoice"
+          ],
+          "blocked_tools": [
+            "payments.initiate"
+          ],
+          "tests": [
+            {
+              "name": "no_payment_without_approval"
+            }
+          ]
+        },
+        "versions": [
+          {
+            "id": 2,
+            "skill_id": "invoice_reconciliation",
+            "version": 1,
+            "markdown": "# Invoice Reconciliation\n\n## Purpose\nCompare invoices against purchase records and flag mismatches.\n\n## Instructions\n- Normalize vendor names before matching.\n- Match invoice id, amount, date, and purchase order.\n- Draft an approval note when the match is strong.\n- Never initiate payment without human approval.\n\n## Permissions\nAllowed tools:\n- accounting.read_invoice\n\nBlocked tools:\n- payments.initiate",
+            "status": "approved",
+            "quality_score": 0.86,
+            "created_at": "2026-05-27T00:42:27+00:00",
+            "allowed_tools": [
+              "accounting.read_invoice"
+            ],
+            "blocked_tools": [
+              "payments.initiate"
+            ],
+            "tests": [
+              {
+                "name": "no_payment_without_approval"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "skill_id": "research_summary",
+        "name": "Research Summary",
+        "description": "Creates concise research briefs.",
+        "current_version": 1,
+        "visibility": "team",
+        "status": "active",
+        "created_at": "2026-05-27T00:42:27+00:00",
+        "updated_at": "2026-05-27T00:42:27+00:00",
+        "current": {
+          "id": 3,
+          "skill_id": "research_summary",
+          "version": 1,
+          "markdown": "# Research Summary\n\n## Purpose\nCreate concise research briefs with claims, evidence needs, and next steps.\n\n## Instructions\n- Start with the core claim.\n- Separate facts from assumptions.\n- Highlight missing evidence.\n- Recommend the next validation step.\n\n## Permissions\nAllowed tools:\n- search.read\n\nBlocked tools:\n- external.publish",
+          "status": "approved",
+          "quality_score": 0.84,
+          "created_at": "2026-05-27T00:42:27+00:00",
+          "allowed_tools": [
+            "search.read"
+          ],
+          "blocked_tools": [
+            "external.publish"
+          ],
+          "tests": [
+            {
+              "name": "separates_fact_from_assumption"
+            }
+          ]
+        },
+        "versions": [
+          {
+            "id": 3,
+            "skill_id": "research_summary",
+            "version": 1,
+            "markdown": "# Research Summary\n\n## Purpose\nCreate concise research briefs with claims, evidence needs, and next steps.\n\n## Instructions\n- Start with the core claim.\n- Separate facts from assumptions.\n- Highlight missing evidence.\n- Recommend the next validation step.\n\n## Permissions\nAllowed tools:\n- search.read\n\nBlocked tools:\n- external.publish",
+            "status": "approved",
+            "quality_score": 0.84,
+            "created_at": "2026-05-27T00:42:27+00:00",
+            "allowed_tools": [
+              "search.read"
+            ],
+            "blocked_tools": [
+              "external.publish"
+            ],
+            "tests": [
+              {
+                "name": "separates_fact_from_assumption"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "skill_id": "sales_followup_email",
+        "name": "Sales Follow-Up Email",
+        "description": "Writes follow-up emails from call notes.",
+        "current_version": 2,
+        "visibility": "team",
+        "status": "active",
+        "created_at": "2026-05-27T00:42:27+00:00",
+        "updated_at": "2026-05-27T00:42:27+00:00",
+        "current": {
+          "id": 4,
+          "skill_id": "sales_followup_email",
+          "version": 2,
+          "markdown": "# Sales Follow-Up Email\n\n## Purpose\nWrite concise follow-up emails from sales call notes.\n\n## Instructions\n- Thank the prospect for the call.\n- Mention the company and main pain point.\n- Provide a short recap.\n- Include the next step before closing.\n- Keep the email under 180 words.\n\n## Permissions\nAllowed tools:\n- crm.read_contact\n- email.create_draft\n\nBlocked tools:\n- email.send_without_approval\n\n## Learned Behavior\n\n- Put the agreed next step in the first three lines of the email.\n",
+          "status": "approved",
+          "quality_score": 0.92,
+          "created_at": "2026-05-27T00:42:27+00:00",
+          "allowed_tools": [
+            "crm.read_contact",
+            "email.create_draft"
+          ],
+          "blocked_tools": [
+            "email.send_without_approval"
+          ],
+          "tests": [
+            {
+              "name": "includes_next_step"
+            },
+            {
+              "name": "under_180_words"
+            }
+          ]
+        },
+        "versions": [
+          {
+            "id": 4,
+            "skill_id": "sales_followup_email",
+            "version": 2,
+            "markdown": "# Sales Follow-Up Email\n\n## Purpose\nWrite concise follow-up emails from sales call notes.\n\n## Instructions\n- Thank the prospect for the call.\n- Mention the company and main pain point.\n- Provide a short recap.\n- Include the next step before closing.\n- Keep the email under 180 words.\n\n## Permissions\nAllowed tools:\n- crm.read_contact\n- email.create_draft\n\nBlocked tools:\n- email.send_without_approval\n\n## Learned Behavior\n\n- Put the agreed next step in the first three lines of the email.\n",
+            "status": "approved",
+            "quality_score": 0.92,
+            "created_at": "2026-05-27T00:42:27+00:00",
+            "allowed_tools": [
+              "crm.read_contact",
+              "email.create_draft"
+            ],
+            "blocked_tools": [
+              "email.send_without_approval"
+            ],
+            "tests": [
+              {
+                "name": "includes_next_step"
+              },
+              {
+                "name": "under_180_words"
+              }
+            ]
+          },
+          {
+            "id": 1,
+            "skill_id": "sales_followup_email",
+            "version": 1,
+            "markdown": "# Sales Follow-Up Email\n\n## Purpose\nWrite concise follow-up emails from sales call notes.\n\n## Instructions\n- Thank the prospect for the call.\n- Mention the company and main pain point.\n- Provide a short recap.\n- Include the next step before closing.\n- Keep the email under 180 words.\n\n## Permissions\nAllowed tools:\n- crm.read_contact\n- email.create_draft\n\nBlocked tools:\n- email.send_without_approval",
+            "status": "approved",
+            "quality_score": 0.74,
+            "created_at": "2026-05-27T00:42:27+00:00",
+            "allowed_tools": [
+              "crm.read_contact",
+              "email.create_draft"
+            ],
+            "blocked_tools": [
+              "email.send_without_approval"
+            ],
+            "tests": [
+              {
+                "name": "includes_next_step"
+              },
+              {
+                "name": "under_180_words"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "releases": [
+      {
+        "release_id": "rel_f130959c8a",
+        "skill_id": "sales_followup_email",
+        "from_version": 1,
+        "to_version": 2,
+        "scope": "team",
+        "rollout": "10_percent_canary",
+        "status": "released",
+        "rollback_version": 1,
+        "created_at": "2026-05-27T00:42:27+00:00"
+      }
+    ]
+  }
+}

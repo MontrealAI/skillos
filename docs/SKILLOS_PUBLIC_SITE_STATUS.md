@@ -1,14 +1,14 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-06-01T04:03:43Z`
+Generated: `2026-06-01T04:04:07Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 89
-- Workflows tracked: 48
-- Recent successful runs: 46
+- Proof entries: 90
+- Workflows tracked: 49
+- Recent successful runs: 43
 - Recent failed runs: 0
 - Recent running runs: 4
 
@@ -208,6 +208,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI Capability Economy Clearinghouse Proof**
   - Page: https://montrealai.github.io/skillos/proof-capability-economy-clearinghouse-github-capability-economy-clearinghouse-capability-economy-clearinghouse-capability-economy.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-economy-clearinghouse-proof.yml
+- **Autonomous RSI Capability Governance Twin Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capability-governance-twin-github-capability-governance-twin-capability-governance-twin-capability-governance.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-governance-twin-proof.yml
 - **Autonomous RSI Capability Liquidity Engine Proof**
   - Page: https://montrealai.github.io/skillos/proof-capability-liquidity-engine-github-capability-liquidity-engine-capability-liquidity-engine-capability-liquidity.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml

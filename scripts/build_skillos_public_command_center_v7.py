@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-'''SkillOS Public Command Center Root Authority v7.
+'''SkillOS Public Command Center Root Authority v7.1.
 
 Builds the public command center from repository evidence at GitHub Actions run time.
 No pre-made HTML is required as source. The output directory is a fresh Pages artifact.
@@ -15,8 +15,8 @@ import argparse, datetime as dt, hashlib, html, json, os, re
 from pathlib import Path
 from typing import Any
 
-SCHEMA = "skillos.public_command_center.root_authority.v7"
-MARKER = "SKILLOS_PUBLIC_COMMAND_CENTER_V7_ROOT_AUTHORITY"
+SCHEMA = "skillos.public_command_center.root_authority.v7.1"
+MARKER = "SKILLOS_PUBLIC_COMMAND_CENTER_V7_1_ROOT_AUTHORITY"
 OLD_FORBIDDEN = [
     "Autonomous Proof Command Center",
     "SkillOS Proof Command Center",
@@ -214,30 +214,40 @@ def normalize_proof(path: Path, raw: dict[str, Any], source_rank: int = 0) -> di
 
 def collect_proofs(root: Path) -> list[dict[str, Any]]:
     candidates: list[tuple[int, Path, dict[str, Any]]] = []
-    json_paths = []
+    sources: list[tuple[Path, int]] = []
     for pattern, rank in [("data/*.json", 4), ("site/data/*.json", 2)]:
-        for path in root.glob(pattern):
-            name = path.name.lower()
-            if any(x in name for x in ["command-center", "health", "manifest"]):
-                continue
-            raw = load_json(path)
-            if raw is None:
-                continue
-            if isinstance(raw, dict) and isinstance(raw.get("proofs"), list):
-                for i, item in enumerate(raw.get("proofs", [])):
-                    if isinstance(item, dict):
-                        pseudo = dict(item)
-                        pseudo.setdefault("_registry_index", i)
-                        candidates.append((rank - 1, path, pseudo))
-                continue
-            if isinstance(raw, list):
-                for i, item in enumerate(raw):
-                    if isinstance(item, dict):
-                        pseudo = dict(item); pseudo.setdefault("_registry_index", i)
-                        candidates.append((rank - 1, path, pseudo))
-                continue
-            if proof_like(raw):
-                candidates.append((rank, path, raw))
+        sources.extend((p, rank) for p in root.glob(pattern))
+    for rel, rank in [("proof-registry.json", 3), ("site/proof-registry.json", 3)]:
+        p = root / rel
+        if p.exists():
+            sources.append((p, rank))
+    seen_paths: set[str] = set()
+    for path, rank in sources:
+        key = str(path.resolve())
+        if key in seen_paths:
+            continue
+        seen_paths.add(key)
+        name = path.name.lower()
+        if any(x in name for x in ["command-center", "health", "manifest"]):
+            continue
+        raw = load_json(path)
+        if raw is None:
+            continue
+        if isinstance(raw, dict) and isinstance(raw.get("proofs"), list):
+            for i, item in enumerate(raw.get("proofs", [])):
+                if isinstance(item, dict):
+                    pseudo = dict(item)
+                    pseudo.setdefault("_registry_index", i)
+                    candidates.append((rank - 1, path, pseudo))
+            continue
+        if isinstance(raw, list):
+            for i, item in enumerate(raw):
+                if isinstance(item, dict):
+                    pseudo = dict(item); pseudo.setdefault("_registry_index", i)
+                    candidates.append((rank - 1, path, pseudo))
+            continue
+        if proof_like(raw):
+            candidates.append((rank, path, raw))
     by_id: dict[str, dict[str, Any]] = {}
     for rank, path, raw in candidates:
         proof = normalize_proof(path, raw, rank)
@@ -306,24 +316,80 @@ def write(path: Path, text: str) -> None:
     path.write_text(text, encoding='utf-8')
 
 def copy_receipts(root: Path, out: Path, proofs: list[dict[str, Any]]) -> None:
+    # Copy canonical machine-readable evidence and public assets that already exist.
+    # Historic registry entries can expose docs/badges that were not materialized in
+    # the Pages artifact. Root Authority v7.1 guarantees every rendered link exists.
     for p in proofs:
         src = root / p['source_json']
+        dst = out / p['json']
+        dst.parent.mkdir(parents=True, exist_ok=True)
         if src.exists():
-            dst = out / p['json']
-            dst.parent.mkdir(parents=True, exist_ok=True)
-            try: dst.write_bytes(src.read_bytes())
-            except Exception: pass
+            try:
+                dst.write_bytes(src.read_bytes())
+            except Exception:
+                pass
+        if not dst.exists():
+            write(dst, json.dumps({
+                'schema': SCHEMA + '.normalized_receipt',
+                'marker': MARKER,
+                'id': p.get('id'),
+                'title': p.get('title'),
+                'description': p.get('description'),
+                'proved': p.get('proved'),
+                'status': p.get('status'),
+                'source_json': p.get('source_json'),
+                'note': 'Generated by the Public SkillOS Command Center because this registry entry did not include a standalone JSON receipt at this path.'
+            }, indent=2, sort_keys=True) + '\n')
+
     for src_dir, rel_dir in [(root/'docs','docs'),(root/'badges','badges'),(root/'site/docs','docs'),(root/'site/badges','badges')]:
         if src_dir.exists():
             for src in src_dir.glob('*'):
                 if src.is_file() and src.suffix.lower() in {'.md','.svg','.json','.txt'}:
-                    dst = out/rel_dir/src.name; dst.parent.mkdir(parents=True, exist_ok=True)
+                    dst = out/rel_dir/src.name
+                    dst.parent.mkdir(parents=True, exist_ok=True)
                     if not dst.exists():
-                        try: dst.write_bytes(src.read_bytes())
-                        except Exception: pass
+                        try:
+                            dst.write_bytes(src.read_bytes())
+                        except Exception:
+                            pass
+
+    # Guarantee that every proof card report and badge link exists.
+    for p in proofs:
+        doc = out / p['doc']
+        if not doc.exists():
+            lines = [
+                '# ' + text_value(p.get('title'), 'SkillOS proof'),
+                '',
+                'Status: ' + ('PASSED' if p.get('proved') else text_value(p.get('status'), 'available')) + '  ',
+                'Proof ID: `' + text_value(p.get('id'), '') + '`  ',
+                'Source receipt: `' + text_value(p.get('source_json'), '') + '`',
+                '',
+                text_value(p.get('description'), 'Autonomous SkillOS proof surfaced from repository evidence.'),
+                '',
+                '## Public interpretation',
+                '',
+                'This report was generated automatically by the SkillOS Public Command Center Root Authority v7.1 because the proof registry exposed a report link that did not yet have a matching Markdown artifact in the Pages output. The Command Center keeps viewer-facing links complete while preserving the original source receipt pointer above.',
+                '',
+                '## Skills surfaced',
+                '',
+            ]
+            skills = p.get('skills_used', [])[:12]
+            if skills:
+                for s in skills:
+                    lines.append('- **' + text_value(s.get('name'), 'Skill') + '** — ' + text_value(s.get('purpose'), ''))
+            else:
+                lines.append('- Skill surfaced from repository metadata.')
+            write(doc, '\n'.join(lines) + '\n')
+        badge = out / p['badge']
+        if not badge.exists():
+            label = 'passed' if p.get('proved') else 'available'
+            fill = '#2bb673' if p.get('proved') else '#65758b'
+            title = html.escape(text_value(p.get('id'), 'proof')[:36])
+            svg = '<svg xmlns="http://www.w3.org/2000/svg" width="420" height="20"><rect width="420" height="20" rx="10" fill="#06131f"/><rect x="314" width="106" height="20" rx="10" fill="' + fill + '"/><text x="12" y="14" fill="#dff7ff" font-family="Verdana" font-size="11">' + title + '</text><text x="334" y="14" fill="#fff" font-family="Verdana" font-size="11">' + label + '</text></svg>'
+            write(badge, svg)
 
 def make_badge(out: Path, manifest: dict[str, Any]) -> None:
-    svg=f'''<svg xmlns="http://www.w3.org/2000/svg" width="390" height="20"><rect width="390" height="20" rx="10" fill="#06131f"/><rect x="284" width="106" height="20" rx="10" fill="#2bb673"/><text x="12" y="14" fill="#dff7ff" font-family="Verdana" font-size="11">SkillOS public command center v7</text><text x="306" y="14" fill="#fff" font-family="Verdana" font-size="11">fresh</text></svg>'''
+    svg=f'''<svg xmlns="http://www.w3.org/2000/svg" width="390" height="20"><rect width="390" height="20" rx="10" fill="#06131f"/><rect x="284" width="106" height="20" rx="10" fill="#2bb673"/><text x="12" y="14" fill="#dff7ff" font-family="Verdana" font-size="11">SkillOS public command center v7.1</text><text x="306" y="14" fill="#fff" font-family="Verdana" font-size="11">fresh</text></svg>'''
     write(out/'badges/command-center-root-authority.svg', svg)
 
 def route_card() -> str:
@@ -382,7 +448,7 @@ def build_pages(root: Path, out: Path, site_url: str) -> dict[str, Any]:
     write(out/'skills.html', page_shell('SkillOS Skills Used', skills_body, 'Skills Used'))
 
     action_rows = ''.join(f'<tr><td>{esc(w["name"])}</td><td class="mono small">{esc(w["path"])}</td><td>{esc(", ".join(w["triggers"]) or "manual")}</td><td>{"retired" if w["retired"] else "active"}</td></tr>' for w in workflows)
-    actions_body = f'''<section><div class="eyebrow">GITHUB ACTIONS</div><h1>Run / Regenerate</h1><p class="lead">Use the root authority workflow to rebuild the Command Center from evidence and deploy the GitHub Pages artifact.</p><div class="card opulent"><h3>Recommended workflow</h3><p class="mono">Public SkillOS Command Center Root Authority v7</p><p>Inputs: <span class="mono">deploy_pages=true</span>, <span class="mono">verify_live=true</span>, <span class="mono">cancel_legacy_runs=true</span>.</p></div><h2>Indexed workflows</h2><table><tr><th>Workflow</th><th>Path</th><th>Triggers</th><th>Status</th></tr>{action_rows}</table></section>'''
+    actions_body = f'''<section><div class="eyebrow">GITHUB ACTIONS</div><h1>Run / Regenerate</h1><p class="lead">Use the root authority workflow to rebuild the Command Center from evidence and deploy the GitHub Pages artifact.</p><div class="card opulent"><h3>Recommended workflow</h3><p class="mono">Public SkillOS Command Center Root Authority v7.1</p><p>Inputs: <span class="mono">deploy_pages=true</span>, <span class="mono">verify_live=true</span>, <span class="mono">cancel_legacy_runs=true</span>.</p></div><h2>Indexed workflows</h2><table><tr><th>Workflow</th><th>Path</th><th>Triggers</th><th>Status</th></tr>{action_rows}</table></section>'''
     write(out/'actions.html', page_shell('SkillOS Actions', actions_body, 'Run'))
     write(out/'run.html', page_shell('Run SkillOS', actions_body, 'Run'))
 
@@ -402,10 +468,10 @@ def build_pages(root: Path, out: Path, site_url: str) -> dict[str, Any]:
     health_body = f'''<section><div class="eyebrow">HEALTH CHECK</div><h1>Command Center Health</h1><p class="lead">The verifier checks that the root is the Command Center, the flagship is a subpage, old root phrases are blocked, links exist, and the manifest is current.</p><table><tr><th>Check</th><th>Status</th></tr>{''.join(f'<tr><td>{esc(k.replace("_"," "))}</td><td>{esc(v)}</td></tr>' for k,v in health['checks'].items())}</table><div class="buttons"><a class="btn primary" href="data/command-center-manifest.json">Open manifest</a><a class="btn" href="data/command-center-health.json">Open health JSON</a></div></section>'''
     write(out/'health.html', page_shell('SkillOS Health', health_body, 'Health'))
 
-    runbook_body = f'''<section><div class="eyebrow">RUNBOOK</div><h1>Non-technical runbook</h1><div class="route"><div><h3>1. Open Actions</h3><p>Go to GitHub Actions and choose <b>Public SkillOS Command Center Root Authority v7</b>.</p></div><div><h3>2. Click Run workflow</h3><p>Use deploy_pages=true and verify_live=true.</p></div><div><h3>3. Check the root</h3><p>Open /skillos/ and /skillos/index.html. Both must show the Public SkillOS Command Center.</p></div></div></section>'''
+    runbook_body = f'''<section><div class="eyebrow">RUNBOOK</div><h1>Non-technical runbook</h1><div class="route"><div><h3>1. Open Actions</h3><p>Go to GitHub Actions and choose <b>Public SkillOS Command Center Root Authority v7.1</b>.</p></div><div><h3>2. Click Run workflow</h3><p>Use deploy_pages=true and verify_live=true.</p></div><div><h3>3. Check the root</h3><p>Open /skillos/ and /skillos/index.html. Both must show the Public SkillOS Command Center.</p></div></div></section>'''
     write(out/'runbook.html', page_shell('SkillOS Runbook', runbook_body, 'Run'))
     write(out/'404.html', page_shell('SkillOS — Page not found', '<section><h1>Page not found</h1><p>Return to the <a href="index.html">Public SkillOS Command Center</a>.</p></section>', 'Home'))
-    write(out/'force-refresh.html', page_shell('SkillOS Force Refresh', f'<section><h1>Force refresh complete</h1><p class="mono">{MARKER}</p><p>Open <a href="index.html?v=v7">the Command Center</a>.</p></section>', 'Home'))
+    write(out/'force-refresh.html', page_shell('SkillOS Force Refresh', f'<section><h1>Force refresh complete</h1><p class="mono">{MARKER}</p><p>Open <a href="index.html?v=v7-1">the Command Center</a>.</p></section>', 'Home'))
     write(out/'sw.js', "self.addEventListener('install',event=>self.skipWaiting());self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.map(k=>caches.delete(k))))));")
 
     registry = {'schema': SCHEMA+'.proof_registry', 'marker': MARKER, 'updated_at_utc': manifest['generated_at_utc'], 'proofs': [{k:p[k] for k in ['id','title','description','href','json','doc','badge','proved','status','value_capture_rate_percent','virtual_specialist_agents','specialist_roles','locked_holdout_count','rsi_release_count','skills_used_count','generated_at_utc']} for p in proofs]}

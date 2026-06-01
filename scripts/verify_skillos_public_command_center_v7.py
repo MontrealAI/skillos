@@ -4,8 +4,8 @@ import argparse, json, re
 from pathlib import Path
 from html.parser import HTMLParser
 
-SCHEMA="skillos.public_command_center.root_authority.v7"
-MARKER="SKILLOS_PUBLIC_COMMAND_CENTER_V7_ROOT_AUTHORITY"
+SCHEMA="skillos.public_command_center.root_authority.v7.1"
+MARKER="SKILLOS_PUBLIC_COMMAND_CENTER_V7_1_ROOT_AUTHORITY"
 FORBIDDEN=["Autonomous Proof Command Center","SkillOS Proof Command Center","SkillOS Public Command Center v2","SkillOS Public Command Center v3","SkillOS Sovereign Command Center v5"]
 
 class LinkParser(HTMLParser):
@@ -27,7 +27,7 @@ def main() -> None:
     ap=argparse.ArgumentParser(); ap.add_argument('--out', default='dist'); args=ap.parse_args()
     out=Path(args.out).resolve()
     index=read(out/'index.html')
-    if MARKER not in index: fail('Root index missing v7 marker')
+    if MARKER not in index: fail('Root index missing v7.1 marker')
     if 'Public SkillOS Command Center' not in index: fail('Root index is not the Public SkillOS Command Center')
     for phrase in FORBIDDEN:
         if phrase in index: fail(f'Forbidden legacy phrase appears in root: {phrase}')

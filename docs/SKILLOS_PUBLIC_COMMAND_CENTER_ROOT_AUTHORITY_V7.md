@@ -1,4 +1,4 @@
-# SkillOS Public Command Center Root Authority v7
+# SkillOS Public Command Center Root Authority v7.1
 
 This pack fixes the root contract permanently:
 
@@ -32,7 +32,7 @@ Then it verifies the artifact, uploads it to GitHub Pages, deploys it, and live-
 ## Recommended run
 
 ```text
-GitHub → Actions → Public SkillOS Command Center Root Authority v7 → Run workflow
+GitHub → Actions → Public SkillOS Command Center Root Authority v7.1 → Run workflow
 ```
 
 Inputs:
@@ -55,6 +55,6 @@ both show `Public SkillOS Command Center`, not a single proof page.
 The manifest should show:
 
 ```text
-schema: skillos.public_command_center.root_authority.v7
-marker: SKILLOS_PUBLIC_COMMAND_CENTER_V7_ROOT_AUTHORITY
+schema: skillos.public_command_center.root_authority.v7.1
+marker: SKILLOS_PUBLIC_COMMAND_CENTER_V7_1_ROOT_AUTHORITY
 ```

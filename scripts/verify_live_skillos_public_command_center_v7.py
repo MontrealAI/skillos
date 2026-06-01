@@ -2,11 +2,11 @@
 from __future__ import annotations
 import argparse, json, sys, time, urllib.request
 
-MARKER="SKILLOS_PUBLIC_COMMAND_CENTER_V7_ROOT_AUTHORITY"
+MARKER="SKILLOS_PUBLIC_COMMAND_CENTER_V7_1_ROOT_AUTHORITY"
 FORBIDDEN=["Autonomous Proof Command Center","SkillOS Proof Command Center","SkillOS Public Command Center v2","SkillOS Public Command Center v3","SkillOS Sovereign Command Center v5"]
 
 def fetch(url: str) -> str:
-    req=urllib.request.Request(url, headers={'User-Agent':'SkillOS-v7-live-verifier','Cache-Control':'no-cache'})
+    req=urllib.request.Request(url, headers={'User-Agent':'SkillOS-v7-1-live-verifier','Cache-Control':'no-cache'})
     with urllib.request.urlopen(req, timeout=20) as r:
         return r.read().decode('utf-8', errors='ignore')
 
@@ -16,8 +16,8 @@ def main() -> None:
     last=''
     for i in range(args.retries):
         try:
-            root=fetch(base+f'?v=v7-{int(time.time())}')
-            idx=fetch(base+f'index.html?v=v7-{int(time.time())}')
+            root=fetch(base+f'?v=v7-1-{int(time.time())}')
+            idx=fetch(base+f'index.html?v=v7-1-{int(time.time())}')
             manifest=fetch(base+'data/command-center-manifest.json')
             ok=(MARKER in root and MARKER in idx and MARKER in manifest and 'Public SkillOS Command Center' in root and 'Public SkillOS Command Center' in idx and not any(p in root for p in FORBIDDEN) and '<h1>Capability Governance Twin' not in root)
             if ok:

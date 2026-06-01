@@ -1,10 +1,25 @@
 {
-  "generated_at_utc": "2026-06-01T16:54:15Z",
-  "homepage_phrase_gate": "PASSED",
-  "passed_or_proved_count": 37,
-  "proof_count": 60,
-  "root_and_index_strategy": "same artifact, no-cache meta tags, service-worker kill file, canonical Pages workflow",
-  "schema": "skillos.command_center.health.v4",
-  "skills_surfaced_count": 66,
+  "generated_at_utc": "2026-06-01T17:29:13Z",
+  "proof_count": 104,
+  "proved_count": 37,
+  "required_pages": [
+    "404.html",
+    "actions.html",
+    "architecture.html",
+    "executive.html",
+    "flywheel.html",
+    "force-refresh.html",
+    "health.html",
+    "index.html",
+    "multi-agent.html",
+    "proofs.html",
+    "receipts.html",
+    "runbook.html",
+    "skills.html"
+  ],
+  "root_marker": "SKILLOS_COMMAND_CENTER_V5_1_CANONICAL_ROOT",
+  "schema": "skillos.command_center.health.v5",
+  "skills_used_count": 52,
+  "status": "ready",
   "workflow_count": 54
 }

@@ -14,11 +14,6 @@ Inputs:
 Verify:
 
 - `https://montrealai.github.io/skillos/data/command-center-manifest.json` contains `skillos.command_center.sovereign.v5.1`
-- `https://montrealai.github.io/skillos/?v=sovereign-v5-1-1` contains `SKILLOS_COMMAND_CENTER_V5_1_CANONICAL_ROOT`
-- `https://montrealai.github.io/skillos/index.html?v=sovereign-v5-1-1` contains `SKILLOS_COMMAND_CENTER_V5_1_CANONICAL_ROOT`
+- `https://montrealai.github.io/skillos/?v=sovereign-v5-1` contains `SKILLOS_COMMAND_CENTER_V5_1_CANONICAL_ROOT`
+- `https://montrealai.github.io/skillos/index.html?v=sovereign-v5-1` contains `SKILLOS_COMMAND_CENTER_V5_1_CANONICAL_ROOT`
 - Neither page contains `Autonomous Proof Command Center`.
-
-
-## v5.1 robustness note
-
-The builder accepts heterogeneous proof receipts. Nested objects for titles, IDs, statuses, registry entries, skills, and numeric fields are normalized instead of crashing the public-site refresh.

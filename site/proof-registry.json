@@ -1,6 +1,24 @@
 {
   "proofs": [
     {
+      "badge": "badges/rsi-capability-sla-reliability-mesh-proof.svg",
+      "doc": "docs/rsi-capability-sla-reliability-mesh-proof.md",
+      "generated_at_utc": "2026-06-01T03:37:34Z",
+      "href": "rsi-capability-sla-reliability-mesh-proof.html",
+      "id": "rsi-capability-sla-reliability-mesh-proof",
+      "json": "data/rsi-capability-sla-reliability-mesh-proof.json",
+      "proved": true,
+      "reliability_score": 54.1223,
+      "rsi_release_count": 12,
+      "skills_used_count": 18,
+      "sla_breach_rate_percent": 0.0,
+      "specialist_roles": 67108864,
+      "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_SLA_RELIABILITY_MESH_PROOF",
+      "title": "Autonomous RSI Capability SLA Reliability Mesh Proof",
+      "value_capture_rate_percent": 96.9985,
+      "virtual_specialist_agents": 2147483648
+    },
+    {
       "badge": "badges/rsi-capability-treasury-flywheel-proof.svg",
       "doc": "docs/rsi-capability-treasury-flywheel-proof.md",
       "generated_at_utc": "2026-06-01T03:30:09Z",
@@ -279,5 +297,5 @@
       "workflow_url": "https://github.com/MontrealAI/skillos/actions/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml"
     }
   ],
-  "updated_at_utc": "2026-06-01T03:30:09Z"
+  "updated_at_utc": "2026-06-01T03:37:34Z"
 }

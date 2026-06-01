@@ -12,4 +12,4 @@ jobs:
     steps:
       - run: |
           echo "This legacy workflow is retired."
-          echo "Use: Public SkillOS Command Center Root Authority v7."
+          echo "Use: Public SkillOS Command Center Root Authority v7.1."

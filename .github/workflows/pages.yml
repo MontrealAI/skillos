@@ -1,4 +1,4 @@
-name: Public SkillOS Command Center Root Authority v7
+name: Public SkillOS Command Center Root Authority v7.1
 
 on:
   workflow_dispatch:
@@ -94,7 +94,7 @@ jobs:
       - name: Upload generated Command Center artifact for inspection
         uses: actions/upload-artifact@v4
         with:
-          name: skillos-public-command-center-root-authority-v7
+          name: skillos-public-command-center-root-authority-v7-1
           path: dist
           if-no-files-found: error
 

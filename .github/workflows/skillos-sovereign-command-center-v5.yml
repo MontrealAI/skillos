@@ -1,4 +1,4 @@
-name: SkillOS Sovereign Command Center v5 Canonical Deploy
+name: SkillOS Sovereign Command Center v5.1 Canonical Deploy
 
 on:
   workflow_dispatch:
@@ -44,7 +44,7 @@ permissions:
   actions: write
 
 concurrency:
-  group: skillos-sovereign-command-center-v5
+  group: skillos-sovereign-command-center-v5-1
   cancel-in-progress: true
 
 jobs:
@@ -67,7 +67,7 @@ jobs:
 
       - name: Explain canonical fix
         run: |
-          echo "SkillOS v5 is the single canonical Pages publisher."
+          echo "SkillOS v5.1 is the single canonical Pages publisher."
           echo "It builds site/index.html and deploys that exact artifact."
           echo "It retires old refresh workflows that can overwrite the root page."
 
@@ -91,7 +91,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python scripts/cancel_legacy_skillos_site_runs.py
 
-      - name: Build sovereign command center v5
+      - name: Build sovereign command center v5.1
         run: python scripts/build_skillos_sovereign_command_center_v5.py
 
       - name: Verify local site integrity
@@ -105,7 +105,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add site docs badges scripts .github/workflows
-            git commit -m "Publish SkillOS sovereign command center v5"
+            git commit -m "Publish SkillOS sovereign command center v5.1"
             git push
           else
             echo "Command center already fresh."
@@ -119,7 +119,7 @@ jobs:
           cp -R site/. dist/
           test -f dist/index.html
           test -f dist/.nojekyll
-          grep -q "SKILLOS_COMMAND_CENTER_V5_CANONICAL_ROOT" dist/index.html
+          grep -q "SKILLOS_COMMAND_CENTER_V5_1_CANONICAL_ROOT" dist/index.html
           ! grep -q "Autonomous Proof Command Center" dist/index.html
 
       - name: Configure GitHub Pages
@@ -146,9 +146,9 @@ jobs:
       - name: Upload command center artifact
         uses: actions/upload-artifact@v4
         with:
-          name: skillos-sovereign-command-center-v5
+          name: skillos-sovereign-command-center-v5-1
           path: |
             site/**
             docs/SKILLOS_SOVEREIGN_COMMAND_CENTER_V5.md
             docs/SKILLOS_COMMAND_CENTER_ROOT_FIX_V5_RUNBOOK.md
-            badges/command-center-sovereign-v5.svg
+            badges/command-center-sovereign-v5-1.svg

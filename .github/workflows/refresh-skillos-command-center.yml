@@ -8,10 +8,10 @@ permissions:
 
 jobs:
   retired:
-    name: Retired; v5 canonical deploy is the single publisher
+    name: Retired; v5.1 canonical deploy is the single publisher
     runs-on: ubuntu-latest
     steps:
       - name: Explain retirement
         run: |
           echo "This legacy workflow is intentionally retired."
-          echo "Use: SkillOS Sovereign Command Center v5 Canonical Deploy."
+          echo "Use: SkillOS Sovereign Command Center v5.1 Canonical Deploy."

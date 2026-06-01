@@ -1,90 +1,261 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SkillOS Public Command Center</title><style>
-:root{--bg:#06131f;--panel:rgba(255,255,255,.075);--panel2:rgba(255,255,255,.108);--line:rgba(255,255,255,.16);--text:#f5fbff;--muted:#b8c8d8;--cyan:#86f8ff;--green:#7dffb0;--gold:#ffd66b;--pink:#ff9ef8}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:radial-gradient(circle at 82% 0,#3d4381 0,transparent 34%),radial-gradient(circle at 0 18%,#095e70 0,transparent 26%),linear-gradient(135deg,#06131f,#13243d 60%,#282a5d);color:var(--text)}
-body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px;pointer-events:none;mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),rgba(0,0,0,.05))}
-a{color:var(--cyan)}main{max-width:1240px;margin:0 auto;padding:44px 20px 84px;position:relative}nav{position:sticky;top:0;z-index:10;background:rgba(6,19,31,.91);border-bottom:1px solid var(--line);backdrop-filter:blur(14px);display:flex;justify-content:space-between;align-items:center;padding:14px 22px}nav a{color:var(--muted);text-decoration:none;font-weight:850;margin-left:14px}
-h1{font-size:clamp(44px,7.2vw,104px);line-height:.84;letter-spacing:-.08em;margin:12px 0}h2{font-size:clamp(30px,4.5vw,58px);letter-spacing:-.05em;margin:36px 0 14px}h3{letter-spacing:-.025em}p{color:var(--muted);font-size:18px;line-height:1.55}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:center}.card,.metric,.proof-card,.workflow-card{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:0 22px 80px rgba(0,0,0,.25)}.card.feature{background:linear-gradient(180deg,var(--panel2),var(--panel))}
-.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.18em;font-weight:950;font-size:12px}.quote{font-size:clamp(24px,3.2vw,42px);line-height:1.08;letter-spacing:-.04em;color:var(--text)}.pill{display:inline-block;border:1px solid rgba(134,248,255,.35);border-radius:999px;padding:7px 10px;margin:4px 6px 4px 0;color:var(--cyan);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}.metric strong{display:block;color:var(--green);font-size:32px}.metric span{color:var(--muted)}.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.proof-card h3{font-size:22px;margin:8px 0}.proof-card p{font-size:15px}.proof-card .links a,.workflow-card a.button,.button{display:inline-block;background:var(--cyan);color:#06131f;text-decoration:none;border-radius:999px;padding:10px 14px;font-weight:950;margin:4px 6px 4px 0}.secondary{background:rgba(255,255,255,.09)!important;color:var(--text)!important;border:1px solid var(--line)}
-.skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.skill-card{background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:22px;padding:16px;min-height:166px}.skill-card h3{font-size:18px;margin:8px 0}.skill-card p{font-size:14px;margin:0}.family{color:var(--gold);font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.1em}.bar{display:grid;grid-template-columns:240px 1fr 120px;gap:12px;align-items:center;margin:12px 0}.bar span,.bar b{color:var(--muted)}.bar div{height:20px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--cyan));border-radius:999px}
-table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:16px 0}td,th{padding:12px;border-bottom:1px solid var(--line);text-align:left}th{color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:.08em}.notice{border-left:4px solid var(--gold);background:rgba(255,214,107,.08);border-radius:16px;padding:16px 18px;color:var(--muted)}.workflow-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.status-ok{color:var(--green);font-weight:950}.status-warn{color:var(--gold);font-weight:950}.small{font-size:14px;color:var(--muted)}code{background:rgba(255,255,255,.08);padding:2px 6px;border-radius:8px}
-@media(max-width:1000px){.proof-grid{grid-template-columns:repeat(2,1fr)}.skill-grid{grid-template-columns:repeat(2,1fr)}.workflow-grid{grid-template-columns:1fr}}@media(max-width:760px){.hero,.grid,.proof-grid,.skill-grid,.bar{grid-template-columns:1fr}nav{display:block}nav a{display:inline-block;margin:8px 10px 0 0}}
-</style></head><body><nav><strong>SkillOS Command Center</strong><div><a href="index.html">Home</a><a href="proofs.html">Proofs</a><a href="actions.html">Run Proofs</a><a href="data/command-center-manifest.json">Manifest</a></div></nav><main><section class="hero"><div><div class="eyebrow">Public SkillOS Command Center</div><h1>Autonomous proof, always refreshed.</h1><p>The SkillOS website is regenerated from the repository itself: proof receipts, workflow files, badges, Markdown reports, skills catalogs, and GitHub Actions outputs.</p><p><a class="button" href="proofs.html">Explore proofs</a><a class="button secondary" href="actions.html">Run proofs</a><a class="button secondary" href="https://github.com/MontrealAI/skillos">Open GitHub</a></p></div><div class="card feature"><div class="eyebrow">What this page guarantees</div><div class="quote">No manual homepage curation required. Every refresh scans the repo, rebuilds the command center, verifies the Skills Used displays, and republishes the proof registry.</div><p class="small">Generated at 2026-06-01T13:42:45Z. Latest GitHub run status is fetched best-effort when the GitHub token is available.</p></div></section>
-<section class="grid"><div class="metric"><strong>51</strong><span>proof receipts found</span></div><div class="metric"><strong>37</strong><span>passed proof receipts</span></div><div class="metric"><strong>50</strong><span>workflow files found</span></div><div class="metric"><strong>52</strong><span>unique skills displayed</span></div></section>
-<section class="card"><div class="eyebrow">Core public explanation</div><div class="quote">work → traces → skills → verification → releases → routing upgrades → compounding capability</div><p>SkillOS makes this loop visible. The public site shows the proof visually; GitHub Actions shows the proof regenerating; JSON receipts show machine-readable evidence; Skills Used cards show what the agent system actually did.</p></section>
-<section><h2>Latest proof pages</h2><div class="proof-grid"><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>autonomous_no_send_shadow_pilot</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="shadow-pilot-proof.html">Open proof page</a><a class="secondary" href="data/shadow_pilot_proof.json">JSON receipt</a><a class="secondary" href="docs/shadow_pilot_proof.md">Report</a></p>
-<img alt="proof badge" src="badges/shadow_pilot_proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>fully autonomous no-human-review market-readiness proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="autonomous-market-readiness.html">Open proof page</a><a class="secondary" href="data/autonomous_market_readiness.json">JSON receipt</a><a class="secondary" href="docs/autonomous_market_readiness.md">Report</a></p>
-<img alt="proof badge" src="badges/autonomous_market_readiness.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Core capability proof</div>
-<h3>Proof Forge Meta Coordination</h3>
-<p><span class="status-ok">PASSED</span> · value capture — · risk breach —</p>
-<p class="small">— agents · — roles · 0 skills · — releases</p>
-<div></div>
-<p class="links"><a href="rsi-proof-forge-meta-coordination-proof.html">Open proof page</a><a class="secondary" href="data/rsi-proof-forge-meta-coordination-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-proof-forge-meta-coordination-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-proof-forge-meta-coordination-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Reliability, assurance, and governance</div>
-<h3>Autonomous RSI Capability Governance Twin Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 97.6124%% · risk breach 0.0000%%</p>
-<p class="small">2147483648 agents · 67108864 roles · 18 skills · 12 releases</p>
-<div><span class="pill">Governance Twin Construction</span><span class="pill">Policy-as-Code Compilation</span><span class="pill">Permission Boundary Mapping</span></div>
-<p class="links"><a href="rsi-capability-governance-twin-proof.html">Open proof page</a><a class="secondary" href="data/rsi-capability-governance-twin-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-capability-governance-twin-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-capability-governance-twin-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Reliability, assurance, and governance</div>
-<h3>Autonomous RSI Capability Assurance Case Graph Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 97.6571%% · risk breach 0.0000%%</p>
-<p class="small">2147483648 agents · 67108864 roles · 18 skills · 12 releases</p>
-<div><span class="pill">Assurance Claim Decomposition</span><span class="pill">Evidence Packet Assembly</span><span class="pill">Control Coverage Mapping</span></div>
-<p class="links"><a href="rsi-capability-assurance-case-graph-proof.html">Open proof page</a><a class="secondary" href="data/rsi-capability-assurance-case-graph-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-capability-assurance-case-graph-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-capability-assurance-case-graph-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Reliability, assurance, and governance</div>
-<h3>Autonomous RSI Capability SLA Reliability Mesh Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 96.9985%% · risk breach 0.0000%%</p>
-<p class="small">2147483648 agents · 67108864 roles · 18 skills · 12 releases</p>
-<div><span class="pill">Demand Decomposition</span><span class="pill">SLA Contract Extraction</span><span class="pill">Latency-Aware Routing</span></div>
-<p class="links"><a href="rsi-capability-sla-reliability-mesh-proof.html">Open proof page</a><a class="secondary" href="data/rsi-capability-sla-reliability-mesh-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-capability-sla-reliability-mesh-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-capability-sla-reliability-mesh-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>Autonomous RSI Capability Treasury Flywheel Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 97.0953%% · risk breach 0.0000%%</p>
-<p class="small">2147483648 agents · 67108864 roles · 0 skills · 21 releases</p>
-<div></div>
-<p class="links"><a href="rsi-capability-treasury-flywheel-proof.html">Open proof page</a><a class="secondary" href="data/rsi-capability-treasury-flywheel-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-capability-treasury-flywheel-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-capability-treasury-flywheel-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>Autonomous RSI Capability Economy Clearinghouse Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 96.6013%% · risk breach 0.0000%%</p>
-<p class="small">1073741824 agents · 33554432 roles · 0 skills · 13 releases</p>
-<div></div>
-<p class="links"><a href="rsi-capability-economy-clearinghouse-proof.html">Open proof page</a><a class="secondary" href="data/rsi-capability-economy-clearinghouse-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-capability-economy-clearinghouse-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-capability-economy-clearinghouse-proof.svg" style="max-width:240px;height:20px">
-</article><article class="proof-card">
-<div class="family">Skill markets and compounding moat</div>
-<h3>Autonomous RSI Fork-Resistant Capability Network Proof</h3>
-<p><span class="status-ok">PASSED</span> · value capture 96.1864%% · risk breach 0.0000%%</p>
-<p class="small">536870912 agents · 16777216 roles · 0 skills · 14 releases</p>
-<div></div>
-<p class="links"><a href="rsi-fork-resistant-capability-network-proof.html">Open proof page</a><a class="secondary" href="data/rsi-fork-resistant-capability-network-proof.json">JSON receipt</a><a class="secondary" href="docs/rsi-fork-resistant-capability-network-proof.md">Report</a></p>
-<img alt="proof badge" src="badges/rsi-fork-resistant-capability-network-proof.svg" style="max-width:240px;height:20px">
-</article></div><p><a class="button" href="proofs.html">View all proofs</a></p></section>
-<section id="skills-used"><h2>Skills Used across the network</h2><p>The command center automatically extracts skills from proof receipts and renders them as user-friendly cards. This gives non-technical viewers a concrete way to understand the multi-agent system.</p><div class="skill-grid"><article class="skill-card"><div class="family">Twin</div><h3>Governance Twin Construction</h3><p>Builds a deterministic shadow model of the capability network before production release.</p><p class="small">Verifier: Twin Fidelity Court</p></article><article class="skill-card"><div class="family">Policy</div><h3>Policy-as-Code Compilation</h3><p>Converts governance boundaries into machine-checkable policy constraints.</p><p class="small">Verifier: Policy Coverage Court</p></article><article class="skill-card"><div class="family">Access Control</div><h3>Permission Boundary Mapping</h3><p>Maps each route to allowed skills, agents, tools, and data scopes.</p><p class="small">Verifier: Permission Hygiene Court</p></article><article class="skill-card"><div class="family">Twin</div><h3>Shadow Route Simulation</h3><p>Runs candidate capability routes in the twin before production promotion.</p><p class="small">Verifier: Shadow/Production Gap Court</p></article><article class="skill-card"><div class="family">Verification</div><h3>Verifier Coverage Allocation</h3><p>Allocates verifier courts to high-risk and high-value routes.</p><p class="small">Verifier: Verifier Capacity Court</p></article><article class="skill-card"><div class="family">Safety</div><h3>Policy Violation Detection</h3><p>Rejects candidate routes that violate policy, access, or disclosure constraints.</p><p class="small">Verifier: Policy Violation Court</p></article><article class="skill-card"><div class="family">Safety</div><h3>Rollback Path Planning</h3><p>Ensures a safe containment or reversal path exists before release.</p><p class="small">Verifier: Rollback Court</p></article><article class="skill-card"><div class="family">Reliability</div><h3>Incident Counterfactual Replay</h3><p>Replays past incidents and near misses against candidate protocol updates.</p><p class="small">Verifier: Incident Replay Court</p></article><article class="skill-card"><div class="family">Assurance</div><h3>Assurance Claim Decomposition</h3><p>Breaks broad capability claims into testable subclaims.</p><p class="small">Verifier: Claim Consistency Court</p></article><article class="skill-card"><div class="family">Evidence</div><h3>Evidence Packet Assembly</h3><p>Builds auditable evidence packets from traces, receipts, metrics, and verifier decisions.</p><p class="small">Verifier: Evidence Sufficiency Court</p></article><article class="skill-card"><div class="family">Controls</div><h3>Control Coverage Mapping</h3><p>Maps every material risk to a control, owner, verifier, and residual-risk score.</p><p class="small">Verifier: Control Coverage Court</p></article><article class="skill-card"><div class="family">Verification</div><h3>Trace Replay Verification</h3><p>Checks that claimed outcomes can be replayed from deterministic receipts.</p><p class="small">Verifier: Replay Court</p></article><article class="skill-card"><div class="family">Trust</div><h3>Provenance Integrity Check</h3><p>Validates the origin and chain of skill, evidence, and release artifacts.</p><p class="small">Verifier: Provenance Court</p></article><article class="skill-card"><div class="family">Verification</div><h3>Verifier Independence Scoring</h3><p>Scores whether verifier decisions are sufficiently separated from the generator.</p><p class="small">Verifier: Independence Court</p></article><article class="skill-card"><div class="family">Safety</div><h3>Residual Risk Quantification</h3><p>Quantifies residual risk after controls, rollbacks, and evidence review.</p><p class="small">Verifier: Risk Court</p></article><article class="skill-card"><div class="family">Adversarial</div><h3>Red-Team Challenge Routing</h3><p>Routes each assurance case through adversarial challenge panels.</p><p class="small">Verifier: Red-Team Court</p></article><article class="skill-card"><div class="family">Evidence</div><h3>Demand Decomposition</h3><p>Breaks incoming work into verifiable capability requirements.</p><p class="small">Verifier: Verifier Coverage Planning</p></article><article class="skill-card"><div class="family">Reliability</div><h3>SLA Contract Extraction</h3><p>Extracts latency, quality, safety, and rollback obligations from each job.</p><p class="small">Verifier: Reliability Scoring</p></article><article class="skill-card"><div class="family">Routing</div><h3>Latency-Aware Routing</h3><p>Routes work to skills and agents that can satisfy time-sensitive constraints.</p><p class="small">Verifier: SLA Breach Court</p></article><article class="skill-card"><div class="family">Market</div><h3>Capacity Market Clearing</h3><p>Matches demand to verified specialist capacity without overload.</p><p class="small">Verifier: Capacity Planning Court</p></article><article class="skill-card"><div class="family">Verification</div><h3>Verifier Coverage Planning</h3><p>Allocates verifier capacity to the highest-risk and highest-value work.</p><p class="small">Verifier: Verifier Court</p></article><article class="skill-card"><div class="family">Trust</div><h3>Provenance Audit</h3><p>Checks whether the skill, agent, and trace history are replayable and trustworthy.</p><p class="small">Verifier: Provenance Court</p></article><article class="skill-card"><div class="family">Safety</div><h3>Risk Veto</h3><p>Blocks routes that have unacceptable risk without sufficient rollback.</p><p class="small">Verifier: Risk Court</p></article><article class="skill-card"><div class="family">Safety</div><h3>Rollback Planning</h3><p>Ensures each routed action can be safely reversed or contained.</p><p class="small">Verifier: Incident Replay</p></article></div></section>
-<section><h2>How to see the proof</h2><div class="grid"><div class="card"><div class="eyebrow">1</div><h3>Open a proof page</h3><p>Click a proof card to see the visual evidence, metrics, controls, release history, and Skills Used.</p></div><div class="card"><div class="eyebrow">2</div><h3>Open the JSON receipt</h3><p>The JSON receipt is the machine-readable proof artifact generated by the workflow.</p></div><div class="card"><div class="eyebrow">3</div><h3>Rerun in GitHub Actions</h3><p>Open the Actions page, choose a workflow, and click Run workflow. A green run regenerates the proof autonomously.</p></div><div class="card"><div class="eyebrow">4</div><h3>Return here</h3><p>This command center refreshes from committed proof outputs so viewers always have a single current hub.</p></div></div></section>
-<section><h2>Workflow status</h2><div class="workflow-grid"><article class="workflow-card"><div class="family">Proof workflow</div><h3>_SkillOS Public Proof Command Center Refresh Reusable</h3><p><span class="status-ok">available</span> · _skillos-public-proof-command-center-refresh-reusable.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/_skillos-public-proof-command-center-refresh-reusable.yml">Open workflow</a></p></article><article class="workflow-card"><div class="family">Proof workflow</div><h3>Autonomous RSI Adversarial Capability Command Center Proof</h3><p><span class="status-ok">available</span> · rsi-capability-command-center-proof.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/rsi-capability-command-center-proof.yml">Open workflow</a></p></article><article class="workflow-card"><div class="family">Proof workflow</div><h3>Autonomous RSI Adversarial Multi-Agent Market Command Center Proof</h3><p><span class="status-ok">available</span> · rsi-adversarial-multi-agent-market-command-center-proof.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/rsi-adversarial-multi-agent-market-command-center-proof.yml">Open workflow</a></p></article><article class="workflow-card"><div class="family">Proof workflow</div><h3>Autonomous RSI Capital-to-Capability Command Center v17 Proof</h3><p><span class="status-ok">available</span> · rsi-capability-command-center-v17-proof.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/rsi-capability-command-center-v17-proof.yml">Open workflow</a></p></article><article class="workflow-card"><div class="family">Proof workflow</div><h3>SkillOS Public Proof Command Center Refresh</h3><p><span class="status-warn">pending</span> · skillos-public-proof-command-center-refresh.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/skillos-public-proof-command-center-refresh.yml">Open workflow</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/runs/26758679103">Latest run</a></p></article><article class="workflow-card"><div class="family">Repository workflow</div><h3>Refresh SkillOS Public Command Center</h3><p><span class="status-warn">in_progress</span> · refresh-skillos-command-center.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/refresh-skillos-command-center.yml">Open workflow</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/runs/26758674477">Latest run</a></p></article><article class="workflow-card"><div class="family">Repository workflow</div><h3>SkillOS Public Site Command Center Refresh</h3><p><span class="status-warn">pending</span> · skillos-public-site-refresh.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/skillos-public-site-refresh.yml">Open workflow</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/runs/26758677572">Latest run</a></p></article><article class="workflow-card"><div class="family">Proof workflow</div><h3>Autonomous Enterprise Ops Market Proof</h3><p><span class="status-ok">available</span> · enterprise-ops-proof.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/enterprise-ops-proof.yml">Open workflow</a></p></article><article class="workflow-card"><div class="family">Proof workflow</div><h3>Autonomous RSI Adversarial Benchmark Foundry Proof</h3><p><span class="status-ok">available</span> · autonomous-rsi-adversarial-benchmark-foundry-proof.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/autonomous-rsi-adversarial-benchmark-foundry-proof.yml">Open workflow</a></p></article><article class="workflow-card"><div class="family">Proof workflow</div><h3>Autonomous RSI AI-First Blockchain Capital Machine Proof</h3><p><span class="status-ok">success</span> · autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml">Open workflow</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/runs/26749434659">Latest run</a></p></article></div><p><a class="button" href="actions.html">Open all workflows</a></p></section><section class="notice"><strong>Public boundary:</strong> SkillOS publishes deterministic benchmark proofs and reference workflows. The public command center is not a claim of live customer revenue, independent financial-performance claims, financial advice, legal advice, medical advice, policy advice, token advice, or achieved superintelligence.</section></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkillOS Public Proof Command Center</title>
+<link rel="stylesheet" href="assets/command-center.css">
+<script defer src="assets/command-center.js"></script>
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">SkillOS Proof Command Center</a>
+  <div class="navlinks">
+    <a href="index.html">Home</a>
+    <a href="proofs.html">Proofs</a>
+    <a href="actions.html">Actions</a>
+    <a href="multi-agent.html">Multi-Agent</a>
+    <a href="receipts.html">Receipts</a>
+    <a href="architecture.html">Architecture</a>
+    <a href="runbook.html">Run / Regenerate</a>
+    <a href="https://github.com/MontrealAI/skillos">GitHub</a>
+  </div>
+</nav>
+<main>
+<section class="hero">
+  <div>
+    <div class="eyebrow">MONTREAL.AI / SKILLOS</div>
+    <h1>Autonomous Proof Command Center</h1>
+    <p>Fresh, beautiful, GitHub-native hub for every SkillOS proof, run, receipt, report, chart, and visual dashboard.</p>
+    <div class="actions">
+      <a class="button gold" href="https://montrealai.github.io/skillos/rsi-capability-command-center-v17-proof.html">View flagship proof</a>
+      <a class="button" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capability-command-center-v17-proof.yml">Run flagship Action</a>
+      <a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/workflows/skillos-run-all-public-proofs.yml">Run all proofs</a>
+      <a class="button secondary" href="receipts.html">Inspect receipts</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="eyebrow">Live freshness</div>
+    <div class="status">Updated 2026-06-01T13:43:14Z</div>
+    <p>Autonomously regenerated from GitHub Actions workflows, latest runs, proof JSON receipts, proof reports, badges, and visual pages.</p>
+    <p class="small">Repository: <a href="https://github.com/MontrealAI/skillos">MontrealAI/skillos</a></p>
+  </div>
+</section>
+
+<section class="section card">
+  <div class="eyebrow">Capital-to-capability thesis</div>
+  <div class="quote">Can autonomous coordination turn capital, compute, energy, data, trust, talent, product, distribution, validation, risk control, and reinvestment into compounding productive capability?</div>
+  <p>This site does not claim superintelligence or Kardashev Type II achievement. It makes the mechanism publicly testable: a large specialist-agent organization improves its coordination layer through validation-gated Recursive Self-Improvement.</p>
+</section>
+
+<section class="grid">
+  <div class="metric"><strong>512</strong><span>flagship agents</span></div>
+  <div class="metric"><strong>64</strong><span>specialist roles</span></div>
+  <div class="metric"><strong>90.5%</strong><span>benchmark value capture</span></div>
+  <div class="metric"><strong>109.3B</strong><span>benchmark value captured</span></div>
+</section>
+
+<section class="two">
+  <div class="chart" data-chart="rsi-curve"></div>
+  <div class="chart" data-chart="capability-radar"></div>
+</section>
+
+<section class="section">
+  <h2>Flagship multi-agent proof</h2>
+  <div class="proof-grid">
+    
+<div class="proof-card clickable">
+  <span class="badge ok">passed autonomous rsi capital to capability command center v17 proof</span>
+  <h3><a href="https://montrealai.github.io/skillos/rsi-capability-command-center-v17-proof.html">Autonomous RSI Capital-to-Capability Command Center v17 Proof</a></h3>
+  <p>adversarial capital-to-capability command center proof with recursive self-improvement and large-scale specialist-agent coordination</p>
+  <p class="small">512 agents · 64 roles · 1280 holdout · 11 RSI releases</p>
+  <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-capability-command-center-v17-proof.html">View proof</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capability-command-center-v17-proof.yml">Run on GitHub</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_capability_command_center_v17_proof.json">JSON</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_capability_command_center_v17_proof.md">Docs</a></div>
+</div>
+
+    <div class="proof-card">
+      <span class="badge ok">large-scale coordination</span>
+      <h3>Single agent vs uncoordinated pool vs static coordination vs SkillOS RSI</h3>
+      <p>Many agents alone are not the moat. Recursive improvement of the coordination layer is the moat.</p>
+      <div class="actions">
+        <a class="button" href="multi-agent.html">See comparison</a>
+        <a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capability-command-center-v17-proof.yml">Run proof</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="two">
+  <div class="chart" data-chart="proof-status"></div>
+  <div class="chart" data-chart="workflow-status"></div>
+</section>
+
+<section class="section">
+  <h2>Command center dashboards</h2>
+  <div class="proof-grid">
+    <div class="proof-card"><span class="badge ok">receipts</span><h3>Machine-readable proof receipts</h3><p>Inspect JSON proof receipts, Markdown reports, generated timestamps, run metadata, and safe boundaries.</p><div class="actions"><a class="button" href="receipts.html">Open receipts</a></div></div>
+    <div class="proof-card"><span class="badge ok">leaderboard</span><h3>Proof leaderboard</h3><p>See proofs ranked by agent count, RSI releases, holdout cases, and public status.</p><div class="actions"><a class="button" href="leaderboard.html">Open leaderboard</a></div></div>
+    <div class="proof-card"><span class="badge ok">architecture</span><h3>Capital-to-capability architecture</h3><p>Visual explanation of the mechanism under the Kardashev-scale value thesis.</p><div class="actions"><a class="button" href="architecture.html">Open architecture</a></div></div>
+    <div class="proof-card"><span class="badge ok">actions</span><h3>Run and regenerate</h3><p>Rerun one proof, rerun all public proofs, or refresh the entire public website.</p><div class="actions"><a class="button" href="runbook.html">Open runbook</a></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Proof library</h2>
+  <div class="proof-grid">
+<div class="proof-card clickable">
+  <span class="badge ok">passed autonomous rsi capital to capability command center v17 proof</span>
+  <h3><a href="https://montrealai.github.io/skillos/rsi-capability-command-center-v17-proof.html">Autonomous RSI Capital-to-Capability Command Center v17 Proof</a></h3>
+  <p>adversarial capital-to-capability command center proof with recursive self-improvement and large-scale specialist-agent coordination</p>
+  <p class="small">512 agents · 64 roles · 1280 holdout · 11 RSI releases</p>
+  <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-capability-command-center-v17-proof.html">View proof</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capability-command-center-v17-proof.yml">Run on GitHub</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_capability_command_center_v17_proof.json">JSON</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_capability_command_center_v17_proof.md">Docs</a></div>
+</div>
+
+<div class="proof-card clickable">
+  <span class="badge ok">passed autonomous rsi adversarial capability command center proof</span>
+  <h3><a href="https://montrealai.github.io/skillos/rsi-capability-command-center-proof.html">Autonomous RSI Adversarial Capability Command Center Proof</a></h3>
+  <p>adversarial large-scale agentic coordination for capital-to-capability compounding, market capture, resource allocation, risk control, and validated reinvestment</p>
+  <p class="small">320 agents · 32 roles · 1280 holdout · 11 RSI releases</p>
+  <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-capability-command-center-proof.html">View proof</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capability-command-center-proof.yml">Run on GitHub</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_capability_command_center_proof.json">JSON</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_capability_command_center_proof.md">Docs</a></div>
+</div>
+
+<div class="proof-card clickable">
+  <span class="badge ok">passed autonomous rsi capital to capability engine proof</span>
+  <h3><a href="https://montrealai.github.io/skillos/proof-capital-to-capability-engine-large-scale-agentic-coordination-for-capital-to-capability.html">large-scale agentic coordination for capital-to-capability compounding, market capture, resource allocation, risk control, and validated reinvestment</a></h3>
+  <p>large-scale agentic coordination for capital-to-capability compounding, market capture, resource allocation, risk control, and validated reinvestment</p>
+  <p class="small">256 agents · 32 roles · 1440 holdout · 13 RSI releases</p>
+  <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/proof-capital-to-capability-engine-large-scale-agentic-coordination-for-capital-to-capability.html">View proof</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_capital_to_capability_engine_proof.json">JSON</a></div>
+</div>
+
+<div class="proof-card clickable">
+  <span class="badge warn">not run yet</span>
+  <h3><a href="https://montrealai.github.io/skillos/rsi-capital-to-capability-engine-proof.html">Capital To Capability Engine</a></h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-capital-to-capability-engine-proof.html">View proof</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_capital_to_capability_engine_proof.md">Docs</a></div>
+</div>
+
+<div class="proof-card clickable">
+  <span class="badge warn">not run yet</span>
+  <h3><a href="https://montrealai.github.io/skillos/proof-capital-to-capability-engine-github-capital-to-capability-engine-capital-to-capability.html">Autonomous RSI Capital-to-Capability Engine Proof</a></h3>
+  <p>Autonomous RSI Capital-to-Capability Engine Proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/proof-capital-to-capability-engine-github-capital-to-capability-engine-capital-to-capability.html">View proof</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-capital-to-capability-engine-proof.yml">Run on GitHub</a></div>
+</div>
+
+<div class="proof-card clickable">
+  <span class="badge ok">passed autonomous rsi adversarial multi agent market command center proof</span>
+  <h3><a href="https://montrealai.github.io/skillos/proof-adversarial-multi-agent-command-center-adversarial-large-scale-agentic-coordination-for-profitable.html">adversarial large-scale agentic coordination for profitable market-capture portfolio selection, resource allocation, risk control, and compounding business strategy</a></h3>
+  <p>adversarial large-scale agentic coordination for profitable market-capture portfolio selection, resource allocation, risk control, and compounding business strategy</p>
+  <p class="small">160 agents · 20 roles · 1200 holdout · 13 RSI releases</p>
+  <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/proof-adversarial-multi-agent-command-center-adversarial-large-scale-agentic-coordination-for-profitable.html">View proof</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/data/rsi_adversarial_multi_agent_market_command_center_proof.json">JSON</a></div>
+</div>
+
+<div class="proof-card clickable">
+  <span class="badge warn">not run yet</span>
+  <h3><a href="https://montrealai.github.io/skillos/rsi-adversarial-multi-agent-market-command-center-proof.html">Adversarial Multi Agent Command Center</a></h3>
+  <p>Autonomous public proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/rsi-adversarial-multi-agent-market-command-center-proof.html">View proof</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/docs/rsi_adversarial_multi_agent_market_command_center_proof.md">Docs</a></div>
+</div>
+
+<div class="proof-card clickable">
+  <span class="badge warn">not run yet</span>
+  <h3><a href="https://montrealai.github.io/skillos/proof-adversarial-multi-agent-command-center-github-adversarial-multi-agent-command-center-adversarial.html">Autonomous RSI Adversarial Multi-Agent Market Command Center Proof</a></h3>
+  <p>Autonomous RSI Adversarial Multi-Agent Market Command Center Proof</p>
+  <p class="small">public, reproducible proof</p>
+  <div class="actions"><a class="button" href="https://montrealai.github.io/skillos/proof-adversarial-multi-agent-command-center-github-adversarial-multi-agent-command-center-adversarial.html">View proof</a><a class="button secondary" href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-adversarial-multi-agent-market-command-center-proof.yml">Run on GitHub</a></div>
+</div>
+</div>
+  <div class="actions"><a class="button secondary" href="proofs.html">View all proofs</a></div>
+</section>
+
+<section class="section">
+  <h2>Run or regenerate</h2>
+  <div class="steps">
+    <div class="step"><strong>Run one proof</strong><p>Open a proof card, click <span class="mono">Run on GitHub</span>, then click <span class="mono">Run workflow</span>.</p></div>
+    <div class="step"><strong>Run all proofs</strong><p>Use the orchestrator workflow to dispatch public proof workflows from one place.</p><p><a class="button" href="https://github.com/MontrealAI/skillos/actions/workflows/skillos-run-all-public-proofs.yml">Run all public proofs</a></p></div>
+    <div class="step"><strong>Refresh hub</strong><p>The refresh workflow rebuilds the public site from proof receipts and latest run metadata.</p><p><a class="button secondary" href="https://github.com/MontrealAI/skillos/actions/workflows/skillos-public-proof-command-center-refresh.yml">Refresh site</a></p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Latest Actions status</h2>
+  <table><tr><th>Workflow</th><th>Status</th><th>Event</th><th>Latest run</th></tr><tr>
+<td><a href="https://montrealai.github.io/skillos/proof-refresh-skillos-command-center-github-refresh-skillos-command-center-refresh-skillos-command.html"><strong>SkillOS Public Proof Command Center Refresh</strong></a><br><span class="small mono">.github/workflows/skillos-public-proof-command-center-refresh.yml</span><br><span class="small"><a href="https://montrealai.github.io/skillos/proof-refresh-skillos-command-center-github-refresh-skillos-command-center-refresh-skillos-command.html">View proof page</a> · <a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml">GitHub Action</a> · <a href="https://github.com/MontrealAI/skillos/actions/runs/26758708287">Latest run</a></span></td>
+<td><span class="badge warn">running</span></td>
+<td>workflow_run</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26758708287">2026-06-01T13:43:10Z</a></td>
+</tr>
+<tr>
+<td><a href="https://montrealai.github.io/skillos/proof-refresh-skillos-command-center-github-refresh-skillos-command-center-refresh-skillos-command.html"><strong>SkillOS Public Site Command Center Refresh</strong></a><br><span class="small mono">.github/workflows/skillos-public-site-refresh.yml</span><br><span class="small"><a href="https://montrealai.github.io/skillos/proof-refresh-skillos-command-center-github-refresh-skillos-command-center-refresh-skillos-command.html">View proof page</a> · <a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml">GitHub Action</a> · <a href="https://github.com/MontrealAI/skillos/actions/runs/26758708264">Latest run</a></span></td>
+<td><span class="badge warn">running</span></td>
+<td>workflow_run</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26758708264">2026-06-01T13:43:10Z</a></td>
+</tr>
+<tr>
+<td><a href="https://montrealai.github.io/skillos/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html"><strong>SkillOS tests</strong></a><br><span class="small mono">.github/workflows/tests.yml</span><br><span class="small"><a href="https://montrealai.github.io/skillos/proof-skillos-tests-github-tests-skillos-tests-skillos-tests.html">View proof page</a> · <a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/tests.yml">GitHub Action</a> · <a href="https://github.com/MontrealAI/skillos/actions/runs/26758674260">Latest run</a></span></td>
+<td><span class="badge ok">passing</span></td>
+<td>push</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26758674260">2026-06-01T13:43:07Z</a></td>
+</tr>
+<tr>
+<td><a href="https://montrealai.github.io/skillos/proof-refresh-skillos-command-center-github-refresh-skillos-command-center-refresh-skillos-command.html"><strong>Refresh SkillOS Public Command Center</strong></a><br><span class="small mono">.github/workflows/refresh-skillos-command-center.yml</span><br><span class="small"><a href="https://montrealai.github.io/skillos/proof-refresh-skillos-command-center-github-refresh-skillos-command-center-refresh-skillos-command.html">View proof page</a> · <a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/refresh-skillos-command-center.yml">GitHub Action</a> · <a href="https://github.com/MontrealAI/skillos/actions/runs/26758674477">Latest run</a></span></td>
+<td><span class="badge ok">passing</span></td>
+<td>push</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26758674477">2026-06-01T13:42:56Z</a></td>
+</tr>
+<tr>
+<td><a href="https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html"><strong>Deploy SkillOS website with autonomous safe public copy</strong></a><br><span class="small mono">.github/workflows/pages.yml</span><br><span class="small"><a href="https://montrealai.github.io/skillos/proof-deploy-skillos-website-with-safe-copy-github-pages-deploy-skillos-website-with.html">View proof page</a> · <a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/pages.yml">GitHub Action</a> · <a href="https://github.com/MontrealAI/skillos/actions/runs/26758673890">Latest run</a></span></td>
+<td><span class="badge warn">not run yet</span></td>
+<td>push</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26758673890">2026-06-01T13:42:35Z</a></td>
+</tr>
+<tr>
+<td><a href="https://montrealai.github.io/skillos/proof-fully-readiness-github-readiness-fully-readiness-fully-readiness.html"><strong>Fully Autonomous Market-Readiness Proof</strong></a><br><span class="small mono">.github/workflows/autonomous-market-readiness.yml</span><br><span class="small"><a href="https://montrealai.github.io/skillos/proof-fully-readiness-github-readiness-fully-readiness-fully-readiness.html">View proof page</a> · <a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-market-readiness.yml">GitHub Action</a> · <a href="https://github.com/MontrealAI/skillos/actions/runs/26756796029">Latest run</a></span></td>
+<td><span class="badge ok">passing</span></td>
+<td>schedule</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26756796029">2026-06-01T13:07:13Z</a></td>
+</tr>
+<tr>
+<td><a href="https://montrealai.github.io/skillos/proof-ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai.html"><strong>Autonomous RSI AI-First Blockchain Capital Machine Proof</strong></a><br><span class="small mono">.github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml</span><br><span class="small"><a href="https://montrealai.github.io/skillos/proof-ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai.html">View proof page</a> · <a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml">GitHub Action</a> · <a href="https://github.com/MontrealAI/skillos/actions/runs/26749434659">Latest run</a></span></td>
+<td><span class="badge ok">passing</span></td>
+<td>schedule</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26749434659">2026-06-01T10:30:18Z</a></td>
+</tr>
+<tr>
+<td><a href="https://montrealai.github.io/skillos/proof-ai-first-governance-capital-engine-github-ai-first-governance-capital-engine-ai.html"><strong>Autonomous RSI AI-First Governance Capital Engine Proof</strong></a><br><span class="small mono">.github/workflows/autonomous-rsi-ai-first-governance-capital-engine-proof.yml</span><br><span class="small"><a href="https://montrealai.github.io/skillos/proof-ai-first-governance-capital-engine-github-ai-first-governance-capital-engine-ai.html">View proof page</a> · <a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-ai-first-governance-capital-engine-proof.yml">GitHub Action</a> · <a href="https://github.com/MontrealAI/skillos/actions/runs/26748542511">Latest run</a></span></td>
+<td><span class="badge ok">passing</span></td>
+<td>schedule</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26748542511">2026-06-01T10:09:30Z</a></td>
+</tr>
+<tr>
+<td><a href="https://montrealai.github.io/skillos/proof-corporate-strategy-frontier-github-corporate-strategy-frontier-corporate-strategy-frontier-corporate-strategy.html"><strong>Autonomous RSI Corporate Strategy Frontier Proof</strong></a><br><span class="small mono">.github/workflows/autonomous-rsi-corporate-strategy-frontier-proof.yml</span><br><span class="small"><a href="https://montrealai.github.io/skillos/proof-corporate-strategy-frontier-github-corporate-strategy-frontier-corporate-strategy-frontier-corporate-strategy.html">View proof page</a> · <a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-corporate-strategy-frontier-proof.yml">GitHub Action</a> · <a href="https://github.com/MontrealAI/skillos/actions/runs/26740989570">Latest run</a></span></td>
+<td><span class="badge bad">failure</span></td>
+<td>schedule</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26740989570">2026-06-01T07:22:26Z</a></td>
+</tr>
+<tr>
+<td><a href="https://montrealai.github.io/skillos/proof-forge-meta-coordination-github-forge-meta-coordination-forge-meta-coordination-forge-meta.html"><strong>Autonomous RSI Proof Forge Meta-Coordination Proof</strong></a><br><span class="small mono">.github/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml</span><br><span class="small"><a href="https://montrealai.github.io/skillos/proof-forge-meta-coordination-github-forge-meta-coordination-forge-meta-coordination-forge-meta.html">View proof page</a> · <a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml">GitHub Action</a> · <a href="https://github.com/MontrealAI/skillos/actions/runs/26740391981">Latest run</a></span></td>
+<td><span class="badge ok">passing</span></td>
+<td>schedule</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26740391981">2026-06-01T07:07:01Z</a></td>
+</tr>
+<tr>
+<td><a href="https://montrealai.github.io/skillos/proof-capability-governance-twin-github-capability-governance-twin-capability-governance-twin-capability-governance.html"><strong>Autonomous RSI Capability Governance Twin Proof</strong></a><br><span class="small mono">.github/workflows/autonomous-rsi-capability-governance-twin-proof.yml</span><br><span class="small"><a href="https://montrealai.github.io/skillos/proof-capability-governance-twin-github-capability-governance-twin-capability-governance-twin-capability-governance.html">View proof page</a> · <a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-governance-twin-proof.yml">GitHub Action</a> · <a href="https://github.com/MontrealAI/skillos/actions/runs/26734519022">Latest run</a></span></td>
+<td><span class="badge ok">passing</span></td>
+<td>workflow_dispatch</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26734519022">2026-06-01T04:05:29Z</a></td>
+</tr>
+<tr>
+<td><a href="https://montrealai.github.io/skillos/proof-capability-assurance-case-graph-github-capability-assurance-case-graph-capability-assurance-case.html"><strong>Autonomous RSI Capability Assurance Case Graph Proof</strong></a><br><span class="small mono">.github/workflows/autonomous-rsi-capability-assurance-case-graph-proof.yml</span><br><span class="small"><a href="https://montrealai.github.io/skillos/proof-capability-assurance-case-graph-github-capability-assurance-case-graph-capability-assurance-case.html">View proof page</a> · <a href="https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-assurance-case-graph-proof.yml">GitHub Action</a> · <a href="https://github.com/MontrealAI/skillos/actions/runs/26733966935">Latest run</a></span></td>
+<td><span class="badge ok">passing</span></td>
+<td>workflow_dispatch</td>
+<td><a href="https://github.com/MontrealAI/skillos/actions/runs/26733966935">2026-06-01T03:45:50Z</a></td>
+</tr></table>
+</section>
+
+<section class="notice">
+  <strong>Public boundary:</strong> These are autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. They are not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.
+</section>
+</main>
+</body>
+</html>

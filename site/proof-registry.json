@@ -1,6 +1,20 @@
 {
   "proofs": [
     {
+      "badge": "badges/rsi-capability-treasury-flywheel-proof.svg",
+      "doc": "docs/rsi-capability-treasury-flywheel-proof.md",
+      "generated_at_utc": "2026-06-01T03:30:09Z",
+      "href": "rsi-capability-treasury-flywheel-proof.html",
+      "id": "rsi-capability-treasury-flywheel-proof",
+      "json": "data/rsi-capability-treasury-flywheel-proof.json",
+      "proved": true,
+      "rsi_release_count": 21,
+      "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_TREASURY_FLYWHEEL_PROOF",
+      "title": "Autonomous RSI Capability Treasury Flywheel Proof",
+      "value_capture_rate_percent": 97.0953,
+      "virtual_specialist_agents": 2147483648
+    },
+    {
       "badge": "badges/rsi-capability-economy-clearinghouse-proof.svg",
       "clearing_liquidity_score": 53.5639,
       "doc": "docs/rsi-capability-economy-clearinghouse-proof.md",
@@ -265,5 +279,5 @@
       "workflow_url": "https://github.com/MontrealAI/skillos/actions/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml"
     }
   ],
-  "updated_at_utc": "2026-06-01T01:48:41Z"
+  "updated_at_utc": "2026-06-01T03:30:09Z"
 }

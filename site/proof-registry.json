@@ -1,6 +1,24 @@
 {
   "proofs": [
     {
+      "badge": "badges/rsi-capability-governance-twin-proof.svg",
+      "doc": "docs/rsi-capability-governance-twin-proof.md",
+      "generated_at_utc": "2026-06-01T04:05:24Z",
+      "href": "rsi-capability-governance-twin-proof.html",
+      "id": "rsi-capability-governance-twin-proof",
+      "json": "data/rsi-capability-governance-twin-proof.json",
+      "policy_violation_rate_percent": 0.0,
+      "proved": true,
+      "rsi_release_count": 12,
+      "shadow_production_gap_rate_percent": 0.0,
+      "skills_used_count": 18,
+      "specialist_roles": 67108864,
+      "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF",
+      "title": "Autonomous RSI Capability Governance Twin Proof",
+      "value_capture_rate_percent": 97.6124,
+      "virtual_specialist_agents": 2147483648
+    },
+    {
       "assurance_gap_rate_percent": 0.0,
       "audit_readiness_score": 58.0494,
       "badge": "badges/rsi-capability-assurance-case-graph-proof.svg",
@@ -315,5 +333,5 @@
       "workflow_url": "https://github.com/MontrealAI/skillos/actions/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml"
     }
   ],
-  "updated_at_utc": "2026-06-01T03:45:45Z"
+  "updated_at_utc": "2026-06-01T04:05:24Z"
 }

@@ -1,4 +1,4 @@
-name: SkillOS Public Command Center v3 Autopublisher
+name: Retired legacy SkillOS site refresh
 
 on:
   workflow_dispatch:
@@ -6,17 +6,12 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: skillos-legacy-command-center-disabled
-  cancel-in-progress: true
-
 jobs:
   retired:
-    name: Legacy workflow retired
+    name: Retired; v5 canonical deploy is the single publisher
     runs-on: ubuntu-latest
     steps:
-      - name: Explain canonical workflow
+      - name: Explain retirement
         run: |
-          echo "This legacy refresh workflow has been retired to prevent the old homepage from overwriting /skillos/."
-          echo "Run: Deploy SkillOS website with autonomous safe public copy"
-          echo "Canonical manifest: https://montrealai.github.io/skillos/data/command-center-manifest.json"
+          echo "This legacy workflow is intentionally retired."
+          echo "Use: SkillOS Sovereign Command Center v5 Canonical Deploy."

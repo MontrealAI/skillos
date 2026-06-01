@@ -1,0 +1,154 @@
+name: SkillOS Sovereign Command Center v5 Canonical Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_to_repo:
+        description: "Commit regenerated public command center files back to main"
+        type: boolean
+        required: false
+        default: true
+      deploy_pages:
+        description: "Deploy the freshly built site to GitHub Pages in this same run"
+        type: boolean
+        required: false
+        default: true
+      verify_live:
+        description: "Verify /skillos/ and /skillos/index.html after deployment"
+        type: boolean
+        required: false
+        default: true
+      cancel_legacy_runs:
+        description: "Try to cancel old site-refresh runs before publishing"
+        type: boolean
+        required: false
+        default: true
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/**"
+      - "scripts/**"
+      - "data/**"
+      - "docs/**"
+      - "badges/**"
+      - "site/**"
+      - "skills/**"
+      - "README.md"
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: write
+
+concurrency:
+  group: skillos-sovereign-command-center-v5
+  cancel-in-progress: true
+
+jobs:
+  build_verify_commit_deploy:
+    name: Build, verify, commit, and deploy canonical SkillOS site
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Explain canonical fix
+        run: |
+          echo "SkillOS v5 is the single canonical Pages publisher."
+          echo "It builds site/index.html and deploys that exact artifact."
+          echo "It retires old refresh workflows that can overwrite the root page."
+
+      - name: Try to set GitHub Pages build type to workflow
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api \
+            -X PUT \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "repos/${GITHUB_REPOSITORY}/pages" \
+            -f build_type=workflow \
+            || echo "Could not update Pages build_type with this token. Continuing."
+
+      - name: Cancel legacy public-site refresh runs
+        if: ${{ inputs.cancel_legacy_runs != false }}
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/cancel_legacy_skillos_site_runs.py
+
+      - name: Build sovereign command center v5
+        run: python scripts/build_skillos_sovereign_command_center_v5.py
+
+      - name: Verify local site integrity
+        run: python scripts/verify_skillos_sovereign_command_center_v5.py
+
+      - name: Commit regenerated command center files
+        if: ${{ inputs.publish_to_repo != false }}
+        continue-on-error: true
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add site docs badges scripts .github/workflows
+            git commit -m "Publish SkillOS sovereign command center v5"
+            git push
+          else
+            echo "Command center already fresh."
+          fi
+
+      - name: Prepare canonical Pages artifact
+        if: ${{ inputs.deploy_pages != false }}
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          cp -R site/. dist/
+          test -f dist/index.html
+          test -f dist/.nojekyll
+          grep -q "SKILLOS_COMMAND_CENTER_V5_CANONICAL_ROOT" dist/index.html
+          ! grep -q "Autonomous Proof Command Center" dist/index.html
+
+      - name: Configure GitHub Pages
+        if: ${{ inputs.deploy_pages != false }}
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: ${{ inputs.deploy_pages != false }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy GitHub Pages
+        id: deployment
+        if: ${{ inputs.deploy_pages != false }}
+        uses: actions/deploy-pages@v4
+
+      - name: Verify live root and index are v5
+        if: ${{ inputs.deploy_pages != false && inputs.verify_live != false }}
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: python scripts/verify_live_skillos_sovereign_command_center_v5.py --base-url "${PAGE_URL:-https://montrealai.github.io/skillos/}"
+
+      - name: Upload command center artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: skillos-sovereign-command-center-v5
+          path: |
+            site/**
+            docs/SKILLOS_SOVEREIGN_COMMAND_CENTER_V5.md
+            docs/SKILLOS_COMMAND_CENTER_ROOT_FIX_V5_RUNBOOK.md
+            badges/command-center-sovereign-v5.svg

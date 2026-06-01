@@ -1,10 +1,10 @@
 {
-  "generated_at_utc": "2026-06-01T16:46:17Z",
+  "generated_at_utc": "2026-06-01T16:48:15Z",
   "homepage_phrase_gate": "PASSED",
   "passed_or_proved_count": 37,
   "proof_count": 60,
   "root_and_index_strategy": "same artifact, no-cache meta tags, service-worker kill file, canonical Pages workflow",
   "schema": "skillos.command_center.health.v4",
   "skills_surfaced_count": 66,
-  "workflow_count": 52
+  "workflow_count": 54
 }

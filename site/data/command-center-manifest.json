@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-06-01T16:46:17Z",
+  "generated_at_utc": "2026-06-01T16:48:15Z",
   "passed_or_proved_count": 37,
   "proof_count": 60,
   "proofs": [
@@ -4133,8 +4133,8 @@
       "verifier": "Site Integration Verifier"
     }
   ],
-  "version_hash": "542d1339a78c172b",
-  "workflow_count": 52,
+  "version_hash": "abbfca1539b3ec0d",
+  "workflow_count": 54,
   "workflows": [
     {
       "file": ".github/workflows/_skillos-public-proof-command-center-refresh-reusable.yml",
@@ -4288,12 +4288,12 @@
     },
     {
       "file": ".github/workflows/pages.yml",
-      "name": "Deploy SkillOS website with autonomous safe public copy",
-      "trigger": "manual + schedule + push"
+      "name": "Retired legacy SkillOS site refresh",
+      "trigger": "manual"
     },
     {
       "file": ".github/workflows/refresh-skillos-command-center.yml",
-      "name": "Refresh SkillOS Public Command Center",
+      "name": "Retired legacy SkillOS site refresh",
       "trigger": "manual"
     },
     {
@@ -4368,28 +4368,38 @@
     },
     {
       "file": ".github/workflows/skillos-command-center-autopublisher-v2.yml",
-      "name": "SkillOS Command Center Autopublisher v2",
+      "name": "Retired legacy SkillOS site refresh",
       "trigger": "manual"
     },
     {
       "file": ".github/workflows/skillos-command-center-autopublisher-v3.yml",
-      "name": "SkillOS Public Command Center v3 Autopublisher",
+      "name": "Retired legacy SkillOS site refresh",
+      "trigger": "manual"
+    },
+    {
+      "file": ".github/workflows/skillos-command-center-autopublisher-v4.yml",
+      "name": "Retired legacy SkillOS site refresh",
       "trigger": "manual"
     },
     {
       "file": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
-      "name": "SkillOS Public Proof Command Center Refresh",
+      "name": "Retired legacy SkillOS site refresh",
       "trigger": "manual"
     },
     {
       "file": ".github/workflows/skillos-public-site-refresh.yml",
-      "name": "SkillOS Public Site Command Center Refresh",
+      "name": "Retired legacy SkillOS site refresh",
       "trigger": "manual"
     },
     {
       "file": ".github/workflows/skillos-run-all-public-proofs.yml",
       "name": "SkillOS Run All Public Proofs",
       "trigger": "manual"
+    },
+    {
+      "file": ".github/workflows/skillos-sovereign-command-center-v5.yml",
+      "name": "SkillOS Sovereign Command Center v5 Canonical Deploy",
+      "trigger": "manual + schedule + push"
     },
     {
       "file": ".github/workflows/tests.yml",

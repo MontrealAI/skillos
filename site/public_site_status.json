@@ -1174,7 +1174,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-06-01T08:13:54Z",
+  "generated_at_utc": "2026-06-01T08:14:00Z",
   "proof_count": 91,
   "proofs": [
     {
@@ -6771,7 +6771,7 @@
   "recent_failed_runs": 1,
   "recent_running_runs": 2,
   "recent_successful_runs": 47,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26743188713",
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26743192463",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",

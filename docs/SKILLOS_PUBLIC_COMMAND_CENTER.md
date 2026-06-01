@@ -1,6 +1,6 @@
 # SkillOS Public Command Center
 
-Generated: `2026-06-01T15:37:43Z`
+Generated: `2026-06-01T16:01:00Z`
 
 The public command center is regenerated autonomously from repository state.
 
@@ -36,7 +36,7 @@ docs/SKILLOS_PUBLIC_COMMAND_CENTER.md
 ```text
 proof receipts indexed: 51
 passed proof receipts: 37
-workflow files indexed: 51
+workflow files indexed: 52
 ```
 
 ## Viewer instructions

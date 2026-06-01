@@ -17,7 +17,7 @@ a{color:var(--cyan);text-decoration:none}.top{position:sticky;top:0;z-index:20;d
 </style>
 <script>
 (function() {
-  const version = "9b070e1a6713a4d2";
+  const version = "574505c0be991fc7";
   document.documentElement.dataset.skillosVersion = version;
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.getRegistrations().then(regs => Promise.all(regs.map(r => r.unregister()))).catch(() => {});
@@ -30,5 +30,5 @@ a{color:var(--cyan);text-decoration:none}.top{position:sticky;top:0;z-index:20;d
 </head>
 <body>
 <nav class="top"><a class="brand" href="./">SkillOS Public Command Center v4</a><div class="nav"><a href="executive.html">Executive</a><a href="proofs.html">Proofs</a><a href="skills.html">Skills Used</a><a href="actions.html">Run</a><a href="health.html">Health</a><a href="https://github.com/MontrealAI/skillos">GitHub</a></div></nav>
-<main><h1>Command Center Health</h1><p>This page verifies that the canonical v4 root fix is active.</p><table><tr><th>Check</th><th>Value</th></tr><tr><td>schema</td><td>skillos.command_center.health.v4</td></tr><tr><td>generated_at_utc</td><td>2026-06-01T16:50:00Z</td></tr><tr><td>homepage_phrase_gate</td><td>PASSED</td></tr><tr><td>root_and_index_strategy</td><td>same artifact, no-cache meta tags, service-worker kill file, canonical Pages workflow</td></tr><tr><td>proof_count</td><td>60</td></tr><tr><td>passed_or_proved_count</td><td>37</td></tr><tr><td>workflow_count</td><td>54</td></tr><tr><td>skills_surfaced_count</td><td>66</td></tr></table><section class="root-fix"><strong>Expected:</strong> <code>/skillos/</code> and <code>/skillos/index.html</code> should show the same v4 command center after Pages deployment and cache expiry.</section></main>
+<main><h1>Command Center Health</h1><p>This page verifies that the canonical v4 root fix is active.</p><table><tr><th>Check</th><th>Value</th></tr><tr><td>schema</td><td>skillos.command_center.health.v4</td></tr><tr><td>generated_at_utc</td><td>2026-06-01T16:54:15Z</td></tr><tr><td>homepage_phrase_gate</td><td>PASSED</td></tr><tr><td>root_and_index_strategy</td><td>same artifact, no-cache meta tags, service-worker kill file, canonical Pages workflow</td></tr><tr><td>proof_count</td><td>60</td></tr><tr><td>passed_or_proved_count</td><td>37</td></tr><tr><td>workflow_count</td><td>54</td></tr><tr><td>skills_surfaced_count</td><td>66</td></tr></table><section class="root-fix"><strong>Expected:</strong> <code>/skillos/</code> and <code>/skillos/index.html</code> should show the same v4 command center after Pages deployment and cache expiry.</section></main>
 </body></html>

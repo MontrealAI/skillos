@@ -1,0 +1,127 @@
+name: SkillOS Command Center Autopublisher v2
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_to_repo:
+        description: "Commit regenerated Command Center files back to main"
+        type: boolean
+        required: false
+        default: true
+      deploy_pages:
+        description: "Deploy GitHub Pages directly from this workflow"
+        type: boolean
+        required: false
+        default: true
+      force_rebuild:
+        description: "Force a visible freshness rebuild even if content looks unchanged"
+        type: boolean
+        required: false
+        default: true
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/**"
+      - "scripts/**"
+      - "data/**"
+      - "docs/**"
+      - "badges/**"
+      - "site/**"
+      - "skills/**"
+      - "README.md"
+      - ".nojekyll"
+  schedule:
+    - cron: "17,47 * * * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    name: Build, verify, commit, and deploy the public SkillOS Command Center
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Build SkillOS Public Command Center v2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python scripts/build_skillos_command_center_v2.py
+
+      - name: Verify SkillOS Public Command Center v2
+        run: python scripts/verify_skillos_command_center_v2.py
+
+      - name: Force visible freshness marker
+        if: ${{ inputs.force_rebuild != false }}
+        run: date -u +"%Y-%m-%dT%H:%M:%SZ" > site/force-refresh-version.txt
+
+      - name: Commit regenerated Command Center files
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.publish_to_repo }}
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add site docs/SKILLOS_PUBLIC_COMMAND_CENTER_V2.md badges/command-center-fresh.svg
+            git commit -m "Refresh SkillOS public command center v2"
+            git push
+          else
+            echo "Command Center already fresh."
+          fi
+
+      - name: Build Pages artifact
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          cp -R site/. dist/
+          test -f dist/index.html
+          test -f dist/data/command-center-manifest.json
+
+      - name: Configure GitHub Pages
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy GitHub Pages
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Summary
+        run: |
+          {
+            echo "## SkillOS Command Center Autopublisher v2"
+            echo
+            echo "- Built and verified: site/index.html"
+            echo "- Manifest: site/data/command-center-manifest.json"
+            echo "- Registry: site/proof-registry.json"
+            echo "- Public URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+            echo
+            echo "Recommended verification URL:"
+            echo
+            echo "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/data/command-center-manifest.json"
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -182,7 +182,7 @@
     }
   ],
   "source": "deterministic fallback launch receipt; replaced by repository receipt when available",
-  "source_path": "data/rsi-capability-governance-twin-proof.json",
+  "source_path": "site/data/rsi-capability-governance-twin-proof.json",
   "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF",
   "title": "Autonomous RSI Capability Governance Twin Proof"
 }

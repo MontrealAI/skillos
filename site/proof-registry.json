@@ -4,7 +4,7 @@
     {
       "badge": "badges/flagship-capability-governance-twin.svg",
       "doc": "docs/FLAGSHIP_CAPABILITY_GOVERNANCE_TWIN_LAUNCH.md",
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "skillos-flagship-capability-governance-twin-launch",
       "json": "data/rsi-capability-governance-twin-proof.json",
@@ -29,7 +29,7 @@
       "generated_at_utc": "2026-06-01T04:05:24Z",
       "href": "capability-governance-twin.html",
       "id": "autonomous-rsi-capability-governance-twin-proof",
-      "json": "site/data/rsi-capability-governance-twin-proof.json",
+      "json": "data/rsi-capability-governance-twin-proof.json",
       "proved": true,
       "skills_used_count": 18,
       "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF",
@@ -38,6 +38,17 @@
     },
     {
       "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "skillos-flagship-capability-governance-twin-launch",
+      "json": "site/proof-registry.json",
+      "proved": true,
+      "skills_used_count": 18,
+      "status": "FLAGSHIP_LAUNCH_READY",
+      "title": "SkillOS Flagship Capability Governance Twin Launch",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "autonomous-rsi-capability-governance-twin-proof",
       "json": "data/public_site_status.json",
@@ -48,7 +59,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "autonomous-rsi-capability-governance-twin-proof",
       "json": "site/data/public_site_status.json",
@@ -59,10 +70,43 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "autonomous-rsi-capability-governance-twin-proof",
       "json": "site/public_site_status.json",
+      "proved": true,
+      "skills_used_count": 18,
+      "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF",
+      "title": "Autonomous RSI Capability Governance Twin Proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "autonomous-rsi-capability-governance-twin-proof",
+      "json": "site/proof-registry.json",
+      "proved": true,
+      "skills_used_count": 18,
+      "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF",
+      "title": "Autonomous RSI Capability Governance Twin Proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "autonomous-rsi-capability-governance-twin-proof",
+      "json": "site/proof-registry.json",
+      "proved": true,
+      "skills_used_count": 18,
+      "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF",
+      "title": "Autonomous RSI Capability Governance Twin Proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "autonomous-rsi-capability-governance-twin-proof",
+      "json": "site/proof-registry.json",
       "proved": true,
       "skills_used_count": 18,
       "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF",
@@ -82,6 +126,28 @@
     },
     {
       "generated_at_utc": "2026-06-01T04:05:24Z",
+      "href": "capability-governance-twin.html",
+      "id": "autonomous-rsi-capability-governance-twin-proof",
+      "json": "site/proof-registry.json",
+      "proved": true,
+      "skills_used_count": 18,
+      "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF",
+      "title": "Autonomous RSI Capability Governance Twin Proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T04:05:24Z",
+      "href": "capability-governance-twin.html",
+      "id": "autonomous-rsi-capability-governance-twin-proof",
+      "json": "site/proof-registry.json",
+      "proved": true,
+      "skills_used_count": 18,
+      "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF",
+      "title": "Autonomous RSI Capability Governance Twin Proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T04:05:24Z",
       "href": "autonomous-rsi-capability-governance-twin-proof.html",
       "id": "autonomous-rsi-capability-governance-twin-proof",
       "json": "site/proof-registry.json",
@@ -92,7 +158,40 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T04:05:24Z",
+      "href": "autonomous-rsi-capability-governance-twin-proof.html",
+      "id": "autonomous-rsi-capability-governance-twin-proof",
+      "json": "site/proof-registry.json",
+      "proved": true,
+      "skills_used_count": 18,
+      "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_GOVERNANCE_TWIN_PROOF",
+      "title": "Autonomous RSI Capability Governance Twin Proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T04:05:24Z",
+      "href": "rsi-capability-governance-twin-proof.html",
+      "id": "rsi-capability-governance-twin-proof",
+      "json": "site/proof-registry.json",
+      "proved": true,
+      "skills_used_count": 18,
+      "status": "PASSED",
+      "title": "Autonomous RSI Capability Governance Twin Proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T04:05:24Z",
+      "href": "rsi-capability-governance-twin-proof.html",
+      "id": "rsi-capability-governance-twin-proof",
+      "json": "site/proof-registry.json",
+      "proved": true,
+      "skills_used_count": 18,
+      "status": "PASSED",
+      "title": "Autonomous RSI Capability Governance Twin Proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "capability-governance-twin",
       "json": "data/public_site_status.json",
@@ -103,7 +202,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "autonomous-rsi-capability-governance-twin-proof",
       "json": "data/public_site_status.json",
@@ -114,7 +213,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "capability-governance-twin",
       "json": "site/data/public_site_status.json",
@@ -125,7 +224,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "autonomous-rsi-capability-governance-twin-proof",
       "json": "site/data/public_site_status.json",
@@ -136,7 +235,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "capability-governance-twin",
       "json": "site/public_site_status.json",
@@ -147,10 +246,98 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "autonomous-rsi-capability-governance-twin-proof",
       "json": "site/public_site_status.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "Autonomous RSI Capability Governance Twin Proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "flagship-capability-governance-twin-manifest",
+      "json": "data/flagship-capability-governance-twin-manifest.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "flagship-capability-governance-twin-manifest",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "flagship-capability-governance-twin-manifest",
+      "json": "site/data/flagship-capability-governance-twin-manifest.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "flagship-capability-governance-twin-manifest",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "capability-governance-twin",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "Capability Governance Twin",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "autonomous-rsi-capability-governance-twin-proof",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "Autonomous RSI Capability Governance Twin Proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "capability-governance-twin",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "Capability Governance Twin",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "autonomous-rsi-capability-governance-twin-proof",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "Autonomous RSI Capability Governance Twin Proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "capability-governance-twin",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "Capability Governance Twin",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "autonomous-rsi-capability-governance-twin-proof",
+      "json": "site/proof-registry.json",
       "proved": false,
       "skills_used_count": 18,
       "status": "UNKNOWN",
@@ -169,14 +356,14 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T04:05:24Z",
-      "href": "rsi-capability-governance-twin-proof.html",
-      "id": "rsi-capability-governance-twin-proof",
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "./rsi-ai-first-governance-capital-engine-proof.html",
+      "id": "autonomous-rsi-ai-first-governance-capital-engine-proof",
       "json": "site/proof-registry.json",
       "proved": true,
       "skills_used_count": 18,
-      "status": "PASSED",
-      "title": "Autonomous RSI Capability Governance Twin Proof",
+      "status": "passing",
+      "title": "Autonomous RSI AI-First Governance Capital Engine Proof",
       "value_capture_rate_percent": 97.6124
     },
     {
@@ -224,7 +411,7 @@
       "value_capture_rate_percent": 96.9985
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "ai-first-governance-capital-engine",
       "json": "data/public_site_status.json",
@@ -235,7 +422,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "governance-frontier",
       "json": "data/public_site_status.json",
@@ -246,7 +433,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "autonomous-rsi-ai-first-governance-capital-engine-proof",
       "json": "data/public_site_status.json",
@@ -257,7 +444,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "autonomous-rsi-governance-frontier-proof",
       "json": "data/public_site_status.json",
@@ -268,7 +455,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "fully-autonomous-recursive-self-improvement-adversarial-large-scale-multi-agent-capital-to-capability-command-center-proof",
       "json": "data/rsi_capability_command_center_proof.json",
@@ -279,7 +466,7 @@
       "value_capture_rate_percent": 91.4
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "rsi-governance-frontier-proof",
       "json": "data/rsi-governance-frontier-proof.json",
@@ -290,7 +477,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "rsi-ai-first-governance-capital-engine-proof",
       "json": "data/rsi-ai-first-governance-capital-engine-proof.json",
@@ -301,7 +488,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "ai-first-governance-capital-engine",
       "json": "site/data/public_site_status.json",
@@ -312,7 +499,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "governance-frontier",
       "json": "site/data/public_site_status.json",
@@ -323,7 +510,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "autonomous-rsi-ai-first-governance-capital-engine-proof",
       "json": "site/data/public_site_status.json",
@@ -334,7 +521,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "autonomous-rsi-governance-frontier-proof",
       "json": "site/data/public_site_status.json",
@@ -345,7 +532,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "fully-autonomous-recursive-self-improvement-adversarial-large-scale-multi-agent-capital-to-capability-command-center-proof",
       "json": "site/data/rsi_capability_command_center_proof.json",
@@ -356,7 +543,7 @@
       "value_capture_rate_percent": 91.4
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "rsi-governance-frontier-proof",
       "json": "site/data/rsi-governance-frontier-proof.json",
@@ -367,7 +554,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "rsi-ai-first-governance-capital-engine-proof.html",
       "id": "rsi-ai-first-governance-capital-engine-proof",
       "json": "site/data/proof-registry.json",
@@ -378,7 +565,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "rsi-governance-frontier-proof.html",
       "id": "rsi-governance-frontier-proof",
       "json": "site/data/proof-registry.json",
@@ -389,7 +576,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "rsi-ai-first-governance-capital-engine-proof",
       "json": "site/data/rsi-ai-first-governance-capital-engine-proof.json",
@@ -400,7 +587,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "ai-first-governance-capital-engine",
       "json": "site/public_site_status.json",
@@ -411,7 +598,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "governance-frontier",
       "json": "site/public_site_status.json",
@@ -422,7 +609,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "autonomous-rsi-ai-first-governance-capital-engine-proof",
       "json": "site/public_site_status.json",
@@ -433,7 +620,7 @@
       "value_capture_rate_percent": 97.6124
     },
     {
-      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "generated_at_utc": "2026-06-01T18:40:00Z",
       "href": "capability-governance-twin.html",
       "id": "autonomous-rsi-governance-frontier-proof",
       "json": "site/public_site_status.json",
@@ -445,13 +632,200 @@
     },
     {
       "generated_at_utc": "2026-06-01T18:37:26Z",
-      "href": "./rsi-ai-first-governance-capital-engine-proof.html",
+      "href": "capability-governance-twin.html",
+      "id": "ai-first-governance-capital-engine",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "PENDING",
+      "title": "Ai First Governance Capital Engine",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "governance-frontier",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "PENDING",
+      "title": "Governance Frontier",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
       "id": "autonomous-rsi-ai-first-governance-capital-engine-proof",
       "json": "site/proof-registry.json",
-      "proved": true,
+      "proved": false,
       "skills_used_count": 18,
-      "status": "passing",
+      "status": "UNKNOWN",
       "title": "Autonomous RSI AI-First Governance Capital Engine Proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "autonomous-rsi-governance-frontier-proof",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "Autonomous RSI Governance Frontier Proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "rsi-governance-frontier-proof",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "rsi-governance-frontier-proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "rsi-ai-first-governance-capital-engine-proof",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "rsi-ai-first-governance-capital-engine-proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "ai-first-governance-capital-engine",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "PENDING",
+      "title": "Ai First Governance Capital Engine",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "governance-frontier",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "PENDING",
+      "title": "Governance Frontier",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "autonomous-rsi-ai-first-governance-capital-engine-proof",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "Autonomous RSI AI-First Governance Capital Engine Proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "autonomous-rsi-governance-frontier-proof",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "Autonomous RSI Governance Frontier Proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "rsi-governance-frontier-proof",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "rsi-governance-frontier-proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "rsi-ai-first-governance-capital-engine-proof.html",
+      "id": "rsi-ai-first-governance-capital-engine-proof",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "rsi-ai-first-governance-capital-engine-proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "rsi-governance-frontier-proof.html",
+      "id": "rsi-governance-frontier-proof",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "rsi-governance-frontier-proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "rsi-ai-first-governance-capital-engine-proof",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "rsi-ai-first-governance-capital-engine-proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "ai-first-governance-capital-engine",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "PENDING",
+      "title": "Ai First Governance Capital Engine",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "governance-frontier",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "PENDING",
+      "title": "Governance Frontier",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "autonomous-rsi-ai-first-governance-capital-engine-proof",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "Autonomous RSI AI-First Governance Capital Engine Proof",
+      "value_capture_rate_percent": 97.6124
+    },
+    {
+      "generated_at_utc": "2026-06-01T18:37:26Z",
+      "href": "capability-governance-twin.html",
+      "id": "autonomous-rsi-governance-frontier-proof",
+      "json": "site/proof-registry.json",
+      "proved": false,
+      "skills_used_count": 18,
+      "status": "UNKNOWN",
+      "title": "Autonomous RSI Governance Frontier Proof",
       "value_capture_rate_percent": 97.6124
     },
     {
@@ -519,382 +893,8 @@
       "status": "PASSED_AUTONOMOUS_RSI_REVENUE_EXPERIMENT_FACTORY_MARKET_PROOF",
       "title": "fully autonomous recursive self-improvement revenue experiment factory market-readiness proof",
       "value_capture_rate_percent": 82.4
-    },
-    {
-      "generated_at_utc": "2026-06-01T15:29:49Z",
-      "href": "capability-governance-twin.html",
-      "id": "fully-autonomous-recursive-self-improvement-unit-economics-profit-engine-market-readiness-proof",
-      "json": "data/rsi_unit_economics_market_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_UNIT_ECONOMICS_PROFIT_ENGINE_MARKET_PROOF",
-      "title": "fully autonomous recursive self-improvement unit economics profit engine market-readiness proof",
-      "value_capture_rate_percent": 84.7
-    },
-    {
-      "generated_at_utc": "2026-06-01T15:29:49Z",
-      "href": "capability-governance-twin.html",
-      "id": "fully-autonomous-recursive-self-improvement-unit-economics-profit-engine-market-readiness-proof",
-      "json": "site/data/rsi_unit_economics_market_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_UNIT_ECONOMICS_PROFIT_ENGINE_MARKET_PROOF",
-      "title": "fully autonomous recursive self-improvement unit economics profit engine market-readiness proof",
-      "value_capture_rate_percent": 84.7
-    },
-    {
-      "generated_at_utc": "2026-06-01T15:20:29Z",
-      "href": "capability-governance-twin.html",
-      "id": "fully-autonomous-recursive-self-improvement-scientific-discovery-market-readiness-proof",
-      "json": "data/rsi_metamaterials_discovery_market_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_METAMATERIALS_DISCOVERY_MARKET_PROOF",
-      "title": "fully autonomous recursive self-improvement scientific discovery market-readiness proof",
-      "value_capture_rate_percent": 97.6124
-    },
-    {
-      "generated_at_utc": "2026-06-01T15:20:29Z",
-      "href": "capability-governance-twin.html",
-      "id": "fully-autonomous-recursive-self-improvement-scientific-discovery-market-readiness-proof",
-      "json": "site/data/rsi_metamaterials_discovery_market_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_METAMATERIALS_DISCOVERY_MARKET_PROOF",
-      "title": "fully autonomous recursive self-improvement scientific discovery market-readiness proof",
-      "value_capture_rate_percent": 97.6124
-    },
-    {
-      "generated_at_utc": "2026-06-01T15:18:29Z",
-      "href": "capability-governance-twin.html",
-      "id": "fully-autonomous-recursive-self-improvement-corporate-operating-system-market-readiness-proof",
-      "json": "data/rsi_corporate_os_market_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_CORPORATE_OS_MARKET_PROOF",
-      "title": "fully autonomous recursive self-improvement corporate operating system market-readiness proof",
-      "value_capture_rate_percent": 100.0
-    },
-    {
-      "generated_at_utc": "2026-06-01T15:18:29Z",
-      "href": "capability-governance-twin.html",
-      "id": "fully-autonomous-recursive-self-improvement-corporate-operating-system-market-readiness-proof",
-      "json": "site/data/rsi_corporate_os_market_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_CORPORATE_OS_MARKET_PROOF",
-      "title": "fully autonomous recursive self-improvement corporate operating system market-readiness proof",
-      "value_capture_rate_percent": 100.0
-    },
-    {
-      "generated_at_utc": "2026-06-01T14:55:03Z",
-      "href": "capability-governance-twin.html",
-      "id": "fully-autonomous-recursive-self-improvement-silicon-verification-market-readiness-proof",
-      "json": "data/rsi_silicon_verification_market_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_SILICON_VERIFICATION_MARKET_PROOF",
-      "title": "fully autonomous recursive self-improvement silicon verification market-readiness proof",
-      "value_capture_rate_percent": 97.6124
-    },
-    {
-      "generated_at_utc": "2026-06-01T14:55:03Z",
-      "href": "capability-governance-twin.html",
-      "id": "fully-autonomous-recursive-self-improvement-silicon-verification-market-readiness-proof",
-      "json": "site/data/rsi_silicon_verification_market_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_SILICON_VERIFICATION_MARKET_PROOF",
-      "title": "fully autonomous recursive self-improvement silicon verification market-readiness proof",
-      "value_capture_rate_percent": 97.6124
-    },
-    {
-      "generated_at_utc": "2026-06-01T14:40:33Z",
-      "href": "capability-governance-twin.html",
-      "id": "fully-autonomous-recursive-self-improvement-cyber-defense-market-readiness-proof",
-      "json": "data/rsi_cyberdefense_market_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_CYBERDEFENSE_MARKET_PROOF",
-      "title": "fully autonomous recursive self-improvement cyber defense market-readiness proof",
-      "value_capture_rate_percent": 97.6124
-    },
-    {
-      "generated_at_utc": "2026-06-01T14:40:33Z",
-      "href": "capability-governance-twin.html",
-      "id": "fully-autonomous-recursive-self-improvement-cyber-defense-market-readiness-proof",
-      "json": "site/data/rsi_cyberdefense_market_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_CYBERDEFENSE_MARKET_PROOF",
-      "title": "fully autonomous recursive self-improvement cyber defense market-readiness proof",
-      "value_capture_rate_percent": 97.6124
-    },
-    {
-      "generated_at_utc": "2026-06-01T14:30:33Z",
-      "href": "capability-governance-twin.html",
-      "id": "fully-autonomous-recursive-self-improvement-market-readiness-proof",
-      "json": "data/rsi_cloudops_market_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_CLOUDOPS_MARKET_PROOF",
-      "title": "fully autonomous recursive self-improvement market-readiness proof",
-      "value_capture_rate_percent": 97.6124
-    },
-    {
-      "generated_at_utc": "2026-06-01T14:30:33Z",
-      "href": "capability-governance-twin.html",
-      "id": "fully-autonomous-recursive-self-improvement-market-readiness-proof",
-      "json": "site/data/rsi_cloudops_market_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_CLOUDOPS_MARKET_PROOF",
-      "title": "fully autonomous recursive self-improvement market-readiness proof",
-      "value_capture_rate_percent": 97.6124
-    },
-    {
-      "generated_at_utc": "2026-06-01T03:30:09Z",
-      "href": "capability-governance-twin.html",
-      "id": "autonomous-rsi-capability-treasury-flywheel-proof",
-      "json": "data/rsi-capability-treasury-flywheel-proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_TREASURY_FLYWHEEL_PROOF",
-      "title": "Autonomous RSI Capability Treasury Flywheel Proof",
-      "value_capture_rate_percent": 97.0953
-    },
-    {
-      "generated_at_utc": "2026-06-01T03:30:09Z",
-      "href": "capability-governance-twin.html",
-      "id": "autonomous-rsi-capability-treasury-flywheel-proof",
-      "json": "site/data/rsi-capability-treasury-flywheel-proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_TREASURY_FLYWHEEL_PROOF",
-      "title": "Autonomous RSI Capability Treasury Flywheel Proof",
-      "value_capture_rate_percent": 97.0953
-    },
-    {
-      "generated_at_utc": "2026-06-01T01:48:41Z",
-      "href": "capability-governance-twin.html",
-      "id": "autonomous-rsi-capability-economy-clearinghouse-proof",
-      "json": "data/rsi-capability-economy-clearinghouse-proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_ECONOMY_CLEARINGHOUSE_PROOF",
-      "title": "Autonomous RSI Capability Economy Clearinghouse Proof",
-      "value_capture_rate_percent": 96.6013
-    },
-    {
-      "generated_at_utc": "2026-06-01T01:48:41Z",
-      "href": "capability-governance-twin.html",
-      "id": "autonomous-rsi-capability-economy-clearinghouse-proof",
-      "json": "site/data/rsi-capability-economy-clearinghouse-proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_CAPABILITY_ECONOMY_CLEARINGHOUSE_PROOF",
-      "title": "Autonomous RSI Capability Economy Clearinghouse Proof",
-      "value_capture_rate_percent": 96.6013
-    },
-    {
-      "generated_at_utc": "2026-06-01T01:33:42Z",
-      "href": "capability-governance-twin.html",
-      "id": "autonomous-rsi-fork-resistant-capability-network-proof",
-      "json": "data/rsi-fork-resistant-capability-network-proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_FORK_RESISTANT_CAPABILITY_NETWORK_PROOF",
-      "title": "Autonomous RSI Fork-Resistant Capability Network Proof",
-      "value_capture_rate_percent": 96.1864
-    },
-    {
-      "generated_at_utc": "2026-06-01T01:33:42Z",
-      "href": "capability-governance-twin.html",
-      "id": "autonomous-rsi-fork-resistant-capability-network-proof",
-      "json": "site/data/rsi-fork-resistant-capability-network-proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_FORK_RESISTANT_CAPABILITY_NETWORK_PROOF",
-      "title": "Autonomous RSI Fork-Resistant Capability Network Proof",
-      "value_capture_rate_percent": 96.1864
-    },
-    {
-      "generated_at_utc": "2026-05-31T23:41:21Z",
-      "href": "capability-governance-twin.html",
-      "id": "autonomous-rsi-skill-compounding-moat-proof",
-      "json": "data/rsi-skill-compounding-moat-proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_SKILL_COMPOUNDING_MOAT_PROOF",
-      "title": "Autonomous RSI Skill Compounding Moat Proof",
-      "value_capture_rate_percent": 96.9765
-    },
-    {
-      "generated_at_utc": "2026-05-31T23:41:21Z",
-      "href": "capability-governance-twin.html",
-      "id": "autonomous-rsi-skill-compounding-moat-proof",
-      "json": "site/data/rsi-skill-compounding-moat-proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_SKILL_COMPOUNDING_MOAT_PROOF",
-      "title": "Autonomous RSI Skill Compounding Moat Proof",
-      "value_capture_rate_percent": 96.9765
-    },
-    {
-      "generated_at_utc": "2026-05-31T23:27:46Z",
-      "href": "capability-governance-twin.html",
-      "id": "autonomous-rsi-full-stack-capability-lifecycle-proof",
-      "json": "data/rsi-full-stack-capability-lifecycle-proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_FULL_STACK_CAPABILITY_LIFECYCLE_PROOF",
-      "title": "Autonomous RSI Full-Stack Capability Lifecycle Proof",
-      "value_capture_rate_percent": 96.2057
-    },
-    {
-      "generated_at_utc": "2026-05-31T23:27:46Z",
-      "href": "capability-governance-twin.html",
-      "id": "autonomous-rsi-full-stack-capability-lifecycle-proof",
-      "json": "site/data/rsi-full-stack-capability-lifecycle-proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_FULL_STACK_CAPABILITY_LIFECYCLE_PROOF",
-      "title": "Autonomous RSI Full-Stack Capability Lifecycle Proof",
-      "value_capture_rate_percent": 96.2057
-    },
-    {
-      "generated_at_utc": "2026-05-31T23:19:17Z",
-      "href": "capability-governance-twin.html",
-      "id": "autonomous-rsi-continual-capability-frontier-proof",
-      "json": "data/rsi-continual-capability-frontier-proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_CONTINUAL_CAPABILITY_FRONTIER_PROOF",
-      "title": "Autonomous RSI Continual Capability Frontier Proof",
-      "value_capture_rate_percent": 96.652
-    },
-    {
-      "generated_at_utc": "2026-05-31T23:19:17Z",
-      "href": "capability-governance-twin.html",
-      "id": "autonomous-rsi-continual-capability-frontier-proof",
-      "json": "site/data/rsi-continual-capability-frontier-proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_CONTINUAL_CAPABILITY_FRONTIER_PROOF",
-      "title": "Autonomous RSI Continual Capability Frontier Proof",
-      "value_capture_rate_percent": 96.652
-    },
-    {
-      "generated_at_utc": "2026-05-31T19:40:27Z",
-      "href": "capability-governance-twin.html",
-      "id": "autonomous-rsi-skill-provenance-ledger-proof",
-      "json": "data/rsi-skill-provenance-ledger-proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_SKILL_PROVENANCE_LEDGER_PROOF",
-      "title": "Autonomous RSI Skill Provenance Ledger Proof",
-      "value_capture_rate_percent": 99.9463
-    },
-    {
-      "generated_at_utc": "2026-05-31T19:40:27Z",
-      "href": "capability-governance-twin.html",
-      "id": "autonomous-rsi-skill-provenance-ledger-proof",
-      "json": "site/data/rsi-skill-provenance-ledger-proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_SKILL_PROVENANCE_LEDGER_PROOF",
-      "title": "Autonomous RSI Skill Provenance Ledger Proof",
-      "value_capture_rate_percent": 99.9463
-    },
-    {
-      "generated_at_utc": "2026-05-31T14:54:20Z",
-      "href": "capability-governance-twin.html",
-      "id": "fully-autonomous-recursive-self-improvement-capital-to-capability-engine-benchmark",
-      "json": "data/rsi_capital_to_capability_engine_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_CAPITAL_TO_CAPABILITY_ENGINE_PROOF",
-      "title": "fully autonomous recursive self-improvement capital-to-capability engine benchmark",
-      "value_capture_rate_percent": 90.5
-    },
-    {
-      "generated_at_utc": "2026-05-31T14:54:20Z",
-      "href": "capability-governance-twin.html",
-      "id": "fully-autonomous-recursive-self-improvement-capital-to-capability-engine-benchmark",
-      "json": "site/data/rsi_capital_to_capability_engine_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_CAPITAL_TO_CAPABILITY_ENGINE_PROOF",
-      "title": "fully autonomous recursive self-improvement capital-to-capability engine benchmark",
-      "value_capture_rate_percent": 90.5
-    },
-    {
-      "generated_at_utc": "2026-05-31T14:11:02Z",
-      "href": "capability-governance-twin.html",
-      "id": "fully-autonomous-recursive-self-improvement-marketplace-flywheel-market-readiness-proof",
-      "json": "data/rsi_marketplace_flywheel_market_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_MARKETPLACE_FLYWHEEL_MARKET_PROOF",
-      "title": "fully autonomous recursive self-improvement marketplace flywheel market-readiness proof",
-      "value_capture_rate_percent": 87.0
-    },
-    {
-      "generated_at_utc": "2026-05-31T14:11:02Z",
-      "href": "capability-governance-twin.html",
-      "id": "fully-autonomous-recursive-self-improvement-marketplace-flywheel-market-readiness-proof",
-      "json": "site/data/rsi_marketplace_flywheel_market_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_MARKETPLACE_FLYWHEEL_MARKET_PROOF",
-      "title": "fully autonomous recursive self-improvement marketplace flywheel market-readiness proof",
-      "value_capture_rate_percent": 87.0
-    },
-    {
-      "generated_at_utc": "2026-05-31T13:39:41Z",
-      "href": "capability-governance-twin.html",
-      "id": "corporate-capability-frontier",
-      "json": "data/rsi_corporate_capability_frontier_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_CORPORATE_CAPABILITY_FRONTIER_PROOF",
-      "title": "corporate-capability-frontier",
-      "value_capture_rate_percent": 99.856
-    },
-    {
-      "generated_at_utc": "2026-05-31T13:39:41Z",
-      "href": "capability-governance-twin.html",
-      "id": "corporate-capability-frontier",
-      "json": "site/data/rsi_corporate_capability_frontier_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_CORPORATE_CAPABILITY_FRONTIER_PROOF",
-      "title": "corporate-capability-frontier",
-      "value_capture_rate_percent": 99.856
-    },
-    {
-      "generated_at_utc": "2026-05-31T13:12:14Z",
-      "href": "capability-governance-twin.html",
-      "id": "autonomous-rsi-enterprise-superorganization-proof",
-      "json": "data/rsi_enterprise_superorganization_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_ENTERPRISE_SUPERORGANIZATION_PROOF",
-      "title": "Autonomous RSI Enterprise Superorganization Proof",
-      "value_capture_rate_percent": 99.978
-    },
-    {
-      "generated_at_utc": "2026-05-31T13:12:14Z",
-      "href": "capability-governance-twin.html",
-      "id": "autonomous-rsi-enterprise-superorganization-proof",
-      "json": "site/data/rsi_enterprise_superorganization_proof.json",
-      "proved": true,
-      "skills_used_count": 18,
-      "status": "PASSED_AUTONOMOUS_RSI_ENTERPRISE_SUPERORGANIZATION_PROOF",
-      "title": "Autonomous RSI Enterprise Superorganization Proof",
-      "value_capture_rate_percent": 99.978
     }
   ],
   "schema": "skillos.proof_registry.flagship.v1",
-  "updated_at_utc": "2026-06-01T18:37:26Z"
+  "updated_at_utc": "2026-06-01T18:40:00Z"
 }

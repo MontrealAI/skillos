@@ -1,3 +1,12 @@
+# SkillOS Public Command Center v3
+
+Generated: `2026-06-01T15:59:56Z`
+
+Run `SkillOS Command Center Autopublisher v3` with `publish_to_repo=true`, `deploy_pages=true`, and `force_rebuild=true`.
+
+## Manifest
+
+```json
 {
   "counts": {
     "manual_workflows": 50,
@@ -467,3 +476,8 @@
     ".github/workflows/tests.yml"
   ]
 }
+```
+
+## Boundary
+
+These are autonomous deterministic benchmark proofs using synthetic/redacted-style public benchmark data and benchmark assumptions. They are not audited customer ROI, live customer adoption, financial advice, investment advice, legal advice, medical advice, employment advice, policy advice, token advice, achieved superintelligence, Kardashev Type II achievement, or guarantees.

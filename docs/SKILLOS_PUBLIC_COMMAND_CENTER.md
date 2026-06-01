@@ -1,6 +1,6 @@
 # SkillOS Public Command Center
 
-Generated: `2026-06-01T15:06:33Z`
+Generated: `2026-06-01T15:37:43Z`
 
 The public command center is regenerated autonomously from repository state.
 

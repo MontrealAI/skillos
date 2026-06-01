@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "c0b4b90318dc1229c9e55a7c04bb1c7d679d9c62",
+  "commit": "6b1398b706a32bd3388e5e49333a0383158a6020",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,7 +1174,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-06-01T15:20:41Z",
+  "generated_at_utc": "2026-06-01T15:22:32Z",
   "proof_count": 93,
   "proofs": [
     {
@@ -4493,8 +4493,8 @@
       "json_path": "data/rsi_metamaterials_discovery_market_proof.json",
       "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/rsi_metamaterials_discovery_market_proof.json",
       "key": "metamaterials-discovery",
-      "latest_run_status": "pending",
-      "latest_run_updated_at": "2026-06-01T15:20:19Z",
+      "latest_run_status": "in_progress",
+      "latest_run_updated_at": "2026-06-01T15:22:16Z",
       "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26764182657",
       "metrics": {
         "avg_score": 100.0,
@@ -6827,13 +6827,37 @@
   "proved_or_passed_proof_count": 35,
   "recent_failed_runs": 6,
   "recent_running_runs": 3,
-  "recent_successful_runs": 37,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26764188715",
+  "recent_successful_runs": 38,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26764294298",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
   "workflow_count": 51,
   "workflows": [
+    {
+      "conclusion": null,
+      "event": "workflow_run",
+      "name": "SkillOS Public Proof Command Center Refresh",
+      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-refresh-skillos-command-center-github-refresh-skillos-command-center-refresh-skillos-command.html",
+      "proof_title": "Refresh SkillOS Public Command Center",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26764294298",
+      "status": "in_progress",
+      "updated_at": "2026-06-01T15:22:23Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
+    },
+    {
+      "conclusion": null,
+      "event": "schedule",
+      "name": "Autonomous RSI Metamaterials Discovery Market Proof",
+      "path": ".github/workflows/rsi-metamaterials-discovery-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/rsi-metamaterials-discovery-proof.html",
+      "proof_title": "Autonomous RSI Metamaterials Discovery Market Proof",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26764182657",
+      "status": "in_progress",
+      "updated_at": "2026-06-01T15:22:16Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-metamaterials-discovery-proof.yml"
+    },
     {
       "conclusion": null,
       "event": "workflow_run",
@@ -6845,30 +6869,6 @@
       "status": "in_progress",
       "updated_at": "2026-06-01T15:20:31Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
-    },
-    {
-      "conclusion": null,
-      "event": "workflow_run",
-      "name": "SkillOS Public Proof Command Center Refresh",
-      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-refresh-skillos-command-center-github-refresh-skillos-command-center-refresh-skillos-command.html",
-      "proof_title": "Refresh SkillOS Public Command Center",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26764187886",
-      "status": "in_progress",
-      "updated_at": "2026-06-01T15:20:30Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
-    },
-    {
-      "conclusion": null,
-      "event": "schedule",
-      "name": "Autonomous RSI Metamaterials Discovery Market Proof",
-      "path": ".github/workflows/rsi-metamaterials-discovery-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/rsi-metamaterials-discovery-proof.html",
-      "proof_title": "Autonomous RSI Metamaterials Discovery Market Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26764182657",
-      "status": "pending",
-      "updated_at": "2026-06-01T15:20:19Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/rsi-metamaterials-discovery-proof.yml"
     },
     {
       "conclusion": "success",

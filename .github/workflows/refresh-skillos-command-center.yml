@@ -2,110 +2,21 @@ name: Refresh SkillOS Public Command Center
 
 on:
   workflow_dispatch:
-    inputs:
-      publish_to_repo:
-        description: "Commit refreshed command center outputs"
-        type: boolean
-        required: false
-        default: true
-      deploy_pages:
-        description: "Deploy GitHub Pages directly from this workflow"
-        type: boolean
-        required: false
-        default: false
-  schedule:
-    - cron: "17 */6 * * *"
-  push:
-    branches:
-      - main
-    paths:
-      - "data/**"
-      - "docs/**"
-      - "badges/**"
-      - "site/**"
-      - ".github/workflows/**"
-      - "scripts/**"
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
-  actions: read
+  contents: read
 
 concurrency:
-  group: skillos-command-center
-  cancel-in-progress: false
+  group: skillos-legacy-command-center-disabled
+  cancel-in-progress: true
 
 jobs:
-  refresh:
-    name: Rebuild public SkillOS command center
+  retired:
+    name: Legacy workflow retired
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-        with:
-          ref: main
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-
-      - name: Build command center from repository state
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-          SKILLOS_LIVE_URL: "https://montrealai.github.io/skillos/"
-        run: python scripts/build_skillos_command_center.py
-
-      - name: Verify command center completeness
-        run: python scripts/verify_skillos_command_center.py
-
-      - name: Upload command center artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: skillos-public-command-center
-          path: |
-            site/index.html
-            site/proofs.html
-            site/actions.html
-            site/data/command-center-manifest.json
-            site/proof-registry.json
-            site/sitemap.xml
-            site/robots.txt
-            site/badges/command-center-fresh.svg
-            badges/command-center-fresh.svg
-            docs/SKILLOS_PUBLIC_COMMAND_CENTER.md
-
-      - name: Commit refreshed command center outputs
-        if: ${{ github.event_name != 'workflow_dispatch' || inputs.publish_to_repo }}
+      - name: Explain canonical workflow
         run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add site/index.html site/proofs.html site/actions.html site/data/command-center-manifest.json site/proof-registry.json site/sitemap.xml site/robots.txt site/badges/command-center-fresh.svg badges/command-center-fresh.svg docs/SKILLOS_PUBLIC_COMMAND_CENTER.md
-            git commit -m "Refresh SkillOS public command center"
-            git push
-          else
-            echo "Command center already fresh."
-          fi
-
-      - name: Build Pages artifact
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
-        run: |
-          mkdir -p dist
-          cp -R site/* dist/
-
-      - name: Configure GitHub Pages
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
-        uses: actions/configure-pages@v5
-
-      - name: Upload GitHub Pages artifact
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
-      - name: Deploy GitHub Pages
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy_pages }}
-        uses: actions/deploy-pages@v4
+          echo "This legacy refresh workflow has been retired to prevent the old homepage from overwriting /skillos/."
+          echo "Run: Deploy SkillOS website with autonomous safe public copy"
+          echo "Canonical manifest: https://montrealai.github.io/skillos/data/command-center-manifest.json"

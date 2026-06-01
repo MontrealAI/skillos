@@ -1,87 +1,144 @@
 name: Deploy SkillOS website with autonomous safe public copy
 
 on:
+  workflow_dispatch:
+    inputs:
+      publish_to_repo:
+        description: "Commit generated command-center outputs back to main"
+        type: boolean
+        required: false
+        default: true
+      deploy_pages:
+        description: "Deploy GitHub Pages from the freshly generated site artifact"
+        type: boolean
+        required: false
+        default: true
+      cancel_legacy_runs:
+        description: "Cancel old refresh workflows that can overwrite the root URL"
+        type: boolean
+        required: false
+        default: true
   push:
     branches: [main]
-  workflow_dispatch:
+    paths:
+      - ".github/workflows/**"
+      - "scripts/**"
+      - "docs/**"
+      - "data/**"
+      - "site/**"
+      - "badges/**"
+      - "README.md"
   schedule:
-    - cron: "17 9 * * *"
+    - cron: "11 * * * *"
 
 permissions:
   contents: write
   pages: write
   id-token: write
+  actions: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build:
-    name: Safe-copy check, proof, tests, shadow proof link, and website build
+    name: Build, verify, commit, and package canonical SkillOS Command Center v4
     runs-on: ubuntu-latest
+    outputs:
+      deployed_url: https://montrealai.github.io/skillos/
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Cancel legacy command-center runs
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.cancel_legacy_runs }}
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          CURRENT_RUN_ID: ${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request
+          token=os.environ["GH_TOKEN"]; repo=os.environ["REPO"]; current=str(os.environ["CURRENT_RUN_ID"])
+          legacy_names={
+              "SkillOS Public Proof Command Center Refresh",
+              "SkillOS Public Site Command Center Refresh",
+              "Refresh SkillOS Public Command Center",
+              "SkillOS Command Center Autopublisher v2",
+              "SkillOS Public Command Center v3 Autopublisher",
+          }
+          headers={"Authorization":f"Bearer {token}","Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28"}
+          req=urllib.request.Request(f"https://api.github.com/repos/{repo}/actions/runs?status=in_progress&per_page=100",headers=headers)
+          data=json.load(urllib.request.urlopen(req))
+          cancelled=[]
+          for run in data.get("workflow_runs",[]):
+              if str(run.get("id"))==current:
+                  continue
+              if run.get("name") not in legacy_names:
+                  continue
+              url=f"https://api.github.com/repos/{repo}/actions/runs/{run['id']}/cancel"
+              try:
+                  urllib.request.urlopen(urllib.request.Request(url,method="POST",headers=headers),timeout=10).read()
+                  cancelled.append({"id":run["id"],"name":run["name"]})
+              except Exception as e:
+                  print(f"Could not cancel {run.get('name')} #{run.get('id')}: {e}")
+          print(json.dumps({"cancelled_legacy_runs":cancelled},indent=2))
+          PY
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      - name: Apply safe public copy policy
-        run: python scripts/apply_safe_public_copy.py
+      - name: Build canonical command center
+        run: python scripts/build_skillos_command_center_v4.py --summary "$GITHUB_STEP_SUMMARY"
 
-      - name: Run autonomous no-send shadow pilot proof
-        run: |
-          if [ -f scripts/run_shadow_pilot_proof.py ]; then
-            python scripts/run_shadow_pilot_proof.py --summary "$GITHUB_STEP_SUMMARY"
-          else
-            echo "Shadow pilot proof runner not found yet; skipping."
-          fi
+      - name: Verify canonical command center
+        run: python scripts/verify_skillos_command_center_v4.py
 
-      - name: Make shadow pilot proof visible on main site
-        run: python scripts/make_shadow_pilot_visible.py
-
-      - name: Run SkillOS QA, regenerate proof, and build site
-        run: python scripts/qa_check.py
-
-      - name: Make shadow pilot proof visible after build
-        run: python scripts/make_shadow_pilot_visible.py
-
-      - name: Apply safe public copy policy after visibility update
-        run: python scripts/apply_safe_public_copy.py
-
-      - name: Verify shadow pilot proof visibility
-        run: python scripts/verify_shadow_pilot_visibility.py
-
-      - name: Verify safe public copy before deploy
-        run: python scripts/verify_safe_public_copy.py --strict
-
-      - name: Commit autonomous updates back to repository
+      - name: Commit canonical generated outputs
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.publish_to_repo }}
         continue-on-error: true
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add .
-            git commit -m "Make shadow pilot proof visible"
+            git add site docs badges scripts .github/workflows
+            git commit -m "Deploy canonical SkillOS public command center v4"
             git push
           else
-            echo "No autonomous updates to commit."
+            echo "Canonical command center already fresh."
           fi
 
+      - name: Build Pages artifact
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          cp -R site/. dist/
+          test -f dist/index.html
+          test -f dist/data/command-center-manifest.json
+          grep -q "SkillOS Public Command Center v4" dist/index.html
+          ! grep -q "Autonomous Proof Command Center" dist/index.html
+
       - name: Configure GitHub Pages
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
         uses: actions/configure-pages@v5
 
       - name: Upload GitHub Pages artifact
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
   deploy:
-    name: Publish to https://montrealai.github.io/skillos/
+    name: Publish canonical root to https://montrealai.github.io/skillos/
     needs: build
+    if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_pages }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -89,6 +146,9 @@ jobs:
     permissions:
       pages: write
       id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: true
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy GitHub Pages
         uses: actions/deploy-pages@v4

@@ -1,14 +1,14 @@
 # SkillOS Public Proof Command Center Status
 
-Generated: `2026-06-01T03:33:59Z`
+Generated: `2026-06-01T03:34:29Z`
 Repository: `MontrealAI/skillos`
 Site: https://montrealai.github.io/skillos/
 
 ## Summary
 
-- Proof entries: 83
-- Workflows tracked: 46
-- Recent successful runs: 44
+- Proof entries: 84
+- Workflows tracked: 47
+- Recent successful runs: 41
 - Recent failed runs: 0
 - Recent running runs: 4
 
@@ -198,6 +198,9 @@ Site: https://montrealai.github.io/skillos/
 - **Autonomous RSI Capability Liquidity Engine Proof**
   - Page: https://montrealai.github.io/skillos/proof-capability-liquidity-engine-github-capability-liquidity-engine-capability-liquidity-engine-capability-liquidity.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml
+- **Autonomous RSI Capability SLA Reliability Mesh Proof**
+  - Page: https://montrealai.github.io/skillos/proof-capability-sla-reliability-mesh-github-capability-sla-reliability-mesh-capability-sla-reliability.html
+  - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-sla-reliability-mesh-proof.yml
 - **Autonomous RSI Capability Treasury Flywheel Proof**
   - Page: https://montrealai.github.io/skillos/proof-capability-treasury-flywheel-github-capability-treasury-flywheel-capability-treasury-flywheel-capability-treasury.html
   - Workflow: https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-treasury-flywheel-proof.yml

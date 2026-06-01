@@ -976,15 +976,15 @@
       "locked_holdout_count": 0,
       "page_exists": true,
       "proved": false,
-      "risk_breach_rate_percent": 0,
+      "risk_breach_rate_percent": 0.0,
       "rsi_release_count": 0,
       "skills_used_count": 0,
-      "source": "site/executive.html",
+      "source": "site/proof-registry.json",
       "specialist_roles": 0,
       "status": "PAGE_ONLY",
       "summary": "Existing public proof page.",
       "title": "Executive",
-      "value_capture_rate_percent": 0,
+      "value_capture_rate_percent": 0.0,
       "virtual_specialist_agents": 0
     },
     {
@@ -997,15 +997,15 @@
       "locked_holdout_count": 0,
       "page_exists": true,
       "proved": false,
-      "risk_breach_rate_percent": 0,
+      "risk_breach_rate_percent": 0.0,
       "rsi_release_count": 0,
       "skills_used_count": 0,
-      "source": "site/flywheel.html",
+      "source": "site/proof-registry.json",
       "specialist_roles": 0,
       "status": "PAGE_ONLY",
       "summary": "Existing public proof page.",
       "title": "Flywheel",
-      "value_capture_rate_percent": 0,
+      "value_capture_rate_percent": 0.0,
       "virtual_specialist_agents": 0
     },
     {
@@ -1018,15 +1018,15 @@
       "locked_holdout_count": 0,
       "page_exists": true,
       "proved": false,
-      "risk_breach_rate_percent": 0,
+      "risk_breach_rate_percent": 0.0,
       "rsi_release_count": 0,
       "skills_used_count": 0,
-      "source": "site/health.html",
+      "source": "site/proof-registry.json",
       "specialist_roles": 0,
       "status": "PAGE_ONLY",
       "summary": "Existing public proof page.",
       "title": "Health",
-      "value_capture_rate_percent": 0,
+      "value_capture_rate_percent": 0.0,
       "virtual_specialist_agents": 0
     },
     {
@@ -1417,15 +1417,15 @@
       "locked_holdout_count": 0,
       "page_exists": true,
       "proved": false,
-      "risk_breach_rate_percent": 0,
+      "risk_breach_rate_percent": 0.0,
       "rsi_release_count": 0,
       "skills_used_count": 0,
-      "source": "site/skills.html",
+      "source": "site/proof-registry.json",
       "specialist_roles": 0,
       "status": "PAGE_ONLY",
       "summary": "Existing public proof page.",
       "title": "Skills",
-      "value_capture_rate_percent": 0,
+      "value_capture_rate_percent": 0.0,
       "virtual_specialist_agents": 0
     },
     {
@@ -1597,5 +1597,5 @@
       "virtual_specialist_agents": 0
     }
   ],
-  "updated_at_utc": "2026-06-01T16:02:54Z"
+  "updated_at_utc": "2026-06-01T16:06:58Z"
 }

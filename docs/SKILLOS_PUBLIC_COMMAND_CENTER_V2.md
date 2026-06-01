@@ -1,6 +1,6 @@
 # SkillOS Public Command Center v2
 
-Generated: `2026-06-01T16:02:54Z`
+Generated: `2026-06-01T16:06:58Z`
 
 Run `SkillOS Command Center Autopublisher v2` with `publish_to_repo=true`, `deploy_pages=true`, and `force_rebuild=true`.
 
@@ -15,7 +15,7 @@ Run `SkillOS Command Center Autopublisher v2` with `publish_to_repo=true`, `depl
     "skills_surfaced": 53,
     "workflows_indexed": 52
   },
-  "generated_at_utc": "2026-06-01T16:02:54Z",
+  "generated_at_utc": "2026-06-01T16:06:58Z",
   "inventory": {
     "badges": 65,
     "html_pages": 55,
@@ -104,7 +104,7 @@ Run `SkillOS Command Center Autopublisher v2` with `publish_to_repo=true`, `depl
   "public_boundary": "These are autonomous deterministic benchmark proofs using synthetic/redacted-style public benchmark data and benchmark assumptions. They are not audited customer ROI, live customer adoption, financial advice, investment advice, legal advice, medical advice, employment advice, policy advice, token advice, achieved superintelligence, Kardashev Type II achievement, or guarantees.",
   "repository": "MontrealAI/skillos",
   "schema": "skillos.command_center.v2",
-  "site_latest_signal_utc": "2026-06-01T16:02:54Z",
+  "site_latest_signal_utc": "2026-06-01T16:06:58Z",
   "skills": [
     {
       "layer": "Access Control",

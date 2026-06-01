@@ -1,6 +1,6 @@
 # SkillOS Flagship Capability Governance Twin Launch
 
-Generated: `2026-06-01T18:40:00Z`  
+Generated: `2026-06-01T21:14:57Z`  
 Marker: `SKILLOS_FLAGSHIP_GOVERNANCE_TWIN_LAUNCH_V1`  
 Schema: `skillos.flagship.capability_governance_twin.launch.v1`
 

@@ -103,7 +103,7 @@
     "value_at_stake": 8350320565739.17,
     "value_capture_percent": 98.558142
   },
-  "generated_at_unix": 1780237593,
+  "generated_at_unix": 1780322425,
   "mechanism": {
     "coordination_claim": "Large-scale specialist-agent strategy coordination is tested against single-agent, uncoordinated-swarm, static-committee, no-RSI, shuffled-reward, random-protocol, and risk-blind controls.",
     "enterprise_value_chain": [
@@ -395,7 +395,7 @@
       "value_capture_percent": 98.536959
     }
   ],
-  "runtime_seconds": 10.647,
+  "runtime_seconds": 10.644,
   "schema_version": "skillos.rsi_corporate_strategy_frontier.proof.v6",
   "seed": 2026053106,
   "slug": "rsi-corporate-strategy-frontier-proof",

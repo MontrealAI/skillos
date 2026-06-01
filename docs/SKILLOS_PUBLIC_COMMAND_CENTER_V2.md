@@ -1,6 +1,6 @@
 # SkillOS Public Command Center v2
 
-Generated: `2026-06-01T15:09:51Z`
+Generated: `2026-06-01T15:30:38Z`
 
 Run `SkillOS Command Center Autopublisher v2` with `publish_to_repo=true`, `deploy_pages=true`, and `force_rebuild=true`.
 
@@ -15,12 +15,12 @@ Run `SkillOS Command Center Autopublisher v2` with `publish_to_repo=true`, `depl
     "skills_surfaced": 53,
     "workflows_indexed": 51
   },
-  "generated_at_utc": "2026-06-01T15:09:51Z",
+  "generated_at_utc": "2026-06-01T15:30:38Z",
   "inventory": {
     "badges": 65,
-    "html_pages": 50,
-    "json_receipts": 124,
-    "markdown_reports": 126,
+    "html_pages": 51,
+    "json_receipts": 125,
+    "markdown_reports": 127,
     "workflows": 51
   },
   "proof_ids": [
@@ -100,7 +100,7 @@ Run `SkillOS Command Center Autopublisher v2` with `publish_to_repo=true`, `depl
   "public_boundary": "These are autonomous deterministic benchmark proofs using synthetic/redacted-style public benchmark data and benchmark assumptions. They are not audited customer ROI, live customer adoption, financial advice, investment advice, legal advice, medical advice, employment advice, policy advice, token advice, achieved superintelligence, Kardashev Type II achievement, or guarantees.",
   "repository": "MontrealAI/skillos",
   "schema": "skillos.command_center.v2",
-  "site_latest_signal_utc": "2026-06-01T15:09:51Z",
+  "site_latest_signal_utc": "2026-06-01T15:30:38Z",
   "skills": [
     {
       "layer": "Access Control",

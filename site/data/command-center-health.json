@@ -1,7 +1,8 @@
 {
-  "generated_at_utc": "2026-06-01T15:09:51Z",
+  "generated_at_utc": "2026-06-01T15:30:38Z",
   "proofs_indexed": 72,
   "site_files": [
+    ".nojekyll",
     "404.html",
     "actions.html",
     "app.js",
@@ -35,6 +36,7 @@
     "badges/rsi-skill-provenance-ledger-proof.svg",
     "data/autonomous_market_benchmark.json",
     "data/autonomous_market_readiness.json",
+    "data/command-center-health.json",
     "data/command-center-manifest.json",
     "data/demo.json",
     "data/enterprise_ops_benchmark.json",
@@ -118,6 +120,7 @@
     "docs/rsi-skill-compounding-moat-proof.md",
     "docs/rsi-skill-provenance-ledger-proof.md",
     "enterprise-ops-proof.html",
+    "force-refresh-version.txt",
     "force-refresh.html",
     "index.html",
     "leaderboard.html",
@@ -171,7 +174,8 @@
     "runbook.html",
     "shadow-pilot-proof.html",
     "sitemap.xml",
-    "styles.css"
+    "styles.css",
+    "version.txt"
   ],
   "skills_surfaced": 53,
   "status": "fresh",

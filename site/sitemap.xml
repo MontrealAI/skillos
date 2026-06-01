@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://montrealai.github.io/skillos/index.html</loc></url>
-<url><loc>https://montrealai.github.io/skillos/proofs.html</loc></url>
-<url><loc>https://montrealai.github.io/skillos/skills.html</loc></url>
-<url><loc>https://montrealai.github.io/skillos/actions.html</loc></url>
-<url><loc>https://montrealai.github.io/skillos/receipts.html</loc></url>
-<url><loc>https://montrealai.github.io/skillos/executive.html</loc></url>
-<url><loc>https://montrealai.github.io/skillos/multi-agent.html</loc></url>
-<url><loc>https://montrealai.github.io/skillos/architecture.html</loc></url>
-<url><loc>https://montrealai.github.io/skillos/flywheel.html</loc></url>
-<url><loc>https://montrealai.github.io/skillos/health.html</loc></url>
-<url><loc>https://montrealai.github.io/skillos/runbook.html</loc></url>
-<url><loc>https://montrealai.github.io/skillos/force-refresh.html</loc></url>
-<url><loc>https://montrealai.github.io/skillos/404.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-ai-first-governance-capital-engine-proof.html</loc></url>
 </urlset>

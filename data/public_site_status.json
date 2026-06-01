@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "9c03f0ec00aa46479d611184fa03552e4bf10bc1",
+  "commit": "c61f3ae257e70440dcb84e234c59f0fa51848dab",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,7 +1174,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-06-01T14:26:12Z",
+  "generated_at_utc": "2026-06-01T14:27:51Z",
   "proof_count": 92,
   "proofs": [
     {
@@ -6016,7 +6016,7 @@
       "workflow": "Autonomous RSI Skill Provenance Ledger Proof"
     },
     {
-      "generated_at": "2026-05-31T12:54:07Z",
+      "generated_at": "2026-06-01T14:27:18Z",
       "holdout_count": 360,
       "json_path": "data/enterprise_ops_market_proof.json",
       "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/enterprise_ops_market_proof.json",
@@ -6334,6 +6334,10 @@
     },
     {
       "key": "enterprise-ops-github-enterprise-ops-enterprise-ops-enterprise-ops",
+      "latest_run_conclusion": "failure",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-06-01T14:27:29Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26761163431",
       "page_path": "site/proof-enterprise-ops-github-enterprise-ops-enterprise-ops-enterprise-ops.html",
       "page_url": "https://montrealai.github.io/skillos/proof-enterprise-ops-github-enterprise-ops-enterprise-ops-enterprise-ops.html",
       "source": "workflow",
@@ -6471,10 +6475,6 @@
     },
     {
       "key": "capability-treasury-flywheel-github-capability-treasury-flywheel-capability-treasury-flywheel-capability-treasury",
-      "latest_run_conclusion": "success",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-06-01T03:30:16Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733584803",
       "page_path": "site/proof-capability-treasury-flywheel-github-capability-treasury-flywheel-capability-treasury-flywheel-capability-treasury.html",
       "page_url": "https://montrealai.github.io/skillos/proof-capability-treasury-flywheel-github-capability-treasury-flywheel-capability-treasury-flywheel-capability-treasury.html",
       "source": "workflow",
@@ -6793,15 +6793,39 @@
     }
   ],
   "proved_or_passed_proof_count": 35,
-  "recent_failed_runs": 0,
-  "recent_running_runs": 1,
-  "recent_successful_runs": 49,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26761097438",
+  "recent_failed_runs": 1,
+  "recent_running_runs": 2,
+  "recent_successful_runs": 47,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26761189382",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
   "workflow_count": 50,
   "workflows": [
+    {
+      "conclusion": null,
+      "event": "workflow_run",
+      "name": "SkillOS Public Proof Command Center Refresh",
+      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-refresh-skillos-command-center-github-refresh-skillos-command-center-refresh-skillos-command.html",
+      "proof_title": "Refresh SkillOS Public Command Center",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26761189382",
+      "status": "in_progress",
+      "updated_at": "2026-06-01T14:27:43Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
+    },
+    {
+      "conclusion": "failure",
+      "event": "schedule",
+      "name": "Autonomous Enterprise Ops Market Proof",
+      "path": ".github/workflows/enterprise-ops-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-enterprise-ops-github-enterprise-ops-enterprise-ops-enterprise-ops.html",
+      "proof_title": "Autonomous Enterprise Ops Market Proof",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26761163431",
+      "status": "completed",
+      "updated_at": "2026-06-01T14:27:29Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/enterprise-ops-proof.yml"
+    },
     {
       "conclusion": null,
       "event": "schedule",
@@ -6837,18 +6861,6 @@
       "status": "completed",
       "updated_at": "2026-06-01T14:00:49Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-corporate-strategy-frontier-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "workflow_run",
-      "name": "SkillOS Public Proof Command Center Refresh",
-      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-refresh-skillos-command-center-github-refresh-skillos-command-center-refresh-skillos-command.html",
-      "proof_title": "Refresh SkillOS Public Command Center",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26759038986",
-      "status": "completed",
-      "updated_at": "2026-06-01T13:49:44Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
       "conclusion": "success",
@@ -6959,18 +6971,6 @@
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-sla-reliability-mesh-proof.yml"
     },
     {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Capability Treasury Flywheel Proof",
-      "path": ".github/workflows/autonomous-rsi-capability-treasury-flywheel-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-capability-treasury-flywheel-github-capability-treasury-flywheel-capability-treasury-flywheel-capability-treasury.html",
-      "proof_title": "Autonomous RSI Capability Treasury Flywheel Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26733584803",
-      "status": "completed",
-      "updated_at": "2026-06-01T03:30:16Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-treasury-flywheel-proof.yml"
-    },
-    {
       "conclusion": null,
       "event": null,
       "name": "_SkillOS Public Proof Command Center Refresh Reusable",
@@ -7041,6 +7041,18 @@
       "status": "not_run",
       "updated_at": "",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-liquidity-engine-proof.yml"
+    },
+    {
+      "conclusion": null,
+      "event": null,
+      "name": "Autonomous RSI Capability Treasury Flywheel Proof",
+      "path": ".github/workflows/autonomous-rsi-capability-treasury-flywheel-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-capability-treasury-flywheel-github-capability-treasury-flywheel-capability-treasury-flywheel-capability-treasury.html",
+      "proof_title": "Autonomous RSI Capability Treasury Flywheel Proof",
+      "run_url": null,
+      "status": "not_run",
+      "updated_at": "",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-treasury-flywheel-proof.yml"
     },
     {
       "conclusion": null,
@@ -7209,18 +7221,6 @@
       "status": "not_run",
       "updated_at": "",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-skill-provenance-ledger-proof.yml"
-    },
-    {
-      "conclusion": null,
-      "event": null,
-      "name": "Autonomous Enterprise Ops Market Proof",
-      "path": ".github/workflows/enterprise-ops-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-enterprise-ops-github-enterprise-ops-enterprise-ops-enterprise-ops.html",
-      "proof_title": "Autonomous Enterprise Ops Market Proof",
-      "run_url": null,
-      "status": "not_run",
-      "updated_at": "",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/enterprise-ops-proof.yml"
     },
     {
       "conclusion": null,

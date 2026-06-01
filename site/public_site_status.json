@@ -1174,7 +1174,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-06-01T04:04:07Z",
+  "generated_at_utc": "2026-06-01T04:04:27Z",
   "proof_count": 90,
   "proofs": [
     {
@@ -6284,6 +6284,9 @@
     },
     {
       "key": "capability-governance-twin-github-capability-governance-twin-capability-governance-twin-capability-governance",
+      "latest_run_status": "in_progress",
+      "latest_run_updated_at": "2026-06-01T04:04:21Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734519022",
       "page_path": "site/proof-capability-governance-twin-github-capability-governance-twin-capability-governance-twin-capability-governance.html",
       "page_url": "https://montrealai.github.io/skillos/proof-capability-governance-twin-github-capability-governance-twin-capability-governance-twin-capability-governance.html",
       "source": "workflow",
@@ -6652,9 +6655,9 @@
   ],
   "proved_or_passed_proof_count": 34,
   "recent_failed_runs": 0,
-  "recent_running_runs": 4,
-  "recent_successful_runs": 43,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734509473",
+  "recent_running_runs": 5,
+  "recent_successful_runs": 44,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734511353",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
@@ -6663,26 +6666,38 @@
     {
       "conclusion": null,
       "event": "workflow_run",
-      "name": "SkillOS Public Proof Command Center Refresh",
-      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
-      "proof_page_url": null,
-      "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734511353",
-      "status": "pending",
-      "updated_at": "2026-06-01T04:04:01Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
-    },
-    {
-      "conclusion": null,
-      "event": "workflow_run",
       "name": "SkillOS Public Site Command Center Refresh",
       "path": ".github/workflows/skillos-public-site-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
       "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734511343",
-      "status": "pending",
-      "updated_at": "2026-06-01T04:04:01Z",
+      "status": "in_progress",
+      "updated_at": "2026-06-01T04:04:22Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
+    },
+    {
+      "conclusion": null,
+      "event": "workflow_dispatch",
+      "name": "Autonomous RSI Capability Governance Twin Proof",
+      "path": ".github/workflows/autonomous-rsi-capability-governance-twin-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-capability-governance-twin-github-capability-governance-twin-capability-governance-twin-capability-governance.html",
+      "proof_title": "Autonomous RSI Capability Governance Twin Proof",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734519022",
+      "status": "in_progress",
+      "updated_at": "2026-06-01T04:04:21Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-governance-twin-proof.yml"
+    },
+    {
+      "conclusion": null,
+      "event": "workflow_run",
+      "name": "SkillOS Public Proof Command Center Refresh",
+      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
+      "proof_page_url": null,
+      "proof_title": null,
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26734511353",
+      "status": "in_progress",
+      "updated_at": "2026-06-01T04:04:17Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
     },
     {
       "conclusion": null,
@@ -6851,18 +6866,6 @@
       "status": "not_run",
       "updated_at": "",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-blockchain-protocol-capital-frontier-proof.yml"
-    },
-    {
-      "conclusion": null,
-      "event": null,
-      "name": "Autonomous RSI Capability Governance Twin Proof",
-      "path": ".github/workflows/autonomous-rsi-capability-governance-twin-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-capability-governance-twin-github-capability-governance-twin-capability-governance-twin-capability-governance.html",
-      "proof_title": "Autonomous RSI Capability Governance Twin Proof",
-      "run_url": null,
-      "status": "not_run",
-      "updated_at": "",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-governance-twin-proof.yml"
     },
     {
       "conclusion": null,

@@ -1,6 +1,6 @@
 {
   "branch": "main",
-  "commit": "86ef7a4b563cd824b08cdf18fb918a56d2b2d8d2",
+  "commit": "b6190865f4814c9726e5b1efdc64dec2a08d6471",
   "flagship": {
     "agent_count": 512,
     "agents_per_role": 8,
@@ -1174,7 +1174,7 @@
     },
     "validation_count": 320
   },
-  "generated_at_utc": "2026-06-01T06:00:01Z",
+  "generated_at_utc": "2026-06-01T08:13:54Z",
   "proof_count": 91,
   "proofs": [
     {
@@ -4877,7 +4877,7 @@
     {
       "doc_path": "docs/rsi-proof-forge-meta-coordination-proof.md",
       "doc_url": "https://github.com/MontrealAI/skillos/blob/main/docs/rsi-proof-forge-meta-coordination-proof.md",
-      "generated_at": "2026-05-31T18:31:25+00:00",
+      "generated_at": "2026-06-01T07:06:56+00:00",
       "json_path": "data/rsi-proof-forge-meta-coordination-proof.json",
       "json_url": "https://github.com/MontrealAI/skillos/blob/main/data/rsi-proof-forge-meta-coordination-proof.json",
       "key": "forge-meta-coordination",
@@ -6330,10 +6330,6 @@
     },
     {
       "key": "ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai",
-      "latest_run_conclusion": "success",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-06-01T01:35:29Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26730622151",
       "page_path": "site/proof-ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai.html",
       "page_url": "https://montrealai.github.io/skillos/proof-ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai.html",
       "source": "workflow",
@@ -6510,6 +6506,10 @@
     },
     {
       "key": "corporate-strategy-frontier-github-corporate-strategy-frontier-corporate-strategy-frontier-corporate-strategy",
+      "latest_run_conclusion": "failure",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-06-01T07:22:26Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26740989570",
       "page_path": "site/proof-corporate-strategy-frontier-github-corporate-strategy-frontier-corporate-strategy-frontier-corporate-strategy.html",
       "page_url": "https://montrealai.github.io/skillos/proof-corporate-strategy-frontier-github-corporate-strategy-frontier-corporate-strategy-frontier-corporate-strategy.html",
       "source": "workflow",
@@ -6562,10 +6562,6 @@
     },
     {
       "key": "fork-resistant-capability-network-github-fork-resistant-capability-network-fork-resistant-capability",
-      "latest_run_conclusion": "success",
-      "latest_run_status": "completed",
-      "latest_run_updated_at": "2026-06-01T01:33:48Z",
-      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26730579302",
       "page_path": "site/proof-fork-resistant-capability-network-github-fork-resistant-capability-network-fork-resistant-capability.html",
       "page_url": "https://montrealai.github.io/skillos/proof-fork-resistant-capability-network-github-fork-resistant-capability-network-fork-resistant-capability.html",
       "source": "workflow",
@@ -6631,6 +6627,10 @@
     },
     {
       "key": "forge-meta-coordination-github-forge-meta-coordination-forge-meta-coordination-forge-meta",
+      "latest_run_conclusion": "success",
+      "latest_run_status": "completed",
+      "latest_run_updated_at": "2026-06-01T07:07:01Z",
+      "latest_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26740391981",
       "page_path": "site/proof-forge-meta-coordination-github-forge-meta-coordination-forge-meta-coordination-forge-meta.html",
       "page_url": "https://montrealai.github.io/skillos/proof-forge-meta-coordination-github-forge-meta-coordination-forge-meta-coordination-forge-meta.html",
       "source": "workflow",
@@ -6768,10 +6768,10 @@
     }
   ],
   "proved_or_passed_proof_count": 35,
-  "recent_failed_runs": 0,
-  "recent_running_runs": 1,
-  "recent_successful_runs": 49,
-  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26737978284",
+  "recent_failed_runs": 1,
+  "recent_running_runs": 2,
+  "recent_successful_runs": 47,
+  "refresh_run_url": "https://github.com/MontrealAI/skillos/actions/runs/26743188713",
   "repository": "MontrealAI/skillos",
   "safe_boundary": "Autonomous deterministic market-readiness proofs using synthetic/redacted-style benchmark data and benchmark assumptions. Not audited customer ROI, live customer adoption, financial advice, investment advice, superintelligence, Kardashev Type II achievement, or guarantees.",
   "site_url": "https://montrealai.github.io/skillos/",
@@ -6780,26 +6780,50 @@
     {
       "conclusion": null,
       "event": "schedule",
-      "name": "SkillOS Public Proof Command Center Refresh",
-      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
-      "proof_page_url": null,
-      "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26737978284",
-      "status": "in_progress",
-      "updated_at": "2026-06-01T05:59:55Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "schedule",
       "name": "SkillOS Public Site Command Center Refresh",
       "path": ".github/workflows/skillos-public-site-refresh.yml",
       "proof_page_url": null,
       "proof_title": null,
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26737941635",
-      "status": "completed",
-      "updated_at": "2026-06-01T05:59:08Z",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26743192463",
+      "status": "in_progress",
+      "updated_at": "2026-06-01T08:13:52Z",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-site-refresh.yml"
+    },
+    {
+      "conclusion": null,
+      "event": "schedule",
+      "name": "SkillOS Public Proof Command Center Refresh",
+      "path": ".github/workflows/skillos-public-proof-command-center-refresh.yml",
+      "proof_page_url": null,
+      "proof_title": null,
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26743188713",
+      "status": "in_progress",
+      "updated_at": "2026-06-01T08:13:47Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/skillos-public-proof-command-center-refresh.yml"
+    },
+    {
+      "conclusion": "failure",
+      "event": "schedule",
+      "name": "Autonomous RSI Corporate Strategy Frontier Proof",
+      "path": ".github/workflows/autonomous-rsi-corporate-strategy-frontier-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-corporate-strategy-frontier-github-corporate-strategy-frontier-corporate-strategy-frontier-corporate-strategy.html",
+      "proof_title": "Autonomous RSI Corporate Strategy Frontier Proof",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26740989570",
+      "status": "completed",
+      "updated_at": "2026-06-01T07:22:26Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-corporate-strategy-frontier-proof.yml"
+    },
+    {
+      "conclusion": "success",
+      "event": "schedule",
+      "name": "Autonomous RSI Proof Forge Meta-Coordination Proof",
+      "path": ".github/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-forge-meta-coordination-github-forge-meta-coordination-forge-meta-coordination-forge-meta.html",
+      "proof_title": "Autonomous RSI Proof Forge Meta-Coordination Proof",
+      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26740391981",
+      "status": "completed",
+      "updated_at": "2026-06-01T07:07:01Z",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml"
     },
     {
       "conclusion": "success",
@@ -6886,30 +6910,6 @@
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-capability-economy-clearinghouse-proof.yml"
     },
     {
-      "conclusion": "success",
-      "event": "schedule",
-      "name": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
-      "path": ".github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai.html",
-      "proof_title": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26730622151",
-      "status": "completed",
-      "updated_at": "2026-06-01T01:35:29Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml"
-    },
-    {
-      "conclusion": "success",
-      "event": "workflow_dispatch",
-      "name": "Autonomous RSI Fork-Resistant Capability Network Proof",
-      "path": ".github/workflows/autonomous-rsi-fork-resistant-capability-network-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-fork-resistant-capability-network-github-fork-resistant-capability-network-fork-resistant-capability.html",
-      "proof_title": "Autonomous RSI Fork-Resistant Capability Network Proof",
-      "run_url": "https://github.com/MontrealAI/skillos/actions/runs/26730579302",
-      "status": "completed",
-      "updated_at": "2026-06-01T01:33:48Z",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-fork-resistant-capability-network-proof.yml"
-    },
-    {
       "conclusion": null,
       "event": null,
       "name": "_SkillOS Public Proof Command Center Refresh Reusable",
@@ -6956,6 +6956,18 @@
       "status": "not_run",
       "updated_at": "",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-adversarial-benchmark-foundry-proof.yml"
+    },
+    {
+      "conclusion": null,
+      "event": null,
+      "name": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
+      "path": ".github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-ai-first-blockchain-capital-machine-github-ai-first-blockchain-capital-machine-ai.html",
+      "proof_title": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
+      "run_url": null,
+      "status": "not_run",
+      "updated_at": "",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml"
     },
     {
       "conclusion": null,
@@ -7032,18 +7044,6 @@
     {
       "conclusion": null,
       "event": null,
-      "name": "Autonomous RSI Corporate Strategy Frontier Proof",
-      "path": ".github/workflows/autonomous-rsi-corporate-strategy-frontier-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-corporate-strategy-frontier-github-corporate-strategy-frontier-corporate-strategy-frontier-corporate-strategy.html",
-      "proof_title": "Autonomous RSI Corporate Strategy Frontier Proof",
-      "run_url": null,
-      "status": "not_run",
-      "updated_at": "",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-corporate-strategy-frontier-proof.yml"
-    },
-    {
-      "conclusion": null,
-      "event": null,
       "name": "Autonomous RSI Cross-Domain Capability Transfer Atlas Proof",
       "path": ".github/workflows/autonomous-rsi-cross-domain-capability-transfer-atlas-proof.yml",
       "proof_page_url": "https://montrealai.github.io/skillos/proof-cross-domain-capability-transfer-atlas-github-cross-domain-capability-transfer-atlas-cross.html",
@@ -7092,6 +7092,18 @@
     {
       "conclusion": null,
       "event": null,
+      "name": "Autonomous RSI Fork-Resistant Capability Network Proof",
+      "path": ".github/workflows/autonomous-rsi-fork-resistant-capability-network-proof.yml",
+      "proof_page_url": "https://montrealai.github.io/skillos/proof-fork-resistant-capability-network-github-fork-resistant-capability-network-fork-resistant-capability.html",
+      "proof_title": "Autonomous RSI Fork-Resistant Capability Network Proof",
+      "run_url": null,
+      "status": "not_run",
+      "updated_at": "",
+      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-fork-resistant-capability-network-proof.yml"
+    },
+    {
+      "conclusion": null,
+      "event": null,
       "name": "Autonomous RSI Full-Stack Capability Lifecycle Proof",
       "path": ".github/workflows/autonomous-rsi-full-stack-capability-lifecycle-proof.yml",
       "proof_page_url": "https://montrealai.github.io/skillos/proof-full-stack-capability-lifecycle-github-full-stack-capability-lifecycle-full-stack-capability.html",
@@ -7136,18 +7148,6 @@
       "status": "not_run",
       "updated_at": "",
       "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-open-replication-mesh-proof.yml"
-    },
-    {
-      "conclusion": null,
-      "event": null,
-      "name": "Autonomous RSI Proof Forge Meta-Coordination Proof",
-      "path": ".github/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml",
-      "proof_page_url": "https://montrealai.github.io/skillos/proof-forge-meta-coordination-github-forge-meta-coordination-forge-meta-coordination-forge-meta.html",
-      "proof_title": "Autonomous RSI Proof Forge Meta-Coordination Proof",
-      "run_url": null,
-      "status": "not_run",
-      "updated_at": "",
-      "workflow_url": "https://github.com/MontrealAI/skillos/blob/main/.github/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml"
     },
     {
       "conclusion": null,

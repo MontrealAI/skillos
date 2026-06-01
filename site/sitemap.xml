@@ -1,54 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://montrealai.github.io/skillos/</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-corporate-strategy-frontier-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/404.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/actions.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/architecture.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/autonomous-market-readiness.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/enterprise-ops-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/index.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/leaderboard.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/multi-agent.html</loc></url>
   <url><loc>https://montrealai.github.io/skillos/proofs.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/receipts.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-adversarial-benchmark-foundry-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-adversarial-multi-agent-market-command-center-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-ai-first-blockchain-capital-machine-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-ai-first-governance-capital-engine-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-blockchain-protocol-capital-frontier-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-capability-assurance-case-graph-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-capability-command-center-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-capability-command-center-v17-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-capability-economy-clearinghouse-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/actions.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/shadow-pilot-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/autonomous-market-readiness.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-proof-forge-meta-coordination-proof.html</loc></url>
   <url><loc>https://montrealai.github.io/skillos/rsi-capability-governance-twin-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-capability-liquidity-engine-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-capability-assurance-case-graph-proof.html</loc></url>
   <url><loc>https://montrealai.github.io/skillos/rsi-capability-sla-reliability-mesh-proof.html</loc></url>
   <url><loc>https://montrealai.github.io/skillos/rsi-capability-treasury-flywheel-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-capital-to-capability-engine-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-causal-attribution-engine-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-cloudops-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-capability-economy-clearinghouse-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-fork-resistant-capability-network-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-skill-compounding-moat-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-full-stack-capability-lifecycle-proof.html</loc></url>
   <url><loc>https://montrealai.github.io/skillos/rsi-continual-capability-frontier-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-corporate-capability-frontier-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-corporate-os-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-adversarial-benchmark-foundry-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-open-replication-mesh-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-objective-integrity-firewall-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-causal-attribution-engine-proof.html</loc></url>
   <url><loc>https://montrealai.github.io/skillos/rsi-cross-domain-capability-transfer-atlas-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-cyberdefense-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-skill-provenance-ledger-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-capital-to-capability-engine-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-capability-command-center-v17-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-revenue-experiment-factory-market-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-marketplace-flywheel-market-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-corporate-os-market-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-metamaterials-discovery-market-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-corporate-capability-frontier-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-silicon-verification-market-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-enterprise-superorganization-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/enterprise-ops-market-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-cyberdefense-market-proof.html</loc></url>
   <url><loc>https://montrealai.github.io/skillos/rsi-enterprise-capability-foundry-proof.html</loc></url>
   <url><loc>https://montrealai.github.io/skillos/rsi-enterprise-eureka-factory-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-enterprise-superorganization-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-fork-resistant-capability-network-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-full-stack-capability-lifecycle-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-governance-frontier-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-marketplace-flywheel-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-metamaterials-discovery-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-objective-integrity-firewall-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-open-replication-mesh-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-proof-forge-meta-coordination-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-revenue-experiment-factory-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-silicon-verification-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-skill-compounding-moat-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-skill-provenance-ledger-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-unit-economics-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/runbook.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/shadow-pilot-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-cloudops-market-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-adversarial-multi-agent-market-command-center-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-unit-economics-market-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/wealth-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-silicon-verification-benchmark.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-cyberdefense-benchmark.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-revenue-experiment-factory-benchmark.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/enterprise-ops-benchmark.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-capital-to-capability-engine-benchmark.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-capability-command-center-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-corporate-os-benchmark.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-cloudops-benchmark.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-metamaterials-discovery-benchmark.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-adversarial-multi-agent-market-command-center-benchmark.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-capability-command-center-benchmark.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-capability-command-center-v17-benchmark.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-corporate-strategy-frontier-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-blockchain-protocol-capital-frontier-proof.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-unit-economics-benchmark.html</loc></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-marketplace-flywheel-benchmark.html</loc></url>
 </urlset>

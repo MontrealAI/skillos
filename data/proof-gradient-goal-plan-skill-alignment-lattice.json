@@ -2360,7 +2360,7 @@
       "value_delta": 0.1585
     }
   ],
-  "commit": "196b99e",
+  "commit": "7decc23",
   "comparisons": {
     "goal_plan_static": {
       "goal_alignment": 0.83,
@@ -2417,7 +2417,7 @@
     "success_uplift_over_static_min": 0.075,
     "value_uplift_over_static_min": 0.075
   },
-  "generated_at": "2026-06-02T17:31:57Z",
+  "generated_at": "2026-06-02T17:32:54Z",
   "goals_used": [
     {
       "direction": "Increase future work quality by converting successful traces into verified network skills.",
@@ -2589,7 +2589,7 @@
     "It does not claim achieved superintelligence, Kardashev Type II civilization, investment returns, financial advice, legal advice, medical advice, employment advice, credit advice, policy advice, or token advice.",
     "It tests whether goal-plan-skill aligned proof gradients outperform static and unverified propagation baselines under controlled holdout conditions."
   ],
-  "receipt_hash": "0881ced571ac0dccb095fc152ac24cc96ebc5ff8c240cc1681a450b7d72aefa1",
+  "receipt_hash": "84f2f48ba13c5fd601e98dd612b6d7dc85fe997a538626b3807a64657c60d529",
   "release_curve": [
     {
       "accepted_skills": 0,

@@ -1,0 +1,66 @@
+[
+  {
+    "input": "task, agent, role quorum, outcome, risk event, value outcome",
+    "layer": "Observation",
+    "name": "Attempt Trace Capture",
+    "output": "structured trace with provenance and measurable result",
+    "purpose": "Capture every agent attempt as reusable evidence instead of losing the operational lesson after completion.",
+    "verifier": "trace schema, deterministic seed, holdout isolation check"
+  },
+  {
+    "input": "high-quality traces and task requirement vectors",
+    "layer": "Capability Extraction",
+    "name": "Skill Distillation",
+    "output": "candidate skill with domain, vector, cost, and risk profile",
+    "purpose": "Compress successful repeated work patterns into candidate reusable skills.",
+    "verifier": "candidate must improve validation tasks before propagation"
+  },
+  {
+    "input": "candidate skill and isolated validation cases",
+    "layer": "Evolution",
+    "name": "Proof-Gated Selection",
+    "output": "accepted, rejected, revised, or retired skill decision",
+    "purpose": "Accept only skills that survive validation, holdout, transfer, and risk gates.",
+    "verifier": "uplift threshold, transfer threshold, risk breach ceiling"
+  },
+  {
+    "input": "uplift, confidence, transfer score, risk penalty, reuse potential",
+    "layer": "Selection Signal",
+    "name": "Gradient Scoring",
+    "output": "signed evolution gradient for each candidate skill",
+    "purpose": "Convert proof outcomes into a gradient that decides what the network should learn next.",
+    "verifier": "positive gradients must outperform static coordination on holdout"
+  },
+  {
+    "input": "accepted skill, role map, skill compatibility, release gate",
+    "layer": "Routing Upgrade",
+    "name": "Network Propagation",
+    "output": "network-wide routing upgrade",
+    "purpose": "Share verified skills across the agent network while preventing unverified capability drift.",
+    "verifier": "post-propagation holdout score and negative-control rejection"
+  },
+  {
+    "input": "skill candidate, release route, policy boundary, rollback path",
+    "layer": "Governed Release",
+    "name": "Capability Governance Twin",
+    "output": "governed release decision with public receipt",
+    "purpose": "Simulate the release of a new capability before allowing it to influence network routing.",
+    "verifier": "policy gate, rollback gate, verifier coverage gate"
+  },
+  {
+    "input": "poisoned skills, overfit skills, high-risk shortcuts",
+    "layer": "Robustness",
+    "name": "Adversarial Negative Control",
+    "output": "rejection receipt and risk-breach evidence",
+    "purpose": "Inject plausible but harmful skills to verify that proof, not popularity, decides propagation.",
+    "verifier": "bad skills must receive negative or sub-threshold gradients"
+  },
+  {
+    "input": "metrics, gates, baselines, skills, evidence hashes",
+    "layer": "Communication",
+    "name": "Executive Receipt Rendering",
+    "output": "JSON receipt, Markdown report, badge, webpage",
+    "purpose": "Turn the proof into a public, non-technical, inspectable artifact.",
+    "verifier": "artifact existence, public boundary, link integrity"
+  }
+]

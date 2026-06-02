@@ -1,0 +1,130 @@
+name: Proof Gradient Agent Evolution Protocol Proof
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy_pages:
+        description: "Deploy the generated Public SkillOS Command Center to GitHub Pages"
+        required: true
+        default: "true"
+        type: choice
+        options: ["true", "false"]
+      verify_live:
+        description: "Verify the live root after deployment"
+        required: true
+        default: "true"
+        type: choice
+        options: ["true", "false"]
+      cancel_legacy_runs:
+        description: "Cancel older site refresh/deploy runs that could overwrite the root"
+        required: true
+        default: "true"
+        type: choice
+        options: ["true", "false"]
+  schedule:
+    - cron: "23 5 * * *"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/proof-gradient-agent-evolution-protocol.yml"
+      - "scripts/run_proof_gradient_agent_evolution_protocol.py"
+      - "scripts/build_proof_gradient_agent_evolution_protocol_site.py"
+      - "scripts/verify_proof_gradient_agent_evolution_protocol.py"
+      - "scripts/verify_live_proof_gradient_agent_evolution_protocol.py"
+      - "data/**"
+      - "docs/**"
+      - "badges/**"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: skillos-proof-gradient-agent-evolution-protocol-root-authority
+  cancel-in-progress: true
+
+jobs:
+  proof-gradient:
+    name: Build, verify, deploy, and publish Proof Gradient
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Explain the root contract
+        run: |
+          echo "Root contract:"
+          echo "/skillos/                                = Public SkillOS Command Center"
+          echo "/skillos/index.html                      = Public SkillOS Command Center"
+          echo "/skillos/proof-gradient-agent-evolution-protocol.html = Proof Gradient flagship proof room"
+          echo "The root is the lobby. Proofs are rooms."
+
+      - name: Cancel legacy site refresh/deploy runs
+        if: ${{ github.event.inputs.cancel_legacy_runs != 'false' }}
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/cancel_legacy_skillos_site_runs.py
+
+      - name: Run Proof Gradient benchmark proof
+        run: python scripts/run_proof_gradient_agent_evolution_protocol.py
+
+      - name: Build Public SkillOS Command Center from repository evidence
+        run: python scripts/build_proof_gradient_agent_evolution_protocol_site.py --out dist
+
+      - name: Verify generated root, proof, skills, and links
+        run: python scripts/verify_proof_gradient_agent_evolution_protocol.py --out dist
+
+      - name: Commit generated evidence receipts, reports, and badges
+        continue-on-error: true
+        run: |
+          if [[ -n "$(git status --porcelain data docs badges)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/proof-gradient-agent-evolution-protocol.json \
+                    data/proof_gradient_agent_evolution_protocol_receipt.json \
+                    data/skills_used_proof_gradient_agent_evolution_protocol.json \
+                    docs/PROOF_GRADIENT_AGENT_EVOLUTION_PROTOCOL_PROOF.md \
+                    badges/proof-gradient-agent-evolution-protocol.svg
+            git commit -m "Publish Proof Gradient agent evolution protocol evidence" || true
+            git push || true
+          else
+            echo "No generated evidence changes to commit."
+          fi
+
+      - name: Upload generated Command Center artifact for inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: proof-gradient-command-center-dist
+          path: dist
+
+      - name: Configure GitHub Pages
+        if: ${{ github.event.inputs.deploy_pages != 'false' }}
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: ${{ github.event.inputs.deploy_pages != 'false' }}
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+      - name: Deploy GitHub Pages artifact
+        if: ${{ github.event.inputs.deploy_pages != 'false' }}
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Verify live root and proof page
+        if: ${{ github.event.inputs.deploy_pages != 'false' && github.event.inputs.verify_live != 'false' }}
+        run: python scripts/verify_live_proof_gradient_agent_evolution_protocol.py --base-url "${{ steps.deployment.outputs.page_url }}"

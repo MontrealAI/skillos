@@ -1,49 +1,32 @@
 #!/usr/bin/env python3
-import json, os, sys, time, urllib.request
+import json, os, sys, urllib.request
 
-LEGACY_HINTS = [
-    "public proof command center", "public site refresh", "command center refresh", "sovereign command center", "capability governance twin launch"
-]
+TOKEN=os.environ.get("GITHUB_TOKEN")
+REPO=os.environ.get("GITHUB_REPOSITORY")
+CURRENT=os.environ.get("GITHUB_RUN_ID")
+LEGACY=["public-site", "command center refresh", "sovereign", "capability governance twin launch"]
 
-def request(url, token, method="GET", data=None):
-    headers = {"Accept":"application/vnd.github+json", "X-GitHub-Api-Version":"2022-11-28"}
-    if token:
-        headers["Authorization"] = f"Bearer {token}"
-    body = json.dumps(data).encode() if data is not None else None
-    req = urllib.request.Request(url, data=body, headers=headers, method=method)
-    with urllib.request.urlopen(req, timeout=30) as r:
-        raw = r.read().decode()
-        return json.loads(raw) if raw else {}
+def req(url, method="GET"):
+    if not TOKEN or not REPO: return None
+    r=urllib.request.Request(url, method=method, headers={"Authorization":"Bearer "+TOKEN,"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28"})
+    try:
+        with urllib.request.urlopen(r, timeout=20) as resp:
+            return resp.read().decode()
+    except Exception as e:
+        print("cancel helper ignored:", e)
+        return None
 
 def main():
-    token = os.environ.get("GITHUB_TOKEN")
-    repo = os.environ.get("GITHUB_REPOSITORY")
-    current = os.environ.get("GITHUB_RUN_ID")
-    if not token or not repo:
-        print("No GITHUB_TOKEN or GITHUB_REPOSITORY; legacy cancellation skipped.")
-        return
-    api = f"https://api.github.com/repos/{repo}/actions/runs?status=in_progress&per_page=100"
-    try:
-        runs = request(api, token).get("workflow_runs", [])
-    except Exception as e:
-        print(f"Could not list runs: {e}")
-        return
-    cancelled = []
+    if not TOKEN or not REPO:
+        print("No token/repo available; skipping cancellation."); return
+    url=f"https://api.github.com/repos/{REPO}/actions/runs?status=in_progress&per_page=100"
+    data=req(url)
+    if not data: return
+    runs=json.loads(data).get("workflow_runs",[])
     for run in runs:
-        rid = str(run.get("id"))
-        if rid == str(current):
-            continue
-        name = (run.get("name") or "").lower()
-        path = (run.get("path") or "").lower()
-        if any(h in name or h.replace(" ", "-") in path for h in LEGACY_HINTS):
-            url = f"https://api.github.com/repos/{repo}/actions/runs/{rid}/cancel"
-            try:
-                request(url, token, method="POST", data={})
-                cancelled.append({"id":rid, "name":run.get("name"), "path":run.get("path")})
-                time.sleep(0.2)
-            except Exception as e:
-                print(f"Could not cancel {rid}: {e}")
-    print(json.dumps({"cancelled": cancelled, "count": len(cancelled)}, indent=2))
-
-if __name__ == "__main__":
-    main()
+        if str(run.get("id")) == str(CURRENT): continue
+        name=(run.get("name") or "").lower()
+        if any(x in name for x in LEGACY):
+            print("Cancelling legacy run", run.get("id"), run.get("name"))
+            req(f"https://api.github.com/repos/{REPO}/actions/runs/{run.get('id')}/cancel", method="POST")
+if __name__ == "__main__": main()

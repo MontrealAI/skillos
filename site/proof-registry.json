@@ -1,5 +1,18 @@
 [
   {
+    "coordination_quality": 0.9321799829498979,
+    "fingerprint": "ef32cdf645705a4a0eab40c326cc21046083d25a88c63137244d5a386ae1dcf0",
+    "generated_at_utc": "2026-06-02T06:59:02+00:00",
+    "href": "rsi-proof-forge-meta-coordination-proof.html",
+    "id": "rsi-proof-forge-meta-coordination-proof",
+    "proof_credibility": 0.9994579200067399,
+    "proof_version": "12.0",
+    "status": "passing",
+    "title": "Autonomous RSI Proof Forge Meta-Coordination Proof",
+    "value_capture_rate": 0.9909679137790379,
+    "workflow_url": "https://github.com/MontrealAI/skillos/actions/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml"
+  },
+  {
     "agents": 262144,
     "holdout_value_capture": 0.9990703123366625,
     "href": "./rsi-ai-first-blockchain-capital-machine-proof.html",

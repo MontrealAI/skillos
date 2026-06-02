@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="44" viewBox="0 0 450 44" role="img" aria-label="Proof Gradient Alignment Lattice: proof passed">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#091827"/><stop offset="1" stop-color="#2b214c"/></linearGradient></defs>
+  <rect rx="14" width="450" height="44" fill="url(#g)"/>
+  <circle cx="24" cy="22" r="8" fill="#68f99f"/>
+  <text x="42" y="18" fill="#eaf7ff" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="700">PROOF GRADIENT · GOAL-PLAN-SKILL ALIGNMENT</text>
+  <text x="42" y="34" fill="#68f99f" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800">PROOF PASSED · 96.5% HOLDOUT SUCCESS</text>
+</svg>

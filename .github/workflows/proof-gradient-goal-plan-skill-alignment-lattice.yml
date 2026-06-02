@@ -1,0 +1,121 @@
+name: Proof Gradient Goal-Plan-Skill Alignment Lattice Proof
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy_pages:
+        description: "Deploy the generated Public SkillOS Command Center to GitHub Pages"
+        required: true
+        default: "true"
+        type: choice
+        options: ["true", "false"]
+      verify_live:
+        description: "Verify the live /skillos/ root after deployment"
+        required: true
+        default: "true"
+        type: choice
+        options: ["true", "false"]
+      cancel_legacy_runs:
+        description: "Cancel older site refresh/deploy runs before deploying"
+        required: true
+        default: "true"
+        type: choice
+        options: ["true", "false"]
+  schedule:
+    - cron: "41 4 * * *"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/proof-gradient-goal-plan-skill-alignment-lattice.yml"
+      - "scripts/run_proof_gradient_goal_plan_skill_alignment_lattice.py"
+      - "scripts/build_proof_gradient_goal_plan_skill_alignment_lattice_site.py"
+      - "scripts/verify_proof_gradient_goal_plan_skill_alignment_lattice.py"
+      - "scripts/verify_live_proof_gradient_goal_plan_skill_alignment_lattice.py"
+      - "scripts/cancel_legacy_skillos_site_runs.py"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: proof-gradient-goal-plan-skill-alignment-lattice-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  proof-gradient:
+    name: Generate, verify, publish, and deploy Proof Gradient alignment lattice
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Explain proof contract
+        run: |
+          echo "Root contract: /skillos/ is Public SkillOS Command Center."
+          echo "Proof room: /skillos/proof-gradient-goal-plan-skill-alignment-lattice.html."
+          echo "GoalOS = Direction; PlanOS = Strategy; SkillOS = Capability; Proof Gradient = Evolution."
+
+      - name: Cancel legacy refresh/deploy runs
+        if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.cancel_legacy_runs == 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/cancel_legacy_skillos_site_runs.py
+
+      - name: Run Proof Gradient alignment lattice proof
+        run: python scripts/run_proof_gradient_goal_plan_skill_alignment_lattice.py
+
+      - name: Build Public SkillOS Command Center and proof room
+        run: python scripts/build_proof_gradient_goal_plan_skill_alignment_lattice_site.py --out dist
+
+      - name: Verify generated artifact
+        run: python scripts/verify_proof_gradient_goal_plan_skill_alignment_lattice.py --out dist
+
+      - name: Commit proof receipts, report, and badge
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/proof-gradient-goal-plan-skill-alignment-lattice.json docs/PROOF_GRADIENT_GOAL_PLAN_SKILL_ALIGNMENT_LATTICE_PROOF.md badges/proof-gradient-goal-plan-skill-alignment-lattice.svg || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Add Proof Gradient goal-plan-skill alignment lattice proof"
+            git push
+          else
+            echo "No proof artifacts changed."
+          fi
+
+      - name: Upload generated Command Center artifact for inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: proof-gradient-goal-plan-skill-alignment-lattice-site
+          path: dist
+
+      - name: Configure GitHub Pages
+        if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.deploy_pages == 'true' }}
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.deploy_pages == 'true' }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy GitHub Pages artifact
+        if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.deploy_pages == 'true' }}
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Verify live root and proof room
+        if: ${{ github.event_name != 'workflow_dispatch' || (github.event.inputs.deploy_pages == 'true' && github.event.inputs.verify_live == 'true') }}
+        run: python scripts/verify_live_proof_gradient_goal_plan_skill_alignment_lattice.py --base "${{ steps.deployment.outputs.page_url }}"

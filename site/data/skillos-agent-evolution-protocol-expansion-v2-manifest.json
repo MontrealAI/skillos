@@ -1,0 +1,7 @@
+{
+  "generated_at_utc": "2026-06-03T01:14:50Z",
+  "marker": "SKILLOS_AGENT_EVOLUTION_PROTOCOL_EXPANSION_V2",
+  "mode": "additive-expansion-no-removal",
+  "root_contract": "Public SkillOS Command Center owns /skillos/ and /skillos/index.html; protocol and proofs are subpages.",
+  "schema": "skillos.proof_carrying_intelligence.expansion.v2"
+}

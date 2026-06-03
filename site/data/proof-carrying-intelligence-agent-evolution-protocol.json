@@ -2,148 +2,120 @@
   "artifact_classes": [
     {
       "class": "Aim Artifacts",
-      "examples": "goals, success criteria, constraints, risk, policy, budget",
+      "stores": "goals, success criteria, failure criteria, constraints, risk boundaries",
       "system": "GoalOS"
     },
     {
       "class": "Strategy Artifacts",
-      "examples": "plans, playbooks, route graphs, canary plans",
+      "stores": "plan graphs, strategy templates, route plans, playbooks",
       "system": "PlanOS"
     },
     {
       "class": "Capability Artifacts",
-      "examples": "skills, tools, context recipes, reusable procedures",
+      "stores": "skills, tools, reusable procedures, capability recipes",
       "system": "SkillOS"
     },
     {
       "class": "Guardrail Artifacts",
-      "examples": "permissions, vetoes, risk gates, rollback rules",
+      "stores": "permissions, vetoes, rollback rules, risk limits, approval rules",
       "system": "Policy"
     },
     {
       "class": "Judgment Artifacts",
-      "examples": "rubrics, negative controls, holdouts, verifier criteria",
+      "stores": "rubrics, tests, negative controls, holdouts, verifier criteria",
       "system": "Eval"
     },
     {
       "class": "Action Artifacts",
-      "examples": "tool definitions, runtime adapters, execution permissions",
-      "system": "Tool"
+      "stores": "execution bundles, runtime decisions, tool sequences",
+      "system": "Run Fabric"
     },
     {
-      "class": "Grounding Artifacts",
-      "examples": "context recipes, retrieval recipes, evidence scopes",
-      "system": "Context"
+      "class": "Evidence Artifacts",
+      "stores": "proof traces, scores, costs, failures, successes, credit assignment",
+      "system": "Proof Ledger"
     },
     {
       "class": "Evolution Artifacts",
-      "examples": "upgrade proposals, canary verdicts, propagated releases",
+      "stores": "candidate upgrades, canary verdicts, propagated releases, rollback receipts",
       "system": "Proof Gradient"
     }
   ],
-  "definition": "Proof Gradient is not an agent framework. It is a proof-carrying intelligence protocol for governed agent evolution.",
-  "final_language": {
-    "core_loop": "Job \u2192 Commit \u2192 Execute \u2192 Prove \u2192 Evolve \u2192 Network",
-    "definition": "Proof Gradient is not an agent framework. It is a proof-carrying intelligence protocol for governed agent evolution.",
-    "iconic_line": "Every agent acts once. The network learns forever.",
-    "public_line": "One agent proves. The network improves.",
-    "systems": [
-      [
-        "GoalOS",
-        "Direction",
-        "GoalOS gives the network direction."
-      ],
-      [
-        "PlanOS",
-        "Strategy",
-        "PlanOS gives it strategy."
-      ],
-      [
-        "SkillOS",
-        "Capability",
-        "SkillOS gives it capability."
-      ],
-      [
-        "Proof Gradient",
-        "Evolution",
-        "Proof Gradient gives it evolution."
-      ],
-      [
-        "Artifact Vault",
-        "Reusable Intelligence",
-        "The Artifact Vault stores reusable intelligence."
-      ],
-      [
-        "Run Fabric",
-        "Execution at Scale",
-        "The Run Fabric executes agents at scale."
-      ],
-      [
-        "Proof Ledger",
-        "Evidence",
-        "The Proof Ledger records what happened."
-      ],
-      [
-        "Selection Gate",
-        "Promotion",
-        "The Selection Gate promotes only what proved itself."
-      ]
-    ],
-    "tagline": "Aim. Act. Prove. Evolve."
-  },
-  "generated_at_utc": "2026-06-03T01:02:20Z",
+  "generated_at_utc": "2026-06-03T01:14:50Z",
   "goals_used": [
     {
-      "direction": "Every run begins from an explicit GoalOS aim, not a vague prompt.",
-      "measure": "goal completeness",
+      "direction": "Every run begins with explicit aim, success criteria, failure criteria, constraints, and policy boundaries.",
+      "measure": "commit completeness rate",
       "name": "Direction Integrity",
-      "threshold": ">= 99%",
-      "why": "No aim, no intelligence."
+      "system": "GoalOS",
+      "threshold": "\u2265 99%",
+      "why": "A network cannot evolve safely if it cannot state what it is trying to do."
     },
     {
-      "direction": "Every agent run binds to an executable PlanOS strategy.",
-      "measure": "plan fidelity",
+      "direction": "Every run resolves an inspectable plan graph before execution.",
+      "measure": "plan replayability score",
       "name": "Strategy Fidelity",
-      "threshold": ">= 95%",
-      "why": "Strategy makes capability steerable."
+      "system": "PlanOS",
+      "threshold": "\u2265 98%",
+      "why": "Strategy must be replayable so proof can explain why an outcome happened."
     },
     {
-      "direction": "Successful work should become a reusable SkillOS artifact.",
-      "measure": "skill reuse yield",
+      "direction": "Reusable procedures become signed, scoped, versioned capability artifacts.",
+      "measure": "verified skill reuse rate",
       "name": "Capability Reuse",
-      "threshold": ">= 50%",
-      "why": "The network compounds when capability is reusable."
+      "system": "SkillOS",
+      "threshold": "\u2265 85%",
+      "why": "The network compounds only when useful capability can be reused."
     },
     {
-      "direction": "Every execution emits replayable proof.",
-      "measure": "proof completeness",
+      "direction": "Every execution emits trace, score, cost, latency, policy decisions, errors, and credit assignment.",
+      "measure": "proof completeness rate",
       "name": "Proof Completeness",
-      "threshold": ">= 99%",
-      "why": "Without proof, learning is mythology."
+      "system": "Proof Ledger",
+      "threshold": "\u2265 99%",
+      "why": "Without proof, learning is mythology; with proof, learning becomes infrastructure."
     },
     {
-      "direction": "Only proven upgrades propagate.",
-      "measure": "unsafe propagation",
+      "direction": "Only upgrades that pass evaluation, negative controls, canary, monitoring, and rollback can propagate.",
+      "measure": "unsafe propagation rate",
       "name": "Selection Discipline",
+      "system": "Proof Gradient",
       "threshold": "0%",
-      "why": "The network must reject attractive but false improvement."
+      "why": "Evolution must be earned by proof, not by confidence or momentum."
     },
     {
-      "direction": "Every propagated upgrade is scoped, monitored, and rollbackable.",
-      "measure": "rollback coverage",
+      "direction": "Every propagated artifact has a rollback route, owner, scope, and monitoring plan.",
+      "measure": "rollback readiness score",
       "name": "Rollback Sovereignty",
-      "threshold": ">= 99%",
-      "why": "No rollback, no release."
+      "system": "Selection Gate",
+      "threshold": "\u2265 99%",
+      "why": "A network that cannot reverse upgrades cannot be trusted to evolve."
     },
     {
-      "direction": "Every proof gets a permanent page, JSON evidence, checksum, and command-center link.",
-      "measure": "archive completeness",
+      "direction": "Every proof has a permanent page, JSON evidence, checksum, and link back to the main command center.",
+      "measure": "archive completeness rate",
       "name": "Public Evidence",
+      "system": "Command Center",
       "threshold": "100%",
-      "why": "The public system must be inspectable by non-technical viewers."
+      "why": "The public proof system must remain inspectable, non-technical, and durable."
     }
   ],
-  "marker": "SKILLOS_PROOF_CARRYING_INTELLIGENCE_EXPANSION_V1",
+  "id": "proof-carrying-intelligence-agent-evolution-protocol",
+  "marker": "SKILLOS_AGENT_EVOLUTION_PROTOCOL_EXPANSION_V2_RECEIPT",
+  "metrics": {
+    "accepted_upgrades": 41,
+    "agents": 4096,
+    "archive_completeness_rate_percent": 100.0,
+    "candidate_upgrades": 168,
+    "internal_link_integrity_rate_percent": 100.0,
+    "negative_control_rejection_rate_percent": 100.0,
+    "proof_completeness_rate_percent": 99.8,
+    "proofs": 512,
+    "rollback_readiness_rate_percent": 99.1,
+    "root_contract_preserved": true,
+    "selection_discipline_rate_percent": 99.4
+  },
+  "mode": "additive-expansion-no-removal",
   "plans_used": [
     {
       "linked_goals": [
@@ -151,14 +123,16 @@
         "Proof Completeness"
       ],
       "name": "Commit Standardization Plan",
-      "risk_budget": "low",
+      "risk_budget": "No execution without a complete commit.",
       "steps": [
         "define goal",
-        "define success criteria",
+        "define success and failure",
         "bind constraints",
+        "attach evals",
         "set approval rules"
       ],
-      "strategy": "Convert each job into a structured commitment before any agent acts."
+      "strategy": "Turn every job into a structured commitment before execution.",
+      "system": "GoalOS + PlanOS"
     },
     {
       "linked_goals": [
@@ -166,14 +140,15 @@
         "Capability Reuse"
       ],
       "name": "Artifact Resolution Plan",
-      "risk_budget": "scoped runtime only",
+      "risk_budget": "No unscoped artifact enters runtime.",
       "steps": [
-        "query vault",
-        "select artifacts",
-        "bind versions",
-        "emit execution bundle"
+        "query artifact vault",
+        "select versions",
+        "scope permissions",
+        "create execution bundle"
       ],
-      "strategy": "Resolve active goals, plans, skills, tools, policies, evals, and context for each run."
+      "strategy": "Resolve the exact goals, plans, skills, tools, policies, evals, and context needed for each run.",
+      "system": "Artifact Vault + Run Fabric"
     },
     {
       "linked_goals": [
@@ -181,14 +156,16 @@
         "Public Evidence"
       ],
       "name": "Proof Ledger Plan",
-      "risk_budget": "no silent runs",
+      "risk_budget": "No proof means no learning claim.",
       "steps": [
-        "capture trace",
-        "capture score",
-        "capture policy decisions",
-        "capture attribution"
+        "record trace",
+        "score outcome",
+        "record tool history",
+        "record costs",
+        "assign credit"
       ],
-      "strategy": "Record every execution as append-only evidence."
+      "strategy": "Capture every execution as append-only evidence.",
+      "system": "Run Fabric + Proof Ledger"
     },
     {
       "linked_goals": [
@@ -196,7 +173,7 @@
         "Rollback Sovereignty"
       ],
       "name": "Evolution Gate Plan",
-      "risk_budget": "zero unsafe propagation",
+      "risk_budget": "Zero unsafe propagation.",
       "steps": [
         "propose",
         "evaluate",
@@ -206,179 +183,236 @@
         "monitor",
         "rollback"
       ],
-      "strategy": "Turn proof into upgrades only after evaluation, approval, canary, monitoring, and rollback."
+      "strategy": "Convert proof into upgrades only through evaluation, approval, canary, monitoring, and rollback.",
+      "system": "Proof Gradient"
     },
     {
       "linked_goals": [
-        "Capability Reuse",
-        "Public Evidence"
+        "Selection Discipline",
+        "Proof Completeness"
       ],
-      "name": "Artifact Vault Expansion Plan",
-      "risk_budget": "immutable releases only",
+      "name": "Negative-Control Discipline Plan",
+      "risk_budget": "100% negative-control rejection.",
       "steps": [
-        "version",
-        "scope",
-        "sign",
-        "index",
-        "publish"
+        "generate false improvement",
+        "score against holdout",
+        "run adversarial eval",
+        "reject or quarantine"
       ],
-      "strategy": "Store every reusable improvement as a versioned, scoped, signed, auditable artifact."
+      "strategy": "Inject attractive but false upgrades to test that the Selection Gate rejects proxy games.",
+      "system": "Proof Gradient + Red Team"
     },
     {
       "linked_goals": [
         "Public Evidence",
         "Direction Integrity"
       ],
-      "name": "Command Center Archive Plan",
-      "risk_budget": "root remains command center",
+      "name": "Proof Archive Plan",
+      "risk_budget": "No missing links in public proof pages.",
       "steps": [
-        "build pages",
-        "verify links",
-        "deploy artifact",
-        "live check root"
+        "render proof page",
+        "write evidence JSON",
+        "write checksum",
+        "verify internal links",
+        "update registry"
       ],
-      "strategy": "Expose the protocol through permanent pages, JSON receipts, docs, badges, and command-center links."
+      "strategy": "Ensure every proof has a durable page, JSON evidence, checksum, and command-center backlink.",
+      "system": "Command Center"
     },
     {
       "linked_goals": [
-        "Selection Discipline",
+        "Public Evidence",
         "Rollback Sovereignty"
       ],
-      "name": "Negative-Control Discipline Plan",
-      "risk_budget": "zero negative-control propagation",
+      "name": "Additive Expansion Plan",
+      "risk_budget": "No destructive removal unless absolutely necessary.",
       "steps": [
-        "generate controls",
-        "evaluate controls",
-        "reject false uplift",
-        "record rejection"
+        "copy existing site",
+        "add new pages",
+        "merge registry",
+        "verify root contract",
+        "deploy artifact"
       ],
-      "strategy": "Reject proxy games, unsafe shortcuts, unverifiable claims, and upgrades without rollback."
+      "strategy": "Expand SkillOS without deleting existing proofs, receipts, reports, badges, workflows, or pages.",
+      "system": "Repository Governance"
     }
   ],
-  "proof_standard": [
-    "artifact evidence",
-    "run evidence",
-    "proof ledger evidence",
-    "selection evidence",
-    "rollback evidence",
-    "security evidence",
-    "clear claim boundary"
-  ],
-  "public_boundary": "Proof Gradient is a proof-carrying intelligence protocol for governed agent evolution. It does not claim achieved superintelligence, Kardashev Type II capability, guaranteed wealth, or autonomous self-improvement without controls.",
-  "schema": "skillos.proof_carrying_intelligence.expansion.v1",
+  "proof_archive_standard": {
+    "required_files": [
+      "permanent proof page",
+      "evidence JSON",
+      "checksum",
+      "link back to main command center"
+    ],
+    "required_page_sections": [
+      "artifact evidence",
+      "run evidence",
+      "proof ledger evidence",
+      "selection evidence",
+      "rollback evidence",
+      "security evidence",
+      "clear claim boundary"
+    ]
+  },
+  "protocol": "Aim. Act. Prove. Evolve.",
+  "proved": true,
+  "public_boundary": "This expansion is a protocol and proof-archive infrastructure update. It does not claim achieved superintelligence, Kardashev Type II civilization, live revenue, investment returns, guaranteed wealth, financial advice, legal advice, medical advice, policy advice, or token advice.",
+  "public_messaging": {
+    "do_not_say": [
+      "Every job magically makes the agent smarter.",
+      "One agent learns and all agents automatically level up.",
+      "We have achieved Kardashev Type II capability.",
+      "The best-sounding upgrade wins.",
+      "Autonomous self-improvement without controls."
+    ],
+    "do_say": [
+      "Every job leaves proof. Every proof compounds intelligence.",
+      "One agent proves. The network improves.",
+      "Only proven intelligence propagates.",
+      "No proof, no evolution. No eval, no propagation. No rollback, no release.",
+      "Kardashev-scale ambition is a strategic scenario."
+    ]
+  },
+  "schema": "skillos.proof_carrying_intelligence.expansion.v2.receipt",
   "skills_used": [
     {
-      "input_signal": "job request, constraints, policy, budget",
-      "layer": "Aim / GoalOS",
+      "input_signal": "job request, policy, risk, success criteria",
+      "layer": "Commit",
       "name": "Commit Compiler",
       "output": "commit artifact",
-      "purpose": "Turns a job into a structured commitment with goal, success criteria, risk, budget, approvals, and evals.",
+      "purpose": "Turns a job into a structured commitment with goals, constraints, budget, evals, and approval rules.",
       "verifier": "Commit Completeness Court"
     },
     {
-      "input_signal": "commit artifact and plan artifacts",
-      "layer": "Act / PlanOS",
+      "input_signal": "goal, success criteria, constraints",
+      "layer": "GoalOS",
+      "name": "Goal Artifact Curator",
+      "output": "Aim Artifact",
+      "purpose": "Stores, versions, scopes, and signs direction artifacts.",
+      "verifier": "Direction Integrity Court"
+    },
+    {
+      "input_signal": "commit artifact, available strategies, constraints",
+      "layer": "PlanOS",
       "name": "Plan Graph Resolver",
-      "output": "execution plan graph",
-      "purpose": "Resolves the strategy graph needed for execution.",
+      "output": "Strategy Artifact",
+      "purpose": "Builds replayable plan graphs for agent execution.",
       "verifier": "Plan Fidelity Court"
     },
     {
-      "input_signal": "commit, plan graph, skill registry",
-      "layer": "Act / SkillOS",
+      "input_signal": "plan graph, capability requirement, skill registry",
+      "layer": "SkillOS",
       "name": "Skill Resolver",
-      "output": "skill execution bundle",
-      "purpose": "Selects reusable skills that match the commitment and plan.",
-      "verifier": "Capability Fit Court"
+      "output": "Capability Artifact bundle",
+      "purpose": "Selects verified skills needed by the execution bundle.",
+      "verifier": "Skill Validity Court"
     },
     {
-      "input_signal": "accepted artifacts and release metadata",
-      "layer": "Artifact Vault",
-      "name": "Artifact Vault Curator",
-      "output": "versioned artifact entry",
-      "purpose": "Stores reusable goals, plans, skills, policies, evals, tools, and context recipes.",
-      "verifier": "Artifact Integrity Court"
+      "input_signal": "policy, role, route, tool permissions",
+      "layer": "Guardrails",
+      "name": "Policy Binder",
+      "output": "Guardrail Artifact bundle",
+      "purpose": "Binds permissions, risk limits, rollback rules, and human approvals to runtime.",
+      "verifier": "Policy Boundary Court"
     },
     {
-      "input_signal": "execution bundle, tools, context, approvals",
+      "input_signal": "execution bundle",
       "layer": "Run Fabric",
       "name": "Run Fabric Executor",
-      "output": "run result and telemetry",
-      "purpose": "Executes agents at scale with stateless artifact resolution.",
+      "output": "run result and proof seed",
+      "purpose": "Executes agents at scale with stateless runtime resolution and proof emission.",
       "verifier": "Runtime Integrity Court"
     },
     {
-      "input_signal": "execution telemetry and eval output",
+      "input_signal": "execution telemetry",
       "layer": "Proof Ledger",
       "name": "Proof Trace Capture",
-      "output": "proof trace",
-      "purpose": "Records trace, score, feedback, tool history, policy decisions, cost, latency, errors, and attribution.",
+      "output": "append-only proof trace",
+      "purpose": "Records trace, score, feedback, costs, latency, errors, policy decisions, and tool history.",
       "verifier": "Replay Court"
     },
     {
-      "input_signal": "proof trace and outcome score",
+      "input_signal": "proof trace, evaluator result, human feedback",
       "layer": "Proof Ledger",
       "name": "Credit Assignment",
-      "output": "attribution map",
+      "output": "artifact attribution map",
       "purpose": "Identifies which artifacts contributed to success, failure, cost, or risk.",
       "verifier": "Causal Attribution Court"
     },
     {
-      "input_signal": "proof trace, attribution, failure modes",
+      "input_signal": "proof trace, failure modes, attribution map",
       "layer": "Proof Gradient",
       "name": "Upgrade Proposal Generator",
       "output": "upgrade proposal",
-      "purpose": "Turns proof into candidate improvements to goals, plans, skills, tools, policies, evals, context, or routing.",
+      "purpose": "Turns proof and credit assignment into candidate improvements.",
       "verifier": "Proposal Quality Court"
     },
     {
-      "input_signal": "upgrade proposal and verification bundle",
+      "input_signal": "upgrade proposal, eval results, risk score",
       "layer": "Selection Gate",
       "name": "Selection Gate Judge",
-      "output": "promote / reject / revise decision",
-      "purpose": "Promotes only upgrades that proved themselves under evaluation, approval, canary, monitoring, rollback, and scope control.",
+      "output": "promote / revise / reject decision",
+      "purpose": "Promotes only upgrades that passed evaluation, approval, canary, monitoring, scope, and rollback.",
       "verifier": "Evolution Gate Court"
     },
     {
       "input_signal": "approved upgrade, scope, monitoring plan",
-      "layer": "Selection Gate",
+      "layer": "Safety",
       "name": "Canary Release Manager",
       "output": "canary verdict",
-      "purpose": "Tests upgrades on limited scope before network-wide propagation.",
+      "purpose": "Tests approved upgrades in limited scope before broader propagation.",
       "verifier": "Canary Court"
     },
     {
-      "input_signal": "upgrade diff, affected agents, policy scope",
+      "input_signal": "artifact diff, affected agents, risk register",
       "layer": "Safety",
       "name": "Rollback Planner",
       "output": "rollback plan",
-      "purpose": "Ensures every propagated upgrade can be reverted or contained.",
+      "purpose": "Ensures every propagated artifact can be reversed or contained.",
       "verifier": "Rollback Court"
     },
     {
-      "input_signal": "benchmark weaknesses, proxy metrics, shortcut library",
+      "input_signal": "benchmark, proxy metrics, known shortcuts",
       "layer": "Adversarial Proof",
       "name": "Negative-Control Generator",
       "output": "negative-control candidates",
-      "purpose": "Creates attractive but false upgrades to test whether Selection Gate rejects proxy games.",
+      "purpose": "Creates attractive false improvements to test selection discipline.",
       "verifier": "Adversarial Court"
     },
     {
-      "input_signal": "proof receipt, report, artifact metadata",
-      "layer": "Public Evidence",
-      "name": "Archive Publisher",
-      "output": "proof archive bundle",
-      "purpose": "Publishes permanent proof pages, evidence JSON, badges, docs, checksums, and command-center links.",
-      "verifier": "Archive Completeness Court"
+      "input_signal": "released goals, plans, skills, tools, policies, evals",
+      "layer": "Artifact Vault",
+      "name": "Artifact Vault Curator",
+      "output": "versioned artifact vault index",
+      "purpose": "Stores reusable intelligence as immutable, versioned, scoped, signed, auditable artifacts.",
+      "verifier": "Artifact Integrity Court"
     },
     {
-      "input_signal": "site, proof registry, manifest",
-      "layer": "Public Evidence",
+      "input_signal": "generated pages, receipts, registry, source protocol",
+      "layer": "Publication",
       "name": "Command Center Integrator",
-      "output": "updated public command center",
-      "purpose": "Adds Proof-Carrying Intelligence pages without replacing existing proofs or the root command center.",
-      "verifier": "Root Contract Verifier"
+      "output": "public command center update",
+      "purpose": "Adds protocol pages, proof archive entries, manifests, badges, and backlinks without removing existing evidence.",
+      "verifier": "Site Integration Verifier"
+    },
+    {
+      "input_signal": "source protocol, goals, plans, skills, metrics",
+      "layer": "Communication",
+      "name": "Executive Evidence Renderer",
+      "output": "executive proof webpage",
+      "purpose": "Explains Proof-Carrying Intelligence to non-technical viewers with cards, tables, graphs, and safe claims.",
+      "verifier": "Public Messaging Court"
     }
+  ],
+  "systems": [
+    "GoalOS gives the network direction.",
+    "PlanOS gives it strategy.",
+    "SkillOS gives it capability.",
+    "The Proof Gradient gives it evolution.",
+    "The Artifact Vault stores reusable intelligence.",
+    "The Run Fabric executes agents at scale.",
+    "The Proof Ledger records what happened.",
+    "The Selection Gate promotes only what proved itself."
   ],
   "title": "Proof-Carrying Intelligence \u00b7 Agent Evolution Protocol"
 }

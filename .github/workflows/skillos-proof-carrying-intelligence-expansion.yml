@@ -1,0 +1,83 @@
+name: SkillOS Proof-Carrying Intelligence Expansion
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_to_repo:
+        description: "Commit generated additive site/docs/data/badge outputs"
+        type: boolean
+        required: false
+        default: true
+      deploy_pages:
+        description: "Deploy generated GitHub Pages artifact"
+        type: boolean
+        required: false
+        default: true
+      verify_live:
+        description: "Verify live Pages root after deployment"
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: skillos-pages
+  cancel-in-progress: false
+
+jobs:
+  expand:
+    name: Expand SkillOS to Proof-Carrying Intelligence
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Build additive Command Center expansion
+        run: python scripts/build_skillos_proof_carrying_intelligence_expansion.py --out dist
+      - name: Verify generated expansion
+        run: python scripts/verify_skillos_proof_carrying_intelligence_expansion.py --out dist
+      - name: Commit generated outputs without deleting existing site
+        if: ${{ inputs.publish_to_repo }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          mkdir -p site data docs badges
+          cp -R dist/. site/
+          cp dist/data/proof-carrying-intelligence-agent-evolution-protocol.json data/proof-carrying-intelligence-agent-evolution-protocol.json
+          cp dist/docs/PROOF_CARRYING_INTELLIGENCE_AGENT_EVOLUTION_PROTOCOL.md docs/PROOF_CARRYING_INTELLIGENCE_AGENT_EVOLUTION_PROTOCOL.md
+          cp dist/badges/proof-carrying-intelligence.svg badges/proof-carrying-intelligence.svg
+          git add site data/proof-carrying-intelligence-agent-evolution-protocol.json docs/PROOF_CARRYING_INTELLIGENCE_AGENT_EVOLUTION_PROTOCOL.md badges/proof-carrying-intelligence.svg data/proof_carrying_intelligence_expansion_source.json scripts/build_skillos_proof_carrying_intelligence_expansion.py scripts/verify_skillos_proof_carrying_intelligence_expansion.py scripts/verify_live_skillos_proof_carrying_intelligence_expansion.py .github/workflows/skillos-proof-carrying-intelligence-expansion.yml docs/SKILLOS_PROOF_CARRYING_INTELLIGENCE_EXPANSION.md
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Expand SkillOS to proof-carrying intelligence"
+            git push
+          else
+            echo "No generated changes to commit."
+          fi
+      - name: Configure GitHub Pages
+        if: ${{ inputs.deploy_pages }}
+        uses: actions/configure-pages@v5
+      - name: Upload GitHub Pages artifact
+        if: ${{ inputs.deploy_pages }}
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+      - name: Deploy GitHub Pages
+        id: deployment
+        if: ${{ inputs.deploy_pages }}
+        uses: actions/deploy-pages@v4
+      - name: Verify live site
+        if: ${{ inputs.verify_live }}
+        run: python scripts/verify_live_skillos_proof_carrying_intelligence_expansion.py

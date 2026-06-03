@@ -1,6 +1,6 @@
-# SkillOS Sovereign Command Center v5
+# SkillOS Sovereign Command Center v5.1
 
-Generated: `2026-06-01T16:17:37Z`
+Generated: `2026-06-01T17:34:33Z`
 
 This is the canonical public SkillOS Command Center publisher.
 
@@ -8,7 +8,7 @@ It scans proof receipts, workflows, reports, badges, and Skills Used metadata; r
 
 ## Canonical marker
 
-`SKILLOS_COMMAND_CENTER_V5_CANONICAL_ROOT`
+`SKILLOS_COMMAND_CENTER_V5_1_CANONICAL_ROOT`
 
 ## Public thesis
 

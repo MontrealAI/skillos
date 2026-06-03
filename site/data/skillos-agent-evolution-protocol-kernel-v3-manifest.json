@@ -1,0 +1,7 @@
+{
+  "marker": "SKILLOS_AGENT_EVOLUTION_PROTOCOL_KERNEL_V3",
+  "mode": "additive-expansion-no-removal",
+  "proofs_indexed": 80,
+  "root_contract": "The root is the Public SkillOS Command Center. Protocols and proofs are rooms. A room must never replace the lobby.",
+  "schema": "skillos.agent_evolution_protocol.kernel.v3"
+}

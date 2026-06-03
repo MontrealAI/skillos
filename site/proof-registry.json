@@ -1,6 +1,16 @@
 {
   "proofs": [
     {
+      "badge": "badges/agent-evolution-protocol.svg",
+      "doc": "docs/SKILLOS_AGENT_EVOLUTION_PROTOCOL_KERNEL_V3.md",
+      "href": "agent-evolution-protocol.html",
+      "id": "agent-evolution-protocol-kernel-v3",
+      "json": "data/proof-carrying-intelligence-agent-evolution-protocol.json",
+      "proved": true,
+      "status": "ADDITIVE_EXPANSION_ACTIVE",
+      "title": "SkillOS Agent Evolution Protocol Kernel v3"
+    },
+    {
       "badge": "badges/proof-carrying-intelligence.svg",
       "doc": "docs/PROOF_CARRYING_INTELLIGENCE_AGENT_EVOLUTION_PROTOCOL.md",
       "href": "proof-carrying-intelligence.html",
@@ -940,5 +950,6 @@
       "value_capture_rate_percent": 97.6124
     }
   ],
-  "updated_at_utc": "2026-06-03T02:23:28Z"
+  "updated_at_utc": "2026-06-03T02:23:28Z",
+  "updated_by": "SKILLOS_AGENT_EVOLUTION_PROTOCOL_KERNEL_V3"
 }

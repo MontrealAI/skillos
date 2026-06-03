@@ -2,4 +2,4 @@
 
 Aim. Act. Prove. Evolve.
 
-Every job leaves proof. Every proof can compound intelligence.
+The root remains the Public SkillOS Command Center. This expansion adds protocol rooms without deleting existing proofs.

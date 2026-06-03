@@ -1,1 +1,1 @@
-skillos-agent-evolution-protocol-expansion-v2
+agent-evolution-protocol-kernel-v3

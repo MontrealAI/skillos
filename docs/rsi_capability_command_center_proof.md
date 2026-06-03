@@ -176,10 +176,10 @@ training failures → adversarial coordination lessons → candidate capital-to-
 - **proof version:** `v16.0`
 - **workflow:** `Autonomous RSI Adversarial Capability Command Center Proof`
 - **repository:** `MontrealAI/skillos`
-- **commit sha:** `44e200135dc60cae98dc329612d30c49e21a5d76`
-- **run id:** `26830956659`
-- **run url:** `https://github.com/MontrealAI/skillos/actions/runs/26830956659`
-- **generated at utc:** `2026-06-02T15:43:38Z`
+- **commit sha:** `ff72e18206d8ccf98aec99d322cc583f9ae9c45b`
+- **run id:** `26896481183`
+- **run url:** `https://github.com/MontrealAI/skillos/actions/runs/26896481183`
+- **generated at utc:** `2026-06-03T15:53:24Z`
 - **benchmark seed:** `20260530`
 
 ## Boundary

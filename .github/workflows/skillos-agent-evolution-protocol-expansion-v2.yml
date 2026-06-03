@@ -1,0 +1,87 @@
+name: SkillOS Agent Evolution Protocol Expansion v2
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_to_repo:
+        description: "Commit generated additive expansion outputs"
+        type: boolean
+        required: false
+        default: true
+      deploy_pages:
+        description: "Deploy generated Pages artifact"
+        type: boolean
+        required: false
+        default: true
+      verify_live:
+        description: "Verify live Pages after deployment"
+        type: boolean
+        required: false
+        default: false
+  push:
+    branches: [ main ]
+    paths:
+      - "data/proof_carrying_intelligence_expansion_v2_source.json"
+      - "scripts/build_skillos_agent_evolution_protocol_expansion_v2.py"
+      - "scripts/verify_skillos_agent_evolution_protocol_expansion_v2.py"
+      - ".github/workflows/skillos-agent-evolution-protocol-expansion-v2.yml"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: skillos-pages
+  cancel-in-progress: false
+
+jobs:
+  expansion:
+    name: Build and publish additive SkillOS Agent Evolution Protocol expansion
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Build generated site artifact
+        run: python scripts/build_skillos_agent_evolution_protocol_expansion_v2.py --out dist
+      - name: Verify generated expansion
+        run: python scripts/verify_skillos_agent_evolution_protocol_expansion_v2.py --out dist
+      - name: Commit generated additive outputs
+        if: ${{ inputs.publish_to_repo }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          mkdir -p site
+          cp -R dist/* site/
+          git add site data/proof_carrying_intelligence_expansion_v2_source.json
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Expand SkillOS to proof-carrying intelligence protocol"
+            git push
+          else
+            echo "No generated changes to commit."
+          fi
+      - name: Configure GitHub Pages
+        if: ${{ inputs.deploy_pages }}
+        uses: actions/configure-pages@v5
+      - name: Upload GitHub Pages artifact
+        if: ${{ inputs.deploy_pages }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - name: Deploy GitHub Pages
+        id: deployment
+        if: ${{ inputs.deploy_pages }}
+        uses: actions/deploy-pages@v4
+      - name: Verify live expansion
+        if: ${{ inputs.verify_live }}
+        run: python scripts/verify_live_skillos_agent_evolution_protocol_expansion_v2.py

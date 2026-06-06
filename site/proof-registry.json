@@ -1,5 +1,16 @@
 [
   {
+    "agents": 262144,
+    "holdout_value_capture": 0.9990703123366625,
+    "href": "./rsi-ai-first-blockchain-capital-machine-proof.html",
+    "roles": 8192,
+    "slug": "rsi-ai-first-blockchain-capital-machine-proof",
+    "status": "passing",
+    "title": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
+    "updated_at": "2026-06-06T01:24:48Z",
+    "workflow": ".github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml"
+  },
+  {
     "agents": 524288,
     "domain": "AI-first governance",
     "holdout_value_capture": 0.9993828786644704,
@@ -10,17 +21,6 @@
     "title": "Autonomous RSI AI-First Governance Capital Engine Proof",
     "updated_at": "2026-06-06T01:20:13Z",
     "workflow": ".github/workflows/autonomous-rsi-ai-first-governance-capital-engine-proof.yml"
-  },
-  {
-    "agents": 262144,
-    "holdout_value_capture": 0.9990703123366625,
-    "href": "./rsi-ai-first-blockchain-capital-machine-proof.html",
-    "roles": 8192,
-    "slug": "rsi-ai-first-blockchain-capital-machine-proof",
-    "status": "passing",
-    "title": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
-    "updated_at": "2026-06-05T17:25:39Z",
-    "workflow": ".github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml"
   },
   {
     "coordination_quality": 0.9321799829498979,

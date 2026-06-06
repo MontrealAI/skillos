@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-06-05T15:23:48Z",
+  "generated_at_utc": "2026-06-06T14:51:31Z",
   "status": "PASSED_AUTONOMOUS_RSI_CAPITAL_TO_CAPABILITY_COMMAND_CENTER_V17_PROOF",
   "proved": true,
   "proof_type": "adversarial capital-to-capability command center proof with recursive self-improvement and large-scale specialist-agent coordination",
@@ -191,10 +191,10 @@
   },
   "proof_receipts": {
     "repository": "MontrealAI/skillos",
-    "commit_sha": "653e9a31a8552a839962874da82f7b9d480f38c2",
+    "commit_sha": "9cfceea3ecb31ef7b5393629f5fb78a499aa4375",
     "workflow": "Autonomous RSI Capital-to-Capability Command Center v17 Proof",
-    "run_id": "27023722153",
-    "run_url": "https://github.com/MontrealAI/skillos/actions/runs/27023722153",
+    "run_id": "27065421305",
+    "run_url": "https://github.com/MontrealAI/skillos/actions/runs/27065421305",
     "ref": "main"
   },
   "train_count": 640,

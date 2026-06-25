@@ -7,52 +7,52 @@
   },
   "baselines": [
     {
-      "avg_quality": 40.04,
+      "avg_quality": 40.06,
       "jobs": 1280,
       "mode": "single",
-      "risk_breach_rate": 0.0148,
-      "success_rate": 0.0336,
-      "value_capture_rate": 0.2124,
-      "value_captured": 1820849.61
+      "risk_breach_rate": 0.0125,
+      "success_rate": 0.0383,
+      "value_capture_rate": 0.2127,
+      "value_captured": 1823195.6
     },
     {
-      "avg_quality": 38.55,
+      "avg_quality": 38.46,
       "jobs": 1280,
       "mode": "pool",
-      "risk_breach_rate": 0.0164,
-      "success_rate": 0.0258,
-      "value_capture_rate": 0.1993,
-      "value_captured": 1708713.07
+      "risk_breach_rate": 0.0203,
+      "success_rate": 0.0328,
+      "value_capture_rate": 0.1991,
+      "value_captured": 1706854.54
     },
     {
       "avg_quality": 46.32,
       "jobs": 1280,
       "mode": "static",
       "risk_breach_rate": 0.0,
-      "success_rate": 0.168,
-      "value_capture_rate": 0.2619,
-      "value_captured": 2245741.72
+      "success_rate": 0.1609,
+      "value_capture_rate": 0.2615,
+      "value_captured": 2241513.03
     },
     {
-      "avg_quality": 40.72,
+      "avg_quality": 40.68,
       "jobs": 1280,
       "mode": "unverified",
       "risk_breach_rate": 0.0,
-      "success_rate": 0.0375,
-      "value_capture_rate": 0.2113,
-      "value_captured": 1811413.08
+      "success_rate": 0.0406,
+      "value_capture_rate": 0.2108,
+      "value_captured": 1807226.65
     },
     {
-      "avg_quality": 51.05,
+      "avg_quality": 51.21,
       "jobs": 1280,
       "mode": "proof_gradient",
       "risk_breach_rate": 0.0,
-      "success_rate": 0.3461,
-      "value_capture_rate": 0.3077,
-      "value_captured": 2638417.47
+      "success_rate": 0.3781,
+      "value_capture_rate": 0.3092,
+      "value_captured": 2651081.84
     }
   ],
-  "created_at": "2026-06-24T06:40:00Z",
+  "created_at": "2026-06-25T06:40:42Z",
   "decision_sample": [
     {
       "candidate_id": "candidate-r01-0056",
@@ -85,37 +85,37 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "compliance evidence",
-      "gradient": 5.4e-05,
+      "gradient": 0.006056,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
-      "success_uplift": 0.0,
+      "success_uplift": 0.0157,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0002
+      "value_capture_uplift": 0.0001
     },
     {
       "candidate_id": "candidate-r01-0028",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "market intelligence",
-      "gradient": 0.006083,
-      "risk_delta": 0.0,
-      "sample_size": 64,
-      "source": "distilled_trace",
-      "success_uplift": 0.0157,
-      "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0002
-    },
-    {
-      "candidate_id": "candidate-r01-0032",
-      "confidence": 0.8,
-      "decision": "rejected",
-      "domain": "compliance evidence",
-      "gradient": 0.000571,
+      "gradient": 0.000109,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
       "success_uplift": 0.0,
+      "transfer_uplift": 0.0,
+      "value_capture_uplift": 0.0004
+    },
+    {
+      "candidate_id": "candidate-r01-0032",
+      "confidence": 0.8,
+      "decision": "accepted",
+      "domain": "compliance evidence",
+      "gradient": 0.0066,
+      "risk_delta": 0.0,
+      "sample_size": 64,
+      "source": "distilled_trace",
+      "success_uplift": 0.0157,
       "transfer_uplift": 0.0,
       "value_capture_uplift": 0.0021
     },
@@ -124,39 +124,39 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "support operations",
-      "gradient": 0.00049,
+      "gradient": 0.003309,
+      "risk_delta": 0.0,
+      "sample_size": 64,
+      "source": "distilled_trace",
+      "success_uplift": 0.0,
+      "transfer_uplift": 0.0209,
+      "value_capture_uplift": 0.0011
+    },
+    {
+      "candidate_id": "candidate-r01-0054",
+      "confidence": 0.8,
+      "decision": "rejected",
+      "domain": "support operations",
+      "gradient": 0.000245,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0018
-    },
-    {
-      "candidate_id": "candidate-r01-0054",
-      "confidence": 0.8,
-      "decision": "accepted",
-      "domain": "support operations",
-      "gradient": 0.006426,
-      "risk_delta": 0.0,
-      "sample_size": 64,
-      "source": "distilled_trace",
-      "success_uplift": 0.0156,
-      "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0016
+      "value_capture_uplift": 0.0009
     },
     {
       "candidate_id": "candidate-r01-0034",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "governance",
-      "gradient": 0.006235,
+      "gradient": 0.000272,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
-      "success_uplift": 0.0156,
+      "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0009
+      "value_capture_uplift": 0.001
     },
     {
       "candidate_id": "candidate-r01-0038-poison",
@@ -174,66 +174,66 @@
     {
       "candidate_id": "candidate-r01-0044",
       "confidence": 0.8,
-      "decision": "rejected",
+      "decision": "accepted",
       "domain": "research operations",
-      "gradient": 0.000653,
+      "gradient": 0.006616,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
-      "success_uplift": 0.0,
+      "success_uplift": 0.0156,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0024
+      "value_capture_uplift": 0.0023
     },
     {
       "candidate_id": "candidate-r01-0057-poison",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "security",
-      "gradient": 0.000462,
+      "gradient": 0.000326,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0017
+      "value_capture_uplift": 0.0012
     },
     {
       "candidate_id": "candidate-r01-0076-poison",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "research operations",
-      "gradient": 0.000354,
+      "gradient": 0.006208,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
-      "success_uplift": 0.0,
+      "success_uplift": 0.0156,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0013
+      "value_capture_uplift": 0.0008
     },
     {
       "candidate_id": "candidate-r01-0024",
       "confidence": 0.8,
-      "decision": "accepted",
+      "decision": "rejected",
       "domain": "software delivery",
-      "gradient": 0.018526,
+      "gradient": 0.003322,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
-      "success_uplift": 0.0313,
-      "transfer_uplift": 0.0416,
-      "value_capture_uplift": 0.0019
+      "success_uplift": 0.0,
+      "transfer_uplift": 0.0208,
+      "value_capture_uplift": 0.0012
     },
     {
       "candidate_id": "candidate-r01-0008",
       "confidence": 0.8,
       "decision": "accepted",
       "domain": "software delivery",
-      "gradient": 0.006562,
+      "gradient": 0.009595,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
-      "success_uplift": 0.0156,
-      "transfer_uplift": 0.0,
+      "success_uplift": 0.0157,
+      "transfer_uplift": 0.0208,
       "value_capture_uplift": 0.0021
     },
     {
@@ -254,26 +254,26 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "blockchain coordination",
-      "gradient": 0.000245,
+      "gradient": 0.000136,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0009
+      "value_capture_uplift": 0.0005
     },
     {
       "candidate_id": "candidate-r01-0016",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "market intelligence",
-      "gradient": 8.2e-05,
+      "gradient": 5.4e-05,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0003
+      "value_capture_uplift": 0.0002
     },
     {
       "candidate_id": "candidate-r01-0074",
@@ -293,24 +293,24 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "enterprise strategy",
-      "gradient": 5.4e-05,
+      "gradient": 0.0,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0002
+      "value_capture_uplift": 0.0
     },
     {
       "candidate_id": "candidate-r01-0078",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "security",
-      "gradient": 0.00599,
+      "gradient": 0.0,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
-      "success_uplift": 0.0156,
+      "success_uplift": 0.0,
       "transfer_uplift": 0.0,
       "value_capture_uplift": 0.0
     },
@@ -332,13 +332,13 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "enterprise strategy",
-      "gradient": 0.000272,
+      "gradient": 0.006208,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
-      "success_uplift": 0.0,
+      "success_uplift": 0.0156,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.001
+      "value_capture_uplift": 0.0008
     },
     {
       "candidate_id": "candidate-r02-0004",
@@ -371,13 +371,13 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "blockchain coordination",
-      "gradient": 0.000245,
+      "gradient": 0.000163,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0009
+      "value_capture_uplift": 0.0006
     },
     {
       "candidate_id": "candidate-r02-0042",
@@ -397,13 +397,13 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "compliance evidence",
-      "gradient": 0.003173,
+      "gradient": 0.000109,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
       "success_uplift": 0.0,
-      "transfer_uplift": 0.0209,
-      "value_capture_uplift": 0.0006
+      "transfer_uplift": 0.0,
+      "value_capture_uplift": 0.0004
     },
     {
       "candidate_id": "candidate-r02-0066",
@@ -423,19 +423,6 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "governance",
-      "gradient": 2.7e-05,
-      "risk_delta": 0.0,
-      "sample_size": 64,
-      "source": "distilled_trace",
-      "success_uplift": 0.0,
-      "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0001
-    },
-    {
-      "candidate_id": "candidate-r02-0028",
-      "confidence": 0.8,
-      "decision": "rejected",
-      "domain": "support operations",
       "gradient": 0.0,
       "risk_delta": 0.0,
       "sample_size": 64,
@@ -445,69 +432,82 @@
       "value_capture_uplift": 0.0
     },
     {
+      "candidate_id": "candidate-r02-0028",
+      "confidence": 0.8,
+      "decision": "rejected",
+      "domain": "support operations",
+      "gradient": 2.7e-05,
+      "risk_delta": 0.0,
+      "sample_size": 64,
+      "source": "distilled_trace",
+      "success_uplift": 0.0,
+      "transfer_uplift": 0.0,
+      "value_capture_uplift": 0.0001
+    },
+    {
       "candidate_id": "candidate-r02-0000-poison",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "research operations",
-      "gradient": 0.00019,
+      "gradient": 0.000136,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0007
+      "value_capture_uplift": 0.0005
     },
     {
       "candidate_id": "candidate-r02-0014",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "support operations",
-      "gradient": 0.000136,
+      "gradient": 0.006099,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
-      "success_uplift": 0.0,
+      "success_uplift": 0.0156,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0005
+      "value_capture_uplift": 0.0004
     },
     {
       "candidate_id": "candidate-r02-0019-poison",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "market intelligence",
-      "gradient": 0.016091,
+      "gradient": 0.015982,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0312,
       "transfer_uplift": 0.0208,
-      "value_capture_uplift": 0.0041
+      "value_capture_uplift": 0.0037
     },
     {
       "candidate_id": "candidate-r02-0040",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "enterprise strategy",
-      "gradient": 0.000272,
+      "gradient": 0.000218,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.001
+      "value_capture_uplift": 0.0008
     },
     {
       "candidate_id": "candidate-r02-0010",
       "confidence": 0.8,
       "decision": "accepted",
       "domain": "support operations",
-      "gradient": 0.006534,
+      "gradient": 0.006453,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
-      "success_uplift": 0.0,
-      "transfer_uplift": 0.0416,
-      "value_capture_uplift": 0.002
+      "success_uplift": 0.0156,
+      "transfer_uplift": 0.0,
+      "value_capture_uplift": 0.0017
     },
     {
       "candidate_id": "candidate-r02-0026",
@@ -538,28 +538,28 @@
     {
       "candidate_id": "candidate-r02-0048",
       "confidence": 0.8,
-      "decision": "rejected",
+      "decision": "accepted",
       "domain": "blockchain coordination",
-      "gradient": 0.003485,
+      "gradient": 0.015453,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
-      "success_uplift": 0.0,
-      "transfer_uplift": 0.0208,
-      "value_capture_uplift": 0.0018
+      "success_uplift": 0.0156,
+      "transfer_uplift": 0.0625,
+      "value_capture_uplift": 0.0017
     },
     {
       "candidate_id": "candidate-r02-0052",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "market intelligence",
-      "gradient": 2.7e-05,
+      "gradient": 0.0,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0001
+      "value_capture_uplift": 0.0
     },
     {
       "candidate_id": "candidate-r02-0038-poison",
@@ -592,39 +592,39 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "compliance evidence",
-      "gradient": 0.006562,
+      "gradient": 0.000435,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
-      "success_uplift": 0.0156,
+      "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0021
+      "value_capture_uplift": 0.0016
     },
     {
       "candidate_id": "candidate-r02-0076-poison",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "support operations",
-      "gradient": 0.019536,
+      "gradient": 0.02536,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
-      "success_uplift": 0.0312,
-      "transfer_uplift": 0.0417,
-      "value_capture_uplift": 0.0057
+      "success_uplift": 0.0469,
+      "transfer_uplift": 0.0416,
+      "value_capture_uplift": 0.005
     },
     {
       "candidate_id": "candidate-r03-0076",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "support operations",
-      "gradient": 8.2e-05,
+      "gradient": 5.4e-05,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0003
+      "value_capture_uplift": 0.0002
     },
     {
       "candidate_id": "candidate-r03-0000",
@@ -644,13 +644,13 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "enterprise strategy",
-      "gradient": 8.2e-05,
+      "gradient": 5.4e-05,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0003
+      "value_capture_uplift": 0.0002
     },
     {
       "candidate_id": "candidate-r03-0044",
@@ -670,13 +670,13 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "governance",
-      "gradient": 0.000272,
+      "gradient": 0.0,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.001
+      "value_capture_uplift": 0.0
     },
     {
       "candidate_id": "candidate-r03-0026",
@@ -735,13 +735,13 @@
       "confidence": 0.8,
       "decision": "accepted",
       "domain": "compliance evidence",
-      "gradient": 0.021808,
+      "gradient": 0.009638,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
-      "success_uplift": 0.0469,
-      "transfer_uplift": 0.0209,
-      "value_capture_uplift": 0.0029
+      "success_uplift": 0.0156,
+      "transfer_uplift": 0.0208,
+      "value_capture_uplift": 0.0024
     },
     {
       "candidate_id": "candidate-r03-0076-poison",
@@ -761,52 +761,52 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "security",
-      "gradient": 0.000136,
+      "gradient": 8.2e-05,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0005
+      "value_capture_uplift": 0.0003
     },
     {
       "candidate_id": "candidate-r03-0074",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "blockchain coordination",
-      "gradient": 2.7e-05,
+      "gradient": 0.0,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0001
+      "value_capture_uplift": 0.0
     },
     {
       "candidate_id": "candidate-r03-0019-poison",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "enterprise strategy",
-      "gradient": 0.003131,
+      "gradient": 8.2e-05,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
-      "transfer_uplift": 0.0208,
-      "value_capture_uplift": 0.0005
+      "transfer_uplift": 0.0,
+      "value_capture_uplift": 0.0003
     },
     {
       "candidate_id": "candidate-r03-0057-poison",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "support operations",
-      "gradient": 0.003403,
+      "gradient": 0.000272,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
-      "transfer_uplift": 0.0208,
-      "value_capture_uplift": 0.0015
+      "transfer_uplift": 0.0,
+      "value_capture_uplift": 0.001
     },
     {
       "candidate_id": "candidate-r04-0004",
@@ -839,13 +839,13 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "market intelligence",
-      "gradient": 0.000109,
+      "gradient": 5.4e-05,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0004
+      "value_capture_uplift": 0.0002
     },
     {
       "candidate_id": "candidate-r04-0019-poison",
@@ -878,13 +878,13 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "enterprise strategy",
-      "gradient": 0.000109,
+      "gradient": 5.4e-05,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0004
+      "value_capture_uplift": 0.0002
     },
     {
       "candidate_id": "candidate-r04-0062",
@@ -904,13 +904,13 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "research operations",
-      "gradient": 0.009843,
+      "gradient": 0.00068,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
-      "success_uplift": 0.0156,
-      "transfer_uplift": 0.0209,
-      "value_capture_uplift": 0.0031
+      "success_uplift": 0.0,
+      "transfer_uplift": 0.0,
+      "value_capture_uplift": 0.0025
     },
     {
       "candidate_id": "candidate-r04-0012",
@@ -930,13 +930,13 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "support operations",
-      "gradient": 0.00019,
+      "gradient": 5.4e-05,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0007
+      "value_capture_uplift": 0.0002
     },
     {
       "candidate_id": "candidate-r04-0006",
@@ -969,13 +969,13 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "enterprise strategy",
-      "gradient": 0.006045,
+      "gradient": 0.0,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
-      "success_uplift": 0.0156,
+      "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0002
+      "value_capture_uplift": 0.0
     },
     {
       "candidate_id": "candidate-r04-0044",
@@ -1047,26 +1047,26 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "market intelligence",
-      "gradient": 0.003104,
+      "gradient": 2.7e-05,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
       "success_uplift": 0.0,
-      "transfer_uplift": 0.0208,
-      "value_capture_uplift": 0.0004
+      "transfer_uplift": 0.0,
+      "value_capture_uplift": 0.0001
     },
     {
       "candidate_id": "candidate-r05-0018",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "governance",
-      "gradient": 0.000245,
+      "gradient": 0.000136,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "distilled_trace",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0009
+      "value_capture_uplift": 0.0005
     },
     {
       "candidate_id": "candidate-r05-0028",
@@ -1096,7 +1096,7 @@
     }
   ],
   "git_ref": "main",
-  "git_sha": "d2b5f602cd366b3c0655fd4f3551fd7cf21fb2db",
+  "git_sha": "4b4c0ad88d6c3b99b648eedc90ffd27211b3259a",
   "id": "proof-gradient-agent-evolution-protocol",
   "large_multi_agent_system": {
     "agent_count": 384,
@@ -1145,78 +1145,78 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "security",
-      "gradient": 0.000462,
+      "gradient": 0.000326,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0017
+      "value_capture_uplift": 0.0012
     },
     {
       "candidate_id": "candidate-r01-0076-poison",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "research operations",
-      "gradient": 0.000354,
+      "gradient": 0.006208,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
-      "success_uplift": 0.0,
+      "success_uplift": 0.0156,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0013
+      "value_capture_uplift": 0.0008
     },
     {
       "candidate_id": "candidate-r01-0019-poison",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "blockchain coordination",
-      "gradient": 0.000245,
+      "gradient": 0.000136,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0009
+      "value_capture_uplift": 0.0005
     },
     {
       "candidate_id": "candidate-r01-0000-poison",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "enterprise strategy",
-      "gradient": 5.4e-05,
+      "gradient": 0.0,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0002
+      "value_capture_uplift": 0.0
     },
     {
       "candidate_id": "candidate-r02-0000-poison",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "research operations",
-      "gradient": 0.00019,
+      "gradient": 0.000136,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0007
+      "value_capture_uplift": 0.0005
     },
     {
       "candidate_id": "candidate-r02-0019-poison",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "market intelligence",
-      "gradient": 0.016091,
+      "gradient": 0.015982,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0312,
       "transfer_uplift": 0.0208,
-      "value_capture_uplift": 0.0041
+      "value_capture_uplift": 0.0037
     },
     {
       "candidate_id": "candidate-r02-0038-poison",
@@ -1236,26 +1236,26 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "compliance evidence",
-      "gradient": 0.006562,
+      "gradient": 0.000435,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
-      "success_uplift": 0.0156,
+      "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0021
+      "value_capture_uplift": 0.0016
     },
     {
       "candidate_id": "candidate-r02-0076-poison",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "support operations",
-      "gradient": 0.019536,
+      "gradient": 0.02536,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
-      "success_uplift": 0.0312,
-      "transfer_uplift": 0.0417,
-      "value_capture_uplift": 0.0057
+      "success_uplift": 0.0469,
+      "transfer_uplift": 0.0416,
+      "value_capture_uplift": 0.005
     },
     {
       "candidate_id": "candidate-r03-0000-poison",
@@ -1288,39 +1288,39 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "security",
-      "gradient": 0.000136,
+      "gradient": 8.2e-05,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0005
+      "value_capture_uplift": 0.0003
     },
     {
       "candidate_id": "candidate-r03-0019-poison",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "enterprise strategy",
-      "gradient": 0.003131,
+      "gradient": 8.2e-05,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
-      "transfer_uplift": 0.0208,
-      "value_capture_uplift": 0.0005
+      "transfer_uplift": 0.0,
+      "value_capture_uplift": 0.0003
     },
     {
       "candidate_id": "candidate-r03-0057-poison",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "support operations",
-      "gradient": 0.003403,
+      "gradient": 0.000272,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
-      "transfer_uplift": 0.0208,
-      "value_capture_uplift": 0.0015
+      "transfer_uplift": 0.0,
+      "value_capture_uplift": 0.001
     },
     {
       "candidate_id": "candidate-r04-0076-poison",
@@ -1366,26 +1366,26 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "enterprise strategy",
-      "gradient": 0.000109,
+      "gradient": 5.4e-05,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0004
+      "value_capture_uplift": 0.0002
     },
     {
       "candidate_id": "candidate-r04-0038-poison",
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "research operations",
-      "gradient": 0.009843,
+      "gradient": 0.00068,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
-      "success_uplift": 0.0156,
-      "transfer_uplift": 0.0209,
-      "value_capture_uplift": 0.0031
+      "success_uplift": 0.0,
+      "transfer_uplift": 0.0,
+      "value_capture_uplift": 0.0025
     },
     {
       "candidate_id": "candidate-r05-0000-poison",
@@ -1401,6 +1401,19 @@
       "value_capture_uplift": 0.0
     },
     {
+      "candidate_id": "candidate-r05-0019-poison",
+      "confidence": 0.8,
+      "decision": "rejected",
+      "domain": "research operations",
+      "gradient": 0.00611,
+      "risk_delta": 0.0,
+      "sample_size": 64,
+      "source": "negative_control",
+      "success_uplift": 0.0157,
+      "transfer_uplift": 0.0,
+      "value_capture_uplift": 0.0003
+    },
+    {
       "candidate_id": "candidate-r05-0057-poison",
       "confidence": 0.8,
       "decision": "rejected",
@@ -1412,19 +1425,6 @@
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
       "value_capture_uplift": 0.0
-    },
-    {
-      "candidate_id": "candidate-r05-0019-poison",
-      "confidence": 0.8,
-      "decision": "rejected",
-      "domain": "research operations",
-      "gradient": 0.012131,
-      "risk_delta": 0.0,
-      "sample_size": 64,
-      "source": "negative_control",
-      "success_uplift": 0.0156,
-      "transfer_uplift": 0.0417,
-      "value_capture_uplift": 0.0005
     },
     {
       "candidate_id": "candidate-r05-0076-poison",
@@ -1444,13 +1444,13 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "research operations",
-      "gradient": 0.00305,
+      "gradient": 2.7e-05,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
-      "transfer_uplift": 0.0208,
-      "value_capture_uplift": 0.0002
+      "transfer_uplift": 0.0,
+      "value_capture_uplift": 0.0001
     },
     {
       "candidate_id": "candidate-r06-0057-poison",
@@ -1483,13 +1483,13 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "security",
-      "gradient": 0.022624,
+      "gradient": 0.01647,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
-      "success_uplift": 0.0469,
+      "success_uplift": 0.0313,
       "transfer_uplift": 0.0209,
-      "value_capture_uplift": 0.0059
+      "value_capture_uplift": 0.0053
     },
     {
       "candidate_id": "candidate-r06-0038-poison",
@@ -1509,31 +1509,31 @@
       "confidence": 0.8,
       "decision": "rejected",
       "domain": "research operations",
-      "gradient": 0.000109,
+      "gradient": 5.4e-05,
       "risk_delta": 0.0,
       "sample_size": 64,
       "source": "negative_control",
       "success_uplift": 0.0,
       "transfer_uplift": 0.0,
-      "value_capture_uplift": 0.0004
+      "value_capture_uplift": 0.0002
     }
   ],
   "proof_gates": [
     {
       "name": "Holdout success uplift over static coordination",
-      "observed": "17.81 pp",
+      "observed": "21.72 pp",
       "passed": true,
       "required": ">= 6.0 percentage points"
     },
     {
       "name": "Value capture uplift over static coordination",
-      "observed": "4.58 pp",
+      "observed": "4.77 pp",
       "passed": true,
       "required": ">= 3.0 percentage points"
     },
     {
       "name": "Proof Gradient beats unverified propagation",
-      "observed": "30.86 pp",
+      "observed": "33.75 pp",
       "passed": true,
       "required": ">= 2.0 percentage points success uplift"
     },
@@ -1551,144 +1551,144 @@
     },
     {
       "name": "Skill compounding release curve",
-      "observed": "0.0117 delta",
+      "observed": "0.0113 delta",
       "passed": true,
       "required": "final value capture > release 0 value capture"
     }
   ],
   "proof_id": "proof-gradient-agent-evolution-protocol",
   "public_claim_boundary": "This proof is a deterministic benchmark and public mechanism demonstration. It does not claim achieved superintelligence, audited customer ROI, investment returns, financial advice, legal advice, medical advice, employment advice, credit advice, token advice, or Kardashev Type II civilization. It shows a testable mechanism: proof-gated skill propagation can outperform static or unverified coordination under the stated benchmark assumptions.",
-  "receipt_sha256": "879cc089882f44c855918c6e4150e4e5bfa4a29a8860b75e5ecc5b63792a2f98",
+  "receipt_sha256": "cf9102955b04296891c13fe0b86da395086851220a91f489140966f4b376638f",
   "release_curve": [
     {
       "accepted_skills": 10,
       "proof_gradient_risk_breach": 0.0,
-      "proof_gradient_success": 0.299,
+      "proof_gradient_success": 0.2969,
       "proof_gradient_value_capture": 0.2953,
       "release": 0,
-      "static_success": 0.1604,
+      "static_success": 0.15,
       "unverified_skills": 10,
-      "unverified_success": 0.1573
+      "unverified_success": 0.151
     },
     {
       "accepted_skills": 13,
       "proof_gradient_risk_breach": 0.0,
-      "proof_gradient_success": 0.324,
-      "proof_gradient_value_capture": 0.3011,
+      "proof_gradient_success": 0.3073,
+      "proof_gradient_value_capture": 0.3002,
       "release": 1,
-      "static_success": 0.1688,
+      "static_success": 0.1729,
       "unverified_skills": 28,
-      "unverified_success": 0.1771
+      "unverified_success": 0.1615
     },
     {
-      "accepted_skills": 14,
+      "accepted_skills": 15,
       "proof_gradient_risk_breach": 0.0,
-      "proof_gradient_success": 0.3385,
-      "proof_gradient_value_capture": 0.3028,
+      "proof_gradient_success": 0.3479,
+      "proof_gradient_value_capture": 0.3048,
       "release": 2,
-      "static_success": 0.1635,
+      "static_success": 0.1729,
       "unverified_skills": 47,
-      "unverified_success": 0.1375
+      "unverified_success": 0.1396
     },
     {
-      "accepted_skills": 15,
+      "accepted_skills": 16,
       "proof_gradient_risk_breach": 0.0,
-      "proof_gradient_success": 0.351,
-      "proof_gradient_value_capture": 0.3057,
+      "proof_gradient_success": 0.3615,
+      "proof_gradient_value_capture": 0.3067,
       "release": 3,
-      "static_success": 0.1604,
+      "static_success": 0.1615,
       "unverified_skills": 57,
-      "unverified_success": 0.1177
+      "unverified_success": 0.1302
     },
     {
-      "accepted_skills": 15,
+      "accepted_skills": 16,
       "proof_gradient_risk_breach": 0.0,
-      "proof_gradient_success": 0.3427,
-      "proof_gradient_value_capture": 0.3056,
+      "proof_gradient_success": 0.3521,
+      "proof_gradient_value_capture": 0.3068,
       "release": 4,
-      "static_success": 0.1625,
+      "static_success": 0.1646,
       "unverified_skills": 69,
-      "unverified_success": 0.1104
+      "unverified_success": 0.1083
     },
     {
-      "accepted_skills": 15,
+      "accepted_skills": 16,
       "proof_gradient_risk_breach": 0.0,
-      "proof_gradient_success": 0.3552,
-      "proof_gradient_value_capture": 0.3056,
+      "proof_gradient_success": 0.3594,
+      "proof_gradient_value_capture": 0.3075,
       "release": 5,
-      "static_success": 0.1458,
+      "static_success": 0.1542,
       "unverified_skills": 86,
-      "unverified_success": 0.0948
-    },
-    {
-      "accepted_skills": 15,
-      "proof_gradient_risk_breach": 0.0,
-      "proof_gradient_success": 0.3333,
-      "proof_gradient_value_capture": 0.305,
-      "release": 6,
-      "static_success": 0.1552,
-      "unverified_skills": 103,
       "unverified_success": 0.0917
     },
     {
-      "accepted_skills": 15,
+      "accepted_skills": 16,
       "proof_gradient_risk_breach": 0.0,
-      "proof_gradient_success": 0.3583,
-      "proof_gradient_value_capture": 0.3063,
+      "proof_gradient_success": 0.3479,
+      "proof_gradient_value_capture": 0.3066,
+      "release": 6,
+      "static_success": 0.174,
+      "unverified_skills": 103,
+      "unverified_success": 0.0802
+    },
+    {
+      "accepted_skills": 17,
+      "proof_gradient_risk_breach": 0.0,
+      "proof_gradient_success": 0.3573,
+      "proof_gradient_value_capture": 0.3087,
       "release": 7,
-      "static_success": 0.1604,
+      "static_success": 0.1583,
       "unverified_skills": 119,
-      "unverified_success": 0.0542
+      "unverified_success": 0.0656
     },
     {
-      "accepted_skills": 15,
+      "accepted_skills": 17,
       "proof_gradient_risk_breach": 0.0,
-      "proof_gradient_success": 0.3417,
-      "proof_gradient_value_capture": 0.3056,
+      "proof_gradient_success": 0.35,
+      "proof_gradient_value_capture": 0.3081,
       "release": 8,
-      "static_success": 0.176,
-      "unverified_skills": 135,
-      "unverified_success": 0.0469
-    },
-    {
-      "accepted_skills": 15,
-      "proof_gradient_risk_breach": 0.0,
-      "proof_gradient_success": 0.3427,
-      "proof_gradient_value_capture": 0.3046,
-      "release": 9,
-      "static_success": 0.1719,
-      "unverified_skills": 142,
-      "unverified_success": 0.0417
-    },
-    {
-      "accepted_skills": 16,
-      "proof_gradient_risk_breach": 0.0,
-      "proof_gradient_success": 0.3458,
-      "proof_gradient_value_capture": 0.3064,
-      "release": 10,
-      "static_success": 0.1604,
-      "unverified_skills": 159,
-      "unverified_success": 0.0333
-    },
-    {
-      "accepted_skills": 16,
-      "proof_gradient_risk_breach": 0.0,
-      "proof_gradient_success": 0.3552,
-      "proof_gradient_value_capture": 0.3076,
-      "release": 11,
-      "static_success": 0.1688,
-      "unverified_skills": 172,
+      "static_success": 0.151,
+      "unverified_skills": 136,
       "unverified_success": 0.049
     },
     {
-      "accepted_skills": 16,
+      "accepted_skills": 17,
       "proof_gradient_risk_breach": 0.0,
-      "proof_gradient_success": 0.3573,
-      "proof_gradient_value_capture": 0.307,
+      "proof_gradient_success": 0.3563,
+      "proof_gradient_value_capture": 0.3071,
+      "release": 9,
+      "static_success": 0.1667,
+      "unverified_skills": 143,
+      "unverified_success": 0.0396
+    },
+    {
+      "accepted_skills": 17,
+      "proof_gradient_risk_breach": 0.0,
+      "proof_gradient_success": 0.3594,
+      "proof_gradient_value_capture": 0.3079,
+      "release": 10,
+      "static_success": 0.1656,
+      "unverified_skills": 159,
+      "unverified_success": 0.0406
+    },
+    {
+      "accepted_skills": 17,
+      "proof_gradient_risk_breach": 0.0,
+      "proof_gradient_success": 0.3635,
+      "proof_gradient_value_capture": 0.3071,
+      "release": 11,
+      "static_success": 0.1625,
+      "unverified_skills": 171,
+      "unverified_success": 0.05
+    },
+    {
+      "accepted_skills": 17,
+      "proof_gradient_risk_breach": 0.0,
+      "proof_gradient_success": 0.35,
+      "proof_gradient_value_capture": 0.3066,
       "release": 12,
-      "static_success": 0.1708,
+      "static_success": 0.1677,
       "unverified_skills": 184,
-      "unverified_success": 0.0427
+      "unverified_success": 0.0417
     }
   ],
   "repository": "MontrealAI/skillos",
@@ -1768,29 +1768,29 @@
   },
   "status": "PASSED",
   "summary_metrics": {
-    "accepted_skills": 6,
+    "accepted_skills": 7,
     "agents": 384,
-    "candidate_decisions": 213,
+    "candidate_decisions": 215,
     "domains": 10,
     "holdout_jobs": 960,
     "jobs_total": 2400,
     "negative_control_rejection_rate": 1.0,
     "ood_jobs": 320,
     "proof_gradient_risk_breach_rate": 0.0,
-    "proof_gradient_success_rate": 0.3461,
-    "proof_gradient_value_capture_rate": 0.3077,
-    "rejected_skills": 207,
+    "proof_gradient_success_rate": 0.3781,
+    "proof_gradient_value_capture_rate": 0.3092,
+    "rejected_skills": 208,
     "releases": 12,
     "roles": 20,
-    "single_agent_success_rate": 0.0336,
-    "static_success_rate": 0.168,
-    "static_value_capture_rate": 0.2619,
-    "success_uplift_over_static_pp": 17.81,
-    "success_uplift_over_unverified_pp": 30.86,
+    "single_agent_success_rate": 0.0383,
+    "static_success_rate": 0.1609,
+    "static_value_capture_rate": 0.2615,
+    "success_uplift_over_static_pp": 21.72,
+    "success_uplift_over_unverified_pp": 33.75,
     "train_jobs": 640,
-    "unverified_success_rate": 0.0375,
+    "unverified_success_rate": 0.0406,
     "validation_jobs": 480,
-    "value_uplift_over_static_pp": 4.58
+    "value_uplift_over_static_pp": 4.77
   },
   "tagline": "One agent tries. Proof decides. The network evolves.",
   "thesis": "Proof Gradient is the selection layer for agent intelligence: agents attempt work, SkillOS extracts reusable skills, proof decides what propagates, and the network evolves through validation-gated capability gradients.",

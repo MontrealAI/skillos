@@ -1,5 +1,16 @@
 [
   {
+    "agents": 262144,
+    "holdout_value_capture": 0.9990703123366625,
+    "href": "./rsi-ai-first-blockchain-capital-machine-proof.html",
+    "roles": 8192,
+    "slug": "rsi-ai-first-blockchain-capital-machine-proof",
+    "status": "passing",
+    "title": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
+    "updated_at": "2026-06-26T09:53:46Z",
+    "workflow": ".github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml"
+  },
+  {
     "agents": 524288,
     "domain": "AI-first governance",
     "holdout_value_capture": 0.9993828786644704,
@@ -23,17 +34,6 @@
     "title": "Autonomous RSI Proof Forge Meta-Coordination Proof",
     "value_capture_rate": 0.9909679137790379,
     "workflow_url": "https://github.com/MontrealAI/skillos/actions/workflows/autonomous-rsi-proof-forge-meta-coordination-proof.yml"
-  },
-  {
-    "agents": 262144,
-    "holdout_value_capture": 0.9990703123366625,
-    "href": "./rsi-ai-first-blockchain-capital-machine-proof.html",
-    "roles": 8192,
-    "slug": "rsi-ai-first-blockchain-capital-machine-proof",
-    "status": "passing",
-    "title": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
-    "updated_at": "2026-06-26T01:28:55Z",
-    "workflow": ".github/workflows/autonomous-rsi-ai-first-blockchain-capital-machine-proof.yml"
   },
   {
     "badge": "badges/agent-evolution-protocol.svg",

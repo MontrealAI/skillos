@@ -1,8 +1,8 @@
 # Proof Gradient · Goal-Plan-Skill Alignment Lattice
 
 **Status:** PASSED  
-**Generated:** 2026-07-01T06:10:11Z  
-**Receipt hash:** `3f474c0490c3287caa7350918eea91b09e4dae6023c8845488308f65665c8133`
+**Generated:** 2026-07-02T06:02:04Z  
+**Receipt hash:** `53a6aaf102933183faa71932d4a0b4fc382d2fb358297b8d608c88d927cffe1d`
 
 > One agent tries. Proof decides. The network evolves.
 

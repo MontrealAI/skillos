@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://montrealai.github.io/skillos/</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/agent-evolution-protocol.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/autonomous-rsi-capability-governance-twin-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/capability-governance-twin.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/proof-carrying-intelligence.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-ai-first-blockchain-capital-machine-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-ai-first-governance-capital-engine-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-capability-governance-twin-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-governance-frontier-proof.html</loc></url>
-  <url><loc>https://montrealai.github.io/skillos/rsi-proof-forge-meta-coordination-proof.html</loc></url>
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+  <url><loc>https://montrealai.github.io/skillos/</loc><lastmod>2026-07-09</lastmod></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-proof-forge-meta-coordination-proof.html</loc><lastmod>2026-07-09</lastmod></url>
+  <url><loc>https://montrealai.github.io/skillos/./rsi-ai-first-blockchain-capital-machine-proof.html</loc><lastmod>2026-07-09</lastmod></url>
+  <url><loc>https://montrealai.github.io/skillos/./rsi-ai-first-governance-capital-engine-proof.html</loc><lastmod>2026-07-09</lastmod></url>
+  <url><loc>https://montrealai.github.io/skillos/agent-evolution-protocol.html</loc><lastmod>2026-07-09</lastmod></url>
+  <url><loc>https://montrealai.github.io/skillos/proof-carrying-intelligence.html</loc><lastmod>2026-07-09</lastmod></url>
+  <url><loc>https://montrealai.github.io/skillos/capability-governance-twin.html</loc><lastmod>2026-07-09</lastmod></url>
+  <url><loc>https://montrealai.github.io/skillos/autonomous-rsi-capability-governance-twin-proof.html</loc><lastmod>2026-07-09</lastmod></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-capability-governance-twin-proof.html</loc><lastmod>2026-07-09</lastmod></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-ai-first-governance-capital-engine-proof.html</loc><lastmod>2026-07-09</lastmod></url>
+  <url><loc>https://montrealai.github.io/skillos/rsi-governance-frontier-proof.html</loc><lastmod>2026-07-09</lastmod></url>
 </urlset>

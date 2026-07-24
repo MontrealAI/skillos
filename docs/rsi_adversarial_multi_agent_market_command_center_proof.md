@@ -9,9 +9,9 @@ Adversarial large-scale agentic coordination for profitable market-capture portf
 ## Proof receipts
 
 - Repository: `MontrealAI/skillos`
-- Commit SHA: `26b46fd55c8648af99bb7c38b925ac95c93955f6`
-- GitHub Actions run: `https://github.com/MontrealAI/skillos/actions/runs/30018360594`
-- Generated at: `2026-07-23T14:59:06Z`
+- Commit SHA: `f2ba7ab4ca38d09c0b842f73e89442bedbe299ec`
+- GitHub Actions run: `https://github.com/MontrealAI/skillos/actions/runs/30103111332`
+- Generated at: `2026-07-24T14:56:06Z`
 - Benchmark seed: `20260530`
 
 ## Why this matters

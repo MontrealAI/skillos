@@ -1,7 +1,7 @@
 # Autonomous RSI AI-First Governance Capital Engine Proof
 
 **Version:** v9.0
-**Run timestamp:** 2026-08-08T16:33:53Z
+**Run timestamp:** 2026-08-09T00:37:12Z
 **Proof status:** PASSED
 
 ## What this proves

@@ -125,11 +125,11 @@ The final system uses required-role quorum, specialist consensus, risk-gated pro
 ## Proof receipts
 
 - Repository: `MontrealAI/skillos`
-- Commit SHA: `6841ea10dfc289920508cfc8b27091ff02395564`
+- Commit SHA: `6df5b2618459a7c91104d4eeb580bbff9b1ffed0`
 - Workflow: `Autonomous RSI Capital-to-Capability Command Center v17 Proof`
-- Run URL: `https://github.com/MontrealAI/skillos/actions/runs/36729708185`
+- Run URL: `https://github.com/MontrealAI/skillos/actions/runs/36876875879`
 - Benchmark seed: `20260530`
-- Generated at: `2026-09-30T14:31:14Z`
+- Generated at: `2026-10-01T14:30:44Z`
 
 ## Boundary
 

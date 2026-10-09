@@ -91,11 +91,11 @@ training failures → coordination lessons → candidate capital-to-capability p
 
 ## Proof receipts
 
-- Commit SHA: `76c4b833b456b05dcd044f8db25fd60fa814dffe`
-- GitHub Actions run: `https://github.com/MontrealAI/skillos/actions/runs/37793422112`
+- Commit SHA: `1b59e3b5e3a0f65b071bb11813152565a5629764`
+- GitHub Actions run: `https://github.com/MontrealAI/skillos/actions/runs/37945190375`
 - Benchmark seed: `20260530`
 - Source SHA-256: `8ded046916510bc50f429d7568318ae182780f1d4ad2d46ee102838fcdb0d8e9`
-- Generated at UTC: `2026-10-08T14:34:28Z`
+- Generated at UTC: `2026-10-09T14:34:41Z`
 
 ## Pre-registered proof gates
 

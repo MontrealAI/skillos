@@ -642,7 +642,7 @@
     "candidate_protocol_strategies_per_case": 21,
     "frontier_correct_rate": 0.94482421875,
     "github_repository": "MontrealAI/skillos",
-    "github_sha": "c8db9347ac432a26e4e4795ddb8be18bcd21c3dd",
+    "github_sha": "1981bb6a21b1774b3a55d41cb713b94c9455a2b3",
     "holdout_value_capture": 0.9990703123366625,
     "locked_holdout_cases": 2048,
     "proof_name": "Autonomous RSI AI-First Blockchain Capital Machine Proof",
@@ -650,7 +650,7 @@
     "regimes": 18,
     "risk_breach_rate": 0.0,
     "rsi_release_cycles": 14,
-    "run_timestamp_utc": "2026-10-14T01:09:30Z",
+    "run_timestamp_utc": "2026-10-14T08:51:27Z",
     "seed": 2026053108,
     "slug": "rsi-ai-first-blockchain-capital-machine-proof",
     "specialist_roles": 8192,
@@ -706,7 +706,7 @@
     "required_human_review": false,
     "required_negative_controls_fail": true
   },
-  "protocol_fingerprint": "96006c48bee133ee51dfc8c379916f86bd9db5c3bcd0aa7f00594ed0bff1683e",
+  "protocol_fingerprint": "f4f0d1e457bf30adfedbd0d192b90fc87037c1330004cbf5f21d72bc6d308255",
   "public_safety_note": "This is a deterministic benchmark proof, not live protocol revenue, token advice, investment advice, a claim of achieved superintelligence, or a claim of Kardashev Type II civilization.",
   "regimes": [
     "agent-native payment settlement",

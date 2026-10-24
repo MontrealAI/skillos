@@ -3,8 +3,8 @@
 GoalOS gives Direction. PlanOS gives Strategy. SkillOS gives Capability. Proof Gradient gives Evolution.
 ## Executive result
 Status: **PASSED**
-Agents: **384** · Roles: **20** · Releases: **12** · Accepted skills: **7**
-Proof Gradient holdout success: **0.3625** · Static coordination: **0.1672** · Unverified propagation: **0.0344**
+Agents: **384** · Roles: **20** · Releases: **12** · Accepted skills: **8**
+Proof Gradient holdout success: **0.3664** · Static coordination: **0.1617** · Unverified propagation: **0.0461**
 ## Mechanism
 ```text
 attempt
@@ -16,20 +16,20 @@ attempt
 → better attempt
 ```
 ## Proof gates
-- ✅ **Holdout success uplift over static coordination** — required >= 6.0 percentage points; observed 19.53 pp
-- ✅ **Value capture uplift over static coordination** — required >= 3.0 percentage points; observed 4.40 pp
-- ✅ **Proof Gradient beats unverified propagation** — required >= 2.0 percentage points success uplift; observed 32.81 pp
+- ✅ **Holdout success uplift over static coordination** — required >= 6.0 percentage points; observed 20.47 pp
+- ✅ **Value capture uplift over static coordination** — required >= 3.0 percentage points; observed 4.63 pp
+- ✅ **Proof Gradient beats unverified propagation** — required >= 2.0 percentage points success uplift; observed 32.03 pp
 - ✅ **Risk breach ceiling** — required <= 7.5%; observed 0.00%
 - ✅ **Negative-control rejection** — required >= 95% rejected; observed 100.00%
-- ✅ **Skill compounding release curve** — required final value capture > release 0 value capture; observed 0.0094 delta
+- ✅ **Skill compounding release curve** — required final value capture > release 0 value capture; observed 0.0121 delta
 ## Baselines
 | Mode | Success | Quality | Risk breach | Value capture |
 |---|---:|---:|---:|---:|
-| single | 3.20% | 40.00 | 2.19% | 21.15% |
-| pool | 2.89% | 38.59 | 1.72% | 20.05% |
-| static | 16.72% | 46.51 | 0.00% | 26.26% |
-| unverified | 3.44% | 40.65 | 0.00% | 21.13% |
-| proof_gradient | 36.25% | 50.94 | 0.00% | 30.66% |
+| single | 3.83% | 39.98 | 2.19% | 21.16% |
+| pool | 2.66% | 38.45 | 1.48% | 19.93% |
+| static | 16.17% | 46.28 | 0.00% | 26.16% |
+| unverified | 4.61% | 40.73 | 0.00% | 21.10% |
+| proof_gradient | 36.64% | 51.17 | 0.00% | 30.79% |
 
 ## Skills Used
 ### Attempt Trace Capture

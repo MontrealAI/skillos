@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-27T14:34:37Z",
+  "generated_at_utc": "2026-10-29T14:26:17Z",
   "status": "PASSED_AUTONOMOUS_RSI_CAPITAL_TO_CAPABILITY_ENGINE_PROOF",
   "proved": true,
   "proof_type": "fully autonomous recursive self-improvement capital-to-capability engine benchmark",
@@ -1020,9 +1020,9 @@
   "decision_cycle_reduction_vs_single_agent_percent": 99.5,
   "benchmark_implied_value_captured_over_single_agent_usd": 94755510849.57,
   "receipts": {
-    "generated_at_utc": "2026-10-27T14:34:37Z",
-    "commit_sha": "277bb2e79cbd45938c6fc87793abfc9b18c5d9c9",
-    "run_url": "https://github.com/MontrealAI/skillos/actions/runs/40522391800",
+    "generated_at_utc": "2026-10-29T14:26:17Z",
+    "commit_sha": "7b8571b6d1befdb937f6f4fd2c170bf0898efcec",
+    "run_url": "https://github.com/MontrealAI/skillos/actions/runs/40891065653",
     "repository": "MontrealAI/skillos",
     "workflow": "Autonomous RSI Capital-to-Capability Engine Proof",
     "seed": 20260530,

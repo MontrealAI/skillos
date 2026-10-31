@@ -1,19 +1,19 @@
 {
-  "generated_at_utc": "2026-10-30T14:23:01Z",
+  "generated_at_utc": "2026-10-31T14:19:52Z",
   "status": "PASSED_AUTONOMOUS_RSI_ADVERSARIAL_MULTI_AGENT_MARKET_COMMAND_CENTER_PROOF",
   "proved": true,
   "proof_type": "fully autonomous recursive self-improvement adversarial large-scale multi-agent market-command-center proof",
   "workflow": "adversarial large-scale agentic coordination for profitable market-capture portfolio selection, resource allocation, risk control, and compounding business strategy",
   "receipts": {
-    "generated_at_utc": "2026-10-30T14:23:01Z",
+    "generated_at_utc": "2026-10-31T14:19:52Z",
     "repository": "MontrealAI/skillos",
-    "commit_sha": "e11899be09039931e5c85a55b4bf8515b9b2620d",
+    "commit_sha": "754656f0292deea1872fa489635a4a908d7ca4fd",
     "ref_name": "main",
     "workflow": "Autonomous RSI Adversarial Multi-Agent Market Command Center Proof",
-    "run_id": "41071209516",
-    "run_number": "159",
+    "run_id": "41209609078",
+    "run_number": "160",
     "run_attempt": "1",
-    "run_url": "https://github.com/MontrealAI/skillos/actions/runs/41071209516",
+    "run_url": "https://github.com/MontrealAI/skillos/actions/runs/41209609078",
     "benchmark_seed": 20260530
   },
   "agent_system": {

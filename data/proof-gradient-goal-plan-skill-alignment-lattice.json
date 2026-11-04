@@ -2360,7 +2360,7 @@
       "value_delta": 0.1585
     }
   ],
-  "commit": "f31aea2",
+  "commit": "7ea06cb",
   "comparisons": {
     "goal_plan_static": {
       "goal_alignment": 0.83,
@@ -2417,7 +2417,7 @@
     "success_uplift_over_static_min": 0.075,
     "value_uplift_over_static_min": 0.075
   },
-  "generated_at": "2026-11-03T04:43:16Z",
+  "generated_at": "2026-11-04T04:43:21Z",
   "goals_used": [
     {
       "direction": "Increase future work quality by converting successful traces into verified network skills.",
@@ -2589,7 +2589,7 @@
     "It does not claim achieved superintelligence, Kardashev Type II civilization, investment returns, financial advice, legal advice, medical advice, employment advice, credit advice, policy advice, or token advice.",
     "It tests whether goal-plan-skill aligned proof gradients outperform static and unverified propagation baselines under controlled holdout conditions."
   ],
-  "receipt_hash": "79365f16721aecf01e9d34e692849c774c4bd47d65bc0f860f5766f05a23d873",
+  "receipt_hash": "f26851ef582767e5f4b691f9a1a26d837f1e85437f9459e5c488790b3123fe85",
   "release_curve": [
     {
       "accepted_skills": 0,
@@ -2743,7 +2743,7 @@
     }
   ],
   "repository": "MontrealAI/skillos",
-  "run_id": "41579729666",
+  "run_id": "41774883488",
   "schema": "skillos.proof_gradient.goal_plan_skill_alignment_lattice.v1",
   "seed": 2026060202,
   "skills_used": [
